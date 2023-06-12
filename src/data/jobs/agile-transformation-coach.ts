@@ -1,4 +1,4 @@
-{
+export const AgileTransformationCoach = {
 	"slug": "agile-transformation-consultant",
 	"title": "Agile Transformation Consultant (m/w/x)",
 	"location": "Stuttgart",
