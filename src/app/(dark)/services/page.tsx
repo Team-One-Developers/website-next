@@ -1,10 +1,10 @@
-import Image from 'next/image';
+import Image from "next/image";
 
 export const Services = () => {
   return (
-    <main className=''>
+    <main className="">
       <div>
-        <p className='text-4xl text p-8 '>
+        <p className="text-4xl text p-8 ">
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industrys standard dummy text ever
           since the 1500s, when an unknown printer took a galley of type and
@@ -15,7 +15,7 @@ export const Services = () => {
           more recently with desktop publishing software like Aldus PageMaker
           including versions of Lorem Ipsum.
         </p>
-        <p className='text-4xl text p-8 '>
+        <p className="text-4xl text p-8 ">
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industrys standard dummy text ever
           since the 1500s, when an unknown printer took a galley of type and
@@ -26,7 +26,7 @@ export const Services = () => {
           more recently with desktop publishing software like Aldus PageMaker
           including versions of Lorem Ipsum.
         </p>
-        <p className='text-4xl text p-8 '>
+        <p className="text-4xl text p-8 ">
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industrys standard dummy text ever
           since the 1500s, when an unknown printer took a galley of type and
@@ -37,7 +37,7 @@ export const Services = () => {
           more recently with desktop publishing software like Aldus PageMaker
           including versions of Lorem Ipsum.
         </p>
-        <p className='text-4xl text p-8 '>
+        <p className="text-4xl text p-8 ">
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industrys standard dummy text ever
           since the 1500s, when an unknown printer took a galley of type and

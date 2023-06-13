@@ -1,45 +1,46 @@
-'use client';
+'use client'
 
-import { PAGE_THEME } from '@/constants';
-import { SiteMetadata } from '@/data';
-import { PageTheme } from '@/types';
-import clsx from 'clsx';
-import Image from 'next/image';
-import Link from 'next/link';
-import { useEffect, useState } from 'react';
-import { ContentWrapper } from '../ContentWrapper/ContentWrapper';
+import { PAGE_THEME } from '@/constants'
+import { SiteMetadata } from '@/data'
+import { PageTheme } from '@/types'
+import clsx from 'clsx'
+import Image from 'next/image'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import { useEffect, useState } from 'react'
+import { ContentWrapper } from '../ContentWrapper/ContentWrapper'
 
 export const Header = ({ theme }: { theme: PageTheme }) => {
-  const [mounted, setMounted] = useState(false);
-  const [burgerNavigationOpened, setBurgerNavigationOpened] = useState(false);
+  const [mounted, setMounted] = useState(false)
+  const [burgerNavigationOpened, setBurgerNavigationOpened] = useState(false)
+
+  const pathname = usePathname()
 
   useEffect(() => {
-    setMounted(true);
-  }, []);
+    setMounted(true)
+  }, [])
 
-  const isLargeScreen = true;
+  const isLargeScreen = true
 
   // useMedia({ query: `(min-width: ${BREAKPOINTS.lg}px)` });
 
   return (
     <header
-      className={'z-50 sticky top-0'}
+      className={'sticky top-0 z-50'}
       style={{
-        backgroundImage: `linear-gradient(var(--t1-${
-          theme === PAGE_THEME.dark ? 'black' : 'lightGrey'
-        }) -20%, transparent 87%, transparent 98%, transparent 100%)`,
+        backgroundImage: `linear-gradient(var(--theme-bgColor) -20%, transparent 87%, transparent 98%, transparent 100%)`,
       }}
     >
       <div
-        className='w-full h-full absolute backdrop-blur-sm -z-10'
+        className="absolute -z-10 h-full w-full backdrop-blur-sm"
         style={{ mask: 'linear-gradient(#1d1d1d 80%, transparent)' }}
       />
       <ContentWrapper>
         {
           // 26px to add up to 32px (the logo is 12px higher than the nav buttons)
         }
-        <div className='flex justify-between items-center pt-[1.625rem]'>
-          <Link href='/'>
+        <div className="flex items-center justify-between pt-[1.625rem]">
+          <Link href="/">
             <div
               className={clsx(
                 'grid self-center',
@@ -53,7 +54,7 @@ export const Header = ({ theme }: { theme: PageTheme }) => {
                     ? '/images/logo/t1d-logo-negativ.svg'
                     : '/images/logo/t1d-logo.svg'
                 }
-                alt='Team One Developers Logo'
+                alt="Team One Developers Logo"
                 height={46}
                 width={135}
               />
@@ -63,29 +64,29 @@ export const Header = ({ theme }: { theme: PageTheme }) => {
           {mounted && !isLargeScreen ? (
             <>
               <button
-                className='text-t1-black bg-t1-green p-3 rounded-sm shadow-none text-xs cursor-pointer z-50 outline-none border-none self-start font-SpaceGroteskMedium'
+                className="z-50 cursor-pointer self-start rounded-sm border-none bg-t1-green p-3 font-SpaceGroteskMedium text-xs text-t1-black shadow-none outline-none"
                 onClick={() => {
-                  setBurgerNavigationOpened(true);
+                  setBurgerNavigationOpened(true)
                 }}
               >
                 MENU
               </button>
 
               {burgerNavigationOpened && (
-                <div className='fixed flex justify-end inset-0 z-[60]'>
+                <div className="fixed inset-0 z-[60] flex justify-end">
                   <div
-                    className='w-screen h-screen absolute top-0 left-0'
+                    className="absolute left-0 top-0 h-screen w-screen"
                     style={{
                       backgroundColor: 'rgba(0, 0, 0, 0.8)',
                       transition:
                         'backgroundColor 500ms cubic-bezier(0.77, 0, 0.175, 1) 0s !important',
                     }}
                     onClick={() => {
-                      setBurgerNavigationOpened(false);
+                      setBurgerNavigationOpened(false)
                     }}
                   />
                   <div
-                    className='bg-t1-darkGrey p-0 m-0 h-full overflow-hidden block box-border w-full border-none outline-none z-10 max-w-[568px]'
+                    className="z-10 m-0 box-border block h-full w-full max-w-[568px] overflow-hidden border-none bg-t1-darkGray p-0 outline-none"
                     style={{
                       transition:
                         'transform 500ms cubic-bezier(0.77, 0, 0.175, 1) 0s',
@@ -93,37 +94,37 @@ export const Header = ({ theme }: { theme: PageTheme }) => {
                     }}
                   >
                     <div
-                      className='flex flex-col justify-between h-full'
+                      className="flex h-full flex-col justify-between"
                       style={{
                         paddingLeft: 'max(env(safe-area-inset-left), 2rem)',
                         paddingRight: 'max(env(safe-area-inset-right), 2rem)',
                       }}
                     >
-                      <div className='flex-grow text-right p-8 pr-0'>
+                      <div className="flex-grow p-8 pr-0 text-right">
                         <button
-                          className='text-t1-black bg-t1-green p-3 rounded-sm shadow-none text-xs cursor-pointer z-50 outline-none border-none self-start font-SpaceGroteskMedium'
+                          className="z-50 cursor-pointer self-start rounded-sm border-none bg-t1-green p-3 font-SpaceGroteskMedium text-xs text-t1-black shadow-none outline-none"
                           onClick={() => {
-                            setBurgerNavigationOpened(false);
+                            setBurgerNavigationOpened(false)
                           }}
                         >
                           CLOSE
                         </button>
-                        <nav className='text-left pt-8 font-SpaceGroteskRegular'>
+                        <nav className="pt-8 text-left font-SpaceGroteskRegular">
                           {SiteMetadata.menuLinks.map((linkObj, index) => {
                             return (
                               <Link
-                                className='uppercase text-t1-white block mb-8 overflow-hidden text-3xl hover:bg-t1-darkGrey hover:text-t1-green active:bg-t1-darkGrey active:text-t1-green '
+                                className="mb-8 block overflow-hidden text-3xl uppercase text-t1-white hover:bg-t1-darkGray hover:text-t1-green active:bg-t1-darkGray active:text-t1-green "
                                 key={index}
                                 href={`${linkObj.link}`}
                               >
                                 {linkObj.name}
                               </Link>
-                            );
+                            )
                           })}
                         </nav>
                       </div>
 
-                      <div className='self-end text-white p-8'>
+                      <div className="self-end p-8 text-white">
                         <p>kontakt@t1dev.de</p>
                         <p>+49 711 252 98 690</p>
                       </div>
@@ -133,11 +134,16 @@ export const Header = ({ theme }: { theme: PageTheme }) => {
               )}
             </>
           ) : (
-            <nav className='flex z-40 gap-2'>
+            <nav className="z-40 flex gap-2">
               {SiteMetadata.menuLinks.map((linkObj, index) => {
                 return (
                   <Link
-                    className='leading-[14px] cursor-pointer rounded-[3px] bg-t1-green no-underline text-sm uppercase text-t1-darkGrey font-SpaceGroteskRegular py-[10px] px-[14px] active:text-t1-green active:bg-t1-darkGrey'
+                    className={clsx(
+                      'cursor-pointer rounded-[3px] px-[14px] py-[10px] font-SpaceGroteskRegular text-sm uppercase leading-[14px] no-underline shadow-md hover:shadow-navLinkShadow active:bg-t1-darkGray active:text-t1-green',
+                      pathname === linkObj.link
+                        ? 'bg-t1-darkGray text-t1-green'
+                        : 'bg-t1-green text-t1-darkGray'
+                    )}
                     key={index}
                     href={`${linkObj.link}`}
                     style={{
@@ -146,12 +152,12 @@ export const Header = ({ theme }: { theme: PageTheme }) => {
                   >
                     {linkObj.name}
                   </Link>
-                );
+                )
               })}
             </nav>
           )}
         </div>
       </ContentWrapper>
     </header>
-  );
-};
+  )
+}

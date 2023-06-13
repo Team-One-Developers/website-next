@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  important: true,
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -22,6 +23,9 @@ module.exports = {
       '2xl': '1400px',
     },
     extend: {
+      boxShadow: {
+        navLinkShadow: '0px 0px 10px rgba(70,255,173,0.77)',
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
@@ -31,15 +35,19 @@ module.exports = {
         t1: {
           white: 'var(--t1-white)',
           lightGray: 'var(--t1-lightGray)',
-          grey: 'var(--t1-grey)',
-          darkGrey: 'var(--t1-darkGrey)',
+          gray: 'var(--t1-gray)',
+          darkGray: 'var(--t1-darkGray)',
           black: 'var(--t1-black)',
           green: 'var(--t1-green)',
           darkerGreen: 'var(--t1-darkerGreen))',
           transparent: 'var(--t1-transparent)',
         },
+        theme: {
+          bgColor: 'var(--theme-bgColor)',
+          textColor: 'var(--theme-textColor)',
+        },
       },
     },
   },
   plugins: [],
-};
+}
