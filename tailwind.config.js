@@ -29,15 +29,14 @@ module.exports = {
       },
       colors: {
         t1: {
-          white: '#FFFFFF',
-          lightGray: '#f2f2f2',
-          grey: '#585858',
-          darkGrey: '#1D1D1D',
-          black: '#000000',
-
-          green: '#46FFAD',
-          darkerGreen: '#21352B',
-          transparent: 'transparent',
+          white: 'var(--t1-white)',
+          lightGray: 'var(--t1-lightGray)',
+          grey: 'var(--t1-grey)',
+          darkGrey: 'var(--t1-darkGrey)',
+          black: 'var(--t1-black)',
+          green: 'var(--t1-green)',
+          darkerGreen: 'var(--t1-darkerGreen))',
+          transparent: 'var(--t1-transparent)',
         },
       },
     },

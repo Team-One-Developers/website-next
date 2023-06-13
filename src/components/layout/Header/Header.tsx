@@ -1,14 +1,13 @@
 'use client';
 
-import { ContentWrapper } from '@/components';
-import { BREAKPOINTS, DARK } from '@/constants';
+import { PAGE_THEME } from '@/constants';
 import { SiteMetadata } from '@/data';
 import { PageTheme } from '@/types';
 import clsx from 'clsx';
 import Image from 'next/image';
 import Link from 'next/link';
-import useMedia from 'react-media';
 import { useEffect, useState } from 'react';
+import { ContentWrapper } from '../ContentWrapper/ContentWrapper';
 
 export const Header = ({ theme }: { theme: PageTheme }) => {
   const [mounted, setMounted] = useState(false);
@@ -18,18 +17,21 @@ export const Header = ({ theme }: { theme: PageTheme }) => {
     setMounted(true);
   }, []);
 
-  const isLargeScreen = useMedia({ query: `(min-width: ${BREAKPOINTS.lg}px)` });
+  const isLargeScreen = true;
+
+  // useMedia({ query: `(min-width: ${BREAKPOINTS.lg}px)` });
 
   return (
     <header
-      className={clsx(
-        // no explicit to-transparent, see https://tailwindcss.com/docs/gradient-color-stops
-        'z-50 sticky top-0 bg-gradient-to-r from-[-20%] to-100% via-[87%] via-t1-transparent',
-        theme === DARK ? 'from-t1-black' : 'to-t1-white'
-      )}
+      className={'z-50 sticky top-0'}
+      style={{
+        backgroundImage: `linear-gradient(var(--t1-${
+          theme === PAGE_THEME.dark ? 'black' : 'lightGrey'
+        }) -20%, transparent 87%, transparent 98%, transparent 100%)`,
+      }}
     >
       <div
-        className='w-full h-full absolute backdrop-blur-sm'
+        className='w-full h-full absolute backdrop-blur-sm -z-10'
         style={{ mask: 'linear-gradient(#1d1d1d 80%, transparent)' }}
       />
       <ContentWrapper>
@@ -47,13 +49,13 @@ export const Header = ({ theme }: { theme: PageTheme }) => {
             >
               <Image
                 src={
-                  theme === DARK
-                    ? '../../../../images/logo/t1d-logo-negativ.svg'
-                    : '../../../../images/logo/t1d-logo.svg'
+                  theme === PAGE_THEME.dark
+                    ? '/images/logo/t1d-logo-negativ.svg'
+                    : '/images/logo/t1d-logo.svg'
                 }
                 alt='Team One Developers Logo'
-                placeholder='blur'
                 height={46}
+                width={135}
               />
             </div>
           </Link>
@@ -109,13 +111,13 @@ export const Header = ({ theme }: { theme: PageTheme }) => {
                         <nav className='text-left pt-8 font-SpaceGroteskRegular'>
                           {SiteMetadata.menuLinks.map((linkObj, index) => {
                             return (
-                              <BurgerNavigationLink
+                              <Link
+                                className='uppercase text-t1-white block mb-8 overflow-hidden text-3xl hover:bg-t1-darkGrey hover:text-t1-green active:bg-t1-darkGrey active:text-t1-green '
                                 key={index}
-                                activeClassName='active'
-                                to={`${linkObj.link}`}
+                                href={`${linkObj.link}`}
                               >
                                 {linkObj.name}
-                              </BurgerNavigationLink>
+                              </Link>
                             );
                           })}
                         </nav>
@@ -134,13 +136,16 @@ export const Header = ({ theme }: { theme: PageTheme }) => {
             <nav className='flex z-40 gap-2'>
               {SiteMetadata.menuLinks.map((linkObj, index) => {
                 return (
-                  <NavigationLink
+                  <Link
+                    className='leading-[14px] cursor-pointer rounded-[3px] bg-t1-green no-underline text-sm uppercase text-t1-darkGrey font-SpaceGroteskRegular py-[10px] px-[14px] active:text-t1-green active:bg-t1-darkGrey'
                     key={index}
-                    activeClassName='active'
-                    to={`${linkObj.link}`}
+                    href={`${linkObj.link}`}
+                    style={{
+                      transition: 'background-color 250ms linear',
+                    }}
                   >
                     {linkObj.name}
-                  </NavigationLink>
+                  </Link>
                 );
               })}
             </nav>
@@ -150,47 +155,3 @@ export const Header = ({ theme }: { theme: PageTheme }) => {
     </header>
   );
 };
-
-const BurgerNavigationLink = styled(Link)`
-  text-transform: uppercase;
-  color: ${COLORS.white};
-  display: block;
-  // text-align: right;
-  margin-bottom: ${SPACES.ml}px;
-  overflow: hidden;
-
-  font-size: 2rem;
-
-  &.active {
-    color: ${COLORS.green};
-    background-color: ${COLORS.darkGrey};
-  }
-
-  &:hover {
-    color: ${COLORS.green};
-    background-color: ${COLORS.darkGrey};
-  }
-`;
-
-const NavigationLink = styled(Link)`
-  font-family: 'Space Grotesk Regular';
-  cursor: pointer;
-  border-radius: 3px;
-  padding: 10px 14px;
-
-  color: ${COLORS.darkGrey};
-  background-color: ${COLORS.green};
-  text-decoration: none;
-  font-size: 14px;
-  text-transform: uppercase;
-  transition: background-color 250ms linear;
-
-  &.active {
-    color: ${COLORS.green};
-    background-color: ${COLORS.darkGrey};
-  }
-
-  &:hover {
-    box-shadow: 0px 0px 10px rgba(70, 255, 173, 0.77);
-  }
-`;

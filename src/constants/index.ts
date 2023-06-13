@@ -1,2 +1,2 @@
 export { BREAKPOINTS } from './breakpoints';
-export { DARK, LIGHT } from './theme';
+export { DARK, LIGHT, PAGE_THEME } from './theme';

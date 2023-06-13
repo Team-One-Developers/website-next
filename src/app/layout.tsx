@@ -51,7 +51,7 @@ export default function RootLayout({
           SpaceGroteskRegular.variable,
           SpaceGroteskLight.variable,
           SpaceGroteskMedium.variable,
-          'bg-t1-lightGray'
+          'leading-4 bg-t1-black'
         )}
       >
         {children}

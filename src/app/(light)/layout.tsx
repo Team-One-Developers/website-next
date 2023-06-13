@@ -1,8 +1,6 @@
-import clsx from 'clsx';
 import '../globals.css';
-import { Inter } from 'next/font/google';
-
-const inter = Inter({ subsets: ['latin'] });
+import { Header } from '@/components';
+import { PAGE_THEME } from '@/constants';
 
 export const metadata = {
   title: 'Create Next App',
@@ -14,5 +12,10 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <section className={'bg-t1-lightGray'}>{children}</section>;
+  return (
+    <div>
+      <Header theme={PAGE_THEME.dark} />
+      <section className={'bg-t1-lightGray text-t1-black'}>{children}</section>
+    </div>
+  );
 }
