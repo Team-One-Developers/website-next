@@ -13,10 +13,17 @@
   --t1-transparent: transparent;
 
   --theme-bgColor: var(--t1-lightGray);
-  --text-textColor: var(--t1-black);
+  --theme-textColor: var(--t1-black);
+  --theme-selectionBgColor: rgba(70, 255, 173, 0.6);
 }
 
-[data-theme="dark"] {
+[data-theme='dark'] {
   --theme-bgColor: var(--t1-black);
   --theme-textColor: var(--t1-white);
+  --theme-selectionBgColor: rgba(70, 255, 173, 1);
+}
+::selection,
+::moz-selection {
+  color: var(--t1-black);
+  background-color: var(--theme-selectionBgColor);
 }

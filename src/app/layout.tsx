@@ -1,6 +1,6 @@
 import clsx from 'clsx'
 import './globals.css'
-import localFont from '@next/font/local'
+import localFont from 'next/font/local'
 
 const ABCD = localFont({
   src: '../fonts/abc-diatype-regular.woff2',
@@ -51,7 +51,7 @@ export default function RootLayout({
           SpaceGroteskRegular.variable,
           SpaceGroteskLight.variable,
           SpaceGroteskMedium.variable,
-          ''
+          'bg-t1-black'
         )}
       >
         {children}
