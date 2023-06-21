@@ -13,15 +13,19 @@
   --t1-transparent: transparent;
 
   --theme-bgColor: var(--t1-lightGray);
+
   --theme-textColor: var(--t1-black);
   --theme-textHoverColor: #1d1d1d80;
+
   --theme-selectionBgColor: rgba(70, 255, 173, 0.6);
 }
 
 [data-theme='dark'] {
   --theme-bgColor: var(--t1-black);
+
   --theme-textColor: var(--t1-white);
   --theme-textHoverColor: var(--t1-green);
+
   --theme-selectionBgColor: rgba(70, 255, 173, 1);
 }
 ::selection,
