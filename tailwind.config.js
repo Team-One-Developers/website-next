@@ -45,6 +45,7 @@ module.exports = {
         theme: {
           bgColor: 'var(--theme-bgColor)',
           textColor: 'var(--theme-textColor)',
+          textHoverColor: 'var(--theme-textHoverColor)',
         },
       },
     },

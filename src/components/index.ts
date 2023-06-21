@@ -1,6 +1,8 @@
-export * from './layout';
+export * from './layout'
+
+export * from './atoms'
 /*
-export * from './atoms';
 export * from './molecules';
 export * from './organisms';
+
 */

@@ -7,7 +7,7 @@ import clsx from 'clsx'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { ContentWrapper } from '../ContentWrapper/ContentWrapper'
 
 export const Header = ({ theme }: { theme: PageTheme }) => {
@@ -52,7 +52,7 @@ export const Header = ({ theme }: { theme: PageTheme }) => {
             </div>
           </Link>
 
-          <div className="md:hidden">
+          <div className="lg:hidden">
             <button
               className="z-50 cursor-pointer select-none self-start rounded-[3px] border-none bg-t1-green px-[14px] py-[10px] font-SpaceGroteskRegular text-sm leading-[14px] text-t1-black shadow-none outline-none"
               onClick={() => {
@@ -129,7 +129,7 @@ export const Header = ({ theme }: { theme: PageTheme }) => {
             )}
           </div>
 
-          <nav className="z-40 hidden gap-2 md:flex">
+          <nav className="z-40 hidden gap-2 lg:flex">
             {SiteMetadata.menuLinks.map((linkObj, index) => {
               return (
                 <Link

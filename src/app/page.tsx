@@ -1,4 +1,4 @@
-import { Header } from '@/components'
+import { ContentWrapper, Footer, Header } from '@/components'
 import { PAGE_THEME } from '@/constants'
 import Image from 'next/image'
 
@@ -54,6 +54,9 @@ export const Home = () => {
           </p>
         </div>
       </main>
+      <ContentWrapper>
+        <Footer />
+      </ContentWrapper>
     </div>
   )
 }
