@@ -16,8 +16,10 @@ export const Footer = () => {
 
   const navigationLinkCSS = (link: string) =>
     clsx(
-      'font-ABCDiatypeRegular font-normal text-base block leading-[144%] mb-2 ease-linear duration-150 active:text-textHoverColor hover:text-textHoverColor last:mb-0',
-      pathname === link ? 'text-theme-textHoverColor' : 'text-theme-textColor'
+      'font-ABCDiatypeRegular font-normal text-base block leading-[144%] mb-2 ease-linear duration-150 last:mb-0',
+      pathname === link
+        ? 'text-theme-textHoverColor'
+        : 'text-theme-textColor active:text-theme-textHoverColor hover:text-theme-textHoverColor'
     )
 
   const externalLinkCSS =

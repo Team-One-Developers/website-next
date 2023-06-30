@@ -23,6 +23,12 @@ module.exports = {
       '2xl': '1400px',
     },
     extend: {
+      borderRadius: {
+        blog: '20px',
+      },
+      fontSize: {
+        '2xs': '0.6rem',
+      },
       boxShadow: {
         navLinkShadow: '0px 0px 10px rgba(70,255,173,0.77)',
       },
@@ -39,7 +45,7 @@ module.exports = {
           darkGray: 'var(--t1-darkGray)',
           black: 'var(--t1-black)',
           green: 'var(--t1-green)',
-          darkerGreen: 'var(--t1-darkerGreen))',
+          darkGreen: 'var(--t1-darkGreen)',
           transparent: 'var(--t1-transparent)',
         },
         theme: {

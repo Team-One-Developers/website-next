@@ -1,5 +1,5 @@
 import "../globals.css";
-import { Header } from "@/components";
+import { ContentWrapper, Footer, Header } from "@/components";
 import { PAGE_THEME } from "@/constants";
 
 export const metadata = {
@@ -15,6 +15,9 @@ export default function RootLayout({
     <div data-theme="light" className="bg-theme-bgColor text-theme-textColor">
       <Header theme={PAGE_THEME.light} />
       <section>{children}</section>
+      <ContentWrapper>
+        <Footer />
+      </ContentWrapper>
     </div>
   );
 }

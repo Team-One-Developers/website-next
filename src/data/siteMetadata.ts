@@ -17,6 +17,10 @@ export const SiteMetadata = {
       link: '/culture',
     },
     {
+      name: 'Blog',
+      link: '/blog',
+    },
+    {
       name: 'Karriere',
       link: '/career',
     },

@@ -8,8 +8,9 @@
   --t1-gray: #585858;
   --t1-darkGray: #1d1d1d;
   --t1-black: #000000;
+  --t1-ggreen: #46ffad;
   --t1-green: #46ffad;
-  --t1-darkerGreen: #21352b;
+  --t1-darkGreen: #2f3521;
   --t1-transparent: transparent;
 
   --theme-bgColor: var(--t1-lightGray);
