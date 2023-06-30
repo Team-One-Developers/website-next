@@ -1,4 +1,4 @@
-import { ContentWrapper, Footer, Header } from '@/components'
+import { ContentWrapper, Footer, Header, Ticker } from '@/components'
 import { PAGE_THEME } from '@/constants'
 import Image from 'next/image'
 
@@ -54,6 +54,7 @@ export const Home = () => {
           </p>
         </div>
       </main>
+      <Ticker theme={PAGE_THEME.light} />
       <ContentWrapper>
         <Footer />
       </ContentWrapper>
