@@ -1,23 +1,23 @@
-import clsx from 'clsx';
-import { forwardRef, ReactNode } from 'react';
+import clsx from 'clsx'
+import { forwardRef, ReactNode } from 'react'
 
 interface ContentWrapperProps {
-  children: ReactNode;
-  className?: string;
-  id?: string;
+  children: ReactNode
+  className?: string
+  id?: string
   // Flag to indicate to use the new API where the max width is considered in the padding. This enables to have a steady background color without an additional full width wrapper. Usage without this flag is deprecated.
-  useMaxWidth?: boolean;
+  useMaxWidth?: boolean
 }
 
 export const ContentWrapper = forwardRef<HTMLDivElement, ContentWrapperProps>(
   function CWrapper(props: ContentWrapperProps, ref) {
-    const { children, className, useMaxWidth = true, id } = props;
+    const { children, className, useMaxWidth = true, id } = props
 
     return (
       <div
         id={id}
         ref={ref}
-        className={clsx('block my-0 mx-auto', className)}
+        className={clsx('mx-auto my-0 block', className)}
         style={
           useMaxWidth
             ? {
@@ -35,6 +35,8 @@ export const ContentWrapper = forwardRef<HTMLDivElement, ContentWrapperProps>(
       >
         {children}
       </div>
-    );
+    )
   }
-);
+)
+
+export default ContentWrapper

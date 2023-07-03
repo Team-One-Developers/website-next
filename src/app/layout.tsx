@@ -1,6 +1,7 @@
 import clsx from 'clsx'
 import './globals.css'
 import localFont from 'next/font/local'
+import { Cookie } from '@/components'
 
 const ABCD = localFont({
   src: '../fonts/abc-diatype-regular.woff2',
@@ -54,6 +55,7 @@ export default function RootLayout({
         )}
       >
         {children}
+        <Cookie />
       </body>
     </html>
   )

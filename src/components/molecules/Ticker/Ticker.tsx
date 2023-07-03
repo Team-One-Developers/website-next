@@ -27,7 +27,7 @@ export const Ticker = (props: TickerProps) => {
 
   Array.from(Array(10).keys()).forEach((key) => {
     marqueeItems.push(
-      <div className="flex items-center overflow-hidden" key={key}>
+      <div className="mt-[200px] flex items-center overflow-hidden" key={key}>
         <p
           className={clsx(
             ' font-SpaceGroteskRegular text-[82px] font-normal uppercase leading-none -tracking-[0.01em] sm:text-[120px] md:text-[175px]',

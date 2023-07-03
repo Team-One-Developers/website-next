@@ -155,3 +155,5 @@ export const Header = ({ theme }: { theme: PageTheme }) => {
     </header>
   )
 }
+
+export default Header
