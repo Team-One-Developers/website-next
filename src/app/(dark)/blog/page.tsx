@@ -1,6 +1,7 @@
 'use client'
 
-import { Icon } from '@/components'
+import { Heading, Icon } from '@/components'
+import { FONT_CONFIGS } from '@/constants'
 import clsx from 'clsx'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
@@ -71,10 +72,15 @@ export const Blog = () => {
     <main className="min-h-screen">
       <div className="w-full rounded p-24">
         <div className="max-w-[80%]">
-          <h1 className="text-6xl font-medium">{`Read our blog`}</h1>
-          <h3 className="mt-4 text-4xl text-t1-green">
-            {`Regular posts about topics that drive us`}
-          </h3>
+          <Heading
+            tag="h1"
+            fontDefaults={FONT_CONFIGS.desktop_h2_regular}
+          >{`Read our blog`}</Heading>
+          <Heading
+            tag="h3"
+            fontDefaults={FONT_CONFIGS.desktop_h4}
+            className="!text-t1-green"
+          >{`Regular posts about topics that drive us`}</Heading>
         </div>
       </div>
       <div className="grid w-full grid-flow-row grid-cols-[1fr_3fr] gap-8 p-24">

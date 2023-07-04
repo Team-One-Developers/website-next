@@ -9,7 +9,7 @@ interface TickerProps {
   theme: PageTheme
   text?: string
   speed?: number
-  color?: string | undefined
+  textClassName?: string | undefined
   includeLogo?: boolean
   className?: string
 }
@@ -18,10 +18,10 @@ export const Ticker = (props: TickerProps) => {
   const {
     text = 'Team One Developers',
     speed = 300,
-    color = undefined,
     includeLogo = true,
     theme,
     className,
+    textClassName,
   } = props
   const marqueeItems: any[] = []
 
@@ -31,8 +31,8 @@ export const Ticker = (props: TickerProps) => {
         <p
           className={clsx(
             ' font-SpaceGroteskRegular text-[82px] font-normal uppercase leading-none -tracking-[0.01em] sm:text-[120px] md:text-[175px]',
-            color
-              ? color
+            textClassName
+              ? textClassName
               : theme === PAGE_THEME.dark
               ? 'text-t1-darkGray'
               : 'text-t1-green'
@@ -62,9 +62,9 @@ export const Ticker = (props: TickerProps) => {
         ) : (
           <div
             className={clsx(
-              'mx-[75px] text-[82px] sm:text-[120px] md:text-[175px]',
-              color
-                ? color
+              'mx-[75px] text-[82px]',
+              textClassName
+                ? textClassName
                 : theme === PAGE_THEME.dark
                 ? 'text-t1-darkGray'
                 : 'text-t1-green'
@@ -80,7 +80,7 @@ export const Ticker = (props: TickerProps) => {
   return (
     <Marquee
       className={clsx(
-        'mx-0 my-16 flex min-w-full shrink-0 grow-0 basis-auto',
+        'mx-0 my-16 flex min-w-full shrink-0 grow-0 basis-auto select-none',
         className
       )}
       //TODO: mediaQuery, speed/3, lg+ speed

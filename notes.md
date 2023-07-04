@@ -8,7 +8,6 @@ TODO/Questions
 - marquee items 10?
 - kontakt text
 - marquee text shadow? nicis vorschlag
-- component props (colors) -> classnames (text-t1-green) or actual values?
 
 SELBER ENTSCHIEDEN:
 
