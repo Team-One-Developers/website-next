@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
 
-import clsx from 'clsx'
+import { twJoin } from 'tailwind-merge'
 
 interface CopyProps {
   children: ReactNode
@@ -13,11 +13,11 @@ export const Copy = (props: CopyProps) => {
 
   return (
     <p
-      className={clsx(
-        'm-0 mb-4 inline-block font-light leading-5',
-        textSize === 'sm' && 'font-ABCDiatypeRegular text-base',
-        textSize === 'l' && 'font-ABCDiatypeRegular text-2xl',
-        textSize === 'xl' && 'font-SpaceGroteskRegular text-4xl',
+      className={twJoin(
+        'm-0 mb-4 inline-block font-light leading-[1.25em]',
+        textSize === 'sm' && 'font-ABCDiatypeRegular text-[1rem]',
+        textSize === 'l' && 'font-ABCDiatypeRegular text-[1.5rem]',
+        textSize === 'xl' && 'font-SpaceGroteskRegular text-[2.25rem]',
         className
       )}
     >

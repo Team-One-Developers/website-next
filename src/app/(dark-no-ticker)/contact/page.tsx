@@ -1,6 +1,6 @@
 import { ContentWrapper, Copy, Heading, Ticker } from '@/components'
 import { FONT_CONFIGS, PAGE_THEME } from '@/constants'
-import clsx from 'clsx'
+import { twJoin } from 'tailwind-merge'
 import Image from 'next/image'
 
 export const Contact = () => {
@@ -34,7 +34,7 @@ export const Contact = () => {
   const ExternalLink = ({ href, name }: { href: string; name: string }) => {
     return (
       <div
-        className={clsx(
+        className={twJoin(
           'mt-1 flex w-fit gap-2 border-b border-t1-green text-t1-white',
           FONT_CONFIGS.desktop_copy_xtra_large
         )}
@@ -69,7 +69,7 @@ export const Contact = () => {
           </div>
           <div className={'flex grow-[2] flex-col gap-2 p-4'}>
             <Copy
-              className={clsx(
+              className={twJoin(
                 '!-mt-3 !mb-0',
                 FONT_CONFIGS.desktop_copy_xtra_large
               )}

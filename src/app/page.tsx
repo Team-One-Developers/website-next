@@ -1,4 +1,12 @@
-import { ContentWrapper, Footer, Header, Ticker } from '@/components'
+import {
+  ChangingWords,
+  ContentWrapper,
+  Footer,
+  FullWidthSectionContainer,
+  Header,
+  Heading,
+  Ticker,
+} from '@/components'
 import { PAGE_THEME } from '@/constants'
 import Image from 'next/image'
 
@@ -7,6 +15,27 @@ export const Home = () => {
     <div className="bg-theme-bgColor text-theme-textColor" data-theme="light">
       <Header theme={PAGE_THEME.light} />
       <main className="">
+        <ContentWrapper className="mt-20">
+          <FullWidthSectionContainer marginTopClassName="mt-0">
+            <Heading
+              tag="h1"
+              className="max-w-[790px] text-[3rem] uppercase leading-110 tracking-aBitTighter lg:text-[3rem] lg:leading-110"
+            >
+              WIR <br /> ENTWICKELN <br /> DIE ZUKUNFT <br /> DES WEB.
+            </Heading>
+          </FullWidthSectionContainer>
+        </ContentWrapper>
+
+        <ChangingWords
+          className="hidden p-4 text-t1-darkGray sm:mt-48 sm:flex "
+          isSmall={true}
+          words={['Scroll', 'Move Smoothly']}
+        />
+
+        <ChangingWords
+          words={['software', 'agile', 'human', 'team']}
+        ></ChangingWords>
+
         <div>
           <p className="text p-8 text-4xl ">
             Lorem Ipsum is simply dummy text of the printing and typesetting

@@ -1,0 +1,11 @@
+.changingWordsSmallWrapper::before {
+  content: '▾';
+}
+
+.changingWordsBigWrapper::before {
+  content: '(';
+}
+
+.changingWordsBigWrapper::after {
+  content: ')';
+}

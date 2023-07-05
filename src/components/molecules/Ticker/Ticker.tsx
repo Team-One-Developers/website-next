@@ -1,9 +1,12 @@
+'use client'
+
 import Marquee from 'react-fast-marquee'
 
-import clsx from 'clsx'
+import { twJoin } from 'tailwind-merge'
 import { PageTheme } from '@/types'
 import { PAGE_THEME } from '@/constants'
 import Image from 'next/image'
+import { useMediaQuery } from 'usehooks-ts'
 
 interface TickerProps {
   theme: PageTheme
@@ -25,11 +28,13 @@ export const Ticker = (props: TickerProps) => {
   } = props
   const marqueeItems: any[] = []
 
+  const isLg = useMediaQuery('(min-width: 992px)')
+
   Array.from(Array(10).keys()).forEach((key) => {
     marqueeItems.push(
       <div className="mt-[200px] flex items-center overflow-hidden" key={key}>
         <p
-          className={clsx(
+          className={twJoin(
             ' font-SpaceGroteskRegular text-[82px] font-normal uppercase leading-none -tracking-[0.01em] sm:text-[120px] md:text-[175px]',
             textClassName
               ? textClassName
@@ -37,12 +42,14 @@ export const Ticker = (props: TickerProps) => {
               ? 'text-t1-darkGray'
               : 'text-t1-green'
           )}
+          /*
           style={{
             textShadow:
               theme === PAGE_THEME.dark
                 ? '1px 1px 2px var(--t1-lightGray)'
                 : '1px 1px 2px gray',
-          }}
+        }}
+        */
         >
           {text}
         </p>
@@ -61,7 +68,7 @@ export const Ticker = (props: TickerProps) => {
           </div>
         ) : (
           <div
-            className={clsx(
+            className={twJoin(
               'mx-[75px] text-[82px]',
               textClassName
                 ? textClassName
@@ -76,15 +83,15 @@ export const Ticker = (props: TickerProps) => {
       </div>
     )
   })
+  console.log(isLg)
 
   return (
     <Marquee
-      className={clsx(
+      className={twJoin(
         'mx-0 my-16 flex min-w-full shrink-0 grow-0 basis-auto select-none',
         className
       )}
-      //TODO: mediaQuery, speed/3, lg+ speed
-      speed={speed}
+      speed={isLg ? speed : speed / 3}
       gradient={false}
     >
       {marqueeItems}

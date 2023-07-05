@@ -2,7 +2,7 @@
 
 import { Heading, Icon } from '@/components'
 import { FONT_CONFIGS } from '@/constants'
-import clsx from 'clsx'
+import { twJoin } from 'tailwind-merge'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 
@@ -30,7 +30,7 @@ export const Blog = () => {
         onClick={() => router.push('/blog/autogpt')}
       >
         <div
-          className={clsx(
+          className={twJoin(
             'relative h-full w-full bg-t1-green text-t1-black',
             swapped ? 'order-2 rounded-r-blog' : 'order-1 rounded-l-blog'
           )}
@@ -50,7 +50,7 @@ export const Blog = () => {
           />
         </div>
         <div
-          className={clsx(
+          className={twJoin(
             'flex flex-col justify-center  bg-t1-darkGray p-6',
             swapped ? 'order-1 rounded-l-blog' : 'order-2 rounded-r-blog'
           )}
@@ -77,9 +77,9 @@ export const Blog = () => {
             fontDefaults={FONT_CONFIGS.desktop_h2_regular}
           >{`Read our blog`}</Heading>
           <Heading
-            tag="h3"
-            fontDefaults={FONT_CONFIGS.desktop_h4}
-            className="!text-t1-green"
+            tag="h2"
+            fontDefaults={FONT_CONFIGS.desktop_h5}
+            colorClassName="text-t1-green"
           >{`Regular posts about topics that drive us`}</Heading>
         </div>
       </div>

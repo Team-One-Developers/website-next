@@ -1,4 +1,4 @@
-import clsx from 'clsx'
+import { twJoin } from 'tailwind-merge'
 import './globals.css'
 import localFont from 'next/font/local'
 import { Cookie } from '@/components'
@@ -45,7 +45,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={clsx(
+        className={twJoin(
           ABCD.variable,
           ABCDItalic.variable,
           SpaceGroteskRegular.variable,

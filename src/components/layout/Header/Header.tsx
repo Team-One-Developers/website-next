@@ -3,7 +3,7 @@
 import { PAGE_THEME } from '@/constants'
 import { SiteMetadata } from '@/data'
 import { PageTheme } from '@/types'
-import clsx from 'clsx'
+import { twJoin } from 'tailwind-merge'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -33,7 +33,7 @@ export const Header = ({ theme }: { theme: PageTheme }) => {
         <div className="flex items-center justify-between pt-[1.625rem]">
           <Link href="/">
             <div
-              className={clsx(
+              className={twJoin(
                 'grid self-center',
                 burgerNavigationOpened && 'burgerNavOpened'
               )}
@@ -103,7 +103,7 @@ export const Header = ({ theme }: { theme: PageTheme }) => {
                         {SiteMetadata.menuLinks.map((linkObj, index) => {
                           return (
                             <Link
-                              className={clsx(
+                              className={twJoin(
                                 'mb-8 block select-none overflow-hidden text-3xl uppercase hover:text-t1-green active:text-t1-green ',
                                 pathname === linkObj.link
                                   ? 'text-t1-green'
@@ -133,7 +133,7 @@ export const Header = ({ theme }: { theme: PageTheme }) => {
             {SiteMetadata.menuLinks.map((linkObj, index) => {
               return (
                 <Link
-                  className={clsx(
+                  className={twJoin(
                     'cursor-pointer select-none rounded-[3px] px-[14px] py-[10px] font-SpaceGroteskRegular text-sm uppercase leading-[14px] no-underline shadow-md hover:shadow-navLinkShadow active:bg-t1-darkGray active:text-t1-green',
                     pathname === linkObj.link
                       ? 'bg-t1-darkGray text-t1-green'

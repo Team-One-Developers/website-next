@@ -1,4 +1,4 @@
-import clsx from 'clsx'
+import { twJoin } from 'tailwind-merge'
 import { forwardRef, ReactNode } from 'react'
 
 interface ContentWrapperProps {
@@ -17,7 +17,7 @@ export const ContentWrapper = forwardRef<HTMLDivElement, ContentWrapperProps>(
       <div
         id={id}
         ref={ref}
-        className={clsx('mx-auto my-0 block', className)}
+        className={twJoin('mx-auto my-0 block', className)}
         style={
           useMaxWidth
             ? {

@@ -2,7 +2,7 @@
 
 import { SiteMetadata } from '@/data'
 
-import clsx from 'clsx'
+import { twJoin } from 'tailwind-merge'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -15,15 +15,15 @@ export const Footer = () => {
     'font-SpaceGroteskRegular uppercase font-medium leading-3 pb-2 text-[11px] opacity-50 mt-4 md:mt-0'
 
   const navigationLinkCSS = (link: string) =>
-    clsx(
-      'font-ABCDiatypeRegular font-normal text-base block leading-[144%] mb-2 ease-linear duration-150 last:mb-0',
+    twJoin(
+      'font-ABCDiatypeRegular font-normal text-base block leading-144 mb-2 ease-linear duration-150 last:mb-0',
       pathname === link
         ? 'text-theme-textHoverColor'
         : 'text-theme-textColor active:text-theme-textHoverColor hover:text-theme-textHoverColor'
     )
 
   const externalLinkCSS =
-    'font-ABCDiatypeRegular font-normal text-base leading-[144%] block text-theme-textColor ease-linear duration-150 hover:text-theme-textHoverColor'
+    'font-ABCDiatypeRegular font-normal text-base leading-144 block text-theme-textColor ease-linear duration-150 hover:text-theme-textHoverColor'
 
   return (
     <footer className="block pb-8 md:grid md:grid-flow-row  md:grid-cols-[2.5fr_1fr_1fr_1fr] md:grid-rows-[1fr_1fr] md:gap-x-3 md:gap-y-5 md:text-left">
@@ -40,7 +40,7 @@ export const Footer = () => {
           {SiteMetadata.menuLinks.map((linkObj, index) => {
             return (
               <Link
-                className={clsx(
+                className={twJoin(
                   navigationLinkCSS(linkObj.link),
                   'inline-block p-0 pr-2 md:block'
                 )}
@@ -52,7 +52,7 @@ export const Footer = () => {
             )
           })}
           <Link
-            className={clsx(
+            className={twJoin(
               navigationLinkCSS('/legal-notice'),
               'inline-block p-0 pr-2 md:block'
             )}
@@ -61,7 +61,7 @@ export const Footer = () => {
             Impressum
           </Link>
           <Link
-            className={clsx(
+            className={twJoin(
               navigationLinkCSS('/privacy'),
               'inline-block p-0 pr-2 md:block'
             )}
@@ -88,7 +88,7 @@ export const Footer = () => {
       <div className="col-start-3 md:self-end">
         <h2 className={navigationSectionHeaderCSS}>GPS</h2>
         <a
-          className={clsx(externalLinkCSS, 'flex flex-col')}
+          className={twJoin(externalLinkCSS, 'flex flex-col')}
           href="https://g.page/team-one-developers-gmbh?share"
           target="_blank"
         >
@@ -107,7 +107,7 @@ export const Footer = () => {
           kontakt@t1dev.de
         </a>
 
-        <h2 className={clsx(navigationSectionHeaderCSS, 'md:mt-4')}>Phone</h2>
+        <h2 className={twJoin(navigationSectionHeaderCSS, 'md:mt-4')}>Phone</h2>
         <a
           className={externalLinkCSS}
           href="tel:+4971125298690"
