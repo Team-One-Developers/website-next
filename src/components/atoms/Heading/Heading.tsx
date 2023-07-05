@@ -1,4 +1,4 @@
-import { ReactNode } from 'react'
+import { ReactElement, ReactNode } from 'react'
 
 import { twJoin, twMerge } from 'tailwind-merge'
 
@@ -10,7 +10,7 @@ interface HeadingProps {
   colorClassName?: string
 }
 
-export const Heading = (props: HeadingProps) => {
+export const Heading = (props: HeadingProps): ReactElement => {
   const { children, tag, fontDefaults, className, colorClassName } = props
 
   if (tag === 'h1')
@@ -45,17 +45,17 @@ export const Heading = (props: HeadingProps) => {
       </h2>
     )
 
-  if (tag === 'h3')
-    return (
-      <h3
-        className={twMerge(
-          'm-0 text-[3rem] font-medium uppercase leading-[1]',
-          fontDefaults,
-          colorClassName ? colorClassName : 'text-theme-textColor',
-          className
-        )}
-      >
-        {children}
-      </h3>
-    )
+  //H3
+  return (
+    <h3
+      className={twMerge(
+        'm-0 text-[3rem] font-medium uppercase leading-[1]',
+        fontDefaults,
+        colorClassName ? colorClassName : 'text-theme-textColor',
+        className
+      )}
+    >
+      {children}
+    </h3>
+  )
 }
