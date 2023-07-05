@@ -3,7 +3,6 @@ TODO/Questions
 - cookie consent
 - ThemeWrapper?
 - replace arbitrary values across the board
-- useMediaQueries (especially for changing words list items)
 - layout problem (group for each layout basically)
 - marquee items 10?
 - kontakt text
