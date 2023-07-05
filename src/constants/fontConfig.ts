@@ -1,4 +1,4 @@
-const DESKTOP_COPY = 'font-ABCDiatypeRegular not-italic font-normal'
+const DESKTOP_COPY = 'font-ABCDiatypeRegular not-italic font-normal '
 
 export const DESKTOP_COPY_SMALL = DESKTOP_COPY + 'text-base leading-144'
 export const DESKTOP_COPY_SMALL_ALTERNATE =

@@ -1,0 +1,16 @@
+.bgDancers {
+  transition: 1500ms;
+
+  mask-image: url('../../../../public/images/dancers/dancing-squares.svg');
+  mask-repeat: no-repeat;
+  mask-position: 50%;
+  mask-size: 540px;
+
+  @media (min-width: 768px) {
+    mask-size: 670px;
+  }
+
+  @media (min-width: 992px) {
+    mask-size: 900px;
+  }
+}
