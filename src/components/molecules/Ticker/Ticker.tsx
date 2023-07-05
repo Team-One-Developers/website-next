@@ -83,7 +83,6 @@ export const Ticker = (props: TickerProps) => {
       </div>
     )
   })
-  console.log(isLg)
 
   return (
     <Marquee
