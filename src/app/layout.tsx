@@ -1,7 +1,10 @@
 import { twJoin } from 'tailwind-merge'
 import './globals.css'
 import localFont from 'next/font/local'
-import { Cookie } from '@/components'
+
+// do it this way to prevent Error: Cant access lexical declaration before initialitazion
+import { PageLayout } from '../components/layout/PageLayout/PageLayout'
+import { Cookie } from '../components/layout/Cookie/Cookie'
 
 const ABCD = localFont({
   src: '../fonts/abc-diatype-regular.woff2',
@@ -54,7 +57,7 @@ export default function RootLayout({
           'bg-t1-black'
         )}
       >
-        {children}
+        <PageLayout>{children}</PageLayout>
         <Cookie />
       </body>
     </html>
