@@ -1,0 +1,10 @@
+.HeadlinePseudo {
+  ::before {
+    content: '(';
+    margin-right: 0.25rem;
+  }
+  ::after {
+    content: ':)';
+    letter-spacing: 0.25rem;
+  }
+}

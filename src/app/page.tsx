@@ -3,16 +3,15 @@
 import {
   AnimatedTeaser,
   ChangingWords,
+  Companies,
   ContentWrapper,
   Copy,
   CtaSection,
   DancingFigures,
-  Footer,
   FullWidthSectionContainer,
-  Header,
   Heading,
   Hero,
-  Ticker,
+  PageLayout,
 } from '@/components'
 import { FONT_CONFIGS, PAGE_THEME } from '@/constants'
 import Image from 'next/image'
@@ -26,7 +25,7 @@ export const Home = () => {
   })
 
   return (
-    <div>
+    <PageLayout theme={PAGE_THEME.light}>
       <ContentWrapper className="mt-20">
         <FullWidthSectionContainer marginTopClassName="mt-0">
           <Heading
@@ -99,6 +98,12 @@ export const Home = () => {
         ref={animatedTeaserContainerRef}
       />
 
+      <ContentWrapper className="bg-t1-green pt-20 sm:pt-8 md:pt-0">
+        <Companies />
+      </ContentWrapper>
+
+      <ContentWrapper className="h-[200px] bg-t1-green">c</ContentWrapper>
+
       <div>
         <p className="text p-8 text-4xl ">
           Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -145,7 +150,7 @@ export const Home = () => {
           including versions of Lorem Ipsum.
         </p>
       </div>
-    </div>
+    </PageLayout>
   )
 }
 

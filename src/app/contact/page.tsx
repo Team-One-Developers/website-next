@@ -1,4 +1,4 @@
-import { ContentWrapper, Copy, Heading, Ticker } from '@/components'
+import { ContentWrapper, Copy, Heading, PageLayout, Ticker } from '@/components'
 import { FONT_CONFIGS, PAGE_THEME } from '@/constants'
 import { twJoin } from 'tailwind-merge'
 import Image from 'next/image'
@@ -46,7 +46,7 @@ export const Contact = () => {
   }
 
   return (
-    <main>
+    <PageLayout ticker={false}>
       <ContentWrapper>
         <Heading
           tag="h1"
@@ -95,7 +95,7 @@ export const Contact = () => {
         includeLogo={false}
         className="-mt-[200px] mb-[100px] md:mb-[200px]"
       />
-    </main>
+    </PageLayout>
   )
 }
 

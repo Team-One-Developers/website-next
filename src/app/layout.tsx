@@ -3,7 +3,6 @@ import './globals.css'
 import localFont from 'next/font/local'
 
 // do it this way to prevent Error: Cant access lexical declaration before initialitazion
-import { PageLayout } from '../components/layout/PageLayout/PageLayout'
 import { Cookie } from '../components/layout/Cookie/Cookie'
 
 const ABCD = localFont({
@@ -57,7 +56,7 @@ export default function RootLayout({
           'bg-t1-black'
         )}
       >
-        <PageLayout>{children}</PageLayout>
+        {children}
         <Cookie />
       </body>
     </html>

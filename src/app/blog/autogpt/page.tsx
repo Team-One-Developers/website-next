@@ -1,4 +1,4 @@
-import { Icon } from '@/components'
+import { Icon, PageLayout } from '@/components'
 import Image from 'next/image'
 
 export const Blog = () => {
@@ -47,84 +47,86 @@ export const Blog = () => {
   }
 
   return (
-    <main className="min-h-screen">
-      <div className="w-full rounded p-24">
-        <div className="max-w-[80%]">
-          <h1 className="text-6xl font-medium">
-            {`AutoGPT - Magical omnipotent tool of the future or overhyped unpractical side-project? `}
-          </h1>
-          <h3 className="mt-4 text-4xl text-t1-green">
-            {`The new tool called "AutoGPT" ist the new hot topic. What use does it actually have and is it worth learning?`}
-          </h3>
-          <p className="mt-4">Monday, 26th July 2023</p>
-        </div>
-        <div className="mt-16 flex items-center">
-          <div className="flex h-16 w-16 items-center justify-center rounded-full bg-t1-green text-t1-black">
-            SB
+    <PageLayout>
+      <div className="min-h-screen">
+        <div className="w-full rounded p-24">
+          <div className="max-w-[80%]">
+            <h1 className="text-6xl font-medium">
+              {`AutoGPT - Magical omnipotent tool of the future or overhyped unpractical side-project? `}
+            </h1>
+            <h3 className="mt-4 text-4xl text-t1-green">
+              {`The new tool called "AutoGPT" ist the new hot topic. What use does it actually have and is it worth learning?`}
+            </h3>
+            <p className="mt-4">Monday, 26th July 2023</p>
           </div>
-          <div className="ml-4">
-            <p className="text-xl font-bold">Simon Broß</p>
-            <p className="text-t1-lightGray">Software Engineer</p>
+          <div className="mt-16 flex items-center">
+            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-t1-green text-t1-black">
+              SB
+            </div>
+            <div className="ml-4">
+              <p className="text-xl font-bold">Simon Broß</p>
+              <p className="text-t1-lightGray">Software Engineer</p>
+            </div>
           </div>
         </div>
-      </div>
-      <div className="grid w-full gap-8 p-24 pt-0 lg:grid-cols-[1fr_600px_1fr] xl:grid-cols-[1fr_800px_1fr]">
-        <div className="">
-          <div className="sticky top-[140px] rounded border border-t1-green p-4">
-            <h3 className="text-xl font-bold">Table of Content</h3>
+        <div className="grid w-full gap-8 p-24 pt-0 lg:grid-cols-[1fr_600px_1fr] xl:grid-cols-[1fr_800px_1fr]">
+          <div className="">
+            <div className="sticky top-[140px] rounded border border-t1-green p-4">
+              <h3 className="text-xl font-bold">Table of Content</h3>
 
-            <ul className="mt-4 flex flex-col gap-1">
-              <li>- What is AutoGPTs goal? </li>
-              <li>- How to use it?</li>
-              <li>- How good it is for its purpose?</li>
-              <li>- Is it futureproof?</li>
-              <li>- How can it improve everydaylife?</li>
-              <li>- Conclusion</li>
-            </ul>
+              <ul className="mt-4 flex flex-col gap-1">
+                <li>- What is AutoGPTs goal? </li>
+                <li>- How to use it?</li>
+                <li>- How good it is for its purpose?</li>
+                <li>- Is it futureproof?</li>
+                <li>- How can it improve everydaylife?</li>
+                <li>- Conclusion</li>
+              </ul>
+            </div>
           </div>
-        </div>
-        <div className="flex flex-col gap-4 p-4">
-          <BlogBlockHeadline title="AutoGPT - What is its goal?" />
-          <BlogBlockText />
-          <BlogBlockHeadline title="How to use it?" />
-          <BlogBlockText />
-          <BlogBlockHeadline title="How good it is for its purpose?" />
-          <BlogBlockText />
-          <BlogBlockHeadline title="Is it futureproof?" />
-          <BlogBlockText />
-          <BlogBlockHeadline title="How can it improve everydaylife?" />
-          <BlogBlockText />
-          <BlogBlockHeadline title="Conclusion" />
-          <BlogBlockText />
-        </div>
-        <div>
-          <div className="sticky top-[140px] flex flex-col gap-4">
-            <h3 className="text-2xl">Mentioned articles:</h3>
-            <RelatedArticle
-              iconText="TOD"
-              title="Is Team One Developers?"
-              subtitle="Insights into the work-life"
-            />
-            <RelatedArticle
-              iconText="JID"
-              title="Tauren Spa ist ein must-visit"
-              subtitle="Urlaub in Österreich? Tauren Spa ist ein MUST-VISIT!"
-            />
-            <RelatedArticle
-              iconText="ZDH"
-              title="Geht ein Keks die Treppe runter, unten merkt er, er hat garkeine
+          <div className="flex flex-col gap-4 p-4">
+            <BlogBlockHeadline title="AutoGPT - What is its goal?" />
+            <BlogBlockText />
+            <BlogBlockHeadline title="How to use it?" />
+            <BlogBlockText />
+            <BlogBlockHeadline title="How good it is for its purpose?" />
+            <BlogBlockText />
+            <BlogBlockHeadline title="Is it futureproof?" />
+            <BlogBlockText />
+            <BlogBlockHeadline title="How can it improve everydaylife?" />
+            <BlogBlockText />
+            <BlogBlockHeadline title="Conclusion" />
+            <BlogBlockText />
+          </div>
+          <div>
+            <div className="sticky top-[140px] flex flex-col gap-4">
+              <h3 className="text-2xl">Mentioned articles:</h3>
+              <RelatedArticle
+                iconText="TOD"
+                title="Is Team One Developers?"
+                subtitle="Insights into the work-life"
+              />
+              <RelatedArticle
+                iconText="JID"
+                title="Tauren Spa ist ein must-visit"
+                subtitle="Urlaub in Österreich? Tauren Spa ist ein MUST-VISIT!"
+              />
+              <RelatedArticle
+                iconText="ZDH"
+                title="Geht ein Keks die Treppe runter, unten merkt er, er hat garkeine
                 Füße."
-              subtitle="Geht er die Treppe wieder hoch."
-            />
-            <RelatedArticle
-              iconText="RSF"
-              title="Expedition Maisi Flitzer"
-              subtitle="Jetzt Mais-Salat essend den Berg runter mit 150 KM/h"
-            />
+                subtitle="Geht er die Treppe wieder hoch."
+              />
+              <RelatedArticle
+                iconText="RSF"
+                title="Expedition Maisi Flitzer"
+                subtitle="Jetzt Mais-Salat essend den Berg runter mit 150 KM/h"
+              />
+            </div>
           </div>
         </div>
       </div>
-    </main>
+    </PageLayout>
   )
 }
 
