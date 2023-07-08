@@ -12,7 +12,7 @@ interface CtaSectionProps {
   children?: React.ReactNode
   fontDefaultsContent?: string
   fontDefaultsHeadline?: string
-  headlineMarginBottom?: string
+  headlineMarginBottomClass?: string
   className?: string
 }
 
@@ -28,7 +28,7 @@ export const CtaSection = (props: CtaSectionProps) => {
     animate,
     fontDefaultsContent,
     fontDefaultsHeadline,
-    headlineMarginBottom = 'mb-8',
+    headlineMarginBottomClass = 'mb-8',
     className,
   } = props
 
@@ -47,7 +47,7 @@ export const CtaSection = (props: CtaSectionProps) => {
       )}
       {headlineText && (
         <Heading
-          className={twJoin('', headlineMarginBottom)}
+          className={twJoin('', headlineMarginBottomClass)}
           fontDefaults={fontDefaultsHeadline}
           tag="h2"
         >
