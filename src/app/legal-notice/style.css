@@ -1,0 +1,15 @@
+.legalUL {
+  list-style: square inside;
+}
+
+.legalULLI::marker {
+  color: var(--t1-green);
+}
+
+.legalULLIPadded {
+  padding-left: 1rem;
+}
+
+.legalULLIPadded::marker {
+  color: var(--t1-green);
+}
