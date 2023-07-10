@@ -7,8 +7,8 @@ type CenteredSectionContainerProps = {
   backgroundColorClass?: string
   marginTopClass?: string
   marginBottomClass?: string
-  widthWrapperLeft?: number
-  widthWrapperRight?: number
+  leftWidthClass?: string
+  rightWidthClass?: string
 }
 
 // TODO : doesnt work with ContentWrapper
@@ -21,8 +21,8 @@ export const CenteredSectionContainer = (
     marginTopClass = 0,
     marginBottomClass = 0,
     backgroundColorClass = 'bg-t1-transparent',
-    widthWrapperLeft = 1,
-    widthWrapperRight = 1,
+    leftWidthClass = 'w-full',
+    rightWidthClass = 'w-full',
   } = props
 
   return (
@@ -35,16 +35,10 @@ export const CenteredSectionContainer = (
       )}
     >
       <div>
-        <div style={{ width: `${widthWrapperLeft * 100}%` }}>{left}</div>
+        <div className={leftWidthClass}>{left}</div>
       </div>
       <div className="flex items-center">
-        <div
-          style={{
-            width: widthWrapperRight ? `${widthWrapperRight * 100}%` : '100%',
-          }}
-        >
-          {right}
-        </div>
+        <div className={rightWidthClass}>{right}</div>
       </div>
     </div>
   )

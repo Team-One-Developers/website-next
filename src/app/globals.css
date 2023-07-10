@@ -28,8 +28,26 @@
 
   --theme-selectionBgColor: rgba(70, 255, 173, 1);
 }
+
 ::selection,
 ::moz-selection {
   color: var(--t1-black);
   background-color: var(--theme-selectionBgColor);
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+  opacity: 0;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ffffffab;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #72ffc0b1;
 }

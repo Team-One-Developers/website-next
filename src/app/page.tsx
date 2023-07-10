@@ -217,7 +217,7 @@ export const Home = () => {
               />
             </CtaSection>
           }
-          widthWrapperRight={0.65}
+          rightWidthClass="w-[65%]"
         />
       </ContentWrapper>
     </PageLayout>
