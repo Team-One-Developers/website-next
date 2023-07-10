@@ -1,6 +1,6 @@
 import { forwardRef, ReactNode } from 'react'
 import { twJoin } from 'tailwind-merge'
-
+import './Mask.css'
 interface ImageMaskProps {
   children: ReactNode
   position?: 'center' | 'top'
@@ -11,16 +11,7 @@ export const ImageMask = forwardRef<HTMLDivElement, ImageMaskProps>(
   function IMWrapper(props: ImageMaskProps, ref) {
     const { children, position = 'center', className } = props
     return (
-      <div
-        ref={ref}
-        className={twJoin('inline-block', className)}
-        style={{
-          WebkitMaskImage: 'url(/images/logo/logoform.svg)',
-          WebkitMaskSize: 'contain',
-          WebkitMaskRepeat: 'no-repeat',
-          WebkitMaskPosition: position,
-        }}
-      >
+      <div ref={ref} className={twJoin('testing inline-block', className)}>
         {children}
       </div>
     )
