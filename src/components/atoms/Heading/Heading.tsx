@@ -8,10 +8,12 @@ interface HeadingProps {
   className?: string
   children: ReactNode
   colorClassName?: string
+  style?: any
 }
 
 export const Heading = (props: HeadingProps): ReactElement => {
-  const { children, tag, fontDefaults, className, colorClassName } = props
+  const { children, tag, fontDefaults, className, colorClassName, style } =
+    props
 
   if (tag === 'h1')
     return (
@@ -24,6 +26,7 @@ export const Heading = (props: HeadingProps): ReactElement => {
           colorClassName ? colorClassName : 'text-theme-textColor',
           className
         )}
+        style={...style}
       >
         {children}
       </h1>
@@ -40,6 +43,7 @@ export const Heading = (props: HeadingProps): ReactElement => {
           colorClassName ? colorClassName : 'text-theme-textColor',
           className
         )}
+        style={...style}
       >
         {children}
       </h2>
@@ -54,6 +58,7 @@ export const Heading = (props: HeadingProps): ReactElement => {
         colorClassName ? colorClassName : 'text-theme-textColor',
         className
       )}
+      style={...style}
     >
       {children}
     </h3>

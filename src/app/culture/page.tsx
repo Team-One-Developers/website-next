@@ -6,6 +6,7 @@ import {
   Hero,
   PageLayout,
 } from '@/components'
+import { Values } from '@/components/organisms/Values/Values'
 import { FONT_CONFIGS } from '@/constants'
 import Image from 'next/image'
 
@@ -38,7 +39,9 @@ export const Culture = () => {
       <ContentWrapper>
         <CultureBlock />
       </ContentWrapper>
-      <ContentWrapper>values</ContentWrapper>
+      <ContentWrapper>
+        <Values />
+      </ContentWrapper>
     </PageLayout>
   )
 }

@@ -1,4 +1,9 @@
-import { Copy, ImageDecoration, TwoColumnsSectionContainer } from '@/components'
+import {
+  Copy,
+  ImageDecoration,
+  ImageMask,
+  TwoColumnsSectionContainer,
+} from '@/components'
 import { FONT_CONFIGS } from '@/constants'
 import Image from 'next/image'
 
@@ -6,6 +11,7 @@ import CupIcon from '../../../../public/images/icons/cup.svg'
 import WorldIcon from '../../../../public/images/icons/world-1.svg'
 import PersonIcon from '../../../../public/images/icons/person-1.svg'
 import HumanCentredIcon from '../../../../public/images/icons/humancentred.svg'
+import DancingHearts from '../../../../public/images/dancers/dancing-hearts.svg'
 import T1DLogoDecoration from '../../../../public/images/logo/t1d-sticker-neongreen.svg'
 
 export const CultureBlock = () => {
@@ -107,39 +113,43 @@ export const CultureBlock = () => {
         backgroundColorClass="bg-t1-black"
       />
 
-      {/*
       <TwoColumnsSectionContainer
         left={
-          <DancingHeartsBackground>
+          <div className="relative">
+            <Image
+              src={DancingHearts}
+              alt="moving hearts"
+              height={75}
+              width={75}
+              className="absolute bottom-0"
+            ></Image>
             <ImageMask>
-              <StaticImage
-                src="../../../images/t1d_kai_knoerzer_126.jpg"
-                alt="Woman with a dog"
-                placeholder="blurred"
-                layout="constrained"
-                as="div"
+              <Image
+                src="/images/t1d_kai_knoerzer_126.jpg"
+                alt="Man with a dog"
                 width={750}
-              ></StaticImage>
+                height={1125}
+              ></Image>
             </ImageMask>
-          </DancingHeartsBackground>
+          </div>
         }
         right={null}
-        backgroundColor={COLORS.black}
-        widthWrapperLeft={0.85}
+        backgroundColorClass="bg-t1-black"
+        leftXLWidthClass="xl:w-[95%]"
       />
 
       <TwoColumnsSectionContainer
         className="mt-4"
         left={
-          <ListElement>
-            <ListElementIcon>
-              <HumanCentredIcon />
-            </ListElementIcon>
+          <div className="mb-8 grid w-full grid-cols-[0.1fr_1.9fr] gap-x-4 gap-y-0">
+            <div className="box-border p-2">
+              <Image src={HumanCentredIcon} alt="4 Personen Icon" />
+            </div>
             <div>
               <Copy
-                textColor={COLORS.white}
+                className="text-t1-white"
                 textSize="l"
-                fontConfig={FontConfigs.DESKTOP_COPY_LARGE}
+                fontDefaults={FONT_CONFIGS.desktop_copy_large}
               >
                 Menschenzentriert zu arbeiten bedeutet für uns natürlich auch,
                 kundenzentriert zu arbeiten. Als Dienstleister, der wir sind,
@@ -150,13 +160,12 @@ export const CultureBlock = () => {
                 eine nachhaltige und hochperformante Umsetzung gewährleistet.
               </Copy>
             </div>
-          </ListElement>
+          </div>
         }
         right={null}
-        backgroundColor={COLORS.black}
-        widthWrapperLeft={0.85}
-          />
-    */}
+        backgroundColorClass="bg-t1-black"
+        leftXLWidthClass="xl:w-[95%]"
+      />
     </>
   )
 }
