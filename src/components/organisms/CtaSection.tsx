@@ -1,5 +1,9 @@
-import { Copy, CtaLink, Heading, TopLine } from '@/components'
 import { twJoin } from 'tailwind-merge'
+
+import Copy from '../atoms/Copy'
+import { CtaLink } from '../atoms/CtaLink'
+import { Heading } from '../atoms/Heading'
+import { TopLine } from '../atoms/Topline'
 
 interface CtaSectionProps {
   topLineText?: string

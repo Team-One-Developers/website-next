@@ -1,14 +1,15 @@
 'use client'
 
+import { useState } from 'react'
+import Image from 'next/image'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { PAGE_THEME } from '@/constants'
 import { SiteMetadata } from '@/data'
 import { PageTheme } from '@/types'
 import { twJoin } from 'tailwind-merge'
-import Image from 'next/image'
-import Link from 'next/link'
-import { usePathname } from 'next/navigation'
-import { useState } from 'react'
-import { ContentWrapper } from '../ContentWrapper/ContentWrapper'
+
+import { ContentWrapper } from './ContentWrapper'
 
 export const Header = ({ theme }: { theme: PageTheme }) => {
   const [burgerNavigationOpened, setBurgerNavigationOpened] = useState(false)

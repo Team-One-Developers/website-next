@@ -8,7 +8,7 @@ interface TopLineProps {
   textSize?: 'l' | 'sm'
   uppercase?: boolean
   children: ReactNode
-  fontsDefault?: string
+  fontDefaults?: string
   className?: string
 }
 
@@ -20,7 +20,7 @@ export const TopLine = (props: TopLineProps) => {
     textSize = 'sm',
     uppercase = true,
     className = '',
-    fontsDefault,
+    fontDefaults,
   } = props
 
   return (
@@ -30,7 +30,7 @@ export const TopLine = (props: TopLineProps) => {
         uppercase && 'uppercase',
         textSize === 'sm' ? 'text-[11px]' : 'text-[16px]',
         colorClassName,
-        fontsDefault,
+        fontDefaults,
         className
       )}
       style={{ opacity: opacity }}

@@ -1,9 +1,11 @@
 import { twJoin } from 'tailwind-merge'
+
 import './globals.css'
+
 import localFont from 'next/font/local'
 
 // do it this way to prevent Error: Cant access lexical declaration before initialitazion
-import { Cookie } from '../components/layout/Cookie/Cookie'
+import { Cookie } from '../components/layout/Cookie'
 
 const ABCD = localFont({
   src: '../fonts/abc-diatype-regular.woff2',

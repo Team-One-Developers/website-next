@@ -1,7 +1,14 @@
-import { ContentWrapper, Copy, Heading, PageLayout, Ticker } from '@/components'
+import Image from 'next/image'
 import { FONT_CONFIGS, PAGE_THEME } from '@/constants'
 import { twJoin } from 'tailwind-merge'
-import Image from 'next/image'
+
+import Copy from '@/components/atoms/Copy'
+import { Heading } from '@/components/atoms/Heading'
+
+import { Ticker } from '@/components/molecules/Ticker'
+
+import ContentWrapper from '@/components/layout/ContentWrapper'
+import { PageLayout } from '@/components/layout/PageLayout'
 
 export const Contact = () => {
   const ArrowSVG = ({

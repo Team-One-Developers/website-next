@@ -1,8 +1,10 @@
 'use client'
 
-import { Accordion, TopLine } from '@/components'
-import { FONT_CONFIGS } from '@/constants'
 import { useState } from 'react'
+import { FONT_CONFIGS } from '@/constants'
+
+import { TopLine } from '../atoms/Topline'
+import { Accordion } from '../molecules/Accordion'
 
 export const Values = () => {
   const [isAllExpanded, setIsAllExpanded] = useState<boolean>(false)
@@ -12,7 +14,7 @@ export const Values = () => {
       <div className="flex justify-between p-2 lg:mt-36">
         <TopLine
           colorClassName="text-t1-white"
-          fontsDefault={FONT_CONFIGS.desktop_topline}
+          fontDefaults={FONT_CONFIGS.desktop_topline}
           opacity={1}
         >
           (T1D HIGH FIVE)

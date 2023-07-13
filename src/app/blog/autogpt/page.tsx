@@ -1,5 +1,6 @@
-import { Icon, PageLayout } from '@/components'
 import Image from 'next/image'
+
+import { PageLayout } from '@/components/layout/PageLayout'
 
 export const Blog = () => {
   const RelatedArticle = ({

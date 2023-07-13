@@ -5,7 +5,6 @@ import useInterval from 'use-interval'
 import { FONT_CONFIGS } from '@/constants'
 import { twJoin, twMerge } from 'tailwind-merge'
 import { useMediaQuery } from 'usehooks-ts'
-import './pseudo.css'
 
 const LINE_HEIGHTS = {
   small: {
@@ -105,8 +104,8 @@ export const ChangingWords = (props: ChangingWordsProps) => {
         fontDefaults,
         'flex uppercase',
         smallVariant
-          ? 'changingWordsSmallWrapper h-[0.825rem] gap-2'
-          : 'changingWordsBigWrapper items-center justify-center gap-4 ',
+          ? 'h-[0.825rem] gap-2 before:content-["▾"]'
+          : 'items-center  justify-center gap-4 before:content-["("] after:content-[")"]',
         height.className,
         className
       )}

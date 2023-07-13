@@ -1,8 +1,11 @@
 import { ReactNode } from 'react'
-import { Ticker } from '../../molecules'
-import { Header, ContentWrapper, Footer } from '../'
-import { PAGE_THEME } from '../../../constants'
 import { PageTheme } from '@/types'
+
+import { PAGE_THEME } from '../../constants'
+import { Ticker } from '../molecules/Ticker'
+import ContentWrapper from './ContentWrapper'
+import Footer from './Footer'
+import Header from './Header'
 
 export const PageLayout = ({
   children,

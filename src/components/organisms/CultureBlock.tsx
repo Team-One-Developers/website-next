@@ -1,18 +1,16 @@
-import {
-  Copy,
-  ImageDecoration,
-  ImageMask,
-  TwoColumnsSectionContainer,
-} from '@/components'
-import { FONT_CONFIGS } from '@/constants'
 import Image from 'next/image'
+import { FONT_CONFIGS } from '@/constants'
 
-import CupIcon from '../../../../public/images/icons/cup.svg'
-import WorldIcon from '../../../../public/images/icons/world-1.svg'
-import PersonIcon from '../../../../public/images/icons/person-1.svg'
-import HumanCentredIcon from '../../../../public/images/icons/humancentred.svg'
 import DancingHearts from '../../../../public/images/dancers/dancing-hearts.svg'
+import CupIcon from '../../../../public/images/icons/cup.svg'
+import HumanCentredIcon from '../../../../public/images/icons/humancentred.svg'
+import PersonIcon from '../../../../public/images/icons/person-1.svg'
+import WorldIcon from '../../../../public/images/icons/world-1.svg'
 import T1DLogoDecoration from '../../../../public/images/logo/t1d-sticker-neongreen.svg'
+import Copy from '../atoms/Copy'
+import { ImageDecoration } from '../atoms/ImageDecoration'
+import { ImageMask } from '../atoms/ImageMask'
+import { TwoColumnsSectionContainer } from '../layout/TwoColumnsSectionContainer'
 
 export const CultureBlock = () => {
   return (

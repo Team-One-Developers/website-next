@@ -1,12 +1,12 @@
 'use client'
 
-import { SiteMetadata } from '@/data'
-
-import { twJoin } from 'tailwind-merge'
-import { usePathname } from 'next/navigation'
-import Link from 'next/link'
 import Image from 'next/image'
-import { Icon } from '@/components/atoms'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import { SiteMetadata } from '@/data'
+import { twJoin } from 'tailwind-merge'
+
+import { Icon } from '../atoms/Icons'
 
 export const Footer = () => {
   const pathname = usePathname()

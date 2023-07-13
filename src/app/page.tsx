@@ -1,23 +1,25 @@
 'use client'
 
-import {
-  AnimatedTeaser,
-  CenteredSectionContainer,
-  ChangingWords,
-  Companies,
-  ContentWrapper,
-  Copy,
-  CtaSection,
-  DancingFigures,
-  FullWidthSectionContainer,
-  Heading,
-  Hero,
-  ImageMask,
-  PageLayout,
-} from '@/components'
-import { FONT_CONFIGS, PAGE_THEME } from '@/constants'
 import Image from 'next/image'
+import { FONT_CONFIGS, PAGE_THEME } from '@/constants'
 import { useInView } from 'react-intersection-observer'
+
+import Copy from '@/components/atoms/Copy'
+import { DancingFigures } from '@/components/atoms/DancingFigures'
+import { Heading } from '@/components/atoms/Heading'
+import { ImageMask } from '@/components/atoms/ImageMask'
+
+import { Companies } from '@/components/molecules/Companies'
+import { Hero } from '@/components/molecules/Hero'
+
+import { AnimatedTeaser } from '@/components/organisms/AnimatedTeaser'
+import { ChangingWords } from '@/components/organisms/ChangingWords'
+import { CtaSection } from '@/components/organisms/CtaSection'
+
+import { CenteredSectionContainer } from '@/components/layout/CenteredSectionContainer'
+import ContentWrapper from '@/components/layout/ContentWrapper'
+import { FullWidthSectionContainer } from '@/components/layout/FullWidthSectionContainer'
+import { PageLayout } from '@/components/layout/PageLayout'
 
 import SamuelPic from '../../public/images/t1d_kai_knoerzer_011_edited.jpg'
 import JannikPic from '../../public/images/t1d_kai_knoerzer_055.jpg'

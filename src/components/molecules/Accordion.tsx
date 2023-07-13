@@ -1,9 +1,12 @@
 'use client'
 
-import { twJoin, twMerge } from 'tailwind-merge'
-import { Copy, Heading, TopLine } from '@/components'
-import { FONT_CONFIGS } from '@/constants'
 import { useEffect, useState } from 'react'
+import { FONT_CONFIGS } from '@/constants'
+import { twJoin, twMerge } from 'tailwind-merge'
+
+import Copy from '../atoms/Copy'
+import { Heading } from '../atoms/Heading'
+import { TopLine } from '../atoms/Topline'
 
 interface AccordionProps {
   allOpen: boolean
@@ -29,7 +32,9 @@ export const Accordion = (props: AccordionProps) => {
       )}
       open={open}
       style={{ transition: 'all 0.25s ease-in-out' }}
-      onClick={() => {
+      // TODO test if it works with defaultChecked and onChange updates own state
+      onClick={(event) => {
+        event.preventDefault()
         setOpen(!open)
       }}
     >
@@ -38,7 +43,7 @@ export const Accordion = (props: AccordionProps) => {
           className="mb-[10px] block md:w-[6.6%]"
           colorClassName="text-t1-white"
           opacity={1}
-          fontsDefault={FONT_CONFIGS.sub_column}
+          fontDefaults={FONT_CONFIGS.sub_column}
         >
           {counter}
         </TopLine>

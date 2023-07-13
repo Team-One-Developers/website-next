@@ -1,10 +1,13 @@
 'use client'
 
-import { Heading, Icon, PageLayout } from '@/components'
-import { FONT_CONFIGS } from '@/constants'
-import { twJoin } from 'tailwind-merge'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
+import { FONT_CONFIGS } from '@/constants'
+import { twJoin } from 'tailwind-merge'
+
+import { Heading } from '@/components/atoms/Heading'
+
+import { PageLayout } from '@/components/layout/PageLayout'
 
 export const Blog = () => {
   const router = useRouter()

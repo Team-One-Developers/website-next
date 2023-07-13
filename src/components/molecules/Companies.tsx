@@ -1,8 +1,10 @@
-import { Heading } from '@/components'
 import { FONT_CONFIGS } from '@/constants'
 
 import './CompaniesPseudo.css'
+
 import Image from 'next/image'
+
+import { Heading } from '../atoms/Heading'
 
 export const Companies = () => {
   return (

@@ -1,7 +1,8 @@
 'use client'
 
-import { Copy } from '../../atoms/Copy/Copy'
 import { default as CookieConsent } from 'react-cookie-consent'
+
+import { Copy } from '../atoms/Copy'
 
 export const Cookie = () => {
   return (

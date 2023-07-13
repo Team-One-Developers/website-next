@@ -1,8 +1,12 @@
 import { forwardRef } from 'react'
 import { twJoin } from 'tailwind-merge'
-import './animation.css'
-import { Copy, Heading } from '@/components'
+
+import './style.css'
+
 import { FONT_CONFIGS } from '@/constants'
+
+import Copy from '../atoms/Copy'
+import { Heading } from '../atoms/Heading'
 
 type AnimatedTeaserProps = {
   backgroundColor?: string

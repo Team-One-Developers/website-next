@@ -1,14 +1,16 @@
-import {
-  ContentWrapper,
-  CultureBlock,
-  DancingFigures,
-  Heading,
-  Hero,
-  PageLayout,
-} from '@/components'
-import { Values } from '@/components/organisms/Values/Values'
-import { FONT_CONFIGS } from '@/constants'
 import Image from 'next/image'
+import { FONT_CONFIGS } from '@/constants'
+
+import { DancingFigures } from '@/components/atoms/DancingFigures'
+import { Heading } from '@/components/atoms/Heading'
+
+import { Hero } from '@/components/molecules/Hero'
+
+import { CultureBlock } from '@/components/organisms/CultureBlock'
+import { Values } from '@/components/organisms/Values'
+
+import ContentWrapper from '@/components/layout/ContentWrapper'
+import { PageLayout } from '@/components/layout/PageLayout'
 
 export const Culture = () => {
   return (

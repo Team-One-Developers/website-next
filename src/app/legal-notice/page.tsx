@@ -1,13 +1,13 @@
-import {
-  ContentWrapper,
-  FullWidthSectionContainer,
-  Heading,
-  PageLayout,
-} from '@/components'
 import { FONT_CONFIGS } from '@/constants'
-import Image from 'next/image'
 import { twJoin } from 'tailwind-merge'
+
 import './style.css'
+
+import { Heading } from '@/components/atoms/Heading'
+
+import ContentWrapper from '@/components/layout/ContentWrapper'
+import { FullWidthSectionContainer } from '@/components/layout/FullWidthSectionContainer'
+import { PageLayout } from '@/components/layout/PageLayout'
 
 export const Legal = () => {
   const legalParagraphCSS = FONT_CONFIGS.desktop_copy_small + ' text-t1-white'
@@ -43,7 +43,7 @@ export const Legal = () => {
             Vertreten durch die Geschäftsführung
           </Heading>
           <ul className={twJoin('legalUL', legalParagraphCSS)}>
-            <li className="legalULLI">Timo Brückel</li>
+            <li className="marker legalULLI">Timo Brückel</li>
             <li className="legalULLI">Julian Richter</li>
             <li className="legalULLI">Michael Krause</li>
           </ul>

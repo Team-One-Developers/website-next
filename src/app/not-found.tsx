@@ -1,17 +1,14 @@
-import {
-  Button,
-  ContentWrapper,
-  Copy,
-  Footer,
-  FullWidthSectionContainer,
-  Header,
-  Heading,
-  PageLayout,
-  Ticker,
-} from '@/components'
-import { PAGE_THEME } from '@/constants'
 import Image from 'next/image'
 import Link from 'next/link'
+import { PAGE_THEME } from '@/constants'
+
+import { Button } from '@/components/atoms/Button'
+import Copy from '@/components/atoms/Copy'
+import { Heading } from '@/components/atoms/Heading'
+
+import ContentWrapper from '@/components/layout/ContentWrapper'
+import { FullWidthSectionContainer } from '@/components/layout/FullWidthSectionContainer'
+import { PageLayout } from '@/components/layout/PageLayout'
 
 export const NotFound = () => {
   return (

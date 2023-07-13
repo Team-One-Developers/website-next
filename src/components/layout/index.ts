@@ -1,8 +1,0 @@
-export { ContentWrapper } from './ContentWrapper/ContentWrapper'
-export { Header } from './Header/Header'
-export { Footer } from './Footer/Footer'
-export { Cookie } from './Cookie/Cookie'
-export { FullWidthSectionContainer } from './SectionContainer/FullWidthSectionContainer'
-export { PageLayout } from './PageLayout/PageLayout'
-export { CenteredSectionContainer } from './SectionContainer/CenteredSectionContainer'
-export { TwoColumnsSectionContainer } from './SectionContainer/TwoColumnsSectionContainer'
