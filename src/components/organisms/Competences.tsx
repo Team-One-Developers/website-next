@@ -3,7 +3,7 @@ import { FONT_CONFIGS } from '@/constants'
 import { IntersectionOptions, useInView } from 'react-intersection-observer'
 import { twJoin } from 'tailwind-merge'
 
-import Copy from '../atoms/Copy'
+import Typography from '../atoms/Typography'
 import { Heading } from '../atoms/Heading'
 import { TopLine } from '../atoms/Topline'
 import ContentWrapper from '../layout/ContentWrapper'
@@ -34,12 +34,12 @@ export const Competences = () => {
         >
           {headline}
         </Heading>
-        <Copy
-          fontDefaults={FONT_CONFIGS.desktop_copy_small}
+        <Typography
+          fontDefaults={FONT_CONFIGS.desktop_Typography_small}
           className="mt-[14px] lg:mt-0"
         >
           {text}
-        </Copy>
+        </Typography>
       </div>
     )
   }
@@ -59,15 +59,15 @@ export const Competences = () => {
             <Heading tag="h2" fontDefaults={FONT_CONFIGS.desktop_h2_medium}>
               BUSINESS & <br /> PRODUCT STRATEGY
             </Heading>
-            <Copy
+            <Typography
               className="text-center mt-3.5"
-              fontDefaults={FONT_CONFIGS.desktop_copy_small}
+              fontDefaults={FONT_CONFIGS.desktop_Typography_small}
             >
               Von der digitalen Geschäfts- und Geschäftsfeldstrategie, über die
               Produktstrategie bis hin zur UX-Strategie beraten wir
               branchenübergreifend mit unseren Strategie-Experten Startups von
               Early stage bis Grownup ebenso wie Corporates.
-            </Copy>
+            </Typography>
           </div>
         </div>
         <div className="flex flex-col mt-8 lg:mt-32">

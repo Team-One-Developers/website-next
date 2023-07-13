@@ -6,7 +6,7 @@ import { FONT_CONFIGS } from '@/constants'
 import { useInView } from 'react-intersection-observer'
 import { twJoin, twMerge } from 'tailwind-merge'
 
-import Copy from '../atoms/Copy'
+import Typography from '../atoms/Typography'
 import { Heading } from '../atoms/Heading'
 import ContentWrapper from '../layout/ContentWrapper'
 
@@ -96,10 +96,10 @@ export const TechStacks = () => {
 
           <div className="flex justify-center mt-4">
             <div className="w-full sm:w-[80%] sm:min-h-auto md:w-[70%] lg:w-[40%]">
-              <Copy
+              <Typography
                 className="text-inherit"
-                textSize="sm"
-                fontDefaults={FONT_CONFIGS.desktop_copy_small}
+                variant="md"
+                fontDefaults={FONT_CONFIGS.desktop_Typography_small}
               >
                 {isBackendActive ? (
                   <>
@@ -141,7 +141,7 @@ export const TechStacks = () => {
                     breiten JavaScript Ökosystem zu Hause.
                   </>
                 )}
-              </Copy>
+              </Typography>
             </div>
           </div>
 
@@ -180,7 +180,7 @@ const TechStackLogos = (props: TechStackLogosProps) => {
           }}
         >
           <Image
-            src={`/images/technologies/aws-lambda.svg`}
+            src={"/images/technologies/aws-lambda.svg"}
             alt="Technology Logo"
             fill
             className=""

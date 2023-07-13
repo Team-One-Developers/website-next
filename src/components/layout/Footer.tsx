@@ -29,7 +29,7 @@ export const Footer = () => {
     <footer className="block pb-8 md:grid md:grid-flow-row  md:grid-cols-[2.5fr_1fr_1fr_1fr] md:grid-rows-[1fr_1fr] md:gap-x-3 md:gap-y-5 md:text-left">
       <div className="md:row-span-2 md:mb-0 md:self-end md:justify-self-start">
         <h2 className={navigationSectionHeaderCSS}>
-          &copy; 2023 Team One Developers. All Rights Reserved.
+          &Typography; 2023 Team One Developers. All Rights Reserved.
         </h2>
       </div>
 
@@ -77,7 +77,7 @@ export const Footer = () => {
         <a
           className={externalLinkCSS}
           href="https://g.page/team-one-developers-gmbh?share"
-          target="_blank"
+          target="_blank" rel="noreferrer"
         >
           Team One Developers GmbH <br />
           Hospitalstraße 35 <br />
@@ -90,7 +90,7 @@ export const Footer = () => {
         <a
           className={twJoin(externalLinkCSS, 'flex flex-col')}
           href="https://g.page/team-one-developers-gmbh?share"
-          target="_blank"
+          target="_blank" rel="noreferrer"
         >
           <tspan>{`N 48° 46' 33.25`}</tspan>
           <tspan>{`E 9° 10' 15.91`}</tspan>
@@ -102,7 +102,7 @@ export const Footer = () => {
         <a
           className={externalLinkCSS}
           href="mailto:kontakt@t1dev.de"
-          target="_blank"
+          target="_blank" rel="noreferrer"
         >
           kontakt@t1dev.de
         </a>
@@ -111,7 +111,7 @@ export const Footer = () => {
         <a
           className={externalLinkCSS}
           href="tel:+4971125298690"
-          target="_blank"
+          target="_blank" rel="noreferrer"
         >
           +49 711 252 98 690
         </a>
@@ -121,7 +121,7 @@ export const Footer = () => {
         <a
           href="https://www.instagram.com/teamonedevelopers/"
           target="_blank"
-          aria-label="Instagram"
+          aria-label="Instagram" rel="noreferrer"
         >
           <Icon
             name="Instagram"
@@ -132,7 +132,7 @@ export const Footer = () => {
         <a
           href="https://www.linkedin.com/company/team-one-developers/"
           target="_blank"
-          aria-label="LinkedIn"
+          aria-label="LinkedIn" rel="noreferrer"
         >
           <Icon
             name="LinkedIn"

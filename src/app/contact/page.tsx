@@ -2,7 +2,7 @@ import Image from 'next/image'
 import { FONT_CONFIGS, PAGE_THEME } from '@/constants'
 import { twJoin } from 'tailwind-merge'
 
-import Copy from '@/components/atoms/Copy'
+import Typography from '@/components/atoms/Typography'
 import { Heading } from '@/components/atoms/Heading'
 
 import { Ticker } from '@/components/molecules/Ticker'
@@ -10,7 +10,7 @@ import { Ticker } from '@/components/molecules/Ticker'
 import ContentWrapper from '@/components/layout/ContentWrapper'
 import { PageLayout } from '@/components/layout/PageLayout'
 
-export const Contact = () => {
+const Contact = () => {
   const ArrowSVG = ({
     className,
     style,
@@ -43,7 +43,7 @@ export const Contact = () => {
       <div
         className={twJoin(
           'mt-1 flex w-fit gap-2 border-b border-t1-green text-t1-white',
-          FONT_CONFIGS.desktop_copy_xtra_large
+          FONT_CONFIGS.desktop_Typography_xtra_large
         )}
       >
         <ArrowSVG className="h-[1.3em] w-[1.3em] items-center justify-center" />
@@ -75,17 +75,17 @@ export const Contact = () => {
             />
           </div>
           <div className={'flex grow-[2] flex-col gap-2 p-4'}>
-            <Copy
+            <Typography
               className={twJoin(
                 '!-mt-3 !mb-0',
-                FONT_CONFIGS.desktop_copy_xtra_large
+                FONT_CONFIGS.desktop_Typography_xtra_large
               )}
-              textSize="sm"
+              variant="md"
             >
               Team One Developers GmbH <br />
               Hospitalstraße 35 <br />
               70174 Stuttgart
-            </Copy>
+            </Typography>
             <ExternalLink
               href="mailto:kontakt@t1dev.de"
               name="kontakt@t1dev.de"

@@ -8,7 +8,7 @@ import './style.css'
 import Image from 'next/image'
 import { twJoin, twMerge } from 'tailwind-merge'
 
-import Copy from '../atoms/Copy'
+import Typography from '../atoms/Typography'
 import { Heading } from '../atoms/Heading'
 import { ImageMask } from '../atoms/ImageMask'
 import { TopLine } from '../atoms/Topline'
@@ -91,9 +91,9 @@ export const UxDesign = () => {
 
       <div className="mb-8 flex justify-center">
         <div className="w-[45%] text-center">
-          <Copy
-            fontDefaults={FONT_CONFIGS.desktop_copy_small_alternate}
-            textSize="sm"
+          <Typography
+            fontDefaults={FONT_CONFIGS.desktop_Typography_small_alternate}
+            variant="md"
             className="text-t1-white"
           >
             Mindestens so wichtig wie der Code den wir schreiben, ist das
@@ -102,18 +102,18 @@ export const UxDesign = () => {
             Zusammenarbeit von Softwareentwicklung und –design ist ein gerne
             unterschätzter Erfolgsfaktor performanter, interdisziplinärer
             Entwicklungsteams und entscheidend für den Produkterfolg.
-          </Copy>
-          <Copy
-            fontDefaults={FONT_CONFIGS.desktop_copy_small_alternate}
+          </Typography>
+          <Typography
+            fontDefaults={FONT_CONFIGS.desktop_Typography_small_alternate}
             className="text-t1-white"
-            textSize="sm"
+            variant="md"
           >
             Ausgehend von geschäfts- oder produkstrategischen Rahmenbedingungen
             bildet das User Experience Design die zentrale Schnittstelle
             zwischen Nutzer und Technologie. Wir unterstützen dabei
             ganzheitlich, entlang der gesamten UX-Wertschöpfung: von der
             Marktrecherche bis zum Visual Design.
-          </Copy>
+          </Typography>
         </div>
       </div>
 
@@ -226,8 +226,8 @@ export const UxDesign = () => {
             </BubbleContainer>
             <BubbleContainer
               active={
-                activeCategory == UX_CATEGORIES.ux_design ||
-                activeCategory == UX_CATEGORIES.ui_design
+                activeCategory === UX_CATEGORIES.ux_design ||
+                activeCategory === UX_CATEGORIES.ui_design
               }
             >
               <ImageMask>

@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { FONT_CONFIGS, PAGE_THEME } from '@/constants'
 import { useInView } from 'react-intersection-observer'
 
-import Copy from '@/components/atoms/Copy'
+import Typography from '@/components/atoms/Typography'
 import { DancingFigures } from '@/components/atoms/DancingFigures'
 import { Heading } from '@/components/atoms/Heading'
 import { ImageMask } from '@/components/atoms/ImageMask'
@@ -85,7 +85,7 @@ export const Home = () => {
           <ChangingWords
             words={['software', 'agile', 'human', 'team']}
             className="text-t1-white"
-          ></ChangingWords>
+          />
         }
         overlayPosition="offsetTop"
       />
@@ -95,9 +95,9 @@ export const Home = () => {
           <figure className="mb-6 flex h-[129px] w-full justify-center text-t1-green md:hidden">
             <DancingFigures />
           </figure>
-          <Copy
+          <Typography
             className="text-t1-black"
-            textSize="xl"
+            variant="xl"
             fontDefaults={FONT_CONFIGS.desktop_h2_regular}
           >
             Wir sind Technologie-Experten und verstehen uns als integrativer
@@ -105,14 +105,14 @@ export const Home = () => {
             <DancingFigures className="hidden h-16 px-4 py-0 align-middle text-t1-green md:inline" />
             Mit jahrelanger Expertise in den Bereichen Softwareentwicklung,
             Strategie sowie UX/UI Design.
-          </Copy>
+          </Typography>
         </FullWidthSectionContainer>
         <CtaSection
           className="mt-16 lg:max-w-[25%]"
           contentText="Wir helfen Organisationen dabei, sich nachhaltig zu modernen digitalen Unternehmen zu wandeln. Immer mit dem Ziel, qualitativ hochwertige, skalierbare und durchdachte Software zu entwickeln, welche messbaren Mehrwert für unsere Kunden schafft."
           ctaButtonLink={'/services'}
           ctaButtonLabel="Unsere Leistungen"
-          fontDefaultsContent={FONT_CONFIGS.desktop_copy_small}
+          fontDefaultsContent={FONT_CONFIGS.desktop_Typography_small}
         />
       </ContentWrapper>
 
@@ -151,7 +151,7 @@ export const Home = () => {
           animate={!cultureContainerInView}
           headlineMarginBottomClass="mb-24"
           fontDefaultsHeadline={FONT_CONFIGS.desktop_h3}
-          fontDefaultsContent={FONT_CONFIGS.desktop_copy_small}
+          fontDefaultsContent={FONT_CONFIGS.desktop_Typography_small}
         >
           <Image
             src="/images/icons/person-1.svg"
@@ -207,7 +207,7 @@ export const Home = () => {
               ctaButtonLabel="Karriere"
               ctaButtonLink="/career"
               fontDefaultsHeadline={FONT_CONFIGS.desktop_h3}
-              fontDefaultsContent={FONT_CONFIGS.desktop_copy_small}
+              fontDefaultsContent={FONT_CONFIGS.desktop_Typography_small}
               headlineMarginBottomClass="mb-[2.875rem]"
             >
               <Image

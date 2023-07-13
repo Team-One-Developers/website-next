@@ -5,7 +5,7 @@ import './style.css'
 
 import { FONT_CONFIGS } from '@/constants'
 
-import Copy from '../atoms/Copy'
+import Typography from '../atoms/Typography'
 import { Heading } from '../atoms/Heading'
 
 type AnimatedTeaserProps = {
@@ -34,16 +34,16 @@ export const AnimatedTeaser = forwardRef<HTMLDivElement, AnimatedTeaserProps>(
           <div
             className={twJoin('bgDancers absolute inset-0 h-full w-full')}
             style={{ transition: '1500ms', backgroundColor: animationColor }}
-          ></div>
+          />
           <div className="relative w-[85%] text-center md:w-[70%] lg:w-[55%] xl:w-[40%]">
             <div className="mb-[0.75rem]">
-              <Copy
-                textSize="l"
-                fontDefaults={FONT_CONFIGS.desktop_copy_large}
+              <Typography
+                variant="lg"
+                fontDefaults={FONT_CONFIGS.desktop_Typography_large}
                 className="m-0 text-t1-black"
               >
                 Wir arbeiten
-              </Copy>
+              </Typography>
             </div>
 
             <Heading
@@ -54,11 +54,11 @@ export const AnimatedTeaser = forwardRef<HTMLDivElement, AnimatedTeaserProps>(
               Integrativ & Agil
             </Heading>
 
-            <Copy className="text-t1-black" textSize="l">
+            <Typography className="text-t1-black" variant="lg">
               Integrativ bedeutet für uns nicht nur, nah am Kunden zu sein,
               sondern vor allem auch die Produkte, an denen wir arbeiten, so zu
               entwickeln, als wären es unsere eigenen. Team One for One Team.
-            </Copy>
+            </Typography>
           </div>
         </div>
       </div>

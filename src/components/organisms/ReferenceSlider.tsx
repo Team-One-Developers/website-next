@@ -2,7 +2,7 @@ import Image from 'next/image'
 import { FONT_CONFIGS } from '@/constants'
 import { twJoin } from 'tailwind-merge'
 
-import Copy from '../atoms/Copy'
+import Typography from '../atoms/Typography'
 import { Heading } from '../atoms/Heading'
 import { TopLine } from '../atoms/Topline'
 import ContentWrapper from '../layout/ContentWrapper'
@@ -19,7 +19,7 @@ export const ReferencesSlider = () => {
     <div className="bg-t1-lightGray">
       <ContentWrapper>
         <div className="flex justify-center bg-t1-lightGray pt-[75px] pb-8 font-medium">
-          <TopLine colorClassName="text-t1-black" opacity={1} textSize="l">
+          <TopLine colorClassName="text-t1-black" opacity={1} variant="lg">
             REFERENZEN
           </TopLine>
         </div>
@@ -117,13 +117,13 @@ const ReferencesSliderEntry = (props: ReferenceSliderEntryProps) => {
               </li>
             ))}
           </ul>
-          <Copy
+          <Typography
             className="mt-8 md:pr-20 xl:pr-28 text-t1-black"
-            textSize="sm"
-            fontDefaults={FONT_CONFIGS.desktop_copy_small}
+            variant="md"
+            fontDefaults={FONT_CONFIGS.desktop_Typography_small}
           >
             {infoText}
-          </Copy>
+          </Typography>
         </figcaption>
       </figure>
     </li>

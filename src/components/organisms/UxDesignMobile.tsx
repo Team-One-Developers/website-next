@@ -3,7 +3,7 @@
 import { ReactNode, useState } from 'react'
 import { BREAKPOINTS, FONT_CONFIGS, UX_CATEGORIES } from '@/constants'
 
-import Copy from '../atoms/Copy'
+import Typography from '../atoms/Typography'
 import { Heading } from '../atoms/Heading'
 import { TopLine } from '../atoms/Topline'
 
@@ -65,21 +65,21 @@ export const UxDesignMobile = () => {
 
       <div className="mb-8 flex justify-center">
         <div className="w-[75%] text-center">
-          <Copy textSize="sm" className="text-t1-white">
+          <Typography variant="md" className="text-t1-white">
             Mindestens so wichtig wie der Code den wir schreiben, ist das
             Design, in welchem digitale Produkte von ihren Anwendern
             wahrgenommen und regelmäßig genutzt werden. Die integrative
             Zusammenarbeit von Softwareentwicklung und –design ist ein gerne
             unterschätzter Erfolgsfaktor performanter, interdisziplinärer
             Entwicklungsteams und entscheidend für den Produkterfolg.
-          </Copy>
-          <Copy className="text-t1-white" textSize="sm">
+          </Typography>
+          <Typography className="text-t1-white" variant="md">
             Ausgehend von geschäfts- oder produkstrategischen Rahmenbedingungen
             bildet das User Experience Design die zentrale Schnittstelle
             zwischen Nutzer und Technologie. Wir unterstützen dabei
             ganzheitlich, entlang der gesamten UX-Wertschöpfung: von der
             Marktrecherche bis zum Visual Design.
-          </Copy>
+          </Typography>
         </div>
       </div>
 
@@ -104,65 +104,65 @@ export const UxDesignMobile = () => {
           <BubbleContainer className="col-start-4 row-start-2 vertical-lr row-span-3">
             <Bubble
               active={
-                activeCategory == UX_CATEGORIES.ux_design ||
-                activeCategory == UX_CATEGORIES.ui_design
+                activeCategory === UX_CATEGORIES.ux_design ||
+                activeCategory === UX_CATEGORIES.ui_design
               }
               text="Information Design"
-            ></Bubble>
+            />
           </BubbleContainer>
 
           <BubbleContainer className="row-start-2 col-start-1 row-span-3 vertical-lr justify-self-end">
             <Bubble
               active={
-                activeCategory == UX_CATEGORIES.ui_development ||
-                activeCategory == UX_CATEGORIES.ui_design
+                activeCategory === UX_CATEGORIES.ui_development ||
+                activeCategory === UX_CATEGORIES.ui_design
               }
               text="Visual Design"
-            ></Bubble>
+            />
           </BubbleContainer>
 
           <BubbleContainer className="row-start-2 col-start-2">
             <Bubble
-              active={activeCategory == UX_CATEGORIES.ux_design}
+              active={activeCategory === UX_CATEGORIES.ux_design}
               text="Research & Insight"
-            ></Bubble>
+            />
           </BubbleContainer>
 
           <BubbleContainer className="row-start-2 col-start-3">
             <Bubble
               active={
-                activeCategory == UX_CATEGORIES.ux_design ||
-                activeCategory == UX_CATEGORIES.ui_design
+                activeCategory === UX_CATEGORIES.ux_design ||
+                activeCategory === UX_CATEGORIES.ui_design
               }
               text="Strategy"
-            ></Bubble>
+            />
           </BubbleContainer>
 
           <BubbleContainer className="row-start-3 col-start-2 col-span-2">
             <Bubble
               active={
-                activeCategory == UX_CATEGORIES.ux_design ||
-                activeCategory == UX_CATEGORIES.ui_development ||
-                activeCategory == UX_CATEGORIES.ui_design
+                activeCategory === UX_CATEGORIES.ux_design ||
+                activeCategory === UX_CATEGORIES.ui_development ||
+                activeCategory === UX_CATEGORIES.ui_design
               }
               text="Interaction Design"
-            ></Bubble>
+            />
           </BubbleContainer>
           <BubbleContainer className="row-start-4 col-start-2">
             <Bubble
               active={
-                activeCategory == UX_CATEGORIES.application_development ||
-                activeCategory == UX_CATEGORIES.ui_development
+                activeCategory === UX_CATEGORIES.application_development ||
+                activeCategory === UX_CATEGORIES.ui_development
               }
               text="Frontend HTML / CSS / JS"
-            ></Bubble>
+            />
           </BubbleContainer>
 
           <BubbleContainer className="row-start-4 col-start-3">
             <Bubble
-              active={activeCategory == UX_CATEGORIES.application_development}
+              active={activeCategory === UX_CATEGORIES.application_development}
               text="Backend"
-            ></Bubble>
+            />
           </BubbleContainer>
 
           <div className="flex justify-center items-center row-start-5 col-start-2 col-span-2">

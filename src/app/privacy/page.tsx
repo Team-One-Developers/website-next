@@ -13,8 +13,8 @@ import { FullWidthSectionContainer } from '@/components/layout/FullWidthSectionC
 import { PageLayout } from '@/components/layout/PageLayout'
 
 export const Privacy = () => {
-  const legalParagraphCSS = FONT_CONFIGS.desktop_copy_small + ' text-t1-white'
-  const offsetLegalParagraphCSS = legalParagraphCSS + ' mt-4'
+  const legalParagraphCSS = `${FONT_CONFIGS.desktop_Typography_small} text-t1-white`
+  const offsetLegalParagraphCSS = `${legalParagraphCSS} mt-4`
 
   return (
     <PageLayout>

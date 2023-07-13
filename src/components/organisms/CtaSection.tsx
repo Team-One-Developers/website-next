@@ -1,6 +1,6 @@
 import { twJoin } from 'tailwind-merge'
 
-import Copy from '../atoms/Copy'
+import Typography from '../atoms/Typography'
 import { CtaLink } from '../atoms/CtaLink'
 import { Heading } from '../atoms/Heading'
 import { TopLine } from '../atoms/Topline'
@@ -65,13 +65,13 @@ export const CtaSection = (props: CtaSectionProps) => {
           translate: animate ? '0 20px' : '',
         }}
       >
-        <Copy
+        <Typography
           className="m-0 mb-6 text-t1-black"
-          textSize="sm"
+          variant="md"
           fontDefaults={fontDefaultsContent}
         >
           {contentText}
-        </Copy>
+        </Typography>
         <CtaLink variant={buttonColor} href={ctaButtonLink}>
           {ctaButtonLabel}
         </CtaLink>

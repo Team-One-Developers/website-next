@@ -7,7 +7,7 @@ import HumanCentredIcon from '../../../../public/images/icons/humancentred.svg'
 import PersonIcon from '../../../../public/images/icons/person-1.svg'
 import WorldIcon from '../../../../public/images/icons/world-1.svg'
 import T1DLogoDecoration from '../../../../public/images/logo/t1d-sticker-neongreen.svg'
-import Copy from '../atoms/Copy'
+import Typography from '../atoms/Typography'
 import { ImageDecoration } from '../atoms/ImageDecoration'
 import { ImageMask } from '../atoms/ImageMask'
 import { TwoColumnsSectionContainer } from '../layout/TwoColumnsSectionContainer'
@@ -19,24 +19,24 @@ export const CultureBlock = () => {
         className="mt-14"
         left={
           <>
-            <Copy
-              textSize="sm"
+            <Typography
+              variant="md"
               className="text-t1-white"
-              fontDefaults={FONT_CONFIGS.desktop_copy_small}
+              fontDefaults={FONT_CONFIGS.desktop_Typography_small}
             >
               Dass es schwer ist, Tech-Talente für sich zu gewinnen ist kein
               Geheimnis mehr. Uns beschäftigt daher eine Frage so intensiv wie
               kaum eine andere:
-            </Copy>
-            <Copy
-              textSize="xl"
+            </Typography>
+            <Typography
+              variant="xl"
               className="text-t1-white"
-              fontDefaults={FONT_CONFIGS.desktop_copy_xtra_large}
+              fontDefaults={FONT_CONFIGS.desktop_Typography_xtra_large}
             >
               Was können wir als Tech-Unternehmen tun, um das attraktivste
               Arbeitsumfeld zu schaffen, das wir selbst je gesehen haben?
               <Image src={CupIcon} alt="Cup SVG" className="-mt-2 inline" />
-            </Copy>
+            </Typography>
           </>
         }
         right={
@@ -74,34 +74,34 @@ export const CultureBlock = () => {
               <div className="box-border p-2">
                 <Image src={WorldIcon} alt="World Globe Icon" className="" />
               </div>
-              <Copy
+              <Typography
                 className="text-t1-white"
-                textSize="l"
-                fontDefaults={FONT_CONFIGS.desktop_copy_large}
+                variant="lg"
+                fontDefaults={FONT_CONFIGS.desktop_Typography_large}
               >
                 Die wichtigsten Antworten auf diese Frage sind für uns: Werte zu
                 definieren, Werte zu leben und sie auch zu schützen. Dabei
                 ehrlich und authentisch zu sein, nichts zu versprechen was man
                 nicht halten kann und vor allem nicht nur zu reden, sondern zu
                 machen.
-              </Copy>
+              </Typography>
             </div>
             <div className="mb-8 grid w-full grid-cols-[0.1fr_1.9fr] gap-x-4 gap-y-0">
               <div className="box-border p-2">
                 <Image src={PersonIcon} alt="Person Icon" className="" />
               </div>
               <div>
-                <Copy
+                <Typography
                   className="text-t1-white"
-                  textSize="l"
-                  fontDefaults={FONT_CONFIGS.desktop_copy_large}
+                  variant="lg"
+                  fontDefaults={FONT_CONFIGS.desktop_Typography_large}
                 >
                   Und zu guter Letzt: Individuelle Rahmenbedingungen zu
                   schaffen. Diese Antworten liefern uns einen natürlichen
                   Treibstoff, mit dem wir wachsen und gedeihen, der uns als Team
                   gut tut und zusammenhält und uns von jedem anderen Arbeitgeber
                   unterscheidet.
-                </Copy>
+                </Typography>
               </div>
             </div>
           </>
@@ -120,14 +120,14 @@ export const CultureBlock = () => {
               height={75}
               width={75}
               className="absolute bottom-0"
-            ></Image>
+            />
             <ImageMask>
               <Image
                 src="/images/t1d_kai_knoerzer_126.jpg"
                 alt="Man with a dog"
                 width={750}
                 height={1125}
-              ></Image>
+              />
             </ImageMask>
           </div>
         }
@@ -144,10 +144,10 @@ export const CultureBlock = () => {
               <Image src={HumanCentredIcon} alt="4 Personen Icon" />
             </div>
             <div>
-              <Copy
+              <Typography
                 className="text-t1-white"
-                textSize="l"
-                fontDefaults={FONT_CONFIGS.desktop_copy_large}
+                variant="lg"
+                fontDefaults={FONT_CONFIGS.desktop_Typography_large}
               >
                 Menschenzentriert zu arbeiten bedeutet für uns natürlich auch,
                 kundenzentriert zu arbeiten. Als Dienstleister, der wir sind,
@@ -156,7 +156,7 @@ export const CultureBlock = () => {
                 digitalen Produktlandschaft zu schaffen, gemeinsam zu verstehen,
                 wie Software zu einem zentralen Werttreiber wird und wie man
                 eine nachhaltige und hochperformante Umsetzung gewährleistet.
-              </Copy>
+              </Typography>
             </div>
           </div>
         }

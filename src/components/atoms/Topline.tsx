@@ -5,7 +5,7 @@ import { twJoin } from 'tailwind-merge'
 interface TopLineProps {
   colorClassName: string
   opacity?: number
-  textSize?: 'l' | 'sm'
+  variant?: 'l' | 'sm'
   uppercase?: boolean
   children: ReactNode
   fontDefaults?: string
@@ -17,7 +17,7 @@ export const TopLine = (props: TopLineProps) => {
     children,
     colorClassName,
     opacity = 1,
-    textSize = 'sm',
+    variant = 'sm',
     uppercase = true,
     className = '',
     fontDefaults,
@@ -28,7 +28,7 @@ export const TopLine = (props: TopLineProps) => {
       className={twJoin(
         'font-SpaceGroteskMedium',
         uppercase && 'uppercase',
-        textSize === 'sm' ? 'text-[11px]' : 'text-[16px]',
+        variant === 'sm' ? 'text-[11px]' : 'text-[16px]',
         colorClassName,
         fontDefaults,
         className

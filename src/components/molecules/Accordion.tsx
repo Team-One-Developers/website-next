@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import { FONT_CONFIGS } from '@/constants'
 import { twJoin, twMerge } from 'tailwind-merge'
 
-import Copy from '../atoms/Copy'
+import Typography from '../atoms/Typography'
 import { Heading } from '../atoms/Heading'
 import { TopLine } from '../atoms/Topline'
 
@@ -72,12 +72,12 @@ export const Accordion = (props: AccordionProps) => {
         </svg>
       </summary>
 
-      <Copy
-        textSize="l"
+      <Typography
+        variant="lg"
         className="m-0 mt-4 text-base text-t1-white md:ml-[6.6%] md:text-xl lg:w-[40%]"
       >
         {text}
-      </Copy>
+      </Typography>
     </details>
   )
 }

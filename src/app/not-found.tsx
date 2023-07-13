@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { PAGE_THEME } from '@/constants'
 
 import { Button } from '@/components/atoms/Button'
-import Copy from '@/components/atoms/Copy'
+import Typography from '@/components/atoms/Typography'
 import { Heading } from '@/components/atoms/Heading'
 
 import ContentWrapper from '@/components/layout/ContentWrapper'
@@ -16,13 +16,13 @@ export const NotFound = () => {
       <FullWidthSectionContainer>
         <ContentWrapper>
           <Heading tag="h1">404</Heading>
-          <Copy textSize="l" className="mt-4 text-t1-white">
+          <Typography variant="lg" className="mt-4 text-t1-white">
             Die Seite wurde nicht gefunden
-          </Copy>
+          </Typography>
           <br />
-          <Copy textSize="sm" className="w-full text-t1-white md:w-1/3">
+          <Typography variant="md" className="w-full text-t1-white md:w-1/3">
             Sorry, die Seite die du angefragt hast, scheint nicht zu existieren.
-          </Copy>
+          </Typography>
           <br />
           <Link href="/">
             <Button>Zur Startseite</Button>
