@@ -58,12 +58,7 @@
     transform: translateY(10px);
   }
   100% {
-    opacity: 1;
+    opacity: 100%;
     transform: translateY(0);
   }
-}
-
-.svgFill * {
-  fill: white;
-  color: white;
 }

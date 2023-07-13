@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { ReactElement, ReactNode, useState } from 'react'
 import Image from 'next/image'
 import { FONT_CONFIGS } from '@/constants'
 import { useInView } from 'react-intersection-observer'
@@ -9,28 +9,7 @@ import { twJoin, twMerge } from 'tailwind-merge'
 import Copy from '../atoms/Copy'
 import { Heading } from '../atoms/Heading'
 import ContentWrapper from '../layout/ContentWrapper'
-
-const FrontendTechnologyLogos = [
-  'css',
-  'gatsby',
-  'graphql',
-  'html',
-  'jest',
-  'nextjs',
-  'nodejs',
-  'react-logo',
-  'redux',
-  'typescript',
-]
-
-const BackendTechnologyLogos = [
-  'aws-lambda',
-  'java',
-  'kotlin',
-  'kubernetes',
-  'python',
-  'spring',
-]
+import { BackendTechnologyLogos, FrontendTechnologyLogos } from './TechIcons'
 
 export type LogoPath = {
   publicURL: string
@@ -145,7 +124,7 @@ export const TechStacks = () => {
             </div>
           </div>
 
-          <div className="flex justify-center p-12">
+          <div className="flex justify-center flex-wrap p-12">
             <div className="w-full sm:w-[80%] md:w-[70%] lg:w-[55%]">
               <TechStackLogos isBackendActive={isBackendActive} />
             </div>
@@ -165,11 +144,11 @@ const TechStackLogos = (props: TechStackLogosProps) => {
 
   return (
     <section ref={ref}>
-      {logos.map((logo: string, logoIndex: number) => (
+      {logos.map((Logo, logoIndex: number) => (
         <figure
           key={`${isBackendActive ? 'be' : 'fe'}-${logoIndex}`}
           className={twJoin(
-            'inline-block opacity-0 m-2 md:6',
+            'inline-block m-2 md:6',
             isBackendActive ? 'text-t1-white' : 'text-t1-black',
             sizeClasses
           )}
@@ -177,13 +156,11 @@ const TechStackLogos = (props: TechStackLogosProps) => {
             animation: `FadeIn 0.25s ease-in-out ${175 * logoIndex}ms 1
 		normal forwards paused`,
             animationPlayState: inView ? 'running' : 'paused',
+            opacity: 0,
           }}
         >
-          <Image
-            src={`/images/technologies/aws-lambda.svg`}
-            alt="Technology Logo"
-            fill
-            className=""
+          <Logo
+            fill={isBackendActive ? 'var(--t1-white)' : 'var(--t1-black)'}
           />
         </figure>
       ))}
