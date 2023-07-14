@@ -1,56 +1,131 @@
 import Image from 'next/image'
+import { FONT_CONFIGS } from '@/constants'
 
+import Copy from '@/components/atoms/Copy'
+import { CtaLink } from '@/components/atoms/CtaLink'
+import { Heading } from '@/components/atoms/Heading'
+import { ImageMask } from '@/components/atoms/ImageMask'
+
+import { Benefits } from '@/components/organisms/Benefits'
+
+import ContentWrapper from '@/components/layout/ContentWrapper'
+import { FullWidthSectionContainer } from '@/components/layout/FullWidthSectionContainer'
 import { PageLayout } from '@/components/layout/PageLayout'
 
 export const Career = () => {
   return (
     <PageLayout>
-      <div>
-        <p className="text p-8 text-4xl ">
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industrys standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only
-          five centuries, but also the leap into electronic typesetting,
-          remaining essentially unchanged. It was popularised in the 1960s with
-          the release of Letraset sheets containing Lorem Ipsum passages, and
-          more recently with desktop publishing software like Aldus PageMaker
-          including versions of Lorem Ipsum.
-        </p>
-        <p className="text p-8 text-4xl ">
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industrys standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only
-          five centuries, but also the leap into electronic typesetting,
-          remaining essentially unchanged. It was popularised in the 1960s with
-          the release of Letraset sheets containing Lorem Ipsum passages, and
-          more recently with desktop publishing software like Aldus PageMaker
-          including versions of Lorem Ipsum.
-        </p>
-        <p className="text p-8 text-4xl ">
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industrys standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only
-          five centuries, but also the leap into electronic typesetting,
-          remaining essentially unchanged. It was popularised in the 1960s with
-          the release of Letraset sheets containing Lorem Ipsum passages, and
-          more recently with desktop publishing software like Aldus PageMaker
-          including versions of Lorem Ipsum.
-        </p>
-        <p className="text p-8 text-4xl ">
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industrys standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only
-          five centuries, but also the leap into electronic typesetting,
-          remaining essentially unchanged. It was popularised in the 1960s with
-          the release of Letraset sheets containing Lorem Ipsum passages, and
-          more recently with desktop publishing software like Aldus PageMaker
-          including versions of Lorem Ipsum.
-        </p>
-      </div>
+      <ContentWrapper>
+        <FullWidthSectionContainer className="mt-12">
+          <Heading
+            tag="h1"
+            fontDefaults={FONT_CONFIGS.desktop_h3}
+            className="py-8"
+          >
+            Unser Team <br />- Dein Playground
+          </Heading>
+        </FullWidthSectionContainer>
+      </ContentWrapper>
+      <ContentWrapper className="mt-8 lg:flex lg:gap-8">
+        <ImageMask className="mt-8 lg:basis-[50%]">
+          <Image
+            src="/images/t1d_kai_knoerzer_079.jpg"
+            alt="Lazy man sleeping on a printer"
+            width={960}
+            height={1440}
+          />
+        </ImageMask>
+        <section className="mt-16 md:ml-12 lg:basis-[32.5%]">
+          <Image
+            src="/images/icons/person-1.svg"
+            alt="Person icon"
+            height={18}
+            width={18}
+            className="mb-4"
+          />
+          <Copy
+            textSize="l"
+            className="text-t1-green mb-8"
+            fontDefaults={FONT_CONFIGS.desktop_copy_large}
+          >
+            Wir verstehen uns nicht einfach nur als Arbeitgeber, sondern viel
+            mehr als aktiver Begleiter auf dem Weg zu deinen individuellen
+            Zielen. Unser Anspruch ist es, den Menschen in den Mittelpunkt
+            unseres unternehmerischen Handelns zu stellen – und dabei fangen wir
+            bei uns im Team an.
+          </Copy>
+          <Copy
+            textSize="sm"
+            className="text-t1-white"
+            fontDefaults={FONT_CONFIGS.desktop_copy_small}
+          >
+            Oft sagen wir in Gesprächen „wir sind Playground für den modernen
+            und ambitionierten Softwareentwickler“ – das beschreibt unser
+            Arbeitsumfeld am besten. Wir arbeiten in anspruchsvollen
+            Kundenprojekten mit spannenden Themen und modernen Tech-Stacks und
+            agilem Selbstverständnis. Weiterentwicklung ist für uns ein fester
+            Bestandteil unserer Unternehmensphilosophie: von Trainings und
+            Konferenzbesuchen über eigene Open-Source-Projekte bis hin zum
+            Spin-Off von eigenständiger Produktideen . Alles ein „Kann“ und kein
+            „Muss“, in jedem Fall aber vielseitig und mit unendlich vielen
+            Möglichkeiten.
+          </Copy>
+        </section>
+      </ContentWrapper>
+      <ContentWrapper className="mt-24 lg:mt-36">
+        <Benefits />
+      </ContentWrapper>
+      <ContentWrapper>
+        <Copy
+          className="mt-24 mb-6 lg:mt-32 text-t1-white m-0"
+          textSize="l"
+          fontDefaults={FONT_CONFIGS.desktop_copy_large}
+        >
+          Wir suchen dich:
+        </Copy>
+        <Copy
+          className="mt-24 mb-6 lg:mt-32 text-t1-white m-0"
+          textSize="l"
+          fontDefaults={FONT_CONFIGS.desktop_copy_large}
+        >
+          JOBS - ACCORDEON
+        </Copy>
+      </ContentWrapper>
+      <ContentWrapper className="mt-[6.5rem]">
+        <div className="flex flex-col gap-4 items-baseline lg:max-w-[32%]">
+          <Copy
+            textSize="l"
+            className="text-t1-white"
+            fontDefaults={FONT_CONFIGS.desktop_copy_large}
+          >
+            Oder du suchst uns?
+          </Copy>
+          <Copy
+            textSize="sm"
+            className="text-t1-white"
+            fontDefaults={FONT_CONFIGS.desktop_copy_small}
+          >
+            Um als Developer nicht nur gut zu sein, sondern es auch zu bleiben,
+            ist Initiative und Selbstständigkeit gefragt. Deshalb wissen wir das
+            auch bei unseren Bewerbern zu schätzen. Wenn Ihr der Meinung sein,
+            dass Ihr das perfekte neue Team-Mitglied für Team One Developers
+            seid, dann meldet euch einfach initiativ – am besten schon mit
+            aussagekräftigen Bewerbungsunterlagen.
+          </Copy>
+          <CtaLink variant="green" href="/contact">
+            Initiativ bewerben
+          </CtaLink>
+        </div>
+      </ContentWrapper>
+      <ContentWrapper className="mt-36">
+        <Image
+          src="/images/t1d_nov22_185.jpg"
+          alt="Picture of people in an Office"
+          width={1920}
+          height={800}
+          className="rounded-[25px]"
+        />
+      </ContentWrapper>
     </PageLayout>
   )
 }

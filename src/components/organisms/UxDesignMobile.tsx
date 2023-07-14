@@ -1,7 +1,7 @@
 'use client'
 
 import { ReactNode, useState } from 'react'
-import { BREAKPOINTS, FONT_CONFIGS, UX_CATEGORIES } from '@/constants'
+import { FONT_CONFIGS, UX_CATEGORIES } from '@/constants'
 
 import Copy from '../atoms/Copy'
 import { Heading } from '../atoms/Heading'
