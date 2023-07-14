@@ -112,7 +112,7 @@ export const Career = () => {
             seid, dann meldet euch einfach initiativ – am besten schon mit
             aussagekräftigen Bewerbungsunterlagen.
           </Copy>
-          <Link variant="green" href="/contact">
+          <Link variant="secondary" href="/contact">
             Initiativ bewerben
           </Link>
         </div>

@@ -15,8 +15,8 @@ export const CenteredSectionContainer = (
     left,
     right,
     className,
-    leftComponentClass = 'w-full',
-    rightComponentClass = 'w-full',
+    leftComponentClass,
+    rightComponentClass,
   }: CenteredSectionContainerProps
 ) => {
 

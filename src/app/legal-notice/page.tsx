@@ -10,12 +10,12 @@ import { FullWidthSectionContainer } from '@/components/layout/FullWidthSectionC
 import { PageLayout } from '@/components/layout/PageLayout'
 
 export const Legal = () => {
-  const legalParagraphCSS = FONT_CONFIGS.desktop_copy_small + ' text-t1-white'
+  const legalParagraphCSS = `${FONT_CONFIGS.desktop_copy_small} text-t1-white`
 
   return (
     <PageLayout>
       <ContentWrapper>
-        <FullWidthSectionContainer marginTopClassName="mt-20">
+        <FullWidthSectionContainer className="mt-20">
           <Heading
             className="mt-8"
             tag="h1"

@@ -1,21 +1,16 @@
 import { ReactNode } from 'react'
-
-import { twJoin } from 'tailwind-merge'
+import { twMerge } from 'tailwind-merge'
 
 interface FullWidthSectionContainerProps {
-  marginTopClassName?: string
   children: ReactNode
   className?: string
 }
 
-export const FullWidthSectionContainer = (
-  props: FullWidthSectionContainerProps
-) => {
-  const { children, marginTopClassName = 'mt-8', className } = props
-
+export const FullWidthSectionContainer = ({
+  children,
+  className,
+}: FullWidthSectionContainerProps) => {
   return (
-    <div className={twJoin(marginTopClassName, 'block pl-0 pr-0', className)}>
-      {children}
-    </div>
+    <div className={twMerge('block pl-0 pr-0 mt-8', className)}>{children}</div>
   )
 }

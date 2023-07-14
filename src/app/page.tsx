@@ -56,7 +56,7 @@ export const Home = () => {
   return (
     <PageLayout theme={PAGE_THEME.light}>
       <ContentWrapper className="mt-20">
-        <FullWidthSectionContainer marginTopClassName="mt-0">
+        <FullWidthSectionContainer className="mt-0">
           <Heading
             tag="h1"
             className="max-w-[790px] text-[3rem] uppercase leading-110 tracking-aBitTighter lg:text-[3rem] lg:leading-110"
@@ -91,7 +91,7 @@ export const Home = () => {
       />
 
       <ContentWrapper>
-        <FullWidthSectionContainer marginTopClassName="mt-20">
+        <FullWidthSectionContainer className="mt-20">
           <figure className="mb-6 flex h-[129px] w-full justify-center text-t1-green md:hidden">
             <DancingFigures />
           </figure>
