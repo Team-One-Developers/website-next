@@ -1,12 +1,6 @@
 import Image from 'next/image'
 import { FONT_CONFIGS } from '@/constants'
 
-import DancingHearts from '../../../../public/images/dancers/dancing-hearts.svg'
-import CupIcon from '../../../../public/images/icons/cup.svg'
-import HumanCentredIcon from '../../../../public/images/icons/humancentred.svg'
-import PersonIcon from '../../../../public/images/icons/person-1.svg'
-import WorldIcon from '../../../../public/images/icons/world-1.svg'
-import T1DLogoDecoration from '../../../../public/images/logo/t1d-sticker-neongreen.svg'
 import Copy from '../atoms/Copy'
 import { ImageDecoration } from '../atoms/ImageDecoration'
 import { ImageMask } from '../atoms/ImageMask'
@@ -35,7 +29,13 @@ export const CultureBlock = () => {
             >
               Was können wir als Tech-Unternehmen tun, um das attraktivste
               Arbeitsumfeld zu schaffen, das wir selbst je gesehen haben?
-              <Image src={CupIcon} alt="Cup SVG" className="-mt-2 inline" />
+              <Image
+                src="/images/icons/cup.svg"
+                alt="Cup SVG"
+                height={36}
+                width={36}
+                className="-mt-2 inline"
+              />
             </Copy>
           </>
         }
@@ -46,8 +46,10 @@ export const CultureBlock = () => {
               <div className="relative ">
                 <div className="absolute left-[15px] top-[20px] h-[85px] w-[70%] bg-t1-black" />
                 <Image
-                  src={T1DLogoDecoration}
+                  src="/images/logo/t1d-sticker-neongreen.svg"
                   alt="T1D Logo"
+                  width={125}
+                  height={144}
                   className="relative z-[2000]"
                 />
               </div>
@@ -72,7 +74,13 @@ export const CultureBlock = () => {
           <>
             <div className="mb-8 grid w-full grid-cols-[0.1fr_1.9fr] gap-x-4 gap-y-0">
               <div className="box-border p-2">
-                <Image src={WorldIcon} alt="World Globe Icon" className="" />
+                <Image
+                  src="/images/icons/world-1.svg"
+                  alt="World Globe Icon"
+                  width={18}
+                  height={18}
+                  className=""
+                />
               </div>
               <Copy
                 className="text-t1-white"
@@ -88,7 +96,13 @@ export const CultureBlock = () => {
             </div>
             <div className="mb-8 grid w-full grid-cols-[0.1fr_1.9fr] gap-x-4 gap-y-0">
               <div className="box-border p-2">
-                <Image src={PersonIcon} alt="Person Icon" className="" />
+                <Image
+                  src="/images/icons/person-1.svg"
+                  alt="Person Icon"
+                  width={18}
+                  height={18}
+                  className=""
+                />
               </div>
               <div>
                 <Copy
@@ -115,7 +129,7 @@ export const CultureBlock = () => {
         left={
           <div className="relative">
             <Image
-              src={DancingHearts}
+              src="/images/dancers/dancing-hearts.svg"
               alt="moving hearts"
               height={75}
               width={75}
@@ -141,7 +155,12 @@ export const CultureBlock = () => {
         left={
           <div className="mb-8 grid w-full grid-cols-[0.1fr_1.9fr] gap-x-4 gap-y-0">
             <div className="box-border p-2">
-              <Image src={HumanCentredIcon} alt="4 Personen Icon" />
+              <Image
+                src="/images/icons/humancentred.svg"
+                alt="4 Personen Icon"
+                width={28}
+                height={18}
+              />
             </div>
             <div>
               <Copy
