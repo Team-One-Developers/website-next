@@ -2,7 +2,7 @@ import Image from 'next/image'
 import { FONT_CONFIGS } from '@/constants'
 
 import Copy from '@/components/atoms/Copy'
-import { CtaLink } from '@/components/atoms/CtaLink'
+import { Link } from '@/components/atoms/Link'
 import { Heading } from '@/components/atoms/Heading'
 import { ImageMask } from '@/components/atoms/ImageMask'
 
@@ -112,9 +112,9 @@ export const Career = () => {
             seid, dann meldet euch einfach initiativ – am besten schon mit
             aussagekräftigen Bewerbungsunterlagen.
           </Copy>
-          <CtaLink variant="green" href="/contact">
+          <Link variant="green" href="/contact">
             Initiativ bewerben
-          </CtaLink>
+          </Link>
         </div>
       </ContentWrapper>
       <ContentWrapper className="mt-36">

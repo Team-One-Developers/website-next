@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --t1-white: #ffffff;
+    --t1-lightGray: #f2f2f2;
+    --t1-gray: #585858;
+    --t1-darkGray: #1d1d1d;
+    --t1-black: #000000;
+    --t1-green: #46ffad;
+    --t1-darkGreen: #21352b;
+    --t1-transparent: transparent;
+
+    --theme-bgColor: var(--t1-lightGray);
+
+    --theme-textColor: var(--t1-black);
+    --theme-textHoverColor: #1d1d1d80;
+
+    --theme-selectionBgColor: rgba(70, 255, 173, 0.6);
+  }
+
+  [data-theme='dark'] {
+    --theme-bgColor: var(--t1-black);
+
+    --theme-textColor: var(--t1-white);
+    --theme-textHoverColor: var(--t1-green);
+
+    --theme-selectionBgColor: rgba(70, 255, 173, 1);
+  }
+
+  ::selection,
+  ::moz-selection {
+    color: var(--t1-black);
+    background-color: var(--theme-selectionBgColor);
+  }
+
+  ::-webkit-scrollbar {
+    width: 12px;
+    opacity: 0;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #ffffffab;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #72ffc0b1;
+  }
+
+  @keyframes FadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    100% {
+      opacity: 100%;
+      transform: translateY(0);
+    }
+  }
+}

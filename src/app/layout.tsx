@@ -1,6 +1,6 @@
 import { twJoin } from 'tailwind-merge'
 
-import './globals.css'
+import '../styles/global.css'
 
 import localFont from 'next/font/local'
 

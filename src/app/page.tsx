@@ -85,7 +85,7 @@ export const Home = () => {
           <ChangingWords
             words={['software', 'agile', 'human', 'team']}
             className="text-t1-white"
-          ></ChangingWords>
+          />
         }
         overlayPosition="offsetTop"
       />
@@ -110,8 +110,9 @@ export const Home = () => {
         <CtaSection
           className="mt-16 lg:max-w-[25%]"
           contentText="Wir helfen Organisationen dabei, sich nachhaltig zu modernen digitalen Unternehmen zu wandeln. Immer mit dem Ziel, qualitativ hochwertige, skalierbare und durchdachte Software zu entwickeln, welche messbaren Mehrwert für unsere Kunden schafft."
-          ctaButtonLink={'/services'}
-          ctaButtonLabel="Unsere Leistungen"
+          link={'/services'}
+          linkLabel="Unsere Leistungen"
+          linkVariant="secondary"
           fontDefaultsContent={FONT_CONFIGS.desktop_copy_small}
         />
       </ContentWrapper>
@@ -145,9 +146,8 @@ export const Home = () => {
           topLineText="CULTURE @ T1D"
           headlineText="Wir sind menschen&shy;zentriert."
           contentText='Wir glauben an Fortschritt durch Technologie, an Nachhaltigkeit durch Qualität sowie an die Prinzipien des agilen Manifests. Und vor allem glauben wir an die "Zielgruppe Mensch", die im Mittelpunkt unseres Handelns stehen muss.'
-          ctaButtonLabel="Unsere Kultur"
-          ctaButtonLink="/culture"
-          buttonColor={'black'}
+          linkLabel="Unsere Kultur"
+          link="/culture"
           animate={!cultureContainerInView}
           headlineMarginBottomClass="mb-24"
           fontDefaultsHeadline={FONT_CONFIGS.desktop_h3}
@@ -204,8 +204,8 @@ export const Home = () => {
               contentText={
                 'Team One Developers ist für uns nicht nur ein Name, sondern ein Versprechen: Das Versprechen den Unterschied zu machen, nicht nur Standard sondern die beste Wahl zu sein. Für unsere Partner und ganz besonders für unsere Kollegen'
               }
-              ctaButtonLabel="Karriere"
-              ctaButtonLink="/career"
+              linkLabel="Karriere"
+              link="/career"
               fontDefaultsHeadline={FONT_CONFIGS.desktop_h3}
               fontDefaultsContent={FONT_CONFIGS.desktop_copy_small}
               headlineMarginBottomClass="mb-[2.875rem]"
