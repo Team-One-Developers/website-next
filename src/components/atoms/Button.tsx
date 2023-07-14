@@ -5,8 +5,8 @@ export const buttonVariants = tv({
   base: 'w-full cursor-pointer rounded-sm border-none px-[22px] py-4 font-SpaceGroteskRegular uppercase tracking-normal outline-none md:w-auto',
   variants: {
     color: {
-      black: 'bg-t1-black text-t1-green',
-      neongreen: 'bg-t1-green text-t1-darkGray',
+      primary: 'bg-t1-green text-t1-darkGray',
+      secondary: 'bg-t1-black text-t1-green',
     },
     size: {
       md: 'text-[14px] md:px-[14px] md:py-[10px]',
@@ -14,7 +14,7 @@ export const buttonVariants = tv({
     },
   },
   defaultVariants: {
-    color: 'neongreen',
+    color: 'primary',
     size: 'md',
   },
 })
