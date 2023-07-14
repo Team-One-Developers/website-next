@@ -1,17 +1,16 @@
 'use client'
 
 import { ReactNode, useState } from 'react'
-import { FONT_CONFIGS, UX_CATEGORIES } from '@/constants'
+import { UX_CATEGORIES } from '@/constants'
 
 import './style.css'
 
 import Image from 'next/image'
 import { twJoin, twMerge } from 'tailwind-merge'
 
-import Typography from '../atoms/Typography'
-import { Heading } from '../atoms/Heading'
 import { ImageMask } from '../atoms/ImageMask'
 import { TopLine } from '../atoms/Topline'
+import Typography from '../atoms/Typography'
 
 export const UxDesign = () => {
   const [activeCategory, setActiveCategory] = useState(UX_CATEGORIES.ux_design)
@@ -75,27 +74,19 @@ export const UxDesign = () => {
       <div className="mb-6 flex flex-col flex-nowrap items-center ">
         <TopLine
           colorClassName="text-t1-green"
-          fontDefaults={FONT_CONFIGS.paragraph_label}
+          fontVariant="paragraph_label"
           className="mb-4"
         >
           ( WE DEVELOP )
         </TopLine>
-        <Heading
-          tag="h2"
-          fontDefaults={FONT_CONFIGS.desktop_h2_medium}
-          className="font-medium"
-        >
+        <Typography as="h2" variant="h2_bold" className="font-medium">
           UX DESIGN
-        </Heading>
+        </Typography>
       </div>
 
       <div className="mb-8 flex justify-center">
         <div className="w-[45%] text-center">
-          <Typography
-            fontDefaults={FONT_CONFIGS.desktop_Typography_small_alternate}
-            variant="md"
-            className="text-t1-white"
-          >
+          <Typography variant="text_sm" className="text-t1-white">
             Mindestens so wichtig wie der Code den wir schreiben, ist das
             Design, in welchem digitale Produkte von ihren Anwendern
             wahrgenommen und regelmäßig genutzt werden. Die integrative
@@ -103,11 +94,7 @@ export const UxDesign = () => {
             unterschätzter Erfolgsfaktor performanter, interdisziplinärer
             Entwicklungsteams und entscheidend für den Produkterfolg.
           </Typography>
-          <Typography
-            fontDefaults={FONT_CONFIGS.desktop_Typography_small_alternate}
-            className="text-t1-white"
-            variant="md"
-          >
+          <Typography variant="text_sm" className="text-t1-white">
             Ausgehend von geschäfts- oder produkstrategischen Rahmenbedingungen
             bildet das User Experience Design die zentrale Schnittstelle
             zwischen Nutzer und Technologie. Wir unterstützen dabei

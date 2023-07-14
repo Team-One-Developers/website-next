@@ -1,22 +1,18 @@
-import { FONT_CONFIGS } from '@/constants'
-
-import './CompaniesPseudo.css'
-
 import Image from 'next/image'
 
-import { Heading } from '../atoms/Heading'
+import Typography from '../atoms/Typography'
 
 export const Companies = () => {
   return (
     <div className="bg-t1-transparent">
       <div className="flex justify-center text-center">
-        <Heading
-          className="HeadlinePseudo md:-mt-9"
-          tag="h2"
-          fontDefaults={FONT_CONFIGS.desktop_topline}
+        <Typography
+          className="before:content-['('] after:content-[':)'] before:tracking-[0.25rem] after:tracking-[0.25rem] md:-mt-9"
+          as="h2"
+          variant="text_topline"
         >
           Kunden, die auf T1D zählen
-        </Heading>
+        </Typography>
       </div>
       <div className="mt-12 flex flex-wrap gap-9">
         <div className="flex grow flex-wrap justify-around gap-9">

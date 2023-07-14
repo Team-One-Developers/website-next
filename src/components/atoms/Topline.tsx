@@ -1,14 +1,15 @@
 import { ReactNode } from 'react'
-
 import { twJoin } from 'tailwind-merge'
+
+import Typography, { TypographyProps } from './Typography'
 
 interface TopLineProps {
   colorClassName: string
   opacity?: number
-  variant?: 'l' | 'sm'
+  variant?: 'lg' | 'sm'
   uppercase?: boolean
   children: ReactNode
-  fontDefaults?: string
+  fontVariant?: TypographyProps['variant']
   className?: string
 }
 
@@ -20,7 +21,7 @@ export const TopLine = (props: TopLineProps) => {
     variant = 'sm',
     uppercase = true,
     className = '',
-    fontDefaults,
+    fontVariant,
   } = props
 
   return (
@@ -30,12 +31,11 @@ export const TopLine = (props: TopLineProps) => {
         uppercase && 'uppercase',
         variant === 'sm' ? 'text-[11px]' : 'text-[16px]',
         colorClassName,
-        fontDefaults,
         className
       )}
       style={{ opacity: opacity }}
     >
-      {children}
+      <Typography variant={fontVariant}>{children}</Typography>
     </span>
   )
 }

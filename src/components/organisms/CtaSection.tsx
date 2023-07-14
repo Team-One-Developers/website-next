@@ -1,9 +1,9 @@
 import { twJoin } from 'tailwind-merge'
 
-import Typography from '../atoms/Typography'
 import { CtaLink } from '../atoms/CtaLink'
 import { Heading } from '../atoms/Heading'
 import { TopLine } from '../atoms/Topline'
+import Typography, { TypographyProps } from '../atoms/Typography'
 
 interface CtaSectionProps {
   topLineText?: string
@@ -14,9 +14,9 @@ interface CtaSectionProps {
   buttonColor?: 'black' | 'green'
   animate?: boolean
   children?: React.ReactNode
-  fontDefaultsContent?: string
-  fontDefaultsHeadline?: string
-  headlineMarginBottomClass?: string
+  contentVariant: TypographyProps['variant']
+  headlineVariant: TypographyProps['variant']
+  headlineClassName?: string
   className?: string
 }
 
@@ -30,9 +30,9 @@ export const CtaSection = (props: CtaSectionProps) => {
     buttonColor,
     children,
     animate,
-    fontDefaultsContent,
-    fontDefaultsHeadline,
-    headlineMarginBottomClass = 'mb-8',
+    contentVariant,
+    headlineVariant,
+    headlineClassName = '',
     className,
   } = props
 
@@ -50,13 +50,13 @@ export const CtaSection = (props: CtaSectionProps) => {
         </TopLine>
       )}
       {headlineText && (
-        <Heading
-          className={twJoin('', headlineMarginBottomClass)}
-          fontDefaults={fontDefaultsHeadline}
-          tag="h2"
+        <Typography
+          className={twJoin('mb-8', headlineClassName)}
+          as="h2"
+          variant={headlineVariant}
         >
           {headlineText}
-        </Heading>
+        </Typography>
       )}
       <div
         style={{
@@ -65,11 +65,7 @@ export const CtaSection = (props: CtaSectionProps) => {
           translate: animate ? '0 20px' : '',
         }}
       >
-        <Typography
-          className="m-0 mb-6 text-t1-black"
-          variant="md"
-          fontDefaults={fontDefaultsContent}
-        >
+        <Typography className="m-0 mb-6 text-t1-black" variant={contentVariant}>
           {contentText}
         </Typography>
         <CtaLink variant={buttonColor} href={ctaButtonLink}>

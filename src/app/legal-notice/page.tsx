@@ -1,72 +1,56 @@
-import { FONT_CONFIGS } from '@/constants'
 import { twJoin } from 'tailwind-merge'
 
 import './style.css'
 
 import { Heading } from '@/components/atoms/Heading'
+import Typography from '@/components/atoms/Typography'
 
 import ContentWrapper from '@/components/layout/ContentWrapper'
 import { FullWidthSectionContainer } from '@/components/layout/FullWidthSectionContainer'
 import { PageLayout } from '@/components/layout/PageLayout'
 
 export const Legal = () => {
-  const legalParagraphCSS = `${FONT_CONFIGS.desktop_Typography_small} text-t1-white`
-
   return (
     <PageLayout>
       <ContentWrapper>
         <FullWidthSectionContainer marginTopClassName="mt-20">
-          <Heading
-            className="mt-8"
-            tag="h1"
-            fontDefaults={FONT_CONFIGS.desktop_h3}
-          >
+          <Typography className="mt-8" as="h1" variant="h3">
             Impressum
-          </Heading>
-          <Heading
-            className="mt-8"
-            tag="h2"
-            fontDefaults={FONT_CONFIGS.desktop_h4}
-          >
+          </Typography>
+          <Typography className="mt-8" as="h2" variant="h4">
             Verantwortlich für den Inhalt dieser Website
-          </Heading>
-          <address className={legalParagraphCSS}>
+          </Typography>
+          <Typography as="address" className="text-t1-white" variant="text_sm">
             Team One Developers GmbH <br />
             Hospitalstraße 35 <br />
             70174 Stuttgart
-          </address>
-          <Heading
-            className="mt-8"
-            tag="h2"
-            fontDefaults={FONT_CONFIGS.desktop_h4}
-          >
+          </Typography>
+          <Typography className="mt-8" as="h2" variant="h4">
             Vertreten durch die Geschäftsführung
-          </Heading>
-          <ul className={twJoin('legalUL', legalParagraphCSS)}>
+          </Typography>
+          <Typography
+            as="ul"
+            className="legalUI text-t1-white"
+            variant="text_sm"
+          >
             <li className="marker legalULLI">Timo Brückel</li>
             <li className="legalULLI">Julian Richter</li>
             <li className="legalULLI">Michael Krause</li>
-          </ul>
-          <Heading
-            className="mt-8"
-            tag="h2"
-            fontDefaults={FONT_CONFIGS.desktop_h4}
-          >
+          </Typography>
+
+          <Typography className="mt-8" as="h2" variant="h4">
             Registereintrag
-          </Heading>
-          <article className={legalParagraphCSS}>
+          </Typography>
+          <Typography as="article" className="text-t1-white" variant="text_sm">
             Eintragung im Handelsregister. <br />
             Registergericht: Amtsgericht <br />
             Stuttgart Registernummer: HRB 777716
-          </article>
-          <Heading
-            className="mt-8"
-            tag="h2"
-            fontDefaults={FONT_CONFIGS.desktop_h4}
-          >
+          </Typography>
+
+          <Typography className="mt-8" as="h2" variant="h4">
             Datenschutz
-          </Heading>
-          <p className={legalParagraphCSS}>
+          </Typography>
+          <Typography as="p" className="text-t1-white" variant="text_sm">
             Sofern innerhalb des Internetangebotes die Möglichkeit zur Eingabe
             persönlicher oder geschäftlicher Daten (E-Mail Adressen, Namen,
             Anschriften) besteht, so erfolgt die Preisgabe dieser Daten seitens
@@ -87,34 +71,27 @@ export const Legal = () => {
               Datenschutz
             </a>
             .
-          </p>
-          <Heading
-            className="mt-8"
-            tag="h2"
-            fontDefaults={FONT_CONFIGS.desktop_h4}
-          >
+          </Typography>
+
+          <Typography className="mt-8" as="h2" variant="h4">
             Verbraucherinformation gemäß Verbraucherstreitbeilegungsgesetz
-          </Heading>
-          <p className={legalParagraphCSS}>
+          </Typography>
+          <Typography as="p" className="text-t1-white" variant="text_sm">
             Die Team One Developers GmbH ist nicht bereit und verpflichtet, an
             Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle
             teilzunehmen.
-          </p>
-          <Heading
-            className="mt-8"
-            tag="h2"
-            fontDefaults={FONT_CONFIGS.desktop_h4}
-          >
+          </Typography>
+          <Typography className="mt-8" as="h2" variant="h4">
             Verlinkungen
-          </Heading>
-          <p className={legalParagraphCSS}>
+          </Typography>
+          <Typography as="p" className="text-t1-white" variant="text_sm">
             Diese Webseite enthält Verlinkungen zu Webseiten Dritter. Für die
             Inhalte der Webseiten Dritter übernimmt die Team One Developers GmbH
             keine Haftung.
-          </p>
-          <strong className={legalParagraphCSS}>
+          </Typography>
+          <Typography as="strong" className="text-t1-white" variant="text_sm">
             Keine Gewähr für Richtigkeit, Vollständigkeit und Aktualität.
-          </strong>
+          </Typography>
         </FullWidthSectionContainer>
       </ContentWrapper>
     </PageLayout>

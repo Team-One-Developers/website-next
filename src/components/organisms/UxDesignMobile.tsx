@@ -1,11 +1,10 @@
 'use client'
 
 import { ReactNode, useState } from 'react'
-import { FONT_CONFIGS, UX_CATEGORIES } from '@/constants'
+import { UX_CATEGORIES } from '@/constants'
 
-import Typography from '../atoms/Typography'
-import { Heading } from '../atoms/Heading'
 import { TopLine } from '../atoms/Topline'
+import Typography from '../atoms/Typography'
 
 import './style.css'
 
@@ -58,14 +57,14 @@ export const UxDesignMobile = () => {
     <div className="transitionAll">
       <div className="flex items-center gap-4 flex-col flex-nowrap mb-4">
         <TopLine colorClassName="text-t1-green">( WE DEVELOP )</TopLine>
-        <Heading tag="h2" fontDefaults={FONT_CONFIGS.desktop_h2_medium}>
+        <Typography as="h2" variant="h2_bold">
           UX DESIGN
-        </Heading>
+        </Typography>
       </div>
 
       <div className="mb-8 flex justify-center">
         <div className="w-[75%] text-center">
-          <Typography variant="md" className="text-t1-white">
+          <Typography variant="text_sm" className="text-t1-white">
             Mindestens so wichtig wie der Code den wir schreiben, ist das
             Design, in welchem digitale Produkte von ihren Anwendern
             wahrgenommen und regelmäßig genutzt werden. Die integrative
@@ -73,7 +72,7 @@ export const UxDesignMobile = () => {
             unterschätzter Erfolgsfaktor performanter, interdisziplinärer
             Entwicklungsteams und entscheidend für den Produkterfolg.
           </Typography>
-          <Typography className="text-t1-white" variant="md">
+          <Typography variant="text_sm" className="text-t1-white">
             Ausgehend von geschäfts- oder produkstrategischen Rahmenbedingungen
             bildet das User Experience Design die zentrale Schnittstelle
             zwischen Nutzer und Technologie. Wir unterstützen dabei

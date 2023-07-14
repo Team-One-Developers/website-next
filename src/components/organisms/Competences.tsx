@@ -1,11 +1,8 @@
-import { useEffect, useState } from 'react'
-import { FONT_CONFIGS } from '@/constants'
-import { IntersectionOptions, useInView } from 'react-intersection-observer'
 import { twJoin } from 'tailwind-merge'
 
-import Typography from '../atoms/Typography'
 import { Heading } from '../atoms/Heading'
 import { TopLine } from '../atoms/Topline'
+import Typography from '../atoms/Typography'
 import ContentWrapper from '../layout/ContentWrapper'
 
 export const Competences = () => {
@@ -27,17 +24,14 @@ export const Competences = () => {
         <span className="font-SpaceGroteskRegular font-medium not-italic text-xs leading-110 tracking-aBitTighter uppercase min-w-[7%]">
           ( 0{count} / 03 )
         </span>
-        <Heading
-          tag="h3"
-          fontDefaults={FONT_CONFIGS.desktop_h3}
+        <Typography
+          as="h3"
+          variant="h3"
           className="md:text-[2rem] mt-[14px] lg:mt-0 font-semibold group-hover:text-inherit lg:max-w-[440px] w-full"
         >
           {headline}
-        </Heading>
-        <Typography
-          fontDefaults={FONT_CONFIGS.desktop_Typography_small}
-          className="mt-[14px] lg:mt-0"
-        >
+        </Typography>
+        <Typography variant="text_sm" className="mt-[14px] lg:mt-0">
           {text}
         </Typography>
       </div>
@@ -52,17 +46,14 @@ export const Competences = () => {
             <TopLine
               colorClassName="text-t1-green"
               className="mb-5 uppercase"
-              fontDefaults={FONT_CONFIGS.desktop_topline}
+              fontVariant="text_topline"
             >
               ( WE DEVELOP )
             </TopLine>
-            <Heading tag="h2" fontDefaults={FONT_CONFIGS.desktop_h2_medium}>
+            <Typography as="h2" variant="h2_bold">
               BUSINESS & <br /> PRODUCT STRATEGY
-            </Heading>
-            <Typography
-              className="text-center mt-3.5"
-              fontDefaults={FONT_CONFIGS.desktop_Typography_small}
-            >
+            </Typography>
+            <Typography className="text-center mt-3.5" variant="text_sm">
               Von der digitalen Geschäfts- und Geschäftsfeldstrategie, über die
               Produktstrategie bis hin zur UX-Strategie beraten wir
               branchenübergreifend mit unseren Strategie-Experten Startups von

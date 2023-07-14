@@ -1,10 +1,8 @@
 import Image from 'next/image'
-import { FONT_CONFIGS } from '@/constants'
 import { twJoin } from 'tailwind-merge'
 
-import Typography from '../atoms/Typography'
-import { Heading } from '../atoms/Heading'
 import { TopLine } from '../atoms/Topline'
+import Typography from '../atoms/Typography'
 import ContentWrapper from '../layout/ContentWrapper'
 
 interface ReferenceSliderEntryProps {
@@ -100,27 +98,24 @@ const ReferencesSliderEntry = (props: ReferenceSliderEntryProps) => {
           <Image src={imageSrc} alt="" fill style={{ objectFit: 'contain' }} />
         </div>
         <figcaption className="flex flex-col justify-center xl:grow-0 xl:shrink-0 xl:basis-[45%]">
-          <Heading
-            tag="h2"
-            fontDefaults={FONT_CONFIGS.desktop_h2_medium}
-            colorClassName="text-t1-black"
-          >
+          <Typography as="h2" variant="h2_bold" className="text-t1-black">
             {headline}
-          </Heading>
+          </Typography>
           <ul className="flex gap-4 mt-2 text-t1-black">
             {technologyList?.map((technology) => (
-              <li
-                className={twJoin('uppercase', FONT_CONFIGS.desktop_topline)}
+              <Typography
+                as="li"
+                variant="text_topline"
+                className="uppercase"
                 key={technology}
               >
                 {technology}
-              </li>
+              </Typography>
             ))}
           </ul>
           <Typography
             className="mt-8 md:pr-20 xl:pr-28 text-t1-black"
-            variant="md"
-            fontDefaults={FONT_CONFIGS.desktop_Typography_small}
+            variant="text_sm"
           >
             {infoText}
           </Typography>

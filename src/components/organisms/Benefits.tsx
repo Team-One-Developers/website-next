@@ -2,11 +2,9 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
-import { FONT_CONFIGS } from '@/constants'
 import { twJoin } from 'tailwind-merge'
 
-import Copy from '../atoms/Copy'
-import { Heading } from '../atoms/Heading'
+import Typography from '../atoms/Typography'
 
 export const Benefits = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | undefined>(1)
@@ -39,20 +37,16 @@ export const Benefits = () => {
         onMouseLeave={() => setHoveredIndex(undefined)}
       >
         <Image src={icon} alt="Little icon" height={36} width={36} />
-        <Heading
+        <Typography
           className="mb-2 text-base text-t1-green mt-2"
-          tag="h3"
-          fontDefaults={FONT_CONFIGS.desktop_topline_large}
+          as="h3"
+          variant="text_topline_lg"
         >
           {headline}
-        </Heading>
-        <Copy
-          textSize="sm"
-          className="m-0 text-t1-white"
-          fontDefaults={FONT_CONFIGS.desktop_copy_small}
-        >
+        </Typography>
+        <Typography variant="text_sm" className="m-0 text-t1-white">
           {text}
-        </Copy>
+        </Typography>
       </div>
     )
   }
@@ -60,13 +54,9 @@ export const Benefits = () => {
   return (
     <div className="bg-t1-black text-t1-white lg:flex">
       <div className="relative lg:basis-[50%]">
-        <Heading
-          tag="h2"
-          fontDefaults={FONT_CONFIGS.desktop_h3}
-          className="lg:max-w-[60%]"
-        >
+        <Typography as="h2" variant="h3" className="lg:max-w-[60%]">
           Unsere Benefits auf einen Blick
-        </Heading>
+        </Typography>
         <video
           className={twJoin(
             'absolute right-0 h-[200px] aspect-[16/9] object-cover translate-y-[50px] translate-x-[50px] hidden lg:block',

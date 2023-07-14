@@ -1,10 +1,11 @@
 'use client'
 
-import { ReactNode, useEffect, useRef, useState } from 'react'
-import useInterval from 'use-interval'
-import { FONT_CONFIGS } from '@/constants'
+import { useRef, useState } from 'react'
 import { twJoin, twMerge } from 'tailwind-merge'
+import useInterval from 'use-interval'
 import { useMediaQuery } from 'usehooks-ts'
+
+import Typography from '../atoms/Typography'
 
 const LINE_HEIGHTS = {
   small: {
@@ -31,10 +32,6 @@ export const ChangingWords = (props: ChangingWordsProps) => {
   const isLg = useMediaQuery('(min-width: 992px)')
 
   const height = smallVariant ? LINE_HEIGHTS.small : LINE_HEIGHTS.big
-
-  const fontDefaults = smallVariant
-    ? FONT_CONFIGS.changing_words_small
-    : FONT_CONFIGS.changing_words
 
   const listItemsRefs = useRef<Array<HTMLLIElement | null>>([])
   const listRef = useRef<HTMLUListElement | null>(null)
@@ -99,9 +96,9 @@ export const ChangingWords = (props: ChangingWordsProps) => {
   )
 
   return (
-    <figure
-      className={twMerge(
-        fontDefaults,
+    <Typography
+      as="figure"
+      className={twJoin(
         'flex uppercase',
         smallVariant
           ? 'h-[0.825rem] gap-2 before:content-["▾"]'
@@ -111,6 +108,6 @@ export const ChangingWords = (props: ChangingWordsProps) => {
       )}
     >
       {wordList}
-    </figure>
+    </Typography>
   )
 }

@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import { FONT_CONFIGS } from '@/constants'
 
 import { TopLine } from '../atoms/Topline'
 import { Accordion } from '../molecules/Accordion'
@@ -14,7 +13,7 @@ export const Values = () => {
       <div className="flex justify-between p-2 lg:mt-36">
         <TopLine
           colorClassName="text-t1-white"
-          fontDefaults={FONT_CONFIGS.desktop_topline}
+          fontVariant="text_topline"
           opacity={1}
         >
           (T1D HIGH FIVE)

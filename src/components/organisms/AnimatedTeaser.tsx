@@ -3,10 +3,7 @@ import { twJoin } from 'tailwind-merge'
 
 import './style.css'
 
-import { FONT_CONFIGS } from '@/constants'
-
 import Typography from '../atoms/Typography'
-import { Heading } from '../atoms/Heading'
 
 type AnimatedTeaserProps = {
   backgroundColor?: string
@@ -37,24 +34,20 @@ export const AnimatedTeaser = forwardRef<HTMLDivElement, AnimatedTeaserProps>(
           />
           <div className="relative w-[85%] text-center md:w-[70%] lg:w-[55%] xl:w-[40%]">
             <div className="mb-[0.75rem]">
-              <Typography
-                variant="lg"
-                fontDefaults={FONT_CONFIGS.desktop_Typography_large}
-                className="m-0 text-t1-black"
-              >
+              <Typography variant="text_lg" className="m-0 text-t1-black">
                 Wir arbeiten
               </Typography>
             </div>
 
-            <Heading
+            <Typography
               className="mb-20 md:text-[3.75rem] 2xl:mb-[11.25rem]"
-              tag="h2"
-              fontDefaults={FONT_CONFIGS.desktop_h1_medium}
+              as="h2"
+              variant="h1"
             >
               Integrativ & Agil
-            </Heading>
+            </Typography>
 
-            <Typography className="text-t1-black" variant="lg">
+            <Typography className="text-t1-black" variant="text_lg">
               Integrativ bedeutet für uns nicht nur, nah am Kunden zu sein,
               sondern vor allem auch die Produkte, an denen wir arbeiten, so zu
               entwickeln, als wären es unsere eigenen. Team One for One Team.

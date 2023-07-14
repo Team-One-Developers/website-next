@@ -1,12 +1,11 @@
 'use client'
 
 import Image from 'next/image'
-import { FONT_CONFIGS } from '@/constants'
 import { useMediaQuery } from 'usehooks-ts'
 
-import Typography from '@/components/atoms/Typography'
-import { Heading } from '@/components/atoms/Heading'
+import { Button, buttonVariants } from '@/components/atoms/Button'
 import { TopLine } from '@/components/atoms/Topline'
+import Typography from '@/components/atoms/Typography'
 
 import { Hero } from '@/components/molecules/Hero'
 
@@ -20,7 +19,6 @@ import { UxDesignMobile } from '@/components/organisms/UxDesignMobile'
 import ContentWrapper from '@/components/layout/ContentWrapper'
 import { FullWidthSectionContainer } from '@/components/layout/FullWidthSectionContainer'
 import { PageLayout } from '@/components/layout/PageLayout'
-import { Button, buttonVariants } from '@/components/atoms/Button'
 
 export const Services = () => {
   const isXl = useMediaQuery('(min-width: 1200px)')
@@ -28,14 +26,10 @@ export const Services = () => {
   return (
     <PageLayout>
       <ContentWrapper className="mt-20 lg:flex gap-[15%]">
-        <Heading
-          className="lg:basis-[35%]"
-          tag="h1"
-          fontDefaults={FONT_CONFIGS.desktop_h3}
-        >
+        <Typography className="lg:basis-[35%]" as="h1" variant="h3">
           Wir schaffen nachhaltige Mehrwerte durch exzellente Software &
           menschenzentrierte Arbeitsweisen.
-        </Heading>
+        </Typography>
 
         <div className="mt-16 lg:mt-0 basis-[32.5%]">
           <Image
@@ -45,22 +39,14 @@ export const Services = () => {
             height={18}
             className="mb-4"
           />
-          <Typography
-            className="mb-8 text-t1-green text-lg"
-            variant="lg"
-            fontDefaults={FONT_CONFIGS.desktop_Typography_large}
-          >
+          <Typography className="mb-8 text-t1-green text-lg" variant="text_xl">
             Digitale Geschäftsmodelle, digitale Kunden und remote-first Teams
             erfordern modernere Methoden, Technologien und Geisteshaltungen als
             die klassische Welt. Als Software-Beratung befähigen wir unsere
             Kunden, im digitalen Wettbewerb erfolgreich zu sein - strategisch,
             technologisch und methodisch.
           </Typography>
-          <Typography
-            className=" text-t1-white"
-            variant="md"
-            fontDefaults={FONT_CONFIGS.desktop_Typography_small}
-          >
+          <Typography className=" text-t1-white" variant="text_sm">
             Wir kombinieren umfassendes Fachwissen mit der Begeisterung für neue
             Technologien, um innovative, hochmoderne, stabile und skalierbare
             Enterprise Plattformen zu bauen. Vom Startup bis hin zum

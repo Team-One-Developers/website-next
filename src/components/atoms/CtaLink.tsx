@@ -1,7 +1,8 @@
-import { FONT_CONFIGS } from '@/constants'
-import Link from 'next/link'
 import { ReactNode } from 'react'
+import Link from 'next/link'
 import { twMerge } from 'tailwind-merge'
+
+import Typography from './Typography'
 
 export const CtaLink = ({
   href,
@@ -15,9 +16,7 @@ export const CtaLink = ({
   return (
     <Link
       className={twMerge(
-        'inline-block',
-        FONT_CONFIGS.cta_button,
-        'uppercase',
+        'inline-block uppercase',
         variant === 'black'
           ? 'bg-t1-black text-t1-green'
           : 'bg-t1-green text-t1-darkGray',
@@ -25,7 +24,9 @@ export const CtaLink = ({
       )}
       href={href}
     >
-      {children}
+      <Typography as="p" variant="cta_button">
+        {children}
+      </Typography>
     </Link>
   )
 }

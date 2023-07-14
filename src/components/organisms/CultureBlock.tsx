@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import { FONT_CONFIGS } from '@/constants'
 
 import DancingHearts from '../../../../public/images/dancers/dancing-hearts.svg'
 import CupIcon from '../../../../public/images/icons/cup.svg'
@@ -7,9 +6,9 @@ import HumanCentredIcon from '../../../../public/images/icons/humancentred.svg'
 import PersonIcon from '../../../../public/images/icons/person-1.svg'
 import WorldIcon from '../../../../public/images/icons/world-1.svg'
 import T1DLogoDecoration from '../../../../public/images/logo/t1d-sticker-neongreen.svg'
-import Typography from '../atoms/Typography'
 import { ImageDecoration } from '../atoms/ImageDecoration'
 import { ImageMask } from '../atoms/ImageMask'
+import Typography from '../atoms/Typography'
 import { TwoColumnsSectionContainer } from '../layout/TwoColumnsSectionContainer'
 
 export const CultureBlock = () => {
@@ -19,20 +18,12 @@ export const CultureBlock = () => {
         className="mt-14"
         left={
           <>
-            <Typography
-              variant="md"
-              className="text-t1-white"
-              fontDefaults={FONT_CONFIGS.desktop_Typography_small}
-            >
+            <Typography variant="text_sm" className="text-t1-white">
               Dass es schwer ist, Tech-Talente für sich zu gewinnen ist kein
               Geheimnis mehr. Uns beschäftigt daher eine Frage so intensiv wie
               kaum eine andere:
             </Typography>
-            <Typography
-              variant="xl"
-              className="text-t1-white"
-              fontDefaults={FONT_CONFIGS.desktop_Typography_xtra_large}
-            >
+            <Typography variant="text_xl" className="text-t1-white">
               Was können wir als Tech-Unternehmen tun, um das attraktivste
               Arbeitsumfeld zu schaffen, das wir selbst je gesehen haben?
               <Image src={CupIcon} alt="Cup SVG" className="-mt-2 inline" />
@@ -74,11 +65,7 @@ export const CultureBlock = () => {
               <div className="box-border p-2">
                 <Image src={WorldIcon} alt="World Globe Icon" className="" />
               </div>
-              <Typography
-                className="text-t1-white"
-                variant="lg"
-                fontDefaults={FONT_CONFIGS.desktop_Typography_large}
-              >
+              <Typography className="text-t1-white" variant="text_lg">
                 Die wichtigsten Antworten auf diese Frage sind für uns: Werte zu
                 definieren, Werte zu leben und sie auch zu schützen. Dabei
                 ehrlich und authentisch zu sein, nichts zu versprechen was man
@@ -91,11 +78,7 @@ export const CultureBlock = () => {
                 <Image src={PersonIcon} alt="Person Icon" className="" />
               </div>
               <div>
-                <Typography
-                  className="text-t1-white"
-                  variant="lg"
-                  fontDefaults={FONT_CONFIGS.desktop_Typography_large}
-                >
+                <Typography className="text-t1-white" variant="text_lg">
                   Und zu guter Letzt: Individuelle Rahmenbedingungen zu
                   schaffen. Diese Antworten liefern uns einen natürlichen
                   Treibstoff, mit dem wir wachsen und gedeihen, der uns als Team
@@ -144,11 +127,7 @@ export const CultureBlock = () => {
               <Image src={HumanCentredIcon} alt="4 Personen Icon" />
             </div>
             <div>
-              <Typography
-                className="text-t1-white"
-                variant="lg"
-                fontDefaults={FONT_CONFIGS.desktop_Typography_large}
-              >
+              <Typography className="text-t1-white" variant="text_lg">
                 Menschenzentriert zu arbeiten bedeutet für uns natürlich auch,
                 kundenzentriert zu arbeiten. Als Dienstleister, der wir sind,
                 heißt das natürlich in allererster Linie, ein klares Verständnis

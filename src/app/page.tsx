@@ -1,13 +1,13 @@
 'use client'
 
 import Image from 'next/image'
-import { FONT_CONFIGS, PAGE_THEME } from '@/constants'
+import { PAGE_THEME } from '@/constants'
 import { useInView } from 'react-intersection-observer'
 
-import Typography from '@/components/atoms/Typography'
 import { DancingFigures } from '@/components/atoms/DancingFigures'
 import { Heading } from '@/components/atoms/Heading'
 import { ImageMask } from '@/components/atoms/ImageMask'
+import Typography from '@/components/atoms/Typography'
 
 import { Companies } from '@/components/molecules/Companies'
 import { Hero } from '@/components/molecules/Hero'
@@ -95,11 +95,7 @@ export const Home = () => {
           <figure className="mb-6 flex h-[129px] w-full justify-center text-t1-green md:hidden">
             <DancingFigures />
           </figure>
-          <Typography
-            className="text-t1-black"
-            variant="xl"
-            fontDefaults={FONT_CONFIGS.desktop_h2_regular}
-          >
+          <Typography className="text-t1-black" variant="h2">
             Wir sind Technologie-Experten und verstehen uns als integrativer
             Entwicklungs- & Beratungspartner in komplexen Softwareprojekten.{' '}
             <DancingFigures className="hidden h-16 px-4 py-0 align-middle text-t1-green md:inline" />
@@ -112,7 +108,8 @@ export const Home = () => {
           contentText="Wir helfen Organisationen dabei, sich nachhaltig zu modernen digitalen Unternehmen zu wandeln. Immer mit dem Ziel, qualitativ hochwertige, skalierbare und durchdachte Software zu entwickeln, welche messbaren Mehrwert für unsere Kunden schafft."
           ctaButtonLink={'/services'}
           ctaButtonLabel="Unsere Leistungen"
-          fontDefaultsContent={FONT_CONFIGS.desktop_Typography_small}
+          contentVariant="text_sm"
+          headlineVariant="h2"
         />
       </ContentWrapper>
 
@@ -149,9 +146,9 @@ export const Home = () => {
           ctaButtonLink="/culture"
           buttonColor={'black'}
           animate={!cultureContainerInView}
-          headlineMarginBottomClass="mb-24"
-          fontDefaultsHeadline={FONT_CONFIGS.desktop_h3}
-          fontDefaultsContent={FONT_CONFIGS.desktop_Typography_small}
+          headlineClassName="mb-24"
+          headlineVariant="h3"
+          contentVariant="text_sm"
         >
           <Image
             src="/images/icons/person-1.svg"
@@ -206,9 +203,9 @@ export const Home = () => {
               }
               ctaButtonLabel="Karriere"
               ctaButtonLink="/career"
-              fontDefaultsHeadline={FONT_CONFIGS.desktop_h3}
-              fontDefaultsContent={FONT_CONFIGS.desktop_Typography_small}
-              headlineMarginBottomClass="mb-[2.875rem]"
+              headlineVariant="h3"
+              contentVariant="text_sm"
+              headlineClassName="mb-[2.875rem]"
             >
               <Image
                 src="/images/icons/world-1.svg"

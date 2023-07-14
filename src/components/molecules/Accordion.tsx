@@ -1,12 +1,10 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { FONT_CONFIGS } from '@/constants'
 import { twJoin, twMerge } from 'tailwind-merge'
 
-import Typography from '../atoms/Typography'
-import { Heading } from '../atoms/Heading'
 import { TopLine } from '../atoms/Topline'
+import Typography from '../atoms/Typography'
 
 interface AccordionProps {
   allOpen: boolean
@@ -43,18 +41,18 @@ export const Accordion = (props: AccordionProps) => {
           className="mb-[10px] block md:w-[6.6%]"
           colorClassName="text-t1-white"
           opacity={1}
-          fontDefaults={FONT_CONFIGS.sub_column}
+          fontVariant="sub_column"
         >
           {counter}
         </TopLine>
-        <Heading
-          tag="h3"
-          fontDefaults={FONT_CONFIGS.desktop_h2_regular}
+        <Typography
+          as="h3"
+          variant="h2"
           className="uppercase text-inherit"
           style={{ transition: '0.25s' }}
         >
           {headline}
-        </Heading>
+        </Typography>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="228.99 210.87 137.3 173.53"
@@ -73,7 +71,7 @@ export const Accordion = (props: AccordionProps) => {
       </summary>
 
       <Typography
-        variant="lg"
+        variant="text_lg"
         className="m-0 mt-4 text-base text-t1-white md:ml-[6.6%] md:text-xl lg:w-[40%]"
       >
         {text}
