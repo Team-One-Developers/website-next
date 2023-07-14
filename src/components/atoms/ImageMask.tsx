@@ -1,6 +1,8 @@
 import { forwardRef, ReactNode } from 'react'
 import { twJoin } from 'tailwind-merge'
 
+import "./Mask.css"
+
 
 interface ImageMaskProps {
   children: ReactNode
@@ -12,13 +14,7 @@ export const ImageMask = forwardRef<HTMLDivElement, ImageMaskProps>(
     return (
       <div
         ref={ref}
-        className={twJoin('inline-block', className)}
-        style={{
-          maskImage: 'url(/images/logo/logoform.svg)',
-          maskSize: 'contain',
-          maskRepeat: 'no-repeat',
-          maskPosition: 'center',
-        }}
+        className={twJoin('mask inline-block', className)}
         {...rest}
       >
         {children}

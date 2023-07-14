@@ -1,44 +1,37 @@
 import { ReactNode } from 'react'
-import { twJoin } from 'tailwind-merge'
+import { twMerge } from 'tailwind-merge'
 
 type CenteredSectionContainerProps = {
   left: ReactNode
   right: ReactNode
-  backgroundColorClass?: string
-  marginTopClass?: string
-  marginBottomClass?: string
-  leftWidthClass?: string
-  rightWidthClass?: string
+  className?: string
+  leftComponentClass?: string
+  rightComponentClass?: string
 }
 
 // TODO : doesnt work with ContentWrapper
 export const CenteredSectionContainer = (
-  props: CenteredSectionContainerProps
-) => {
-  const {
+  {
     left,
     right,
-    marginTopClass = 0,
-    marginBottomClass = 0,
-    backgroundColorClass = 'bg-t1-transparent',
-    leftWidthClass = 'w-full',
-    rightWidthClass = 'w-full',
-  } = props
+    className,
+    leftComponentClass = 'w-full',
+    rightComponentClass = 'w-full',
+  }: CenteredSectionContainerProps
+) => {
 
   return (
     <div
-      className={twJoin(
-        'box-border grid w-full grid-cols-1 justify-center gap-8 px-[2vw] py-8 md:grid-cols-2',
-        marginTopClass,
-        marginBottomClass,
-        backgroundColorClass
+      className={twMerge(
+        'box-border grid w-full grid-cols-1 bg-t1-transparent justify-center gap-8 px-[2vw] py-8 md:grid-cols-2',
+        className
       )}
     >
       <div>
-        <div className={leftWidthClass}>{left}</div>
+        <div className={twMerge("w-full", leftComponentClass)}>{left}</div>
       </div>
       <div className="flex items-center">
-        <div className={rightWidthClass}>{right}</div>
+        <div className={twMerge("w-full", rightComponentClass)}>{right}</div>
       </div>
     </div>
   )

@@ -162,9 +162,8 @@ export const Home = () => {
           />
         </CtaSection>
         <ImageMask
-          position="top"
           ref={culturePictureRef}
-          className="max-w-[50%]"
+          className="md:max-w-[50%]"
         >
           <figure
             className=""
@@ -219,7 +218,7 @@ export const Home = () => {
               />
             </CtaSection>
           }
-          rightWidthClass="w-[65%]"
+          rightComponentClass="w-[65%]"
         />
       </ContentWrapper>
     </PageLayout>
