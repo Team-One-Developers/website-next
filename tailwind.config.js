@@ -80,6 +80,9 @@ module.exports = {
           textHoverColor: 'var(--theme-textHoverColor)',
         },
       },
+      backgroundImage: (theme) => ({
+				header_gradient: "linear-gradient(var(--theme-bgColor) -20%, transparent 87%, transparent 98%, transparent 100%);",
+			}),
     },
   },
   plugins: [

@@ -17,12 +17,7 @@ export const Header = ({ theme }: { theme: PageTheme }) => {
   const pathname = usePathname()
 
   return (
-    <header
-      className={'sticky top-0 z-50'}
-      style={{
-        backgroundImage: `linear-gradient(var(--theme-bgColor) -20%, transparent 87%, transparent 98%, transparent 100%)`,
-      }}
-    >
+    <header className={'sticky top-0 z-50 bg-header_gradient'}>
       <div
         className="absolute -z-10 h-full w-full backdrop-blur-sm"
         style={{ mask: 'linear-gradient(#1d1d1d 80%, transparent)' }}
@@ -35,10 +30,9 @@ export const Header = ({ theme }: { theme: PageTheme }) => {
           <Link href="/">
             <div
               className={twJoin(
-                'grid self-center',
+                'grid self-center duration-300',
                 burgerNavigationOpened && 'burgerNavOpened'
               )}
-              style={{ transition: '350ms' }}
             >
               <Image
                 src={
