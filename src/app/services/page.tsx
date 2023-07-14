@@ -39,7 +39,7 @@ export const Services = () => {
             height={18}
             className="mb-4"
           />
-          <Typography className="mb-8 text-t1-green text-lg" variant="text_xl">
+          <Typography className="mb-8 text-t1-green text-lg" variant="text_lg">
             Digitale Geschäftsmodelle, digitale Kunden und remote-first Teams
             erfordern modernere Methoden, Technologien und Geisteshaltungen als
             die klassische Welt. Als Software-Beratung befähigen wir unsere

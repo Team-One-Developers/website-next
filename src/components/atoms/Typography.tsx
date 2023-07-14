@@ -4,7 +4,7 @@ import { tv, VariantProps } from 'tailwind-variants'
 import { cn } from '@/lib/utils'
 
 export const typographyVariants = tv({
-  base: 'm-0 mb-4 inline-block not-italic tracking-tinyBitTighter',
+  base: 'm-0 mb-4 not-italic tracking-tinyBitTighter',
   variants: {
     variant: {
       text_sm: 'font-ABCDiatypeRegular font-normal leading-144 text-base',
@@ -15,13 +15,13 @@ export const typographyVariants = tv({
       text_topline: 'font-SpaceGroteskRegular font-medium leading-110 text-2xs',
       text_topline_lg:
         'font-SpaceGroteskRegular font-medium leading-110 text-base',
-      h1: 'font-SpaceGroteskRegular font-medium leading-115 text-6xl md:text-8xl',
-      h2: 'font-SpaceGroteskRegular font-normal leading-115 text-2xl md:text-5xl lg:text-6xl',
+      h1: 'uppercase font-SpaceGroteskRegular font-medium leading-115 text-6xl md:text-8xl',
+      h2: 'uppercase font-SpaceGroteskRegular font-normal leading-115 text-2xl md:text-5xl lg:text-6xl',
       h2_sm:
-        'font-SpaceGroteskRegular font-normal leading-115 text-xl md:text-2.5xl lg:text-4.5xl',
+        'uppercase font-SpaceGroteskRegular font-normal leading-115 text-xl md:text-2.5xl lg:text-4.5xl',
       h2_bold:
-        'font-SpaceGroteskRegular font-medium leading-110 text-2.5xl md:text-5xl lg:6xl',
-      h3: 'font-SpaceGroteskRegular font-medium leading-110 text-2.5xl md:text-5xl',
+        'uppercase font-SpaceGroteskRegular font-medium leading-110 text-2.5xl md:text-5xl lg:6xl',
+      h3: 'uppercase font-SpaceGroteskRegular font-medium leading-110 text-2.5xl md:text-5xl',
       h4: 'font-SpaceGroteskRegular font-medium leading-110 text-3.5xl',
       h5: 'font-SpaceGroteskRegular font-medium leading-110 text-xl',
       cta_button: 'font-SpaceGroteskRegular font-normal leading-84 text-sm',
