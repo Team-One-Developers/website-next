@@ -23,6 +23,8 @@ export interface ButtonProps
   extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'color'>,
     VariantProps<typeof buttonVariants> {}
 
+   
+
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, color, size, children, ...props }, ref) => {
     return (

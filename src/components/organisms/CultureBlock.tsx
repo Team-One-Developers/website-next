@@ -120,14 +120,14 @@ export const CultureBlock = () => {
               height={75}
               width={75}
               className="absolute bottom-0"
-            ></Image>
+            />
             <ImageMask>
               <Image
                 src="/images/t1d_kai_knoerzer_126.jpg"
                 alt="Man with a dog"
                 width={750}
                 height={1125}
-              ></Image>
+              />
             </ImageMask>
           </div>
         }
