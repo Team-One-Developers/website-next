@@ -77,7 +77,7 @@ export const Footer = () => {
         <a
           className={externalLinkCSS}
           href="https://g.page/team-one-developers-gmbh?share"
-          target="_blank"
+          target="_blank" rel="noreferrer"
         >
           Team One Developers GmbH <br />
           Hospitalstraße 35 <br />
@@ -90,7 +90,7 @@ export const Footer = () => {
         <a
           className={twJoin(externalLinkCSS, 'flex flex-col')}
           href="https://g.page/team-one-developers-gmbh?share"
-          target="_blank"
+          target="_blank" rel="noreferrer"
         >
           <tspan>{`N 48° 46' 33.25`}</tspan>
           <tspan>{`E 9° 10' 15.91`}</tspan>
@@ -102,7 +102,7 @@ export const Footer = () => {
         <a
           className={externalLinkCSS}
           href="mailto:kontakt@t1dev.de"
-          target="_blank"
+          target="_blank" rel="noreferrer"
         >
           kontakt@t1dev.de
         </a>
@@ -111,7 +111,7 @@ export const Footer = () => {
         <a
           className={externalLinkCSS}
           href="tel:+4971125298690"
-          target="_blank"
+          target="_blank" rel="noreferrer"
         >
           +49 711 252 98 690
         </a>
@@ -121,23 +121,23 @@ export const Footer = () => {
         <a
           href="https://www.instagram.com/teamonedevelopers/"
           target="_blank"
-          aria-label="Instagram"
+          aria-label="Instagram" rel="noreferrer"
         >
           <Icon
             name="Instagram"
             color="var(--theme-textColor)"
-            hoverColorCSS="hover:fill-theme-textHoverColor"
+            className="hover:fill-theme-textHoverColor"
           />
         </a>
         <a
           href="https://www.linkedin.com/company/team-one-developers/"
           target="_blank"
-          aria-label="LinkedIn"
+          aria-label="LinkedIn" rel="noreferrer"
         >
           <Icon
             name="LinkedIn"
             color="var(--theme-textColor)"
-            hoverColorCSS="hover:fill-theme-textHoverColor"
+            className="hover:fill-theme-textHoverColor"
           />
         </a>
       </div>

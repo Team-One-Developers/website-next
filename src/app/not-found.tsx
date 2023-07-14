@@ -1,6 +1,4 @@
-import Image from 'next/image'
 import Link from 'next/link'
-import { PAGE_THEME } from '@/constants'
 
 import { Button } from '@/components/atoms/Button'
 import Copy from '@/components/atoms/Copy'
