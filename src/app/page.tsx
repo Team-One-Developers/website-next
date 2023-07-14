@@ -24,7 +24,7 @@ import { PageLayout } from '@/components/layout/PageLayout'
 import SamuelPic from '../../public/images/t1d_kai_knoerzer_011_edited.jpg'
 import JannikPic from '../../public/images/t1d_kai_knoerzer_055.jpg'
 
-export const Home = () => {
+const Home = () => {
   // Triggers Animation for Animated Teaser
   const [animatedTeaserContainerRef, animatedTeaserInView] = useInView({
     threshold: 0.8,
@@ -161,10 +161,7 @@ export const Home = () => {
             className="mr-2 brightness-0"
           />
         </CtaSection>
-        <ImageMask
-          ref={culturePictureRef}
-          className="md:max-w-[50%]"
-        >
+        <ImageMask ref={culturePictureRef} className="md:max-w-[50%]">
           <figure
             className=""
             style={{
@@ -205,7 +202,7 @@ export const Home = () => {
               }
               linkLabel="Karriere"
               link="/career"
-              linkVariant='secondary'
+              linkVariant="secondary"
               fontDefaultsHeadline={FONT_CONFIGS.desktop_h3}
               fontDefaultsContent={FONT_CONFIGS.desktop_copy_small}
               headlineMarginBottomClass="mb-[2.875rem]"

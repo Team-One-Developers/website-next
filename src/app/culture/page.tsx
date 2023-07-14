@@ -12,7 +12,7 @@ import { Values } from '@/components/organisms/Values'
 import ContentWrapper from '@/components/layout/ContentWrapper'
 import { PageLayout } from '@/components/layout/PageLayout'
 
-export const Culture = () => {
+const Culture = () => {
   return (
     <PageLayout>
       <ContentWrapper className="relative mt-20">

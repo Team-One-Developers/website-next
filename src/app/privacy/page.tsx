@@ -12,7 +12,7 @@ import ContentWrapper from '@/components/layout/ContentWrapper'
 import { FullWidthSectionContainer } from '@/components/layout/FullWidthSectionContainer'
 import { PageLayout } from '@/components/layout/PageLayout'
 
-export const Privacy = () => {
+const Privacy = () => {
   const legalParagraphCSS = `${FONT_CONFIGS.desktop_copy_small} text-t1-white`
   const offsetLegalParagraphCSS = `${legalParagraphCSS} mt-4`
 

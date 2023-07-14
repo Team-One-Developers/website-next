@@ -8,7 +8,7 @@ import ContentWrapper from '@/components/layout/ContentWrapper'
 import { FullWidthSectionContainer } from '@/components/layout/FullWidthSectionContainer'
 import { PageLayout } from '@/components/layout/PageLayout'
 
-export const NotFound = () => {
+const NotFound = () => {
   return (
     <PageLayout>
       <FullWidthSectionContainer>
@@ -30,4 +30,5 @@ export const NotFound = () => {
     </PageLayout>
   )
 }
+
 export default NotFound

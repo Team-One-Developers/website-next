@@ -9,7 +9,7 @@ import { Heading } from '@/components/atoms/Heading'
 
 import { PageLayout } from '@/components/layout/PageLayout'
 
-export const Blog = () => {
+const Blog = () => {
   const router = useRouter()
 
   const BlogArticle = ({

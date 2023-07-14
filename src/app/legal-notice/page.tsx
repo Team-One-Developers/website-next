@@ -9,7 +9,7 @@ import ContentWrapper from '@/components/layout/ContentWrapper'
 import { FullWidthSectionContainer } from '@/components/layout/FullWidthSectionContainer'
 import { PageLayout } from '@/components/layout/PageLayout'
 
-export const Legal = () => {
+const Legal = () => {
   const legalParagraphCSS = `${FONT_CONFIGS.desktop_copy_small} text-t1-white`
 
   return (

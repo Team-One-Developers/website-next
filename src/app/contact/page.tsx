@@ -10,7 +10,7 @@ import { Ticker } from '@/components/molecules/Ticker'
 import ContentWrapper from '@/components/layout/ContentWrapper'
 import { PageLayout } from '@/components/layout/PageLayout'
 
-export const Contact = () => {
+const Contact = () => {
   const ArrowSVG = ({
     className,
     style,
