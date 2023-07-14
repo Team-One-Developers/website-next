@@ -205,6 +205,7 @@ export const Home = () => {
               }
               linkLabel="Karriere"
               link="/career"
+              linkVariant='secondary'
               fontDefaultsHeadline={FONT_CONFIGS.desktop_h3}
               fontDefaultsContent={FONT_CONFIGS.desktop_copy_small}
               headlineMarginBottomClass="mb-[2.875rem]"
@@ -218,7 +219,7 @@ export const Home = () => {
               />
             </CtaSection>
           }
-          rightComponentClass="w-[65%]"
+          rightComponentClass="md:w-[65%]"
         />
       </ContentWrapper>
     </PageLayout>
