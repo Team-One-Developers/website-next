@@ -4,7 +4,7 @@ import { tv, VariantProps } from 'tailwind-variants'
 import { cn } from '@/lib/utils'
 
 export const typographyVariants = tv({
-  base: 'm-0 mb-4 not-italic tracking-tinyBitTighter',
+  base: 'm-0 not-italic tracking-tinyBitTighter',
   variants: {
     variant: {
       text_sm: 'font-ABCDiatypeRegular font-normal text-base leading-144',
