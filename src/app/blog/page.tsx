@@ -34,7 +34,7 @@ const Blog = () => {
       >
         <div
           className={twJoin(
-            'relative h-full w-full bg-t1-green text-t1-black',
+            'relative h-full w-full bg-primary text-t1-black',
             swapped ? 'order-2 rounded-r-blog' : 'order-1 rounded-l-blog'
           )}
         >
@@ -61,7 +61,7 @@ const Blog = () => {
           <p className="text-bold text-xl">{title}</p>
           <p className="mt-4 text-base">{subtitle}</p>
           <button
-            className="text-bold mt-8 self-start rounded-[3px] border-none bg-t1-green px-[14px] py-[10px] font-SpaceGroteskRegular text-base leading-[14px] text-t1-black shadow-none outline-none"
+            className="text-bold mt-8 self-start rounded-[3px] border-none bg-primary px-[14px] py-[10px] font-SpaceGroteskRegular text-base leading-[14px] text-t1-black shadow-none outline-none"
             onClick={() => router.push('/blog/autogpt')}
           >
             Read more
@@ -79,17 +79,17 @@ const Blog = () => {
             <Heading
               tag="h1"
               fontDefaults={FONT_CONFIGS.desktop_h2_regular}
-            >{`Read our blog`}</Heading>
+            >{"Read our blog"}</Heading>
             <Heading
               tag="h2"
               fontDefaults={FONT_CONFIGS.desktop_h5}
-              colorClassName="text-t1-green"
-            >{`Regular posts about topics that drive us`}</Heading>
+              colorClassName="text-primary"
+            >{"Regular posts about topics that drive us"}</Heading>
           </div>
         </div>
         <div className="grid w-full grid-flow-row grid-cols-[1fr_3fr] gap-8 p-24">
           <div>
-            <div className="sticky top-[140px] rounded border border-t1-green p-4">
+            <div className="sticky top-[140px] rounded border border-primary p-4">
               <h2 className="text-2xl">Filter</h2>
             </div>
           </div>

@@ -65,24 +65,28 @@ module.exports = {
       },
       colors: {
         t1: {
-          white: 'var(--t1-white)',
           lightGray: 'var(--t1-lightGray)',
           gray: 'var(--t1-gray)',
           darkGray: 'var(--t1-darkGray)',
           black: 'var(--t1-black)',
-          green: 'var(--t1-green)',
+          green: 'var(--primary)',
           darkGreen: 'var(--t1-darkGreen)',
           transparent: 'var(--t1-transparent)',
         },
-        theme: {
-          bgColor: 'var(--theme-bgColor)',
-          textColor: 'var(--theme-textColor)',
-          textHoverColor: 'var(--theme-textHoverColor)',
+        background: 'var(--theme-background)',
+        primary: {
+          DEFAULT: 'var(--theme-primary)',
+          foreground: 'var(--theme-primary-foreground)',
+        },
+        foreground: {
+          DEFAULT: 'var(--theme-foreground)',
+          hover: 'var(--theme-foreground-hover)',
         },
       },
       backgroundImage: (theme) => ({
-				header_gradient: "linear-gradient(var(--theme-bgColor) -20%, transparent 87%, transparent 98%, transparent 100%);",
-			}),
+        header_gradient:
+          'linear-gradient(var(--theme-background) -20%, transparent 87%, transparent 98%, transparent 100%);',
+      }),
     },
   },
   plugins: [

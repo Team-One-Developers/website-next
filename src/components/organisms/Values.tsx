@@ -13,7 +13,7 @@ export const Values = () => {
     <>
       <div className="flex justify-between p-2 lg:mt-36">
         <TopLine
-          colorClassName="text-t1-white"
+          colorClassName="text-white"
           fontDefaults={FONT_CONFIGS.desktop_topline}
           opacity={1}
         >
@@ -21,10 +21,10 @@ export const Values = () => {
         </TopLine>
 
         <button
-          className="cursor-pointer text-t1-white brightness-100 contrast-100"
+          className="cursor-pointer text-white brightness-100 contrast-100"
           onClick={() => setIsAllExpanded(!isAllExpanded)}
         >
-          <TopLine colorClassName="text-t1-white" opacity={1}>
+          <TopLine colorClassName="text-white" opacity={1}>
             {`${isAllExpanded ? '▾' : '▸'} ALLE ÖFFNEN`}
           </TopLine>
         </button>

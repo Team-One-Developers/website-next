@@ -24,7 +24,7 @@ const Culture = () => {
           WIR MACHEN DAS, WOVON ALLE SPRECHEN: WIR STELLEN DEN MENSCHEN IN DEN
           MITTELPUNKT.
         </Heading>
-        <DancingFigures className="absolute z-10 mt-20 h-[227px] w-[245px] text-t1-green xs:left-1/2 xs:-translate-x-[50%] xs:-translate-y-[10%] md:left-3/4 md:top-[42.5%] lg:top-[30%] lg:h-[411px] lg:w-[462px]" />
+        <DancingFigures className="absolute z-10 mt-20 h-[227px] w-[245px] text-primary xs:left-1/2 xs:-translate-x-[50%] xs:-translate-y-[10%] md:left-3/4 md:top-[42.5%] lg:top-[30%] lg:h-[411px] lg:w-[462px]" />
       </ContentWrapper>
       <Hero
         className="mt-[19rem]"

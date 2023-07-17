@@ -24,6 +24,8 @@ import { PageLayout } from '@/components/layout/PageLayout'
 import SamuelPic from '../../public/images/t1d_kai_knoerzer_011_edited.jpg'
 import JannikPic from '../../public/images/t1d_kai_knoerzer_055.jpg'
 
+import clsx from "clsx"
+
 const Home = () => {
   // Triggers Animation for Animated Teaser
   const [animatedTeaserContainerRef, animatedTeaserInView] = useInView({
@@ -84,7 +86,7 @@ const Home = () => {
         overlayNode={
           <ChangingWords
             words={['software', 'agile', 'human', 'team']}
-            className="text-t1-white"
+            className="text-white"
           />
         }
         overlayPosition="offsetTop"
@@ -92,7 +94,7 @@ const Home = () => {
 
       <ContentWrapper>
         <FullWidthSectionContainer className="mt-20">
-          <figure className="mb-6 flex h-[129px] w-full justify-center text-t1-green md:hidden">
+          <figure className="mb-6 flex h-[129px] w-full justify-center text-primary md:hidden">
             <DancingFigures />
           </figure>
           <Copy
@@ -102,7 +104,7 @@ const Home = () => {
           >
             Wir sind Technologie-Experten und verstehen uns als integrativer
             Entwicklungs- & Beratungspartner in komplexen Softwareprojekten.{' '}
-            <DancingFigures className="hidden h-16 px-4 py-0 align-middle text-t1-green md:inline" />
+            <DancingFigures className="hidden h-16 px-4 py-0 align-middle text-primary md:inline" />
             Mit jahrelanger Expertise in den Bereichen Softwareentwicklung,
             Strategie sowie UX/UI Design.
           </Copy>
@@ -118,19 +120,14 @@ const Home = () => {
       </ContentWrapper>
 
       <AnimatedTeaser
-        className="mt-16"
-        backgroundColor={
-          animatedTeaserInView ? 'var(--t1-green)' : 'var(--t1-lightGray)'
-        }
-        animationColor={
-          animatedTeaserInView ? 'var(--t1-white)' : 'var(--t1-green)'
-        }
+        className={clsx("mt-16", animatedTeaserInView ? "bg-primary" : "bg-background")}
+        innerClassName={clsx(animatedTeaserInView ? "bg-white" : "bg-primary")}
         ref={animatedTeaserContainerRef}
       />
 
       <ContentWrapper
         useMaxWidth={false}
-        className="w-full bg-t1-green pt-20 sm:pt-8 md:pt-0"
+        className="w-full bg-primary pt-20 sm:pt-8 md:pt-0"
       >
         <Companies />
       </ContentWrapper>
@@ -138,7 +135,7 @@ const Home = () => {
       <ContentWrapper
         ref={cultureContainerRef}
         useMaxWidth={false}
-        className="bg-t1-green pt-32 sm:pt-48 lg:flex lg:justify-between lg:gap-8 xl:pt-72"
+        className="bg-primary pt-32 sm:pt-48 lg:flex lg:justify-between lg:gap-8 xl:pt-72"
         style={{ transition: '500ms' }}
       >
         <CtaSection
@@ -176,7 +173,7 @@ const Home = () => {
 
       <ContentWrapper
         ref={careerContainerRef}
-        className={careerContainerInView ? 'bg-t1-lightGray' : 'bg-t1-green'}
+        className={careerContainerInView ? 'bg-t1-lightGray' : 'bg-primary'}
         style={{ transition: '500ms' }}
         useMaxWidth={false}
       >

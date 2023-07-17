@@ -27,8 +27,8 @@ export const Accordion = (props: AccordionProps) => {
   return (
     <details
       className={twMerge(
-        'group relative cursor-pointer overflow-hidden border-t-2 border-t1-white p-2 text-t1-white last:border-b-2 hover:bg-t1-darkGray md:p-4',
-        open ? 'text-t1-green' : 'hover:py-9 hover:text-t1-green'
+        'group relative cursor-pointer overflow-hidden border-t-2 border-t1-white p-2 text-white last:border-b-2 hover:bg-t1-darkGray md:p-4',
+        open ? 'text-primary' : 'hover:py-9 hover:text-primary'
       )}
       open={open}
       style={{ transition: 'all 0.25s ease-in-out' }}
@@ -41,7 +41,7 @@ export const Accordion = (props: AccordionProps) => {
       <summary className="flex list-none list-image-none flex-col md:flex-row">
         <TopLine
           className="mb-[10px] block md:w-[6.6%]"
-          colorClassName="text-t1-white"
+          colorClassName="text-white"
           opacity={1}
           fontDefaults={FONT_CONFIGS.sub_column}
         >
@@ -58,9 +58,9 @@ export const Accordion = (props: AccordionProps) => {
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="228.99 210.87 137.3 173.53"
-          fill="var(--t1-green)"
-          className={twJoin(
-            'absolute left-[2.5%] w-[100px] translate-y-[100%] -rotate-[10deg] text-t1-green opacity-0',
+          fill="currentColor"
+          className={twMerge(
+            'absolute left-[2.5%] w-[100px] translate-y-[100%] -rotate-[10deg] text-primary opacity-0',
             !open &&
               '2xl:group-hover:translate-y-[10%] 2xl:group-hover:-rotate-[10deg] 2xl:group-hover:opacity-100'
           )}
@@ -74,7 +74,7 @@ export const Accordion = (props: AccordionProps) => {
 
       <Copy
         textSize="l"
-        className="m-0 mt-4 text-base text-t1-white md:ml-[6.6%] md:text-xl lg:w-[40%]"
+        className="m-0 mt-4 text-base text-white md:ml-[6.6%] md:text-xl lg:w-[40%]"
       >
         {text}
       </Copy>

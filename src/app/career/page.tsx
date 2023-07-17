@@ -45,7 +45,7 @@ const Career = () => {
           />
           <Copy
             textSize="l"
-            className="text-t1-green mb-8"
+            className="text-primary mb-8"
             fontDefaults={FONT_CONFIGS.desktop_copy_large}
           >
             Wir verstehen uns nicht einfach nur als Arbeitgeber, sondern viel
@@ -56,7 +56,7 @@ const Career = () => {
           </Copy>
           <Copy
             textSize="sm"
-            className="text-t1-white"
+            className="text-white"
             fontDefaults={FONT_CONFIGS.desktop_copy_small}
           >
             Oft sagen wir in Gesprächen „wir sind Playground für den modernen
@@ -77,14 +77,14 @@ const Career = () => {
       </ContentWrapper>
       <ContentWrapper>
         <Copy
-          className="mt-24 mb-6 lg:mt-32 text-t1-white m-0"
+          className="mt-24 mb-6 lg:mt-32 text-white m-0"
           textSize="l"
           fontDefaults={FONT_CONFIGS.desktop_copy_large}
         >
           Wir suchen dich:
         </Copy>
         <Copy
-          className="mt-24 mb-6 lg:mt-32 text-t1-white m-0"
+          className="mt-24 mb-6 lg:mt-32 text-white m-0"
           textSize="l"
           fontDefaults={FONT_CONFIGS.desktop_copy_large}
         >
@@ -95,14 +95,14 @@ const Career = () => {
         <div className="flex flex-col gap-4 items-baseline lg:max-w-[32%]">
           <Copy
             textSize="l"
-            className="text-t1-white"
+            className="text-white"
             fontDefaults={FONT_CONFIGS.desktop_copy_large}
           >
             Oder du suchst uns?
           </Copy>
           <Copy
             textSize="sm"
-            className="text-t1-white"
+            className="text-white"
             fontDefaults={FONT_CONFIGS.desktop_copy_small}
           >
             Um als Developer nicht nur gut zu sein, sondern es auch zu bleiben,

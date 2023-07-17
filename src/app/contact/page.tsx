@@ -42,7 +42,7 @@ const Contact = () => {
     return (
       <div
         className={twJoin(
-          'mt-1 flex w-fit gap-2 border-b border-t1-green text-t1-white',
+          'mt-1 flex w-fit gap-2 border-b border-primary text-white',
           FONT_CONFIGS.desktop_copy_xtra_large
         )}
       >
@@ -98,7 +98,7 @@ const Contact = () => {
         theme={PAGE_THEME.dark}
         text="Get In Touch"
         speed={300}
-        textClassName="text-t1-green"
+        textClassName="text-primary"
         includeLogo={false}
         className="-mt-[200px] mb-[100px] md:mb-[200px]"
       />

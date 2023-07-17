@@ -10,7 +10,7 @@ import { FullWidthSectionContainer } from '@/components/layout/FullWidthSectionC
 import { PageLayout } from '@/components/layout/PageLayout'
 
 const Legal = () => {
-  const legalParagraphCSS = `${FONT_CONFIGS.desktop_copy_small} text-t1-white`
+  const legalParagraphCSS = `${FONT_CONFIGS.desktop_copy_small} text-white`
 
   return (
     <PageLayout>
@@ -83,7 +83,7 @@ const Legal = () => {
             Rechtliche Schritte gegen die Versender von so genannten Spam-Mails
             bei Verstößen gegen dieses Verbot sind ausdrücklich vorbehalten. Für
             detaillierte Informationen siehe{' '}
-            <a href="/privacy" className="text-t1-green">
+            <a href="/privacy" className="text-primary">
               Datenschutz
             </a>
             .

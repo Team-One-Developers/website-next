@@ -46,7 +46,7 @@ const Services = () => {
             className="mb-4"
           />
           <Copy
-            className="mb-8 text-t1-green"
+            className="mb-8 text-primary"
             textSize="l"
             fontDefaults={FONT_CONFIGS.desktop_copy_large}
           >
@@ -57,7 +57,7 @@ const Services = () => {
             technologisch und methodisch.
           </Copy>
           <Copy
-            className=" text-t1-white"
+            className=" text-white"
             textSize="sm"
             fontDefaults={FONT_CONFIGS.desktop_copy_small}
           >
@@ -83,7 +83,7 @@ const Services = () => {
           <>
             <TopLine
               className="mb-6"
-              colorClassName="text-t1-white"
+              colorClassName="text-white"
               textSize="l"
               opacity={1}
             >
@@ -92,7 +92,7 @@ const Services = () => {
             <ChangingWords
               words={['Software', 'Strategy', 'UX Design']}
               delay={1250}
-              className="text-t1-white"
+              className="text-white"
             />
           </>
         }

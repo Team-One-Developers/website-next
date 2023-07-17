@@ -21,7 +21,7 @@ export const Competences = () => {
     return (
       <div
         className={twJoin(
-          'group p-8 lg:flex-row lg:gap-8  flex flex-col rounded-lg hover:text-t1-darkGray hover:bg-t1-green bg-t1-darkGray mb-4 text-t1-white '
+          'group p-8 lg:flex-row lg:gap-8  flex flex-col rounded-lg hover:text-t1-darkGray hover:bg-primary bg-t1-darkGray mb-4 text-white '
         )}
       >
         <span className="font-SpaceGroteskRegular font-medium not-italic text-xs leading-110 tracking-aBitTighter uppercase min-w-[7%]">
@@ -50,7 +50,7 @@ export const Competences = () => {
         <div className="flex flex-col items-center">
           <div className="text-center lg:w-1/2">
             <TopLine
-              colorClassName="text-t1-green"
+              colorClassName="text-primary"
               className="mb-5 uppercase"
               fontDefaults={FONT_CONFIGS.desktop_topline}
             >

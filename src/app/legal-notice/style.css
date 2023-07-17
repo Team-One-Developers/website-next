@@ -3,7 +3,7 @@
 }
 
 .legalULLI::marker {
-  color: var(--t1-green);
+  color: var(--theme-primary);
 }
 
 .legalULLIPadded {
@@ -11,5 +11,5 @@
 }
 
 .legalULLIPadded::marker {
-  color: var(--t1-green);
+  color: var(--theme-primary);
 }

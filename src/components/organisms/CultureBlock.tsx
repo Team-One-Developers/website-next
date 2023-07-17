@@ -15,7 +15,7 @@ export const CultureBlock = () => {
           <>
             <Copy
               textSize="sm"
-              className="text-t1-white"
+              className="text-white"
               fontDefaults={FONT_CONFIGS.desktop_copy_small}
             >
               Dass es schwer ist, Tech-Talente für sich zu gewinnen ist kein
@@ -24,7 +24,7 @@ export const CultureBlock = () => {
             </Copy>
             <Copy
               textSize="xl"
-              className="text-t1-white"
+              className="text-white"
               fontDefaults={FONT_CONFIGS.desktop_copy_xtra_large}
             >
               Was können wir als Tech-Unternehmen tun, um das attraktivste
@@ -83,7 +83,7 @@ export const CultureBlock = () => {
                 />
               </div>
               <Copy
-                className="text-t1-white"
+                className="text-white"
                 textSize="l"
                 fontDefaults={FONT_CONFIGS.desktop_copy_large}
               >
@@ -106,7 +106,7 @@ export const CultureBlock = () => {
               </div>
               <div>
                 <Copy
-                  className="text-t1-white"
+                  className="text-white"
                   textSize="l"
                   fontDefaults={FONT_CONFIGS.desktop_copy_large}
                 >
@@ -164,7 +164,7 @@ export const CultureBlock = () => {
             </div>
             <div>
               <Copy
-                className="text-t1-white"
+                className="text-white"
                 textSize="l"
                 fontDefaults={FONT_CONFIGS.desktop_copy_large}
               >

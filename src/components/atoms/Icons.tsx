@@ -1,6 +1,5 @@
 interface Icon {
   name: 'Instagram' | 'LinkedIn'
-  color?: string
   className?: string
   width?: string | number
   height?: string | number
@@ -8,7 +7,6 @@ interface Icon {
 
 export const Icon = ({
   name,
-  color = 'none',
   className,
   height = 28,
   width = 28,
@@ -51,7 +49,7 @@ export const Icon = ({
       xmlns="http://www.w3.org/2000/svg"
       width={width}
       height={height}
-      fill={color}
+      fill={"currentColor"}
       className={className}
     >
       {svg(name)}

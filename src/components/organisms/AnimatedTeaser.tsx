@@ -1,5 +1,5 @@
 import { forwardRef } from 'react'
-import { twJoin } from 'tailwind-merge'
+import { twJoin, twMerge } from 'tailwind-merge'
 
 import './style.css'
 
@@ -9,32 +9,26 @@ import Copy from '../atoms/Copy'
 import { Heading } from '../atoms/Heading'
 
 type AnimatedTeaserProps = {
-  backgroundColor?: string
-  animationColor?: string
   className?: string
+  innerClassName?: string
 }
 
 export const AnimatedTeaser = forwardRef<HTMLDivElement, AnimatedTeaserProps>(
   function CWrapper(props: AnimatedTeaserProps, ref) {
-    const {
-      backgroundColor = 'var(--t1-lightGray)',
-      animationColor = 'var(--t1-green)',
-      className,
-    } = props
+    const { innerClassName, className } = props
 
     return (
       <div
         ref={ref}
-        className={twJoin('w-full pt-8 md:pt-0', className)}
-        style={{
-          backgroundColor: backgroundColor,
-        }}
+        className={twJoin('w-full pt-8 md:pt-0 bg-background duration-[1500ms]', className)}
       >
         <div className="relative mx-auto my-0 flex aspect-[1.5] w-full max-w-[1680px] items-center justify-center">
           <div
-            className={twJoin('bgDancers absolute inset-0 h-full w-full')}
-            style={{ transition: '1500ms', backgroundColor: animationColor }}
-          ></div>
+            className={twMerge(
+              'bgDancers absolute inset-0 h-full w-full bg-primary transition-all duration-[1500ms]',
+              innerClassName
+            )}
+          />
           <div className="relative w-[85%] text-center md:w-[70%] lg:w-[55%] xl:w-[40%]">
             <div className="mb-[0.75rem]">
               <Copy

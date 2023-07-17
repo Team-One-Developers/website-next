@@ -22,7 +22,7 @@ export const UxDesign = () => {
         className={twMerge(
           'relative m-0 cursor-pointer border-none px-1 py-4 uppercase text-t1-gray',
           activeCategory === category &&
-            'text-t1-green after:absolute after:left-[50%] after:h-[5px] after:w-[5px] after:-translate-x-[50%] after:translate-y-[425%] after:rounded-full after:bg-t1-green'
+            'text-primary after:absolute after:left-[50%] after:h-[5px] after:w-[5px] after:-translate-x-[50%] after:translate-y-[425%] after:rounded-full after:bg-primary'
         )}
         onClick={() => setActiveCategory(category)}
       >
@@ -35,7 +35,7 @@ export const UxDesign = () => {
     return (
       <div
         className={twMerge(
-          'box-border flex h-[180px] w-[140px] items-center justify-center rounded-[40%] bg-t1-green p-[20px]',
+          'box-border flex h-[180px] w-[140px] items-center justify-center rounded-[40%] bg-primary p-[20px]',
           active
             ? 'rounded-[39%] border-[#38d38dc5] border-[5px]'
             : 'brightness-[25%]'
@@ -61,7 +61,7 @@ export const UxDesign = () => {
       <div
         className={twJoin(
           'relative z-10 after:absolute after:bottom-0 after:right-0 after:top-0 after:mx-0 after:my-auto after:h-[7px] after:w-[7px] after:-translate-x-[5px] after:rounded-[50%] after:bg-t1-darkGreen after:transition-[300ms]',
-          active && 'after:bg-t1-green',
+          active && 'after:bg-primary',
           className
         )}
       >
@@ -74,7 +74,7 @@ export const UxDesign = () => {
     <div className="transitionAll">
       <div className="mb-6 flex flex-col flex-nowrap items-center ">
         <TopLine
-          colorClassName="text-t1-green"
+          colorClassName="text-primary"
           fontDefaults={FONT_CONFIGS.paragraph_label}
           className="mb-4"
         >
@@ -94,7 +94,7 @@ export const UxDesign = () => {
           <Copy
             fontDefaults={FONT_CONFIGS.desktop_copy_small_alternate}
             textSize="sm"
-            className="text-t1-white"
+            className="text-white"
           >
             Mindestens so wichtig wie der Code den wir schreiben, ist das
             Design, in welchem digitale Produkte von ihren Anwendern
@@ -105,7 +105,7 @@ export const UxDesign = () => {
           </Copy>
           <Copy
             fontDefaults={FONT_CONFIGS.desktop_copy_small_alternate}
-            className="text-t1-white"
+            className="text-white"
             textSize="sm"
           >
             Ausgehend von geschäfts- oder produkstrategischen Rahmenbedingungen
@@ -190,7 +190,7 @@ export const UxDesign = () => {
             />
           </div>
 
-          <div className="col-start-3 row-start-1 flex items-center justify-center text-t1-white">
+          <div className="col-start-3 row-start-1 flex items-center justify-center text-white">
             <BubbleContainer
               className="after:content-[none]"
               active={
@@ -210,8 +210,8 @@ export const UxDesign = () => {
             </BubbleContainer>
           </div>
 
-          <div className="col-span-5 row-start-2 grid grid-cols-7 grid-rows-1 items-center justify-center text-t1-white">
-            <div className="z-10 w-[80%] rounded-xl border-[#21754f] border-2 bg-[rgb(6,25,17)] px-[12px] py-[6px] text-center font-SpaceGroteskRegular text-xs uppercase text-t1-white">
+          <div className="col-span-5 row-start-2 grid grid-cols-7 grid-rows-1 items-center justify-center text-white">
+            <div className="z-10 w-[80%] rounded-xl border-[#21754f] border-2 bg-[rgb(6,25,17)] px-[12px] py-[6px] text-center font-SpaceGroteskRegular text-xs uppercase text-white">
               Human Focused
             </div>
             <BubbleContainer
@@ -226,8 +226,8 @@ export const UxDesign = () => {
             </BubbleContainer>
             <BubbleContainer
               active={
-                activeCategory == UX_CATEGORIES.ux_design ||
-                activeCategory == UX_CATEGORIES.ui_design
+                activeCategory === UX_CATEGORIES.ux_design ||
+                activeCategory === UX_CATEGORIES.ui_design
               }
             >
               <ImageMask>
@@ -286,12 +286,12 @@ export const UxDesign = () => {
                 />
               </ImageMask>
             </BubbleContainer>
-            <div className="z-10 w-[80%] rounded-xl border-[#21754f] border-2 bg-[rgb(6,25,17)] px-[12px] py-[6px] text-center font-SpaceGroteskRegular text-xs uppercase text-t1-white">
+            <div className="z-10 w-[80%] rounded-xl border-[#21754f] border-2 bg-[rgb(6,25,17)] px-[12px] py-[6px] text-center font-SpaceGroteskRegular text-xs uppercase text-white">
               Tech Focused
             </div>
           </div>
 
-          <div className="col-start-3 row-start-3 flex items-center justify-center text-t1-white">
+          <div className="col-start-3 row-start-3 flex items-center justify-center text-white">
             <BubbleContainer
               className="after:content-[none]"
               active={

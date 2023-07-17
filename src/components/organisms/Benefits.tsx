@@ -40,7 +40,7 @@ export const Benefits = () => {
       >
         <Image src={icon} alt="Little icon" height={36} width={36} />
         <Heading
-          className="mb-2 text-base text-t1-green mt-2"
+          className="mb-2 text-base text-primary mt-2"
           tag="h3"
           fontDefaults={FONT_CONFIGS.desktop_topline_large}
         >
@@ -48,7 +48,7 @@ export const Benefits = () => {
         </Heading>
         <Copy
           textSize="sm"
-          className="m-0 text-t1-white"
+          className="m-0 text-white"
           fontDefaults={FONT_CONFIGS.desktop_copy_small}
         >
           {text}
@@ -58,7 +58,7 @@ export const Benefits = () => {
   }
 
   return (
-    <div className="bg-t1-black text-t1-white lg:flex">
+    <div className="bg-t1-black text-white lg:flex">
       <div className="relative lg:basis-[50%]">
         <Heading
           tag="h2"

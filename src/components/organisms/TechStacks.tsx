@@ -1,7 +1,6 @@
 'use client'
 
-import { ReactElement, ReactNode, useState } from 'react'
-import Image from 'next/image'
+import { useState } from 'react'
 import { FONT_CONFIGS } from '@/constants'
 import { useInView } from 'react-intersection-observer'
 import { twJoin, twMerge } from 'tailwind-merge'
@@ -33,7 +32,7 @@ export const TechStacks = () => {
       className={twJoin(
         'flex items-start pt-[9rem] min-h-[820px] transition-[300ms]',
         isBackendActive
-          ? 'bg-t1-black text-t1-white'
+          ? 'bg-t1-black text-white'
           : 'bg-t1-lightGray text-t1-black'
       )}
     >
@@ -57,7 +56,7 @@ export const TechStacks = () => {
                 FONT_CONFIGS.desktop_topline_large,
                 'items-center font-SpaceGroteskMedium uppercase pt-4 flex flex-col md:p-4 pb-0',
                 isBackendActive
-                  ? 'after:content-["⦁"] after:text-xl text-t1-green'
+                  ? 'after:content-["⦁"] after:text-xl text-primary'
                   : 'text-t1-gray'
               )}
               onClick={() => setIsBackendActive(true)}
@@ -149,7 +148,7 @@ const TechStackLogos = (props: TechStackLogosProps) => {
           key={`${isBackendActive ? 'be' : 'fe'}-${logoIndex}`}
           className={twJoin(
             'inline-block m-2 md:6',
-            isBackendActive ? 'text-t1-white' : 'text-t1-black',
+            isBackendActive ? 'text-white' : 'text-t1-black',
             sizeClasses
           )}
           style={{
@@ -159,9 +158,7 @@ const TechStackLogos = (props: TechStackLogosProps) => {
             opacity: 0,
           }}
         >
-          <Logo
-            fill={isBackendActive ? 'var(--t1-white)' : 'var(--t1-black)'}
-          />
+          <Logo />
         </figure>
       ))}
     </section>

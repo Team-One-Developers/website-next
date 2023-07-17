@@ -14,11 +14,11 @@ const NotFound = () => {
       <FullWidthSectionContainer>
         <ContentWrapper>
           <Heading tag="h1">404</Heading>
-          <Copy textSize="l" className="mt-4 text-t1-white">
+          <Copy textSize="l" className="mt-4 text-white">
             Die Seite wurde nicht gefunden
           </Copy>
           <br />
-          <Copy textSize="sm" className="w-full text-t1-white md:w-1/3">
+          <Copy textSize="sm" className="w-full text-white md:w-1/3">
             Sorry, die Seite die du angefragt hast, scheint nicht zu existieren.
           </Copy>
           <br />
