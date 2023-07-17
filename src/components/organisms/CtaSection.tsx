@@ -39,7 +39,7 @@ export const CtaSection = (props: CtaSectionProps) => {
     <section className={className}>
       {subtitleText && (
         <Typography
-          className="mb-4 flex items-center text-t1-black"
+          className="mb-4 flex items-center text-black"
           variant="subtitle"
         >
           {/* We should refactor this as only icons are passed into here */}
@@ -63,7 +63,7 @@ export const CtaSection = (props: CtaSectionProps) => {
           translate: animate ? '0 20px' : '',
         }}
       >
-        <Typography className="m-0 mb-6 text-t1-black" variant={contentVariant}>
+        <Typography className="m-0 mb-6 text-black" variant={contentVariant}>
           {contentText}
         </Typography>
 

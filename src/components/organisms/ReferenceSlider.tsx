@@ -13,14 +13,14 @@ interface ReferenceSliderEntryProps {
 
 export const ReferencesSlider = () => {
   return (
-    <div className="bg-t1-lightGray">
+    <div className="bg-background">
       <ContentWrapper>
-        <div className="flex justify-center bg-t1-lightGray pt-[75px] pb-8 font-medium">
-          <Typography className="text-t1-black" variant="subtitle_lg">
+        <div className="flex justify-center bg-background pt-[75px] pb-8 font-medium">
+          <Typography className="text-black" variant="subtitle_lg">
             REFERENZEN
           </Typography>
         </div>
-        <ul className="flex overflow-scroll gap-6 bg-t1-lightGray py-12 px-4 scroll-pl-4 snap-x">
+        <ul className="flex overflow-scroll gap-6 bg-background py-12 px-4 scroll-pl-4 snap-x">
           <ReferencesSliderEntry
             imageSrc="/images/references/cropped/porsche_sculpture.webp"
             headline="AUTOMOTIVE FINANCIAL SERVICES PLATTFORM"
@@ -97,10 +97,10 @@ const ReferencesSliderEntry = (props: ReferenceSliderEntryProps) => {
           <Image src={imageSrc} alt="" fill style={{ objectFit: 'contain' }} />
         </div>
         <figcaption className="flex flex-col justify-center xl:grow-0 xl:shrink-0 xl:basis-[45%]">
-          <Typography as="h2" variant="h2_bold" className="text-t1-black">
+          <Typography as="h2" variant="h2_bold" className="text-black">
             {headline}
           </Typography>
-          <ul className="flex gap-4 mt-2 text-t1-black">
+          <ul className="flex gap-4 mt-2 text-black">
             {technologyList?.map((technology) => (
               <Typography
                 as="li"
@@ -113,7 +113,7 @@ const ReferencesSliderEntry = (props: ReferenceSliderEntryProps) => {
             ))}
           </ul>
           <Typography
-            className="mt-8 md:pr-20 xl:pr-28 text-t1-black"
+            className="mt-8 md:pr-20 xl:pr-28 text-black"
             variant="text_sm"
           >
             {infoText}

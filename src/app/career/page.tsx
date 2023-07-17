@@ -38,14 +38,14 @@ const Career = () => {
             width={18}
             className="mb-4"
           />
-          <Typography variant="text_lg" className="text-t1-green mb-8">
+          <Typography variant="text_lg" className="text-primary mb-8">
             Wir verstehen uns nicht einfach nur als Arbeitgeber, sondern viel
             mehr als aktiver Begleiter auf dem Weg zu deinen individuellen
             Zielen. Unser Anspruch ist es, den Menschen in den Mittelpunkt
             unseres unternehmerischen Handelns zu stellen – und dabei fangen wir
             bei uns im Team an.
           </Typography>
-          <Typography variant="text_sm" className="text-t1-white">
+          <Typography variant="text_sm" className="text-white">
             Oft sagen wir in Gesprächen „wir sind Playground für den modernen
             und ambitionierten Softwareentwickler“ – das beschreibt unser
             Arbeitsumfeld am besten. Wir arbeiten in anspruchsvollen
@@ -64,13 +64,13 @@ const Career = () => {
       </ContentWrapper>
       <ContentWrapper>
         <Typography
-          className="mt-24 mb-6 lg:mt-32 text-t1-white m-0"
+          className="mt-24 mb-6 lg:mt-32 text-white m-0"
           variant="text_lg"
         >
           Wir suchen dich:
         </Typography>
         <Typography
-          className="mt-24 mb-6 lg:mt-32 text-t1-white m-0"
+          className="mt-24 mb-6 lg:mt-32 text-white m-0"
           variant="text_lg"
         >
           JOBS - ACCORDEON
@@ -78,10 +78,10 @@ const Career = () => {
       </ContentWrapper>
       <ContentWrapper className="mt-[6.5rem]">
         <div className="flex flex-col gap-4 items-baseline lg:max-w-[32%]">
-          <Typography variant="text_lg" className="text-t1-white">
+          <Typography variant="text_lg" className="text-white">
             Oder du suchst uns?
           </Typography>
-          <Typography variant="text_sm" className="text-t1-white">
+          <Typography variant="text_sm" className="text-white">
             Um als Developer nicht nur gut zu sein, sondern es auch zu bleiben,
             ist Initiative und Selbstständigkeit gefragt. Deshalb wissen wir das
             auch bei unseren Bewerbern zu schätzen. Wenn Ihr der Meinung sein,

@@ -16,9 +16,9 @@ export const UxDesignMobile = () => {
     return (
       <button
         className={twMerge(
-          'relative m-0 cursor-pointer border-none px-[2px] py-2 uppercase text-t1-gray text-center',
+          'relative m-0 cursor-pointer border-none px-[2px] py-2 uppercase text-muted-foreground text-center',
           activeCategory === category &&
-            'text-t1-green after:absolute after:left-[50%] after:h-[5px] after:w-[5px] after:-translate-x-[50%] after:translate-y-[425%] after:rounded-full after:bg-t1-green'
+            'text-primary after:absolute after:left-[50%] after:h-[5px] after:w-[5px] after:-translate-x-[50%] after:translate-y-[425%] after:rounded-full after:bg-primary'
         )}
         onClick={() => setActiveCategory(category)}
       >
@@ -31,11 +31,11 @@ export const UxDesignMobile = () => {
     return (
       <div
         className={twJoin(
-          ' border-[#31b378] border-[5px] box-border flex h-full items-center justify-center rounded-lg bg-t1-green py-4 px-2',
+          ' border-[#31b378] border-[5px] box-border flex h-full items-center justify-center rounded-lg bg-primary py-4 px-2',
           active ? 'border-[#46ffad]' : 'brightness-[35%]'
         )}
       >
-        <div className="text-center font-SpaceGroteskRegular text-t1-black box-border">
+        <div className="text-center font-SpaceGroteskRegular text-black box-border">
           {text}
         </div>
       </div>
@@ -55,7 +55,7 @@ export const UxDesignMobile = () => {
   return (
     <div className="transitionAll">
       <div className="flex items-center gap-4 flex-col flex-nowrap mb-4">
-        <Typography className="text-t1-green" variant="subtitle">
+        <Typography className="text-primary" variant="subtitle">
           ( WE DEVELOP )
         </Typography>
         <Typography as="h2" variant="h2_bold">
@@ -65,7 +65,7 @@ export const UxDesignMobile = () => {
 
       <div className="mb-8 flex justify-center">
         <div className="w-[75%] text-center">
-          <Typography variant="text_sm" className="text-t1-white">
+          <Typography variant="text_sm" className="text-white">
             Mindestens so wichtig wie der Code den wir schreiben, ist das
             Design, in welchem digitale Produkte von ihren Anwendern
             wahrgenommen und regelmäßig genutzt werden. Die integrative
@@ -73,7 +73,7 @@ export const UxDesignMobile = () => {
             unterschätzter Erfolgsfaktor performanter, interdisziplinärer
             Entwicklungsteams und entscheidend für den Produkterfolg.
           </Typography>
-          <Typography variant="text_sm" className="text-t1-white">
+          <Typography variant="text_sm" className="text-white">
             Ausgehend von geschäfts- oder produkstrategischen Rahmenbedingungen
             bildet das User Experience Design die zentrale Schnittstelle
             zwischen Nutzer und Technologie. Wir unterstützen dabei
@@ -83,7 +83,7 @@ export const UxDesignMobile = () => {
         </div>
       </div>
 
-      <div className="grid-cols-2 grid-rows-2 sm:grid-cols-4 sm:grid-rows-1 mb-4 grid justify-center gap-x-0 gap-y-1 font-SpaceGroteskRegular uppercase text-t1-gray">
+      <div className="grid-cols-2 grid-rows-2 sm:grid-cols-4 sm:grid-rows-1 mb-4 grid justify-center gap-x-0 gap-y-1 font-SpaceGroteskRegular uppercase text-muted-foreground">
         <CategoryButton category={UX_CATEGORIES.ux_design} />
 
         <CategoryButton category={UX_CATEGORIES.application_development} />
@@ -96,7 +96,7 @@ export const UxDesignMobile = () => {
       <div className="flex justify-center">
         <div className="w-full grid grid-cols-[1fr_1.5fr_1.5fr_1fr] grid-rows-[0.5fr_1fr_fr_1fr_0.5fr] gap-y-3 gap-x-3">
           <div className="flex justify-center items-center row-start-1 col-start-2 col-span-2">
-            <div className="rounded-xl text-center w-1/3 z-10 text-t1-white font-SpaceGroteskRegular uppercase text-xs py-[6px] px-3 border-2 border-[#21754f] bg-[rgb(6,25,17)]">
+            <div className="rounded-xl text-center w-1/3 z-10 text-white font-SpaceGroteskRegular uppercase text-xs py-[6px] px-3 border-2 border-[#21754f] bg-[rgb(6,25,17)]">
               Human Focused
             </div>
           </div>
@@ -166,7 +166,7 @@ export const UxDesignMobile = () => {
           </BubbleContainer>
 
           <div className="flex justify-center items-center row-start-5 col-start-2 col-span-2">
-            <div className="rounded-xl text-center w-1/3 z-10 text-t1-white font-SpaceGroteskRegular uppercase text-xs py-[6px] px-3 border-2 border-[#21754f] bg-[rgb(6,25,17)]">
+            <div className="rounded-xl text-center w-1/3 z-10 text-white font-SpaceGroteskRegular uppercase text-xs py-[6px] px-3 border-2 border-[#21754f] bg-[rgb(6,25,17)]">
               Tech Focused
             </div>
           </div>

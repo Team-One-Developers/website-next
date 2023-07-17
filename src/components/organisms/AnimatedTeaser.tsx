@@ -1,40 +1,37 @@
 import { forwardRef } from 'react'
-import { twJoin } from 'tailwind-merge'
+import { twJoin, twMerge } from 'tailwind-merge'
 
 import './style.css'
 
 import Typography from '../atoms/Typography'
 
 type AnimatedTeaserProps = {
-  backgroundColor?: string
-  animationColor?: string
   className?: string
+  innerClassName?: string
 }
 
 export const AnimatedTeaser = forwardRef<HTMLDivElement, AnimatedTeaserProps>(
   function CWrapper(props: AnimatedTeaserProps, ref) {
-    const {
-      backgroundColor = 'var(--t1-lightGray)',
-      animationColor = 'var(--t1-green)',
-      className,
-    } = props
+    const { innerClassName, className } = props
 
     return (
       <div
         ref={ref}
-        className={twJoin('w-full pt-8 md:pt-0', className)}
-        style={{
-          backgroundColor: backgroundColor,
-        }}
+        className={twJoin(
+          'w-full pt-8 md:pt-0 bg-background duration-[1500ms]',
+          className
+        )}
       >
         <div className="relative mx-auto my-0 flex aspect-[1.5] w-full max-w-[1680px] items-center justify-center">
           <div
-            className={twJoin('bgDancers absolute inset-0 h-full w-full')}
-            style={{ transition: '1500ms', backgroundColor: animationColor }}
+            className={twMerge(
+              'bgDancers absolute inset-0 h-full w-full bg-primary transition-all duration-[1500ms]',
+              innerClassName
+            )}
           />
           <div className="relative w-[85%] text-center md:w-[70%] lg:w-[55%] xl:w-[40%]">
             <div className="mb-[0.75rem]">
-              <Typography variant="text_lg" className="m-0 text-t1-black">
+              <Typography variant="text_lg" className="m-0 text-black">
                 Wir arbeiten
               </Typography>
             </div>
@@ -47,7 +44,7 @@ export const AnimatedTeaser = forwardRef<HTMLDivElement, AnimatedTeaserProps>(
               Integrativ & Agil
             </Typography>
 
-            <Typography className="text-t1-black" variant="text_lg">
+            <Typography className="text-black" variant="text_lg">
               Integrativ bedeutet für uns nicht nur, nah am Kunden zu sein,
               sondern vor allem auch die Produkte, an denen wir arbeiten, so zu
               entwickeln, als wären es unsere eigenen. Team One for One Team.

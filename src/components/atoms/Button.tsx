@@ -5,8 +5,8 @@ export const buttonVariants = tv({
   base: 'w-full cursor-pointer rounded-sm border-none px-[22px] py-4 font-SpaceGroteskRegular uppercase tracking-normal outline-none md:w-auto',
   variants: {
     color: {
-      primary: 'bg-t1-green text-t1-darkGray',
-      secondary: 'bg-t1-black text-t1-green',
+      primary: 'bg-primary text-t1-darkGray',
+      secondary: 'bg-black text-primary',
     },
     size: {
       md: 'text-[14px] md:px-[14px] md:py-[10px]',

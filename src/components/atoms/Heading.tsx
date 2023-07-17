@@ -23,7 +23,7 @@ export const Heading = (props: HeadingProps): ReactElement => {
           fontDefaults
             ? fontDefaults
             : 'font-SpaceGroteskMedium text-[2.25rem] lg:text-[62px]',
-          colorClassName ? colorClassName : 'text-theme-textColor',
+          colorClassName ? colorClassName : 'text-foreground',
           className
         )}
         style={...style}
@@ -40,7 +40,7 @@ export const Heading = (props: HeadingProps): ReactElement => {
           fontDefaults
             ? fontDefaults
             : 'font-SpaceGroteskMedium text-[2.25rem] lg:text-[62px]',
-          colorClassName ? colorClassName : 'text-theme-textColor',
+          colorClassName ? colorClassName : 'text-foreground',
           className
         )}
         style={...style}
@@ -55,7 +55,7 @@ export const Heading = (props: HeadingProps): ReactElement => {
       className={twMerge(
         'm-0 text-[3rem] font-medium uppercase leading-[1]',
         fontDefaults,
-        colorClassName ? colorClassName : 'text-theme-textColor',
+        colorClassName ? colorClassName : 'text-foreground',
         className
       )}
       style={...style}

@@ -18,12 +18,12 @@ export const Footer = () => {
     twJoin(
       'font-ABCDiatypeRegular font-normal text-base block leading-144 mb-2 ease-linear duration-150 last:mb-0',
       pathname === link
-        ? 'text-theme-textHoverColor'
-        : 'text-theme-textColor active:text-theme-textHoverColor hover:text-theme-textHoverColor'
+        ? 'text-foreground-hover'
+        : 'text-foreground active:text-foreground-hover hover:text-foreground-hover'
     )
 
   const externalLinkCSS =
-    'font-ABCDiatypeRegular font-normal text-base leading-144 block text-theme-textColor ease-linear duration-150 hover:text-theme-textHoverColor'
+    'font-ABCDiatypeRegular font-normal text-base leading-144 block text-foreground ease-linear duration-150 hover:text-foreground-hover'
 
   return (
     <footer className="block pb-8 md:grid md:grid-flow-row  md:grid-cols-[2.5fr_1fr_1fr_1fr] md:grid-rows-[1fr_1fr] md:gap-x-3 md:gap-y-5 md:text-left">
@@ -130,8 +130,7 @@ export const Footer = () => {
         >
           <Icon
             name="Instagram"
-            color="var(--theme-textColor)"
-            className="hover:fill-theme-textHoverColor"
+            className="text-foreground hover:text-foreground-hover"
           />
         </a>
         <a
@@ -142,8 +141,7 @@ export const Footer = () => {
         >
           <Icon
             name="LinkedIn"
-            color="var(--theme-textColor)"
-            className="hover:fill-theme-textHoverColor"
+            className="text-foreground hover:text-foreground-hover"
           />
         </a>
       </div>

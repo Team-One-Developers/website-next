@@ -17,12 +17,7 @@ export const Header = ({ theme }: { theme: PageTheme }) => {
   const pathname = usePathname()
 
   return (
-    <header
-      className={'sticky top-0 z-50'}
-      style={{
-        backgroundImage: `linear-gradient(var(--theme-bgColor) -20%, transparent 87%, transparent 98%, transparent 100%)`,
-      }}
-    >
+    <header className={'sticky top-0 z-50 bg-header_gradient'}>
       <div
         className="absolute -z-10 h-full w-full backdrop-blur-sm"
         style={{ mask: 'linear-gradient(#1d1d1d 80%, transparent)' }}
@@ -35,10 +30,9 @@ export const Header = ({ theme }: { theme: PageTheme }) => {
           <Link href="/">
             <div
               className={twJoin(
-                'grid self-center',
+                'grid self-center duration-300',
                 burgerNavigationOpened && 'burgerNavOpened'
               )}
-              style={{ transition: '350ms' }}
             >
               <Image
                 src={
@@ -55,7 +49,7 @@ export const Header = ({ theme }: { theme: PageTheme }) => {
 
           <div className="lg:hidden">
             <button
-              className="z-50 cursor-pointer select-none self-start rounded-[3px] border-none bg-t1-green px-[14px] py-[10px] font-SpaceGroteskRegular text-sm leading-[14px] text-t1-black shadow-none outline-none"
+              className="z-50 cursor-pointer select-none self-start rounded-[3px] border-none bg-primary px-[14px] py-[10px] font-SpaceGroteskRegular text-sm leading-[14px] text-black shadow-none outline-none"
               onClick={() => {
                 setBurgerNavigationOpened(true)
               }}
@@ -93,7 +87,7 @@ export const Header = ({ theme }: { theme: PageTheme }) => {
                   >
                     <div className="flex-grow p-8 pr-0 text-right">
                       <button
-                        className="z-50 cursor-pointer select-none self-start rounded-[3px] border-none bg-t1-green px-[14px] py-[10px] font-SpaceGroteskRegular text-sm leading-[14px] text-t1-black shadow-none outline-none"
+                        className="z-50 cursor-pointer select-none self-start rounded-[3px] border-none bg-primary px-[14px] py-[10px] font-SpaceGroteskRegular text-sm leading-[14px] text-black shadow-none outline-none"
                         onClick={() => {
                           setBurgerNavigationOpened(false)
                         }}
@@ -105,10 +99,10 @@ export const Header = ({ theme }: { theme: PageTheme }) => {
                           return (
                             <Link
                               className={twJoin(
-                                'mb-8 block select-none overflow-hidden text-3xl uppercase hover:text-t1-green active:text-t1-green ',
+                                'mb-8 block select-none overflow-hidden text-3xl uppercase hover:text-primary active:text-primary ',
                                 pathname === linkObj.link
-                                  ? 'text-t1-green'
-                                  : 'text-t1-white'
+                                  ? 'text-primary'
+                                  : 'text-white'
                               )}
                               key={index}
                               href={`${linkObj.link}`}
@@ -135,10 +129,10 @@ export const Header = ({ theme }: { theme: PageTheme }) => {
               return (
                 <Link
                   className={twJoin(
-                    'cursor-pointer select-none rounded-[3px] px-[14px] py-[10px] font-SpaceGroteskRegular text-sm uppercase leading-[14px] no-underline hover:shadow-navLinkShadow active:bg-t1-darkGray active:text-t1-green',
+                    'cursor-pointer select-none rounded-[3px] px-[14px] py-[10px] font-SpaceGroteskRegular text-sm uppercase leading-[14px] no-underline hover:shadow-navLinkShadow active:bg-t1-darkGray active:text-primary',
                     pathname === linkObj.link
-                      ? 'bg-t1-darkGray text-t1-green'
-                      : 'bg-t1-green text-t1-darkGray'
+                      ? 'bg-t1-darkGray text-primary'
+                      : 'bg-primary text-t1-darkGray'
                   )}
                   key={index}
                   href={`${linkObj.link}`}

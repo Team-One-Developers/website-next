@@ -11,15 +11,15 @@ export const Values = () => {
   return (
     <>
       <div className="flex justify-between p-2 lg:mt-36">
-        <Typography className="text-t1-white" variant="subtitle">
+        <Typography className="text-white" variant="subtitle">
           (T1D HIGH FIVE)
         </Typography>
 
         <button
-          className="cursor-pointer text-t1-white brightness-100 contrast-100"
+          className="cursor-pointer text-white brightness-100 contrast-100"
           onClick={() => setIsAllExpanded(!isAllExpanded)}
         >
-          <Typography className="text-t1-white" variant="subtitle">
+          <Typography className="text-white" variant="subtitle">
             {`${isAllExpanded ? '▾' : '▸'} ALLE ÖFFNEN`}
           </Typography>
         </button>

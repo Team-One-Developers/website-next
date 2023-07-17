@@ -40,16 +40,8 @@ export const Ticker = (props: TickerProps) => {
               ? textClassName
               : theme === PAGE_THEME.dark
               ? 'text-t1-darkGray'
-              : 'text-t1-green'
+              : 'text-primary'
           )}
-          /*
-          style={{
-            textShadow:
-              theme === PAGE_THEME.dark
-                ? '1px 1px 2px var(--t1-lightGray)'
-                : '1px 1px 2px gray',
-        }}
-        */
         >
           {text}
         </p>
@@ -74,7 +66,7 @@ export const Ticker = (props: TickerProps) => {
                 ? textClassName
                 : theme === PAGE_THEME.dark
                 ? 'text-t1-darkGray'
-                : 'text-t1-green'
+                : 'text-primary'
             )}
           >
             •

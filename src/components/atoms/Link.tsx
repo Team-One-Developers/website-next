@@ -8,8 +8,8 @@ export const linkVariants = tv({
   base: 'inline-block md:text-[align:initial] w-full rounded-sm px-0 py-[0.625rem] text-center md:w-[initial] md:px-4',
   variants: {
     variant: {
-      primary: 'bg-t1-black text-t1-green',
-      secondary: 'bg-t1-green text-t1-darkGray',
+      primary: 'bg-black text-primary',
+      secondary: 'bg-primary text-t1-darkGray',
     },
     mode: {
       cta: 'uppercase',

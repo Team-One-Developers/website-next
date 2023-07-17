@@ -16,14 +16,11 @@ const NotFound = () => {
           <Typography variant="h1" as="h1">
             404
           </Typography>
-          <Typography variant="text_lg" className="mt-4 text-t1-white">
+          <Typography variant="text_lg" className="mt-4 text-white">
             Die Seite wurde nicht gefunden
           </Typography>
           <br />
-          <Typography
-            variant="text_sm"
-            className="w-full text-t1-white md:w-1/3"
-          >
+          <Typography variant="text_sm" className="w-full text-white md:w-1/3">
             Sorry, die Seite die du angefragt hast, scheint nicht zu existieren.
           </Typography>
           <br />

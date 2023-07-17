@@ -37,10 +37,10 @@ export const Privacy = () => {
             Hospitalstraße 35 <br />
             70174 Stuttgart
             <br />
-            <a className="text-t1-green" href="tel:+4971125298690">
+            <a className="text-primary" href="tel:+4971125298690">
               +49 711 25298690 <br />
             </a>
-            <a className="text-t1-green" href="mailto:kontakt@t1dev.de">
+            <a className="text-primary" href="mailto:kontakt@t1dev.de">
               kontakt@t1dev.de <br />
             </a>
             <br />

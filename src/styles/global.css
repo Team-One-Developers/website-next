@@ -4,35 +4,36 @@
 
 @layer base {
   :root {
-    --t1-white: #ffffff;
-    --t1-lightGray: #f2f2f2;
-    --t1-gray: #585858;
     --t1-darkGray: #1d1d1d;
-    --t1-black: #000000;
-    --t1-green: #46ffad;
     --t1-darkGreen: #21352b;
-    --t1-transparent: transparent;
 
-    --theme-bgColor: var(--t1-lightGray);
+    --theme-primary: #46ffad;
+    --theme-primary-forground: #f2f2f2;
 
-    --theme-textColor: var(--t1-black);
-    --theme-textHoverColor: #1d1d1d80;
+    --theme-background: #f2f2f2;
+
+    --theme-foreground: #000000;
+    --theme-foreground-hover: #1d1d1d80;
+
+    --theme-muted-foreground: #1d1d1d;
 
     --theme-selectionBgColor: rgba(70, 255, 173, 0.6);
   }
 
   [data-theme='dark'] {
-    --theme-bgColor: var(--t1-black);
+    --theme-background: #000000;
 
-    --theme-textColor: var(--t1-white);
-    --theme-textHoverColor: var(--t1-green);
+    --theme-foreground: #ffffff;
+    --theme-foreground-hover: #46ffad;
+
+    --theme-muted-foreground: #f2f2f2;
 
     --theme-selectionBgColor: rgba(70, 255, 173, 1);
   }
 
   ::selection,
   ::moz-selection {
-    color: var(--t1-black);
+    color: var(--black);
     background-color: var(--theme-selectionBgColor);
   }
 

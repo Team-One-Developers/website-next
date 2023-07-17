@@ -21,7 +21,7 @@ export const PageLayout = ({
   return (
     <div
       data-theme={pageTheme}
-      className="bg-theme-bgColor text-theme-textColor"
+      className="bg-background text-foreground"
     >
       <Header theme={pageTheme} />
 

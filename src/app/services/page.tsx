@@ -38,14 +38,14 @@ const Services = () => {
             height={18}
             className="mb-4"
           />
-          <Typography className="mb-8 text-t1-green text-lg" variant="text_lg">
+          <Typography className="mb-8 text-primary text-lg" variant="text_lg">
             Digitale Geschäftsmodelle, digitale Kunden und remote-first Teams
             erfordern modernere Methoden, Technologien und Geisteshaltungen als
             die klassische Welt. Als Software-Beratung befähigen wir unsere
             Kunden, im digitalen Wettbewerb erfolgreich zu sein - strategisch,
             technologisch und methodisch.
           </Typography>
-          <Typography className=" text-t1-white" variant="text_sm">
+          <Typography className=" text-white" variant="text_sm">
             Wir kombinieren umfassendes Fachwissen mit der Begeisterung für neue
             Technologien, um innovative, hochmoderne, stabile und skalierbare
             Enterprise Plattformen zu bauen. Vom Startup bis hin zum
@@ -66,13 +66,13 @@ const Services = () => {
         }
         overlayNode={
           <>
-            <Typography variant="subtitle_lg" className="mb-6 text-t1-white">
+            <Typography variant="subtitle_lg" className="mb-6 text-white">
               We Develop
             </Typography>
             <ChangingWords
               words={['Software', 'Strategy', 'UX Design']}
               delay={1250}
-              className="text-t1-white"
+              className="text-white"
             />
           </>
         }

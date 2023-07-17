@@ -18,9 +18,9 @@ export const UxDesign = () => {
     return (
       <button
         className={twMerge(
-          'relative m-0 cursor-pointer border-none px-1 py-4 uppercase text-t1-gray',
+          'relative m-0 cursor-pointer border-none px-1 py-4 uppercase text-muted-foreground',
           activeCategory === category &&
-            'text-t1-green after:absolute after:left-[50%] after:h-[5px] after:w-[5px] after:-translate-x-[50%] after:translate-y-[425%] after:rounded-full after:bg-t1-green'
+            'text-primary after:absolute after:left-[50%] after:h-[5px] after:w-[5px] after:-translate-x-[50%] after:translate-y-[425%] after:rounded-full after:bg-primary'
         )}
         onClick={() => setActiveCategory(category)}
       >
@@ -33,13 +33,13 @@ export const UxDesign = () => {
     return (
       <div
         className={twMerge(
-          'box-border flex h-[180px] w-[140px] items-center justify-center rounded-[40%] bg-t1-green p-[20px]',
+          'box-border flex h-[180px] w-[140px] items-center justify-center rounded-[40%] bg-primary p-[20px]',
           active
             ? 'rounded-[39%] border-[#38d38dc5] border-[5px]'
             : 'brightness-[25%]'
         )}
       >
-        <div className="text-center font-SpaceGroteskRegular text-t1-black">
+        <div className="text-center font-SpaceGroteskRegular text-black">
           {text}
         </div>
       </div>
@@ -59,7 +59,7 @@ export const UxDesign = () => {
       <div
         className={twJoin(
           'relative z-10 after:absolute after:bottom-0 after:right-0 after:top-0 after:mx-0 after:my-auto after:h-[7px] after:w-[7px] after:-translate-x-[5px] after:rounded-[50%] after:bg-t1-darkGreen after:transition-[300ms]',
-          active && 'after:bg-t1-green',
+          active && 'after:bg-primary',
           className
         )}
       >
@@ -71,7 +71,7 @@ export const UxDesign = () => {
   return (
     <div className="transitionAll">
       <div className="mb-6 flex flex-col flex-nowrap items-center ">
-        <Typography variant="paragraph_label" className="mb-4 text-t1-green">
+        <Typography variant="paragraph_label" className="mb-4 text-primary">
           ( WE DEVELOP )
         </Typography>
         <Typography as="h2" variant="h2_bold" className="font-medium">
@@ -81,7 +81,7 @@ export const UxDesign = () => {
 
       <div className="mb-8 flex justify-center">
         <div className="w-[45%] text-center">
-          <Typography variant="text_sm" className="text-t1-white">
+          <Typography variant="text_sm" className="text-white">
             Mindestens so wichtig wie der Code den wir schreiben, ist das
             Design, in welchem digitale Produkte von ihren Anwendern
             wahrgenommen und regelmäßig genutzt werden. Die integrative
@@ -89,7 +89,7 @@ export const UxDesign = () => {
             unterschätzter Erfolgsfaktor performanter, interdisziplinärer
             Entwicklungsteams und entscheidend für den Produkterfolg.
           </Typography>
-          <Typography variant="text_sm" className="text-t1-white">
+          <Typography variant="text_sm" className="text-white">
             Ausgehend von geschäfts- oder produkstrategischen Rahmenbedingungen
             bildet das User Experience Design die zentrale Schnittstelle
             zwischen Nutzer und Technologie. Wir unterstützen dabei
@@ -99,7 +99,7 @@ export const UxDesign = () => {
         </div>
       </div>
 
-      <div className="mb-8 flex justify-center gap-x-[20px] gap-y-0 font-SpaceGroteskRegular uppercase text-t1-gray">
+      <div className="mb-8 flex justify-center gap-x-[20px] gap-y-0 font-SpaceGroteskRegular uppercase text-muted-foreground">
         <CategoryButton category={UX_CATEGORIES.ux_design} />
 
         <CategoryButton category={UX_CATEGORIES.application_development} />
@@ -172,7 +172,7 @@ export const UxDesign = () => {
             />
           </div>
 
-          <div className="col-start-3 row-start-1 flex items-center justify-center text-t1-white">
+          <div className="col-start-3 row-start-1 flex items-center justify-center text-white">
             <BubbleContainer
               className="after:content-[none]"
               active={
@@ -192,8 +192,8 @@ export const UxDesign = () => {
             </BubbleContainer>
           </div>
 
-          <div className="col-span-5 row-start-2 grid grid-cols-7 grid-rows-1 items-center justify-center text-t1-white">
-            <div className="z-10 w-[80%] rounded-xl border-[#21754f] border-2 bg-[rgb(6,25,17)] px-[12px] py-[6px] text-center font-SpaceGroteskRegular text-xs uppercase text-t1-white">
+          <div className="col-span-5 row-start-2 grid grid-cols-7 grid-rows-1 items-center justify-center text-white">
+            <div className="z-10 w-[80%] rounded-xl border-[#21754f] border-2 bg-[rgb(6,25,17)] px-[12px] py-[6px] text-center font-SpaceGroteskRegular text-xs uppercase text-white">
               Human Focused
             </div>
             <BubbleContainer
@@ -268,12 +268,12 @@ export const UxDesign = () => {
                 />
               </ImageMask>
             </BubbleContainer>
-            <div className="z-10 w-[80%] rounded-xl border-[#21754f] border-2 bg-[rgb(6,25,17)] px-[12px] py-[6px] text-center font-SpaceGroteskRegular text-xs uppercase text-t1-white">
+            <div className="z-10 w-[80%] rounded-xl border-[#21754f] border-2 bg-[rgb(6,25,17)] px-[12px] py-[6px] text-center font-SpaceGroteskRegular text-xs uppercase text-white">
               Tech Focused
             </div>
           </div>
 
-          <div className="col-start-3 row-start-3 flex items-center justify-center text-t1-white">
+          <div className="col-start-3 row-start-3 flex items-center justify-center text-white">
             <BubbleContainer
               className="after:content-[none]"
               active={

@@ -42,7 +42,7 @@ const Contact = () => {
     return (
       <Typography
         as="div"
-        className="mt-0 flex w-fit gap-2 border-b border-t1-green text-t1-white"
+        className="mt-0 flex w-fit gap-2 border-b border-primary text-white"
         variant="text_xl"
       >
         <ArrowSVG className="h-[1.3em] w-[1.3em] items-center justify-center" />
@@ -87,7 +87,7 @@ const Contact = () => {
         theme={PAGE_THEME.dark}
         text="Get In Touch"
         speed={300}
-        textClassName="text-t1-green"
+        textClassName="text-primary"
         includeLogo={false}
         className="-mt-[200px] mb-[100px] md:mb-[200px]"
       />

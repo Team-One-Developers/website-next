@@ -4,7 +4,7 @@ import Typography from '../atoms/Typography'
 
 export const Companies = () => {
   return (
-    <div className="bg-t1-transparent">
+    <div className="bg-transparent">
       <div className="flex justify-center text-center">
         <Typography
           className="before:content-['('] after:content-[':)'] before:tracking-[0.25rem] after:tracking-[0.25rem] md:-mt-9"

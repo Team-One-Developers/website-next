@@ -18,7 +18,7 @@ export const TwoColumnsSectionContainer = (
     right,
     leftXLWidthClass = 'xl:w-full',
     rightXLWidthClass = 'xl:w-full',
-    backgroundColorClass = 'bg-t1-transparent',
+    backgroundColorClass = 'bg-transparent',
     className,
   } = props
 

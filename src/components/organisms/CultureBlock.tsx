@@ -12,12 +12,12 @@ export const CultureBlock = () => {
         className="mt-14"
         left={
           <>
-            <Typography variant="text_sm" className="text-t1-white">
+            <Typography variant="text_sm" className="text-white">
               Dass es schwer ist, Tech-Talente für sich zu gewinnen ist kein
               Geheimnis mehr. Uns beschäftigt daher eine Frage so intensiv wie
               kaum eine andere:
             </Typography>
-            <Typography variant="text_xl" className="text-t1-white">
+            <Typography variant="text_xl" className="text-white">
               Was können wir als Tech-Unternehmen tun, um das attraktivste
               Arbeitsumfeld zu schaffen, das wir selbst je gesehen haben?
               <Image
@@ -35,7 +35,7 @@ export const CultureBlock = () => {
             className="-rotate-[12.5deg]"
             element={
               <div className="relative ">
-                <div className="absolute left-[15px] top-[20px] h-[85px] w-[70%] bg-t1-black" />
+                <div className="absolute left-[15px] top-[20px] h-[85px] w-[70%] bg-black" />
                 <Image
                   src="/images/logo/t1d-sticker-neongreen.svg"
                   alt="T1D Logo"
@@ -56,7 +56,7 @@ export const CultureBlock = () => {
         }
         leftXLWidthClass="xl:w-[85%]"
         rightXLWidthClass="xl:w-[85%]"
-        backgroundColorClass="bg-t1-black"
+        backgroundColorClass="bg-black"
       />
       <TwoColumnsSectionContainer
         className="mt-6"
@@ -73,7 +73,7 @@ export const CultureBlock = () => {
                   className=""
                 />
               </div>
-              <Typography className="text-t1-white" variant="text_lg">
+              <Typography className="text-white" variant="text_lg">
                 Die wichtigsten Antworten auf diese Frage sind für uns: Werte zu
                 definieren, Werte zu leben und sie auch zu schützen. Dabei
                 ehrlich und authentisch zu sein, nichts zu versprechen was man
@@ -92,7 +92,7 @@ export const CultureBlock = () => {
                 />
               </div>
               <div>
-                <Typography className="text-t1-white" variant="text_lg">
+                <Typography className="text-white" variant="text_lg">
                   Und zu guter Letzt: Individuelle Rahmenbedingungen zu
                   schaffen. Diese Antworten liefern uns einen natürlichen
                   Treibstoff, mit dem wir wachsen und gedeihen, der uns als Team
@@ -105,7 +105,7 @@ export const CultureBlock = () => {
         }
         leftXLWidthClass="xl:w-[85%]"
         rightXLWidthClass="xl:w-[85%]"
-        backgroundColorClass="bg-t1-black"
+        backgroundColorClass="bg-black"
       />
 
       <TwoColumnsSectionContainer
@@ -129,7 +129,7 @@ export const CultureBlock = () => {
           </div>
         }
         right={null}
-        backgroundColorClass="bg-t1-black"
+        backgroundColorClass="bg-black"
         leftXLWidthClass="xl:w-[95%]"
       />
 
@@ -146,7 +146,7 @@ export const CultureBlock = () => {
               />
             </div>
             <div>
-              <Typography className="text-t1-white" variant="text_lg">
+              <Typography className="text-white" variant="text_lg">
                 Menschenzentriert zu arbeiten bedeutet für uns natürlich auch,
                 kundenzentriert zu arbeiten. Als Dienstleister, der wir sind,
                 heißt das natürlich in allererster Linie, ein klares Verständnis
@@ -159,7 +159,7 @@ export const CultureBlock = () => {
           </div>
         }
         right={null}
-        backgroundColorClass="bg-t1-black"
+        backgroundColorClass="bg-black"
         leftXLWidthClass="xl:w-[95%]"
       />
     </>

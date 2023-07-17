@@ -14,7 +14,7 @@ const Blog = () => {
   }) => {
     return (
       <div className="grid grid-flow-row grid-cols-[4rem_1fr] gap-2">
-        <div className="flex h-16 w-16 items-center justify-center rounded bg-t1-green text-t1-black">
+        <div className="flex h-16 w-16 items-center justify-center rounded bg-primary text-black">
           {iconText}
         </div>
         <div>
@@ -53,26 +53,26 @@ const Blog = () => {
         <div className="w-full rounded p-24">
           <div className="max-w-[80%]">
             <h1 className="text-6xl font-medium">
-              {`AutoGPT - Magical omnipotent tool of the future or overhyped unpractical side-project? `}
+              {"AutoGPT - Magical omnipotent tool of the future or overhyped unpractical side-project? "}
             </h1>
-            <h3 className="mt-4 text-4xl text-t1-green">
+            <h3 className="mt-4 text-4xl text-primary">
               {`The new tool called "AutoGPT" ist the new hot topic. What use does it actually have and is it worth learning?`}
             </h3>
             <p className="mt-4">Monday, 26th July 2023</p>
           </div>
           <div className="mt-16 flex items-center">
-            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-t1-green text-t1-black">
+            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary text-black">
               SB
             </div>
             <div className="ml-4">
               <p className="text-xl font-bold">Simon Broß</p>
-              <p className="text-t1-lightGray">Software Engineer</p>
+              <p className="text-muted-foreground">Software Engineer</p>
             </div>
           </div>
         </div>
         <div className="grid w-full gap-8 p-24 pt-0 lg:grid-cols-[1fr_600px_1fr] xl:grid-cols-[1fr_800px_1fr]">
           <div className="">
-            <div className="sticky top-[140px] rounded border border-t1-green p-4">
+            <div className="sticky top-[140px] rounded border border-primary p-4">
               <h3 className="text-xl font-bold">Table of Content</h3>
 
               <ul className="mt-4 flex flex-col gap-1">

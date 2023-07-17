@@ -38,13 +38,13 @@ export const Benefits = () => {
       >
         <Image src={icon} alt="Little icon" height={36} width={36} />
         <Typography
-          className="mb-2 text-base text-t1-green mt-2"
+          className="mb-2 text-base text-primary mt-2"
           as="h3"
           variant="subtitle_lg"
         >
           {headline}
         </Typography>
-        <Typography variant="text_sm" className="m-0 text-t1-white">
+        <Typography variant="text_sm" className="m-0 text-white">
           {text}
         </Typography>
       </div>
@@ -52,7 +52,7 @@ export const Benefits = () => {
   }
 
   return (
-    <div className="bg-t1-black text-t1-white lg:flex">
+    <div className="bg-black text-white lg:flex">
       <div className="relative lg:basis-[50%]">
         <Typography as="h2" variant="h3" className="lg:max-w-[60%]">
           Unsere Benefits auf einen Blick

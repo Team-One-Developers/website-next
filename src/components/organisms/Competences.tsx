@@ -17,7 +17,7 @@ export const Competences = () => {
     return (
       <div
         className={twJoin(
-          'group p-8 lg:flex-row lg:gap-8  flex flex-col rounded-lg hover:text-t1-darkGray hover:bg-t1-green bg-t1-darkGray mb-4 text-t1-white '
+          'group p-8 lg:flex-row lg:gap-8  flex flex-col rounded-lg hover:text-t1-darkGray hover:bg-primary bg-t1-darkGray mb-4 text-white '
         )}
       >
         <span className="font-SpaceGroteskRegular font-medium not-italic text-xs leading-110 tracking-aBitTighter uppercase min-w-[7%]">
@@ -39,11 +39,11 @@ export const Competences = () => {
 
   return (
     <ContentWrapper>
-      <section className="bg-t1-black mt-8 lg:mt-52">
+      <section className="bg-black mt-8 lg:mt-52">
         <div className="flex flex-col items-center">
           <div className="text-center lg:w-1/2">
             <Typography
-              className="mb-5 uppercase text-t1-green"
+              className="mb-5 uppercase text-primary"
               variant="subtitle"
             >
               ( WE DEVELOP )

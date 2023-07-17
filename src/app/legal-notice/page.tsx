@@ -67,7 +67,7 @@ export const Legal = () => {
             Rechtliche Schritte gegen die Versender von so genannten Spam-Mails
             bei Verstößen gegen dieses Verbot sind ausdrücklich vorbehalten. Für
             detaillierte Informationen siehe{' '}
-            <a href="/privacy" className="text-t1-green">
+            <a href="/privacy" className="text-primary">
               Datenschutz
             </a>
             .
