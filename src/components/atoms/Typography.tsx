@@ -12,14 +12,14 @@ export const typographyVariants = tv({
         'font-ABCDiatypeRegular font-normal text-xl md:text-2xl leading-150 ',
       text_xl:
         'font-SpaceGroteskRegular font-normal  text-2xl md:text-2.5xl lg:text-3.5xl leading-130',
-      subtitle: 'font-SpaceGroteskRegular font-medium text-2xs leading-110',
-      subtitle_lg: 'font-SpaceGroteskRegular font-medium text-base leading-110',
+      subtitle: 'font-SpaceGroteskMedium font-medium text-xs leading-110',
+      subtitle_lg: 'font-SpaceGroteskMedium font-medium text-base leading-110',
       h1: 'uppercase font-SpaceGroteskRegular font-medium text-6xl md:text-8xl leading-115 ',
-      h2: 'uppercase font-SpaceGroteskRegular font-normal text-2xl md:text-5xl lg:text-6xl leading-115',
+      h2: 'uppercase font-SpaceGroteskRegular font-normal text-2xl md:text-3.5xl lg:text-5xl leading-115',
       h2_sm:
         'uppercase font-SpaceGroteskRegular font-normal  text-xl md:text-2.5xl lg:text-4.5xl leading-115',
       h2_bold:
-        'uppercase font-SpaceGroteskRegular font-medium text-2.5xl md:text-5xl lg:6xl leading-110',
+        'uppercase font-SpaceGroteskRegular font-medium text-2.5xl md:text-5xl lg:text-6xl leading-110',
       h3: 'uppercase font-SpaceGroteskRegular font-medium text-2.5xl md:text-5xl leading-110',
       h4: 'font-SpaceGroteskRegular font-medium text-3.5xl leading-110',
       h5: 'font-SpaceGroteskRegular font-medium text-xl leading-110',

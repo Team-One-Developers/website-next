@@ -1,6 +1,5 @@
 import Image from 'next/image'
 
-import { CtaLink } from '@/components/atoms/CtaLink'
 import { Heading } from '@/components/atoms/Heading'
 import { ImageMask } from '@/components/atoms/ImageMask'
 import { Link } from '@/components/atoms/Link'

@@ -42,7 +42,7 @@ const Contact = () => {
     return (
       <Typography
         as="div"
-        className="mt-1 flex w-fit gap-2 border-b border-t1-green text-t1-white"
+        className="mt-0 flex w-fit gap-2 border-b border-t1-green text-t1-white"
         variant="text_xl"
       >
         <ArrowSVG className="h-[1.3em] w-[1.3em] items-center justify-center" />
@@ -70,7 +70,7 @@ const Contact = () => {
             />
           </div>
           <div className={'flex grow-[2] flex-col gap-2 p-4'}>
-            <Typography className={twJoin('-mt-3 mb-0')} variant="text_lg">
+            <Typography className={twJoin('-mt-3 mb-0')} variant="text_xl">
               Team One Developers GmbH <br />
               Hospitalstraße 35 <br />
               70174 Stuttgart

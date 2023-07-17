@@ -80,7 +80,7 @@ const Services = () => {
       <ReferencesSlider />
       <TechStacks />
       <Competences />
-      <FullWidthSectionContainer className="mt-20 lg:mt-48">
+      <FullWidthSectionContainer className="mt-20 lg:mt-48 -mb-[400px]">
         {isXl ? <UxDesign /> : <UxDesignMobile />}
       </FullWidthSectionContainer>
     </PageLayout>

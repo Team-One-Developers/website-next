@@ -45,7 +45,7 @@ export const Accordion = (props: AccordionProps) => {
         <Typography
           as="h3"
           variant="h2"
-          className="uppercase text-inherit"
+          className="uppercase text-inherit mb-0"
           style={{ transition: '0.25s' }}
         >
           {headline}
