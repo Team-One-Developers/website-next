@@ -25,11 +25,15 @@ module.exports = {
       '9xl': '8rem',
     },
     fontFamily: {
-      ABCDiatypeRegular: ['var(--font-ABCD)'],
-      ABCDiatypeRegularItalic: ['var(--font-ABCDItalic)'],
-      SpaceGroteskLight: ['var(--font-SpaceGroteskLight)'],
-      SpaceGroteskRegular: ['var(--font-SpaceGroteskRegular)'],
-      SpaceGroteskMedium: ['var(--font-SpaceGroteskMedium)'],
+      abcdiatype: {
+        regular: ['var(--font-ABCD)'],
+        italic: ['var(--font-ABCDItalic)'],
+      },
+      spacegrotesk: {
+        light: ['var(--font-SpaceGroteskLight)'],
+        regular: ['var(--font-SpaceGroteskRegular)'],
+        medium: ['var(--font-SpaceGroteskMedium)'],
+      },
     },
     screens: {
       xs: '0px',
@@ -75,7 +79,7 @@ module.exports = {
           foreground: 'var(--theme-primary-foreground)',
         },
         muted: {
-          foreground: 'var(--theme-muted-foreground)'
+          foreground: 'var(--theme-muted-foreground)',
         },
         foreground: {
           DEFAULT: 'var(--theme-foreground)',
