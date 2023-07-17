@@ -2,8 +2,8 @@
 
 import Image from 'next/image'
 import { PAGE_THEME } from '@/constants'
-import clsx from 'clsx'
 import { useInView } from 'react-intersection-observer'
+import { twJoin } from 'tailwind-merge'
 
 import { DancingFigures } from '@/components/atoms/DancingFigures'
 import { Heading } from '@/components/atoms/Heading'
@@ -116,11 +116,13 @@ const Home = () => {
       </ContentWrapper>
 
       <AnimatedTeaser
-        className={clsx(
+        className={twJoin(
           'mt-16',
           animatedTeaserInView ? 'bg-primary' : 'bg-background'
         )}
-        innerClassName={clsx(animatedTeaserInView ? 'bg-white' : 'bg-primary')}
+        innerClassName={twJoin(
+          animatedTeaserInView ? 'bg-white' : 'bg-primary'
+        )}
         ref={animatedTeaserContainerRef}
       />
 

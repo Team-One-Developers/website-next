@@ -1,7 +1,6 @@
 import { ReactNode } from 'react'
+import { twMerge } from 'tailwind-merge'
 import { tv, VariantProps } from 'tailwind-variants'
-
-import { cn } from '@/lib/utils'
 
 export const typographyVariants = tv({
   base: 'm-0 not-italic tracking-tinyBitTighter',
@@ -60,7 +59,7 @@ export function Typography({
   return (
     <Component
       style={style}
-      className={cn(typographyVariants({ variant }), className)}
+      className={twMerge(typographyVariants({ variant }), className)}
       onClick={onClick}
     >
       {children}
