@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import { twJoin } from 'tailwind-merge'
 
-import { TopLine } from '../atoms/Topline'
 import Typography from '../atoms/Typography'
 import ContentWrapper from '../layout/ContentWrapper'
 
@@ -17,9 +16,9 @@ export const ReferencesSlider = () => {
     <div className="bg-t1-lightGray">
       <ContentWrapper>
         <div className="flex justify-center bg-t1-lightGray pt-[75px] pb-8 font-medium">
-          <TopLine colorClassName="text-t1-black" opacity={1} variant="lg">
+          <Typography className="text-t1-black" variant="subtitle_lg">
             REFERENZEN
-          </TopLine>
+          </Typography>
         </div>
         <ul className="flex overflow-scroll gap-6 bg-t1-lightGray py-12 px-4 scroll-pl-4 snap-x">
           <ReferencesSliderEntry
@@ -105,7 +104,7 @@ const ReferencesSliderEntry = (props: ReferenceSliderEntryProps) => {
             {technologyList?.map((technology) => (
               <Typography
                 as="li"
-                variant="text_topline"
+                variant="subtitle"
                 className="uppercase"
                 key={technology}
               >

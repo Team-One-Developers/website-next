@@ -3,7 +3,6 @@
 import { useEffect, useState } from 'react'
 import { twJoin, twMerge } from 'tailwind-merge'
 
-import { TopLine } from '../atoms/Topline'
 import Typography from '../atoms/Typography'
 
 interface AccordionProps {
@@ -37,14 +36,12 @@ export const Accordion = (props: AccordionProps) => {
       }}
     >
       <summary className="flex list-none list-image-none flex-col md:flex-row">
-        <TopLine
-          className="mb-[10px] block md:w-[6.6%]"
-          colorClassName="text-t1-white"
-          opacity={1}
-          fontVariant="sub_column"
+        <Typography
+          className="mb-[10px] block md:w-[6.6%] text-t1-white"
+          variant="sub_column"
         >
           {counter}
-        </TopLine>
+        </Typography>
         <Typography
           as="h3"
           variant="h2"

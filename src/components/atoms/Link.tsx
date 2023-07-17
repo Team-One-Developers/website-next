@@ -1,8 +1,8 @@
 import { ReactNode } from 'react'
 import NextLink, { LinkProps as NextLinkProps } from 'next/link'
-import { FONT_CONFIGS } from '@/constants'
-import { twMerge } from 'tailwind-merge'
 import { tv, VariantProps } from 'tailwind-variants'
+
+import Typography from './Typography'
 
 export const linkVariants = tv({
   base: 'inline-block md:text-[align:initial] w-full rounded-sm px-0 py-[0.625rem] text-center md:w-[initial] md:px-4',
@@ -20,7 +20,9 @@ export const linkVariants = tv({
   },
 })
 
-export interface LinkProps extends VariantProps<typeof linkVariants>, NextLinkProps {
+export interface LinkProps
+  extends VariantProps<typeof linkVariants>,
+    NextLinkProps {
   children: ReactNode
   className?: string
 }
@@ -37,11 +39,11 @@ export const Link = ({
       className={linkVariants({
         variant,
         mode,
-        className: twMerge(FONT_CONFIGS.cta_button, className),
+        className: className,
       })}
       href={href}
     >
-      {children}
+      <Typography variant="cta_button">{children}</Typography>
     </NextLink>
   )
 }

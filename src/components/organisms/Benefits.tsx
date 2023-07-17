@@ -40,7 +40,7 @@ export const Benefits = () => {
         <Typography
           className="mb-2 text-base text-t1-green mt-2"
           as="h3"
-          variant="text_topline_lg"
+          variant="subtitle_lg"
         >
           {headline}
         </Typography>

@@ -1,7 +1,6 @@
 import { twJoin } from 'tailwind-merge'
 
 import { Heading } from '../atoms/Heading'
-import { TopLine } from '../atoms/Topline'
 import Typography from '../atoms/Typography'
 import ContentWrapper from '../layout/ContentWrapper'
 
@@ -43,13 +42,12 @@ export const Competences = () => {
       <section className="bg-t1-black mt-8 lg:mt-52">
         <div className="flex flex-col items-center">
           <div className="text-center lg:w-1/2">
-            <TopLine
-              colorClassName="text-t1-green"
-              className="mb-5 uppercase"
-              fontVariant="text_topline"
+            <Typography
+              className="mb-5 uppercase text-t1-green"
+              variant="subtitle"
             >
               ( WE DEVELOP )
-            </TopLine>
+            </Typography>
             <Typography as="h2" variant="h2_bold">
               BUSINESS & <br /> PRODUCT STRATEGY
             </Typography>

@@ -3,7 +3,6 @@
 import { ReactNode, useState } from 'react'
 import { UX_CATEGORIES } from '@/constants'
 
-import { TopLine } from '../atoms/Topline'
 import Typography from '../atoms/Typography'
 
 import './style.css'
@@ -56,7 +55,9 @@ export const UxDesignMobile = () => {
   return (
     <div className="transitionAll">
       <div className="flex items-center gap-4 flex-col flex-nowrap mb-4">
-        <TopLine colorClassName="text-t1-green">( WE DEVELOP )</TopLine>
+        <Typography className="text-t1-green" variant="subtitle">
+          ( WE DEVELOP )
+        </Typography>
         <Typography as="h2" variant="h2_bold">
           UX DESIGN
         </Typography>

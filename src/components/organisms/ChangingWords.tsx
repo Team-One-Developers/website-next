@@ -10,7 +10,7 @@ import Typography from '../atoms/Typography'
 const LINE_HEIGHTS = {
   small: {
     className: 'h-[0.825rem]',
-    value: { mobile: 0.925, md: 0.925, lg: 0.925 },
+    value: { mobile: 0.825, md: 0.825, lg: 0.825 },
   },
   big: {
     className: 'h-[3.6375rem] md:h-[5.335rem] lg:h-[10.67rem]',

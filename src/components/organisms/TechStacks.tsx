@@ -39,7 +39,7 @@ export const TechStacks = () => {
           <div className="flex justify-center gap-[30px] text-center my-6">
             <Typography
               as="button"
-              variant="text_topline_lg"
+              variant="subtitle_lg"
               className={twMerge(
                 'items-center font-SpaceGroteskMedium uppercase pt-4 flex flex-col md:p-4 pb-0',
                 isBackendActive
@@ -53,7 +53,7 @@ export const TechStacks = () => {
 
             <Typography
               as="button"
-              variant="text_topline_lg"
+              variant="subtitle_lg"
               className={twMerge(
                 'items-center font-SpaceGroteskMedium uppercase pt-4 flex flex-col md:p-4 pb-0',
                 isBackendActive

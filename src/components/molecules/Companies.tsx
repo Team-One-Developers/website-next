@@ -9,7 +9,7 @@ export const Companies = () => {
         <Typography
           className="before:content-['('] after:content-[':)'] before:tracking-[0.25rem] after:tracking-[0.25rem] md:-mt-9"
           as="h2"
-          variant="text_topline"
+          variant="subtitle"
         >
           Kunden, die auf T1D zählen
         </Typography>

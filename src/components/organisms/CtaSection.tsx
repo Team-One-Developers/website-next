@@ -2,11 +2,10 @@ import { twJoin } from 'tailwind-merge'
 
 import { Heading } from '../atoms/Heading'
 import { Link, LinkProps } from '../atoms/Link'
-import { TopLine } from '../atoms/Topline'
 import Typography, { TypographyProps } from '../atoms/Typography'
 
 interface CtaSectionProps {
-  topLineText?: string
+  subtitleText?: string
   headlineText?: string
   contentText: string
   link: string
@@ -22,7 +21,7 @@ interface CtaSectionProps {
 
 export const CtaSection = (props: CtaSectionProps) => {
   const {
-    topLineText,
+    subtitleText,
     headlineText,
     contentText,
     link,
@@ -38,16 +37,15 @@ export const CtaSection = (props: CtaSectionProps) => {
 
   return (
     <section className={className}>
-      {topLineText && (
-        <TopLine
-          className="mb-4 flex items-center "
-          opacity={1}
-          colorClassName="text-t1-black"
+      {subtitleText && (
+        <Typography
+          className="mb-4 flex items-center text-t1-black"
+          variant="subtitle"
         >
           {/* We should refactor this as only icons are passed into here */}
           {children}
-          {topLineText}
-        </TopLine>
+          {subtitleText}
+        </Typography>
       )}
       {headlineText && (
         <Typography

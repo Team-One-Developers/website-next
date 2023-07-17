@@ -9,7 +9,6 @@ import Image from 'next/image'
 import { twJoin, twMerge } from 'tailwind-merge'
 
 import { ImageMask } from '../atoms/ImageMask'
-import { TopLine } from '../atoms/Topline'
 import Typography from '../atoms/Typography'
 
 export const UxDesign = () => {
@@ -72,13 +71,9 @@ export const UxDesign = () => {
   return (
     <div className="transitionAll">
       <div className="mb-6 flex flex-col flex-nowrap items-center ">
-        <TopLine
-          colorClassName="text-t1-green"
-          fontVariant="paragraph_label"
-          className="mb-4"
-        >
+        <Typography variant="paragraph_label" className="mb-4 text-t1-green">
           ( WE DEVELOP )
-        </TopLine>
+        </Typography>
         <Typography as="h2" variant="h2_bold" className="font-medium">
           UX DESIGN
         </Typography>

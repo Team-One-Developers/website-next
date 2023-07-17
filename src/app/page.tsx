@@ -95,7 +95,7 @@ const Home = () => {
           <figure className="mb-6 flex h-[129px] w-full justify-center text-t1-green md:hidden">
             <DancingFigures />
           </figure>
-          <Typography className="text-t1-black" variant="h2">
+          <Typography className="text-t1-black normal-case" variant="h3">
             Wir sind Technologie-Experten und verstehen uns als integrativer
             Entwicklungs- & Beratungspartner in komplexen Softwareprojekten.{' '}
             <DancingFigures className="hidden h-16 px-4 py-0 align-middle text-t1-green md:inline" />
@@ -140,7 +140,7 @@ const Home = () => {
       >
         <CtaSection
           className="basis-[37%] lg:grow-0"
-          topLineText="CULTURE @ T1D"
+          subtitleText="CULTURE @ T1D"
           headlineText="Wir sind menschen&shy;zentriert."
           contentText='Wir glauben an Fortschritt durch Technologie, an Nachhaltigkeit durch Qualität sowie an die Prinzipien des agilen Manifests. Und vor allem glauben wir an die "Zielgruppe Mensch", die im Mittelpunkt unseres Handelns stehen muss.'
           linkLabel="Unsere Kultur"
@@ -192,7 +192,7 @@ const Home = () => {
           }
           right={
             <CtaSection
-              topLineText="CAREER @ T1D"
+              subtitleText="CAREER @ T1D"
               headlineText="Nur wer Werte vertritt, kann Werte schaffen."
               contentText={
                 'Team One Developers ist für uns nicht nur ein Name, sondern ein Versprechen: Das Versprechen den Unterschied zu machen, nicht nur Standard sondern die beste Wahl zu sein. Für unsere Partner und ganz besonders für unsere Kollegen'

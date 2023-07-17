@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 
-import { TopLine } from '../atoms/Topline'
+import Typography from '../atoms/Typography'
 import { Accordion } from '../molecules/Accordion'
 
 export const Values = () => {
@@ -11,21 +11,17 @@ export const Values = () => {
   return (
     <>
       <div className="flex justify-between p-2 lg:mt-36">
-        <TopLine
-          colorClassName="text-t1-white"
-          fontVariant="text_topline"
-          opacity={1}
-        >
+        <Typography className="text-t1-white" variant="subtitle">
           (T1D HIGH FIVE)
-        </TopLine>
+        </Typography>
 
         <button
           className="cursor-pointer text-t1-white brightness-100 contrast-100"
           onClick={() => setIsAllExpanded(!isAllExpanded)}
         >
-          <TopLine colorClassName="text-t1-white" opacity={1}>
+          <Typography className="text-t1-white" variant="subtitle">
             {`${isAllExpanded ? '▾' : '▸'} ALLE ÖFFNEN`}
-          </TopLine>
+          </Typography>
         </button>
       </div>
       <Accordion

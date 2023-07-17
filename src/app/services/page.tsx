@@ -4,7 +4,6 @@ import Image from 'next/image'
 import { useMediaQuery } from 'usehooks-ts'
 
 import { Button, buttonVariants } from '@/components/atoms/Button'
-import { TopLine } from '@/components/atoms/Topline'
 import Typography from '@/components/atoms/Typography'
 
 import { Hero } from '@/components/molecules/Hero'
@@ -67,14 +66,9 @@ const Services = () => {
         }
         overlayNode={
           <>
-            <TopLine
-              className="mb-6"
-              colorClassName="text-t1-white"
-              variant="lg"
-              opacity={1}
-            >
+            <Typography variant="subtitle_lg" className="mb-6 text-t1-white">
               We Develop
-            </TopLine>
+            </Typography>
             <ChangingWords
               words={['Software', 'Strategy', 'UX Design']}
               delay={1250}
