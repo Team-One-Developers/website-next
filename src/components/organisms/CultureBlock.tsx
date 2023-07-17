@@ -44,7 +44,7 @@ export const CultureBlock = () => {
             className="-rotate-[12.5deg]"
             element={
               <div className="relative ">
-                <div className="absolute left-[15px] top-[20px] h-[85px] w-[70%] bg-t1-black" />
+                <div className="absolute left-[15px] top-[20px] h-[85px] w-[70%] bg-black" />
                 <Image
                   src="/images/logo/t1d-sticker-neongreen.svg"
                   alt="T1D Logo"
@@ -65,7 +65,7 @@ export const CultureBlock = () => {
         }
         leftXLWidthClass="xl:w-[85%]"
         rightXLWidthClass="xl:w-[85%]"
-        backgroundColorClass="bg-t1-black"
+        backgroundColorClass="bg-black"
       />
       <TwoColumnsSectionContainer
         className="mt-6"
@@ -122,7 +122,7 @@ export const CultureBlock = () => {
         }
         leftXLWidthClass="xl:w-[85%]"
         rightXLWidthClass="xl:w-[85%]"
-        backgroundColorClass="bg-t1-black"
+        backgroundColorClass="bg-black"
       />
 
       <TwoColumnsSectionContainer
@@ -146,7 +146,7 @@ export const CultureBlock = () => {
           </div>
         }
         right={null}
-        backgroundColorClass="bg-t1-black"
+        backgroundColorClass="bg-black"
         leftXLWidthClass="xl:w-[95%]"
       />
 
@@ -180,7 +180,7 @@ export const CultureBlock = () => {
           </div>
         }
         right={null}
-        backgroundColorClass="bg-t1-black"
+        backgroundColorClass="bg-black"
         leftXLWidthClass="xl:w-[95%]"
       />
     </>

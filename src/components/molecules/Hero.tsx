@@ -19,7 +19,7 @@ export const Hero = (props: HeroProps) => {
   return (
     <div
       className={twJoin(
-        'relative h-[80vh] w-screen max-w-full bg-t1-white',
+        'relative h-[80vh] w-screen max-w-full bg-white',
         className
       )}
     >

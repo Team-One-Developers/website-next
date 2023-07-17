@@ -49,7 +49,7 @@ export const Header = ({ theme }: { theme: PageTheme }) => {
 
           <div className="lg:hidden">
             <button
-              className="z-50 cursor-pointer select-none self-start rounded-[3px] border-none bg-primary px-[14px] py-[10px] font-SpaceGroteskRegular text-sm leading-[14px] text-t1-black shadow-none outline-none"
+              className="z-50 cursor-pointer select-none self-start rounded-[3px] border-none bg-primary px-[14px] py-[10px] font-SpaceGroteskRegular text-sm leading-[14px] text-black shadow-none outline-none"
               onClick={() => {
                 setBurgerNavigationOpened(true)
               }}
@@ -87,7 +87,7 @@ export const Header = ({ theme }: { theme: PageTheme }) => {
                   >
                     <div className="flex-grow p-8 pr-0 text-right">
                       <button
-                        className="z-50 cursor-pointer select-none self-start rounded-[3px] border-none bg-primary px-[14px] py-[10px] font-SpaceGroteskRegular text-sm leading-[14px] text-t1-black shadow-none outline-none"
+                        className="z-50 cursor-pointer select-none self-start rounded-[3px] border-none bg-primary px-[14px] py-[10px] font-SpaceGroteskRegular text-sm leading-[14px] text-black shadow-none outline-none"
                         onClick={() => {
                           setBurgerNavigationOpened(false)
                         }}

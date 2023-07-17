@@ -18,7 +18,7 @@ export const UxDesignMobile = () => {
     return (
       <button
         className={twMerge(
-          'relative m-0 cursor-pointer border-none px-[2px] py-2 uppercase text-t1-gray text-center',
+          'relative m-0 cursor-pointer border-none px-[2px] py-2 uppercase text-muted-foreground text-center',
           activeCategory === category &&
             'text-primary after:absolute after:left-[50%] after:h-[5px] after:w-[5px] after:-translate-x-[50%] after:translate-y-[425%] after:rounded-full after:bg-primary'
         )}
@@ -37,7 +37,7 @@ export const UxDesignMobile = () => {
           active ? 'border-[#46ffad]' : 'brightness-[35%]'
         )}
       >
-        <div className="text-center font-SpaceGroteskRegular text-t1-black box-border">
+        <div className="text-center font-SpaceGroteskRegular text-black box-border">
           {text}
         </div>
       </div>
@@ -83,7 +83,7 @@ export const UxDesignMobile = () => {
         </div>
       </div>
 
-      <div className="grid-cols-2 grid-rows-2 sm:grid-cols-4 sm:grid-rows-1 mb-4 grid justify-center gap-x-0 gap-y-1 font-SpaceGroteskRegular uppercase text-t1-gray">
+      <div className="grid-cols-2 grid-rows-2 sm:grid-cols-4 sm:grid-rows-1 mb-4 grid justify-center gap-x-0 gap-y-1 font-SpaceGroteskRegular uppercase text-muted-foreground">
         <CategoryButton category={UX_CATEGORIES.ux_design} />
 
         <CategoryButton category={UX_CATEGORIES.application_development} />

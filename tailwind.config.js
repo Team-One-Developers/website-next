@@ -65,12 +65,9 @@ module.exports = {
       },
       colors: {
         t1: {
-          gray: 'var(--t1-gray)',
           darkGray: 'var(--t1-darkGray)',
-          black: 'var(--t1-black)',
-          green: 'var(--primary)',
+          black: 'var(--black)',
           darkGreen: 'var(--t1-darkGreen)',
-          transparent: 'var(--t1-transparent)',
         },
         background: 'var(--theme-background)',
         primary: {

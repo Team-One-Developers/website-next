@@ -4,13 +4,8 @@
 
 @layer base {
   :root {
-    --t1-white: #ffffff;
-    --t1-lightGray: #f2f2f2;
-    --t1-gray: #585858;
     --t1-darkGray: #1d1d1d;
-    --t1-black: #000000;
     --t1-darkGreen: #21352b;
-    --t1-transparent: transparent;
 
     --theme-primary: #46ffad;
     --theme-primary-forground: #f2f2f2;
@@ -38,7 +33,7 @@
 
   ::selection,
   ::moz-selection {
-    color: var(--t1-black);
+    color: var(--black);
     background-color: var(--theme-selectionBgColor);
   }
 

@@ -6,7 +6,7 @@ export const buttonVariants = tv({
   variants: {
     color: {
       primary: 'bg-primary text-t1-darkGray',
-      secondary: 'bg-t1-black text-primary',
+      secondary: 'bg-black text-primary',
     },
     size: {
       md: 'text-[14px] md:px-[14px] md:py-[10px]',

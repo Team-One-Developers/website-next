@@ -14,7 +14,7 @@ const Blog = () => {
   }) => {
     return (
       <div className="grid grid-flow-row grid-cols-[4rem_1fr] gap-2">
-        <div className="flex h-16 w-16 items-center justify-center rounded bg-primary text-t1-black">
+        <div className="flex h-16 w-16 items-center justify-center rounded bg-primary text-black">
           {iconText}
         </div>
         <div>
@@ -61,7 +61,7 @@ const Blog = () => {
             <p className="mt-4">Monday, 26th July 2023</p>
           </div>
           <div className="mt-16 flex items-center">
-            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary text-t1-black">
+            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary text-black">
               SB
             </div>
             <div className="ml-4">

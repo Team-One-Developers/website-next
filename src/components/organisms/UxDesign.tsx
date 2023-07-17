@@ -20,7 +20,7 @@ export const UxDesign = () => {
     return (
       <button
         className={twMerge(
-          'relative m-0 cursor-pointer border-none px-1 py-4 uppercase text-t1-gray',
+          'relative m-0 cursor-pointer border-none px-1 py-4 uppercase text-muted-foreground',
           activeCategory === category &&
             'text-primary after:absolute after:left-[50%] after:h-[5px] after:w-[5px] after:-translate-x-[50%] after:translate-y-[425%] after:rounded-full after:bg-primary'
         )}
@@ -41,7 +41,7 @@ export const UxDesign = () => {
             : 'brightness-[25%]'
         )}
       >
-        <div className="text-center font-SpaceGroteskRegular text-t1-black">
+        <div className="text-center font-SpaceGroteskRegular text-black">
           {text}
         </div>
       </div>
@@ -117,7 +117,7 @@ export const UxDesign = () => {
         </div>
       </div>
 
-      <div className="mb-8 flex justify-center gap-x-[20px] gap-y-0 font-SpaceGroteskRegular uppercase text-t1-gray">
+      <div className="mb-8 flex justify-center gap-x-[20px] gap-y-0 font-SpaceGroteskRegular uppercase text-muted-foreground">
         <CategoryButton category={UX_CATEGORIES.ux_design} />
 
         <CategoryButton category={UX_CATEGORIES.application_development} />

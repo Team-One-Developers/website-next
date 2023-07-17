@@ -98,7 +98,7 @@ const Home = () => {
             <DancingFigures />
           </figure>
           <Copy
-            className="text-t1-black"
+            className="text-black"
             textSize="xl"
             fontDefaults={FONT_CONFIGS.desktop_h2_regular}
           >

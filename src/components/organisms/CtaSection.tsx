@@ -42,7 +42,7 @@ export const CtaSection = (props: CtaSectionProps) => {
         <TopLine
           className="mb-4 flex items-center "
           opacity={1}
-          colorClassName="text-t1-black"
+          colorClassName="text-black"
         >
           {/* We should refactor this as only icons are passed into here */}
           {children}
@@ -66,7 +66,7 @@ export const CtaSection = (props: CtaSectionProps) => {
         }}
       >
         <Copy
-          className="m-0 mb-6 text-t1-black"
+          className="m-0 mb-6 text-black"
           textSize="sm"
           fontDefaults={fontDefaultsContent}
         >

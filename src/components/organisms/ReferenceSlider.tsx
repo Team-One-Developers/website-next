@@ -19,7 +19,7 @@ export const ReferencesSlider = () => {
     <div className="bg-background">
       <ContentWrapper>
         <div className="flex justify-center bg-background pt-[75px] pb-8 font-medium">
-          <TopLine colorClassName="text-t1-black" opacity={1} textSize="l">
+          <TopLine colorClassName="text-black" opacity={1} textSize="l">
             REFERENZEN
           </TopLine>
         </div>
@@ -103,11 +103,11 @@ const ReferencesSliderEntry = (props: ReferenceSliderEntryProps) => {
           <Heading
             tag="h2"
             fontDefaults={FONT_CONFIGS.desktop_h2_medium}
-            colorClassName="text-t1-black"
+            colorClassName="text-black"
           >
             {headline}
           </Heading>
-          <ul className="flex gap-4 mt-2 text-t1-black">
+          <ul className="flex gap-4 mt-2 text-black">
             {technologyList?.map((technology) => (
               <li
                 className={twJoin('uppercase', FONT_CONFIGS.desktop_topline)}
@@ -118,7 +118,7 @@ const ReferencesSliderEntry = (props: ReferenceSliderEntryProps) => {
             ))}
           </ul>
           <Copy
-            className="mt-8 md:pr-20 xl:pr-28 text-t1-black"
+            className="mt-8 md:pr-20 xl:pr-28 text-black"
             textSize="sm"
             fontDefaults={FONT_CONFIGS.desktop_copy_small}
           >

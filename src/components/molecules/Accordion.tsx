@@ -27,7 +27,7 @@ export const Accordion = (props: AccordionProps) => {
   return (
     <details
       className={twMerge(
-        'group relative cursor-pointer overflow-hidden border-t-2 border-t1-white p-2 text-white last:border-b-2 hover:bg-t1-darkGray md:p-4',
+        'group relative cursor-pointer overflow-hidden border-t-2 border-white p-2 text-white last:border-b-2 hover:bg-t1-darkGray md:p-4',
         open ? 'text-primary' : 'hover:py-9 hover:text-primary'
       )}
       open={open}

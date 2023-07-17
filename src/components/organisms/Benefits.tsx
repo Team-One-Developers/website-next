@@ -58,7 +58,7 @@ export const Benefits = () => {
   }
 
   return (
-    <div className="bg-t1-black text-white lg:flex">
+    <div className="bg-black text-white lg:flex">
       <div className="relative lg:basis-[50%]">
         <Heading
           tag="h2"

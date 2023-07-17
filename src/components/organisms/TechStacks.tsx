@@ -33,7 +33,7 @@ export const TechStacks = () => {
         'flex items-start pt-[9rem] min-h-[820px] transition-[300ms]',
         isBackendActive
           ? 'bg-black text-white'
-          : 'bg-background text-t1-black'
+          : 'bg-background text-black'
       )}
     >
       <ContentWrapper>
@@ -45,7 +45,7 @@ export const TechStacks = () => {
                 'items-center font-SpaceGroteskMedium uppercase pt-4 flex flex-col md:p-4 pb-0',
                 isBackendActive
                   ? 'text-muted-foreground'
-                  : 'after:content-["⦁"] after:text-xl text-t1-black'
+                  : 'after:content-["⦁"] after:text-xl text-black'
               )}
               onClick={() => setIsBackendActive(false)}
             >
@@ -57,7 +57,7 @@ export const TechStacks = () => {
                 'items-center font-SpaceGroteskMedium uppercase pt-4 flex flex-col md:p-4 pb-0',
                 isBackendActive
                   ? 'after:content-["⦁"] after:text-xl text-primary'
-                  : 'text-t1-gray'
+                  : 'text-muted-foreground'
               )}
               onClick={() => setIsBackendActive(true)}
             >
@@ -148,7 +148,7 @@ const TechStackLogos = (props: TechStackLogosProps) => {
           key={`${isBackendActive ? 'be' : 'fe'}-${logoIndex}`}
           className={twJoin(
             'inline-block m-2 md:6',
-            isBackendActive ? 'text-white' : 'text-t1-black',
+            isBackendActive ? 'text-white' : 'text-black',
             sizeClasses
           )}
           style={{

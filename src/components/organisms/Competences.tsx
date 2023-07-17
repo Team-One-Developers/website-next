@@ -46,7 +46,7 @@ export const Competences = () => {
 
   return (
     <ContentWrapper>
-      <section className="bg-t1-black mt-8 lg:mt-52">
+      <section className="bg-black mt-8 lg:mt-52">
         <div className="flex flex-col items-center">
           <div className="text-center lg:w-1/2">
             <TopLine

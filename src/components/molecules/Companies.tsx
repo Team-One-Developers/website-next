@@ -8,7 +8,7 @@ import { Heading } from '../atoms/Heading'
 
 export const Companies = () => {
   return (
-    <div className="bg-t1-transparent">
+    <div className="bg-transparent">
       <div className="flex justify-center text-center">
         <Heading
           className="HeadlinePseudo md:-mt-9"

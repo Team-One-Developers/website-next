@@ -34,7 +34,7 @@ export const AnimatedTeaser = forwardRef<HTMLDivElement, AnimatedTeaserProps>(
               <Copy
                 textSize="l"
                 fontDefaults={FONT_CONFIGS.desktop_copy_large}
-                className="m-0 text-t1-black"
+                className="m-0 text-black"
               >
                 Wir arbeiten
               </Copy>
@@ -48,7 +48,7 @@ export const AnimatedTeaser = forwardRef<HTMLDivElement, AnimatedTeaserProps>(
               Integrativ & Agil
             </Heading>
 
-            <Copy className="text-t1-black" textSize="l">
+            <Copy className="text-black" textSize="l">
               Integrativ bedeutet für uns nicht nur, nah am Kunden zu sein,
               sondern vor allem auch die Produkte, an denen wir arbeiten, so zu
               entwickeln, als wären es unsere eigenen. Team One for One Team.
