@@ -2,10 +2,10 @@
 
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
-import { FONT_CONFIGS } from '@/constants'
 import { twJoin } from 'tailwind-merge'
 
 import { Heading } from '@/components/atoms/Heading'
+import Typography from '@/components/atoms/Typography'
 
 import { PageLayout } from '@/components/layout/PageLayout'
 
@@ -76,15 +76,12 @@ const Blog = () => {
       <div className="min-h-screen">
         <div className="w-full rounded p-24">
           <div className="max-w-[80%]">
-            <Heading
-              tag="h1"
-              fontDefaults={FONT_CONFIGS.desktop_h2_regular}
-            >{"Read our blog"}</Heading>
-            <Heading
-              tag="h2"
-              fontDefaults={FONT_CONFIGS.desktop_h5}
-              colorClassName="text-primary"
-            >{"Regular posts about topics that drive us"}</Heading>
+            <Typography as="h1" variant="h2">{`Read our blog`}</Typography>
+            <Typography
+              as="h2"
+              variant="h5"
+              className="text-primary"
+            >{`Regular posts about topics that drive us`}</Typography>
           </div>
         </div>
         <div className="grid w-full grid-flow-row grid-cols-[1fr_3fr] gap-8 p-24">

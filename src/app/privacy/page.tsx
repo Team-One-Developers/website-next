@@ -1,34 +1,23 @@
-import { ReactNode } from 'react'
-import Image from 'next/image'
-import { FONT_CONFIGS } from '@/constants'
-
 import '../legal-notice/style.css'
 
 import { twJoin } from 'tailwind-merge'
 
-import { Heading } from '@/components/atoms/Heading'
+import Typography from '@/components/atoms/Typography'
 
 import ContentWrapper from '@/components/layout/ContentWrapper'
 import { FullWidthSectionContainer } from '@/components/layout/FullWidthSectionContainer'
 import { PageLayout } from '@/components/layout/PageLayout'
 
-const Privacy = () => {
-  const legalParagraphCSS = `${FONT_CONFIGS.desktop_copy_small} text-white`
-  const offsetLegalParagraphCSS = `${legalParagraphCSS} mt-4`
-
+export const Privacy = () => {
   return (
     <PageLayout>
       <ContentWrapper>
         <FullWidthSectionContainer className="mt-12">
           <hgroup className="grid gap-4">
-            <Heading
-              tag="h1"
-              fontDefaults={FONT_CONFIGS.desktop_h3}
-              className="mt-8"
-            >
+            <Typography as="h1" variant="h3" className="mt-8">
               Datenschutz&shy;erklärung
-            </Heading>
-            <p className={legalParagraphCSS}>
+            </Typography>
+            <Typography as="p" variant="text_sm" className="text-white">
               Mit dieser Datenschutzerklärung möchten wir Sie über Art, Umfang
               und Zweck der Verarbeitung von personenbezogenen Daten (im
               Folgenden auch nur als &quot;Daten&quot; bezeichnet) aufklären.
@@ -38,16 +27,12 @@ const Privacy = () => {
               uns vorgenommene Daten-Verarbeitungsvorgänge sowohl im Rahmen
               unserer Kerntätigkeit als auch für die von uns vorgehaltenen
               Online-Medien.
-            </p>
+            </Typography>
           </hgroup>
-          <Heading
-            tag="h2"
-            fontDefaults={FONT_CONFIGS.desktop_h4}
-            className="mt-8"
-          >
+          <Typography as="h2" variant="h4" className="mt-8">
             Wer bei uns für die Datenverarbeitung verantwortlich ist
-          </Heading>
-          <address className={legalParagraphCSS}>
+          </Typography>
+          <Typography as="address" variant="text_sm" className="text-white">
             Team One Developers GmbH <br />
             Hospitalstraße 35 <br />
             70174 Stuttgart
@@ -60,20 +45,20 @@ const Privacy = () => {
             </a>
             <br />
             Geschäftsführer: Timo Brückel, Julian Richter, Michael Krause
-          </address>
-          <Heading
-            tag="h2"
-            fontDefaults={FONT_CONFIGS.desktop_h4}
-            className="mt-8"
-          >
+          </Typography>
+          <Typography as="h2" variant="h4" className="mt-8">
             Ihre Rechte nach der DSGVO
-          </Heading>
-          <p className={legalParagraphCSS}>
+          </Typography>
+          <Typography as="p" variant="text_sm" className="text-white">
             Nach der DSGVO stehen Ihnen die nachfolgend aufgeführten Rechte zu,
             die Sie jederzeit bei dem in Ziffer 1. dieser Datenschutzerklärung
             genannten Verantwortlichen geltend machen können:
-          </p>
-          <ul className={twJoin('legalUL', offsetLegalParagraphCSS)}>
+          </Typography>
+          <Typography
+            as="ul"
+            variant="text_sm"
+            className="legalUL text-white mt-4"
+          >
             <li className="legalULLIPadded">
               <strong>Recht auf Auskunft:</strong> Sie haben das Recht, von uns
               Auskunft darüber zu verlangen, ob und welche Daten wir von Ihnen
@@ -105,26 +90,18 @@ const Privacy = () => {
               Aufsichtsbehörde Ihres üblichen Aufenthaltsortes, Ihres
               Arbeitsplatzes oder unseres Firmensitzes.
             </li>
-          </ul>
-          <Heading
-            tag="h2"
-            fontDefaults={FONT_CONFIGS.desktop_h4}
-            className="mt-8"
-          >
+          </Typography>
+          <Typography as="h2" variant="h4" className="mt-8">
             Widerrufsrecht
-          </Heading>
-          <p className={legalParagraphCSS}>
+          </Typography>
+          <Typography as="p" variant="text_sm" className="text-white">
             Sie haben das Recht, die von Ihnen erteilte Einwilligung zur
             Datenverarbeitung jederzeit zu widerrufen.
-          </p>
-          <Heading
-            tag="h2"
-            fontDefaults={FONT_CONFIGS.desktop_h4}
-            className="mt-8"
-          >
+          </Typography>
+          <Typography as="h2" variant="h4" className="mt-8">
             Widerspruchsrecht
-          </Heading>
-          <p className={legalParagraphCSS}>
+          </Typography>
+          <Typography as="p" variant="text_sm" className="text-white">
             Sie haben das Recht, jederzeit gegen die Verarbeitung Ihrer Daten,
             die wir auf unser berechtigtes Interesse nach Art. 6 Abs. 1 lit. f
             DSGVO stützen, Widerspruch einzulegen. Sofern Sie von Ihrem
@@ -142,26 +119,30 @@ const Privacy = () => {
             <br />
             Ihren Widerspruch richten Sie bitte an die oben angegebene
             Kontaktadresse des Verantwortlichen.
-          </p>
-          <Heading
-            tag="h2"
-            fontDefaults={FONT_CONFIGS.desktop_h4}
-            className="mt-8"
-          >
+          </Typography>
+          <Typography as="h2" variant="h4" className="mt-8">
             Wann löschen wir Ihre Daten?
-          </Heading>
-          <p className={legalParagraphCSS}>
+          </Typography>
+          <Typography as="p" variant="text_sm" className="text-white">
             Wir löschen Ihre Daten dann, wenn wir diese nicht mehr brauchen oder
             Sie uns dies vorgeben. Dass bedeutet, dass - sofern sich aus den
             einzelnen Datenschutzhinweisen dieser Datenschutzerklärung nichts
             anderes ergibt - wir Ihre Daten löschen,
-          </p>
-          <ul className={twJoin('legalUI', offsetLegalParagraphCSS)}>
+          </Typography>
+          <Typography
+            as="ul"
+            variant="text_sm"
+            className="legalUL text-white mt-4"
+          >
             <li className="legalULLIPadded">
               wenn der Zweck der Datenverarbeitung weggefallen ist und damit die
               jeweilige in den einzelnen Datenschutzhinweisen genannte
               Rechtsgrundlage nicht mehr besteht, also bspw.{' '}
-              <ul className={twJoin('legalUI', legalParagraphCSS)}>
+              <Typography
+                as="ul"
+                variant="text_sm"
+                className="legalUL text-white"
+              >
                 <li className="legalULLIPadded">
                   nach Beendigung der zwischen uns bestehenden vertraglichen
                   oder mitgliedschaftlichen Beziehungen (Art. 6 Abs. 1 lit. a
@@ -172,7 +153,7 @@ const Privacy = () => {
                   Verarbeitung oder Speicherung Ihrer Daten (Art. 6 Abs. 1 lit.
                   f DSGVO),
                 </li>
-              </ul>
+              </Typography>
             </li>
             <li className="legalULLIPadded">
               wenn Sie von Ihrem Widerrufsrecht Gebrauch machen und keine
@@ -183,8 +164,8 @@ const Privacy = () => {
               wenn Sie vom Ihrem Widerspruchsrecht Gebrauch machen und der
               Löschung keine zwingenden schutzwürdigen Gründe entgegenstehen.
             </li>
-          </ul>
-          <p className={offsetLegalParagraphCSS}>
+          </Typography>
+          <Typography as="p" variant="text_sm" className="text-white mt-4">
             Sofern wir (bestimmte Teile) Ihre(r) Daten jedoch noch für andere
             Zwecke vorhalten müssen, weil dies etwa steuerliche
             Aufbewahrungsfristen (in der Regel 6 Jahre für
@@ -196,15 +177,11 @@ const Privacy = () => {
             Daten erst nach Ablauf dieser Fristen. Bis zum Ablauf dieser Fristen
             beschränken wir die Verarbeitung dieser Daten jedoch auf diese
             Zwecke (Erfüllung der Aufbewahrungspflichten).
-          </p>
-          <Heading
-            tag="h2"
-            fontDefaults={FONT_CONFIGS.desktop_h4}
-            className="mt-8"
-          >
+          </Typography>
+          <Typography as="h2" variant="h4" className="mt-8">
             Cookies
-          </Heading>
-          <p className={legalParagraphCSS}>
+          </Typography>
+          <Typography as="p" variant="text_sm" className="text-white">
             Unsere Internetseite nutzt Cookies. Bei Cookies handelt es sich um
             kleine Textdateien, bestehend aus einer Reihe von Zahlen und
             Buchstaben, die auf dem von Ihnen genutzten Endgerät abgelegt und
@@ -213,12 +190,16 @@ const Privacy = () => {
             auszutauschen. Hierzu gehören u. a. die Spracheinstellungen auf
             einer Webseite, der Login-Status oder die Stelle, an der ein Video
             geschaut wurde.
-          </p>
-          <p className={offsetLegalParagraphCSS}>
+          </Typography>
+          <Typography as="p" variant="text_sm" className="text-white mt-4">
             Beim Besuch unserer Webseiten werden zwei Typen von Cookies
             eingesetzt:
-          </p>
-          <ul className={twJoin('legalUI', offsetLegalParagraphCSS)}>
+          </Typography>
+          <Typography
+            as="ul"
+            variant="text_sm"
+            className="legalUL text-white mt-4"
+          >
             <li className="legalULLIPadded">
               <strong>Temporäre Cookies (Session Cookies):</strong> Diese
               speichern eine sogenannte Session-ID, mit welcher sich
@@ -237,12 +218,16 @@ const Privacy = () => {
               Statistik-, Marketing- und Personalisierungs-Zwecken verwendet
               werden.
             </li>
-          </ul>
-          <p className={offsetLegalParagraphCSS}>
+          </Typography>
+          <Typography as="p" variant="text_sm" className="text-white mt-4">
             Neben der vorstehenden Einteilung können Cookies auch im Hinblick
             auf ihren Einsatzzweck unterschieden werden:
-          </p>
-          <ul className={twJoin('legalUI', offsetLegalParagraphCSS)}>
+          </Typography>
+          <Typography
+            as="ul"
+            variant="text_sm"
+            className="legalUL text-white mt-4"
+          >
             <li className="legalULLIPadded">
               <strong>Notwendige Cookies:</strong> Dies sind Cookies, die für
               den Betrieb unserer Webseite unbedingt erforderlich sind, um
@@ -268,11 +253,15 @@ const Privacy = () => {
               Abschnitten unserer Datenschutzerklärung oder im Rahmen der
               Einholung Ihrer Einwilligung.
             </li>
-          </ul>
-          <p className={offsetLegalParagraphCSS}>
+          </Typography>
+          <Typography as="p" variant="text_sm" className="text-white mt-4">
             <strong>Betroffene Daten:</strong>
-          </p>
-          <ul className={twJoin('legalUI', offsetLegalParagraphCSS)}>
+          </Typography>
+          <Typography
+            as="ul"
+            variant="text_sm"
+            className="legalUL text-white mt-4"
+          >
             <li className="legalULLIPadded">
               Nutzungsdaten (bspw. Zugriffszeiten, angeklickte Webseiten)
             </li>
@@ -280,16 +269,20 @@ const Privacy = () => {
               Kommunikationsdaten (bspw. Informationen über das genutzte Gerät,
               IP-Adresse).
             </li>
-          </ul>
-          <p className={offsetLegalParagraphCSS}>
+          </Typography>
+          <Typography as="p" variant="text_sm" className="text-white mt-4">
             <strong>Betroffene Personen:</strong> Nutzer unserer Onlineangebote
-          </p>
-          <p className={offsetLegalParagraphCSS}>
+          </Typography>
+          <Typography as="p" variant="text_sm" className="text-white mt-4">
             <strong>Verarbeitungszweck:</strong> Ausspielen unserer
             Internetseiten, Gewährleistung des Betriebs unserer Internetseiten,
             Verbesserung unseres Internetangebotes, Kommunikation und Marketing
-          </p>
-          <article className={twJoin('legalUI', offsetLegalParagraphCSS)}>
+          </Typography>
+          <Typography
+            as="ul"
+            variant="text_sm"
+            className="legalUL text-white mt-4"
+          >
             <strong>
               Rechtsgrundlage: Berechtigtes Interesse, Art. 6 Abs. 1 lit. f
               DSGVO
@@ -307,8 +300,12 @@ const Privacy = () => {
             nach jedem Schließen Ihres Browsers gelöscht werden. Werden Cookies
             für unsere Webseite deaktiviert, können möglicherweise nicht mehr
             alle Funktionen der Webseite vollumfänglich genutzt werden.{' '}
-          </article>
-          <article className={twJoin('legalUI', offsetLegalParagraphCSS)}>
+          </Typography>
+          <Typography
+            as="ul"
+            variant="text_sm"
+            className="legalUL text-white mt-4"
+          >
             <strong>Einwilligung, Art. 6 Abs. 1 lit. a DSGVO</strong>
             <br />
             Sofern wir Sie vor Ihrem Besuch unserer Internetpräsenz darum
@@ -322,15 +319,11 @@ const Privacy = () => {
             Darstellung in Ihrem Browser erforderlich sind. Sofern Sie in das
             Setzen von Cookies eingewilligt haben, haben die jederzeitige
             Möglichkeit, uns gegenüber der erteilten Einwilligung zu widerrufen.
-          </article>
-          <Heading
-            tag="h2"
-            fontDefaults={FONT_CONFIGS.desktop_h4}
-            className="mt-8"
-          >
+          </Typography>
+          <Typography as="h2" variant="h4" className="mt-8">
             Webhosting
-          </Heading>
-          <p className={legalParagraphCSS}>
+          </Typography>
+          <Typography as="p" variant="text_sm" className="text-white">
             Wir bedienen uns zum Vorhalten unserer Internetseiten eines
             Anbieters, auf dessen Server unsere Internetseiten gespeichert und
             für den Abruf im Internet verfügbar gemacht werden (Hosting).
@@ -341,8 +334,12 @@ const Privacy = () => {
             an den von Ihnen genutzten Browser ausliefern zu können sowie
             sämtliche von Ihnen über unsere Internetseite getätigten Eingaben.
             Daneben kann der von uns genutzte Anbieter
-          </p>
-          <ul className={twJoin('legalUI', offsetLegalParagraphCSS)}>
+          </Typography>
+          <Typography
+            as="ul"
+            variant="text_sm"
+            className="legalUL text-white mt-4"
+          >
             <li className="legalULLIPadded">
               das Datum und die Uhrzeit des Zugriffs auf unsere Internetseite
             </li>
@@ -368,17 +365,21 @@ const Privacy = () => {
               die Seiten bzw. Unterseiten, welche Sie auf unserer Internetseite
               besuchen.
             </li>
-          </ul>
-          <p className={offsetLegalParagraphCSS}>
+          </Typography>
+          <Typography as="p" variant="text_sm" className="text-white mt-4">
             erheben. Die vorgenannten Daten werden als Logfiles auf den Servern
             unseres Anbieters gespeichert. Dies ist erforderlich, um die
             Stabilität und Sicherheit des Betriebs unserer Internetseite zu
             gewährleisten.
-          </p>
-          <p className={offsetLegalParagraphCSS}>
+          </Typography>
+          <Typography as="p" variant="text_sm" className="text-white mt-4">
             <strong>Betroffene Daten</strong>
-          </p>
-          <ul className={twJoin('legalUI', offsetLegalParagraphCSS)}>
+          </Typography>
+          <Typography
+            as="ul"
+            variant="text_sm"
+            className="legalUL text-white mt-4"
+          >
             <li className="legalULLIPadded">
               Inhaltsdaten (bspw. Posts, Fotos, Videos)
             </li>
@@ -389,26 +390,22 @@ const Privacy = () => {
               Kommunikationsdaten (bspw. Informationen über das genutzte Gerät,
               IP-Adresse)
             </li>
-          </ul>
-          <p className={offsetLegalParagraphCSS}>
+          </Typography>
+          <Typography as="p" variant="text_sm" className="text-white mt-4">
             <strong>Betroffene Personen:</strong> Nutzer unserer Internetpräsenz
-          </p>
-          <p className={offsetLegalParagraphCSS}>
+          </Typography>
+          <Typography as="p" variant="text_sm" className="text-white mt-4">
             <strong>Verarbeitungszweck:</strong> Ausspielen unserer
             Internetseiten, Gewährleistung des Betriebs unserer Internetseiten
-          </p>
-          <p className={offsetLegalParagraphCSS}>
+          </Typography>
+          <Typography as="p" variant="text_sm" className="text-white mt-4">
             <strong>Rechtsgrundlage:</strong> Berechtigtes Interesse, Art. 6
             Abs. 1 lit. f DSGVO
-          </p>
-          <Heading
-            tag="h3"
-            fontDefaults={FONT_CONFIGS.desktop_h5}
-            className="mt-8"
-          >
+          </Typography>
+          <Typography as="h3" variant="h5" className="mt-8">
             Von uns beauftragte(r) Webhoster: Netlify
-          </Heading>
-          <p className={legalParagraphCSS}>
+          </Typography>
+          <Typography as="p" variant="text_sm" className="text-white">
             Dienstanbieter: VeraSafe United Kingdom Ltd., 37 Albert Embankment
             London SE1 7TL, Vereinigtes Königreich
             <br />
@@ -419,15 +416,11 @@ const Privacy = () => {
             <a href="https://www.netlify.com/privacy/">
               https://www.netlify.com/privacy/
             </a>
-          </p>
-          <Heading
-            tag="h2"
-            fontDefaults={FONT_CONFIGS.desktop_h4}
-            className="mt-8"
-          >
+          </Typography>
+          <Typography as="h2" variant="h4" className="mt-8">
             Kontaktaufnahme
-          </Heading>
-          <p className={legalParagraphCSS}>
+          </Typography>
+          <Typography as="p" variant="text_sm" className="text-white">
             Soweit Sie uns über E-Mail, Soziale Medien, Telefon, Fax, Post,
             unser Kontaktformular oder sonstwie ansprechen und uns hierbei
             personenbezogene Daten wie Ihren Namen, Ihre Telefonnummer oder Ihre
@@ -435,11 +428,15 @@ const Privacy = () => {
             Person oder Ihrem Anliegen machen, verarbeiten wir diese Daten zur
             Beantwortung Ihrer Anfrage im Rahmen des zwischen uns bestehenden
             vorvertraglichen oder vertraglichen Beziehungen.
-          </p>
-          <p className={offsetLegalParagraphCSS}>
+          </Typography>
+          <Typography as="p" variant="text_sm" className="text-white mt-4">
             <strong>Betroffene Daten:</strong>
-          </p>
-          <ul className={twJoin('legalUI', offsetLegalParagraphCSS)}>
+          </Typography>
+          <Typography
+            as="ul"
+            variant="text_sm"
+            className="legalUL text-white mt-4"
+          >
             <li className="legalULLIPadded">
               Bestandsdaten (bspw. Namen, Adressen)
             </li>
@@ -452,28 +449,24 @@ const Privacy = () => {
             <li className="legalULLIPadded">
               Vertragsdaten (bspw. Vertragsgegenstand, Vertragsdauer)
             </li>
-          </ul>
-          <p className={offsetLegalParagraphCSS}>
+          </Typography>
+          <Typography as="p" variant="text_sm" className="text-white mt-4">
             <strong>Betroffene Personen:</strong> Interessenten, Kunden,
             Geschäfts- und Vertragspartner
-          </p>
-          <p className={offsetLegalParagraphCSS}>
+          </Typography>
+          <Typography as="p" variant="text_sm" className="text-white mt-4">
             <strong>Verarbeitungszweck:</strong> Kommunikation sowie
             Beantwortung von Kontaktanfragen, Büro und Organisationsverfahren
-          </p>
-          <p className={offsetLegalParagraphCSS}>
+          </Typography>
+          <Typography as="p" variant="text_sm" className="text-white mt-4">
             <strong>Rechtsgrundlage:</strong> Vertragserfüllung und
             vorvertragliche Anfragen, Art. 6 Abs. 1 lit. b DSGVO, berechtigtes
             Interesse, Art. 6 Abs. 1 lit. f DSGVO
-          </p>
-          <Heading
-            tag="h2"
-            fontDefaults={FONT_CONFIGS.desktop_h4}
-            className="mt-8"
-          >
+          </Typography>
+          <Typography as="h2" variant="h4" className="mt-8">
             Der Umgang mit ihren Daten im Bewerbungsverfahren
-          </Heading>
-          <p className={legalParagraphCSS}>
+          </Typography>
+          <Typography as="p" variant="text_sm" className="text-white">
             Sofern Sie sich bei uns bewerben, verarbeiten wir die von Ihnen im
             Bewerbungsverfahren an uns übermittelten personenbezogenen Daten wie
             bspw. Ihren Name, Adresse, Wohnort, Alter, Bewerbungsfoto, E-Mail
@@ -489,11 +482,15 @@ const Privacy = () => {
             wir Ihre Daten zum Zwecke der Abwicklung des
             Beschäftigungsverhältnisses unter Beachtung der gesetzlichen
             Vorschriften.
-          </p>
-          <p className={offsetLegalParagraphCSS}>
+          </Typography>
+          <Typography as="p" variant="text_sm" className="text-white mt-4">
             <strong>Betroffene Daten:</strong>
-          </p>
-          <ul className={twJoin('legalUI', offsetLegalParagraphCSS)}>
+          </Typography>
+          <Typography
+            as="ul"
+            variant="text_sm"
+            className="legalUL text-white mt-4"
+          >
             <li className="legalULLIPadded">
               Bestandsdaten (bspw. Namen, Adressen)
             </li>
@@ -506,20 +503,20 @@ const Privacy = () => {
             <li className="legalULLIPadded">
               Vertragsdaten (bspw. Vertragsgegenstand, Vertragsdauer)
             </li>
-          </ul>
-          <p className={offsetLegalParagraphCSS}>
+          </Typography>
+          <Typography as="p" variant="text_sm" className="text-white mt-4">
             <strong>Betroffene Personen:</strong> Bewerber und Bewerberinnen
-          </p>
-          <p className={offsetLegalParagraphCSS}>
+          </Typography>
+          <Typography as="p" variant="text_sm" className="text-white mt-4">
             <strong>Verarbeitungszweck:</strong> Abwicklung des
             Bewerbungsverfahrens
-          </p>
-          <p className={offsetLegalParagraphCSS}>
+          </Typography>
+          <Typography as="p" variant="text_sm" className="text-white mt-4">
             <strong>Rechtsgrundlage:</strong> Vertragserfüllung und
             vorvertragliche Anfragen, Art. 6 Abs. 1 lit. b DSGVO, rechtliche
             Verpflichtung, Art. 6 Abs. 1 lit. c DSGVO
-          </p>
-          <p className={offsetLegalParagraphCSS}>
+          </Typography>
+          <Typography as="p" variant="text_sm" className="text-white mt-4">
             <strong>Löschung:</strong>Löschung: Kommt es nicht zu dem Abschluss
             eines Arbeitsvertrages, werden Ihre Daten nach Abschluss des
             Bewerbungsverfahrens bzw. spätestens 2 Monate nach dessen Abschluss
@@ -529,15 +526,11 @@ const Privacy = () => {
             nach dem Allgemeinen Gleichbehandlungsgesetz (AGG). Das
             Bewerbungsverfahren gilt mit der Absendung der Absage an Sie als
             abgeschlossen.
-          </p>
-          <Heading
-            tag="h2"
-            fontDefaults={FONT_CONFIGS.desktop_h4}
-            className="mt-8"
-          >
+          </Typography>
+          <Typography as="h2" variant="h4" className="mt-8">
             Webanalyse und Statistik
-          </Heading>
-          <article className={twJoin('legalUI', legalParagraphCSS)}>
+          </Typography>
+          <Typography as="article" variant="text_sm" className="text-white">
             Um die Besucherströme auf unserer Internetpräsenz zu erfassen und
             statistisch auszuwerten, setzen wir Webanalyse-Dienste ein. Solche
             Dienste erfassen unter anderem Daten darüber, von welcher
@@ -569,11 +562,15 @@ const Privacy = () => {
             dass das von der DSGVO vorgeschriebene Datenschutzniveau nicht
             eingehalten und die Durchsetzung Ihrer Rechte nicht oder nur
             erschwert erfolgen kann.
-          </article>
-          <p className={offsetLegalParagraphCSS}>
+          </Typography>
+          <Typography as="p" variant="text_sm" className="text-white mt-4">
             <strong>Betroffene Daten:</strong>
-          </p>
-          <ul className={twJoin('legalUI', offsetLegalParagraphCSS)}>
+          </Typography>
+          <Typography
+            as="ul"
+            variant="text_sm"
+            className="legalUL text-white mt-4"
+          >
             <li className="legalULLIPadded">
               Nutzungsdaten (bspw. Zugriffszeiten, angeklickte Webseiten)
             </li>
@@ -581,16 +578,16 @@ const Privacy = () => {
               Kommunikationsdaten (bspw. Informationen über das genutzte Gerät,
               IP-Adresse).
             </li>
-          </ul>
-          <p className={offsetLegalParagraphCSS}>
+          </Typography>
+          <Typography as="p" variant="text_sm" className="text-white mt-4">
             <strong>Betroffene Personen:</strong> Nutzer unserer Onlineangebote
-          </p>
-          <p className={offsetLegalParagraphCSS}>
+          </Typography>
+          <Typography as="p" variant="text_sm" className="text-white mt-4">
             <strong>Verarbeitungszweck:</strong> Reichweitenmessung,
             Erfolgskontrolle von Kampagnen, Remarketing sowie interessen- und
             verhaltensbedingtes Marketing
-          </p>
-          <p className={offsetLegalParagraphCSS}>
+          </Typography>
+          <Typography as="p" variant="text_sm" className="text-white mt-4">
             <strong>Rechtsgrundlage:</strong> Sofern wir Sie vor dem Einsatz des
             jeweiligen Dienstes um Ihre Einwilligung gebeten haben, liegt hierin
             die Rechtsgrundlage, Art. 6 Abs. 1 lit. a DSGVO. Im Übrigen setzen
@@ -598,15 +595,11 @@ const Privacy = () => {
             ein, die Besucherströme unserer Internetseiten analysieren, um
             hierüber die Funktionen, Angebote sowie das Nutzungserlebnis
             fortlaufend verbessern zu können, Art. 6 Abs. 1 lit. f DSGVO.
-          </p>
-          <Heading
-            tag="h3"
-            fontDefaults={FONT_CONFIGS.desktop_h5}
-            className="mt-8"
-          >
+          </Typography>
+          <Typography as="h3" variant="h5" className="mt-8">
             Wir nutzen folgende Webanalyse-Dienste: Google Analytics
-          </Heading>
-          <p className={legalParagraphCSS}>
+          </Typography>
+          <Typography as="p" variant="text_sm" className="text-white">
             <strong>Dienstanbieter</strong>: Google Inc., 1600 Amphitheatre
             Parkway, Mountain View, CA 94043, USA
             <br />
@@ -631,15 +624,11 @@ const Privacy = () => {
             <a href="https://tools.google.com/dlpage/gaoptout?hl=de">
               https://tools.google.com/dlpage/gaoptout?hl=de
             </a>
-          </p>
-          <Heading
-            tag="h2"
-            fontDefaults={FONT_CONFIGS.desktop_h4}
-            className="mt-8"
-          >
+          </Typography>
+          <Typography as="h2" variant="h4" className="mt-8">
             Content-Dienste
-          </Heading>
-          <article className={twJoin('legalUI', legalParagraphCSS)}>
+          </Typography>
+          <Typography as="article" variant="text_sm" className="text-white ">
             Wir nutzen bestimmte Dienste, um über unsere Internetpräsenz
             bestimmte Inhalte oder Grafiken (Videos, Bilder, Musik,
             Schriftarten, Kartenmaterial) ausspielen zu können. Dabei
@@ -663,11 +652,15 @@ const Privacy = () => {
             dass das von der DSGVO vorgeschriebene Datenschutzniveau nicht
             eingehalten und die Durchsetzung Ihrer Rechte nicht oder nur
             erschwert erfolgen kann.
-          </article>
-          <p className={offsetLegalParagraphCSS}>
+          </Typography>
+          <Typography as="p" variant="text_sm" className="text-white mt-4">
             <strong>Betroffene Daten:</strong>
-          </p>
-          <ul className={twJoin('legalUI', offsetLegalParagraphCSS)}>
+          </Typography>
+          <Typography
+            as="ul"
+            variant="text_sm"
+            className="legalUL text-white mt-4"
+          >
             <li className="legalULLIPadded">
               Nutzungsdaten (bspw. Zugriffszeiten, angeklickte Webseiten)
             </li>
@@ -675,28 +668,24 @@ const Privacy = () => {
               Kommunikationsdaten (bspw. Informationen über das genutzte Gerät,
               IP-Adresse).
             </li>
-          </ul>
-          <p className={offsetLegalParagraphCSS}>
+          </Typography>
+          <Typography as="p" variant="text_sm" className="text-white mt-4">
             <strong>Betroffene Personen:</strong> Nutzer unserer Internetpräsenz
-          </p>
-          <p className={offsetLegalParagraphCSS}>
+          </Typography>
+          <Typography as="p" variant="text_sm" className="text-white mt-4">
             <strong>Verarbeitungszweck:</strong> Ausspielen unserer
             Internetseiten, Anbieten von Inhalten, Gewährleistung des Betriebs
             unserer Internetseiten
-          </p>
-          <p className={offsetLegalParagraphCSS}>
+          </Typography>
+          <Typography as="p" variant="text_sm" className="text-white mt-4">
             <strong>Rechtsgrundlage:</strong> Einwilligung über
             Cookie-Consent-Banner, Art. 6 Abs. 1 lit. a DSGVO, berechtigte
             Interessen, Art. 6 Abs. 1 lit. f DSGVO
-          </p>
-          <Heading
-            tag="h3"
-            fontDefaults={FONT_CONFIGS.desktop_h5}
-            className="mt-8"
-          >
+          </Typography>
+          <Typography as="h3" variant="h5" className="mt-8">
             Wir nutzen folgende Content-Dienste: Google Maps
-          </Heading>
-          <p className={legalParagraphCSS}>
+          </Typography>
+          <Typography as="p" variant="text_sm" className="text-white">
             Wir nutzen auf unserer Internetpräsenz Google Maps. Hierbei wird
             durch Google die IP-Adresse des Besuchers erhoben und verarbeitet.
             Wenn Sie eine Internetseite besuchen, auf der Google Maps
@@ -706,8 +695,8 @@ const Privacy = () => {
             nicht ohne Ihre Einwilligung) an Google übermittelt. Ihre IP-Adresse
             wird Ihrem Google Account zugeordnet, sofern Sie bei dem Besuch
             unserer Internetpräsenz dort eingeloggt sind.
-          </p>
-          <p className={legalParagraphCSS}>
+          </Typography>
+          <Typography as="p" variant="text_sm" className="text-white">
             Dienstanbieter: Google Inc., 1600 Amphitheatre Parkway, Mountain
             View, CA 94043, USA
             <br />
@@ -726,22 +715,18 @@ const Privacy = () => {
             <a href="https://tools.google.com/dlpage/gaoptout?hl=de">
               https://tools.google.com/dlpage/gaoptout?hl=de
             </a>
-          </p>
-          <Heading
-            tag="h2"
-            fontDefaults={FONT_CONFIGS.desktop_h4}
-            className="mt-8"
-          >
+          </Typography>
+          <Typography as="h2" variant="h4" className="mt-8">
             Sicherheitsmaßnahmen
-          </Heading>
-          <article className={twJoin('legalUI', legalParagraphCSS)}>
+          </Typography>
+          <Typography as="article" variant="text_sm" className="text-white">
             Wir treffen im Übrigen technische und organisatorische
             Sicherheitsmaßnahmen nach dem Stand der Technik, um die Vorschriften
             der Datenschutzgesetze einzuhalten und Ihre Daten gegen zufällige
             oder vorsätzliche Manipulationen, teilweisen oder vollständigen
             Verlust, Zerstörung oder gegen den unbefugten Zugriff Dritter zu
             schützen.
-          </article>
+          </Typography>
         </FullWidthSectionContainer>
       </ContentWrapper>
     </PageLayout>

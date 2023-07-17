@@ -1,12 +1,10 @@
 'use client'
 
 import { useState } from 'react'
-import { FONT_CONFIGS } from '@/constants'
 import { useInView } from 'react-intersection-observer'
 import { twJoin, twMerge } from 'tailwind-merge'
 
-import Copy from '../atoms/Copy'
-import { Heading } from '../atoms/Heading'
+import Typography from '../atoms/Typography'
 import ContentWrapper from '../layout/ContentWrapper'
 import { BackendTechnologyLogos, FrontendTechnologyLogos } from './TechIcons'
 
@@ -31,17 +29,16 @@ export const TechStacks = () => {
     <div
       className={twJoin(
         'flex items-start pt-[9rem] min-h-[820px] transition-[300ms]',
-        isBackendActive
-          ? 'bg-black text-white'
-          : 'bg-background text-black'
+        isBackendActive ? 'bg-black text-white' : 'bg-background text-black'
       )}
     >
       <ContentWrapper>
         <div className="block mx-auto text-center w-full">
           <div className="flex justify-center gap-[30px] text-center my-6">
-            <button
+            <Typography
+              as="button"
+              variant="subtitle_lg"
               className={twMerge(
-                FONT_CONFIGS.desktop_topline_large,
                 'items-center font-SpaceGroteskMedium uppercase pt-4 flex flex-col md:p-4 pb-0',
                 isBackendActive
                   ? 'text-muted-foreground'
@@ -50,10 +47,12 @@ export const TechStacks = () => {
               onClick={() => setIsBackendActive(false)}
             >
               Frontend
-            </button>
-            <button
+            </Typography>
+
+            <Typography
+              as="button"
+              variant="subtitle_lg"
               className={twMerge(
-                FONT_CONFIGS.desktop_topline_large,
                 'items-center font-SpaceGroteskMedium uppercase pt-4 flex flex-col md:p-4 pb-0',
                 isBackendActive
                   ? 'after:content-["⦁"] after:text-xl text-primary'
@@ -62,33 +61,24 @@ export const TechStacks = () => {
               onClick={() => setIsBackendActive(true)}
             >
               Backend / Platform
-            </button>
+            </Typography>
           </div>
-          <Heading
-            tag="h2"
-            fontDefaults={FONT_CONFIGS.desktop_h2_medium}
-            colorClassName="text-inherit"
-          >
+          <Typography as="h2" variant="h2_bold" className="text-inherit">
             {isBackendActive ? 'Backend / Platform' : 'Frontend Development'}
-          </Heading>
+          </Typography>
 
           <div className="flex justify-center mt-4">
             <div className="w-full sm:w-[80%] sm:min-h-auto md:w-[70%] lg:w-[40%]">
-              <Copy
-                className="text-inherit"
-                textSize="sm"
-                fontDefaults={FONT_CONFIGS.desktop_copy_small}
-              >
+              <Typography className="text-inherit" variant="text_sm">
                 {isBackendActive ? (
                   <>
-                    <span
-                      className={twJoin(
-                        'pb-2 block',
-                        FONT_CONFIGS.paragraph_label
-                      )}
+                    <Typography
+                      as="span"
+                      variant="paragraph_label"
+                      className="pb-2 block"
                     >
                       Scalable Solutions
-                    </span>
+                    </Typography>
                     Datengetriebene Produkte erfordern neben skalierbaren und
                     automatisierten Infrastrukturen hochperformante
                     Backendsysteme, welche nicht nur der Komplexität und Dynamik
@@ -101,14 +91,13 @@ export const TechStacks = () => {
                   </>
                 ) : (
                   <>
-                    <span
-                      className={twJoin(
-                        'pb-2 block',
-                        FONT_CONFIGS.paragraph_label
-                      )}
+                    <Typography
+                      as="span"
+                      variant="paragraph_label"
+                      className="pb-2 block"
                     >
                       Modern JavaScript
-                    </span>
+                    </Typography>
                     Wir kombinieren modernste Technologien mit Expertise im
                     Bereich der User Experience sowie agilen Methoden und
                     unterstützen Sie mit unseren erfahrenen JavaScript Beratern
@@ -119,7 +108,7 @@ export const TechStacks = () => {
                     breiten JavaScript Ökosystem zu Hause.
                   </>
                 )}
-              </Copy>
+              </Typography>
             </div>
           </div>
 

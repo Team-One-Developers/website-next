@@ -1,8 +1,7 @@
 import { forwardRef, ReactNode } from 'react'
 import { twJoin } from 'tailwind-merge'
 
-import "./Mask.css"
-
+import './Mask.css'
 
 interface ImageMaskProps {
   children: ReactNode

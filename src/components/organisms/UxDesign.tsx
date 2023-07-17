@@ -1,17 +1,15 @@
 'use client'
 
 import { ReactNode, useState } from 'react'
-import { FONT_CONFIGS, UX_CATEGORIES } from '@/constants'
+import { UX_CATEGORIES } from '@/constants'
 
 import './style.css'
 
 import Image from 'next/image'
 import { twJoin, twMerge } from 'tailwind-merge'
 
-import Copy from '../atoms/Copy'
-import { Heading } from '../atoms/Heading'
 import { ImageMask } from '../atoms/ImageMask'
-import { TopLine } from '../atoms/Topline'
+import Typography from '../atoms/Typography'
 
 export const UxDesign = () => {
   const [activeCategory, setActiveCategory] = useState(UX_CATEGORIES.ux_design)
@@ -73,47 +71,31 @@ export const UxDesign = () => {
   return (
     <div className="transitionAll">
       <div className="mb-6 flex flex-col flex-nowrap items-center ">
-        <TopLine
-          colorClassName="text-primary"
-          fontDefaults={FONT_CONFIGS.paragraph_label}
-          className="mb-4"
-        >
+        <Typography variant="paragraph_label" className="mb-4 text-primary">
           ( WE DEVELOP )
-        </TopLine>
-        <Heading
-          tag="h2"
-          fontDefaults={FONT_CONFIGS.desktop_h2_medium}
-          className="font-medium"
-        >
+        </Typography>
+        <Typography as="h2" variant="h2_bold" className="font-medium">
           UX DESIGN
-        </Heading>
+        </Typography>
       </div>
 
       <div className="mb-8 flex justify-center">
         <div className="w-[45%] text-center">
-          <Copy
-            fontDefaults={FONT_CONFIGS.desktop_copy_small_alternate}
-            textSize="sm"
-            className="text-white"
-          >
+          <Typography variant="text_sm" className="text-white">
             Mindestens so wichtig wie der Code den wir schreiben, ist das
             Design, in welchem digitale Produkte von ihren Anwendern
             wahrgenommen und regelmäßig genutzt werden. Die integrative
             Zusammenarbeit von Softwareentwicklung und –design ist ein gerne
             unterschätzter Erfolgsfaktor performanter, interdisziplinärer
             Entwicklungsteams und entscheidend für den Produkterfolg.
-          </Copy>
-          <Copy
-            fontDefaults={FONT_CONFIGS.desktop_copy_small_alternate}
-            className="text-white"
-            textSize="sm"
-          >
+          </Typography>
+          <Typography variant="text_sm" className="text-white">
             Ausgehend von geschäfts- oder produkstrategischen Rahmenbedingungen
             bildet das User Experience Design die zentrale Schnittstelle
             zwischen Nutzer und Technologie. Wir unterstützen dabei
             ganzheitlich, entlang der gesamten UX-Wertschöpfung: von der
             Marktrecherche bis zum Visual Design.
-          </Copy>
+          </Typography>
         </div>
       </div>
 

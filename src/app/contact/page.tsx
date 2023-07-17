@@ -1,9 +1,9 @@
 import Image from 'next/image'
-import { FONT_CONFIGS, PAGE_THEME } from '@/constants'
+import { PAGE_THEME } from '@/constants'
 import { twJoin } from 'tailwind-merge'
 
-import Copy from '@/components/atoms/Copy'
 import { Heading } from '@/components/atoms/Heading'
+import Typography from '@/components/atoms/Typography'
 
 import { Ticker } from '@/components/molecules/Ticker'
 
@@ -40,28 +40,23 @@ const Contact = () => {
 
   const ExternalLink = ({ href, name }: { href: string; name: string }) => {
     return (
-      <div
-        className={twJoin(
-          'mt-1 flex w-fit gap-2 border-b border-primary text-white',
-          FONT_CONFIGS.desktop_copy_xtra_large
-        )}
+      <Typography
+        as="div"
+        className="mt-0 flex w-fit gap-2 border-b border-primary text-white"
+        variant="text_xl"
       >
         <ArrowSVG className="h-[1.3em] w-[1.3em] items-center justify-center" />
         <a href={href}>{name}</a>
-      </div>
+      </Typography>
     )
   }
 
   return (
     <PageLayout ticker={false}>
       <ContentWrapper>
-        <Heading
-          tag="h1"
-          fontDefaults={FONT_CONFIGS.desktop_h3}
-          className="mt-20"
-        >
+        <Typography as="h1" variant="h3" className="mt-20">
           Die Eins ist man <br /> niemals alleine.
-        </Heading>
+        </Typography>
         <section className="mb-40 mt-20 flex flex-wrap items-center gap-16">
           <div className="relative min-w-[260px] max-w-[460px] grow">
             <Image
@@ -75,17 +70,11 @@ const Contact = () => {
             />
           </div>
           <div className={'flex grow-[2] flex-col gap-2 p-4'}>
-            <Copy
-              className={twJoin(
-                '!-mt-3 !mb-0',
-                FONT_CONFIGS.desktop_copy_xtra_large
-              )}
-              textSize="sm"
-            >
+            <Typography className={twJoin('-mt-3 mb-0')} variant="text_xl">
               Team One Developers GmbH <br />
               Hospitalstraße 35 <br />
               70174 Stuttgart
-            </Copy>
+            </Typography>
             <ExternalLink
               href="mailto:kontakt@t1dev.de"
               name="kontakt@t1dev.de"

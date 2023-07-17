@@ -1,9 +1,8 @@
 import Image from 'next/image'
-import { FONT_CONFIGS } from '@/constants'
 
-import Copy from '../atoms/Copy'
 import { ImageDecoration } from '../atoms/ImageDecoration'
 import { ImageMask } from '../atoms/ImageMask'
+import Typography from '../atoms/Typography'
 import { TwoColumnsSectionContainer } from '../layout/TwoColumnsSectionContainer'
 
 export const CultureBlock = () => {
@@ -13,20 +12,12 @@ export const CultureBlock = () => {
         className="mt-14"
         left={
           <>
-            <Copy
-              textSize="sm"
-              className="text-white"
-              fontDefaults={FONT_CONFIGS.desktop_copy_small}
-            >
+            <Typography variant="text_sm" className="text-white">
               Dass es schwer ist, Tech-Talente für sich zu gewinnen ist kein
               Geheimnis mehr. Uns beschäftigt daher eine Frage so intensiv wie
               kaum eine andere:
-            </Copy>
-            <Copy
-              textSize="xl"
-              className="text-white"
-              fontDefaults={FONT_CONFIGS.desktop_copy_xtra_large}
-            >
+            </Typography>
+            <Typography variant="text_xl" className="text-white">
               Was können wir als Tech-Unternehmen tun, um das attraktivste
               Arbeitsumfeld zu schaffen, das wir selbst je gesehen haben?
               <Image
@@ -36,7 +27,7 @@ export const CultureBlock = () => {
                 width={36}
                 className="-mt-2 inline"
               />
-            </Copy>
+            </Typography>
           </>
         }
         right={
@@ -82,17 +73,13 @@ export const CultureBlock = () => {
                   className=""
                 />
               </div>
-              <Copy
-                className="text-white"
-                textSize="l"
-                fontDefaults={FONT_CONFIGS.desktop_copy_large}
-              >
+              <Typography className="text-white" variant="text_lg">
                 Die wichtigsten Antworten auf diese Frage sind für uns: Werte zu
                 definieren, Werte zu leben und sie auch zu schützen. Dabei
                 ehrlich und authentisch zu sein, nichts zu versprechen was man
                 nicht halten kann und vor allem nicht nur zu reden, sondern zu
                 machen.
-              </Copy>
+              </Typography>
             </div>
             <div className="mb-8 grid w-full grid-cols-[0.1fr_1.9fr] gap-x-4 gap-y-0">
               <div className="box-border p-2">
@@ -105,17 +92,13 @@ export const CultureBlock = () => {
                 />
               </div>
               <div>
-                <Copy
-                  className="text-white"
-                  textSize="l"
-                  fontDefaults={FONT_CONFIGS.desktop_copy_large}
-                >
+                <Typography className="text-white" variant="text_lg">
                   Und zu guter Letzt: Individuelle Rahmenbedingungen zu
                   schaffen. Diese Antworten liefern uns einen natürlichen
                   Treibstoff, mit dem wir wachsen und gedeihen, der uns als Team
                   gut tut und zusammenhält und uns von jedem anderen Arbeitgeber
                   unterscheidet.
-                </Copy>
+                </Typography>
               </div>
             </div>
           </>
@@ -163,11 +146,7 @@ export const CultureBlock = () => {
               />
             </div>
             <div>
-              <Copy
-                className="text-white"
-                textSize="l"
-                fontDefaults={FONT_CONFIGS.desktop_copy_large}
-              >
+              <Typography className="text-white" variant="text_lg">
                 Menschenzentriert zu arbeiten bedeutet für uns natürlich auch,
                 kundenzentriert zu arbeiten. Als Dienstleister, der wir sind,
                 heißt das natürlich in allererster Linie, ein klares Verständnis
@@ -175,7 +154,7 @@ export const CultureBlock = () => {
                 digitalen Produktlandschaft zu schaffen, gemeinsam zu verstehen,
                 wie Software zu einem zentralen Werttreiber wird und wie man
                 eine nachhaltige und hochperformante Umsetzung gewährleistet.
-              </Copy>
+              </Typography>
             </div>
           </div>
         }

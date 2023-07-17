@@ -129,7 +129,7 @@ export const Header = ({ theme }: { theme: PageTheme }) => {
               return (
                 <Link
                   className={twJoin(
-                    'cursor-pointer select-none rounded-[3px] px-[14px] py-[10px] font-SpaceGroteskRegular text-sm uppercase leading-[14px] no-underline shadow-md hover:shadow-navLinkShadow active:bg-t1-darkGray active:text-primary',
+                    'cursor-pointer select-none rounded-[3px] px-[14px] py-[10px] font-SpaceGroteskRegular text-sm uppercase leading-[14px] no-underline hover:shadow-navLinkShadow active:bg-t1-darkGray active:text-primary',
                     pathname === linkObj.link
                       ? 'bg-t1-darkGray text-primary'
                       : 'bg-primary text-t1-darkGray'

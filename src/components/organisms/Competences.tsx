@@ -1,11 +1,7 @@
-import { useEffect, useState } from 'react'
-import { FONT_CONFIGS } from '@/constants'
-import { IntersectionOptions, useInView } from 'react-intersection-observer'
 import { twJoin } from 'tailwind-merge'
 
-import Copy from '../atoms/Copy'
 import { Heading } from '../atoms/Heading'
-import { TopLine } from '../atoms/Topline'
+import Typography from '../atoms/Typography'
 import ContentWrapper from '../layout/ContentWrapper'
 
 export const Competences = () => {
@@ -27,19 +23,16 @@ export const Competences = () => {
         <span className="font-SpaceGroteskRegular font-medium not-italic text-xs leading-110 tracking-aBitTighter uppercase min-w-[7%]">
           ( 0{count} / 03 )
         </span>
-        <Heading
-          tag="h3"
-          fontDefaults={FONT_CONFIGS.desktop_h3}
-          className="md:text-[2rem] mt-[14px] lg:mt-0 font-semibold group-hover:text-inherit lg:max-w-[440px] w-full"
+        <Typography
+          as="h3"
+          variant="h3"
+          className="font-SpaceGroteskMedium md:text-[2rem] mt-[14px] font-medium lg:mt-0  group-hover:text-inherit lg:max-w-[440px] w-full"
         >
           {headline}
-        </Heading>
-        <Copy
-          fontDefaults={FONT_CONFIGS.desktop_copy_small}
-          className="mt-[14px] lg:mt-0"
-        >
+        </Typography>
+        <Typography variant="text_sm" className="mt-[14px] lg:mt-0">
           {text}
-        </Copy>
+        </Typography>
       </div>
     )
   }
@@ -49,25 +42,21 @@ export const Competences = () => {
       <section className="bg-black mt-8 lg:mt-52">
         <div className="flex flex-col items-center">
           <div className="text-center lg:w-1/2">
-            <TopLine
-              colorClassName="text-primary"
-              className="mb-5 uppercase"
-              fontDefaults={FONT_CONFIGS.desktop_topline}
+            <Typography
+              className="mb-5 uppercase text-primary"
+              variant="subtitle"
             >
               ( WE DEVELOP )
-            </TopLine>
-            <Heading tag="h2" fontDefaults={FONT_CONFIGS.desktop_h2_medium}>
+            </Typography>
+            <Typography as="h2" variant="h2_bold">
               BUSINESS & <br /> PRODUCT STRATEGY
-            </Heading>
-            <Copy
-              className="text-center mt-3.5"
-              fontDefaults={FONT_CONFIGS.desktop_copy_small}
-            >
+            </Typography>
+            <Typography className="text-center mt-3.5" variant="text_sm">
               Von der digitalen Geschäfts- und Geschäftsfeldstrategie, über die
               Produktstrategie bis hin zur UX-Strategie beraten wir
               branchenübergreifend mit unseren Strategie-Experten Startups von
               Early stage bis Grownup ebenso wie Corporates.
-            </Copy>
+            </Typography>
           </div>
         </div>
         <div className="flex flex-col mt-8 lg:mt-32">

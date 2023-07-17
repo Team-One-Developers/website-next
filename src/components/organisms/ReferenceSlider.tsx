@@ -1,10 +1,7 @@
 import Image from 'next/image'
-import { FONT_CONFIGS } from '@/constants'
 import { twJoin } from 'tailwind-merge'
 
-import Copy from '../atoms/Copy'
-import { Heading } from '../atoms/Heading'
-import { TopLine } from '../atoms/Topline'
+import Typography from '../atoms/Typography'
 import ContentWrapper from '../layout/ContentWrapper'
 
 interface ReferenceSliderEntryProps {
@@ -19,9 +16,9 @@ export const ReferencesSlider = () => {
     <div className="bg-background">
       <ContentWrapper>
         <div className="flex justify-center bg-background pt-[75px] pb-8 font-medium">
-          <TopLine colorClassName="text-black" opacity={1} textSize="l">
+          <Typography className="text-black" variant="subtitle_lg">
             REFERENZEN
-          </TopLine>
+          </Typography>
         </div>
         <ul className="flex overflow-scroll gap-6 bg-background py-12 px-4 scroll-pl-4 snap-x">
           <ReferencesSliderEntry
@@ -100,30 +97,27 @@ const ReferencesSliderEntry = (props: ReferenceSliderEntryProps) => {
           <Image src={imageSrc} alt="" fill style={{ objectFit: 'contain' }} />
         </div>
         <figcaption className="flex flex-col justify-center xl:grow-0 xl:shrink-0 xl:basis-[45%]">
-          <Heading
-            tag="h2"
-            fontDefaults={FONT_CONFIGS.desktop_h2_medium}
-            colorClassName="text-black"
-          >
+          <Typography as="h2" variant="h2_bold" className="text-black">
             {headline}
-          </Heading>
+          </Typography>
           <ul className="flex gap-4 mt-2 text-black">
             {technologyList?.map((technology) => (
-              <li
-                className={twJoin('uppercase', FONT_CONFIGS.desktop_topline)}
+              <Typography
+                as="li"
+                variant="subtitle"
+                className="uppercase"
                 key={technology}
               >
                 {technology}
-              </li>
+              </Typography>
             ))}
           </ul>
-          <Copy
+          <Typography
             className="mt-8 md:pr-20 xl:pr-28 text-black"
-            textSize="sm"
-            fontDefaults={FONT_CONFIGS.desktop_copy_small}
+            variant="text_sm"
           >
             {infoText}
-          </Copy>
+          </Typography>
         </figcaption>
       </figure>
     </li>

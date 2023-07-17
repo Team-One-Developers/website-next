@@ -1,28 +1,27 @@
 import { twJoin } from 'tailwind-merge'
 
-import Copy from '../atoms/Copy'
-import { Link, LinkProps } from '../atoms/Link'
 import { Heading } from '../atoms/Heading'
-import { TopLine } from '../atoms/Topline'
+import { Link, LinkProps } from '../atoms/Link'
+import Typography, { TypographyProps } from '../atoms/Typography'
 
 interface CtaSectionProps {
-  topLineText?: string
+  subtitleText?: string
   headlineText?: string
   contentText: string
   link: string
   linkLabel: string
-  linkVariant?: LinkProps["variant"]
+  linkVariant?: LinkProps['variant']
   animate?: boolean
   children?: React.ReactNode
-  fontDefaultsContent?: string
-  fontDefaultsHeadline?: string
-  headlineMarginBottomClass?: string
+  contentVariant: TypographyProps['variant']
+  headlineVariant: TypographyProps['variant']
+  headlineClassName?: string
   className?: string
 }
 
 export const CtaSection = (props: CtaSectionProps) => {
   const {
-    topLineText,
+    subtitleText,
     headlineText,
     contentText,
     link,
@@ -30,33 +29,32 @@ export const CtaSection = (props: CtaSectionProps) => {
     linkVariant,
     children,
     animate,
-    fontDefaultsContent,
-    fontDefaultsHeadline,
-    headlineMarginBottomClass = 'mb-8',
+    contentVariant,
+    headlineVariant,
+    headlineClassName = '',
     className,
   } = props
 
   return (
     <section className={className}>
-      {topLineText && (
-        <TopLine
-          className="mb-4 flex items-center "
-          opacity={1}
-          colorClassName="text-black"
+      {subtitleText && (
+        <Typography
+          className="mb-4 flex items-center text-black"
+          variant="subtitle"
         >
           {/* We should refactor this as only icons are passed into here */}
           {children}
-          {topLineText}
-        </TopLine>
+          {subtitleText}
+        </Typography>
       )}
       {headlineText && (
-        <Heading
-          className={twJoin('', headlineMarginBottomClass)}
-          fontDefaults={fontDefaultsHeadline}
-          tag="h2"
+        <Typography
+          className={twJoin('mb-8', headlineClassName)}
+          as="h2"
+          variant={headlineVariant}
         >
           {headlineText}
-        </Heading>
+        </Typography>
       )}
       <div
         style={{
@@ -65,13 +63,10 @@ export const CtaSection = (props: CtaSectionProps) => {
           translate: animate ? '0 20px' : '',
         }}
       >
-        <Copy
-          className="m-0 mb-6 text-black"
-          textSize="sm"
-          fontDefaults={fontDefaultsContent}
-        >
+        <Typography className="m-0 mb-6 text-black" variant={contentVariant}>
           {contentText}
-        </Copy>
+        </Typography>
+
         <Link variant={linkVariant} href={link} mode="cta">
           {linkLabel}
         </Link>

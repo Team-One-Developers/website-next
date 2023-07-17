@@ -1,13 +1,14 @@
 'use client'
 
 import Image from 'next/image'
-import { FONT_CONFIGS, PAGE_THEME } from '@/constants'
+import { PAGE_THEME } from '@/constants'
+import clsx from 'clsx'
 import { useInView } from 'react-intersection-observer'
 
-import Copy from '@/components/atoms/Copy'
 import { DancingFigures } from '@/components/atoms/DancingFigures'
 import { Heading } from '@/components/atoms/Heading'
 import { ImageMask } from '@/components/atoms/ImageMask'
+import Typography from '@/components/atoms/Typography'
 
 import { Companies } from '@/components/molecules/Companies'
 import { Hero } from '@/components/molecules/Hero'
@@ -23,8 +24,6 @@ import { PageLayout } from '@/components/layout/PageLayout'
 
 import SamuelPic from '../../public/images/t1d_kai_knoerzer_011_edited.jpg'
 import JannikPic from '../../public/images/t1d_kai_knoerzer_055.jpg'
-
-import clsx from "clsx"
 
 const Home = () => {
   // Triggers Animation for Animated Teaser
@@ -97,31 +96,31 @@ const Home = () => {
           <figure className="mb-6 flex h-[129px] w-full justify-center text-primary md:hidden">
             <DancingFigures />
           </figure>
-          <Copy
-            className="text-black"
-            textSize="xl"
-            fontDefaults={FONT_CONFIGS.desktop_h2_regular}
-          >
+          <Typography className="text-black normal-case" variant="h3">
             Wir sind Technologie-Experten und verstehen uns als integrativer
             Entwicklungs- & Beratungspartner in komplexen Softwareprojekten.{' '}
             <DancingFigures className="hidden h-16 px-4 py-0 align-middle text-primary md:inline" />
             Mit jahrelanger Expertise in den Bereichen Softwareentwicklung,
             Strategie sowie UX/UI Design.
-          </Copy>
+          </Typography>
         </FullWidthSectionContainer>
         <CtaSection
           className="mt-16 lg:max-w-[25%]"
           contentText="Wir helfen Organisationen dabei, sich nachhaltig zu modernen digitalen Unternehmen zu wandeln. Immer mit dem Ziel, qualitativ hochwertige, skalierbare und durchdachte Software zu entwickeln, welche messbaren Mehrwert für unsere Kunden schafft."
+          contentVariant="text_sm"
+          headlineVariant="h2"
           link={'/services'}
           linkLabel="Unsere Leistungen"
           linkVariant="secondary"
-          fontDefaultsContent={FONT_CONFIGS.desktop_copy_small}
         />
       </ContentWrapper>
 
       <AnimatedTeaser
-        className={clsx("mt-16", animatedTeaserInView ? "bg-primary" : "bg-background")}
-        innerClassName={clsx(animatedTeaserInView ? "bg-white" : "bg-primary")}
+        className={clsx(
+          'mt-16',
+          animatedTeaserInView ? 'bg-primary' : 'bg-background'
+        )}
+        innerClassName={clsx(animatedTeaserInView ? 'bg-white' : 'bg-primary')}
         ref={animatedTeaserContainerRef}
       />
 
@@ -140,15 +139,15 @@ const Home = () => {
       >
         <CtaSection
           className="basis-[37%] lg:grow-0"
-          topLineText="CULTURE @ T1D"
+          subtitleText="CULTURE @ T1D"
           headlineText="Wir sind menschen&shy;zentriert."
           contentText='Wir glauben an Fortschritt durch Technologie, an Nachhaltigkeit durch Qualität sowie an die Prinzipien des agilen Manifests. Und vor allem glauben wir an die "Zielgruppe Mensch", die im Mittelpunkt unseres Handelns stehen muss.'
           linkLabel="Unsere Kultur"
           link="/culture"
           animate={!cultureContainerInView}
-          headlineMarginBottomClass="mb-24"
-          fontDefaultsHeadline={FONT_CONFIGS.desktop_h3}
-          fontDefaultsContent={FONT_CONFIGS.desktop_copy_small}
+          headlineClassName="mb-24"
+          headlineVariant="h3"
+          contentVariant="text_sm"
         >
           <Image
             src="/images/icons/person-1.svg"
@@ -192,17 +191,17 @@ const Home = () => {
           }
           right={
             <CtaSection
-              topLineText="CAREER @ T1D"
+              subtitleText="CAREER @ T1D"
               headlineText="Nur wer Werte vertritt, kann Werte schaffen."
               contentText={
                 'Team One Developers ist für uns nicht nur ein Name, sondern ein Versprechen: Das Versprechen den Unterschied zu machen, nicht nur Standard sondern die beste Wahl zu sein. Für unsere Partner und ganz besonders für unsere Kollegen'
               }
+              headlineVariant="h3"
+              contentVariant="text_sm"
+              headlineClassName="mb-[2.875rem]"
               linkLabel="Karriere"
               link="/career"
               linkVariant="secondary"
-              fontDefaultsHeadline={FONT_CONFIGS.desktop_h3}
-              fontDefaultsContent={FONT_CONFIGS.desktop_copy_small}
-              headlineMarginBottomClass="mb-[2.875rem]"
             >
               <Image
                 src="/images/icons/world-1.svg"

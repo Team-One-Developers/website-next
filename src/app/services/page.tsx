@@ -1,13 +1,10 @@
 'use client'
 
-import { ReactElement } from 'react'
 import Image from 'next/image'
-import { FONT_CONFIGS } from '@/constants'
 import { useMediaQuery } from 'usehooks-ts'
 
-import Copy from '@/components/atoms/Copy'
-import { Heading } from '@/components/atoms/Heading'
-import { TopLine } from '@/components/atoms/Topline'
+import { Button, buttonVariants } from '@/components/atoms/Button'
+import Typography from '@/components/atoms/Typography'
 
 import { Hero } from '@/components/molecules/Hero'
 
@@ -28,14 +25,10 @@ const Services = () => {
   return (
     <PageLayout>
       <ContentWrapper className="mt-20 lg:flex gap-[15%]">
-        <Heading
-          className="lg:basis-[35%]"
-          tag="h1"
-          fontDefaults={FONT_CONFIGS.desktop_h3}
-        >
+        <Typography className="lg:basis-[35%]" as="h1" variant="h3">
           Wir schaffen nachhaltige Mehrwerte durch exzellente Software &
           menschenzentrierte Arbeitsweisen.
-        </Heading>
+        </Typography>
 
         <div className="mt-16 lg:mt-0 basis-[32.5%]">
           <Image
@@ -45,27 +38,19 @@ const Services = () => {
             height={18}
             className="mb-4"
           />
-          <Copy
-            className="mb-8 text-primary"
-            textSize="l"
-            fontDefaults={FONT_CONFIGS.desktop_copy_large}
-          >
+          <Typography className="mb-8 text-primary text-lg" variant="text_lg">
             Digitale Geschäftsmodelle, digitale Kunden und remote-first Teams
             erfordern modernere Methoden, Technologien und Geisteshaltungen als
             die klassische Welt. Als Software-Beratung befähigen wir unsere
             Kunden, im digitalen Wettbewerb erfolgreich zu sein - strategisch,
             technologisch und methodisch.
-          </Copy>
-          <Copy
-            className=" text-white"
-            textSize="sm"
-            fontDefaults={FONT_CONFIGS.desktop_copy_small}
-          >
+          </Typography>
+          <Typography className=" text-white" variant="text_sm">
             Wir kombinieren umfassendes Fachwissen mit der Begeisterung für neue
             Technologien, um innovative, hochmoderne, stabile und skalierbare
             Enterprise Plattformen zu bauen. Vom Startup bis hin zum
             multinationalen Konzern.
-          </Copy>
+          </Typography>
         </div>
       </ContentWrapper>
 
@@ -81,14 +66,9 @@ const Services = () => {
         }
         overlayNode={
           <>
-            <TopLine
-              className="mb-6"
-              colorClassName="text-white"
-              textSize="l"
-              opacity={1}
-            >
+            <Typography variant="subtitle_lg" className="mb-6 text-white">
               We Develop
-            </TopLine>
+            </Typography>
             <ChangingWords
               words={['Software', 'Strategy', 'UX Design']}
               delay={1250}
@@ -100,7 +80,7 @@ const Services = () => {
       <ReferencesSlider />
       <TechStacks />
       <Competences />
-      <FullWidthSectionContainer className="mt-20 lg:mt-48">
+      <FullWidthSectionContainer className="mt-20 lg:mt-48 -mb-[400px]">
         {isXl ? <UxDesign /> : <UxDesignMobile />}
       </FullWidthSectionContainer>
     </PageLayout>

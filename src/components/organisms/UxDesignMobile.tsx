@@ -1,11 +1,9 @@
 'use client'
 
 import { ReactNode, useState } from 'react'
-import { FONT_CONFIGS, UX_CATEGORIES } from '@/constants'
+import { UX_CATEGORIES } from '@/constants'
 
-import Copy from '../atoms/Copy'
-import { Heading } from '../atoms/Heading'
-import { TopLine } from '../atoms/Topline'
+import Typography from '../atoms/Typography'
 
 import './style.css'
 
@@ -57,29 +55,31 @@ export const UxDesignMobile = () => {
   return (
     <div className="transitionAll">
       <div className="flex items-center gap-4 flex-col flex-nowrap mb-4">
-        <TopLine colorClassName="text-primary">( WE DEVELOP )</TopLine>
-        <Heading tag="h2" fontDefaults={FONT_CONFIGS.desktop_h2_medium}>
+        <Typography className="text-primary" variant="subtitle">
+          ( WE DEVELOP )
+        </Typography>
+        <Typography as="h2" variant="h2_bold">
           UX DESIGN
-        </Heading>
+        </Typography>
       </div>
 
       <div className="mb-8 flex justify-center">
         <div className="w-[75%] text-center">
-          <Copy textSize="sm" className="text-white">
+          <Typography variant="text_sm" className="text-white">
             Mindestens so wichtig wie der Code den wir schreiben, ist das
             Design, in welchem digitale Produkte von ihren Anwendern
             wahrgenommen und regelmäßig genutzt werden. Die integrative
             Zusammenarbeit von Softwareentwicklung und –design ist ein gerne
             unterschätzter Erfolgsfaktor performanter, interdisziplinärer
             Entwicklungsteams und entscheidend für den Produkterfolg.
-          </Copy>
-          <Copy className="text-white" textSize="sm">
+          </Typography>
+          <Typography variant="text_sm" className="text-white">
             Ausgehend von geschäfts- oder produkstrategischen Rahmenbedingungen
             bildet das User Experience Design die zentrale Schnittstelle
             zwischen Nutzer und Technologie. Wir unterstützen dabei
             ganzheitlich, entlang der gesamten UX-Wertschöpfung: von der
             Marktrecherche bis zum Visual Design.
-          </Copy>
+          </Typography>
         </div>
       </div>
 

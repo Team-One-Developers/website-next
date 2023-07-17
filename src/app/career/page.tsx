@@ -1,10 +1,9 @@
 import Image from 'next/image'
-import { FONT_CONFIGS } from '@/constants'
 
-import Copy from '@/components/atoms/Copy'
 import { Heading } from '@/components/atoms/Heading'
 import { ImageMask } from '@/components/atoms/ImageMask'
 import { Link } from '@/components/atoms/Link'
+import Typography from '@/components/atoms/Typography'
 
 import { Benefits } from '@/components/organisms/Benefits'
 
@@ -17,13 +16,9 @@ const Career = () => {
     <PageLayout>
       <ContentWrapper>
         <FullWidthSectionContainer className="mt-12">
-          <Heading
-            tag="h1"
-            fontDefaults={FONT_CONFIGS.desktop_h3}
-            className="py-8"
-          >
+          <Typography as="h1" variant="h3" className="py-8">
             Unser Team <br />- Dein Playground
-          </Heading>
+          </Typography>
         </FullWidthSectionContainer>
       </ContentWrapper>
       <ContentWrapper className="mt-8 lg:flex lg:gap-8">
@@ -43,22 +38,14 @@ const Career = () => {
             width={18}
             className="mb-4"
           />
-          <Copy
-            textSize="l"
-            className="text-primary mb-8"
-            fontDefaults={FONT_CONFIGS.desktop_copy_large}
-          >
+          <Typography variant="text_lg" className="text-primary mb-8">
             Wir verstehen uns nicht einfach nur als Arbeitgeber, sondern viel
             mehr als aktiver Begleiter auf dem Weg zu deinen individuellen
             Zielen. Unser Anspruch ist es, den Menschen in den Mittelpunkt
             unseres unternehmerischen Handelns zu stellen – und dabei fangen wir
             bei uns im Team an.
-          </Copy>
-          <Copy
-            textSize="sm"
-            className="text-white"
-            fontDefaults={FONT_CONFIGS.desktop_copy_small}
-          >
+          </Typography>
+          <Typography variant="text_sm" className="text-white">
             Oft sagen wir in Gesprächen „wir sind Playground für den modernen
             und ambitionierten Softwareentwickler“ – das beschreibt unser
             Arbeitsumfeld am besten. Wir arbeiten in anspruchsvollen
@@ -69,49 +56,39 @@ const Career = () => {
             Spin-Off von eigenständiger Produktideen . Alles ein „Kann“ und kein
             „Muss“, in jedem Fall aber vielseitig und mit unendlich vielen
             Möglichkeiten.
-          </Copy>
+          </Typography>
         </section>
       </ContentWrapper>
       <ContentWrapper className="mt-24 lg:mt-36">
         <Benefits />
       </ContentWrapper>
       <ContentWrapper>
-        <Copy
+        <Typography
           className="mt-24 mb-6 lg:mt-32 text-white m-0"
-          textSize="l"
-          fontDefaults={FONT_CONFIGS.desktop_copy_large}
+          variant="text_lg"
         >
           Wir suchen dich:
-        </Copy>
-        <Copy
+        </Typography>
+        <Typography
           className="mt-24 mb-6 lg:mt-32 text-white m-0"
-          textSize="l"
-          fontDefaults={FONT_CONFIGS.desktop_copy_large}
+          variant="text_lg"
         >
           JOBS - ACCORDEON
-        </Copy>
+        </Typography>
       </ContentWrapper>
       <ContentWrapper className="mt-[6.5rem]">
         <div className="flex flex-col gap-4 items-baseline lg:max-w-[32%]">
-          <Copy
-            textSize="l"
-            className="text-white"
-            fontDefaults={FONT_CONFIGS.desktop_copy_large}
-          >
+          <Typography variant="text_lg" className="text-white">
             Oder du suchst uns?
-          </Copy>
-          <Copy
-            textSize="sm"
-            className="text-white"
-            fontDefaults={FONT_CONFIGS.desktop_copy_small}
-          >
+          </Typography>
+          <Typography variant="text_sm" className="text-white">
             Um als Developer nicht nur gut zu sein, sondern es auch zu bleiben,
             ist Initiative und Selbstständigkeit gefragt. Deshalb wissen wir das
             auch bei unseren Bewerbern zu schätzen. Wenn Ihr der Meinung sein,
             dass Ihr das perfekte neue Team-Mitglied für Team One Developers
             seid, dann meldet euch einfach initiativ – am besten schon mit
             aussagekräftigen Bewerbungsunterlagen.
-          </Copy>
+          </Typography>
           <Link variant="secondary" href="/contact">
             Initiativ bewerben
           </Link>
