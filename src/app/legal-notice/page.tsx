@@ -20,7 +20,7 @@ export const Legal = () => {
           <Typography className="mt-8" as="h2" variant="h4">
             Verantwortlich für den Inhalt dieser Website
           </Typography>
-          <Typography as="address" className="text-t1-white" variant="text_sm">
+          <Typography as="address" className="text-white" variant="text_sm">
             Team One Developers GmbH <br />
             Hospitalstraße 35 <br />
             70174 Stuttgart
@@ -28,11 +28,7 @@ export const Legal = () => {
           <Typography className="mt-8" as="h2" variant="h4">
             Vertreten durch die Geschäftsführung
           </Typography>
-          <Typography
-            as="ul"
-            className="legalUI text-t1-white"
-            variant="text_sm"
-          >
+          <Typography as="ul" className="legalUI text-white" variant="text_sm">
             <li className="marker legalULLI">Timo Brückel</li>
             <li className="legalULLI">Julian Richter</li>
             <li className="legalULLI">Michael Krause</li>
@@ -41,7 +37,7 @@ export const Legal = () => {
           <Typography className="mt-8" as="h2" variant="h4">
             Registereintrag
           </Typography>
-          <Typography as="article" className="text-t1-white" variant="text_sm">
+          <Typography as="article" className="text-white" variant="text_sm">
             Eintragung im Handelsregister. <br />
             Registergericht: Amtsgericht <br />
             Stuttgart Registernummer: HRB 777716
@@ -50,7 +46,7 @@ export const Legal = () => {
           <Typography className="mt-8" as="h2" variant="h4">
             Datenschutz
           </Typography>
-          <Typography as="p" className="text-t1-white" variant="text_sm">
+          <Typography as="p" className="text-white" variant="text_sm">
             Sofern innerhalb des Internetangebotes die Möglichkeit zur Eingabe
             persönlicher oder geschäftlicher Daten (E-Mail Adressen, Namen,
             Anschriften) besteht, so erfolgt die Preisgabe dieser Daten seitens
@@ -76,7 +72,7 @@ export const Legal = () => {
           <Typography className="mt-8" as="h2" variant="h4">
             Verbraucherinformation gemäß Verbraucherstreitbeilegungsgesetz
           </Typography>
-          <Typography as="p" className="text-t1-white" variant="text_sm">
+          <Typography as="p" className="text-white" variant="text_sm">
             Die Team One Developers GmbH ist nicht bereit und verpflichtet, an
             Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle
             teilzunehmen.
@@ -84,12 +80,12 @@ export const Legal = () => {
           <Typography className="mt-8" as="h2" variant="h4">
             Verlinkungen
           </Typography>
-          <Typography as="p" className="text-t1-white" variant="text_sm">
+          <Typography as="p" className="text-white" variant="text_sm">
             Diese Webseite enthält Verlinkungen zu Webseiten Dritter. Für die
             Inhalte der Webseiten Dritter übernimmt die Team One Developers GmbH
             keine Haftung.
           </Typography>
-          <Typography as="strong" className="text-t1-white" variant="text_sm">
+          <Typography as="strong" className="text-white" variant="text_sm">
             Keine Gewähr für Richtigkeit, Vollständigkeit und Aktualität.
           </Typography>
         </FullWidthSectionContainer>

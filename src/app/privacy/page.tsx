@@ -17,7 +17,7 @@ export const Privacy = () => {
             <Typography as="h1" variant="h3" className="mt-8">
               Datenschutz&shy;erklärung
             </Typography>
-            <Typography as="p" variant="text_sm" className="text-t1-white">
+            <Typography as="p" variant="text_sm" className="text-white">
               Mit dieser Datenschutzerklärung möchten wir Sie über Art, Umfang
               und Zweck der Verarbeitung von personenbezogenen Daten (im
               Folgenden auch nur als &quot;Daten&quot; bezeichnet) aufklären.
@@ -32,7 +32,7 @@ export const Privacy = () => {
           <Typography as="h2" variant="h4" className="mt-8">
             Wer bei uns für die Datenverarbeitung verantwortlich ist
           </Typography>
-          <Typography as="address" variant="text_sm" className="text-t1-white">
+          <Typography as="address" variant="text_sm" className="text-white">
             Team One Developers GmbH <br />
             Hospitalstraße 35 <br />
             70174 Stuttgart
@@ -49,7 +49,7 @@ export const Privacy = () => {
           <Typography as="h2" variant="h4" className="mt-8">
             Ihre Rechte nach der DSGVO
           </Typography>
-          <Typography as="p" variant="text_sm" className="text-t1-white">
+          <Typography as="p" variant="text_sm" className="text-white">
             Nach der DSGVO stehen Ihnen die nachfolgend aufgeführten Rechte zu,
             die Sie jederzeit bei dem in Ziffer 1. dieser Datenschutzerklärung
             genannten Verantwortlichen geltend machen können:
@@ -57,7 +57,7 @@ export const Privacy = () => {
           <Typography
             as="ul"
             variant="text_sm"
-            className="legalUL text-t1-white mt-4"
+            className="legalUL text-white mt-4"
           >
             <li className="legalULLIPadded">
               <strong>Recht auf Auskunft:</strong> Sie haben das Recht, von uns
@@ -94,14 +94,14 @@ export const Privacy = () => {
           <Typography as="h2" variant="h4" className="mt-8">
             Widerrufsrecht
           </Typography>
-          <Typography as="p" variant="text_sm" className="text-t1-white">
+          <Typography as="p" variant="text_sm" className="text-white">
             Sie haben das Recht, die von Ihnen erteilte Einwilligung zur
             Datenverarbeitung jederzeit zu widerrufen.
           </Typography>
           <Typography as="h2" variant="h4" className="mt-8">
             Widerspruchsrecht
           </Typography>
-          <Typography as="p" variant="text_sm" className="text-t1-white">
+          <Typography as="p" variant="text_sm" className="text-white">
             Sie haben das Recht, jederzeit gegen die Verarbeitung Ihrer Daten,
             die wir auf unser berechtigtes Interesse nach Art. 6 Abs. 1 lit. f
             DSGVO stützen, Widerspruch einzulegen. Sofern Sie von Ihrem
@@ -123,7 +123,7 @@ export const Privacy = () => {
           <Typography as="h2" variant="h4" className="mt-8">
             Wann löschen wir Ihre Daten?
           </Typography>
-          <Typography as="p" variant="text_sm" className="text-t1-white">
+          <Typography as="p" variant="text_sm" className="text-white">
             Wir löschen Ihre Daten dann, wenn wir diese nicht mehr brauchen oder
             Sie uns dies vorgeben. Dass bedeutet, dass - sofern sich aus den
             einzelnen Datenschutzhinweisen dieser Datenschutzerklärung nichts
@@ -132,7 +132,7 @@ export const Privacy = () => {
           <Typography
             as="ul"
             variant="text_sm"
-            className="legalUL text-t1-white mt-4"
+            className="legalUL text-white mt-4"
           >
             <li className="legalULLIPadded">
               wenn der Zweck der Datenverarbeitung weggefallen ist und damit die
@@ -141,7 +141,7 @@ export const Privacy = () => {
               <Typography
                 as="ul"
                 variant="text_sm"
-                className="legalUL text-t1-white"
+                className="legalUL text-white"
               >
                 <li className="legalULLIPadded">
                   nach Beendigung der zwischen uns bestehenden vertraglichen
@@ -165,7 +165,7 @@ export const Privacy = () => {
               Löschung keine zwingenden schutzwürdigen Gründe entgegenstehen.
             </li>
           </Typography>
-          <Typography as="p" variant="text_sm" className="text-t1-white mt-4">
+          <Typography as="p" variant="text_sm" className="text-white mt-4">
             Sofern wir (bestimmte Teile) Ihre(r) Daten jedoch noch für andere
             Zwecke vorhalten müssen, weil dies etwa steuerliche
             Aufbewahrungsfristen (in der Regel 6 Jahre für
@@ -181,7 +181,7 @@ export const Privacy = () => {
           <Typography as="h2" variant="h4" className="mt-8">
             Cookies
           </Typography>
-          <Typography as="p" variant="text_sm" className="text-t1-white">
+          <Typography as="p" variant="text_sm" className="text-white">
             Unsere Internetseite nutzt Cookies. Bei Cookies handelt es sich um
             kleine Textdateien, bestehend aus einer Reihe von Zahlen und
             Buchstaben, die auf dem von Ihnen genutzten Endgerät abgelegt und
@@ -191,14 +191,14 @@ export const Privacy = () => {
             einer Webseite, der Login-Status oder die Stelle, an der ein Video
             geschaut wurde.
           </Typography>
-          <Typography as="p" variant="text_sm" className="text-t1-white mt-4">
+          <Typography as="p" variant="text_sm" className="text-white mt-4">
             Beim Besuch unserer Webseiten werden zwei Typen von Cookies
             eingesetzt:
           </Typography>
           <Typography
             as="ul"
             variant="text_sm"
-            className="legalUL text-t1-white mt-4"
+            className="legalUL text-white mt-4"
           >
             <li className="legalULLIPadded">
               <strong>Temporäre Cookies (Session Cookies):</strong> Diese
@@ -219,14 +219,14 @@ export const Privacy = () => {
               werden.
             </li>
           </Typography>
-          <Typography as="p" variant="text_sm" className="text-t1-white mt-4">
+          <Typography as="p" variant="text_sm" className="text-white mt-4">
             Neben der vorstehenden Einteilung können Cookies auch im Hinblick
             auf ihren Einsatzzweck unterschieden werden:
           </Typography>
           <Typography
             as="ul"
             variant="text_sm"
-            className="legalUL text-t1-white mt-4"
+            className="legalUL text-white mt-4"
           >
             <li className="legalULLIPadded">
               <strong>Notwendige Cookies:</strong> Dies sind Cookies, die für
@@ -254,13 +254,13 @@ export const Privacy = () => {
               Einholung Ihrer Einwilligung.
             </li>
           </Typography>
-          <Typography as="p" variant="text_sm" className="text-t1-white mt-4">
+          <Typography as="p" variant="text_sm" className="text-white mt-4">
             <strong>Betroffene Daten:</strong>
           </Typography>
           <Typography
             as="ul"
             variant="text_sm"
-            className="legalUL text-t1-white mt-4"
+            className="legalUL text-white mt-4"
           >
             <li className="legalULLIPadded">
               Nutzungsdaten (bspw. Zugriffszeiten, angeklickte Webseiten)
@@ -270,10 +270,10 @@ export const Privacy = () => {
               IP-Adresse).
             </li>
           </Typography>
-          <Typography as="p" variant="text_sm" className="text-t1-white mt-4">
+          <Typography as="p" variant="text_sm" className="text-white mt-4">
             <strong>Betroffene Personen:</strong> Nutzer unserer Onlineangebote
           </Typography>
-          <Typography as="p" variant="text_sm" className="text-t1-white mt-4">
+          <Typography as="p" variant="text_sm" className="text-white mt-4">
             <strong>Verarbeitungszweck:</strong> Ausspielen unserer
             Internetseiten, Gewährleistung des Betriebs unserer Internetseiten,
             Verbesserung unseres Internetangebotes, Kommunikation und Marketing
@@ -281,7 +281,7 @@ export const Privacy = () => {
           <Typography
             as="ul"
             variant="text_sm"
-            className="legalUL text-t1-white mt-4"
+            className="legalUL text-white mt-4"
           >
             <strong>
               Rechtsgrundlage: Berechtigtes Interesse, Art. 6 Abs. 1 lit. f
@@ -304,7 +304,7 @@ export const Privacy = () => {
           <Typography
             as="ul"
             variant="text_sm"
-            className="legalUL text-t1-white mt-4"
+            className="legalUL text-white mt-4"
           >
             <strong>Einwilligung, Art. 6 Abs. 1 lit. a DSGVO</strong>
             <br />
@@ -323,7 +323,7 @@ export const Privacy = () => {
           <Typography as="h2" variant="h4" className="mt-8">
             Webhosting
           </Typography>
-          <Typography as="p" variant="text_sm" className="text-t1-white">
+          <Typography as="p" variant="text_sm" className="text-white">
             Wir bedienen uns zum Vorhalten unserer Internetseiten eines
             Anbieters, auf dessen Server unsere Internetseiten gespeichert und
             für den Abruf im Internet verfügbar gemacht werden (Hosting).
@@ -338,7 +338,7 @@ export const Privacy = () => {
           <Typography
             as="ul"
             variant="text_sm"
-            className="legalUL text-t1-white mt-4"
+            className="legalUL text-white mt-4"
           >
             <li className="legalULLIPadded">
               das Datum und die Uhrzeit des Zugriffs auf unsere Internetseite
@@ -366,19 +366,19 @@ export const Privacy = () => {
               besuchen.
             </li>
           </Typography>
-          <Typography as="p" variant="text_sm" className="text-t1-white mt-4">
+          <Typography as="p" variant="text_sm" className="text-white mt-4">
             erheben. Die vorgenannten Daten werden als Logfiles auf den Servern
             unseres Anbieters gespeichert. Dies ist erforderlich, um die
             Stabilität und Sicherheit des Betriebs unserer Internetseite zu
             gewährleisten.
           </Typography>
-          <Typography as="p" variant="text_sm" className="text-t1-white mt-4">
+          <Typography as="p" variant="text_sm" className="text-white mt-4">
             <strong>Betroffene Daten</strong>
           </Typography>
           <Typography
             as="ul"
             variant="text_sm"
-            className="legalUL text-t1-white mt-4"
+            className="legalUL text-white mt-4"
           >
             <li className="legalULLIPadded">
               Inhaltsdaten (bspw. Posts, Fotos, Videos)
@@ -391,21 +391,21 @@ export const Privacy = () => {
               IP-Adresse)
             </li>
           </Typography>
-          <Typography as="p" variant="text_sm" className="text-t1-white mt-4">
+          <Typography as="p" variant="text_sm" className="text-white mt-4">
             <strong>Betroffene Personen:</strong> Nutzer unserer Internetpräsenz
           </Typography>
-          <Typography as="p" variant="text_sm" className="text-t1-white mt-4">
+          <Typography as="p" variant="text_sm" className="text-white mt-4">
             <strong>Verarbeitungszweck:</strong> Ausspielen unserer
             Internetseiten, Gewährleistung des Betriebs unserer Internetseiten
           </Typography>
-          <Typography as="p" variant="text_sm" className="text-t1-white mt-4">
+          <Typography as="p" variant="text_sm" className="text-white mt-4">
             <strong>Rechtsgrundlage:</strong> Berechtigtes Interesse, Art. 6
             Abs. 1 lit. f DSGVO
           </Typography>
           <Typography as="h3" variant="h5" className="mt-8">
             Von uns beauftragte(r) Webhoster: Netlify
           </Typography>
-          <Typography as="p" variant="text_sm" className="text-t1-white">
+          <Typography as="p" variant="text_sm" className="text-white">
             Dienstanbieter: VeraSafe United Kingdom Ltd., 37 Albert Embankment
             London SE1 7TL, Vereinigtes Königreich
             <br />
@@ -420,7 +420,7 @@ export const Privacy = () => {
           <Typography as="h2" variant="h4" className="mt-8">
             Kontaktaufnahme
           </Typography>
-          <Typography as="p" variant="text_sm" className="text-t1-white">
+          <Typography as="p" variant="text_sm" className="text-white">
             Soweit Sie uns über E-Mail, Soziale Medien, Telefon, Fax, Post,
             unser Kontaktformular oder sonstwie ansprechen und uns hierbei
             personenbezogene Daten wie Ihren Namen, Ihre Telefonnummer oder Ihre
@@ -429,13 +429,13 @@ export const Privacy = () => {
             Beantwortung Ihrer Anfrage im Rahmen des zwischen uns bestehenden
             vorvertraglichen oder vertraglichen Beziehungen.
           </Typography>
-          <Typography as="p" variant="text_sm" className="text-t1-white mt-4">
+          <Typography as="p" variant="text_sm" className="text-white mt-4">
             <strong>Betroffene Daten:</strong>
           </Typography>
           <Typography
             as="ul"
             variant="text_sm"
-            className="legalUL text-t1-white mt-4"
+            className="legalUL text-white mt-4"
           >
             <li className="legalULLIPadded">
               Bestandsdaten (bspw. Namen, Adressen)
@@ -450,15 +450,15 @@ export const Privacy = () => {
               Vertragsdaten (bspw. Vertragsgegenstand, Vertragsdauer)
             </li>
           </Typography>
-          <Typography as="p" variant="text_sm" className="text-t1-white mt-4">
+          <Typography as="p" variant="text_sm" className="text-white mt-4">
             <strong>Betroffene Personen:</strong> Interessenten, Kunden,
             Geschäfts- und Vertragspartner
           </Typography>
-          <Typography as="p" variant="text_sm" className="text-t1-white mt-4">
+          <Typography as="p" variant="text_sm" className="text-white mt-4">
             <strong>Verarbeitungszweck:</strong> Kommunikation sowie
             Beantwortung von Kontaktanfragen, Büro und Organisationsverfahren
           </Typography>
-          <Typography as="p" variant="text_sm" className="text-t1-white mt-4">
+          <Typography as="p" variant="text_sm" className="text-white mt-4">
             <strong>Rechtsgrundlage:</strong> Vertragserfüllung und
             vorvertragliche Anfragen, Art. 6 Abs. 1 lit. b DSGVO, berechtigtes
             Interesse, Art. 6 Abs. 1 lit. f DSGVO
@@ -466,7 +466,7 @@ export const Privacy = () => {
           <Typography as="h2" variant="h4" className="mt-8">
             Der Umgang mit ihren Daten im Bewerbungsverfahren
           </Typography>
-          <Typography as="p" variant="text_sm" className="text-t1-white">
+          <Typography as="p" variant="text_sm" className="text-white">
             Sofern Sie sich bei uns bewerben, verarbeiten wir die von Ihnen im
             Bewerbungsverfahren an uns übermittelten personenbezogenen Daten wie
             bspw. Ihren Name, Adresse, Wohnort, Alter, Bewerbungsfoto, E-Mail
@@ -483,13 +483,13 @@ export const Privacy = () => {
             Beschäftigungsverhältnisses unter Beachtung der gesetzlichen
             Vorschriften.
           </Typography>
-          <Typography as="p" variant="text_sm" className="text-t1-white mt-4">
+          <Typography as="p" variant="text_sm" className="text-white mt-4">
             <strong>Betroffene Daten:</strong>
           </Typography>
           <Typography
             as="ul"
             variant="text_sm"
-            className="legalUL text-t1-white mt-4"
+            className="legalUL text-white mt-4"
           >
             <li className="legalULLIPadded">
               Bestandsdaten (bspw. Namen, Adressen)
@@ -504,19 +504,19 @@ export const Privacy = () => {
               Vertragsdaten (bspw. Vertragsgegenstand, Vertragsdauer)
             </li>
           </Typography>
-          <Typography as="p" variant="text_sm" className="text-t1-white mt-4">
+          <Typography as="p" variant="text_sm" className="text-white mt-4">
             <strong>Betroffene Personen:</strong> Bewerber und Bewerberinnen
           </Typography>
-          <Typography as="p" variant="text_sm" className="text-t1-white mt-4">
+          <Typography as="p" variant="text_sm" className="text-white mt-4">
             <strong>Verarbeitungszweck:</strong> Abwicklung des
             Bewerbungsverfahrens
           </Typography>
-          <Typography as="p" variant="text_sm" className="text-t1-white mt-4">
+          <Typography as="p" variant="text_sm" className="text-white mt-4">
             <strong>Rechtsgrundlage:</strong> Vertragserfüllung und
             vorvertragliche Anfragen, Art. 6 Abs. 1 lit. b DSGVO, rechtliche
             Verpflichtung, Art. 6 Abs. 1 lit. c DSGVO
           </Typography>
-          <Typography as="p" variant="text_sm" className="text-t1-white mt-4">
+          <Typography as="p" variant="text_sm" className="text-white mt-4">
             <strong>Löschung:</strong>Löschung: Kommt es nicht zu dem Abschluss
             eines Arbeitsvertrages, werden Ihre Daten nach Abschluss des
             Bewerbungsverfahrens bzw. spätestens 2 Monate nach dessen Abschluss
@@ -530,7 +530,7 @@ export const Privacy = () => {
           <Typography as="h2" variant="h4" className="mt-8">
             Webanalyse und Statistik
           </Typography>
-          <Typography as="article" variant="text_sm" className="text-t1-white">
+          <Typography as="article" variant="text_sm" className="text-white">
             Um die Besucherströme auf unserer Internetpräsenz zu erfassen und
             statistisch auszuwerten, setzen wir Webanalyse-Dienste ein. Solche
             Dienste erfassen unter anderem Daten darüber, von welcher
@@ -563,13 +563,13 @@ export const Privacy = () => {
             eingehalten und die Durchsetzung Ihrer Rechte nicht oder nur
             erschwert erfolgen kann.
           </Typography>
-          <Typography as="p" variant="text_sm" className="text-t1-white mt-4">
+          <Typography as="p" variant="text_sm" className="text-white mt-4">
             <strong>Betroffene Daten:</strong>
           </Typography>
           <Typography
             as="ul"
             variant="text_sm"
-            className="legalUL text-t1-white mt-4"
+            className="legalUL text-white mt-4"
           >
             <li className="legalULLIPadded">
               Nutzungsdaten (bspw. Zugriffszeiten, angeklickte Webseiten)
@@ -579,15 +579,15 @@ export const Privacy = () => {
               IP-Adresse).
             </li>
           </Typography>
-          <Typography as="p" variant="text_sm" className="text-t1-white mt-4">
+          <Typography as="p" variant="text_sm" className="text-white mt-4">
             <strong>Betroffene Personen:</strong> Nutzer unserer Onlineangebote
           </Typography>
-          <Typography as="p" variant="text_sm" className="text-t1-white mt-4">
+          <Typography as="p" variant="text_sm" className="text-white mt-4">
             <strong>Verarbeitungszweck:</strong> Reichweitenmessung,
             Erfolgskontrolle von Kampagnen, Remarketing sowie interessen- und
             verhaltensbedingtes Marketing
           </Typography>
-          <Typography as="p" variant="text_sm" className="text-t1-white mt-4">
+          <Typography as="p" variant="text_sm" className="text-white mt-4">
             <strong>Rechtsgrundlage:</strong> Sofern wir Sie vor dem Einsatz des
             jeweiligen Dienstes um Ihre Einwilligung gebeten haben, liegt hierin
             die Rechtsgrundlage, Art. 6 Abs. 1 lit. a DSGVO. Im Übrigen setzen
@@ -599,7 +599,7 @@ export const Privacy = () => {
           <Typography as="h3" variant="h5" className="mt-8">
             Wir nutzen folgende Webanalyse-Dienste: Google Analytics
           </Typography>
-          <Typography as="p" variant="text_sm" className="text-t1-white">
+          <Typography as="p" variant="text_sm" className="text-white">
             <strong>Dienstanbieter</strong>: Google Inc., 1600 Amphitheatre
             Parkway, Mountain View, CA 94043, USA
             <br />
@@ -628,7 +628,7 @@ export const Privacy = () => {
           <Typography as="h2" variant="h4" className="mt-8">
             Content-Dienste
           </Typography>
-          <Typography as="article" variant="text_sm" className="text-t1-white ">
+          <Typography as="article" variant="text_sm" className="text-white ">
             Wir nutzen bestimmte Dienste, um über unsere Internetpräsenz
             bestimmte Inhalte oder Grafiken (Videos, Bilder, Musik,
             Schriftarten, Kartenmaterial) ausspielen zu können. Dabei
@@ -653,13 +653,13 @@ export const Privacy = () => {
             eingehalten und die Durchsetzung Ihrer Rechte nicht oder nur
             erschwert erfolgen kann.
           </Typography>
-          <Typography as="p" variant="text_sm" className="text-t1-white mt-4">
+          <Typography as="p" variant="text_sm" className="text-white mt-4">
             <strong>Betroffene Daten:</strong>
           </Typography>
           <Typography
             as="ul"
             variant="text_sm"
-            className="legalUL text-t1-white mt-4"
+            className="legalUL text-white mt-4"
           >
             <li className="legalULLIPadded">
               Nutzungsdaten (bspw. Zugriffszeiten, angeklickte Webseiten)
@@ -669,15 +669,15 @@ export const Privacy = () => {
               IP-Adresse).
             </li>
           </Typography>
-          <Typography as="p" variant="text_sm" className="text-t1-white mt-4">
+          <Typography as="p" variant="text_sm" className="text-white mt-4">
             <strong>Betroffene Personen:</strong> Nutzer unserer Internetpräsenz
           </Typography>
-          <Typography as="p" variant="text_sm" className="text-t1-white mt-4">
+          <Typography as="p" variant="text_sm" className="text-white mt-4">
             <strong>Verarbeitungszweck:</strong> Ausspielen unserer
             Internetseiten, Anbieten von Inhalten, Gewährleistung des Betriebs
             unserer Internetseiten
           </Typography>
-          <Typography as="p" variant="text_sm" className="text-t1-white mt-4">
+          <Typography as="p" variant="text_sm" className="text-white mt-4">
             <strong>Rechtsgrundlage:</strong> Einwilligung über
             Cookie-Consent-Banner, Art. 6 Abs. 1 lit. a DSGVO, berechtigte
             Interessen, Art. 6 Abs. 1 lit. f DSGVO
@@ -685,7 +685,7 @@ export const Privacy = () => {
           <Typography as="h3" variant="h5" className="mt-8">
             Wir nutzen folgende Content-Dienste: Google Maps
           </Typography>
-          <Typography as="p" variant="text_sm" className="text-t1-white">
+          <Typography as="p" variant="text_sm" className="text-white">
             Wir nutzen auf unserer Internetpräsenz Google Maps. Hierbei wird
             durch Google die IP-Adresse des Besuchers erhoben und verarbeitet.
             Wenn Sie eine Internetseite besuchen, auf der Google Maps
@@ -696,7 +696,7 @@ export const Privacy = () => {
             wird Ihrem Google Account zugeordnet, sofern Sie bei dem Besuch
             unserer Internetpräsenz dort eingeloggt sind.
           </Typography>
-          <Typography as="p" variant="text_sm" className="text-t1-white">
+          <Typography as="p" variant="text_sm" className="text-white">
             Dienstanbieter: Google Inc., 1600 Amphitheatre Parkway, Mountain
             View, CA 94043, USA
             <br />
@@ -719,7 +719,7 @@ export const Privacy = () => {
           <Typography as="h2" variant="h4" className="mt-8">
             Sicherheitsmaßnahmen
           </Typography>
-          <Typography as="article" variant="text_sm" className="text-t1-white">
+          <Typography as="article" variant="text_sm" className="text-white">
             Wir treffen im Übrigen technische und organisatorische
             Sicherheitsmaßnahmen nach dem Stand der Technik, um die Vorschriften
             der Datenschutzgesetze einzuhalten und Ihre Daten gegen zufällige
