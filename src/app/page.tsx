@@ -173,7 +173,7 @@ const Home = () => {
 
       <ContentWrapper
         ref={careerContainerRef}
-        className={careerContainerInView ? 'bg-t1-lightGray' : 'bg-primary'}
+        className={careerContainerInView ? 'bg-background' : 'bg-primary'}
         style={{ transition: '500ms' }}
         useMaxWidth={false}
       >

@@ -65,7 +65,6 @@ module.exports = {
       },
       colors: {
         t1: {
-          lightGray: 'var(--t1-lightGray)',
           gray: 'var(--t1-gray)',
           darkGray: 'var(--t1-darkGray)',
           black: 'var(--t1-black)',
@@ -77,6 +76,9 @@ module.exports = {
         primary: {
           DEFAULT: 'var(--theme-primary)',
           foreground: 'var(--theme-primary-foreground)',
+        },
+        muted: {
+          foreground: 'var(--theme-muted-foreground)'
         },
         foreground: {
           DEFAULT: 'var(--theme-foreground)',

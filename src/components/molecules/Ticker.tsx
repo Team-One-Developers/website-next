@@ -42,14 +42,6 @@ export const Ticker = (props: TickerProps) => {
               ? 'text-t1-darkGray'
               : 'text-primary'
           )}
-          /*
-          style={{
-            textShadow:
-              theme === PAGE_THEME.dark
-                ? '1px 1px 2px var(--t1-lightGray)'
-                : '1px 1px 2px gray',
-        }}
-        */
         >
           {text}
         </p>

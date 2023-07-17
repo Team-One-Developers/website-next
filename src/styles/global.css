@@ -20,6 +20,8 @@
     --theme-foreground: #000000;
     --theme-foreground-hover: #1d1d1d80;
 
+    --theme-muted-foreground: #1d1d1d;
+
     --theme-selectionBgColor: rgba(70, 255, 173, 0.6);
   }
 
@@ -28,6 +30,8 @@
 
     --theme-foreground: #ffffff;
     --theme-foreground-hover: #46ffad;
+
+    --theme-muted-foreground: #f2f2f2;
 
     --theme-selectionBgColor: rgba(70, 255, 173, 1);
   }

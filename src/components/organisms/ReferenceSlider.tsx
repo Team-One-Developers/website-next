@@ -16,14 +16,14 @@ interface ReferenceSliderEntryProps {
 
 export const ReferencesSlider = () => {
   return (
-    <div className="bg-t1-lightGray">
+    <div className="bg-background">
       <ContentWrapper>
-        <div className="flex justify-center bg-t1-lightGray pt-[75px] pb-8 font-medium">
+        <div className="flex justify-center bg-background pt-[75px] pb-8 font-medium">
           <TopLine colorClassName="text-t1-black" opacity={1} textSize="l">
             REFERENZEN
           </TopLine>
         </div>
-        <ul className="flex overflow-scroll gap-6 bg-t1-lightGray py-12 px-4 scroll-pl-4 snap-x">
+        <ul className="flex overflow-scroll gap-6 bg-background py-12 px-4 scroll-pl-4 snap-x">
           <ReferencesSliderEntry
             imageSrc="/images/references/cropped/porsche_sculpture.webp"
             headline="AUTOMOTIVE FINANCIAL SERVICES PLATTFORM"

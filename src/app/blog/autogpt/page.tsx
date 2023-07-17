@@ -66,7 +66,7 @@ const Blog = () => {
             </div>
             <div className="ml-4">
               <p className="text-xl font-bold">Simon Broß</p>
-              <p className="text-t1-lightGray">Software Engineer</p>
+              <p className="text-muted-foreground">Software Engineer</p>
             </div>
           </div>
         </div>

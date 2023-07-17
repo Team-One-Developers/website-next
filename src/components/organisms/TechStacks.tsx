@@ -32,8 +32,8 @@ export const TechStacks = () => {
       className={twJoin(
         'flex items-start pt-[9rem] min-h-[820px] transition-[300ms]',
         isBackendActive
-          ? 'bg-t1-black text-white'
-          : 'bg-t1-lightGray text-t1-black'
+          ? 'bg-black text-white'
+          : 'bg-background text-t1-black'
       )}
     >
       <ContentWrapper>
@@ -44,7 +44,7 @@ export const TechStacks = () => {
                 FONT_CONFIGS.desktop_topline_large,
                 'items-center font-SpaceGroteskMedium uppercase pt-4 flex flex-col md:p-4 pb-0',
                 isBackendActive
-                  ? 'text-t1-lightGray'
+                  ? 'text-muted-foreground'
                   : 'after:content-["⦁"] after:text-xl text-t1-black'
               )}
               onClick={() => setIsBackendActive(false)}
