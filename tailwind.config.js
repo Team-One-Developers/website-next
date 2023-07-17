@@ -93,7 +93,7 @@ module.exports = {
       },
       backgroundImage: (theme) => ({
         header_gradient:
-          'linear-gradient(var(--theme-background) -20%, transparent 87%, transparent 98%, transparent 100%);',
+          'linear-gradient(var(--theme-background) -20%, transparent 87%, transparent 98%, transparent 100%)',
       }),
     },
   },
