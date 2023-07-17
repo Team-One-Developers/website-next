@@ -1,7 +1,7 @@
 import { twJoin } from 'tailwind-merge'
 
-import { CtaLink } from '../atoms/CtaLink'
 import { Heading } from '../atoms/Heading'
+import { Link, LinkProps } from '../atoms/Link'
 import { TopLine } from '../atoms/Topline'
 import Typography, { TypographyProps } from '../atoms/Typography'
 
@@ -9,9 +9,9 @@ interface CtaSectionProps {
   topLineText?: string
   headlineText?: string
   contentText: string
-  ctaButtonLink: string
-  ctaButtonLabel: string
-  buttonColor?: 'black' | 'green'
+  link: string
+  linkLabel: string
+  linkVariant?: LinkProps['variant']
   animate?: boolean
   children?: React.ReactNode
   contentVariant: TypographyProps['variant']
@@ -25,9 +25,9 @@ export const CtaSection = (props: CtaSectionProps) => {
     topLineText,
     headlineText,
     contentText,
-    ctaButtonLabel,
-    ctaButtonLink,
-    buttonColor,
+    link,
+    linkLabel,
+    linkVariant,
     children,
     animate,
     contentVariant,
@@ -68,9 +68,10 @@ export const CtaSection = (props: CtaSectionProps) => {
         <Typography className="m-0 mb-6 text-t1-black" variant={contentVariant}>
           {contentText}
         </Typography>
-        <CtaLink variant={buttonColor} href={ctaButtonLink}>
-          {ctaButtonLabel}
-        </CtaLink>
+
+        <Link variant={linkVariant} href={link} mode="cta">
+          {linkLabel}
+        </Link>
       </div>
     </section>
   )

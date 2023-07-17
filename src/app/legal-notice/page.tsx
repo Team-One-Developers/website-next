@@ -13,7 +13,7 @@ export const Legal = () => {
   return (
     <PageLayout>
       <ContentWrapper>
-        <FullWidthSectionContainer marginTopClassName="mt-20">
+        <FullWidthSectionContainer className="mt-20">
           <Typography className="mt-8" as="h1" variant="h3">
             Impressum
           </Typography>

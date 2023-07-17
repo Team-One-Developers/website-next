@@ -24,7 +24,7 @@ import { PageLayout } from '@/components/layout/PageLayout'
 import SamuelPic from '../../public/images/t1d_kai_knoerzer_011_edited.jpg'
 import JannikPic from '../../public/images/t1d_kai_knoerzer_055.jpg'
 
-export const Home = () => {
+const Home = () => {
   // Triggers Animation for Animated Teaser
   const [animatedTeaserContainerRef, animatedTeaserInView] = useInView({
     threshold: 0.8,
@@ -56,7 +56,7 @@ export const Home = () => {
   return (
     <PageLayout theme={PAGE_THEME.light}>
       <ContentWrapper className="mt-20">
-        <FullWidthSectionContainer marginTopClassName="mt-0">
+        <FullWidthSectionContainer className="mt-0">
           <Heading
             tag="h1"
             className="max-w-[790px] text-[3rem] uppercase leading-110 tracking-aBitTighter lg:text-[3rem] lg:leading-110"
@@ -91,7 +91,7 @@ export const Home = () => {
       />
 
       <ContentWrapper>
-        <FullWidthSectionContainer marginTopClassName="mt-20">
+        <FullWidthSectionContainer className="mt-20">
           <figure className="mb-6 flex h-[129px] w-full justify-center text-t1-green md:hidden">
             <DancingFigures />
           </figure>
@@ -106,10 +106,11 @@ export const Home = () => {
         <CtaSection
           className="mt-16 lg:max-w-[25%]"
           contentText="Wir helfen Organisationen dabei, sich nachhaltig zu modernen digitalen Unternehmen zu wandeln. Immer mit dem Ziel, qualitativ hochwertige, skalierbare und durchdachte Software zu entwickeln, welche messbaren Mehrwert für unsere Kunden schafft."
-          ctaButtonLink={'/services'}
-          ctaButtonLabel="Unsere Leistungen"
           contentVariant="text_sm"
           headlineVariant="h2"
+          link={'/services'}
+          linkLabel="Unsere Leistungen"
+          linkVariant="secondary"
         />
       </ContentWrapper>
 
@@ -142,9 +143,8 @@ export const Home = () => {
           topLineText="CULTURE @ T1D"
           headlineText="Wir sind menschen&shy;zentriert."
           contentText='Wir glauben an Fortschritt durch Technologie, an Nachhaltigkeit durch Qualität sowie an die Prinzipien des agilen Manifests. Und vor allem glauben wir an die "Zielgruppe Mensch", die im Mittelpunkt unseres Handelns stehen muss.'
-          ctaButtonLabel="Unsere Kultur"
-          ctaButtonLink="/culture"
-          buttonColor={'black'}
+          linkLabel="Unsere Kultur"
+          link="/culture"
           animate={!cultureContainerInView}
           headlineClassName="mb-24"
           headlineVariant="h3"
@@ -158,11 +158,7 @@ export const Home = () => {
             className="mr-2 brightness-0"
           />
         </CtaSection>
-        <ImageMask
-          position="top"
-          ref={culturePictureRef}
-          className="max-w-[50%]"
-        >
+        <ImageMask ref={culturePictureRef} className="md:max-w-[50%]">
           <figure
             className=""
             style={{
@@ -201,11 +197,12 @@ export const Home = () => {
               contentText={
                 'Team One Developers ist für uns nicht nur ein Name, sondern ein Versprechen: Das Versprechen den Unterschied zu machen, nicht nur Standard sondern die beste Wahl zu sein. Für unsere Partner und ganz besonders für unsere Kollegen'
               }
-              ctaButtonLabel="Karriere"
-              ctaButtonLink="/career"
               headlineVariant="h3"
               contentVariant="text_sm"
               headlineClassName="mb-[2.875rem]"
+              linkLabel="Karriere"
+              link="/career"
+              linkVariant="secondary"
             >
               <Image
                 src="/images/icons/world-1.svg"
@@ -216,7 +213,7 @@ export const Home = () => {
               />
             </CtaSection>
           }
-          rightWidthClass="w-[65%]"
+          rightComponentClass="md:w-[65%]"
         />
       </ContentWrapper>
     </PageLayout>

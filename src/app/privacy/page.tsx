@@ -12,7 +12,7 @@ export const Privacy = () => {
   return (
     <PageLayout>
       <ContentWrapper>
-        <FullWidthSectionContainer marginTopClassName="mt-12">
+        <FullWidthSectionContainer className="mt-12">
           <hgroup className="grid gap-4">
             <Typography as="h1" variant="h3" className="mt-8">
               Datenschutz&shy;erklärung

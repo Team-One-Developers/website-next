@@ -1,6 +1,4 @@
-import Image from 'next/image'
 import Link from 'next/link'
-import { PAGE_THEME } from '@/constants'
 
 import { Button } from '@/components/atoms/Button'
 import { Heading } from '@/components/atoms/Heading'
@@ -10,7 +8,7 @@ import ContentWrapper from '@/components/layout/ContentWrapper'
 import { FullWidthSectionContainer } from '@/components/layout/FullWidthSectionContainer'
 import { PageLayout } from '@/components/layout/PageLayout'
 
-export const NotFound = () => {
+const NotFound = () => {
   return (
     <PageLayout>
       <FullWidthSectionContainer>
@@ -37,4 +35,5 @@ export const NotFound = () => {
     </PageLayout>
   )
 }
+
 export default NotFound

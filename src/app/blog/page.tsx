@@ -9,7 +9,7 @@ import Typography from '@/components/atoms/Typography'
 
 import { PageLayout } from '@/components/layout/PageLayout'
 
-export const Blog = () => {
+const Blog = () => {
   const router = useRouter()
 
   const BlogArticle = ({

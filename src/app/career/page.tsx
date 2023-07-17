@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { CtaLink } from '@/components/atoms/CtaLink'
 import { Heading } from '@/components/atoms/Heading'
 import { ImageMask } from '@/components/atoms/ImageMask'
+import { Link } from '@/components/atoms/Link'
 import Typography from '@/components/atoms/Typography'
 
 import { Benefits } from '@/components/organisms/Benefits'
@@ -11,7 +12,7 @@ import ContentWrapper from '@/components/layout/ContentWrapper'
 import { FullWidthSectionContainer } from '@/components/layout/FullWidthSectionContainer'
 import { PageLayout } from '@/components/layout/PageLayout'
 
-export const Career = () => {
+const Career = () => {
   return (
     <PageLayout>
       <ContentWrapper>
@@ -89,9 +90,9 @@ export const Career = () => {
             seid, dann meldet euch einfach initiativ – am besten schon mit
             aussagekräftigen Bewerbungsunterlagen.
           </Typography>
-          <CtaLink variant="green" href="/contact">
+          <Link variant="secondary" href="/contact">
             Initiativ bewerben
-          </CtaLink>
+          </Link>
         </div>
       </ContentWrapper>
       <ContentWrapper className="mt-36">

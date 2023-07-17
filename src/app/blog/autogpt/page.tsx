@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 import { PageLayout } from '@/components/layout/PageLayout'
 
-export const Blog = () => {
+const Blog = () => {
   const RelatedArticle = ({
     title,
     subtitle,

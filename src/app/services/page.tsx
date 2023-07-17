@@ -20,7 +20,7 @@ import ContentWrapper from '@/components/layout/ContentWrapper'
 import { FullWidthSectionContainer } from '@/components/layout/FullWidthSectionContainer'
 import { PageLayout } from '@/components/layout/PageLayout'
 
-export const Services = () => {
+const Services = () => {
   const isXl = useMediaQuery('(min-width: 1200px)')
 
   return (

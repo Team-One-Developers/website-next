@@ -1,19 +1,21 @@
 import { forwardRef, ReactNode } from 'react'
 import { twJoin } from 'tailwind-merge'
-import Mask from './Mask.module.css'
 
+import './Mask.css'
 
 interface ImageMaskProps {
   children: ReactNode
-  position?: 'center' | 'top'
   className?: string
 }
 
 export const ImageMask = forwardRef<HTMLDivElement, ImageMaskProps>(
-  function IMWrapper(props: ImageMaskProps, ref) {
-    const { children, position = 'center', className } = props
+  function IMWrapper({ children, className, ...rest }: ImageMaskProps, ref) {
     return (
-      <div ref={ref} className={twJoin('inline-block',Mask.testing, className)}>
+      <div
+        ref={ref}
+        className={twJoin('mask inline-block', className)}
+        {...rest}
+      >
         {children}
       </div>
     )

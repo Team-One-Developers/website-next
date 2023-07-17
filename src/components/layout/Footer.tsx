@@ -126,7 +126,7 @@ export const Footer = () => {
           <Icon
             name="Instagram"
             color="var(--theme-textColor)"
-            hoverColorCSS="hover:fill-theme-textHoverColor"
+            className="hover:fill-theme-textHoverColor"
           />
         </a>
         <a
@@ -137,7 +137,7 @@ export const Footer = () => {
           <Icon
             name="LinkedIn"
             color="var(--theme-textColor)"
-            hoverColorCSS="hover:fill-theme-textHoverColor"
+            className="hover:fill-theme-textHoverColor"
           />
         </a>
       </div>
