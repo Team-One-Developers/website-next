@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://teamonedevelopers.de
+
+# Sitemaps
+Sitemap: https://teamonedevelopers.de/sitemap.xml
