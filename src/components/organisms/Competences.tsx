@@ -25,7 +25,7 @@ export const Competences = () => {
         </span>
         <Typography
           as="h3"
-          variant="h2"
+          variant="h3"
           className="font-spacegrotesk md:text-[2rem] mt-[14px] font-medium lg:mt-0  group-hover:text-inherit lg:max-w-[440px] w-full"
         >
           {headline}

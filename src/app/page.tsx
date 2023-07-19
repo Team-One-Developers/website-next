@@ -22,11 +22,6 @@ import ContentWrapper from '@/components/layout/ContentWrapper'
 import { FullWidthSectionContainer } from '@/components/layout/FullWidthSectionContainer'
 import { PageLayout } from '@/components/layout/PageLayout'
 
-import HeroPic from '../../public/images/hero.jpg'
-import PersonIcon from '../../public/images/icons/person-1.svg'
-import SamuelPic from '../../public/images/t1d_kai_knoerzer_011_edited.jpg'
-import JannikPic from '../../public/images/t1d_kai_knoerzer_055.jpg'
-
 const Home = () => {
   // Triggers Animation for Animated Teaser
   const [animatedTeaserContainerRef, animatedTeaserInView] = useInView({
@@ -78,9 +73,10 @@ const Home = () => {
       <Hero
         imageNode={
           <Image
-            src={HeroPic}
+            src="/images/optimized/hero_optimized.webp"
             alt="Picture of a keyboard"
-            layout="constrained"
+            layout="fullWidth"
+            className="h-full"
           />
         }
         overlayNode={
@@ -168,7 +164,10 @@ const Home = () => {
               transform: culturePictureInView ? 'scale(1.1)' : '',
             }}
           >
-            <Image src={SamuelPic} alt="Picture of a men posing" />
+            <Image
+              src="/images/optimized/t1d_kai_knoerzer_011_edited_optimized.webp"
+              alt="Picture of a men posing"
+            />
           </figure>
         </ImageMask>
       </ContentWrapper>
@@ -188,7 +187,10 @@ const Home = () => {
                   transform: careerPictureInView ? 'scale(1.1)' : '',
                 }}
               >
-                <Image src={JannikPic} alt="Picture of a men posing" />
+                <Image
+                  src="/images/optimized/t1d_kai_knoerzer_055_optimized.webp"
+                  alt="Picture of a men posing"
+                />
               </figure>
             </ImageMask>
           }

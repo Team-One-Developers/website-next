@@ -2,6 +2,7 @@ import { PAGE_THEME } from '@/constants'
 import { twJoin } from 'tailwind-merge'
 
 import { Heading } from '@/components/atoms/Heading'
+import { Image } from '@/components/atoms/Image'
 import Typography from '@/components/atoms/Typography'
 
 import { Ticker } from '@/components/molecules/Ticker'
@@ -57,7 +58,17 @@ const Contact = () => {
           Die Eins ist man <br /> niemals alleine.
         </Typography>
         <section className="mb-40 mt-20 flex flex-wrap items-center gap-16">
-          <div className="relative min-w-[260px] max-w-[460px] grow"></div>
+          <div className="relative min-w-[260px] max-w-[460px] grow">
+            <Image
+              src="/images/optimized/dinosaur_call_optimized.webp"
+              alt="A person in a T-Rex costume with an inflated cell phone is standing in an office. They are pretending to be on a call."
+              width={460}
+              height={580}
+              style={{
+                flex: 1,
+              }}
+            />
+          </div>
           <div className={'flex grow-[2] flex-col gap-2 p-4'}>
             <Typography className={twJoin('-mt-3 mb-0')} variant="text_xl">
               Team One Developers GmbH <br />

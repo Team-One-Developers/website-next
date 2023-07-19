@@ -41,17 +41,21 @@ export const CultureBlock = () => {
                   alt="T1D Logo"
                   width={125}
                   height={144}
+                  layout="fixed"
+                  objectFit="contain"
                   className="relative z-[2000]"
                 />
               </div>
             }
           >
-            <Image
-              src="/images/cropped/struggling_jannik.webp"
-              alt="A person holding a computer mouse. The cable is heavily tangled up. The person looks surprised into the camera."
-              width={750}
-              height={948}
-            />
+            <ImageMask>
+              <Image
+                src="/images/optimized/t1d_kai_knoerzer_062_optimized.webp"
+                alt="A person holding a computer mouse. The cable is heavily tangled up. The person looks surprised into the camera."
+                width={750}
+                height={948}
+              />
+            </ImageMask>
           </ImageDecoration>
         }
         leftXLWidthClass="xl:w-[85%]"
@@ -120,7 +124,7 @@ export const CultureBlock = () => {
             />
             <ImageMask>
               <Image
-                src="/images/t1d_kai_knoerzer_126.jpg"
+                src="/images/optimized/t1d_kai_knoerzer_126_optimized.webp"
                 alt="Man with a dog"
                 width={750}
                 height={1125}

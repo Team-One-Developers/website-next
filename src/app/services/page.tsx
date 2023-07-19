@@ -58,10 +58,11 @@ const Services = () => {
         className="mt-[4.5rem] lg:mt-[11rem]"
         imageNode={
           <Image
-            src="/images/t1d_nov22_149.jpg"
+            src="/images/optimized/t1d_nov22_149_optimized.webp"
             alt="Picture of office life"
             layout="constrained"
-            style={{ objectFit: 'cover' }}
+            objectFit="cover"
+            className="h-full"
           />
         }
         overlayNode={

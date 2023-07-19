@@ -29,7 +29,7 @@ export const TechStacks = () => {
     <div
       className={twJoin(
         'flex items-start pt-[9rem] min-h-[820px] transition-[300ms]',
-        isBackendActive ? 'bg-black text-white' : 'bg-background text-black'
+        isBackendActive ? 'bg-black text-white' : 'bg-white text-black'
       )}
     >
       <ContentWrapper>
@@ -56,7 +56,7 @@ export const TechStacks = () => {
                 'items-center font-spacegrotesk uppercase pt-4 flex flex-col md:p-4 pb-0',
                 isBackendActive
                   ? 'after:content-["⦁"] after:text-xl text-primary'
-                  : 'text-muted-foreground'
+                  : 'text-t1-darkGray'
               )}
               onClick={() => setIsBackendActive(true)}
             >

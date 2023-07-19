@@ -44,6 +44,7 @@ export const Header = ({ theme }: { theme: PageTheme }) => {
                 alt="Team One Developers Logo"
                 height={46}
                 width={135}
+                layout="fixed"
               />
             </div>
           </Link>

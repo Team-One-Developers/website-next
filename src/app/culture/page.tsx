@@ -25,10 +25,10 @@ const Culture = () => {
         className="mt-[19rem]"
         imageNode={
           <Image
-            src="/images/t1d_nov22_153.jpg"
+            src="/images/optimized/t1d_nov22_153_optimized.webp"
             alt="A man working at his laptop"
-            layout="constrained"
-            style={{ objectFit: 'cover' }}
+            layout="fullWidth"
+            className="h-full"
           />
         }
         overlayNode={null}

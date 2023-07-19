@@ -21,12 +21,14 @@ export const Companies = () => {
             alt="Porsche Logo"
             height={50}
             width={230}
+            objectFit="contain"
           />
           <Image
             src="/images/companies/mercedes.svg"
             alt="Mercedes Logo"
             height={50}
             width={230}
+            objectFit="contain"
           />
         </div>
         <div className="flex grow flex-wrap justify-around gap-9">
@@ -35,12 +37,14 @@ export const Companies = () => {
             alt="Recaro Logo"
             height={50}
             width={230}
+            objectFit="contain"
           />
           <Image
             src="/images/companies/axelspringer.svg"
             alt="AxelSpringer Logo"
             height={50}
             width={230}
+            objectFit="contain"
           />
         </div>
       </div>

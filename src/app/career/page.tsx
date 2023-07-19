@@ -23,7 +23,7 @@ const Career = () => {
       <ContentWrapper className="mt-8 lg:flex lg:gap-8">
         <ImageMask className="mt-8 lg:basis-[50%]">
           <Image
-            src="/images/t1d_kai_knoerzer_079.jpg"
+            src="/images/optimized/t1d_kai_knoerzer_079_optimized.webp"
             alt="Lazy man sleeping on a printer"
             width={960}
             height={1440}
@@ -95,7 +95,7 @@ const Career = () => {
       </ContentWrapper>
       <ContentWrapper className="mt-36">
         <Image
-          src="/images/t1d_nov22_185.jpg"
+          src="/images/optimized/t1d_nov22_185_optimized.webp"
           alt="Picture of people in an Office"
           width={1920}
           height={800}
