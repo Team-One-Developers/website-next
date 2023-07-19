@@ -1,4 +1,4 @@
-import { Image } from '@unpic/react/next'
+import { Image } from '@/components/atoms/Image'
 
 import Typography from '../atoms/Typography'
 

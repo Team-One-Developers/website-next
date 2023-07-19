@@ -2,10 +2,11 @@
 
 import { PAGE_THEME } from '@/constants'
 import { PageTheme } from '@/types'
-import { Image } from '@unpic/react/next'
 import Marquee from 'react-fast-marquee'
 import { twJoin } from 'tailwind-merge'
 import { useMediaQuery } from 'usehooks-ts'
+
+import { Image } from '@/components/atoms/Image'
 
 interface TickerProps {
   theme: PageTheme

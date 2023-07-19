@@ -1,6 +1,5 @@
-import { Image } from '@unpic/react/next'
-
 import { Heading } from '@/components/atoms/Heading'
+import { Image } from '@/components/atoms/Image'
 import { ImageMask } from '@/components/atoms/ImageMask'
 import { Link } from '@/components/atoms/Link'
 import Typography from '@/components/atoms/Typography'

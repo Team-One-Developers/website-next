@@ -6,8 +6,9 @@ import { usePathname } from 'next/navigation'
 import { PAGE_THEME } from '@/constants'
 import { SiteMetadata } from '@/data'
 import { PageTheme } from '@/types'
-import { Image } from '@unpic/react/next'
 import { twJoin } from 'tailwind-merge'
+
+import { Image } from '@/components/atoms/Image'
 
 import { ContentWrapper } from './ContentWrapper'
 

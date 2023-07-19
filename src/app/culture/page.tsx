@@ -1,7 +1,6 @@
-import { Image } from '@unpic/react/next'
-
 import { DancingFigures } from '@/components/atoms/DancingFigures'
 import { Heading } from '@/components/atoms/Heading'
+import { Image } from '@/components/atoms/Image'
 import Typography from '@/components/atoms/Typography'
 
 import { Hero } from '@/components/molecules/Hero'
@@ -28,7 +27,7 @@ const Culture = () => {
           <Image
             src="/images/t1d_nov22_153.jpg"
             alt="A man working at his laptop"
-            fill
+            layout="constrained"
             style={{ objectFit: 'cover' }}
           />
         }

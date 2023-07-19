@@ -1,9 +1,9 @@
 'use client'
 
-import { Image } from '@unpic/react/next'
 import { useMediaQuery } from 'usehooks-ts'
 
 import { Button, buttonVariants } from '@/components/atoms/Button'
+import { Image } from '@/components/atoms/Image'
 import Typography from '@/components/atoms/Typography'
 
 import { Hero } from '@/components/molecules/Hero'

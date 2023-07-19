@@ -1,12 +1,12 @@
 'use client'
 
 import { PAGE_THEME } from '@/constants'
-import { Image } from '@unpic/react/next'
 import { useInView } from 'react-intersection-observer'
 import { twJoin } from 'tailwind-merge'
 
 import { DancingFigures } from '@/components/atoms/DancingFigures'
 import { Heading } from '@/components/atoms/Heading'
+import { Image } from '@/components/atoms/Image'
 import { ImageMask } from '@/components/atoms/ImageMask'
 import Typography from '@/components/atoms/Typography'
 

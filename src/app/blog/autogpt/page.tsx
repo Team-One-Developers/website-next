@@ -1,5 +1,3 @@
-import { Image } from '@unpic/react/next'
-
 import { PageLayout } from '@/components/layout/PageLayout'
 
 const Blog = () => {
