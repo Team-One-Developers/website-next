@@ -35,7 +35,7 @@ export const UxDesignMobile = () => {
           active ? 'border-[#46ffad]' : 'brightness-[35%]'
         )}
       >
-        <div className="text-center font-SpaceGroteskRegular text-black box-border">
+        <div className="text-center font-spacegrotesk text-black box-border">
           {text}
         </div>
       </div>
@@ -83,7 +83,7 @@ export const UxDesignMobile = () => {
         </div>
       </div>
 
-      <div className="grid-cols-2 grid-rows-2 sm:grid-cols-4 sm:grid-rows-1 mb-4 grid justify-center gap-x-0 gap-y-1 font-SpaceGroteskRegular uppercase text-muted-foreground">
+      <div className="grid-cols-2 grid-rows-2 sm:grid-cols-4 sm:grid-rows-1 mb-4 grid justify-center gap-x-0 gap-y-1 font-spacegrotesk uppercase text-muted-foreground">
         <CategoryButton category={UX_CATEGORIES.ux_design} />
 
         <CategoryButton category={UX_CATEGORIES.application_development} />
@@ -96,7 +96,7 @@ export const UxDesignMobile = () => {
       <div className="flex justify-center">
         <div className="w-full grid grid-cols-[1fr_1.5fr_1.5fr_1fr] grid-rows-[0.5fr_1fr_fr_1fr_0.5fr] gap-y-3 gap-x-3">
           <div className="flex justify-center items-center row-start-1 col-start-2 col-span-2">
-            <div className="rounded-xl text-center w-1/3 z-10 text-white font-SpaceGroteskRegular uppercase text-xs py-[6px] px-3 border-2 border-[#21754f] bg-[rgb(6,25,17)]">
+            <div className="rounded-xl text-center w-1/3 z-10 text-white font-spacegrotesk uppercase text-xs py-[6px] px-3 border-2 border-[#21754f] bg-[rgb(6,25,17)]">
               Human Focused
             </div>
           </div>
@@ -166,7 +166,7 @@ export const UxDesignMobile = () => {
           </BubbleContainer>
 
           <div className="flex justify-center items-center row-start-5 col-start-2 col-span-2">
-            <div className="rounded-xl text-center w-1/3 z-10 text-white font-SpaceGroteskRegular uppercase text-xs py-[6px] px-3 border-2 border-[#21754f] bg-[rgb(6,25,17)]">
+            <div className="rounded-xl text-center w-1/3 z-10 text-white font-spacegrotesk uppercase text-xs py-[6px] px-3 border-2 border-[#21754f] bg-[rgb(6,25,17)]">
               Tech Focused
             </div>
           </div>

@@ -14,7 +14,7 @@ const Privacy = () => {
       <ContentWrapper>
         <FullWidthSectionContainer className="mt-12">
           <hgroup className="grid gap-4">
-            <Typography as="h1" variant="h3" className="mt-8">
+            <Typography as="h1" variant="h2" className="mt-8">
               Datenschutz&shy;erklärung
             </Typography>
             <Typography as="p" variant="text_sm" className="text-white">

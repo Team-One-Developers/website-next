@@ -16,7 +16,7 @@ const Culture = () => {
   return (
     <PageLayout>
       <ContentWrapper className="relative mt-20">
-        <Typography as="h1" variant="h3" className="lg:max-w-[calc(50%-2rem)]">
+        <Typography as="h1" variant="h2" className="lg:max-w-[calc(50%-2rem)]">
           WIR MACHEN DAS, WOVON ALLE SPRECHEN: WIR STELLEN DEN MENSCHEN IN DEN
           MITTELPUNKT.
         </Typography>

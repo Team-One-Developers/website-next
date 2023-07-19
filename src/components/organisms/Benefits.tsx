@@ -54,7 +54,7 @@ export const Benefits = () => {
   return (
     <div className="bg-black text-white lg:flex">
       <div className="relative lg:basis-[50%]">
-        <Typography as="h2" variant="h3" className="lg:max-w-[60%]">
+        <Typography as="h2" variant="h2" className="lg:max-w-[60%]">
           Unsere Benefits auf einen Blick
         </Typography>
         <video

@@ -30,15 +30,8 @@ module.exports = {
       '10xl': '11rem',
     },
     fontFamily: {
-      abcdiatype: {
-        regular: ['var(--font-ABCD)'],
-        italic: ['var(--font-ABCDItalic)'],
-      },
-      spacegrotesk: {
-        light: ['var(--font-SpaceGroteskLight)'],
-        regular: ['var(--font-SpaceGroteskRegular)'],
-        medium: ['var(--font-SpaceGroteskMedium)'],
-      },
+      abcdiatype: 'var(--font-ABCD)',
+      spacegrotesk: 'var(--font-SpaceGrotesk)',
     },
     screens: {
       xs: '0px',

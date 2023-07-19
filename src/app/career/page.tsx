@@ -16,7 +16,7 @@ const Career = () => {
     <PageLayout>
       <ContentWrapper>
         <FullWidthSectionContainer className="mt-12">
-          <Typography as="h1" variant="h3" className="py-8">
+          <Typography as="h1" variant="h2" className="py-8">
             Unser Team <br />- Dein Playground
           </Typography>
         </FullWidthSectionContainer>

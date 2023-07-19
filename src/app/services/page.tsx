@@ -25,7 +25,7 @@ const Services = () => {
   return (
     <PageLayout>
       <ContentWrapper className="mt-20 lg:flex gap-[15%]">
-        <Typography className="lg:basis-[35%]" as="h1" variant="h3">
+        <Typography className="lg:basis-[35%]" as="h1" variant="h2">
           Wir schaffen nachhaltige Mehrwerte durch exzellente Software &
           menschenzentrierte Arbeitsweisen.
         </Typography>

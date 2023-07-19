@@ -54,7 +54,7 @@ const Contact = () => {
   return (
     <PageLayout ticker={false}>
       <ContentWrapper>
-        <Typography as="h1" variant="h3" className="mt-20">
+        <Typography as="h1" variant="h2" className="mt-20">
           Die Eins ist man <br /> niemals alleine.
         </Typography>
         <section className="mb-40 mt-20 flex flex-wrap items-center gap-16">

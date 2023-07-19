@@ -39,7 +39,7 @@ export const TechStacks = () => {
               as="button"
               variant="subtitle_lg"
               className={twMerge(
-                'items-center font-SpaceGroteskMedium uppercase pt-4 flex flex-col md:p-4 pb-0',
+                'items-center font-spacegrotesk uppercase pt-4 flex flex-col md:p-4 pb-0',
                 isBackendActive
                   ? 'text-muted-foreground'
                   : 'after:content-["⦁"] after:text-xl text-black'
@@ -53,7 +53,7 @@ export const TechStacks = () => {
               as="button"
               variant="subtitle_lg"
               className={twMerge(
-                'items-center font-SpaceGroteskMedium uppercase pt-4 flex flex-col md:p-4 pb-0',
+                'items-center font-spacegrotesk uppercase pt-4 flex flex-col md:p-4 pb-0',
                 isBackendActive
                   ? 'after:content-["⦁"] after:text-xl text-primary'
                   : 'text-muted-foreground'

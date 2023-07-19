@@ -20,13 +20,13 @@ export const Competences = () => {
           'group p-8 lg:flex-row lg:gap-8  flex flex-col rounded-lg hover:text-t1-darkGray hover:bg-primary bg-t1-darkGray mb-4 text-white '
         )}
       >
-        <span className="font-SpaceGroteskRegular font-medium not-italic text-xs leading-110 tracking-aBitTighter uppercase min-w-[7%]">
+        <span className="font-spacegrotesk font-medium not-italic text-xs leading-110 tracking-aBitTighter uppercase min-w-[7%]">
           ( 0{count} / 03 )
         </span>
         <Typography
           as="h3"
-          variant="h3"
-          className="font-SpaceGroteskMedium md:text-[2rem] mt-[14px] font-medium lg:mt-0  group-hover:text-inherit lg:max-w-[440px] w-full"
+          variant="h2"
+          className="font-spacegrotesk md:text-[2rem] mt-[14px] font-medium lg:mt-0  group-hover:text-inherit lg:max-w-[440px] w-full"
         >
           {headline}
         </Typography>
