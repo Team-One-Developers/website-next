@@ -5,8 +5,9 @@ import { UX_CATEGORIES } from '@/constants'
 
 import './style.css'
 
-import Image from 'next/image'
 import { twJoin, twMerge } from 'tailwind-merge'
+
+import { Image } from '@/components/atoms/Image'
 
 import { ImageMask } from '../atoms/ImageMask'
 import Typography from '../atoms/Typography'
@@ -39,9 +40,7 @@ export const UxDesign = () => {
             : 'brightness-[25%]'
         )}
       >
-        <div className="text-center font-SpaceGroteskRegular text-black">
-          {text}
-        </div>
+        <div className="text-center font-spacegrotesk text-black">{text}</div>
       </div>
     )
   }
@@ -99,7 +98,7 @@ export const UxDesign = () => {
         </div>
       </div>
 
-      <div className="mb-8 flex justify-center gap-x-[20px] gap-y-0 font-SpaceGroteskRegular uppercase text-muted-foreground">
+      <div className="mb-8 flex justify-center gap-x-[20px] gap-y-0 font-spacegrotesk uppercase text-muted-foreground">
         <CategoryButton category={UX_CATEGORIES.ux_design} />
 
         <CategoryButton category={UX_CATEGORIES.application_development} />
@@ -193,7 +192,7 @@ export const UxDesign = () => {
           </div>
 
           <div className="col-span-5 row-start-2 grid grid-cols-7 grid-rows-1 items-center justify-center text-white">
-            <div className="z-10 w-[80%] rounded-xl border-[#21754f] border-2 bg-[rgb(6,25,17)] px-[12px] py-[6px] text-center font-SpaceGroteskRegular text-xs uppercase text-white">
+            <div className="z-10 w-[80%] rounded-xl border-[#21754f] border-2 bg-[rgb(6,25,17)] px-[12px] py-[6px] text-center font-spacegrotesk text-xs uppercase text-white">
               Human Focused
             </div>
             <BubbleContainer
@@ -268,7 +267,7 @@ export const UxDesign = () => {
                 />
               </ImageMask>
             </BubbleContainer>
-            <div className="z-10 w-[80%] rounded-xl border-[#21754f] border-2 bg-[rgb(6,25,17)] px-[12px] py-[6px] text-center font-SpaceGroteskRegular text-xs uppercase text-white">
+            <div className="z-10 w-[80%] rounded-xl border-[#21754f] border-2 bg-[rgb(6,25,17)] px-[12px] py-[6px] text-center font-spacegrotesk text-xs uppercase text-white">
               Tech Focused
             </div>
           </div>

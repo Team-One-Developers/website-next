@@ -2,5 +2,5 @@
 module.exports = {
   siteUrl: process.env.SITE_URL || 'https://teamonedevelopers.de',
   generateRobotsTxt: true, // (optional)
-  // ...other options
+  exclude: ['/icon.png'],
 }

@@ -1,6 +1,8 @@
-import Image from 'next/image'
 import { twJoin } from 'tailwind-merge'
 
+import { Image } from '@/components/atoms/Image'
+
+import { ImageMask } from '../atoms/ImageMask'
 import Typography from '../atoms/Typography'
 import ContentWrapper from '../layout/ContentWrapper'
 
@@ -13,16 +15,16 @@ interface ReferenceSliderEntryProps {
 
 export const ReferencesSlider = () => {
   return (
-    <div className="bg-background">
+    <div className="bg-foreground">
       <ContentWrapper>
-        <div className="flex justify-center bg-background pt-[75px] pb-8 font-medium">
+        <div className="flex justify-center bg-foreground pt-[75px] pb-8 font-medium">
           <Typography className="text-black" variant="subtitle_lg">
             REFERENZEN
           </Typography>
         </div>
-        <ul className="flex overflow-scroll gap-6 bg-background py-12 px-4 scroll-pl-4 snap-x">
+        <ul className="flex overflow-scroll gap-6 bg-foreground py-12 px-4 scroll-pl-4 snap-x">
           <ReferencesSliderEntry
-            imageSrc="/images/references/cropped/porsche_sculpture.webp"
+            imageSrc="/images/optimized/finance_0_optimized.webp"
             headline="AUTOMOTIVE FINANCIAL SERVICES PLATTFORM"
             infoText="Gemeinsam mit unserem Kunden stellen wir uns der Herausforderung
 					Online-Finanzierungen von Premium-Fahrzeugen zur bestmöglichsten
@@ -32,7 +34,7 @@ export const ReferencesSlider = () => {
             technologyList={['TypeScript', 'React', 'Node.js', 'AWS']}
           />
           <ReferencesSliderEntry
-            imageSrc="/images/references/cropped/porsche_front.webp"
+            imageSrc="/images/optimized/taycan_optimized.webp"
             headline="PORSCHE ONLINE VERTRIEBS&shy;PLATTFORM"
             infoText="„Porsche-Enthusiasten die bestmögliche Such- und Kauferfahrung
 						zu bieten“. Nicht weniger war und ist unser Anspruch im Rahmen
@@ -47,7 +49,7 @@ export const ReferencesSlider = () => {
             ]}
           />
           <ReferencesSliderEntry
-            imageSrc="/images/references/cropped/recaro_seat.webp"
+            imageSrc="/images/optimized/recaro_optimized.webp"
             headline="RECARO PEER REVIEW COACHING"
             infoText="Code-Reviews sind ein zentrales Element in unserem
 					Programmier-Alltag. Doch wie gestaltet sich ein effektives
@@ -57,7 +59,7 @@ export const ReferencesSlider = () => {
 					Coachings auf den Grund gegangen."
           />
           <ReferencesSliderEntry
-            imageSrc="/images/references/cropped/fancy_building.webp"
+            imageSrc="/images/optimized/axel-springer_optimized.webp"
             headline="AXEL SPRINGER POI SERVICE CMS"
             infoText="Im Rahmen eines innovativen Spin-Offs der Axel Springer SE
 					entwickelten wir neben der Produktstrategie einen MVP für die
@@ -72,13 +74,13 @@ export const ReferencesSlider = () => {
             ]}
           />
           <ReferencesSliderEntry
-            imageSrc="/images/references/cropped/porsche_interior.webp"
+            imageSrc="/images/optimized/nate-johnston-obOin8-m5sw-unspla_optimized.webp"
             headline="CONSULTING COMPANY DIGITALES FAHRTENBUCH"
             infoText="Für die Automotive-Kunden eines großen Beratungshauses unterstützen wir bei der Produktentwicklung eines digitalen Fahrtenbuches für Flottenfahrer. Durch die Verwendung von plattform-agnostischen Technologien maximieren wir die Flexibilität zur Integration in unterschiedliche Flottenökosysteme."
             technologyList={['Java', 'Quarkus', 'Camel']}
           />
           <ReferencesSliderEntry
-            imageSrc="/images/references/cropped/mercedes_suv.webp"
+            imageSrc="/images/optimized/mercedes-benz_optimized"
             headline="Mercedes-Benz DIGITAL SERVICE STRATEGY"
             infoText="Gemeinsam mit Mercedes-Benz haben wir eine innovative Serviceportfolio-Strategie entwickelt, die nicht nur vollkommen neue Umsatzpotentiale eröffnet, sondern auch auch echte Probleme von Kunden und Partnern löst. Von der Geschäftsfeldanalyse bis hin zur Businesscaseerstellung und dem MVP-Scoping gelang es uns Strategie & Umsetzung nahtlos zu verknüpfen."
           />
@@ -93,9 +95,9 @@ const ReferencesSliderEntry = (props: ReferenceSliderEntryProps) => {
   return (
     <li className="grow-0 shrink-0 basis-[85%] snap-start md:basis-[75%] md:pb-20 xl:pb-40">
       <figure className="flex gap-8 flex-col h-full xl:flex-row">
-        <div className="relative max-h-[320px] aspect-[0.8] sm:max-h-[400px] md:max-h-[480px] xl:max-h-none xl:max-w-[650px] xl:basis-[55%]">
-          <Image src={imageSrc} alt="" fill style={{ objectFit: 'contain' }} />
-        </div>
+        <ImageMask className="relative max-h-[320px] aspect-[0.8] sm:max-h-[400px] md:max-h-[480px] xl:max-h-none xl:max-w-[650px] xl:basis-[55%]">
+          <Image src={imageSrc} alt="" layout="fullWidth" className="h-full" />
+        </ImageMask>
         <figcaption className="flex flex-col justify-center xl:grow-0 xl:shrink-0 xl:basis-[45%]">
           <Typography as="h2" variant="h2_bold" className="text-black">
             {headline}

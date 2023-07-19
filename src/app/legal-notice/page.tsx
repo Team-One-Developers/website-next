@@ -14,7 +14,7 @@ const Legal = () => {
     <PageLayout>
       <ContentWrapper>
         <FullWidthSectionContainer className="mt-20">
-          <Typography className="mt-8" as="h1" variant="h3">
+          <Typography className="mt-8" as="h1" variant="h2">
             Impressum
           </Typography>
           <Typography className="mt-8" as="h2" variant="h4">

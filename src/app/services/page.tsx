@@ -1,9 +1,9 @@
 'use client'
 
-import Image from 'next/image'
 import { useMediaQuery } from 'usehooks-ts'
 
 import { Button, buttonVariants } from '@/components/atoms/Button'
+import { Image } from '@/components/atoms/Image'
 import Typography from '@/components/atoms/Typography'
 
 import { Hero } from '@/components/molecules/Hero'
@@ -25,7 +25,7 @@ const Services = () => {
   return (
     <PageLayout>
       <ContentWrapper className="mt-20 lg:flex gap-[15%]">
-        <Typography className="lg:basis-[35%]" as="h1" variant="h3">
+        <Typography className="lg:basis-[35%]" as="h1" variant="h2">
           Wir schaffen nachhaltige Mehrwerte durch exzellente Software &
           menschenzentrierte Arbeitsweisen.
         </Typography>
@@ -58,10 +58,11 @@ const Services = () => {
         className="mt-[4.5rem] lg:mt-[11rem]"
         imageNode={
           <Image
-            src="/images/t1d_nov22_149.jpg"
+            src="/images/optimized/t1d_nov22_149_optimized.webp"
             alt="Picture of office life"
-            fill
-            style={{ objectFit: 'cover' }}
+            layout="constrained"
+            objectFit="cover"
+            className="h-full"
           />
         }
         overlayNode={

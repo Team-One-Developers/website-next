@@ -1,8 +1,8 @@
-import Image from 'next/image'
 import { PAGE_THEME } from '@/constants'
 import { twJoin } from 'tailwind-merge'
 
 import { Heading } from '@/components/atoms/Heading'
+import { Image } from '@/components/atoms/Image'
 import Typography from '@/components/atoms/Typography'
 
 import { Ticker } from '@/components/molecules/Ticker'
@@ -54,13 +54,13 @@ const Contact = () => {
   return (
     <PageLayout ticker={false}>
       <ContentWrapper>
-        <Typography as="h1" variant="h3" className="mt-20">
+        <Typography as="h1" variant="h2" className="mt-20">
           Die Eins ist man <br /> niemals alleine.
         </Typography>
         <section className="mb-40 mt-20 flex flex-wrap items-center gap-16">
           <div className="relative min-w-[260px] max-w-[460px] grow">
             <Image
-              src="/images/cropped/dinosaur_call.webp"
+              src="/images/optimized/dinosaur_call_optimized.webp"
               alt="A person in a T-Rex costume with an inflated cell phone is standing in an office. They are pretending to be on a call."
               width={460}
               height={580}

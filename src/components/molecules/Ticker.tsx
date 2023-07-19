@@ -1,12 +1,12 @@
 'use client'
 
-import Marquee from 'react-fast-marquee'
-
-import { twJoin } from 'tailwind-merge'
-import { PageTheme } from '@/types'
 import { PAGE_THEME } from '@/constants'
-import Image from 'next/image'
+import { PageTheme } from '@/types'
+import Marquee from 'react-fast-marquee'
+import { twJoin } from 'tailwind-merge'
 import { useMediaQuery } from 'usehooks-ts'
+
+import { Image } from '@/components/atoms/Image'
 
 interface TickerProps {
   theme: PageTheme
@@ -35,7 +35,7 @@ export const Ticker = (props: TickerProps) => {
       <div className="mt-[200px] flex items-center overflow-hidden" key={key}>
         <p
           className={twJoin(
-            ' font-SpaceGroteskRegular text-[82px] font-normal uppercase leading-none -tracking-[0.01em] sm:text-[120px] md:text-[175px]',
+            ' font-spacegrotesk text-[82px] font-normal uppercase leading-none -tracking-[0.01em] sm:text-[120px] md:text-[175px]',
             textClassName
               ? textClassName
               : theme === PAGE_THEME.dark

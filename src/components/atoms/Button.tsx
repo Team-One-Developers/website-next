@@ -2,7 +2,7 @@ import React, { forwardRef } from 'react'
 import { tv, VariantProps } from 'tailwind-variants'
 
 export const buttonVariants = tv({
-  base: 'w-full cursor-pointer rounded-sm border-none px-[22px] py-4 font-SpaceGroteskRegular uppercase tracking-normal outline-none md:w-auto',
+  base: 'w-full cursor-pointer rounded-sm border-none px-[22px] py-4 font-spacegrotesk uppercase tracking-normal outline-none md:w-auto',
   variants: {
     color: {
       primary: 'bg-primary text-t1-darkGray',

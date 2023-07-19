@@ -1,6 +1,5 @@
-import Image from 'next/image'
-
 import { Heading } from '@/components/atoms/Heading'
+import { Image } from '@/components/atoms/Image'
 import { ImageMask } from '@/components/atoms/ImageMask'
 import { Link } from '@/components/atoms/Link'
 import Typography from '@/components/atoms/Typography'
@@ -16,7 +15,7 @@ const Career = () => {
     <PageLayout>
       <ContentWrapper>
         <FullWidthSectionContainer className="mt-12">
-          <Typography as="h1" variant="h3" className="py-8">
+          <Typography as="h1" variant="h2" className="py-8">
             Unser Team <br />- Dein Playground
           </Typography>
         </FullWidthSectionContainer>
@@ -24,7 +23,7 @@ const Career = () => {
       <ContentWrapper className="mt-8 lg:flex lg:gap-8">
         <ImageMask className="mt-8 lg:basis-[50%]">
           <Image
-            src="/images/t1d_kai_knoerzer_079.jpg"
+            src="/images/optimized/t1d_kai_knoerzer_079_optimized.webp"
             alt="Lazy man sleeping on a printer"
             width={960}
             height={1440}
@@ -96,7 +95,7 @@ const Career = () => {
       </ContentWrapper>
       <ContentWrapper className="mt-36">
         <Image
-          src="/images/t1d_nov22_185.jpg"
+          src="/images/optimized/t1d_nov22_185_optimized.webp"
           alt="Picture of people in an Office"
           width={1920}
           height={800}

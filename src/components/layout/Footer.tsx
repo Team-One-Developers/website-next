@@ -1,6 +1,5 @@
 'use client'
 
-import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { SiteMetadata } from '@/data'
@@ -12,18 +11,18 @@ export const Footer = () => {
   const pathname = usePathname()
 
   const navigationSectionHeaderCSS =
-    'font-SpaceGroteskRegular uppercase font-medium leading-3 pb-2 text-[11px] opacity-50 mt-4 md:mt-0'
+    'font-spacegrotesk uppercase font-medium leading-3 pb-2 text-[11px] opacity-50 mt-4 md:mt-0'
 
   const navigationLinkCSS = (link: string) =>
     twJoin(
-      'font-ABCDiatypeRegular font-normal text-base block leading-144 mb-2 ease-linear duration-150 last:mb-0',
+      'font-abcdiatype font-normal text-base block leading-144 mb-2 ease-linear duration-150 last:mb-0',
       pathname === link
         ? 'text-foreground-hover'
         : 'text-foreground active:text-foreground-hover hover:text-foreground-hover'
     )
 
   const externalLinkCSS =
-    'font-ABCDiatypeRegular font-normal text-base leading-144 block text-foreground ease-linear duration-150 hover:text-foreground-hover'
+    'font-abcdiatype font-normal text-base leading-144 block text-foreground ease-linear duration-150 hover:text-foreground-hover'
 
   return (
     <footer className="block pb-8 md:grid md:grid-flow-row  md:grid-cols-[2.5fr_1fr_1fr_1fr] md:grid-rows-[1fr_1fr] md:gap-x-3 md:gap-y-5 md:text-left">

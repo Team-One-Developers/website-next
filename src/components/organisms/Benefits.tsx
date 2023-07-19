@@ -1,8 +1,9 @@
 'use client'
 
 import { useState } from 'react'
-import Image from 'next/image'
 import { twJoin } from 'tailwind-merge'
+
+import { Image } from '@/components/atoms/Image'
 
 import Typography from '../atoms/Typography'
 
@@ -54,14 +55,14 @@ export const Benefits = () => {
   return (
     <div className="bg-black text-white lg:flex">
       <div className="relative lg:basis-[50%]">
-        <Typography as="h2" variant="h3" className="lg:max-w-[60%]">
+        <Typography as="h2" variant="h2" className="lg:max-w-[60%]">
           Unsere Benefits auf einen Blick
         </Typography>
         <video
           className={twJoin(
             'absolute right-0 h-[200px] aspect-[16/9] object-cover top-[30%] translate-y-[50px] translate-x-[50px] hidden lg:block',
             hoveredIndex !== undefined
-              ? 'opacity-[100%] -translate-y-[50px] -translate-x-[50px]'
+              ? 'opacity-[100%] -translate-y-[60px] -translate-x-[60px]'
               : 'opacity-0'
           )}
           style={{ transition: '500ms' }}

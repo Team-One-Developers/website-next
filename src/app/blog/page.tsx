@@ -1,10 +1,10 @@
 'use client'
 
-import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import { twJoin } from 'tailwind-merge'
 
 import { Heading } from '@/components/atoms/Heading'
+import { Image } from '@/components/atoms/Image'
 import Typography from '@/components/atoms/Typography'
 
 import { PageLayout } from '@/components/layout/PageLayout'
@@ -49,7 +49,7 @@ const Blog = () => {
               borderBottomRightRadius: swapped ? '20px' : '0px',
             }}
             alt={imageAlt}
-            fill
+            layout="constrained"
           />
         </div>
         <div
@@ -61,7 +61,7 @@ const Blog = () => {
           <p className="text-bold text-xl">{title}</p>
           <p className="mt-4 text-base">{subtitle}</p>
           <button
-            className="text-bold mt-8 self-start rounded-[3px] border-none bg-primary px-[14px] py-[10px] font-SpaceGroteskRegular text-base leading-[14px] text-black shadow-none outline-none"
+            className="text-bold mt-8 self-start rounded-[3px] border-none bg-primary px-[14px] py-[10px] font-spacegrotesk text-base leading-[14px] text-black shadow-none outline-none"
             onClick={() => router.push('/blog/autogpt')}
           >
             Read more

@@ -1,13 +1,14 @@
 'use client'
 
 import { useState } from 'react'
-import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { PAGE_THEME } from '@/constants'
 import { SiteMetadata } from '@/data'
 import { PageTheme } from '@/types'
 import { twJoin } from 'tailwind-merge'
+
+import { Image } from '@/components/atoms/Image'
 
 import { ContentWrapper } from './ContentWrapper'
 
@@ -43,13 +44,14 @@ export const Header = ({ theme }: { theme: PageTheme }) => {
                 alt="Team One Developers Logo"
                 height={46}
                 width={135}
+                layout="fixed"
               />
             </div>
           </Link>
 
           <div className="lg:hidden">
             <button
-              className="z-50 cursor-pointer select-none self-start rounded-[3px] border-none bg-primary px-[14px] py-[10px] font-SpaceGroteskRegular text-sm leading-[14px] text-black shadow-none outline-none"
+              className="z-50 cursor-pointer select-none self-start rounded-[3px] border-none bg-primary px-[14px] py-[10px] font-spacegrotesk text-sm leading-[14px] text-black shadow-none outline-none"
               onClick={() => {
                 setBurgerNavigationOpened(true)
               }}
@@ -87,14 +89,14 @@ export const Header = ({ theme }: { theme: PageTheme }) => {
                   >
                     <div className="flex-grow p-8 pr-0 text-right">
                       <button
-                        className="z-50 cursor-pointer select-none self-start rounded-[3px] border-none bg-primary px-[14px] py-[10px] font-SpaceGroteskRegular text-sm leading-[14px] text-black shadow-none outline-none"
+                        className="z-50 cursor-pointer select-none self-start rounded-[3px] border-none bg-primary px-[14px] py-[10px] font-spacegrotesk text-sm leading-[14px] text-black shadow-none outline-none"
                         onClick={() => {
                           setBurgerNavigationOpened(false)
                         }}
                       >
                         CLOSE
                       </button>
-                      <nav className="pt-8 text-left font-SpaceGroteskRegular">
+                      <nav className="pt-8 text-left font-spacegrotesk">
                         {SiteMetadata.menuLinks.map((linkObj, index) => {
                           return (
                             <Link
@@ -129,7 +131,7 @@ export const Header = ({ theme }: { theme: PageTheme }) => {
               return (
                 <Link
                   className={twJoin(
-                    'cursor-pointer select-none rounded-[3px] px-[14px] py-[10px] font-SpaceGroteskRegular text-sm uppercase leading-[14px] no-underline hover:shadow-navLinkShadow active:bg-t1-darkGray active:text-primary',
+                    'cursor-pointer select-none rounded-[3px] px-[14px] py-[10px] font-spacegrotesk text-sm uppercase leading-[14px] no-underline hover:shadow-navLinkShadow active:bg-t1-darkGray active:text-primary',
                     pathname === linkObj.link
                       ? 'bg-t1-darkGray text-primary'
                       : 'bg-primary text-t1-darkGray'

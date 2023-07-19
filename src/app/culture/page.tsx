@@ -1,7 +1,6 @@
-import Image from 'next/image'
-
 import { DancingFigures } from '@/components/atoms/DancingFigures'
 import { Heading } from '@/components/atoms/Heading'
+import { Image } from '@/components/atoms/Image'
 import Typography from '@/components/atoms/Typography'
 
 import { Hero } from '@/components/molecules/Hero'
@@ -16,7 +15,7 @@ const Culture = () => {
   return (
     <PageLayout>
       <ContentWrapper className="relative mt-20">
-        <Typography as="h1" variant="h3" className="lg:max-w-[calc(50%-2rem)]">
+        <Typography as="h1" variant="h2" className="lg:max-w-[calc(50%-2rem)]">
           WIR MACHEN DAS, WOVON ALLE SPRECHEN: WIR STELLEN DEN MENSCHEN IN DEN
           MITTELPUNKT.
         </Typography>
@@ -26,10 +25,10 @@ const Culture = () => {
         className="mt-[19rem]"
         imageNode={
           <Image
-            src="/images/t1d_nov22_153.jpg"
+            src="/images/optimized/t1d_nov22_153_optimized.webp"
             alt="A man working at his laptop"
-            fill
-            style={{ objectFit: 'cover' }}
+            layout="fullWidth"
+            className="h-full"
           />
         }
         overlayNode={null}

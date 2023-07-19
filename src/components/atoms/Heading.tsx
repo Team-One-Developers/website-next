@@ -22,7 +22,7 @@ export const Heading = (props: HeadingProps): ReactElement => {
           'm-0 font-medium uppercase leading-[1]',
           fontDefaults
             ? fontDefaults
-            : 'font-SpaceGroteskMedium text-[2.25rem] lg:text-[62px]',
+            : 'font-spacegrotesk text-[2.25rem] lg:text-[62px]',
           colorClassName ? colorClassName : 'text-foreground',
           className
         )}
@@ -39,7 +39,7 @@ export const Heading = (props: HeadingProps): ReactElement => {
           'm-0 uppercase leading-[1]',
           fontDefaults
             ? fontDefaults
-            : 'font-SpaceGroteskMedium text-[2.25rem] lg:text-[62px]',
+            : 'font-spacegrotesk text-[2.25rem] lg:text-[62px]',
           colorClassName ? colorClassName : 'text-foreground',
           className
         )}

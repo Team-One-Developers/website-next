@@ -17,6 +17,9 @@ dependencies:
   '@types/react-dom':
     specifier: 18.2.4
     version: 18.2.4
+  '@unpic/react':
+    specifier: ^0.0.32
+    version: 0.0.32(next@13.4.9)(react-dom@18.2.0)(react@18.2.0)
   autoprefixer:
     specifier: 10.4.14
     version: 10.4.14(postcss@8.4.24)
@@ -643,6 +646,28 @@ packages:
     dependencies:
       '@typescript-eslint/types': 5.62.0
       eslint-visitor-keys: 3.4.1
+    dev: false
+
+  /@unpic/core@0.0.27:
+    resolution: {integrity: sha512-zfhjepdcgXa7v6dID8P0WXrgSqhRnWpn2Vq+3nM9ieQvBUSU+H4ogMSzTJCC2/BhGfSZPZGyLfUKL/X191VaiA==}
+    dependencies:
+      unpic: 3.8.1
+    dev: false
+
+  /@unpic/react@0.0.32(next@13.4.9)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-8bhdGoXyZRTpDMIiodrotiw2vE4XTsBpQTfK7NL+Z/dmtobLVs7eypM6Lv8KCoNcNHEwRfNvZZ/zuAJVm0WpXA==}
+    peerDependencies:
+      next: '>=12'
+      react: '>=17'
+      react-dom: '>=17'
+    peerDependenciesMeta:
+      next:
+        optional: true
+    dependencies:
+      '@unpic/core': 0.0.27
+      next: 13.4.9(@babel/core@7.22.9)(react-dom@18.2.0)(react@18.2.0)
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
     dev: false
 
   /acorn-jsx@5.3.2(acorn@8.10.0):
@@ -3339,6 +3364,10 @@ packages:
       has-bigints: 1.0.2
       has-symbols: 1.0.3
       which-boxed-primitive: 1.0.2
+    dev: false
+
+  /unpic@3.8.1:
+    resolution: {integrity: sha512-/TzVRKYuhiEUnee2O2v43riVWI0wQJm02wkV3+kB3q8VF1jZiMJc5KCuRU52w6npfXI/B921u7rp8ySmTy5LVw==}
     dev: false
 
   /untildify@4.0.0:

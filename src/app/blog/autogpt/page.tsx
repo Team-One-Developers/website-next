@@ -1,5 +1,3 @@
-import Image from 'next/image'
-
 import { PageLayout } from '@/components/layout/PageLayout'
 
 const Blog = () => {
@@ -53,7 +51,9 @@ const Blog = () => {
         <div className="w-full rounded p-24">
           <div className="max-w-[80%]">
             <h1 className="text-6xl font-medium">
-              {"AutoGPT - Magical omnipotent tool of the future or overhyped unpractical side-project? "}
+              {
+                'AutoGPT - Magical omnipotent tool of the future or overhyped unpractical side-project? '
+              }
             </h1>
             <h3 className="mt-4 text-4xl text-primary">
               {`The new tool called "AutoGPT" ist the new hot topic. What use does it actually have and is it worth learning?`}
