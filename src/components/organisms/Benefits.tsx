@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import Image from 'next/image'
+import { Image } from '@unpic/react/next'
 import { twJoin } from 'tailwind-merge'
 
 import Typography from '../atoms/Typography'

@@ -1,6 +1,6 @@
 'use client'
 
-import Image from 'next/image'
+import { Image } from '@unpic/react/next'
 import { useMediaQuery } from 'usehooks-ts'
 
 import { Button, buttonVariants } from '@/components/atoms/Button'
@@ -60,7 +60,7 @@ const Services = () => {
           <Image
             src="/images/t1d_nov22_149.jpg"
             alt="Picture of office life"
-            fill
+            layout="constrained"
             style={{ objectFit: 'cover' }}
           />
         }

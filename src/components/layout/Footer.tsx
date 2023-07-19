@@ -1,9 +1,9 @@
 'use client'
 
-import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { SiteMetadata } from '@/data'
+import { Image } from '@unpic/react/next'
 import { twJoin } from 'tailwind-merge'
 
 import { Icon } from '../atoms/Icons'

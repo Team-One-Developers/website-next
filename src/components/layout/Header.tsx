@@ -1,12 +1,12 @@
 'use client'
 
 import { useState } from 'react'
-import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { PAGE_THEME } from '@/constants'
 import { SiteMetadata } from '@/data'
 import { PageTheme } from '@/types'
+import { Image } from '@unpic/react/next'
 import { twJoin } from 'tailwind-merge'
 
 import { ContentWrapper } from './ContentWrapper'

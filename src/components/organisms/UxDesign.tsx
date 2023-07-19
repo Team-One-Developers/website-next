@@ -5,7 +5,7 @@ import { UX_CATEGORIES } from '@/constants'
 
 import './style.css'
 
-import Image from 'next/image'
+import { Image } from '@unpic/react/next'
 import { twJoin, twMerge } from 'tailwind-merge'
 
 import { ImageMask } from '../atoms/ImageMask'

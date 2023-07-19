@@ -1,7 +1,7 @@
 'use client'
 
-import Image from 'next/image'
 import { PAGE_THEME } from '@/constants'
+import { Image } from '@unpic/react/next'
 import { useInView } from 'react-intersection-observer'
 import { twJoin } from 'tailwind-merge'
 
@@ -22,6 +22,8 @@ import ContentWrapper from '@/components/layout/ContentWrapper'
 import { FullWidthSectionContainer } from '@/components/layout/FullWidthSectionContainer'
 import { PageLayout } from '@/components/layout/PageLayout'
 
+import HeroPic from '../../public/images/hero.jpg'
+import PersonIcon from '../../public/images/icons/person-1.svg'
 import SamuelPic from '../../public/images/t1d_kai_knoerzer_011_edited.jpg'
 import JannikPic from '../../public/images/t1d_kai_knoerzer_055.jpg'
 
@@ -76,10 +78,9 @@ const Home = () => {
       <Hero
         imageNode={
           <Image
-            src="/images/hero.jpg"
+            src={HeroPic}
             alt="Picture of a keyboard"
-            fill
-            style={{ objectFit: 'cover' }}
+            layout="constrained"
           />
         }
         overlayNode={
@@ -96,7 +97,7 @@ const Home = () => {
           <figure className="mb-6 flex h-[129px] w-full justify-center text-primary md:hidden">
             <DancingFigures />
           </figure>
-          <Typography className="text-black normal-case" variant="h3">
+          <Typography className="text-black normal-case" variant="h2">
             Wir sind Technologie-Experten und verstehen uns als integrativer
             Entwicklungs- & Beratungspartner in komplexen Softwareprojekten.{' '}
             <DancingFigures className="hidden h-16 px-4 py-0 align-middle text-primary md:inline" />
@@ -148,7 +149,7 @@ const Home = () => {
           link="/culture"
           animate={!cultureContainerInView}
           headlineClassName="mb-24"
-          headlineVariant="h3"
+          headlineVariant="h2"
           contentVariant="text_sm"
         >
           <Image
@@ -198,7 +199,7 @@ const Home = () => {
               contentText={
                 'Team One Developers ist für uns nicht nur ein Name, sondern ein Versprechen: Das Versprechen den Unterschied zu machen, nicht nur Standard sondern die beste Wahl zu sein. Für unsere Partner und ganz besonders für unsere Kollegen'
               }
-              headlineVariant="h3"
+              headlineVariant="h2"
               contentVariant="text_sm"
               headlineClassName="mb-[2.875rem]"
               linkLabel="Karriere"

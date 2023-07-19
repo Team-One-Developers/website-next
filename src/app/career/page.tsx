@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import { Image } from '@unpic/react/next'
 
 import { Heading } from '@/components/atoms/Heading'
 import { ImageMask } from '@/components/atoms/ImageMask'

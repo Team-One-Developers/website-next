@@ -1,5 +1,5 @@
-import Image from 'next/image'
 import { PAGE_THEME } from '@/constants'
+import { Image } from '@unpic/react/next'
 import { twJoin } from 'tailwind-merge'
 
 import { Heading } from '@/components/atoms/Heading'

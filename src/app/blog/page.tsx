@@ -1,7 +1,7 @@
 'use client'
 
-import Image from 'next/image'
 import { useRouter } from 'next/navigation'
+import { Image } from '@unpic/react/next'
 import { twJoin } from 'tailwind-merge'
 
 import { Heading } from '@/components/atoms/Heading'
@@ -49,7 +49,7 @@ const Blog = () => {
               borderBottomRightRadius: swapped ? '20px' : '0px',
             }}
             alt={imageAlt}
-            fill
+            layout="constrained"
           />
         </div>
         <div

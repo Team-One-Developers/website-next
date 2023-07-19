@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import { Image } from '@unpic/react/next'
 
 import { DancingFigures } from '@/components/atoms/DancingFigures'
 import { Heading } from '@/components/atoms/Heading'
