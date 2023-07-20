@@ -2,4 +2,4 @@ TODO/Questions
 
 - buttons accesibitly rules aria labels
 - seo opengraph images descriptions etc
-- images optimizing
+- image placeholder
