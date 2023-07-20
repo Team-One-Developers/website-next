@@ -38,6 +38,7 @@ export const HomeValuesSection = () => {
               }}
             >
               <Image
+                background="auto"
                 src="/images/optimized/t1d_kai_knoerzer_055_optimized.webp"
                 alt="Picture of a men posing"
                 aspectRatio={0.67}
