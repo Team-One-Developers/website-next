@@ -1,5 +1,4 @@
-'use client'
-
+import { Metadata } from 'next'
 import { useMediaQuery } from 'usehooks-ts'
 
 import { Button, buttonVariants } from '@/components/atoms/Button'
@@ -18,15 +17,12 @@ import { UxDesignMobile } from '@/components/organisms/UxDesignMobile'
 import ContentWrapper from '@/components/layout/ContentWrapper'
 import { FullWidthSectionContainer } from '@/components/layout/FullWidthSectionContainer'
 import { PageLayout } from '@/components/layout/PageLayout'
-import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: "Services"
+  title: 'Services',
 }
 
 const Services = () => {
-  const isXl = useMediaQuery('(min-width: 1200px)')
-
   return (
     <PageLayout>
       <ContentWrapper className="mt-20 lg:flex gap-[15%]">
@@ -87,7 +83,8 @@ const Services = () => {
       <TechStacks />
       <Competences />
       <FullWidthSectionContainer className="mt-20 lg:mt-48 -mb-[400px]">
-        {isXl ? <UxDesign /> : <UxDesignMobile />}
+        <UxDesign className="xl:block hidden" />
+        <UxDesignMobile className="xl:hidden block" />
       </FullWidthSectionContainer>
     </PageLayout>
   )

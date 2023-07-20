@@ -1,5 +1,3 @@
-'use client'
-
 import { PAGE_THEME } from '@/constants'
 import { useInView } from 'react-intersection-observer'
 import { twJoin } from 'tailwind-merge'
@@ -16,6 +14,8 @@ import { Hero } from '@/components/molecules/Hero'
 import { AnimatedTeaser } from '@/components/organisms/AnimatedTeaser'
 import { ChangingWords } from '@/components/organisms/ChangingWords'
 import { CtaSection } from '@/components/organisms/CtaSection'
+import { HomeHumanSection } from '@/components/organisms/HomeHumanSection'
+import { HomeValuesSection } from '@/components/organisms/HomeValuesSection'
 
 import { CenteredSectionContainer } from '@/components/layout/CenteredSectionContainer'
 import ContentWrapper from '@/components/layout/ContentWrapper'
@@ -23,34 +23,6 @@ import { FullWidthSectionContainer } from '@/components/layout/FullWidthSectionC
 import { PageLayout } from '@/components/layout/PageLayout'
 
 const Home = () => {
-  // Triggers Animation for Animated Teaser
-  const [animatedTeaserContainerRef, animatedTeaserInView] = useInView({
-    threshold: 0.8,
-    triggerOnce: true,
-  })
-
-  // Triggers Zoom Animation for first image
-  const [culturePictureRef, culturePictureInView] = useInView({
-    threshold: 0.48425,
-  })
-
-  // Triggers Fade In Animation for the Culture Call To Action
-  const [cultureContainerRef, cultureContainerInView] = useInView({
-    threshold: 0.5,
-    triggerOnce: true,
-  })
-
-  // Triggers Zoom Animation for second Image
-  const [careerPictureRef, careerPictureInView] = useInView({
-    threshold: 0.45,
-  })
-
-  // Triggers Fade In Animation for the Career Call To Action
-  const [careerContainerRef, careerContainerInView] = useInView({
-    threshold: 0.45,
-    triggerOnce: true,
-  })
-
   return (
     <PageLayout theme={PAGE_THEME.light}>
       <ContentWrapper className="mt-20">
@@ -112,16 +84,7 @@ const Home = () => {
         />
       </ContentWrapper>
 
-      <AnimatedTeaser
-        className={twJoin(
-          'mt-16',
-          animatedTeaserInView ? 'bg-primary' : 'bg-background'
-        )}
-        innerClassName={twJoin(
-          animatedTeaserInView ? 'bg-white' : 'bg-primary'
-        )}
-        ref={animatedTeaserContainerRef}
-      />
+      <AnimatedTeaser className="mt-16" />
 
       <ContentWrapper
         useMaxWidth={false}
@@ -130,96 +93,9 @@ const Home = () => {
         <Companies />
       </ContentWrapper>
 
-      <ContentWrapper
-        ref={cultureContainerRef}
-        useMaxWidth={false}
-        className="bg-primary pt-32 sm:pt-48 lg:flex lg:justify-between lg:gap-8 xl:pt-72"
-        style={{ transition: '500ms' }}
-      >
-        <CtaSection
-          className="basis-[37%] lg:grow-0"
-          subtitleText="CULTURE @ T1D"
-          headlineText="Wir sind menschen&shy;zentriert."
-          contentText='Wir glauben an Fortschritt durch Technologie, an Nachhaltigkeit durch Qualität sowie an die Prinzipien des agilen Manifests. Und vor allem glauben wir an die "Zielgruppe Mensch", die im Mittelpunkt unseres Handelns stehen muss.'
-          linkLabel="Unsere Kultur"
-          link="/culture"
-          animate={!cultureContainerInView}
-          headlineClassName="mb-24"
-          headlineVariant="h2"
-          contentVariant="text_sm"
-        >
-          <Image
-            src="/images/icons/person-1.svg"
-            alt="Person Icon"
-            width={16}
-            height={15}
-            className="mr-2 brightness-0"
-          />
-        </CtaSection>
-        <ImageMask ref={culturePictureRef} className="md:max-w-[50%]">
-          <figure
-            className=""
-            style={{
-              transition: '500ms',
-              transform: culturePictureInView ? 'scale(1.1)' : '',
-            }}
-          >
-            <Image
-              src="/images/optimized/t1d_kai_knoerzer_011_edited_optimized.webp"
-              alt="Picture of a men posing"
-            />
-          </figure>
-        </ImageMask>
-      </ContentWrapper>
+      <HomeHumanSection />
 
-      <ContentWrapper
-        ref={careerContainerRef}
-        className={careerContainerInView ? 'bg-background' : 'bg-primary'}
-        style={{ transition: '500ms' }}
-        useMaxWidth={false}
-      >
-        <CenteredSectionContainer
-          left={
-            <ImageMask ref={careerPictureRef} className="justify-[right] flex">
-              <figure
-                style={{
-                  transition: '500ms',
-                  transform: careerPictureInView ? 'scale(1.1)' : '',
-                }}
-              >
-                <Image
-                  src="/images/optimized/t1d_kai_knoerzer_055_optimized.webp"
-                  alt="Picture of a men posing"
-                />
-              </figure>
-            </ImageMask>
-          }
-          right={
-            <CtaSection
-              subtitleText="CAREER @ T1D"
-              headlineText="Nur wer Werte vertritt, kann Werte schaffen."
-              contentText={
-                'Team One Developers ist für uns nicht nur ein Name, sondern ein Versprechen: Das Versprechen den Unterschied zu machen, nicht nur Standard sondern die beste Wahl zu sein. Für unsere Partner und ganz besonders für unsere Kollegen'
-              }
-              headlineVariant="h2"
-              contentVariant="text_sm"
-              headlineClassName="mb-[2.875rem]"
-              linkLabel="Karriere"
-              link="/career"
-              linkVariant="secondary"
-            >
-              <Image
-                src="/images/icons/world-1.svg"
-                alt="Person Icon"
-                width={18}
-                height={18}
-                className="mr-2 brightness-0"
-              />
-            </CtaSection>
-          }
-          rightComponentClass="md:w-[65%]"
-        />
-      </ContentWrapper>
+      <HomeValuesSection />
     </PageLayout>
   )
 }

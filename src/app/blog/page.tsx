@@ -1,22 +1,17 @@
-'use client'
-
-import { useRouter } from 'next/navigation'
+import { Metadata } from 'next'
+import Link from 'next/link'
 import { twJoin } from 'tailwind-merge'
 
 import { Image } from '@/components/atoms/Image'
 import Typography from '@/components/atoms/Typography'
 
 import { PageLayout } from '@/components/layout/PageLayout'
-import { Metadata } from 'next'
-
 
 export const metadata: Metadata = {
-  title: "Blog"
+  title: 'Blog',
 }
 
 const Blog = () => {
-  const router = useRouter()
-
   const BlogArticle = ({
     title,
     subtitle,
@@ -33,10 +28,7 @@ const Blog = () => {
     swapped?: boolean
   }) => {
     return (
-      <div
-        className="grid h-[400px] grid-flow-row grid-cols-[1fr_1fr]"
-        onClick={() => router.push('/blog/autogpt')}
-      >
+      <div className="grid h-[400px] grid-flow-row grid-cols-[1fr_1fr]">
         <div
           className={twJoin(
             'relative h-full w-full bg-primary text-black',
@@ -46,15 +38,13 @@ const Blog = () => {
           <Image
             src={image}
             style={{
-              objectFit: 'cover',
-              overflow: 'hidden',
               borderTopLeftRadius: swapped ? '0px' : '20px',
               borderBottomLeftRadius: swapped ? '0px' : '20px',
               borderTopRightRadius: swapped ? '20px' : '0px',
               borderBottomRightRadius: swapped ? '20px' : '0px',
             }}
             alt={imageAlt}
-            layout="constrained"
+            className="h-full"
           />
         </div>
         <div
@@ -65,12 +55,12 @@ const Blog = () => {
         >
           <p className="text-bold text-xl">{title}</p>
           <p className="mt-4 text-base">{subtitle}</p>
-          <button
+          <Link
+            href="/blog/autogpt"
             className="text-bold mt-8 self-start rounded-[3px] border-none bg-primary px-[14px] py-[10px] font-spacegrotesk text-base leading-[14px] text-black shadow-none outline-none"
-            onClick={() => router.push('/blog/autogpt')}
           >
             Read more
-          </button>
+          </Link>
         </div>
       </div>
     )
@@ -81,12 +71,12 @@ const Blog = () => {
       <div className="min-h-screen">
         <div className="w-full rounded p-24">
           <div className="max-w-[80%]">
-            <Typography as="h1" variant="h2">{"Read our blog"}</Typography>
-            <Typography
-              as="h2"
-              variant="h5"
-              className="text-primary"
-            >{"Regular posts about topics that drive us"}</Typography>
+            <Typography as="h1" variant="h2">
+              {'Read our blog'}
+            </Typography>
+            <Typography as="h2" variant="h5" className="text-primary">
+              {'Regular posts about topics that drive us'}
+            </Typography>
           </div>
         </div>
         <div className="grid w-full grid-flow-row grid-cols-[1fr_3fr] gap-8 p-24">
@@ -95,7 +85,7 @@ const Blog = () => {
               <h2 className="text-2xl">Filter</h2>
             </div>
           </div>
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-12 px-24">
             <BlogArticle
               title="AutoGPT - Magical omnipotent tool of the future or overhyped unpractical side-project?"
               subtitle='The new tool called "AutoGPT" ist the new hot topic. What use does it actually have and is it worth learning?'
@@ -105,7 +95,7 @@ const Blog = () => {
             and scrambled it to make a type specimen book. It has survived not
             only five centuries, but also the leap into electronic typesetting,
             remaining essentially unchanged.`}
-              image="/images/lazy-man.png"
+              image="/images/t1d_nov22_202.jpg"
               imageAlt="lazy man picture"
             />{' '}
             <BlogArticle

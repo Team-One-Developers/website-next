@@ -9,7 +9,7 @@ import './style.css'
 
 import { twJoin, twMerge } from 'tailwind-merge'
 
-export const UxDesignMobile = () => {
+export const UxDesignMobile = ({ className }: { className: string }) => {
   const [activeCategory, setActiveCategory] = useState(UX_CATEGORIES.ux_design)
 
   const CategoryButton = ({ category }: { category: UX_CATEGORIES }) => {
@@ -53,7 +53,7 @@ export const UxDesignMobile = () => {
   }
 
   return (
-    <div className="transitionAll">
+    <div className={twJoin('transitionAll', className)}>
       <div className="flex items-center gap-4 flex-col flex-nowrap mb-4">
         <Typography className="text-primary" variant="subtitle">
           ( WE DEVELOP )

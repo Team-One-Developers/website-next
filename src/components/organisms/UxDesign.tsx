@@ -12,7 +12,7 @@ import { Image } from '@/components/atoms/Image'
 import { ImageMask } from '../atoms/ImageMask'
 import Typography from '../atoms/Typography'
 
-export const UxDesign = () => {
+export const UxDesign = ({ className }: { className: string }) => {
   const [activeCategory, setActiveCategory] = useState(UX_CATEGORIES.ux_design)
 
   const CategoryButton = ({ category }: { category: UX_CATEGORIES }) => {
@@ -68,7 +68,7 @@ export const UxDesign = () => {
   }
 
   return (
-    <div className="transitionAll">
+    <div className={twJoin('transitionAll', className)}>
       <div className="mb-6 flex flex-col flex-nowrap items-center ">
         <Typography variant="paragraph_label" className="mb-4 text-primary">
           ( WE DEVELOP )
