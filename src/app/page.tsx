@@ -1,11 +1,9 @@
 import { PAGE_THEME } from '@/constants'
-import { useInView } from 'react-intersection-observer'
-import { twJoin } from 'tailwind-merge'
+import { blurhashToCssGradientString } from '@unpic/placeholder'
 
 import { DancingFigures } from '@/components/atoms/DancingFigures'
 import { Heading } from '@/components/atoms/Heading'
 import { Image } from '@/components/atoms/Image'
-import { ImageMask } from '@/components/atoms/ImageMask'
 import Typography from '@/components/atoms/Typography'
 
 import { Companies } from '@/components/molecules/Companies'
@@ -17,7 +15,6 @@ import { CtaSection } from '@/components/organisms/CtaSection'
 import { HomeHumanSection } from '@/components/organisms/HomeHumanSection'
 import { HomeValuesSection } from '@/components/organisms/HomeValuesSection'
 
-import { CenteredSectionContainer } from '@/components/layout/CenteredSectionContainer'
 import ContentWrapper from '@/components/layout/ContentWrapper'
 import { FullWidthSectionContainer } from '@/components/layout/FullWidthSectionContainer'
 import { PageLayout } from '@/components/layout/PageLayout'
@@ -45,12 +42,13 @@ const Home = () => {
       <Hero
         imageNode={
           <Image
-            background="auto"
+            background={blurhashToCssGradientString(
+              'LNGk,q%MIV56OZ~psSIAX8t7azRi'
+            )}
             src="/images/optimized/hero_optimized.webp"
             alt="Picture of a keyboard"
             layout="fullWidth"
             className="h-full"
-            aspectRatio={1.5}
           />
         }
         overlayNode={
