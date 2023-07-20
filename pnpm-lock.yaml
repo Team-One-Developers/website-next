@@ -1,4 +1,4 @@
-lockfileVersion: '6.1'
+lockfileVersion: '6.0'
 
 settings:
   autoInstallPeers: true
@@ -17,6 +17,9 @@ dependencies:
   '@types/react-dom':
     specifier: 18.2.4
     version: 18.2.4
+  '@unpic/placeholder':
+    specifier: ^0.1.2
+    version: 0.1.2
   '@unpic/react':
     specifier: ^0.0.32
     version: 0.0.32(next@13.4.9)(react-dom@18.2.0)(react@18.2.0)
@@ -654,6 +657,12 @@ packages:
       unpic: 3.8.1
     dev: false
 
+  /@unpic/placeholder@0.1.2:
+    resolution: {integrity: sha512-O++tS97biojo5sqn5TeTt+jUjl5gWOdIQuOXe8YluTJWq4L0GM6VuTkaspNpsmxHfioJw/6YBirzOpG4t87l8Q==}
+    dependencies:
+      blurhash: 2.0.5
+    dev: false
+
   /@unpic/react@0.0.32(next@13.4.9)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-8bhdGoXyZRTpDMIiodrotiw2vE4XTsBpQTfK7NL+Z/dmtobLVs7eypM6Lv8KCoNcNHEwRfNvZZ/zuAJVm0WpXA==}
     peerDependencies:
@@ -866,6 +875,10 @@ packages:
       buffer: 5.7.1
       inherits: 2.0.4
       readable-stream: 3.6.2
+    dev: false
+
+  /blurhash@2.0.5:
+    resolution: {integrity: sha512-cRygWd7kGBQO3VEhPiTgq4Wc43ctsM+o46urrmPOiuAe+07fzlSB9OJVdpgDL0jPqXUVQ9ht7aq7kxOeJHRK+w==}
     dev: false
 
   /bplist-parser@0.2.0:
