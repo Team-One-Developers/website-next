@@ -36,6 +36,7 @@ const Blog = () => {
           )}
         >
           <Image
+            background="auto"
             src={image}
             style={{
               borderTopLeftRadius: swapped ? '0px' : '20px',

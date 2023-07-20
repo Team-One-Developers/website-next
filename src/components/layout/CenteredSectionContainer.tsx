@@ -10,28 +10,25 @@ type CenteredSectionContainerProps = {
 }
 
 // TODO : doesnt work with ContentWrapper
-export const CenteredSectionContainer = (
-  {
-    left,
-    right,
-    className,
-    leftComponentClass,
-    rightComponentClass,
-  }: CenteredSectionContainerProps
-) => {
-
+export const CenteredSectionContainer = ({
+  left,
+  right,
+  className,
+  leftComponentClass,
+  rightComponentClass,
+}: CenteredSectionContainerProps) => {
   return (
     <div
       className={twMerge(
-        'box-border grid w-full grid-cols-1 bg-transparent bg-transparent justify-center gap-8 px-[2vw] py-8 md:grid-cols-2',
+        'box-border grid w-full grid-cols-1 bg-transparent justify-center gap-8 px-[2vw] py-8 md:grid-cols-2',
         className
       )}
     >
       <div>
-        <div className={twMerge("w-full", leftComponentClass)}>{left}</div>
+        <div className={twMerge('w-full', leftComponentClass)}>{left}</div>
       </div>
       <div className="flex items-center">
-        <div className={twMerge("w-full", rightComponentClass)}>{right}</div>
+        <div className={twMerge('w-full', rightComponentClass)}>{right}</div>
       </div>
     </div>
   )

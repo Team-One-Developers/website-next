@@ -45,10 +45,12 @@ const Home = () => {
       <Hero
         imageNode={
           <Image
+            background="auto"
             src="/images/optimized/hero_optimized.webp"
             alt="Picture of a keyboard"
             layout="fullWidth"
             className="h-full"
+            aspectRatio={1.5}
           />
         }
         overlayNode={

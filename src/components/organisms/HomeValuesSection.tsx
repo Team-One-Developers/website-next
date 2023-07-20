@@ -30,7 +30,7 @@ export const HomeValuesSection = () => {
     >
       <CenteredSectionContainer
         left={
-          <ImageMask ref={careerPictureRef} className="justify-[right] flex">
+          <ImageMask ref={careerPictureRef} className="justify-[right]">
             <figure
               style={{
                 transition: '500ms',
@@ -40,6 +40,7 @@ export const HomeValuesSection = () => {
               <Image
                 src="/images/optimized/t1d_kai_knoerzer_055_optimized.webp"
                 alt="Picture of a men posing"
+                aspectRatio={0.67}
               />
             </figure>
           </ImageMask>

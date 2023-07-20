@@ -119,6 +119,7 @@ export const UxDesign = ({ className }: { className: string }) => {
             )}
           >
             <Image
+              background="auto"
               src="/images/icons/form1.svg"
               alt="UX Design Icon"
               width={360}
@@ -134,6 +135,7 @@ export const UxDesign = ({ className }: { className: string }) => {
             )}
           >
             <Image
+              background="auto"
               src="/images/icons/form2.svg"
               alt="Application Development Icon"
               width={250}
@@ -149,6 +151,7 @@ export const UxDesign = ({ className }: { className: string }) => {
             )}
           >
             <Image
+              background="auto"
               src="/images/icons/form3.svg"
               alt="UI Development Icon"
               width={800}
@@ -164,6 +167,7 @@ export const UxDesign = ({ className }: { className: string }) => {
             )}
           >
             <Image
+              background="auto"
               src="/images/icons/form4.svg"
               alt="UI Design Icon"
               width={332}

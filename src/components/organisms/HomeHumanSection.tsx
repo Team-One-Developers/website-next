@@ -40,6 +40,7 @@ export const HomeHumanSection = () => {
         contentVariant="text_sm"
       >
         <Image
+          background="auto"
           src="/images/icons/person-1.svg"
           alt="Person Icon"
           width={16}
@@ -52,12 +53,14 @@ export const HomeHumanSection = () => {
           className=""
           style={{
             transition: '500ms',
-            transform: culturePictureInView ? 'scale(1.1)' : '',
+            transform: culturePictureInView ? 'scale(1.05)' : '',
           }}
         >
           <Image
+            background="auto"
             src="/images/optimized/t1d_kai_knoerzer_011_edited_optimized.webp"
             alt="Picture of a men posing"
+            aspectRatio={0.75}
           />
         </figure>
       </ImageMask>

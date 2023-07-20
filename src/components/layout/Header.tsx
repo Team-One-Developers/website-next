@@ -36,6 +36,7 @@ export const Header = ({ theme }: { theme: PageTheme }) => {
               )}
             >
               <Image
+                background="auto"
                 src={
                   theme === PAGE_THEME.dark
                     ? '/images/logo/t1d-logo-negativ.svg'

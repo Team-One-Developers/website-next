@@ -48,6 +48,7 @@ export const Ticker = (props: TickerProps) => {
         {includeLogo === true ? (
           <div className="mx-[60px] my-0">
             <Image
+              background="auto"
               src={
                 theme === PAGE_THEME.dark
                   ? '/images/logo/t1d-sticker-darkgray.svg'

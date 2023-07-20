@@ -33,6 +33,7 @@ const Services = () => {
 
         <div className="mt-16 lg:mt-0 basis-[32.5%]">
           <Image
+            background="auto"
             src="/images/icons/world-1.svg"
             alt="Globe Icon"
             width={18}
@@ -59,6 +60,7 @@ const Services = () => {
         className="mt-[4.5rem] lg:mt-[11rem]"
         imageNode={
           <Image
+            background="auto"
             src="/images/optimized/t1d_nov22_149_optimized.webp"
             alt="Picture of office life"
             layout="constrained"

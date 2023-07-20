@@ -1,3 +1,5 @@
+import { Metadata } from 'next'
+
 import { DancingFigures } from '@/components/atoms/DancingFigures'
 import { Heading } from '@/components/atoms/Heading'
 import { Image } from '@/components/atoms/Image'
@@ -10,10 +12,9 @@ import { Values } from '@/components/organisms/Values'
 
 import ContentWrapper from '@/components/layout/ContentWrapper'
 import { PageLayout } from '@/components/layout/PageLayout'
-import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: "Culture"
+  title: 'Culture',
 }
 
 const Culture = () => {
@@ -30,6 +31,7 @@ const Culture = () => {
         className="mt-[19rem]"
         imageNode={
           <Image
+            background="auto"
             src="/images/optimized/t1d_nov22_153_optimized.webp"
             alt="A man working at his laptop"
             layout="fullWidth"

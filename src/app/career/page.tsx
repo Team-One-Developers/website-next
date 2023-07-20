@@ -1,3 +1,5 @@
+import { Metadata } from 'next'
+
 import { Heading } from '@/components/atoms/Heading'
 import { Image } from '@/components/atoms/Image'
 import { ImageMask } from '@/components/atoms/ImageMask'
@@ -9,11 +11,9 @@ import { Benefits } from '@/components/organisms/Benefits'
 import ContentWrapper from '@/components/layout/ContentWrapper'
 import { FullWidthSectionContainer } from '@/components/layout/FullWidthSectionContainer'
 import { PageLayout } from '@/components/layout/PageLayout'
-import { Metadata } from 'next'
-
 
 export const metadata: Metadata = {
-  title: "Career"
+  title: 'Career',
 }
 
 const Career = () => {
@@ -29,6 +29,7 @@ const Career = () => {
       <ContentWrapper className="mt-8 lg:flex lg:gap-8">
         <ImageMask className="mt-8 lg:basis-[50%]">
           <Image
+            background="auto"
             src="/images/optimized/t1d_kai_knoerzer_079_optimized.webp"
             alt="Lazy man sleeping on a printer"
             width={960}
@@ -37,6 +38,7 @@ const Career = () => {
         </ImageMask>
         <section className="mt-16 md:ml-12 lg:basis-[32.5%]">
           <Image
+            background="auto"
             src="/images/icons/person-1.svg"
             alt="Person icon"
             height={18}
@@ -101,6 +103,7 @@ const Career = () => {
       </ContentWrapper>
       <ContentWrapper className="mt-36">
         <Image
+          background="auto"
           src="/images/optimized/t1d_nov22_185_optimized.webp"
           alt="Picture of people in an Office"
           width={1920}

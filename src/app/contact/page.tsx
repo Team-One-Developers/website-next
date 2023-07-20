@@ -1,3 +1,4 @@
+import { Metadata } from 'next'
 import { PAGE_THEME } from '@/constants'
 import { twJoin } from 'tailwind-merge'
 
@@ -9,11 +10,9 @@ import { Ticker } from '@/components/molecules/Ticker'
 
 import ContentWrapper from '@/components/layout/ContentWrapper'
 import { PageLayout } from '@/components/layout/PageLayout'
-import { Metadata } from 'next'
-
 
 export const metadata: Metadata = {
-  title: "Contact"
+  title: 'Contact',
 }
 
 const Contact = () => {
@@ -66,6 +65,7 @@ const Contact = () => {
         <section className="mb-40 mt-20 flex flex-wrap items-center gap-16">
           <div className="relative min-w-[260px] max-w-[460px] grow">
             <Image
+              background="auto"
               src="/images/optimized/dinosaur_call_optimized.webp"
               alt="A person in a T-Rex costume with an inflated cell phone is standing in an office. They are pretending to be on a call."
               width={460}
