@@ -1,12 +1,16 @@
 import '../legal-notice/style.css'
 
-import { twJoin } from 'tailwind-merge'
-
 import Typography from '@/components/atoms/Typography'
 
 import ContentWrapper from '@/components/layout/ContentWrapper'
 import { FullWidthSectionContainer } from '@/components/layout/FullWidthSectionContainer'
 import { PageLayout } from '@/components/layout/PageLayout'
+import { Metadata } from 'next'
+
+
+export const metadata: Metadata = {
+  title: "Privacy"
+}
 
 const Privacy = () => {
   return (

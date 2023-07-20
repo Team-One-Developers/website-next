@@ -18,6 +18,11 @@ import { UxDesignMobile } from '@/components/organisms/UxDesignMobile'
 import ContentWrapper from '@/components/layout/ContentWrapper'
 import { FullWidthSectionContainer } from '@/components/layout/FullWidthSectionContainer'
 import { PageLayout } from '@/components/layout/PageLayout'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: "Services"
+}
 
 const Services = () => {
   const isXl = useMediaQuery('(min-width: 1200px)')

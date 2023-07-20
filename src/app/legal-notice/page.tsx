@@ -1,13 +1,15 @@
-import { twJoin } from 'tailwind-merge'
-
 import './style.css'
 
-import { Heading } from '@/components/atoms/Heading'
 import Typography from '@/components/atoms/Typography'
 
 import ContentWrapper from '@/components/layout/ContentWrapper'
 import { FullWidthSectionContainer } from '@/components/layout/FullWidthSectionContainer'
 import { PageLayout } from '@/components/layout/PageLayout'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: "Legal"
+}
 
 const Legal = () => {
   return (
