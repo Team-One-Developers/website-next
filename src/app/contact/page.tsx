@@ -9,6 +9,12 @@ import { Ticker } from '@/components/molecules/Ticker'
 
 import ContentWrapper from '@/components/layout/ContentWrapper'
 import { PageLayout } from '@/components/layout/PageLayout'
+import { Metadata } from 'next'
+
+
+export const metadata: Metadata = {
+  title: "Contact"
+}
 
 const Contact = () => {
   const ArrowSVG = ({

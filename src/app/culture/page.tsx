@@ -10,6 +10,11 @@ import { Values } from '@/components/organisms/Values'
 
 import ContentWrapper from '@/components/layout/ContentWrapper'
 import { PageLayout } from '@/components/layout/PageLayout'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: "Culture"
+}
 
 const Culture = () => {
   return (

@@ -9,6 +9,12 @@ import { Benefits } from '@/components/organisms/Benefits'
 import ContentWrapper from '@/components/layout/ContentWrapper'
 import { FullWidthSectionContainer } from '@/components/layout/FullWidthSectionContainer'
 import { PageLayout } from '@/components/layout/PageLayout'
+import { Metadata } from 'next'
+
+
+export const metadata: Metadata = {
+  title: "Career"
+}
 
 const Career = () => {
   return (

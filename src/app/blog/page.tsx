@@ -3,11 +3,16 @@
 import { useRouter } from 'next/navigation'
 import { twJoin } from 'tailwind-merge'
 
-import { Heading } from '@/components/atoms/Heading'
 import { Image } from '@/components/atoms/Image'
 import Typography from '@/components/atoms/Typography'
 
 import { PageLayout } from '@/components/layout/PageLayout'
+import { Metadata } from 'next'
+
+
+export const metadata: Metadata = {
+  title: "Blog"
+}
 
 const Blog = () => {
   const router = useRouter()
@@ -76,12 +81,12 @@ const Blog = () => {
       <div className="min-h-screen">
         <div className="w-full rounded p-24">
           <div className="max-w-[80%]">
-            <Typography as="h1" variant="h2">{`Read our blog`}</Typography>
+            <Typography as="h1" variant="h2">{"Read our blog"}</Typography>
             <Typography
               as="h2"
               variant="h5"
               className="text-primary"
-            >{`Regular posts about topics that drive us`}</Typography>
+            >{"Regular posts about topics that drive us"}</Typography>
           </div>
         </div>
         <div className="grid w-full grid-flow-row grid-cols-[1fr_3fr] gap-8 p-24">
