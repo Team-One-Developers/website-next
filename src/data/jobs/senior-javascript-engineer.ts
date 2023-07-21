@@ -2,7 +2,7 @@ export const SeniorJavascriptEngineer = {
   slug: 'senior-javascript-engineer',
   title: '(Senior) JavaScript Engineer (m/w/x)',
   location: 'Stuttgart',
-  schedule: 'full-time',
+  schedule: 'full_time',
   employmentType: 'permanent',
   seniority: 'entry',
   description:
@@ -31,4 +31,4 @@ export const SeniorJavascriptEngineer = {
     'agile-transformation-consultant',
   ],
   date: '2023-02-10',
-};
+}

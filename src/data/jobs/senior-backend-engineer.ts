@@ -2,7 +2,7 @@ export const SeniorBackendEngineer = {
   slug: 'senior-backend-engineer',
   title: '(Senior) Backend Engineer (m/w/x)',
   location: 'Stuttgart',
-  schedule: 'full-time',
+  schedule: 'full_time',
   employmentType: 'permanent',
   seniority: 'entry',
   description:
@@ -28,4 +28,4 @@ export const SeniorBackendEngineer = {
     'agile-transformation-consultant',
   ],
   date: '2023-02-27',
-};
+}

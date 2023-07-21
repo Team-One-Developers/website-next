@@ -2,7 +2,7 @@ export const SeniorDevopsEngineer = {
   slug: 'senior-devops-engineer',
   title: '(Senior) DevOps Engineer (m/w/x)',
   location: 'Stuttgart',
-  schedule: 'full-time',
+  schedule: 'full_time',
   employmentType: 'permanent',
   seniority: 'entry',
   description:
@@ -30,4 +30,4 @@ export const SeniorDevopsEngineer = {
     'agile-transformation-consultant',
   ],
   date: '2023-01-05',
-};
+}

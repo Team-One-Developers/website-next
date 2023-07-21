@@ -1,10 +1,16 @@
 import { Metadata } from 'next'
+import { AgileTransformationCoach as JobA } from '@/data/jobs/agile-transformation-coach'
+import { SeniorBackendEngineer as JobB } from '@/data/jobs/senior-backend-engineer'
+import { SeniorDevopsEngineer as JobC } from '@/data/jobs/senior-devops-engineer'
+import { SeniorJavascriptEngineer as JobD } from '@/data/jobs/senior-javascript-engineer'
 
 import { Heading } from '@/components/atoms/Heading'
 import { Image } from '@/components/atoms/Image'
 import { ImageMask } from '@/components/atoms/ImageMask'
 import { Link } from '@/components/atoms/Link'
 import Typography from '@/components/atoms/Typography'
+
+import { Job, JobElement } from '@/components/molecules/JobElement'
 
 import { Benefits } from '@/components/organisms/Benefits'
 
@@ -17,6 +23,8 @@ export const metadata: Metadata = {
 }
 
 const Career = () => {
+  const jobs = [JobA, JobB, JobC, JobD]
+
   return (
     <PageLayout>
       <ContentWrapper>
@@ -77,12 +85,9 @@ const Career = () => {
         >
           Wir suchen dich:
         </Typography>
-        <Typography
-          className="mt-24 mb-6 lg:mt-32 text-white m-0"
-          variant="text_lg"
-        >
-          JOBS - ACCORDEON
-        </Typography>
+        {jobs.map((job, index) => (
+          <JobElement listIndex={index + 1} key={job.slug} job={job as Job} />
+        ))}
       </ContentWrapper>
       <ContentWrapper className="mt-[6.5rem]">
         <div className="flex flex-col gap-4 items-baseline lg:max-w-[32%]">
