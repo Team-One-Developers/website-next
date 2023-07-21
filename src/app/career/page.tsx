@@ -29,21 +29,22 @@ const Career = () => {
       <ContentWrapper className="mt-8 lg:flex lg:gap-8">
         <ImageMask className="mt-8 lg:basis-[50%]">
           <Image
-            background="auto"
             src="/images/optimized/t1d_kai_knoerzer_079_optimized.webp"
-            alt="Lazy man sleeping on a printer"
+            alt="A person smiling at the camera holding a trophy"
             width={960}
             height={1440}
+            background="auto"
           />
         </ImageMask>
         <section className="mt-16 md:ml-12 lg:basis-[32.5%]">
           <Image
-            background="auto"
             src="/images/icons/person-1.svg"
             alt="Person icon"
             height={18}
             width={18}
+            layout="fixed"
             className="mb-4"
+            background="auto"
           />
           <Typography variant="text_lg" className="text-primary mb-8">
             Wir verstehen uns nicht einfach nur als Arbeitgeber, sondern viel
@@ -103,12 +104,12 @@ const Career = () => {
       </ContentWrapper>
       <ContentWrapper className="mt-36">
         <Image
-          background="auto"
           src="/images/optimized/t1d_nov22_185_optimized.webp"
           alt="Picture of people in an Office"
           width={1920}
           height={800}
           className="rounded-[25px]"
+          background="auto"
         />
       </ContentWrapper>
     </PageLayout>

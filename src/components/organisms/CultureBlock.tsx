@@ -23,9 +23,10 @@ export const CultureBlock = () => {
               <Image
                 background="auto"
                 src="/images/icons/cup.svg"
-                alt="Cup SVG"
+                alt="Coffee Cup Icon"
                 height={36}
                 width={36}
+                layout="fixed"
                 className="-mt-2 inline"
               />
             </Typography>
@@ -38,7 +39,6 @@ export const CultureBlock = () => {
               <div className="relative ">
                 <div className="absolute left-[15px] top-[20px] h-[85px] w-[70%] bg-black" />
                 <Image
-                  background="auto"
                   src="/images/logo/t1d-sticker-neongreen.svg"
                   alt="T1D Logo"
                   width={125}
@@ -46,17 +46,18 @@ export const CultureBlock = () => {
                   layout="fixed"
                   objectFit="contain"
                   className="relative z-[2000]"
+                  background="auto"
                 />
               </div>
             }
           >
             <ImageMask>
               <Image
-                background="auto"
                 src="/images/optimized/t1d_kai_knoerzer_062_optimized.webp"
                 alt="A person holding a computer mouse. The cable is heavily tangled up. The person looks surprised into the camera."
                 width={750}
                 height={948}
+                background="auto"
               />
             </ImageMask>
           </ImageDecoration>
@@ -73,12 +74,13 @@ export const CultureBlock = () => {
             <div className="mb-8 grid w-full grid-cols-[0.1fr_1.9fr] gap-x-4 gap-y-0">
               <div className="box-border p-2">
                 <Image
-                  background="auto"
                   src="/images/icons/world-1.svg"
                   alt="World Globe Icon"
                   width={18}
                   height={18}
+                  layout="fixed"
                   className=""
+                  background="auto"
                 />
               </div>
               <Typography className="text-white" variant="text_lg">
@@ -92,12 +94,13 @@ export const CultureBlock = () => {
             <div className="mb-8 grid w-full grid-cols-[0.1fr_1.9fr] gap-x-4 gap-y-0">
               <div className="box-border p-2">
                 <Image
-                  background="auto"
                   src="/images/icons/person-1.svg"
                   alt="Person Icon"
                   width={18}
                   height={18}
+                  layout="fixed"
                   className=""
+                  background="auto"
                 />
               </div>
               <div>
@@ -121,20 +124,21 @@ export const CultureBlock = () => {
         left={
           <div className="relative">
             <Image
-              background="auto"
               src="/images/dancers/dancing-hearts.svg"
               alt="moving hearts"
               height={75}
               width={75}
+              layout="fixed"
               className="absolute bottom-0"
+              background="auto"
             />
             <ImageMask>
               <Image
-                background="auto"
                 src="/images/optimized/t1d_kai_knoerzer_126_optimized.webp"
-                alt="Man with a dog"
+                alt="Man with a dog smiling at the camera"
                 width={750}
                 height={1125}
+                background="auto"
               />
             </ImageMask>
           </div>
@@ -155,6 +159,7 @@ export const CultureBlock = () => {
                 alt="4 Personen Icon"
                 width={28}
                 height={18}
+                layout="fixed"
               />
             </div>
             <div>

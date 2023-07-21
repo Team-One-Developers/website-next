@@ -17,38 +17,38 @@ export const Companies = () => {
       <div className="mt-12 flex flex-wrap gap-9">
         <div className="flex grow flex-wrap justify-around gap-9">
           <Image
-            background="auto"
             src="/images/companies/porsche.svg"
             alt="Porsche Logo"
             height={50}
             width={230}
             objectFit="contain"
+            background="auto"
           />
           <Image
-            background="auto"
             src="/images/companies/mercedes.svg"
             alt="Mercedes Logo"
             height={50}
             width={230}
             objectFit="contain"
+            background="auto"
           />
         </div>
         <div className="flex grow flex-wrap justify-around gap-9">
           <Image
-            background="auto"
             src="/images/companies/recaro.svg"
             alt="Recaro Logo"
             height={50}
             width={230}
             objectFit="contain"
+            background="auto"
           />
           <Image
-            background="auto"
             src="/images/companies/axelspringer.svg"
             alt="AxelSpringer Logo"
             height={50}
             width={230}
             objectFit="contain"
+            background="auto"
           />
         </div>
       </div>

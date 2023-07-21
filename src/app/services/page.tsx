@@ -33,12 +33,13 @@ const Services = () => {
 
         <div className="mt-16 lg:mt-0 basis-[32.5%]">
           <Image
-            background="auto"
             src="/images/icons/world-1.svg"
             alt="Globe Icon"
             width={18}
             height={18}
+            layout="fixed"
             className="mb-4"
+            background="auto"
           />
           <Typography className="mb-8 text-primary text-lg" variant="text_lg">
             Digitale Geschäftsmodelle, digitale Kunden und remote-first Teams
@@ -60,12 +61,12 @@ const Services = () => {
         className="mt-[4.5rem] lg:mt-[11rem]"
         imageNode={
           <Image
-            background="auto"
             src="/images/optimized/t1d_nov22_149_optimized.webp"
-            alt="Picture of office life"
+            alt="People working in an office"
             layout="constrained"
             objectFit="cover"
             className="h-full"
+            background="auto"
           />
         }
         overlayNode={

@@ -48,7 +48,6 @@ export const Ticker = (props: TickerProps) => {
         {includeLogo === true ? (
           <div className="mx-[60px] my-0">
             <Image
-              background="auto"
               src={
                 theme === PAGE_THEME.dark
                   ? '/images/logo/t1d-sticker-darkgray.svg'
@@ -57,6 +56,8 @@ export const Ticker = (props: TickerProps) => {
               alt="Team One Developers Logo"
               height={80}
               width={63}
+              layout="fixed"
+              background="auto"
             />
           </div>
         ) : (

@@ -30,7 +30,7 @@ export const HomeValuesSection = () => {
     >
       <CenteredSectionContainer
         left={
-          <ImageMask ref={careerPictureRef} className="justify-[right]">
+          <ImageMask ref={careerPictureRef} className="w-full">
             <figure
               style={{
                 transition: '500ms',
@@ -38,10 +38,11 @@ export const HomeValuesSection = () => {
               }}
             >
               <Image
-                background="auto"
                 src="/images/optimized/t1d_kai_knoerzer_055_optimized.webp"
-                alt="Picture of a men posing"
+                alt="Picture of a men posing, smiling at the camera"
                 layout="fullWidth"
+                className="h-full"
+                background="auto"
               />
             </figure>
           </ImageMask>
@@ -62,10 +63,11 @@ export const HomeValuesSection = () => {
           >
             <Image
               src="/images/icons/world-1.svg"
-              alt="Person Icon"
+              alt="Globe Icon"
               width={18}
               height={18}
               className="mr-2 brightness-0"
+              background="auto"
             />
           </CtaSection>
         }

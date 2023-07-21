@@ -96,7 +96,13 @@ const ReferencesSliderEntry = (props: ReferenceSliderEntryProps) => {
     <li className="grow-0 shrink-0 basis-[85%] snap-start md:basis-[75%] md:pb-20 xl:pb-40">
       <figure className="flex gap-8 flex-col h-full xl:flex-row">
         <ImageMask className="relative max-h-[320px] aspect-[0.8] sm:max-h-[400px] md:max-h-[480px] xl:max-h-none xl:max-w-[650px] xl:basis-[55%]">
-          <Image src={imageSrc} alt="" layout="fullWidth" className="h-full" />
+          <Image
+            src={imageSrc}
+            alt=""
+            layout="fullWidth"
+            className="h-full"
+            background="auto"
+          />
         </ImageMask>
         <figcaption className="flex flex-col justify-center xl:grow-0 xl:shrink-0 xl:basis-[45%]">
           <Typography as="h2" variant="h2_bold" className="text-black">

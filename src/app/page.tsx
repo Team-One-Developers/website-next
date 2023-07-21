@@ -42,13 +42,13 @@ const Home = () => {
       <Hero
         imageNode={
           <Image
+            src="/images/optimized/hero_optimized.webp"
+            alt="Picture of a man at a laptop"
+            layout="fullWidth"
+            className="h-full"
             background={blurhashToCssGradientString(
               'LNGk,q%MIV56OZ~psSIAX8t7azRi'
             )}
-            src="/images/optimized/hero_optimized.webp"
-            alt="Picture of a keyboard"
-            layout="fullWidth"
-            className="h-full"
           />
         }
         overlayNode={

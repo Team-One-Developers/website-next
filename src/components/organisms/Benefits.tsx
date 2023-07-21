@@ -37,7 +37,14 @@ export const Benefits = () => {
         onMouseEnter={() => setHoveredIndex(index)}
         onMouseLeave={() => setHoveredIndex(undefined)}
       >
-        <Image src={icon} alt="Little icon" height={36} width={36} />
+        <Image
+          src={icon}
+          alt="Little icon"
+          height={36}
+          width={36}
+          layout="fixed"
+          background="auto"
+        />
         <Typography
           className="mb-2 text-base text-primary mt-2"
           as="h3"
@@ -62,7 +69,7 @@ export const Benefits = () => {
           className={twJoin(
             'absolute right-0 h-[200px] aspect-[16/9] object-cover top-[30%] translate-y-[50px] translate-x-[50px] hidden lg:block',
             hoveredIndex !== undefined
-              ? 'opacity-[100%] -translate-y-[60px] -translate-x-[60px]'
+              ? 'opacity-[100%] -translate-y-[50px] -translate-x-[50px]'
               : 'opacity-0'
           )}
           style={{ transition: '500ms' }}

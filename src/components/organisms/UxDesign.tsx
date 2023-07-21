@@ -119,11 +119,11 @@ export const UxDesign = ({ className }: { className: string }) => {
             )}
           >
             <Image
-              background="auto"
               src="/images/icons/form1.svg"
               alt="UX Design Icon"
               width={360}
               height={294}
+              background="auto"
             />
           </div>
           <div
@@ -135,11 +135,11 @@ export const UxDesign = ({ className }: { className: string }) => {
             )}
           >
             <Image
-              background="auto"
               src="/images/icons/form2.svg"
               alt="Application Development Icon"
               width={250}
               height={232}
+              background="auto"
             />
           </div>
           <div
@@ -151,11 +151,11 @@ export const UxDesign = ({ className }: { className: string }) => {
             )}
           >
             <Image
-              background="auto"
               src="/images/icons/form3.svg"
               alt="UI Development Icon"
               width={800}
               height={1100}
+              background="auto"
             />
           </div>
           <div
@@ -167,11 +167,11 @@ export const UxDesign = ({ className }: { className: string }) => {
             )}
           >
             <Image
-              background="auto"
               src="/images/icons/form4.svg"
               alt="UI Design Icon"
               width={332}
               height={560}
+              background="auto"
             />
           </div>
 

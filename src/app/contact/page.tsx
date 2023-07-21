@@ -65,7 +65,6 @@ const Contact = () => {
         <section className="mb-40 mt-20 flex flex-wrap items-center gap-16">
           <div className="relative min-w-[260px] max-w-[460px] grow">
             <Image
-              background="auto"
               src="/images/optimized/dinosaur_call_optimized.webp"
               alt="A person in a T-Rex costume with an inflated cell phone is standing in an office. They are pretending to be on a call."
               width={460}
@@ -73,6 +72,7 @@ const Contact = () => {
               style={{
                 flex: 1,
               }}
+              background="auto"
             />
           </div>
           <div className={'flex grow-[2] flex-col gap-2 p-4'}>

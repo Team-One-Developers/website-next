@@ -40,15 +40,16 @@ export const HomeHumanSection = () => {
         contentVariant="text_sm"
       >
         <Image
-          background="auto"
           src="/images/icons/person-1.svg"
           alt="Person Icon"
           width={16}
           height={15}
+          layout="fixed"
           className="mr-2 brightness-0"
+          background="auto"
         />
       </CtaSection>
-      <ImageMask ref={culturePictureRef} className="md:max-w-[50%]">
+      <ImageMask ref={culturePictureRef} className="lg:max-w-[50%] w-full ">
         <figure
           className=""
           style={{
@@ -57,10 +58,11 @@ export const HomeHumanSection = () => {
           }}
         >
           <Image
-            background="auto"
             src="/images/optimized/t1d_kai_knoerzer_011_edited_optimized.webp"
-            alt="Picture of a men posing"
+            alt="Picture of a men posing with a laptop."
             layout="fullWidth"
+            className="h-full"
+            background="auto"
           />
         </figure>
       </ImageMask>

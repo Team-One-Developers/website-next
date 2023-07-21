@@ -31,11 +31,11 @@ const Culture = () => {
         className="mt-[19rem]"
         imageNode={
           <Image
-            background="auto"
             src="/images/optimized/t1d_nov22_153_optimized.webp"
-            alt="A man working at his laptop"
+            alt="Two man working on a laptop"
             layout="fullWidth"
             className="h-full"
+            background="auto"
           />
         }
         overlayNode={null}
