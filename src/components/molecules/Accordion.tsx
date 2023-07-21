@@ -22,6 +22,7 @@ export const Accordion = (props: AccordionProps) => {
   }, [allOpen])
 
   return (
+    // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions
     <details
       className={twMerge(
         'group relative cursor-pointer overflow-hidden border-t-2 border-white p-2 text-white last:border-b-2 hover:bg-t1-darkGray md:p-4',

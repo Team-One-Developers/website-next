@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 'use client'
 
 import { useState } from 'react'
@@ -94,6 +96,7 @@ export const Header = ({ theme }: { theme: PageTheme }) => {
                         onClick={() => {
                           setBurgerNavigationOpened(false)
                         }}
+                        aria-label="Navigationsmenü schließen"
                       >
                         CLOSE
                       </button>
@@ -109,6 +112,7 @@ export const Header = ({ theme }: { theme: PageTheme }) => {
                               )}
                               key={index}
                               href={`${linkObj.link}`}
+                              aria-label={`Navigationslink ${linkObj.name}`}
                             >
                               {linkObj.name}
                             </Link>

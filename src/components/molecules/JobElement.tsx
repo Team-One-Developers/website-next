@@ -28,7 +28,10 @@ export const JobElement = (props: JobProps) => {
 
   return (
     <div className="border-t-2 border-white last:border-b-2">
-      <Link href={`/career/jobs/${job.slug}`}>
+      <Link
+        href={`/career/jobs/${job.slug}`}
+        aria-label={`Link zur Jobseite ${job.title}`}
+      >
         <div className="trans grid cursor-pointer grid-cols-1 hover:bg-t1-darkGray md:grid-cols-[0.1fr_2fr_0.5fr]">
           <div className="m-2 md:m-4 basis-[2.5%] shrink-0 grow-0">
             <Typography className="text-white" variant="subtitle">
