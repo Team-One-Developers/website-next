@@ -1,7 +1,7 @@
 export const siteConfig = {
     name: "TeamOneDevelopers",
     url: "https://teamonedevelopers.de",
-    ogImage: "https://teamonedevelopers.de/og.jpg",
+    ogImage: "https://teamonedevelopers.de/og.png",
     description:
       "Wir sind Technologie-Experten und verstehen uns als integrativer Entwicklungs- & Beratungspartner in komplexen Softwareprojekten. .",
     links: {
