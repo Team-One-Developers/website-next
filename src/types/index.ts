@@ -1,1 +1,1 @@
-export type { PageTheme } from './theme';
+export type { PageTheme } from './theme'

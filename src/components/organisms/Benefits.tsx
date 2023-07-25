@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { motion } from 'framer-motion'
 import { twJoin } from 'tailwind-merge'
 
 import { Image } from '@/components/atoms/Image'
@@ -65,22 +66,28 @@ export const Benefits = () => {
         <Typography as="h2" variant="h2" className="lg:max-w-[60%]">
           Unsere Benefits auf einen Blick
         </Typography>
-        <video
-          className={twJoin(
-            'absolute right-0 h-[200px] aspect-[16/9] object-cover top-[30%] translate-y-[50px] translate-x-[50px] hidden lg:block',
-            hoveredIndex !== undefined
-              ? 'opacity-[100%] -translate-y-[50px] -translate-x-[50px]'
-              : 'opacity-0'
-          )}
-          style={{ transition: '500ms' }}
-          tabIndex={-1}
-          aria-hidden="true"
-          autoPlay
-          muted
-          loop
-          playsInline
-          src={hoveredIndex !== undefined ? videoSources[hoveredIndex] : ''}
-        />
+        {hoveredIndex !== undefined && (
+          <motion.video
+            className={twJoin(
+              'absolute right-0 h-[200px] aspect-[16/9] object-cover top-[30%] hidden lg:block'
+            )}
+            initial={{ x: 50, y: 50, scale: 0.8 }}
+            animate={{ x: -50, y: -50, scale: 1 }}
+            transition={{
+              duration: 0.8,
+              type: 'spring',
+              stiffness: 25,
+              damping: 10,
+            }}
+            tabIndex={-1}
+            aria-hidden="true"
+            autoPlay
+            muted
+            loop
+            playsInline
+            src={hoveredIndex !== undefined ? videoSources[hoveredIndex] : ''}
+          />
+        )}
       </div>
 
       <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:basis-[50%]  lg:mt-0 xl:grid-cols-3">
