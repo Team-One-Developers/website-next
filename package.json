@@ -13,6 +13,7 @@
 		"@radix-ui/react-slot": "^1.0.2",
 		"@unpic/placeholder": "^0.1.2",
 		"@unpic/react": "^0.0.33",
+		"@vercel/analytics": "^1.0.1",
 		"autoprefixer": "10.4.14",
 		"contentlayer": "0.3.1",
 		"date-fns": "^2.30.0",
