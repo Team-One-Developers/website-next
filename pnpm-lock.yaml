@@ -17,6 +17,9 @@ dependencies:
   '@vercel/og':
     specifier: ^0.5.9
     version: 0.5.9
+  '@vercel/analytics':
+    specifier: ^1.0.1
+    version: 1.0.1
   autoprefixer:
     specifier: 10.4.14
     version: 10.4.14(postcss@8.4.27)
@@ -1798,6 +1801,7 @@ packages:
       react-dom: 18.2.0(react@18.2.0)
     dev: false
 
+<<<<<<< HEAD
   /@vercel/og@0.5.9:
     resolution: {integrity: sha512-CtjaV/BVHtNCjRtxGqn8Q6AKFLqcG34Byxr91+mY+4eqyp/09LVe9jEeY9WXjbaKvu8syWPMteTpY+YQUQYzSg==}
     engines: {node: '>=16'}
@@ -1805,6 +1809,10 @@ packages:
       '@resvg/resvg-wasm': 2.4.1
       satori: 0.10.1
       yoga-wasm-web: 0.3.3
+=======
+  /@vercel/analytics@1.0.1:
+    resolution: {integrity: sha512-Ux0c9qUfkcPqng3vrR0GTrlQdqNJ2JREn/2ydrVuKwM3RtMfF2mWX31Ijqo1opSjNAq6rK76PwtANw6kl6TAow==}
+>>>>>>> 80a4ce0fc39eadb1c7aa57b0db248f95ef9da8d7
     dev: false
 
   /acorn-jsx@5.3.2(acorn@8.10.0):
