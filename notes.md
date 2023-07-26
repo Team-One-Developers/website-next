@@ -1,5 +1,4 @@
 TODO/Questions
 
-- buttons accesibitly rules aria labels (es lint aria labels rule)
-
-- seo opengraph images descriptions etc
+- Career Pages actual design
+- MDX careers
