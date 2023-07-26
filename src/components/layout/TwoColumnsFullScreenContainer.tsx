@@ -1,7 +1,6 @@
 import { ReactNode } from 'react'
 import Link from 'next/link'
 
-import { Image } from '../atoms/Image'
 import Typography from '../atoms/Typography'
 
 type TwoColumnsFullScreenContainerProps = {
@@ -13,6 +12,24 @@ export const TwoColumnsFullScreenContainer = (
   props: TwoColumnsFullScreenContainerProps
 ) => {
   const { left, right } = props
+
+  const ArrowSVG = ({ className }: { className: string }) => {
+    return (
+      <svg
+        width="30"
+        height="30"
+        viewBox="0 0 18 18"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        className={className}
+      >
+        <path
+          d="M8.89708 12.75L4.99996 6L12.7942 6L8.89708 12.75Z"
+          fill="#46FFAD"
+        />
+      </svg>
+    )
+  }
 
   return (
     <div className="block overflow-hidden grid-cols-2 grid-rows-1 gap-0 lg:grid">
@@ -27,20 +44,14 @@ export const TwoColumnsFullScreenContainer = (
                 Zurück zu Jobs
               </Typography>
             </div>
-            <Image
-              src="/images/icons/arrowDown.svg"
-              alt="Back arrow"
-              height={30}
-              width={30}
-              layout="fixed"
-            />
+            <ArrowSVG className="rotate-90" />
           </div>
         </Link>
         <div className="static w-full py-[75px] px-8 box-border lg:fixed lg:w-1/2 lg:pt-[190px] lg:p-[50px] lg:top-0">
           {left}
         </div>
       </div>
-      <div className=" p-8 h-auto overflow-y-hidden lg:py-[190px] lg:px-[100px] lg:overflow-y-auto lg:h-[calc(100vh-110px)]">
+      <div className="lg:w-1/2 lg:absolute lg:right-0 p-8 h-auto overflow-y-hidden lg:py-[190px] lg:px-[100px] lg:overflow-y-auto lg:h-[calc(100vh-110px)]">
         <div>{right}</div>
       </div>
     </div>

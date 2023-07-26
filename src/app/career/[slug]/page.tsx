@@ -66,7 +66,7 @@ export default async function CareerPage({ params }: CareerProps) {
       <TwoColumnsFullScreenContainer
         left={
           <>
-            <Typography as="h1" variant="h2" className="text-black">
+            <Typography as="h1" variant="h2_bold" className="text-black">
               {career.title}
             </Typography>
             <Link href="/contact">
