@@ -6,6 +6,7 @@ export const typographyVariants = tv({
   base: 'm-0 not-italic tracking-tinyBitTighter font-spacegrotesk',
   variants: {
     variant: {
+      text_xs: 'font-abcdiatype font-normal text-xs leading-144',
       text_sm: 'font-abcdiatype font-normal text-base leading-144',
       text_lg: 'font-abcdiatype font-normal text-xl md:text-2xl leading-150 ',
       text_xl: 'font-normal  text-2xl md:text-2.5xl lg:text-3.5xl leading-130',

@@ -1,6 +1,59 @@
+import { Metadata } from 'next'
+import { notFound } from 'next/navigation'
+import { allBlogs } from 'contentlayer/generated'
+import { format, parseISO } from 'date-fns'
+
+import Typography from '@/components/atoms/Typography'
+
+import ContentWrapper from '@/components/layout/ContentWrapper'
 import { PageLayout } from '@/components/layout/PageLayout'
 
-const Blog = () => {
+import { Mdx } from '@/components/MdxComponents'
+
+interface BlogProps {
+  params: {
+    slug: string
+  }
+}
+
+async function getBlogFromParams(params: BlogProps['params']) {
+  const blog = allBlogs.find((blog) => blog.slugAsParams === params.slug)
+
+  if (!blog) {
+    null
+  }
+
+  return blog
+}
+
+export async function generateMetadata({
+  params,
+}: BlogProps): Promise<Metadata> {
+  const blog = await getBlogFromParams(params)
+
+  if (!blog) {
+    return {}
+  }
+
+  return {
+    title: blog.title,
+    description: blog.description,
+  }
+}
+
+export async function generateStaticParams(): Promise<BlogProps['params'][]> {
+  return allBlogs.map((blog) => ({
+    slug: blog.slugAsParams,
+  }))
+}
+
+export default async function BlogPage({ params }: BlogProps) {
+  const blog = await getBlogFromParams(params)
+
+  if (!blog) {
+    notFound()
+  }
+
   const RelatedArticle = ({
     title,
     subtitle,
@@ -16,57 +69,46 @@ const Blog = () => {
           {iconText}
         </div>
         <div>
-          <p className="text-bold text-sm">{title}</p>
-          <p className="text-xs">{subtitle}</p>
+          <Typography variant="text_sm">{title}</Typography>
+          <Typography variant="text_xs">{subtitle}</Typography>
         </div>
       </div>
     )
   }
 
-  const BlogBlockHeadline = ({ title }: { title: string }) => {
-    return <h2 className="text-4xl">{title}</h2>
-  }
-
-  const BlogBlockText = ({ text }: { text?: string }) => {
-    return (
-      <p className="text-justify text-lg leading-8">
-        {text
-          ? text
-          : `Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged. It was popularised in the 1960s
-            with the release of Letraset sheets containing Lorem Ipsum passages,
-            and more recently with desktop publishing software like Aldus
-            PageMaker including versions of Lorem Ipsum.`}
-      </p>
-    )
-  }
-
   return (
     <PageLayout>
-      <div className="min-h-screen">
+      <ContentWrapper>
         <div className="w-full rounded p-24">
           <div className="max-w-[80%]">
-            <h1 className="text-6xl font-medium">
-              {
-                'AutoGPT - Magical omnipotent tool of the future or overhyped unpractical side-project? '
-              }
-            </h1>
-            <h3 className="mt-4 text-4xl text-primary">
-              {`The new tool called "AutoGPT" ist the new hot topic. What use does it actually have and is it worth learning?`}
-            </h3>
-            <p className="mt-4">Monday, 26th July 2023</p>
+            <Typography as="h1" variant="h2_bold">
+              {blog.title}
+            </Typography>
+            <Typography as="h2" variant="h4" className="text-primary">
+              {blog.description}
+            </Typography>
+            <time
+              dateTime={blog.date}
+              className="mb-2 block text-base text-gray-300"
+            >
+              {format(parseISO(blog.date), 'LLLL d, yyyy')}
+            </time>
           </div>
           <div className="mt-16 flex items-center">
             <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary text-black">
               SB
             </div>
             <div className="ml-4">
-              <p className="text-xl font-bold">Simon Broß</p>
-              <p className="text-muted-foreground">Software Engineer</p>
+              <Typography as="p" variant="h5">
+                Simon Broß
+              </Typography>
+              <Typography
+                as="p"
+                variant="text_sm"
+                className="text-muted-foreground"
+              >
+                Software Engineer
+              </Typography>
             </div>
           </div>
         </div>
@@ -85,20 +127,16 @@ const Blog = () => {
               </ul>
             </div>
           </div>
-          <div className="flex flex-col gap-4 p-4">
-            <BlogBlockHeadline title="AutoGPT - What is its goal?" />
-            <BlogBlockText />
-            <BlogBlockHeadline title="How to use it?" />
-            <BlogBlockText />
-            <BlogBlockHeadline title="How good it is for its purpose?" />
-            <BlogBlockText />
-            <BlogBlockHeadline title="Is it futureproof?" />
-            <BlogBlockText />
-            <BlogBlockHeadline title="How can it improve everydaylife?" />
-            <BlogBlockText />
-            <BlogBlockHeadline title="Conclusion" />
-            <BlogBlockText />
-          </div>
+          <article className="gap-4 p-4 prose max-w-none dark:prose-invert w-full">
+            <h1 className="mb-2">{blog.title}</h1>
+            {blog.description && (
+              <p className="text-xl mt-0 text-slate-700 dark:text-slate-200">
+                {blog.description}
+              </p>
+            )}
+            <hr className="my-4" />
+            <Mdx code={blog.body.code} />
+          </article>
           <div>
             <div className="sticky top-[140px] flex flex-col gap-4">
               <h3 className="text-2xl">Mentioned articles:</h3>
@@ -126,9 +164,7 @@ const Blog = () => {
             </div>
           </div>
         </div>
-      </div>
+      </ContentWrapper>
     </PageLayout>
   )
 }
-
-export default Blog

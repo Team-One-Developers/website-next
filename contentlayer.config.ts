@@ -29,7 +29,7 @@ export const Blog = defineDocumentType(() => ({
 
 export const Career = defineDocumentType(() => ({
   name: 'Career',
-  filePathPattern: 'careers/**/*.mdx',
+  filePathPattern: 'career/**/*.mdx',
   contentType: 'mdx',
   fields: {
     title: { type: 'string', required: true },

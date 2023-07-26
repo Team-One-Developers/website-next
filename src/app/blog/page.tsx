@@ -1,5 +1,7 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
+import { allBlogs } from 'contentlayer/generated'
+import { format, parseISO } from 'date-fns'
 import { twJoin } from 'tailwind-merge'
 
 import { Image } from '@/components/atoms/Image'
@@ -15,14 +17,14 @@ const Blog = () => {
   const BlogArticle = ({
     title,
     subtitle,
-    text,
+    date,
     image,
     imageAlt,
     swapped,
   }: {
     title: string
     subtitle: string
-    text: string
+    date: string
     image: string
     imageAlt: string
     swapped?: boolean
@@ -54,6 +56,9 @@ const Blog = () => {
             swapped ? 'order-1 rounded-l-blog' : 'order-2 rounded-r-blog'
           )}
         >
+          <time dateTime={date} className="mb-2 block text-xs text-gray-300">
+            {format(parseISO(date), 'LLLL d, yyyy')}
+          </time>
           <p className="text-bold text-xl">{title}</p>
           <p className="mt-4 text-base">{subtitle}</p>
           <Link
@@ -87,68 +92,18 @@ const Blog = () => {
             </div>
           </div>
           <div className="flex flex-col gap-12 px-24">
-            <BlogArticle
-              title="AutoGPT - Magical omnipotent tool of the future or overhyped unpractical side-project?"
-              subtitle='The new tool called "AutoGPT" ist the new hot topic. What use does it actually have and is it worth learning?'
-              text={`Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged.`}
-              image="/images/t1d_nov22_202.jpg"
-              imageAlt="lazy man picture"
-            />{' '}
-            <BlogArticle
-              swapped
-              title="AutoGPT - Magical omnipotent tool of the future or overhyped unpractical side-project?"
-              subtitle='The new tool called "AutoGPT" ist the new hot topic. What use does it actually have and is it worth learning?'
-              text={`Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged.`}
-              image="/images/t1d_nov22_153.jpg"
-              imageAlt="poeple pic"
-            />{' '}
-            <BlogArticle
-              title="AutoGPT - Magical omnipotent tool of the future or overhyped unpractical side-project?"
-              subtitle='The new tool called "AutoGPT" ist the new hot topic. What use does it actually have and is it worth learning?'
-              text={`Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged.`}
-              image="/images/t1d_nov22_185.jpg"
-              imageAlt="people picture"
-            />{' '}
-            <BlogArticle
-              swapped
-              title="AutoGPT - Magical omnipotent tool of the future or overhyped unpractical side-project?"
-              subtitle='The new tool called "AutoGPT" ist the new hot topic. What use does it actually have and is it worth learning?'
-              text={`Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged.`}
-              image="/images/t1d_nov22_202.jpg"
-              imageAlt="dinosaur"
-            />{' '}
-            <BlogArticle
-              title="AutoGPT - Magical omnipotent tool of the future or overhyped unpractical side-project?"
-              subtitle='The new tool called "AutoGPT" ist the new hot topic. What use does it actually have and is it worth learning?'
-              text={`Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged.`}
-              image="/images/man-laptop.jpg"
-              imageAlt="laptop picture"
-            />
+            {allBlogs.map((blog, index) => {
+              return (
+                <BlogArticle
+                  key={index}
+                  title={blog.title}
+                  date={blog.date}
+                  subtitle={blog.description}
+                  image="/images/t1d_nov22_202.jpg"
+                  imageAlt="lazy man picture"
+                />
+              )
+            })}
           </div>
         </div>
       </div>

@@ -1,9 +1,14 @@
 import { Metadata } from 'next'
+import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { allCareers } from 'contentlayer/generated'
 
+import { Button } from '@/components/atoms/Button'
+import Typography from '@/components/atoms/Typography'
+
 import ContentWrapper from '@/components/layout/ContentWrapper'
 import { PageLayout } from '@/components/layout/PageLayout'
+import { TwoColumnsFullScreenContainer } from '@/components/layout/TwoColumnsFullScreenContainer'
 
 import { Mdx } from '@/components/MdxComponents'
 
@@ -57,19 +62,30 @@ export default async function CareerPage({ params }: CareerProps) {
   }
 
   return (
-    <PageLayout>
-      <ContentWrapper>
-        <article className="py-6 prose dark:prose-invert">
-          <h1 className="mb-2">{career.title}</h1>
-          {career.description && (
-            <p className="text-xl mt-0 text-slate-700 dark:text-slate-200">
-              {career.description}
-            </p>
-          )}
-          <hr className="my-4" />
-          <Mdx code={career.body.code} />
-        </article>
-      </ContentWrapper>
+    <PageLayout ticker={false} footer={false}>
+      <TwoColumnsFullScreenContainer
+        left={
+          <>
+            <Typography as="h1" variant="h2" className="text-black">
+              {career.title}
+            </Typography>
+            <Link href="/contact">
+              <Button color="secondary" size="lg" className="mt-8">
+                Jetzt bewerben
+              </Button>
+            </Link>
+          </>
+        }
+        right={
+          <article className="py-6 text-white">
+            {career.description && (
+              <p className="text-xl mt-0">{career.description}</p>
+            )}
+            <hr className="my-4" />
+            <Mdx code={career.body.code} />
+          </article>
+        }
+      />
     </PageLayout>
   )
 }

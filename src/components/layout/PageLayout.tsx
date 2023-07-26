@@ -11,27 +11,28 @@ export const PageLayout = ({
   children,
   theme,
   ticker = true,
+  footer = true,
 }: {
   children: ReactNode
   theme?: PageTheme
   ticker?: boolean
+  footer?: boolean
 }) => {
   const pageTheme = theme ? theme : PAGE_THEME.dark
 
   return (
-    <div
-      data-theme={pageTheme}
-      className="bg-background text-foreground"
-    >
+    <div data-theme={pageTheme} className="bg-background text-foreground">
       <Header theme={pageTheme} />
 
       <main className="mb-16">{children}</main>
 
-      {ticker ? <Ticker theme={pageTheme} /> : null}
+      {ticker && <Ticker theme={pageTheme} />}
 
-      <ContentWrapper>
-        <Footer />
-      </ContentWrapper>
+      {footer && (
+        <ContentWrapper>
+          <Footer />
+        </ContentWrapper>
+      )}
     </div>
   )
 }
