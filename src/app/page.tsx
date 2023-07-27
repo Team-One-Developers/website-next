@@ -42,6 +42,7 @@ const Home = () => {
       <Hero
         imageNode={
           <Image
+            priority
             src="/images/optimized/hero_optimized.webp"
             alt="Picture of a man at a laptop"
             layout="fullWidth"
