@@ -6,7 +6,6 @@ import { Space_Grotesk } from "next/font/google"
 import localFont from "next/font/local"
 
 // do it this way to prevent Error: Cant access lexical declaration before initialitazion
-import { Cookie } from "../components/layout/Cookie"
 import { siteConfig } from "@/config/siteConfig"
 import { Metadata } from "next"
 import { Analytics } from "@vercel/analytics/react"
@@ -91,7 +90,6 @@ export default function RootLayout({
 		<html lang="en">
 			<body className={twJoin(ABCD.variable, SpaceFrotesk.variable, "bg-black")}>
 				{children}
-				<Cookie />
 				<Analytics />
 			</body>
 		</html>
