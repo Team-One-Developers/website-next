@@ -6,6 +6,7 @@ import useInterval from "use-interval"
 import { useMediaQuery } from "usehooks-ts"
 
 import Typography from "../atoms/Typography"
+import { motion } from "framer-motion"
 
 const LINE_HEIGHTS = {
 	small: {
@@ -14,7 +15,7 @@ const LINE_HEIGHTS = {
 	},
 	big: {
 		className: "h-[3.6375rem] md:h-[5.335rem] lg:h-[10.67rem]",
-		value: { mobile: 3.6375, md: 5.7, lg: 10.67 },
+		value: { mobile: 3.6375, md: 5.8, lg: 10.67 },
 	},
 }
 
@@ -25,9 +26,7 @@ type ChangingWordsProps = {
 	smallVariant?: boolean
 }
 
-export const ChangingWords = (props: ChangingWordsProps) => {
-	const { words, delay = 1500, className, smallVariant = false } = props
-
+export const ChangingWords = ({ words, delay = 1500, className, smallVariant = false }: ChangingWordsProps) => {
 	const isMd = useMediaQuery("(min-width: 768px)")
 	const isLg = useMediaQuery("(min-width: 992px)")
 
@@ -51,7 +50,7 @@ export const ChangingWords = (props: ChangingWordsProps) => {
 		: `${listItemsRefs.current[activeListItemIndex]?.querySelector("span")?.getBoundingClientRect().width}px`
 
 	const wordList = (
-		<ul
+		<motion.ul
 			className={twJoin("pointer-events-none overflow-hidden", height.className)}
 			style={{
 				width: width,
@@ -60,24 +59,23 @@ export const ChangingWords = (props: ChangingWordsProps) => {
 			ref={listRef}
 		>
 			{words.map((wordString, index) => (
-				<li
+				<motion.li
 					className="whitespace-nowrap"
-					style={{
-						transform: isLg
-							? `translateY(${calculateScrollOffset(activeListItemIndex, height.value.lg as number)}`
+					animate={{
+						y: isLg
+							? calculateScrollOffset(activeListItemIndex, height.value.lg as number)
 							: isMd
-							? `translateY(${calculateScrollOffset(activeListItemIndex, height.value.md)}`
-							: `translateY(${calculateScrollOffset(activeListItemIndex, height.value.lg)})`,
-
-						transition: "transform 500ms",
+							? calculateScrollOffset(activeListItemIndex, height.value.md)
+							: calculateScrollOffset(activeListItemIndex, height.value.lg),
 					}}
+					transition={{ duration: 0.5 }}
 					key={index}
-					ref={(listItemRef: any) => listItemsRefs.current.push(listItemRef)}
+					ref={(listItemRef) => listItemsRefs.current.push(listItemRef)}
 				>
 					<span>{wordString}</span>
-				</li>
+				</motion.li>
 			))}
-		</ul>
+		</motion.ul>
 	)
 
 	return (
