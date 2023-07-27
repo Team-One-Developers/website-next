@@ -41,7 +41,20 @@ export const Career = defineDocumentType(() => ({
   computedFields: computedFields,
 }))
 
+export const Happen = defineDocumentType(() => ({
+  name: 'Happen',
+  filePathPattern: 'happen/**/*.mdx',
+  contentType: 'mdx',
+  fields: {
+    title: { type: 'string', required: true },
+    author: { type: 'string', required: false },
+    // draft, to review, reviewed, show/done
+    status: { type: 'string', required: true },
+    tags: { type: 'list', of: { type: 'string' }, required: false },
+  },
+}))
+
 export default makeSource({
   contentDirPath: './src/content',
-  documentTypes: [Blog, Career],
+  documentTypes: [Blog, Career, Happen],
 })
