@@ -2,14 +2,14 @@ import React, { forwardRef } from 'react'
 import { tv, VariantProps } from 'tailwind-variants'
 
 export const buttonVariants = tv({
-  base: 'w-full cursor-pointer rounded-sm border-none px-[22px] py-4 font-spacegrotesk uppercase tracking-normal outline-none md:w-auto',
+  base: 'w-full rounded-sm cursor-pointer border-none hover:shadow-t1glow px-[22px] py-4 font-spacegrotesk uppercase tracking-normal outline-none md:w-auto',
   variants: {
     color: {
-      primary: 'bg-primary text-t1-darkGray',
-      secondary: 'bg-black text-primary',
+      primary: 'bg-primary text-t1-darkGray hover:brightness-[110%]',
+      secondary: 'bg-black text-primary hover:brightness-[140%] ',
     },
     size: {
-      md: 'text-[14px] md:px-[14px] md:py-[10px]',
+      md: 'text-[14px] md:px-[14px] md:py-[10px] leading-[100%]',
       lg: 'text-[16px] md:px-5 md:py-3',
     },
   },
