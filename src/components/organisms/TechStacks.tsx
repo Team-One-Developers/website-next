@@ -82,7 +82,7 @@ export const TechStacks = () => {
                     Datengetriebene Produkte erfordern neben skalierbaren und
                     automatisierten Infrastrukturen hochperformante
                     Backendsysteme, welche nicht nur der Komplexität und Dynamik
-                    der Geschätsprozesse gerecht werden müssen, sondern auch
+                    der Geschäftsprozesse gerecht werden müssen, sondern auch
                     höchste Standards in den Bereichen Daten- &
                     Informationssicherheit erfüllen. Wir unterstützen bei der
                     Entwicklung modernster Backendplatform mit
