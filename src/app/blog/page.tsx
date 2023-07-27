@@ -21,6 +21,7 @@ const Blog = () => {
     image,
     imageAlt,
     swapped,
+    slug,
   }: {
     title: string
     subtitle: string
@@ -28,6 +29,7 @@ const Blog = () => {
     image: string
     imageAlt: string
     swapped?: boolean
+    slug: string
   }) => {
     return (
       <div className="grid h-[400px] grid-flow-row grid-cols-[1fr_1fr]">
@@ -62,7 +64,7 @@ const Blog = () => {
           <p className="text-bold text-xl">{title}</p>
           <p className="mt-4 text-base">{subtitle}</p>
           <Link
-            href="/blog/autogpt"
+            href={slug}
             className="text-bold mt-8 self-start rounded-[3px] border-none bg-primary px-[14px] py-[10px] font-spacegrotesk text-base leading-[14px] text-black shadow-none outline-none"
           >
             Read more
@@ -99,6 +101,7 @@ const Blog = () => {
                   title={blog.title}
                   date={blog.date}
                   subtitle={blog.description}
+                  slug={blog.slug}
                   image="/images/t1d_nov22_202.jpg"
                   imageAlt="lazy man picture"
                 />
