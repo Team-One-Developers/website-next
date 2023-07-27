@@ -39,14 +39,7 @@ export const metadata: Metadata = {
 		template: `%s - ${siteConfig.name}`,
 	},
 	description: siteConfig.description,
-	keywords: ["Software Projekte", "Next.js", "React", "Tailwind CSS"],
-	authors: [
-		{
-			name: "shadcn",
-			url: "https://shadcn.com",
-		},
-	],
-	creator: "shadcn",
+	keywords: ["Consulting", "Tech Consulting", "Software Projekte", "Next.js", "React", "Tailwind CSS"],
 	themeColor: [
 		{ media: "(prefers-color-scheme: light)", color: "white" },
 		{ media: "(prefers-color-scheme: dark)", color: "black" },
