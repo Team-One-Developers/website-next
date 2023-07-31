@@ -1,6 +1,10 @@
 TODO/Questions
 
-- Structured Data Blog/Career/Logo
+- blog overview mobile
 - lighthouse (aXemonitor chrome) scores
 
-Häppchen von der Ignite session aufschreiben
+Lighhouse/Axe:
+
+- Accesiblity
+  - contrast changing words zB
+- CSP ?

@@ -87,13 +87,13 @@ const Blog = () => {
             </Typography>
           </div>
         </div>
-        <div className="grid w-full grid-flow-row grid-cols-[1fr_3fr] gap-8 p-24">
+        <div className="lg:grid w-full grid-flow-row grid-cols-[1fr_3fr] gap-8 p-24">
           <div>
             <div className="sticky top-[140px] rounded border border-primary p-4">
               <h2 className="text-2xl">Filter</h2>
             </div>
           </div>
-          <div className="flex flex-col gap-12 px-24">
+          <div className="flex flex-col gap-12 mt-12 lg:mt-0 lg:px-24">
             {allBlogs.map((blog, index) => {
               return (
                 <BlogArticle

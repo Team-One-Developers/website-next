@@ -4,6 +4,7 @@ import { blurhashToCssGradientString } from '@unpic/placeholder'
 import { DancingFigures } from '@/components/atoms/DancingFigures'
 import { Heading } from '@/components/atoms/Heading'
 import { Image } from '@/components/atoms/Image'
+import StructuredData from '@/components/atoms/StructuredData'
 import Typography from '@/components/atoms/Typography'
 
 import { Companies } from '@/components/molecules/Companies'
@@ -20,8 +21,23 @@ import { FullWidthSectionContainer } from '@/components/layout/FullWidthSectionC
 import { PageLayout } from '@/components/layout/PageLayout'
 
 const Home = () => {
+  const structuredData = {
+    '@type': 'Organization',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Stuttgart',
+      addressRegion: 'BW',
+      postalCode: '70174',
+      streetAddress: 'Hospitalstraße 35',
+    },
+    email: 'kontak@t1dev.de',
+    legalName: 'Team One Developers GmbH',
+    slogan: 'Wir entwickeln die Zukunft des Web',
+  }
+
   return (
     <PageLayout theme={PAGE_THEME.light}>
+      <StructuredData data={structuredData} />
       <ContentWrapper className="mt-20">
         <FullWidthSectionContainer className="mt-0">
           <Heading

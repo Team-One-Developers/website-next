@@ -33,6 +33,7 @@ const Career = () => {
       <ContentWrapper className="mt-8 lg:flex lg:gap-8">
         <ImageMask className="mt-8 lg:basis-[50%]">
           <Image
+            priority
             src="/images/optimized/t1d_kai_knoerzer_079_optimized.webp"
             alt="A person smiling at the camera holding a trophy"
             width={960}

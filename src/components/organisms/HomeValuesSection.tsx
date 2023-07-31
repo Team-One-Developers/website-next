@@ -59,7 +59,6 @@ export const HomeValuesSection = () => {
             headlineClassName="mb-[2.875rem]"
             linkLabel="Karriere"
             link="/career"
-            linkVariant="secondary"
           >
             <Image
               src="/images/icons/world-1.svg"

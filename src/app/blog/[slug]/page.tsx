@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation'
 import { allBlogs } from 'contentlayer/generated'
 import { format, parseISO } from 'date-fns'
 
+import StructuredData from '@/components/atoms/StructuredData'
 import Typography from '@/components/atoms/Typography'
 
 import ContentWrapper from '@/components/layout/ContentWrapper'
@@ -54,6 +55,17 @@ export default async function BlogPage({ params }: BlogProps) {
     notFound()
   }
 
+  const structuredData = {
+    '@type': 'BlogPost',
+    title: blog.title,
+    // Description is a paragraph above a list with all requirements
+    description: `<p>${blog.description}</p>`,
+    postingOrganization: {
+      '@type': 'Organization',
+      name: 'Team One Developers GmbH',
+    },
+  }
+
   const RelatedArticle = ({
     title,
     subtitle,
@@ -78,6 +90,7 @@ export default async function BlogPage({ params }: BlogProps) {
 
   return (
     <PageLayout>
+      <StructuredData data={structuredData} />
       <ContentWrapper>
         <div className="w-full rounded p-24">
           <div className="max-w-[80%]">
