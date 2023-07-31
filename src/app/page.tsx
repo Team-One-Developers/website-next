@@ -71,7 +71,7 @@ const Home = () => {
         overlayNode={
           <ChangingWords
             words={['software', 'agile', 'human', 'team']}
-            className="text-white"
+            className="text-white drop-shadow-[0px_0px_8px_black]"
           />
         }
         overlayPosition="offsetTop"
