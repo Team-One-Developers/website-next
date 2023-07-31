@@ -1,10 +1,11 @@
 import { Metadata } from 'next'
+import Link from 'next/link'
 import { allCareers } from 'contentlayer/generated'
 
+import { Button } from '@/components/atoms/Button'
 import { Heading } from '@/components/atoms/Heading'
 import { Image } from '@/components/atoms/Image'
 import { ImageMask } from '@/components/atoms/ImageMask'
-import { Link } from '@/components/atoms/Link'
 import Typography from '@/components/atoms/Typography'
 
 import { CareerElement } from '@/components/molecules/CareerElement'
@@ -101,8 +102,8 @@ const Career = () => {
             seid, dann meldet euch einfach initiativ – am besten schon mit
             aussagekräftigen Bewerbungsunterlagen.
           </Typography>
-          <Link variant="secondary" href="/contact">
-            Initiativ bewerben
+          <Link href="/contact">
+            <Button>Initiativ bewerben</Button>
           </Link>
         </div>
       </ContentWrapper>
