@@ -123,7 +123,7 @@ export default async function CareerPage({ params }: CareerProps) {
           </div>
         }
         right={
-          <article className="py-6 text-white">
+          <article className="py-6 text-white prose">
             {career.description && (
               <p className="text-xl mt-0">{career.description}</p>
             )}
