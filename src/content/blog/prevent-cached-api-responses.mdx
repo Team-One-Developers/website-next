@@ -1,0 +1,63 @@
+---
+title: Prevent cached API responses
+descriptionShort: How Cloudfront caching fooled me into thinking I had a MongoDB race condition.
+descriptionLong: "Unintentional Cloudfront caching fooled me into thinking that a MongoDB race condition caused outdated data being displayed in my frontend."
+author: Samuel Mergenthaler
+status: PUBLISHED
+date: "2023-09-20"
+length: BLOG
+language: English
+cta: CAREER
+tags:
+    - Cloud
+    - AWS
+    - MongoDB
+category: SOFTWARE ENGINEERING
+---
+
+## In short
+
+Add the header `Cache-Control: no-store` to your API responses to avoid stale data being served to clients – not all backend frameworks do it for you (e.g. Spring Boot does, Nest.js doesn't). The rest of the article explains what led me to this conclusion and how I solved it with Nest.js.
+
+## Stale data in my frontend
+
+In my React frontend, I'm first sending an HTTP request to my Nest.js backend that updates a document in MongoDB, immediately followed by a second HTTP request to fetch the updated document. But it still returned the old document, as it was before the update.
+
+Note: I know I could also make the write-request return the updated data, but in my specific case, triggering a separate read-request simplifies my frontend-setup.
+
+## Not a database race condition
+
+I suspected that the MongoDB read operation of the second request was being run before the write operation of the previous request had even finished. I spend lots of time playing around with MongoDB read- and write-concern and read- and write-preference. To save you some time: that's not the problem here if you (like me) use an ordinary MongoDB replica set with three nodes. The default MongoDB driver settings make your write- and read operations always talk to your primary MongoDB node, therefore you can very well immediately read your own writes in a second request.
+
+## Prevent cached API responses
+
+In my AWS Cloud infrastructure (defined via Terraform), Cloudfront was configured to cache responses of my API (by default for up to 5 minutes):
+
+```hcl
+resource "aws_cloudfront_distribution" "cloudfront_distribution" {
+  # ...
+  default_cache_behavior {
+    # ...
+    cached_methods   = ["GET"]
+  }
+}
+```
+
+This had never been a problem with my Spring Boot backends, so what was my Nest.js backend doing differently? I compared responses from Spring Boot with responses from Nest.js and found that the header `Cache-Control: no-store` was missing. This header instructs Cloudfront (or any other place your response may travel through) to not cache the response. Spring Boot adds such a header by default, Nest.js doesn't. To add this header to every response in Nest.js, I'm now using a middleware:
+
+```typescript
+import { Injectable, NestMiddleware } from '@nestjs/common'
+import { NextFunction, Request, Response } from 'express'
+
+@Injectable()
+export class PreventCachedResponsesMiddleware implements NestMiddleware {
+    use(req: Request, res: Response, next: NextFunction) {
+        res.setHeader('Cache-Control', 'no-store')
+        next()
+    }
+}
+```
+
+Note that I'm intentionally not using a `NestInterceptor` for this, because interceptors are not applied in case of e.g. a not-found error.
+
+Now, Cloudfront doesn't cache my API responses anymore, so my frontend always displays up-to-date data instead of outdated Cloudfront cache data.

@@ -1,0 +1,68 @@
+---
+title: Git-Delta
+author: MrTea
+descriptionShort: Beautiful terminal diff
+descriptionLong: Beautiful terminal diff
+status: PUBLISHED
+heroImage: /images/optimized/gnu-parallel-delta-blurred.webp
+length: BLOG
+tags:
+    - Git
+language: Englisch
+category: SOFTWARE ENGINEERING
+date: "2023-11-08"
+---
+
+If you are using _git_ and you are using it on the terminal, here is a quick tip to potentially make your life easier. Have a look at this diff:
+
+![Some of my notes about working with GIT](/images/gnu-parallel-delta.webp)
+
+If that is what you want, you can install [delta](https://dandavison.github.io/delta/side-by-side-view.html), a helper for git that functions diff filter. Installation works via package manager like brew or pacman or choco and more, or you can just download the pre-built binary from GitHub. If installed, you need to instruct git to use it by updating your _.gitconfig_ in your home folder:
+
+```
+[core]
+    pager = delta
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+    navigate = true    # use n and N to move between diff sections
+    light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+[merge]
+    conflictstyle = diff3
+[diff]
+    colorMoved = default
+```
+
+And this is technically it. Additionally, _delta_ provides a lot of features that you can configure. Check out the documentation or give mine a try:
+
+```
+[core]
+    pager = delta
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+    navigate = true    # use n and N to move between diff sections
+    light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+    features = unobtrusive-line-numbers decoration side-by-side diff-highlight diff-so-fancy
+    whitespace-error-style = 22 reverse
+[delta "unobtrusive-line-numbers"]
+    line-numbers = true
+    line-numbers-minus-style = "#444444"
+    line-numbers-zero-style = "#444444"
+    line-numbers-plus-style = "#444444"
+    line-numbers-left-format = "{nm:>4}┊"
+    line-numbers-right-format = "{np:>4}│"
+    line-numbers-left-style = blue
+    line-numbers-right-style = blue
+[delta "decorations"]
+    commit-decoration-style = bold yellow box ul
+    file-style = bold yellow ul
+    file-decoration-style = none
+    hunk-header-decoration-style = yellow box
+[merge]
+    conflictstyle = diff3
+[diff]
+    colorMoved = default
+```
+
+With this, you might enjoy using git even more!

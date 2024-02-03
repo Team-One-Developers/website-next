@@ -1,2 +1,2 @@
-export { Technologies } from './technologies'
-export { SiteMetadata } from './siteMetadata'
+export { SiteMetadata } from "./siteMetadata"
+export { Technologies } from "./technologies"
