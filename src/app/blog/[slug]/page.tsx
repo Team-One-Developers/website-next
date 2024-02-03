@@ -19,7 +19,6 @@ import { Metadata } from "next"
 import { notFound } from "next/navigation"
 import "../../../styles/headings.css"
 
-
 interface BlogProps {
     params: {
         slug: string
@@ -101,13 +100,13 @@ export default async function BlogPage({ params }: BlogProps) {
                             alt="Hero Background Image"
                             placeholder="blur"
                             fill
-                            className="absolute top-0 left-0"
+                            className="absolute left-0 top-0"
                         />
-                        <div className="absolute mt-0 top-0 left-0 w-full h-full bg-black opacity-70" />
+                        <div className="absolute left-0 top-0 mt-0 size-full bg-black opacity-70" />
                     </div>
                 )}
-                <Section className="relative -mt-[75px] py-[180px] md:py-[180px] pb-[80px]">
-                    <div className="max-w-[80%] 4xl:max-w-[1920px] flex flex-col gap-4 relative">
+                <Section className="relative -mt-[75px] py-[180px] pb-[80px] md:py-[180px]">
+                    <div className="relative flex max-w-[80%] flex-col gap-4 4xl:max-w-[1920px]">
                         <Typography as="h1" variant="h1">
                             {blog.title}
                         </Typography>
@@ -117,7 +116,7 @@ export default async function BlogPage({ params }: BlogProps) {
 
                         <Tags blog={blog} size="lg" />
                     </div>
-                    <div className="flex items-center relative mt-4">
+                    <div className="relative mt-4 flex items-center">
                         <ProfilePicture imgSrc={author.profileImg} objectFit={author.profileImgObjectFit} />
                         <div className="ml-4">
                             <Typography as="p" variant="h5">
@@ -134,7 +133,7 @@ export default async function BlogPage({ params }: BlogProps) {
                 </Section>
             </div>
             <Section>
-                <div className="flex flex-col gap-24 lg:grid w-full lg:gap-24 grid-rows-auto lg:py-4 4xl:px-0 pt-0 xl:grid-cols-[600px_1fr] 2xl:grid-cols-[700px_1fr] 3xl:grid-cols-[0.8fr_800px_1fr]">
+                <div className="grid-rows-auto flex w-full flex-col gap-24 pt-0 lg:grid lg:gap-24 lg:py-4 xl:grid-cols-[600px_1fr] 2xl:grid-cols-[700px_1fr] 3xl:grid-cols-[0.8fr_800px_1fr] 4xl:px-0">
                     {blog.toc && (
                         <TOC blog={blog} className="xl:col-start-2 xl:row-start-1 3xl:col-start-1 3xl:row-start-1 " />
                     )}
@@ -161,7 +160,7 @@ export default async function BlogPage({ params }: BlogProps) {
                 </Section>
             )}
             <Section>
-                <div className="flex flex-col gap-4 mt-32">
+                <div className="mt-32 flex flex-col gap-4">
                     <Typography as="h3" variant="h3">
                         Verwandte Artikel
                     </Typography>

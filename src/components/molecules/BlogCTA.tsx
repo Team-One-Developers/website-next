@@ -62,20 +62,20 @@ export const BlogCTA = ({ variant, className }: BlogCTAProps) => {
         <div className={twMerge("relative p-8 z-0 rounded-md", className)}>
             <Image
                 src={CTA_BG}
-                className="absolute top-0 -z-10 left-0 opacity-[80%] rounded-md"
+                className="absolute left-0 top-0 -z-10 rounded-md opacity-[80%]"
                 alt="Background Image"
                 fill
                 placeholder="blur"
             />
-            <Link href={BlogCTAValues[variant].link} className="absolute top-0 left-0 w-full h-full z-10" />
-            <div className="flex items-center mb-4">
+            <Link href={BlogCTAValues[variant].link} className="absolute left-0 top-0 z-10 size-full" />
+            <div className="mb-4 flex items-center">
                 <Icon
                     name={BlogCTAValues[variant].icon}
                     height={BlogCTAValues[variant].iconSize}
                     width={BlogCTAValues[variant].iconSize}
                     className="mr-2"
                 />
-                <Typography className="text-primary uppercase" variant="description">
+                <Typography className="uppercase text-primary" variant="description">
                     {BlogCTAValues[variant].subtitle}
                 </Typography>
             </div>
@@ -89,7 +89,7 @@ export const BlogCTA = ({ variant, className }: BlogCTAProps) => {
                     employmentType={allCareers[0].employmentType}
                     schedule={allCareers[0].schedule}
                     location={allCareers[0].location}
-                    className="text-white lg:w-1/2 m-0 mb-6"
+                    className="m-0 mb-6 text-white lg:w-1/2"
                 />
             ) : (
                 <Typography className="m-0 mb-6" variant="paragraph">

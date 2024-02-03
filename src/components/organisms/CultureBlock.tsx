@@ -18,7 +18,7 @@ export const CultureBlock = () => {
                             Dass es schwer ist, Tech-Talente für sich zu gewinnen ist kein Geheimnis mehr. Uns
                             beschäftigt daher eine Frage so intensiv wie kaum eine andere:
                         </Typography>
-                        <Typography variant="h3" className="text-white mt-4 md:mt-0">
+                        <Typography variant="h3" className="mt-4 text-white md:mt-0">
                             Was können wir als Tech-Unternehmen tun, um das attraktivste Arbeitsumfeld zu schaffen, das
                             wir selbst je gesehen haben?
                             <Icon name="cup" className="-mt-2 inline" />
@@ -42,7 +42,7 @@ export const CultureBlock = () => {
                             </div>
                         }
                     >
-                        <ImageMask className="w-full aspect-[0.75]">
+                        <ImageMask className="aspect-[0.75] w-full">
                             <Image
                                 src={Tangled}
                                 alt="A person holding a computer mouse. The cable is heavily tangled up. The person looks surprised into the camera."
@@ -61,10 +61,10 @@ export const CultureBlock = () => {
                 left={null}
                 right={
                     <>
-                        <div className="mb-8 w-full flex flex-row gap-4">
+                        <div className="mb-8 flex w-full flex-row gap-4">
                             <Icon name="globe" className="mt-1 lg:mt-2 " />
                             <Typography
-                                className="text-white font-abcdiatype leading-150 flex-grow flex-shrink basis-0"
+                                className="shrink grow basis-0 font-abcdiatype leading-150 text-white"
                                 variant="h4"
                             >
                                 Die wichtigsten Antworten auf diese Frage sind für uns: Werte zu definieren, Werte zu
@@ -73,10 +73,10 @@ export const CultureBlock = () => {
                                 machen.
                             </Typography>
                         </div>
-                        <div className="mb-8 w-full flex flex-row gap-4">
+                        <div className="mb-8 flex w-full flex-row gap-4">
                             <Icon name="person_small" className="mt-1 lg:mt-2" />
                             <Typography
-                                className="text-white font-abcdiatype leading-150 flex-grow flex-shrink basis-0"
+                                className="shrink grow basis-0 font-abcdiatype leading-150 text-white"
                                 variant="h4"
                             >
                                 Und zu guter Letzt: Individuelle Rahmenbedingungen zu schaffen. Diese Antworten liefern
@@ -94,7 +94,7 @@ export const CultureBlock = () => {
             <TwoColumnsSectionContainer
                 className="pt-0"
                 left={
-                    <div className="relative w-full aspect-[0.75]">
+                    <div className="relative aspect-[0.75] w-full">
                         <Image
                             src="/images/dancers/dancing-hearts.svg"
                             alt="moving hearts"
@@ -102,7 +102,7 @@ export const CultureBlock = () => {
                             width={75}
                             className="absolute bottom-0 z-30"
                         />
-                        <ImageMask className="w-full h-full md:w-auto relative aspect-[0.75]">
+                        <ImageMask className="relative aspect-[0.75] size-full md:w-auto">
                             <Image src={Dog} alt="Man with a dog smiling at the camera" fill placeholder="blur" />
                         </ImageMask>
                     </div>
@@ -115,12 +115,9 @@ export const CultureBlock = () => {
             <TwoColumnsSectionContainer
                 className="md:mt-4"
                 left={
-                    <div className="mb-8 w-full flex flex-row gap-4">
+                    <div className="mb-8 flex w-full flex-row gap-4">
                         <Icon name="humancentered" className="mt-1 lg:mt-2" />
-                        <Typography
-                            className="text-white font-abcdiatype leading-150 flex-grow flex-shrink basis-0"
-                            variant="h4"
-                        >
+                        <Typography className="shrink grow basis-0 font-abcdiatype leading-150 text-white" variant="h4">
                             Menschenzentriert zu arbeiten bedeutet für uns natürlich auch, kundenzentriert zu arbeiten.
                             Als Dienstleister, der wir sind, heißt das natürlich in allererster Linie, ein klares
                             Verständnis für unsere eigenen Kunden und deren Herausforderungen in der digitalen

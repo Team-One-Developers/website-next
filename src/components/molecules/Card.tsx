@@ -9,14 +9,14 @@ export const Card = ({ subTitle, title, text }: { subTitle?: string; title: stri
             )}
         >
             {subTitle && (
-                <span className="font-spacegrotesk text-primary font-medium not-italic text-xs leading-110 tracking-aBitTighter uppercase min-w-[7%]">
+                <span className="tracking-aBitTighter min-w-[7%] font-spacegrotesk text-xs font-medium uppercase not-italic leading-110 text-primary">
                     {subTitle}
                 </span>
             )}
             <Typography
                 as="h3"
                 variant="h3"
-                className="uppercase font-spacegrotesk group-hover:text-inherit lg:max-w-md w-full"
+                className="w-full font-spacegrotesk uppercase group-hover:text-inherit lg:max-w-md"
             >
                 {title}
             </Typography>

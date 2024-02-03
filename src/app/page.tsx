@@ -32,14 +32,14 @@ const Home = () => {
     return (
         <PageLayout theme={PAGE_THEME.light}>
             <StructuredData data={structuredData} />
-            <Section className="">
-                <Typography as="h1" variant="h1" className="max-w-[790px] tracking-aBitTighter font-medium">
+            <Section>
+                <Typography as="h1" variant="h1" className="tracking-aBitTighter max-w-[790px] font-medium">
                     WIR <br /> ENTWICKELN <br /> DIE ZUKUNFT <br /> DES WEB.
                 </Typography>
             </Section>
 
             <ChangingWords
-                className="justify-start hidden p-4 text-t1-darkGray sm:mt-24 sm:flex"
+                className="hidden justify-start p-4 text-t1-darkGray sm:mt-24 sm:flex"
                 variant="description"
                 type="section"
                 words={["Scroll", "Move Smoothly"]}
@@ -51,7 +51,7 @@ const Home = () => {
                     <ChangingWords
                         variant="h1"
                         words={["software", "agile", "human", "team"]}
-                        className="text-white text-6xl md:text-8xl lg:text-10xl"
+                        className="text-6xl text-white md:text-8xl lg:text-10xl"
                     />
                 }
                 overlayPosition="offsetTop"
@@ -61,7 +61,7 @@ const Home = () => {
                 <figure className="mb-6 flex h-[129px] w-full justify-center text-primary md:hidden">
                     <DancingFigures />
                 </figure>
-                <Typography className="text-black normal-case font-normal" variant="h1">
+                <Typography className="font-normal normal-case text-black" variant="h1">
                     Wir sind Technologie-Experten und verstehen uns als integrativer Entwicklungs- & Beratungspartner in
                     komplexen Softwareprojekten.{" "}
                     <DancingFigures className="hidden h-16 px-4 py-0 align-middle text-primary md:inline" />

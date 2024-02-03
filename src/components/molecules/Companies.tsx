@@ -6,7 +6,7 @@ export const Companies = () => {
         <div className="bg-transparent">
             <div className="flex justify-center text-center">
                 <Typography
-                    className="uppercase before:content-['('] after:content-[':)'] before:tracking-[0.25rem] after:tracking-[0.25rem] md:-mt-9"
+                    className="uppercase before:tracking-[0.25rem] before:content-['('] after:tracking-[0.25rem] after:content-[':)'] md:-mt-9"
                     as="h2"
                     variant="description"
                 >

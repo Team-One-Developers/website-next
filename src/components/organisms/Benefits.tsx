@@ -37,7 +37,7 @@ export const Benefits = () => {
                 onMouseLeave={() => setHoveredIndex(undefined)}
             >
                 <Icon name={iconName} height={36} width={36} />
-                <Typography className="mb-2 text-base text-primary mt-2 uppercase" as="h3" variant="subtitle">
+                <Typography className="my-2 text-base uppercase text-primary" as="h3" variant="subtitle">
                     {headline}
                 </Typography>
                 <Typography variant="paragraph" className="m-0 text-white">
@@ -77,7 +77,7 @@ export const Benefits = () => {
                 )}
             </div>
 
-            <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:basis-[50%]  lg:mt-0 xl:grid-cols-3">
+            <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:mt-0  lg:basis-[50%] xl:grid-cols-3">
                 <BenefitElement
                     index={0}
                     iconName="monitor"

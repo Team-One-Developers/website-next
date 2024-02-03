@@ -32,7 +32,7 @@ export const UxDesignMobile = ({ className }: { className: string }) => {
                     active ? "border-[#46ffad]" : "brightness-[35%]"
                 )}
             >
-                <div className="text-center font-spacegrotesk text-black box-border">{text}</div>
+                <div className="box-border text-center font-spacegrotesk text-black">{text}</div>
             </div>
         )
     }
@@ -43,7 +43,7 @@ export const UxDesignMobile = ({ className }: { className: string }) => {
 
     return (
         <div className={twJoin("transitionAll", className)}>
-            <div className="flex items-center gap-4 flex-col flex-nowrap mb-4">
+            <div className="mb-4 flex flex-col flex-nowrap items-center gap-4">
                 <Typography className="text-primary" variant="subtitle">
                     ( WE DEVELOP )
                 </Typography>
@@ -69,7 +69,7 @@ export const UxDesignMobile = ({ className }: { className: string }) => {
                 </div>
             </div>
 
-            <div className="grid-cols-2 grid-rows-2 sm:grid-cols-4 sm:grid-rows-1 mb-4 grid justify-center gap-x-0 gap-y-1 font-spacegrotesk uppercase text-muted">
+            <div className="mb-4 grid grid-cols-2 grid-rows-2 justify-center gap-x-0 gap-y-1 font-spacegrotesk uppercase text-muted sm:grid-cols-4 sm:grid-rows-1">
                 <CategoryButton category={UX_CATEGORIES.ux_design} />
 
                 <CategoryButton category={UX_CATEGORIES.application_development} />
@@ -80,14 +80,14 @@ export const UxDesignMobile = ({ className }: { className: string }) => {
             </div>
 
             <div className="flex justify-center">
-                <div className="w-full grid grid-cols-[1fr_1.5fr_1.5fr_1fr] grid-rows-[0.5fr_1fr_fr_1fr_0.5fr] gap-y-3 gap-x-3">
-                    <div className="flex justify-center items-center row-start-1 col-start-2 col-span-2">
-                        <div className="rounded-xl text-center w-1/3 z-10 text-white font-spacegrotesk uppercase text-xs py-[6px] px-3 border-2 border-[#21754f] bg-[rgb(6,25,17)]">
+                <div className="grid w-full grid-cols-[1fr_1.5fr_1.5fr_1fr] grid-rows-[0.5fr_1fr_fr_1fr_0.5fr] gap-3">
+                    <div className="col-span-2 col-start-2 row-start-1 flex items-center justify-center">
+                        <div className="z-10 w-1/3 rounded-xl border-2 border-[#21754f] bg-[rgb(6,25,17)] px-3 py-[6px] text-center font-spacegrotesk text-xs uppercase text-white">
                             Human Focused
                         </div>
                     </div>
 
-                    <BubbleContainer className="col-start-4 row-start-2 vertical-lr row-span-3">
+                    <BubbleContainer className="col-start-4 row-span-3 row-start-2 vertical-lr">
                         <Bubble
                             active={
                                 activeCategory === UX_CATEGORIES.ux_design || activeCategory === UX_CATEGORIES.ui_design
@@ -96,7 +96,7 @@ export const UxDesignMobile = ({ className }: { className: string }) => {
                         />
                     </BubbleContainer>
 
-                    <BubbleContainer className="row-start-2 col-start-1 row-span-3 vertical-lr justify-self-end">
+                    <BubbleContainer className="col-start-1 row-span-3 row-start-2 justify-self-end vertical-lr">
                         <Bubble
                             active={
                                 activeCategory === UX_CATEGORIES.ui_development ||
@@ -106,11 +106,11 @@ export const UxDesignMobile = ({ className }: { className: string }) => {
                         />
                     </BubbleContainer>
 
-                    <BubbleContainer className="row-start-2 col-start-2">
+                    <BubbleContainer className="col-start-2 row-start-2">
                         <Bubble active={activeCategory === UX_CATEGORIES.ux_design} text="Research & Insight" />
                     </BubbleContainer>
 
-                    <BubbleContainer className="row-start-2 col-start-3">
+                    <BubbleContainer className="col-start-3 row-start-2">
                         <Bubble
                             active={
                                 activeCategory === UX_CATEGORIES.ux_design || activeCategory === UX_CATEGORIES.ui_design
@@ -119,7 +119,7 @@ export const UxDesignMobile = ({ className }: { className: string }) => {
                         />
                     </BubbleContainer>
 
-                    <BubbleContainer className="row-start-3 col-start-2 col-span-2">
+                    <BubbleContainer className="col-span-2 col-start-2 row-start-3">
                         <Bubble
                             active={
                                 activeCategory === UX_CATEGORIES.ux_design ||
@@ -129,7 +129,7 @@ export const UxDesignMobile = ({ className }: { className: string }) => {
                             text="Interaction Design"
                         />
                     </BubbleContainer>
-                    <BubbleContainer className="row-start-4 col-start-2">
+                    <BubbleContainer className="col-start-2 row-start-4">
                         <Bubble
                             active={
                                 activeCategory === UX_CATEGORIES.application_development ||
@@ -139,12 +139,12 @@ export const UxDesignMobile = ({ className }: { className: string }) => {
                         />
                     </BubbleContainer>
 
-                    <BubbleContainer className="row-start-4 col-start-3">
+                    <BubbleContainer className="col-start-3 row-start-4">
                         <Bubble active={activeCategory === UX_CATEGORIES.application_development} text="Backend" />
                     </BubbleContainer>
 
-                    <div className="flex justify-center items-center row-start-5 col-start-2 col-span-2">
-                        <div className="rounded-xl text-center w-1/3 z-10 text-white font-spacegrotesk uppercase text-xs py-[6px] px-3 border-2 border-[#21754f] bg-[rgb(6,25,17)]">
+                    <div className="col-span-2 col-start-2 row-start-5 flex items-center justify-center">
+                        <div className="z-10 w-1/3 rounded-xl border-2 border-[#21754f] bg-[rgb(6,25,17)] px-3 py-[6px] text-center font-spacegrotesk text-xs uppercase text-white">
                             Tech Focused
                         </div>
                     </div>

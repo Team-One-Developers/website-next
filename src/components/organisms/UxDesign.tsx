@@ -159,7 +159,7 @@ export const UxDesign = ({ className }: { className: string }) => {
                     </div>
 
                     <div className="col-span-5 row-start-2 grid grid-cols-7 grid-rows-1 items-center justify-center text-white">
-                        <div className="z-10 w-[80%] rounded-xl border-[#21754f] border-2 bg-[rgb(6,25,17)] px-[12px] py-[6px] text-center font-spacegrotesk text-xs uppercase text-white">
+                        <div className="z-10 w-[80%] rounded-xl border-2 border-[#21754f] bg-[rgb(6,25,17)] px-[12px] py-[6px] text-center font-spacegrotesk text-xs uppercase text-white">
                             Human Focused
                         </div>
                         <BubbleContainer active={activeCategory === UX_CATEGORIES.ux_design}>
@@ -224,7 +224,7 @@ export const UxDesign = ({ className }: { className: string }) => {
                                 />
                             </ImageMask>
                         </BubbleContainer>
-                        <div className="z-10 w-[80%] rounded-xl border-[#21754f] border-2 bg-[rgb(6,25,17)] px-[12px] py-[6px] text-center font-spacegrotesk text-xs uppercase text-white">
+                        <div className="z-10 w-[80%] rounded-xl border-2 border-[#21754f] bg-[rgb(6,25,17)] px-[12px] py-[6px] text-center font-spacegrotesk text-xs uppercase text-white">
                             Tech Focused
                         </div>
                     </div>

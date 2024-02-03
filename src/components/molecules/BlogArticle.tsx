@@ -9,8 +9,8 @@ import Typography from "../atoms/Typography"
 export const BlogArticle = ({ blog }: { blog: Blog }) => {
     return (
         <Link href={blog.slug} className="w-full">
-            <article className="group relative bg-t1-darkGray rounded-md w-full cursor-pointer h-[500px] overflow-hidden">
-                <div className="absolute opacity-40 group-hover:opacity-70 duration-200 w-full h-1/2">
+            <article className="group relative h-[500px] w-full cursor-pointer overflow-hidden rounded-md bg-t1-darkGray">
+                <div className="absolute h-1/2 w-full opacity-40 duration-200 group-hover:opacity-70">
                     <Image
                         src={
                             blog.heroImage
@@ -21,7 +21,7 @@ export const BlogArticle = ({ blog }: { blog: Blog }) => {
                         fill
                     />
                 </div>
-                <div className="p-3 relative flex flex-col gap-2 h-1/2 justify-between">
+                <div className="relative flex h-1/2 flex-col justify-between gap-2 p-3">
                     <Tags blog={blog} color="primary" category={true} />
 
                     <div className="flex flex-col gap-2">
@@ -33,14 +33,14 @@ export const BlogArticle = ({ blog }: { blog: Blog }) => {
                         </Typography>
                     </div>
                 </div>
-                <div className="text-white group-hover:text-black group-hover:bg-primary flex flex-col justify-between h-1/2 ease-in-out duration-200 p-3 rounded-b-md">
+                <div className="flex h-1/2 flex-col justify-between rounded-b-md p-3 text-white duration-200 ease-in-out group-hover:bg-primary group-hover:text-black">
                     <Typography as="p" variant="paragraph" className="">
                         {blog.descriptionLong}
                     </Typography>
 
                     <Button
                         color="primary"
-                        className="group-hover:bg-black group-hover:text-primary ease-in-out duration-200"
+                        className="duration-200 ease-in-out group-hover:bg-black group-hover:text-primary"
                     >
                         Read more
                     </Button>

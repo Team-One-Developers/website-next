@@ -32,10 +32,10 @@ export const HomeHumanSection = () => {
                 />
                 <ImageMask
                     ref={culturePictureRef}
-                    className="lg:max-w-[50%] w-full relative  lg:-mt-[100px] aspect-[0.75]"
+                    className="relative aspect-[0.75] w-full  lg:-mt-[100px] lg:max-w-[50%]"
                 >
                     <figure
-                        className="w-full h-full"
+                        className="size-full"
                         style={{
                             transition: "500ms",
                             transform: culturePictureInView ? "scale(1.05)" : ""

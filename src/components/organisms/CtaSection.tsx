@@ -35,7 +35,7 @@ export const CtaSection = (props: CtaSectionProps) => {
     return (
         <section className={className}>
             {subtitleText && (
-                <div className="flex items-center mb-4">
+                <div className="mb-4 flex items-center">
                     {icon}
                     <Typography className="text-black" variant="description">
                         {subtitleText}

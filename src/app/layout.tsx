@@ -1,5 +1,6 @@
 import { siteConfig } from "@/config/siteConfig"
 import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Metadata } from "next"
 import { Space_Grotesk } from "next/font/google"
 import localFont from "next/font/local"
@@ -24,7 +25,7 @@ const ABCD = localFont({
     display: "swap"
 })
 
-const SpaceFrotesk = Space_Grotesk({
+const SpaceGrotesk = Space_Grotesk({
     subsets: ["latin"],
     variable: "--font-SpaceGrotesk",
     display: "swap"
@@ -73,10 +74,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
-        <html lang="en">
-            <body className={twJoin(ABCD.variable, SpaceFrotesk.variable, "bg-black")}>
+        <html lang="de">
+            <body className={twJoin(ABCD.variable, SpaceGrotesk.variable, "bg-black")}>
                 {children}
                 <Analytics />
+                <SpeedInsights />
             </body>
         </html>
     )

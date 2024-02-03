@@ -28,12 +28,12 @@ const Contact = () => {
                                 alt="A person in a T-Rex costume with an inflated cell phone is standing in an office. They are pretending to be on a call."
                                 width={460}
                                 height={580}
-                                placeholder="blur" 
+                                placeholder="blur"
                             />
                         </ImageMask>
                     </div>
                     <div className={"flex grow-[2] flex-col gap-8 p-4"}>
-                        <Typography className="-mt-3 mb-0 leading-140 font-normal" variant="h3">
+                        <Typography className="-mt-3 mb-0 font-normal leading-140" variant="h3">
                             Team One Developers GmbH <br />
                             Hospitalstraße 35 <br />
                             70174 Stuttgart

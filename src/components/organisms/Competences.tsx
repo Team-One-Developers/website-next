@@ -10,17 +10,17 @@ export const Competences = () => {
                     "group p-8 lg:flex-row lg:gap-8  flex flex-col rounded-lg hover:text-t1-darkGray hover:bg-primary bg-t1-darkGray mb-4 text-white "
                 )}
             >
-                <span className="font-spacegrotesk font-medium not-italic text-xs leading-110 tracking-aBitTighter uppercase min-w-[7%]">
+                <span className="tracking-aBitTighter min-w-[7%] font-spacegrotesk text-xs font-medium uppercase not-italic leading-110">
                     ( 0{count} / 03 )
                 </span>
                 <Typography
                     as="h3"
                     variant="h3"
-                    className="uppercase font-spacegrotesk mt-[14px] lg:mt-0 group-hover:text-inherit lg:max-w-[440px] w-full"
+                    className="mt-[14px] w-full font-spacegrotesk uppercase group-hover:text-inherit lg:mt-0 lg:max-w-[440px]"
                 >
                     {headline}
                 </Typography>
-                <Typography variant="paragraph" className="mt-[14px] lg:mt-0 basis-[90%]">
+                <Typography variant="paragraph" className="mt-[14px] basis-[90%] lg:mt-0">
                     {text}
                 </Typography>
             </div>
@@ -37,14 +37,14 @@ export const Competences = () => {
                     <Typography as="h2" variant="h1" className="lg:text-6xl">
                         BUSINESS & <br /> PRODUCT STRATEGY
                     </Typography>
-                    <Typography className="text-center mt-3.5" variant="paragraph">
+                    <Typography className="mt-3.5 text-center" variant="paragraph">
                         Von der digitalen Geschäfts- und Geschäftsfeldstrategie, über die Produktstrategie bis hin zur
                         UX-Strategie beraten wir branchenübergreifend mit unseren Strategie-Experten Startups von Early
                         stage bis Grownup ebenso wie Corporates.
                     </Typography>
                 </div>
             </div>
-            <div className="flex flex-col mt-8 lg:mt-32">
+            <div className="mt-8 flex flex-col lg:mt-32">
                 <StrategyItem
                     count={1}
                     headline="Strategie&shy;beratung mit Nähe zur Umsetzung"

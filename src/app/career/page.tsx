@@ -28,8 +28,8 @@ const Career = () => {
                     Unser Team <br />- Dein Playground
                 </Typography>
             </Section>
-            <Section className="lg:pt-0 -mt-8 md:-mt-32 lg:mt-0 lg:flex lg:gap-8">
-                <ImageMask className="md:mt-8 lg:basis-[50%] lg:w-1/2 w-2/3 h-full relative aspect-[0.75]">
+            <Section className="-mt-8 md:-mt-32 lg:mt-0 lg:flex lg:gap-8 lg:pt-0">
+                <ImageMask className="relative aspect-[0.75] h-full w-2/3 md:mt-8 lg:w-1/2 lg:basis-[50%]">
                     <Image
                         priority
                         src={Trophy}
@@ -40,7 +40,7 @@ const Career = () => {
                 </ImageMask>
                 <section className="mt-16 md:ml-12 lg:basis-[32.5%]">
                     <Icon name="person_small" className="mb-4" />
-                    <Typography variant="h4" className="text-primary mb-8 leading-140">
+                    <Typography variant="h4" className="mb-8 leading-140 text-primary">
                         Wir verstehen uns nicht einfach nur als Arbeitgeber, sondern viel mehr als aktiver Begleiter auf
                         dem Weg zu deinen individuellen Zielen. Unser Anspruch ist es, den Menschen in den Mittelpunkt
                         unseres unternehmerischen Handelns zu stellen – und dabei fangen wir bei uns im Team an.
@@ -61,7 +61,7 @@ const Career = () => {
             </Section>
             <Section id="jobs">
                 <div>
-                    <Typography className="mt-24 lg:mt-32 text-white m-0 mb-6" variant="h4">
+                    <Typography className="m-0 mb-6 mt-24 text-white lg:mt-32" variant="h4">
                         Wir suchen dich:
                     </Typography>
                     <div className="">
@@ -86,7 +86,7 @@ const Career = () => {
                 </div>
             </Section>
             <Section className="">
-                <div className="flex flex-col gap-4 items-baseline lg:max-w-[32%]">
+                <div className="flex flex-col items-baseline gap-4 lg:max-w-[32%]">
                     <Typography variant="h5" className="text-white">
                         Oder suchst du uns?
                     </Typography>

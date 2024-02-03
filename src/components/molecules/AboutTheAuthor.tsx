@@ -1,4 +1,3 @@
-
 import { Author } from "contentlayer/generated"
 import { Mdx } from "../MdxComponents"
 import { ProfilePicture } from "../atoms/ProfilePicture"
@@ -6,7 +5,7 @@ import Typography from "../atoms/Typography"
 
 export const AboutTheAuthor = ({ author }: { author: Author }) => {
     return (
-        <div className="w-full flex flex-col not-prose mt-32 rounded-md">
+        <div className="not-prose mt-32 flex w-full flex-col rounded-md">
             <Typography as="p" variant="description">
                 Über den Autor
             </Typography>

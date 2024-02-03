@@ -97,14 +97,14 @@ export default async function CareerPage({ params }: CareerProps) {
 
             <TwoColumnsFullScreenContainer
                 left={
-                    <div className="flex flex-col sticky top-0">
+                    <div className="sticky top-0 flex flex-col">
                         <LinkComponent
                             href="/career#jobs"
                             className="w-fit md:w-fit md:py-0"
                             label={
                                 <div className="flex items-center">
                                     <Icon name="backarrow" className="-ml-8 md:-ml-6" />
-                                    <Typography className="uppercase -ml-2 hover:text-inherit" variant="link">
+                                    <Typography className="-ml-2 uppercase hover:text-inherit" variant="link">
                                         Zurück zu den Jobs
                                     </Typography>
                                 </div>
@@ -119,7 +119,7 @@ export default async function CareerPage({ params }: CareerProps) {
                             location={career.location}
                             className="text-black"
                         />
-                        <div className={"flex flex-col gap-4 mt-12"}>
+                        <div className={"mt-12 flex flex-col gap-4"}>
                             <LinkComponent
                                 href="/contact"
                                 color="secondary"
@@ -131,9 +131,9 @@ export default async function CareerPage({ params }: CareerProps) {
                 }
                 right={
                     <div className="">
-                        <article className=" text-white max-w-none font-abcdiatype">
+                        <article className=" max-w-none font-abcdiatype text-white">
                             {career.description && (
-                                <Typography className="text-xl mt-0 font-abcdiatype" variant="h5">
+                                <Typography className="mt-0 font-abcdiatype text-xl" variant="h5">
                                     {career.description}
                                 </Typography>
                             )}
@@ -143,14 +143,14 @@ export default async function CareerPage({ params }: CareerProps) {
                             <Typography as="h2" variant="h2" className="mt-8">
                                 Unsere Benefits:
                             </Typography>
-                            <ul className="w-full pl-0 flex flex-col">
+                            <ul className="flex w-full flex-col pl-0">
                                 {(career.employmentType === "Festanstellung"
                                     ? FESTANSTELLUNG_BENEFITS
                                     : career.employmentType === "Werkstudent"
-                                    ? WERKSTUDENT_BENEFITS
-                                    : PRAKTIKUMS_BENEFITS
+                                      ? WERKSTUDENT_BENEFITS
+                                      : PRAKTIKUMS_BENEFITS
                                 ).map((benefit, index) => (
-                                    <li className="flex items-center gap-2 my-1" key={index}>
+                                    <li className="my-1 flex items-center gap-2" key={index}>
                                         <div className="mt-0 text-primary">
                                             <Icon name={benefit.icon as IconProps["name"]} height={32} width={32} />
                                         </div>
@@ -161,12 +161,12 @@ export default async function CareerPage({ params }: CareerProps) {
                                 ))}
                             </ul>
                         </article>
-                        <div className="w-full mt-32 gap-4 flex flex-col">
+                        <div className="mt-32 flex w-full flex-col gap-4">
                             <Typography variant="h4">Weitere Jobs</Typography>
                             {mostRelatedCareers.map((career, index) => (
                                 <Link href={career.slug} key={index} className="group">
-                                    <div className="flex flex-col bg-t1-darkGray p-8 gap-4 rounded-lg group-hover:brightness-[140%]">
-                                        <div className="flex gap-8 text-primary uppercase">
+                                    <div className="flex flex-col gap-4 rounded-lg bg-t1-darkGray p-8 group-hover:brightness-[140%]">
+                                        <div className="flex gap-8 uppercase text-primary">
                                             <Typography variant="description">{`${career.employmentType}, ${career.schedule}`}</Typography>
                                             <Typography variant="description">{career.location}</Typography>
                                         </div>

@@ -18,7 +18,7 @@ export const HomeValuesSection = () => {
     return (
         <Section>
             <CenteredSectionContainer
-                className="pt-0 -mt-4"
+                className="-mt-4 pt-0"
                 left={
                     <ImageMask ref={careerPictureRef} className="w-full ">
                         <figure
@@ -26,7 +26,7 @@ export const HomeValuesSection = () => {
                                 transition: "500ms",
                                 transform: careerPictureInView ? "scale(1.1)" : ""
                             }}
-                            className="aspect-[0.75] relative"
+                            className="relative aspect-[0.75]"
                         >
                             <Image
                                 src={Smiling}

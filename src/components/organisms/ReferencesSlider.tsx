@@ -11,7 +11,6 @@ import FahrtenbuchImg from "/public/images/optimized/nate-johnston-obOin8-m5sw-u
 import RecaroImg from "/public/images/optimized/recaro_optimized.webp"
 import TaycanImg from "/public/images/optimized/taycan_optimized.webp"
 
-
 interface ReferencesSliderEntryProps {
     imageSrc: StaticImageData
     technologyList?: Array<string>
@@ -23,12 +22,12 @@ export const ReferencesSlider = () => {
     return (
         <div className="bg-muted">
             <Section>
-                <div className="flex justify-center pt-0 md:pt-[75px] pb-8 font-medium">
+                <div className="flex justify-center pb-8 pt-0 font-medium md:pt-[75px]">
                     <Typography className="text-black" variant="subtitle">
                         REFERENZEN
                     </Typography>
                 </div>
-                <ul className="flex overflow-scroll gap-6 md:py-12 px-4 scroll-pl-4 snap-x">
+                <ul className="flex snap-x scroll-pl-4 gap-6 overflow-scroll px-4 md:py-12">
                     <ReferencesSliderEntry
                         imageSrc={FinanceImg}
                         headline="AUTOMOTIVE FINANCIAL SERVICES PLATTFORM"
@@ -87,16 +86,16 @@ export const ReferencesSlider = () => {
 const ReferencesSliderEntry = (props: ReferencesSliderEntryProps) => {
     const { imageSrc, technologyList, headline, infoText } = props
     return (
-        <li className="grow-0 shrink-0 basis-[90%] snap-start md:basis-[75%] md:pb-20 xl:pb-40 pr-4 sm:pr-12 md:pr-20 xl:pr-28">
-            <figure className="flex gap-8 flex-col h-full xl:flex-row">
-                <ImageMask className="relative max-h-[320px] aspect-[0.8] sm:max-h-[400px] md:max-h-[480px] xl:max-h-none xl:max-w-[650px] xl:basis-[55%]">
-                    <Image src={imageSrc} alt={headline} fill placeholder="blur"  />
+        <li className="shrink-0 grow-0 basis-[90%] snap-start pr-4 sm:pr-12 md:basis-[75%] md:pb-20 md:pr-20 xl:pb-40 xl:pr-28">
+            <figure className="flex h-full flex-col gap-8 xl:flex-row">
+                <ImageMask className="relative aspect-[0.8] max-h-[320px] sm:max-h-[400px] md:max-h-[480px] xl:max-h-none xl:max-w-[650px] xl:basis-[55%]">
+                    <Image src={imageSrc} alt={headline} fill placeholder="blur" />
                 </ImageMask>
-                <figcaption className="flex flex-col justify-center xl:grow-0 xl:shrink-0 xl:basis-[45%]">
+                <figcaption className="flex flex-col justify-center xl:shrink-0 xl:grow-0 xl:basis-[45%]">
                     <Typography as="h2" variant="h1" className="text-black ">
                         {headline}
                     </Typography>
-                    <ul className="flex gap-2 justify-between lg:gap-6 mt-2 text-black flex-wrap">
+                    <ul className="mt-2 flex flex-wrap justify-between gap-2 text-black lg:gap-6">
                         {technologyList?.map((technology) => (
                             <Typography as="li" variant="subtitle" className="uppercase" key={technology}>
                                 {technology}

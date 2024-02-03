@@ -28,11 +28,11 @@ export const Header = ({ theme }: { theme: PageTheme }) => {
     return (
         <header className="sticky top-0 z-50">
             <div
-                className="absolute -z-10 h-full w-full backdrop-blur-sm"
+                className="absolute -z-10 size-full backdrop-blur-sm"
                 style={{ mask: "linear-gradient(#1d1d1d 80%, transparent)" }}
             />
             <Section className="py-0 md:py-0">
-                <div className="flex lg:items-center justify-between pt-[1.625rem]">
+                <div className="flex justify-between pt-[1.625rem] lg:items-center">
                     <NextLink href="/">
                         <Logo theme={theme} />
                     </NextLink>
@@ -49,11 +49,11 @@ export const Header = ({ theme }: { theme: PageTheme }) => {
 
                         {burgerNavigationOpened && (
                             <div className="fixed inset-0 z-[60] flex justify-end">
-                                <div className="z-[90000] m-0 h-full w-full overflow-hidden bg-t1-darkGray px-4 md:px-8 pt-[1.625rem]">
+                                <div className="z-[90000] m-0 size-full overflow-hidden bg-t1-darkGray px-4 pt-[1.625rem] md:px-8">
                                     <div className="flex h-full flex-col justify-between">
-                                        <div className="flex flex-col flex-grow">
+                                        <div className="flex grow flex-col">
                                             <Button
-                                                className="w-auto text-[14px] leading-[14px] self-end"
+                                                className="w-auto self-end text-[14px] leading-[14px]"
                                                 onClick={() => {
                                                     setBurgerNavigationOpened(false)
                                                 }}

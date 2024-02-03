@@ -20,11 +20,11 @@ const BlogOverview = () => {
                     alt="Blog Hero Background Image"
                     fill
                     placeholder="blur"
-                    className="top-0 left-0"
+                    className="left-0 top-0"
                 />
-                <div className="absolute mt-0 top-0 left-0 w-full h-full bg-black opacity-70" />
-                <Section className="relative -mt-[75px] py-[180px] md:py-[180px] pb-[80px]">
-                    <div className="max-w-[80%] 4xl:max-w-[1920px] flex flex-col gap-4 relative">
+                <div className="absolute left-0 top-0 mt-0 size-full bg-black opacity-70" />
+                <Section className="relative mt-[75px] py-[180px] pb-[80px] md:py-[180px]">
+                    <div className="4xl:max-w-[1920px] relative flex max-w-[80%] flex-col gap-4">
                         <Typography as="h1" variant="h1">
                             Read our blog
                         </Typography>
@@ -49,7 +49,7 @@ const BlogOverview = () => {
                         )}
                     />
                 </div>
-                <div className="flex flex-col gap-4 mt-16">
+                <div className="mt-16 flex flex-col gap-4">
                     <Typography as="h2" variant="h2">
                         Software Engineering
                     </Typography>

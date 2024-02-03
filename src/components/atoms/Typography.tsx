@@ -6,16 +6,16 @@ export const typographyVariants = tv({
     // base: "not-italic tracking-tinyBitTighter",
     variants: {
         variant: {
-            h1: "text-3xl lg:text-5xl font-normal leading-110 font-spacegrotesk uppercase",
-            h2: "text-2xl lg:text-4xl font-medium leading-110 font-spacegrotesk",
-            h3: "text-xl lg:text-3xl font-medium leading-110 font-spacegrotesk",
-            h4: "text-lg lg:text-2xl font-medium leading-110 font-spacegrotesk",
-            h5: "text-base lg:text-xl font-medium leading-110 font-spacegrotesk",
-            h6: "text-sm lg:text-lg font-medium leading-110 font-spacegrotesk",
-            link: "text-base hover:text-primary font-abcdiatype",
-            subtitle: "text-lg leading-6 font-medium font-abcdiatype",
+            h1: "font-spacegrotesk text-3xl font-normal uppercase leading-110 lg:text-5xl",
+            h2: "font-spacegrotesk text-2xl font-medium leading-110 lg:text-4xl",
+            h3: "font-spacegrotesk text-xl font-medium leading-110 lg:text-3xl",
+            h4: "font-spacegrotesk text-lg font-medium leading-110 lg:text-2xl",
+            h5: "font-spacegrotesk text-base font-medium leading-110 lg:text-xl",
+            h6: "font-spacegrotesk text-sm font-medium leading-110 lg:text-lg",
+            link: "font-abcdiatype text-base hover:text-primary",
+            subtitle: "font-abcdiatype text-lg font-medium leading-6",
             paragraph: "font-abcdiatype text-base font-normal leading-140",
-            description: "font-abcdiatype text-xs leading-110 font-normal"
+            description: "font-abcdiatype text-xs font-normal leading-110"
         }
     },
     defaultVariants: {

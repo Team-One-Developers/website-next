@@ -41,11 +41,11 @@ export const AnimatedTeaser = ({ className, innerClassName }: AnimatedTeaserProp
                         </Typography>
                     </div>
 
-                    <Typography className="mb-20 2xl:mb-[11.25rem] lg:text-6xl" as="h2" variant="h1">
+                    <Typography className="mb-20 lg:text-6xl 2xl:mb-[11.25rem]" as="h2" variant="h1">
                         Integrativ & Agil
                     </Typography>
 
-                    <Typography className="text-black font-abcdiatype" variant="h4">
+                    <Typography className="font-abcdiatype text-black" variant="h4">
                         Integrativ bedeutet für uns nicht nur, nah am Kunden zu sein, sondern vor allem auch die
                         Produkte, an denen wir arbeiten, so zu entwickeln, als wären es unsere eigenen. Team One for One
                         Team.

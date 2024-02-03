@@ -49,7 +49,7 @@ const Privacy = () => {
                     Nach der DSGVO stehen Ihnen die nachfolgend aufgeführten Rechte zu, die Sie jederzeit bei dem in
                     Ziffer 1. dieser Datenschutzerklärung genannten Verantwortlichen geltend machen können:
                 </Typography>
-                <Typography as="ul" variant="paragraph" className="legalUL text-white mt-4">
+                <Typography as="ul" variant="paragraph" className="legalUL mt-4 text-white">
                     <li className="legalULLIPadded">
                         <strong>Recht auf Auskunft:</strong> Sie haben das Recht, von uns Auskunft darüber zu verlangen,
                         ob und welche Daten wir von Ihnen verarbeiten.
@@ -109,7 +109,7 @@ const Privacy = () => {
                     bedeutet, dass - sofern sich aus den einzelnen Datenschutzhinweisen dieser Datenschutzerklärung
                     nichts anderes ergibt - wir Ihre Daten löschen,
                 </Typography>
-                <Typography as="ul" variant="paragraph" className="legalUL text-white mt-4">
+                <Typography as="ul" variant="paragraph" className="legalUL mt-4 text-white">
                     <li className="legalULLIPadded">
                         wenn der Zweck der Datenverarbeitung weggefallen ist und damit die jeweilige in den einzelnen
                         Datenschutzhinweisen genannte Rechtsgrundlage nicht mehr besteht, also bspw.{" "}
@@ -133,7 +133,7 @@ const Privacy = () => {
                         schutzwürdigen Gründe entgegenstehen.
                     </li>
                 </Typography>
-                <Typography as="p" variant="paragraph" className="text-white mt-4">
+                <Typography as="p" variant="paragraph" className="mt-4 text-white">
                     Sofern wir (bestimmte Teile) Ihre(r) Daten jedoch noch für andere Zwecke vorhalten müssen, weil dies
                     etwa steuerliche Aufbewahrungsfristen (in der Regel 6 Jahre für Geschäftskorrespondenz bzw. 10 Jahre
                     für Buchungsbelege) oder die Geltendmachung, Ausübung oder Verteidigung von Rechtsansprüchen aus
@@ -152,10 +152,10 @@ const Privacy = () => {
                     Endgerät und unserer Webseite auszutauschen. Hierzu gehören u. a. die Spracheinstellungen auf einer
                     Webseite, der Login-Status oder die Stelle, an der ein Video geschaut wurde.
                 </Typography>
-                <Typography as="p" variant="paragraph" className="text-white mt-4">
+                <Typography as="p" variant="paragraph" className="mt-4 text-white">
                     Beim Besuch unserer Webseiten werden zwei Typen von Cookies eingesetzt:
                 </Typography>
-                <Typography as="ul" variant="paragraph" className="legalUL text-white mt-4">
+                <Typography as="ul" variant="paragraph" className="legalUL mt-4 text-white">
                     <li className="legalULLIPadded">
                         <strong>Temporäre Cookies (Session Cookies):</strong> Diese speichern eine sogenannte
                         Session-ID, mit welcher sich verschiedene Anfragen Ihres Browsers der gemeinsamen Sitzung
@@ -171,11 +171,11 @@ const Privacy = () => {
                         und Personalisierungs-Zwecken verwendet werden.
                     </li>
                 </Typography>
-                <Typography as="p" variant="paragraph" className="text-white mt-4">
+                <Typography as="p" variant="paragraph" className="mt-4 text-white">
                     Neben der vorstehenden Einteilung können Cookies auch im Hinblick auf ihren Einsatzzweck
                     unterschieden werden:
                 </Typography>
-                <Typography as="ul" variant="paragraph" className="legalUL text-white mt-4">
+                <Typography as="ul" variant="paragraph" className="legalUL mt-4 text-white">
                     <li className="legalULLIPadded">
                         <strong>Notwendige Cookies:</strong> Dies sind Cookies, die für den Betrieb unserer Webseite
                         unbedingt erforderlich sind, um Logins oder Warenkörbe für die Dauer Ihrer Sitzung zu speichern
@@ -194,23 +194,23 @@ const Privacy = () => {
                         Abschnitten unserer Datenschutzerklärung oder im Rahmen der Einholung Ihrer Einwilligung.
                     </li>
                 </Typography>
-                <Typography as="p" variant="paragraph" className="text-white mt-4">
+                <Typography as="p" variant="paragraph" className="mt-4 text-white">
                     <strong>Betroffene Daten:</strong>
                 </Typography>
-                <Typography as="ul" variant="paragraph" className="legalUL text-white mt-4">
+                <Typography as="ul" variant="paragraph" className="legalUL mt-4 text-white">
                     <li className="legalULLIPadded">Nutzungsdaten (bspw. Zugriffszeiten, angeklickte Webseiten)</li>
                     <li className="legalULLIPadded">
                         Kommunikationsdaten (bspw. Informationen über das genutzte Gerät, IP-Adresse).
                     </li>
                 </Typography>
-                <Typography as="p" variant="paragraph" className="text-white mt-4">
+                <Typography as="p" variant="paragraph" className="mt-4 text-white">
                     <strong>Betroffene Personen:</strong> Nutzer unserer Onlineangebote
                 </Typography>
-                <Typography as="p" variant="paragraph" className="text-white mt-4">
+                <Typography as="p" variant="paragraph" className="mt-4 text-white">
                     <strong>Verarbeitungszweck:</strong> Ausspielen unserer Internetseiten, Gewährleistung des Betriebs
                     unserer Internetseiten, Verbesserung unseres Internetangebotes, Kommunikation und Marketing
                 </Typography>
-                <Typography as="ul" variant="paragraph" className="legalUL text-white mt-4">
+                <Typography as="ul" variant="paragraph" className="legalUL mt-4 text-white">
                     <strong>Rechtsgrundlage: Berechtigtes Interesse, Art. 6 Abs. 1 lit. f DSGVO</strong>
                     <br />
                     Sofern wir von Ihnen keine Einwilligung in das Setzen der Cookies einholen, stützen wir die
@@ -223,7 +223,7 @@ const Privacy = () => {
                     deaktiviert, können möglicherweise nicht mehr alle Funktionen der Webseite vollumfänglich genutzt
                     werden.{" "}
                 </Typography>
-                <Typography as="ul" variant="paragraph" className="legalUL text-white mt-4">
+                <Typography as="ul" variant="paragraph" className="legalUL mt-4 text-white">
                     <strong>Einwilligung, Art. 6 Abs. 1 lit. a DSGVO</strong>
                     <br />
                     Sofern wir Sie vor Ihrem Besuch unserer Internetpräsenz darum bitten, bestimmte Cookies auf Ihr
@@ -247,7 +247,7 @@ const Privacy = () => {
                     Browser ausliefern zu können sowie sämtliche von Ihnen über unsere Internetseite getätigten
                     Eingaben. Daneben kann der von uns genutzte Anbieter
                 </Typography>
-                <Typography as="ul" variant="paragraph" className="legalUL text-white mt-4">
+                <Typography as="ul" variant="paragraph" className="legalUL mt-4 text-white">
                     <li className="legalULLIPadded">das Datum und die Uhrzeit des Zugriffs auf unsere Internetseite</li>
                     <li className="legalULLIPadded">Zeitzonendifferenz zur Greenwich Mean Time (GMT)</li>
                     <li className="legalULLIPadded">Zugriffsstatus (HTTP-Status)</li>
@@ -262,29 +262,29 @@ const Privacy = () => {
                         die Seiten bzw. Unterseiten, welche Sie auf unserer Internetseite besuchen.
                     </li>
                 </Typography>
-                <Typography as="p" variant="paragraph" className="text-white mt-4">
+                <Typography as="p" variant="paragraph" className="mt-4 text-white">
                     erheben. Die vorgenannten Daten werden als Logfiles auf den Servern unseres Anbieters gespeichert.
                     Dies ist erforderlich, um die Stabilität und Sicherheit des Betriebs unserer Internetseite zu
                     gewährleisten.
                 </Typography>
-                <Typography as="p" variant="paragraph" className="text-white mt-4">
+                <Typography as="p" variant="paragraph" className="mt-4 text-white">
                     <strong>Betroffene Daten</strong>
                 </Typography>
-                <Typography as="ul" variant="paragraph" className="legalUL text-white mt-4">
+                <Typography as="ul" variant="paragraph" className="legalUL mt-4 text-white">
                     <li className="legalULLIPadded">Inhaltsdaten (bspw. Posts, Fotos, Videos)</li>
                     <li className="legalULLIPadded">Nutzungsdaten (bspw. Zugriffszeiten, angeklickte Webseiten)</li>
                     <li className="legalULLIPadded">
                         Kommunikationsdaten (bspw. Informationen über das genutzte Gerät, IP-Adresse)
                     </li>
                 </Typography>
-                <Typography as="p" variant="paragraph" className="text-white mt-4">
+                <Typography as="p" variant="paragraph" className="mt-4 text-white">
                     <strong>Betroffene Personen:</strong> Nutzer unserer Internetpräsenz
                 </Typography>
-                <Typography as="p" variant="paragraph" className="text-white mt-4">
+                <Typography as="p" variant="paragraph" className="mt-4 text-white">
                     <strong>Verarbeitungszweck:</strong> Ausspielen unserer Internetseiten, Gewährleistung des Betriebs
                     unserer Internetseiten
                 </Typography>
-                <Typography as="p" variant="paragraph" className="text-white mt-4">
+                <Typography as="p" variant="paragraph" className="mt-4 text-white">
                     <strong>Rechtsgrundlage:</strong> Berechtigtes Interesse, Art. 6 Abs. 1 lit. f DSGVO
                 </Typography>
                 <Typography as="h3" variant="h5" className="mt-8">
@@ -309,10 +309,10 @@ const Privacy = () => {
                     machen, verarbeiten wir diese Daten zur Beantwortung Ihrer Anfrage im Rahmen des zwischen uns
                     bestehenden vorvertraglichen oder vertraglichen Beziehungen.
                 </Typography>
-                <Typography as="p" variant="paragraph" className="text-white mt-4">
+                <Typography as="p" variant="paragraph" className="mt-4 text-white">
                     <strong>Betroffene Daten:</strong>
                 </Typography>
-                <Typography as="ul" variant="paragraph" className="legalUL text-white mt-4">
+                <Typography as="ul" variant="paragraph" className="legalUL mt-4 text-white">
                     <li className="legalULLIPadded">Bestandsdaten (bspw. Namen, Adressen)</li>
                     <li className="legalULLIPadded">
                         Kontakdaten (bspw. E-Mail-Adresse, Telefonnummer, Postanschrift)
@@ -320,14 +320,14 @@ const Privacy = () => {
                     <li className="legalULLIPadded">Inhaltsdaten (Texte, Fotos, Videos)</li>
                     <li className="legalULLIPadded">Vertragsdaten (bspw. Vertragsgegenstand, Vertragsdauer)</li>
                 </Typography>
-                <Typography as="p" variant="paragraph" className="text-white mt-4">
+                <Typography as="p" variant="paragraph" className="mt-4 text-white">
                     <strong>Betroffene Personen:</strong> Interessenten, Kunden, Geschäfts- und Vertragspartner
                 </Typography>
-                <Typography as="p" variant="paragraph" className="text-white mt-4">
+                <Typography as="p" variant="paragraph" className="mt-4 text-white">
                     <strong>Verarbeitungszweck:</strong> Kommunikation sowie Beantwortung von Kontaktanfragen, Büro und
                     Organisationsverfahren
                 </Typography>
-                <Typography as="p" variant="paragraph" className="text-white mt-4">
+                <Typography as="p" variant="paragraph" className="mt-4 text-white">
                     <strong>Rechtsgrundlage:</strong> Vertragserfüllung und vorvertragliche Anfragen, Art. 6 Abs. 1 lit.
                     b DSGVO, berechtigtes Interesse, Art. 6 Abs. 1 lit. f DSGVO
                 </Typography>
@@ -346,10 +346,10 @@ const Privacy = () => {
                     Ihre Daten zum Zwecke der Abwicklung des Beschäftigungsverhältnisses unter Beachtung der
                     gesetzlichen Vorschriften.
                 </Typography>
-                <Typography as="p" variant="paragraph" className="text-white mt-4">
+                <Typography as="p" variant="paragraph" className="mt-4 text-white">
                     <strong>Betroffene Daten:</strong>
                 </Typography>
-                <Typography as="ul" variant="paragraph" className="legalUL text-white mt-4">
+                <Typography as="ul" variant="paragraph" className="legalUL mt-4 text-white">
                     <li className="legalULLIPadded">Bestandsdaten (bspw. Namen, Adressen)</li>
                     <li className="legalULLIPadded">
                         Kontakdaten (bspw. E-Mail-Adresse, Telefonnummer, Postanschrift)
@@ -357,17 +357,17 @@ const Privacy = () => {
                     <li className="legalULLIPadded">Zahlungsdaten (bspw. Bankverbindungsdaten, Rechnungen)</li>
                     <li className="legalULLIPadded">Vertragsdaten (bspw. Vertragsgegenstand, Vertragsdauer)</li>
                 </Typography>
-                <Typography as="p" variant="paragraph" className="text-white mt-4">
+                <Typography as="p" variant="paragraph" className="mt-4 text-white">
                     <strong>Betroffene Personen:</strong> Bewerber und Bewerberinnen
                 </Typography>
-                <Typography as="p" variant="paragraph" className="text-white mt-4">
+                <Typography as="p" variant="paragraph" className="mt-4 text-white">
                     <strong>Verarbeitungszweck:</strong> Abwicklung des Bewerbungsverfahrens
                 </Typography>
-                <Typography as="p" variant="paragraph" className="text-white mt-4">
+                <Typography as="p" variant="paragraph" className="mt-4 text-white">
                     <strong>Rechtsgrundlage:</strong> Vertragserfüllung und vorvertragliche Anfragen, Art. 6 Abs. 1 lit.
                     b DSGVO, rechtliche Verpflichtung, Art. 6 Abs. 1 lit. c DSGVO
                 </Typography>
-                <Typography as="p" variant="paragraph" className="text-white mt-4">
+                <Typography as="p" variant="paragraph" className="mt-4 text-white">
                     <strong>Löschung:</strong>Löschung: Kommt es nicht zu dem Abschluss eines Arbeitsvertrages, werden
                     Ihre Daten nach Abschluss des Bewerbungsverfahrens bzw. spätestens 2 Monate nach dessen Abschluss
                     gelöscht. Dies gilt nicht, sofern gesetzliche Bestimmungen der Löschung entgegenstehen oder die
@@ -402,23 +402,23 @@ const Privacy = () => {
                     vorgeschriebene Datenschutzniveau nicht eingehalten und die Durchsetzung Ihrer Rechte nicht oder nur
                     erschwert erfolgen kann.
                 </Typography>
-                <Typography as="p" variant="paragraph" className="text-white mt-4">
+                <Typography as="p" variant="paragraph" className="mt-4 text-white">
                     <strong>Betroffene Daten:</strong>
                 </Typography>
-                <Typography as="ul" variant="paragraph" className="legalUL text-white mt-4">
+                <Typography as="ul" variant="paragraph" className="legalUL mt-4 text-white">
                     <li className="legalULLIPadded">Nutzungsdaten (bspw. Zugriffszeiten, angeklickte Webseiten)</li>
                     <li className="legalULLIPadded">
                         Kommunikationsdaten (bspw. Informationen über das genutzte Gerät, IP-Adresse).
                     </li>
                 </Typography>
-                <Typography as="p" variant="paragraph" className="text-white mt-4">
+                <Typography as="p" variant="paragraph" className="mt-4 text-white">
                     <strong>Betroffene Personen:</strong> Nutzer unserer Onlineangebote
                 </Typography>
-                <Typography as="p" variant="paragraph" className="text-white mt-4">
+                <Typography as="p" variant="paragraph" className="mt-4 text-white">
                     <strong>Verarbeitungszweck:</strong> Reichweitenmessung, Erfolgskontrolle von Kampagnen, Remarketing
                     sowie interessen- und verhaltensbedingtes Marketing
                 </Typography>
-                <Typography as="p" variant="paragraph" className="text-white mt-4">
+                <Typography as="p" variant="paragraph" className="mt-4 text-white">
                     <strong>Rechtsgrundlage:</strong> Sofern wir Sie vor dem Einsatz des jeweiligen Dienstes um Ihre
                     Einwilligung gebeten haben, liegt hierin die Rechtsgrundlage, Art. 6 Abs. 1 lit. a DSGVO. Im Übrigen
                     setzen wir den jeweiligen Dienst auf Grund unseres berechtigten Interesse ein, die Besucherströme
@@ -447,23 +447,23 @@ const Privacy = () => {
                     vorgeschriebene Datenschutzniveau nicht eingehalten und die Durchsetzung Ihrer Rechte nicht oder nur
                     erschwert erfolgen kann.
                 </Typography>
-                <Typography as="p" variant="paragraph" className="text-white mt-4">
+                <Typography as="p" variant="paragraph" className="mt-4 text-white">
                     <strong>Betroffene Daten:</strong>
                 </Typography>
-                <Typography as="ul" variant="paragraph" className="legalUL text-white mt-4">
+                <Typography as="ul" variant="paragraph" className="legalUL mt-4 text-white">
                     <li className="legalULLIPadded">Nutzungsdaten (bspw. Zugriffszeiten, angeklickte Webseiten)</li>
                     <li className="legalULLIPadded">
                         Kommunikationsdaten (bspw. Informationen über das genutzte Gerät, IP-Adresse).
                     </li>
                 </Typography>
-                <Typography as="p" variant="paragraph" className="text-white mt-4">
+                <Typography as="p" variant="paragraph" className="mt-4 text-white">
                     <strong>Betroffene Personen:</strong> Nutzer unserer Internetpräsenz
                 </Typography>
-                <Typography as="p" variant="paragraph" className="text-white mt-4">
+                <Typography as="p" variant="paragraph" className="mt-4 text-white">
                     <strong>Verarbeitungszweck:</strong> Ausspielen unserer Internetseiten, Anbieten von Inhalten,
                     Gewährleistung des Betriebs unserer Internetseiten
                 </Typography>
-                <Typography as="p" variant="paragraph" className="text-white mt-4">
+                <Typography as="p" variant="paragraph" className="mt-4 text-white">
                     <strong>Rechtsgrundlage:</strong> Einwilligung über Cookie-Consent-Banner, Art. 6 Abs. 1 lit. a
                     DSGVO, berechtigte Interessen, Art. 6 Abs. 1 lit. f DSGVO
                 </Typography>

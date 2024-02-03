@@ -35,10 +35,10 @@ export const Accordion = (props: AccordionProps) => {
             }}
         >
             <summary className="flex list-none list-image-none flex-col md:flex-row">
-                <Typography className="mb-[10px] block md:w-[6.6%] text-white" variant="paragraph">
+                <Typography className="mb-[10px] block text-white md:w-[6.6%]" variant="paragraph">
                     {counter}
                 </Typography>
-                <Typography as="h3" variant="h1" className="text-inherit mb-0" style={{ transition: "0.25s" }}>
+                <Typography as="h3" variant="h1" className="mb-0 text-inherit" style={{ transition: "0.25s" }}>
                     {headline}
                 </Typography>
                 <svg

@@ -20,14 +20,14 @@ export const metadata: Metadata = {
 const Services = () => {
     return (
         <PageLayout>
-            <Section className="lg:flex gap-[15%]">
+            <Section className="gap-[15%] lg:flex">
                 <Typography className="lg:basis-[35%]" as="h1" variant="h1">
                     Wir schaffen nachhaltige Mehrwerte durch exzellente Software & menschenzentrierte Arbeitsweisen.
                 </Typography>
 
-                <div className="mt-16 lg:mt-0 basis-[32.5%]">
+                <div className="mt-16 basis-[32.5%] lg:mt-0">
                     <Icon name="globe" className="mb-4" />
-                    <Typography className="mb-8 text-primary font-abcdiatype leading-150" variant="h4">
+                    <Typography className="mb-8 font-abcdiatype leading-150 text-primary" variant="h4">
                         Digitale Geschäftsmodelle, digitale Kunden und remote-first Teams erfordern modernere Methoden,
                         Technologien und Geisteshaltungen als die klassische Welt. Als Software-Beratung befähigen wir
                         unsere Kunden, im digitalen Wettbewerb erfolgreich zu sein - strategisch, technologisch und
@@ -46,13 +46,13 @@ const Services = () => {
                 imageNode={<Image src={OfficeImg} alt="People working in an office" fill placeholder="blur" />}
                 overlayNode={
                     <>
-                        <Typography variant="subtitle" className="mb-6 text-white">
+                        <Typography variant="subtitle" className="mb-6 font-spacegrotesk uppercase text-white">
                             We Develop
                         </Typography>
                         <ChangingWords
                             variant="h1"
                             words={["Software", "Strategy", "UX Design"]}
-                            className="text-white text-6xl md:text-8xl lg:text-10xl"
+                            className="text-6xl text-white md:text-8xl lg:text-10xl"
                         />
                     </>
                 }
@@ -60,8 +60,8 @@ const Services = () => {
             <ReferencesSlider />
             <TechStacks />
             <Competences />
-            <UxDesign className="xl:block hidden" />
-            <UxDesignMobile className="xl:hidden block" />
+            <UxDesign className="hidden xl:block" />
+            <UxDesignMobile className="block xl:hidden" />
         </PageLayout>
     )
 }

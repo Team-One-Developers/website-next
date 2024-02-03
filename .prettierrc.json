@@ -1,41 +1,8 @@
 {
-  "importOrder": [
-    "^(react/(.*)$)|^(react$)",
-    "^(next/(.*)$)|^(next$)",
-    "<THIRD_PARTY_MODULES>",
-    "",
-    "^types$",
-    "^@/types/(.*)$",
-    "^@/server/(.*)$",
-    "^@/config/(.*)$",
-    "^@/lib/(.*)$",
-    "^@/hooks/(.*)$",
-    "^@/components/atoms/(.*)$",
-    "",
-    "^@/components/molecules/(.*)$",
-    "",
-    "^@/components/organisms/(.*)$",
-    "",
-    "^@/components/layout/(.*)$",
-    "",
-    "^@/components/(.*)$",
-    "^@/styles/(.*)$",
-    "^@/app/(.*)$",
-    "",
-    "^[./]"
-  ],
-  "importOrderSeparation": false,
-  "importOrderSortSpecifiers": true,
-  "importOrderBuiltinModulesToTop": true,
-  "importOrderParserPlugins": ["typescript", "jsx", "decorators-legacy"],
-  "importOrderMergeDuplicateImports": true,
-  "importOrderCombineTypeAndValueImports": true,
-  "trailingComma": "es5",
-  "tabWidth": 2,
-  "semi": false,
-  "singleQuote": true,
-  "plugins": [
-    "prettier-plugin-tailwindcss",
-    "@ianvs/prettier-plugin-sort-imports"
-  ]
+    "arrowParens": "always",
+    "printWidth": 120,
+    "proseWrap": "never",
+    "semi": false,
+    "tabWidth": 4,
+    "trailingComma": "none"
 }

@@ -47,8 +47,8 @@ export const TechStacks = () => {
             )}
         >
             <Section>
-                <div className="block mx-auto text-center w-full">
-                    <div className="flex justify-center gap-[30px] text-center my-6">
+                <div className="mx-auto block w-full text-center">
+                    <div className="my-6 flex justify-center gap-[30px] text-center">
                         <Typography
                             as="button"
                             variant="subtitle"
@@ -77,12 +77,12 @@ export const TechStacks = () => {
                         {isBackendActive ? "Backend / Platform" : "Frontend Development"}
                     </Typography>
 
-                    <div className="flex justify-center mt-4">
-                        <div className="w-full sm:w-[80%] sm:min-h-auto md:w-[70%] lg:w-[40%]">
+                    <div className="mt-4 flex justify-center">
+                        <div className="sm:min-h-auto w-full sm:w-[80%] md:w-[70%] lg:w-[40%]">
                             <Typography className="text-inherit" variant="paragraph">
                                 {isBackendActive ? (
                                     <>
-                                        <Typography as="span" variant="paragraph" className="pb-2 block font-bold">
+                                        <Typography as="span" variant="paragraph" className="block pb-2 font-bold">
                                             Scalable Solutions
                                         </Typography>
                                         Datengetriebene Produkte erfordern neben skalierbaren und automatisierten
@@ -95,7 +95,7 @@ export const TechStacks = () => {
                                     </>
                                 ) : (
                                     <>
-                                        <Typography as="span" variant="paragraph" className="pb-2 block font-bold">
+                                        <Typography as="span" variant="paragraph" className="block pb-2 font-bold">
                                             Modern JavaScript
                                         </Typography>
                                         Wir kombinieren modernste Technologien mit Expertise im Bereich der User
@@ -110,7 +110,7 @@ export const TechStacks = () => {
                         </div>
                     </div>
 
-                    <div className="flex justify-center flex-wrap p-12">
+                    <div className="flex flex-wrap justify-center p-12">
                         <div className="w-full sm:w-[80%] md:w-[70%] lg:w-[55%]">
                             <TechStackLogos isBackendActive={isBackendActive} />
                         </div>
