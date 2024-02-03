@@ -1,0 +1,7 @@
+.scrollMarginTopFix h1,
+.scrollMarginTopFix h2,
+.scrollMarginTopFix h3,
+.scrollMarginTopFix h4,
+.scrollMarginTopFix h5 {
+  scroll-margin-top: 100px;
+}

@@ -2,20 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer utilities {
-  @variants responsive {
-    /* Hide scrollbar for Chrome, Safari and Opera */
-    .no-scrollbar::-webkit-scrollbar {
-      display: none;
-    }
-
-    /* Hide scrollbar for IE, Edge and Firefox */
-    .no-scrollbar {
-      -ms-overflow-style: none; /* IE and Edge */
-      scrollbar-width: none; /* Firefox */
-    }
-  }
-}
 
 @layer base {
   :root {
@@ -31,25 +17,30 @@
     --theme-foreground-hover: #1d1d1d80;
 
     --theme-muted-foreground: #1d1d1d;
+    --theme-muted-dark: #f2f2f2;
 
     --theme-selectionBgColor: rgba(70, 255, 173, 0.6);
   }
 
-  [data-theme='dark'] {
+  [data-theme="dark"] {
     --theme-background: #000000;
 
     --theme-foreground: #ffffff;
     --theme-foreground-hover: #46ffad;
 
     --theme-muted-foreground: #f2f2f2;
+    --theme-muted-dark: #585858;
 
     --theme-selectionBgColor: rgba(70, 255, 173, 1);
   }
 
-  ::selection,
+  ::selection {
+    color: var(--theme-background);
+    background-color: var(--theme-foreground);
+  }
   ::moz-selection {
-    color: var(--black);
-    background-color: var(--theme-selectionBgColor);
+    color: var(--theme-background);
+    background-color: var(--theme-foreground);
   }
 
   ::-webkit-scrollbar {
