@@ -24,7 +24,7 @@ const Career = () => {
     return (
         <PageLayout>
             <Section className="pb-0">
-                <Typography as="h1" variant="h1" className="py-8">
+                <Typography as="h1" variant="h1">
                     Unser Team <br />- Dein Playground
                 </Typography>
             </Section>

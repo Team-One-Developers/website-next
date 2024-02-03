@@ -17,7 +17,7 @@ const Contact = () => {
     return (
         <PageLayout ticker={false}>
             <Section>
-                <Typography as="h1" variant="h1" className="mt-8">
+                <Typography as="h1" variant="h1">
                     Die Eins ist man <br /> niemals alleine.
                 </Typography>
                 <section className="mb-40 mt-20 flex flex-wrap items-center gap-16">
@@ -28,6 +28,7 @@ const Contact = () => {
                                 alt="A person in a T-Rex costume with an inflated cell phone is standing in an office. They are pretending to be on a call."
                                 width={460}
                                 height={580}
+                                placeholder="blur" 
                             />
                         </ImageMask>
                     </div>

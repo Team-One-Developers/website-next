@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 const Culture = () => {
     return (
         <PageLayout>
-            <Section className="relative mt-8">
+            <Section className="relative">
                 <Typography as="h1" variant="h1" className="lg:max-w-[calc(50%-2rem)]">
                     WIR MACHEN DAS, WOVON ALLE SPRECHEN: WIR STELLEN DEN MENSCHEN IN DEN MITTELPUNKT.
                 </Typography>

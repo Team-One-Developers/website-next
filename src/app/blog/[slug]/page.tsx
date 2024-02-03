@@ -19,7 +19,6 @@ import { Metadata } from "next"
 import { notFound } from "next/navigation"
 import "../../../styles/headings.css"
 
-import BlogHeroBG from "/public/images/optimized/hero_optimized.webp"
 
 interface BlogProps {
     params: {
@@ -101,7 +100,6 @@ export default async function BlogPage({ params }: BlogProps) {
                             src={blog.heroImage}
                             alt="Hero Background Image"
                             placeholder="blur"
-                            blurDataURL={BlogHeroBG.blurDataURL}
                             fill
                             className="absolute top-0 left-0"
                         />
