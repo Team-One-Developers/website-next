@@ -1,77 +1,59 @@
-'use client'
+"use client"
 
-import { useInView } from 'react-intersection-observer'
-
-import { Image } from '@/components/atoms/Image'
-
-import { ImageMask } from '../atoms/ImageMask'
-import { CenteredSectionContainer } from '../layout/CenteredSectionContainer'
-import ContentWrapper from '../layout/ContentWrapper'
-import { CtaSection } from './CtaSection'
+import { useInView } from "react-intersection-observer"
+import { Image } from "../atoms/Image"
+import { ImageMask } from "../atoms/ImageMask"
+import { CenteredSectionContainer } from "../layout/CenteredSectionContainer"
+import { Section } from "../layout/Section"
+import Icon from "../molecules/Icon"
+import { CtaSection } from "./CtaSection"
+import Smiling from "/public/images/optimized/t1d_kai_knoerzer_055_optimized.webp"
 
 export const HomeValuesSection = () => {
-  // Triggers Zoom Animation for second Image
-  const [careerPictureRef, careerPictureInView] = useInView({
-    threshold: 0.45,
-  })
+    // Triggers Zoom Animation for second Image
+    const [careerPictureRef, careerPictureInView] = useInView({
+        threshold: 0.45
+    })
 
-  // Triggers Fade In Animation for the Career Call To Action
-  const [careerContainerRef, careerContainerInView] = useInView({
-    threshold: 0.45,
-    triggerOnce: true,
-  })
-
-  return (
-    <ContentWrapper
-      ref={careerContainerRef}
-      className={careerContainerInView ? 'bg-background' : 'bg-primary'}
-      style={{ transition: '500ms' }}
-      useMaxWidth={false}
-    >
-      <CenteredSectionContainer
-        left={
-          <ImageMask ref={careerPictureRef} className="w-full">
-            <figure
-              style={{
-                transition: '500ms',
-                transform: careerPictureInView ? 'scale(1.1)' : '',
-              }}
-            >
-              <Image
-                src="/images/optimized/t1d_kai_knoerzer_055_optimized.webp"
-                alt="Picture of a men posing, smiling at the camera"
-                layout="fullWidth"
-                className="h-full"
-                background="auto"
-              />
-            </figure>
-          </ImageMask>
-        }
-        right={
-          <CtaSection
-            subtitleText="CAREER @ T1D"
-            headlineText="Nur wer Werte vertritt, kann Werte schaffen."
-            contentText={
-              'Team One Developers ist für uns nicht nur ein Name, sondern ein Versprechen: Das Versprechen den Unterschied zu machen, nicht nur Standard sondern die beste Wahl zu sein. Für unsere Partner und ganz besonders für unsere Kollegen'
-            }
-            headlineVariant="h2"
-            contentVariant="text_sm"
-            headlineClassName="mb-[2.875rem]"
-            linkLabel="Karriere"
-            link="/career"
-          >
-            <Image
-              src="/images/icons/world-1.svg"
-              alt="Globe Icon"
-              width={18}
-              height={18}
-              className="mr-2 brightness-0"
-              background="auto"
+    return (
+        <Section>
+            <CenteredSectionContainer
+                className="pt-0 -mt-4"
+                left={
+                    <ImageMask ref={careerPictureRef} className="w-full ">
+                        <figure
+                            style={{
+                                transition: "500ms",
+                                transform: careerPictureInView ? "scale(1.1)" : ""
+                            }}
+                            className="aspect-[0.75] relative"
+                        >
+                            <Image
+                                src={Smiling}
+                                alt="Picture of a men posing, smiling at the camera"
+                                fill
+                                placeholder="blur"
+                            />
+                        </figure>
+                    </ImageMask>
+                }
+                right={
+                    <CtaSection
+                        subtitleText="CAREER @ T1D"
+                        headlineText="Nur wer Werte vertritt, kann Werte schaffen."
+                        contentText={
+                            "Team One Developers ist für uns nicht nur ein Name, sondern ein Versprechen: Das Versprechen den Unterschied zu machen, nicht nur Standard sondern die beste Wahl zu sein. Für unsere Partner und ganz besonders für unsere Kollegen"
+                        }
+                        headlineVariant="h1"
+                        headlineClassName="mb-[2.875rem] uppercase font-normal"
+                        contentVariant="paragraph"
+                        linkLabel="Karriere"
+                        link="/career"
+                        icon={<Icon name="globe" className="mr-2 brightness-0" />}
+                    />
+                }
+                rightComponentClass="md:w-[85%]"
             />
-          </CtaSection>
-        }
-        rightComponentClass="md:w-[65%]"
-      />
-    </ContentWrapper>
-  )
+        </Section>
+    )
 }

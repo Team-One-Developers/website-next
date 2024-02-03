@@ -1,183 +1,175 @@
-import { Metadata } from 'next'
-import { notFound } from 'next/navigation'
-import { allBlogs } from 'contentlayer/generated'
-import { format, parseISO } from 'date-fns'
+import { Mdx } from "@/components/MdxComponents"
+import { Image } from "@/components/atoms/Image"
+import { StructuredData } from "@/components/atoms/StructuredData"
+import Typography from "@/components/atoms/Typography"
+import { PageLayout } from "@/components/layout/PageLayout"
+import { Section } from "@/components/layout/Section"
+import { AboutTheAuthor } from "@/components/molecules/AboutTheAuthor"
+import { BlogCTA } from "@/components/molecules/BlogCTA"
+import { ProfilePicture } from "@/components/molecules/ProfilePicture"
+import { T1ProseArticle } from "@/components/molecules/T1ProseArticle"
+import { TOC } from "@/components/molecules/TOC"
+import { Tags } from "@/components/molecules/Tags"
+import { BlogRow } from "@/components/organisms/BlogRow"
+import { formatDate } from "@/lib/formateDate"
+import { getAuthor } from "@/lib/getAuthor"
+import { mostRelated } from "@/lib/mostRelated"
+import { allBlogs } from "contentlayer/generated"
+import { Metadata } from "next"
+import { notFound } from "next/navigation"
+import "../../../styles/headings.css"
 
-import StructuredData from '@/components/atoms/StructuredData'
-import Typography from '@/components/atoms/Typography'
-
-import ContentWrapper from '@/components/layout/ContentWrapper'
-import { PageLayout } from '@/components/layout/PageLayout'
-
-import { Mdx } from '@/components/MdxComponents'
+import BlogHeroBG from "/public/images/optimized/hero_optimized.webp"
 
 interface BlogProps {
-  params: {
-    slug: string
-  }
+    params: {
+        slug: string
+    }
 }
 
-async function getBlogFromParams(params: BlogProps['params']) {
-  const blog = allBlogs.find((blog) => blog.slugAsParams === params.slug)
+async function getBlogFromParams(params: BlogProps["params"]) {
+    const blog = allBlogs.find((blog) => blog.slugAsParams === params.slug)
 
-  if (!blog) {
-    null
-  }
+    if (!blog) {
+        null
+    }
 
-  return blog
+    return blog
 }
 
-export async function generateMetadata({
-  params,
-}: BlogProps): Promise<Metadata> {
-  const blog = await getBlogFromParams(params)
+export async function generateMetadata({ params }: BlogProps): Promise<Metadata> {
+    const blog = await getBlogFromParams(params)
 
-  if (!blog) {
-    return {}
-  }
+    if (!blog) {
+        return {}
+    }
 
-  return {
-    title: blog.title,
-    description: blog.description,
-  }
+    return {
+        openGraph: {
+            images: `/api/og/blog?title=${blog.title}`
+        },
+        title: blog.title,
+        description: blog.descriptionShort
+    }
 }
 
-export async function generateStaticParams(): Promise<BlogProps['params'][]> {
-  return allBlogs.map((blog) => ({
-    slug: blog.slugAsParams,
-  }))
+export async function generateStaticParams(): Promise<BlogProps["params"][]> {
+    return allBlogs.map((blog) => ({
+        slug: blog.slugAsParams
+    }))
 }
 
 export default async function BlogPage({ params }: BlogProps) {
-  const blog = await getBlogFromParams(params)
+    const blog = await getBlogFromParams(params)
 
-  if (!blog) {
-    notFound()
-  }
+    if (!blog) {
+        notFound()
+    }
 
-  const structuredData = {
-    '@type': 'BlogPost',
-    title: blog.title,
-    // Description is a paragraph above a list with all requirements
-    description: `<p>${blog.description}</p>`,
-    postingOrganization: {
-      '@type': 'Organization',
-      name: 'Team One Developers GmbH',
-    },
-  }
+    const mostRelatedBlogs = mostRelated({
+        allItems: allBlogs,
+        currentItem: blog,
+        amount: 4
+    })
 
-  const RelatedArticle = ({
-    title,
-    subtitle,
-    iconText,
-  }: {
-    title: string
-    subtitle: string
-    iconText: string
-  }) => {
+    const author = getAuthor(blog.author)
+    // TODO public link for image?
+
+    const structuredData = {
+        "@type": "NewsArticle",
+        headline: blog.title,
+        image: blog.heroImage ? blog.heroImage : undefined,
+        author: [
+            {
+                "@type": "Person",
+                name: blog.author
+            }
+        ],
+        datePublished: blog.date
+    }
+
     return (
-      <div className="grid grid-flow-row grid-cols-[4rem_1fr] gap-2">
-        <div className="flex h-16 w-16 items-center justify-center rounded bg-primary text-black">
-          {iconText}
-        </div>
-        <div>
-          <Typography variant="text_sm">{title}</Typography>
-          <Typography variant="text_xs">{subtitle}</Typography>
-        </div>
-      </div>
-    )
-  }
+        <PageLayout>
+            <StructuredData data={structuredData} />
+            {
+                // mover under header
+            }
+            <div className="relative h-auto w-full">
+                {blog.heroImage && (
+                    <div>
+                        <Image
+                            src={blog.heroImage}
+                            alt="Hero Background Image"
+                            placeholder="blur"
+                            blurDataURL={BlogHeroBG.blurDataURL}
+                            fill
+                            className="absolute top-0 left-0"
+                        />
+                        <div className="absolute mt-0 top-0 left-0 w-full h-full bg-black opacity-70" />
+                    </div>
+                )}
+                <Section className="relative -mt-[75px] py-[180px] md:py-[180px] pb-[80px]">
+                    <div className="max-w-[80%] 4xl:max-w-[1920px] flex flex-col gap-4 relative">
+                        <Typography as="h1" variant="h1">
+                            {blog.title}
+                        </Typography>
+                        <Typography as="h2" variant="h4" className="text-primary">
+                            {blog.descriptionShort}
+                        </Typography>
 
-  return (
-    <PageLayout>
-      <StructuredData data={structuredData} />
-      <ContentWrapper>
-        <div className="w-full rounded p-24">
-          <div className="max-w-[80%]">
-            <Typography as="h1" variant="h2_bold">
-              {blog.title}
-            </Typography>
-            <Typography as="h2" variant="h4" className="text-primary">
-              {blog.description}
-            </Typography>
-            <time
-              dateTime={blog.date}
-              className="mb-2 block text-base text-gray-300"
-            >
-              {format(parseISO(blog.date), 'LLLL d, yyyy')}
-            </time>
-          </div>
-          <div className="mt-16 flex items-center">
-            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary text-black">
-              SB
+                        <Tags blog={blog} size="lg" />
+                    </div>
+                    <div className="flex items-center relative mt-4">
+                        <ProfilePicture imgSrc={author.profileImg} objectFit={author.profileImgObjectFit} />
+                        <div className="ml-4">
+                            <Typography as="p" variant="h5">
+                                {author.name}
+                            </Typography>
+                            <Typography as="p" variant="paragraph" className="text-muted-dark">
+                                {author.position}
+                            </Typography>
+                            <Typography as="time" variant="paragraph">
+                                {formatDate(blog.date)}
+                            </Typography>
+                        </div>
+                    </div>
+                </Section>
             </div>
-            <div className="ml-4">
-              <Typography as="p" variant="h5">
-                Simon Broß
-              </Typography>
-              <Typography
-                as="p"
-                variant="text_sm"
-                className="text-muted-foreground"
-              >
-                Software Engineer
-              </Typography>
-            </div>
-          </div>
-        </div>
-        <div className="grid w-full gap-8 p-24 pt-0 lg:grid-cols-[1fr_600px_1fr] xl:grid-cols-[1fr_800px_1fr]">
-          <div className="">
-            <div className="sticky top-[140px] rounded border border-primary p-4">
-              <h3 className="text-xl font-bold">Table of Content</h3>
+            <Section>
+                <div className="flex flex-col gap-24 lg:grid w-full lg:gap-24 grid-rows-auto lg:py-4 4xl:px-0 pt-0 xl:grid-cols-[600px_1fr] 2xl:grid-cols-[700px_1fr] 3xl:grid-cols-[0.8fr_800px_1fr]">
+                    {blog.toc && (
+                        <TOC blog={blog} className="xl:col-start-2 xl:row-start-1 3xl:col-start-1 3xl:row-start-1 " />
+                    )}
+                    <div className="scrollMarginTopFix xl:col-start-1 xl:row-start-1 3xl:col-start-2">
+                        <Typography as="h2" variant="h2" className="">
+                            {blog.title}
+                        </Typography>
+                        <Typography as="p" variant="subtitle" className="mt-2">
+                            {blog.descriptionLong}
+                        </Typography>
 
-              <ul className="mt-4 flex flex-col gap-1">
-                <li>- What is AutoGPTs goal? </li>
-                <li>- How to use it?</li>
-                <li>- How good it is for its purpose?</li>
-                <li>- Is it futureproof?</li>
-                <li>- How can it improve everydaylife?</li>
-                <li>- Conclusion</li>
-              </ul>
-            </div>
-          </div>
-          <article className="gap-4 p-4 prose max-w-none dark:prose-invert w-full">
-            <h1 className="mb-2">{blog.title}</h1>
-            {blog.description && (
-              <p className="text-xl mt-0 text-slate-700 dark:text-slate-200">
-                {blog.description}
-              </p>
+                        <hr className="my-8" />
+
+                        <T1ProseArticle>
+                            <Mdx code={blog.body.code} />
+                        </T1ProseArticle>
+                        <AboutTheAuthor author={author} />
+                    </div>
+                </div>
+            </Section>
+            {blog.cta !== "NONE" && (
+                <Section>
+                    <BlogCTA variant={blog.cta} className="mt-16" />
+                </Section>
             )}
-            <hr className="my-4" />
-            <Mdx code={blog.body.code} />
-          </article>
-          <div>
-            <div className="sticky top-[140px] flex flex-col gap-4">
-              <h3 className="text-2xl">Mentioned articles:</h3>
-              <RelatedArticle
-                iconText="TOD"
-                title="Is Team One Developers?"
-                subtitle="Insights into the work-life"
-              />
-              <RelatedArticle
-                iconText="JID"
-                title="Tauren Spa ist ein must-visit"
-                subtitle="Urlaub in Österreich? Tauren Spa ist ein MUST-VISIT!"
-              />
-              <RelatedArticle
-                iconText="ZDH"
-                title="Geht ein Keks die Treppe runter, unten merkt er, er hat garkeine
-                Füße."
-                subtitle="Geht er die Treppe wieder hoch."
-              />
-              <RelatedArticle
-                iconText="RSF"
-                title="Expedition Maisi Flitzer"
-                subtitle="Jetzt Mais-Salat essend den Berg runter mit 150 KM/h"
-              />
-            </div>
-          </div>
-        </div>
-      </ContentWrapper>
-    </PageLayout>
-  )
+            <Section>
+                <div className="flex flex-col gap-4 mt-32">
+                    <Typography as="h3" variant="h3">
+                        Verwandte Artikel
+                    </Typography>
+                    <BlogRow blogs={mostRelatedBlogs} />
+                </div>
+            </Section>
+        </PageLayout>
+    )
 }

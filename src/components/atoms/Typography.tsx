@@ -1,67 +1,44 @@
-import { ReactNode } from 'react'
-import { twMerge } from 'tailwind-merge'
-import { tv, VariantProps } from 'tailwind-variants'
+import { ReactNode } from "react"
+import { twMerge } from "tailwind-merge"
+import { tv, VariantProps } from "tailwind-variants"
 
 export const typographyVariants = tv({
-  base: 'm-0 not-italic tracking-tinyBitTighter font-spacegrotesk',
-  variants: {
-    variant: {
-      text_xs: 'font-abcdiatype font-normal text-xs leading-144',
-      text_sm: 'font-abcdiatype font-normal text-base leading-144',
-      text_lg: 'font-abcdiatype font-normal text-xl md:text-2xl leading-150 ',
-      text_xl: 'font-normal  text-2xl md:text-2.5xl lg:text-3.5xl leading-130',
-      subtitle: 'font-medium text-xs leading-110',
-      subtitle_lg: 'font-medium text-base leading-110',
-      h1: 'uppercase font-medium text-6xl md:text-8xl leading-115 ',
-      h2: 'uppercase font-normal text-2xl md:text-3.5xl lg:text-5xl leading-115',
-      h2_sm:
-        'uppercase font-normal  text-xl md:text-2.5xl lg:text-4.5xl leading-115',
-      h2_bold:
-        'uppercase font-medium text-2.5xl md:text-5xl lg:text-6xl leading-110',
-      h3: 'uppercase font-medium text-2.5xl md:text-5xl leading-110',
-      h4: 'font-medium text-3.5xl leading-110',
-      h5: 'font-medium text-xl leading-110',
-      cta_button: 'font-normal text-sm leading-84',
-      paragraph_label: 'font-semibold text-base leading-144',
-      sub_column: 'font-medium text-sm leading-110',
-      changing_words:
-        'font-normal text-6xl md:text-8xl lg:text-10xl leading-97',
-      changing_words_sm: 'font-medium text-xs leading-110',
+    // base: "not-italic tracking-tinyBitTighter",
+    variants: {
+        variant: {
+            h1: "text-3xl lg:text-5xl font-normal leading-110 font-spacegrotesk uppercase",
+            h2: "text-2xl lg:text-4xl font-medium leading-110 font-spacegrotesk",
+            h3: "text-xl lg:text-3xl font-medium leading-110 font-spacegrotesk",
+            h4: "text-lg lg:text-2xl font-medium leading-110 font-spacegrotesk",
+            h5: "text-base lg:text-xl font-medium leading-110 font-spacegrotesk",
+            h6: "text-sm lg:text-lg font-medium leading-110 font-spacegrotesk",
+            link: "text-base hover:text-primary font-abcdiatype",
+            subtitle: "text-lg leading-6 font-medium font-abcdiatype",
+            paragraph: "font-abcdiatype text-base font-normal leading-140",
+            description: "font-abcdiatype text-xs leading-110 font-normal"
+        }
     },
-  },
-  defaultVariants: {
-    variant: 'text_sm',
-  },
+    defaultVariants: {
+        variant: "paragraph"
+    }
 })
 
-export interface TypographyProps
-  extends VariantProps<typeof typographyVariants> {
-  children: ReactNode
-  className?: string
-  style?: Object
-  as?: any
-  onClick?: () => void
+export interface TypographyProps extends VariantProps<typeof typographyVariants> {
+    children: ReactNode
+    className?: string
+    style?: Object
+    as?: any
+    onClick?: () => void
 }
 
-export function Typography({
-  as,
-  variant,
-  children,
-  className,
-  style,
-  onClick,
-}: TypographyProps) {
-  const Component = as || 'p'
+export function Typography({ as, variant, children, className, style, onClick }: TypographyProps) {
+    const Component = as || "p"
 
-  return (
-    <Component
-      style={style}
-      className={twMerge(typographyVariants({ variant }), className)}
-      onClick={onClick}
-    >
-      {children}
-    </Component>
-  )
+    return (
+        <Component style={style} className={twMerge(typographyVariants({ variant }), className)} onClick={onClick}>
+            {children}
+        </Component>
+    )
 }
 
 export default Typography

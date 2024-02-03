@@ -7,16 +7,20 @@
 .bgDancers {
   transition: 1500ms;
 
-  mask-image: url('../../../public/images/dancers/dancing-squares.svg');
+  mask-image: url("../../../public/images/dancers/dancing-squares.svg");
   mask-repeat: no-repeat;
   mask-position: 50%;
-  mask-size: 540px;
+  mask-size: 340px;
 
   @media (min-width: 768px) {
-    mask-size: 670px;
+    mask-size: 500px;
   }
 
   @media (min-width: 992px) {
+    mask-size: 700px;
+  }
+
+  @media (min-width: 1400px) {
     mask-size: 900px;
   }
 }

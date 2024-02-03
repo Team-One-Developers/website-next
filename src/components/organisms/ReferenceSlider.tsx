@@ -1,7 +1,4 @@
-import { twJoin } from 'tailwind-merge'
-
 import { Image } from '@/components/atoms/Image'
-
 import { ImageMask } from '../atoms/ImageMask'
 import Typography from '../atoms/Typography'
 import ContentWrapper from '../layout/ContentWrapper'

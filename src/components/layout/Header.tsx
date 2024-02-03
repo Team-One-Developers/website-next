@@ -1,158 +1,117 @@
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable jsx-a11y/no-static-element-interactions */
-'use client'
+"use client"
 
-import { useState } from 'react'
-import Image from 'next/image'
-import Link from 'next/link'
-import { usePathname } from 'next/navigation'
-import { PAGE_THEME } from '@/constants'
-import { SiteMetadata } from '@/data'
-import { PageTheme } from '@/types'
-import { twJoin } from 'tailwind-merge'
-
-import { Button } from '../atoms/Button'
-import { ContentWrapper } from './ContentWrapper'
+import { SiteMetadata } from "@/data"
+import { PageTheme } from "@/types"
+import { default as NextLink } from "next/link"
+import { usePathname } from "next/navigation"
+import { useEffect, useState } from "react"
+import { twJoin } from "tailwind-merge"
+import { Button } from "../atoms/Button"
+import { Link } from "../atoms/Link"
+import { Logo } from "../atoms/Logo"
+import { Section } from "../layout/Section"
 
 export const Header = ({ theme }: { theme: PageTheme }) => {
-  const [burgerNavigationOpened, setBurgerNavigationOpened] = useState(false)
+    const [burgerNavigationOpened, setBurgerNavigationOpened] = useState(false)
 
-  const pathname = usePathname()
+    const pathname = usePathname()
 
-  return (
-    <header className={'sticky top-0 z-50 bg-header_gradient'}>
-      <div
-        className="absolute -z-10 h-full w-full backdrop-blur-sm"
-        style={{ mask: 'linear-gradient(#1d1d1d 80%, transparent)' }}
-      />
-      <ContentWrapper>
-        {
-          // 26px to add up to 32px (the logo is 12px higher than the nav buttons)
+    useEffect(() => {
+        if (burgerNavigationOpened) {
+            document.body.style.overflow = "hidden"
         }
-        <div className="flex items-center justify-between pt-[1.625rem]">
-          <Link href="/">
+        return () => {
+            document.body.style.overflow = "unset"
+        }
+    }, [burgerNavigationOpened])
+
+    return (
+        <header className="sticky top-0 z-50">
             <div
-              className={twJoin(
-                'grid self-center duration-300',
-                burgerNavigationOpened && 'burgerNavOpened'
-              )}
-            >
-              <Image
-                src={
-                  theme === PAGE_THEME.dark
-                    ? '/images/logo/t1d-logo-negativ.svg'
-                    : '/images/logo/t1d-logo.svg'
-                }
-                alt="Team One Developers Logo"
-                height={46}
-                width={135}
-              />
-            </div>
-          </Link>
+                className="absolute -z-10 h-full w-full backdrop-blur-sm"
+                style={{ mask: "linear-gradient(#1d1d1d 80%, transparent)" }}
+            />
+            <Section className="py-0 md:py-0">
+                <div className="flex lg:items-center justify-between pt-[1.625rem]">
+                    <NextLink href="/">
+                        <Logo theme={theme} />
+                    </NextLink>
 
-          <div className="lg:hidden">
-            <Button
-              onClick={() => {
-                setBurgerNavigationOpened(true)
-              }}
-            >
-              MENU
-            </Button>
+                    <div className="lg:hidden">
+                        <Button
+                            className="text-[14px] leading-[14px]"
+                            onClick={() => {
+                                setBurgerNavigationOpened(true)
+                            }}
+                        >
+                            MENU
+                        </Button>
 
-            {burgerNavigationOpened && (
-              <div className="fixed inset-0 z-[60] flex justify-end">
-                <button
-                  type="button"
-                  className="absolute left-0 top-0 h-screen w-screen"
-                  style={{
-                    backgroundColor: 'rgba(0, 0, 0, 0.8)',
-                    transition:
-                      'backgroundColor 500ms cubic-bezier(0.77, 0, 0.175, 1) 0s !important',
-                  }}
-                  onClick={() => {
-                    setBurgerNavigationOpened(false)
-                  }}
-                />
-                <div
-                  className="z-10 m-0 box-border block h-full w-full max-w-[568px] overflow-hidden border-none bg-t1-darkGray p-0 outline-none"
-                  style={{
-                    transition:
-                      'transform 500ms cubic-bezier(0.77, 0, 0.175, 1) 0s',
-                    transform: 'translateX(0px)',
-                  }}
-                >
-                  <div
-                    className="flex h-full flex-col justify-between"
-                    style={{
-                      paddingLeft: 'max(env(safe-area-inset-left), 2rem)',
-                      paddingRight: 'max(env(safe-area-inset-right), 2rem)',
-                    }}
-                  >
-                    <div className="flex-grow p-8 pr-0 text-right">
-                      <Button
-                        onClick={() => {
-                          setBurgerNavigationOpened(false)
-                        }}
-                      >
-                        CLOSE
-                      </Button>
-                      <nav className="pt-8 text-left font-spacegrotesk">
+                        {burgerNavigationOpened && (
+                            <div className="fixed inset-0 z-[60] flex justify-end">
+                                <div className="z-[90000] m-0 h-full w-full overflow-hidden bg-t1-darkGray px-4 md:px-8 pt-[1.625rem]">
+                                    <div className="flex h-full flex-col justify-between">
+                                        <div className="flex flex-col flex-grow">
+                                            <Button
+                                                className="w-auto text-[14px] leading-[14px] self-end"
+                                                onClick={() => {
+                                                    setBurgerNavigationOpened(false)
+                                                }}
+                                            >
+                                                CLOSE
+                                            </Button>
+                                            <nav className="pt-8 font-spacegrotesk">
+                                                {SiteMetadata.menuLinks.map((linkObj, index) => {
+                                                    return (
+                                                        <Link
+                                                            className={twJoin(
+                                                                "md:w-full text-3xl bg-t1-darkGray uppercase hover:text-primary active:text-primary transition",
+                                                                pathname === linkObj.link
+                                                                    ? "text-primary"
+                                                                    : "text-white"
+                                                            )}
+                                                            color="primary"
+                                                            key={index}
+                                                            href={`${linkObj.link}`}
+                                                            label={linkObj.name}
+                                                            aria-label={`Navigationslink ${linkObj.name}`}
+                                                        />
+                                                    )
+                                                })}
+                                            </nav>
+                                        </div>
+
+                                        <div className="self-end p-8 text-white">
+                                            <p>kontakt@t1dev.de</p>
+                                            <p>+49 711 252 98 690</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        )}
+                    </div>
+
+                    <nav className="z-40 hidden gap-2 lg:flex">
                         {SiteMetadata.menuLinks.map((linkObj, index) => {
-                          return (
-                            <Link
-                              className={twJoin(
-                                'mb-8 block select-none overflow-hidden text-3xl uppercase hover:text-primary active:text-primary ',
-                                pathname === linkObj.link
-                                  ? 'text-primary'
-                                  : 'text-white'
-                              )}
-                              key={index}
-                              href={`${linkObj.link}`}
-                              aria-label={`Navigationslink ${linkObj.name}`}
-                            >
-                              {linkObj.name}
-                            </Link>
-                          )
+                            return (
+                                <Link
+                                    key={index}
+                                    href={linkObj.link}
+                                    label={linkObj.name}
+                                    className={twJoin(
+                                        "text-[14px] leading-[14px] active:bg-t1-darkGray active:text-primary transition",
+                                        pathname === linkObj.link
+                                            ? "bg-t1-darkGray text-primary"
+                                            : "bg-primary text-t1-darkGray"
+                                    )}
+                                />
+                            )
                         })}
-                      </nav>
-                    </div>
-
-                    <div className="self-end p-8 text-white">
-                      <p>kontakt@t1dev.de</p>
-                      <p>+49 711 252 98 690</p>
-                    </div>
-                  </div>
+                    </nav>
                 </div>
-              </div>
-            )}
-          </div>
-
-          <nav className="z-40 hidden gap-2 lg:flex">
-            {SiteMetadata.menuLinks.map((linkObj, index) => {
-              return (
-                <Link
-                  key={index}
-                  href={`${linkObj.link}`}
-                  style={{ transition: 'background-color 250ms linear' }}
-                >
-                  <Button
-                    className={twJoin(
-                      'duration-[250ms] active:bg-t1-darkGray active:text-primary',
-                      pathname === linkObj.link
-                        ? 'bg-t1-darkGray text-primary'
-                        : 'bg-primary text-t1-darkGray'
-                    )}
-                  >
-                    {linkObj.name}
-                  </Button>
-                </Link>
-              )
-            })}
-          </nav>
-        </div>
-      </ContentWrapper>
-    </header>
-  )
+            </Section>
+        </header>
+    )
 }
 
 export default Header

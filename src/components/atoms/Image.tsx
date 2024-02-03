@@ -1,7 +1,7 @@
-"use client"
+import { ImageProps, default as NextImage } from "next/image"
+import { twJoin } from "tailwind-merge"
+import "./image.css"
 
-import { ImageProps, Image as UnpicImage } from "@unpic/react/next"
-
-export const Image = (props: ImageProps) => {
-	return <UnpicImage background="auto" {...props} />
-}
+export const Image = ({ className, ...rest }: ImageProps) => (
+    <NextImage className={twJoin("image", className)} {...rest} />
+)

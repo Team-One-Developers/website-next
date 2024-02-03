@@ -1,97 +1,104 @@
 "use client"
 
-import { useRef, useState } from "react"
-import { twJoin, twMerge } from "tailwind-merge"
-import useInterval from "use-interval"
-import { useMediaQuery } from "usehooks-ts"
-
-import Typography from "../atoms/Typography"
 import { motion } from "framer-motion"
-
-const LINE_HEIGHTS = {
-	small: {
-		className: "h-[0.825rem]",
-		value: { mobile: 0.825, md: 0.825, lg: 0.825 },
-	},
-	big: {
-		className: "h-[3.6375rem] md:h-[5.335rem] lg:h-[10.67rem]",
-		value: { mobile: 3.6375, md: 5.8, lg: 10.67 },
-	},
-}
+import { useEffect, useLayoutEffect, useRef, useState } from "react"
+import { twJoin } from "tailwind-merge"
+import Typography, { TypographyProps } from "../atoms/Typography"
 
 type ChangingWordsProps = {
-	words: string[]
-	delay?: number
-	className?: string
-	smallVariant?: boolean
+    words: string[]
+    delay?: number
+    className?: string
+    variant?: TypographyProps["variant"]
+    type?: "overview" | "section"
 }
 
-export const ChangingWords = ({ words, delay = 1500, className, smallVariant = false }: ChangingWordsProps) => {
-	const isMd = useMediaQuery("(min-width: 768px)")
-	const isLg = useMediaQuery("(min-width: 992px)")
+export const ChangingWords = ({
+    words,
+    delay = 2000,
+    className,
+    type = "overview",
+    variant = "h1"
+}: ChangingWordsProps) => {
+    const listItemsRefs = useRef<Array<HTMLLIElement | null>>([])
+    const listRef = useRef<HTMLUListElement | null>(null)
+    const [activeListItemIndex, setActiveListItemIndex] = useState(0)
 
-	const height = smallVariant ? LINE_HEIGHTS.small : LINE_HEIGHTS.big
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setActiveListItemIndex((value) => {
+                if (value === words.length - 1) {
+                    return 0
+                } else {
+                    return value + 1
+                }
+            })
+        }, delay)
 
-	const listItemsRefs = useRef<Array<HTMLLIElement | null>>([])
-	const listRef = useRef<HTMLUListElement | null>(null)
-	const [activeListItemIndex, setActiveListItemIndex] = useState(0)
+        return () => {
+            clearInterval(interval)
+        }
+    }, [delay, words])
 
-	useInterval(() => {
-		setActiveListItemIndex(activeListItemIndex + 1)
-		if (activeListItemIndex === words.length - 1) {
-			setActiveListItemIndex(0)
-		}
-	}, delay)
+    const [dimensions, setDimensions] = useState<{
+        width: number | string
+        height: string | number
+    }>({
+        width: 0,
+        height: 0
+    })
 
-	const calculateScrollOffset = (index: number, height: number) => `${-1 * index * height}rem`
+    useLayoutEffect(() => {
+        const activeListItemRef = listItemsRefs.current[activeListItemIndex]
 
-	const width = smallVariant
-		? undefined
-		: `${listItemsRefs.current[activeListItemIndex]?.querySelector("span")?.getBoundingClientRect().width}px`
+        if (activeListItemRef) {
+            setDimensions({
+                width: activeListItemRef.querySelector("span")?.getBoundingClientRect().width || 0,
+                height: activeListItemRef.getBoundingClientRect().height
+            })
+        }
+    }, [activeListItemIndex, words])
 
-	const wordList = (
-		<motion.ul
-			className={twJoin("pointer-events-none overflow-hidden", height.className)}
-			style={{
-				width: width,
-				transition: "width 400ms",
-			}}
-			ref={listRef}
-		>
-			{words.map((wordString, index) => (
-				<motion.li
-					className="whitespace-nowrap"
-					animate={{
-						y: isLg
-							? calculateScrollOffset(activeListItemIndex, height.value.lg as number)
-							: isMd
-							? calculateScrollOffset(activeListItemIndex, height.value.md)
-							: calculateScrollOffset(activeListItemIndex, height.value.lg),
-					}}
-					transition={{ duration: 0.5 }}
-					key={index}
-					ref={(listItemRef) => listItemsRefs.current.push(listItemRef)}
-				>
-					<span>{wordString}</span>
-				</motion.li>
-			))}
-		</motion.ul>
-	)
+    const wordList = (
+        <motion.ul
+            aria-hidden={true}
+            className={twJoin("pointer-events-none overflow-hidden")}
+            style={{
+                width: dimensions.width,
+                height: dimensions.height,
+                transition: "width 400ms"
+            }}
+            ref={listRef}
+        >
+            {words.map((wordString, index) => (
+                <motion.li
+                    className="whitespace-nowrap"
+                    animate={{
+                        y: `-${activeListItemIndex * Number(dimensions.height)}px`
+                    }}
+                    transition={{ duration: 0.5 }}
+                    key={index}
+                    ref={(listItemRef) => listItemsRefs.current.push(listItemRef)}
+                >
+                    <span>{wordString}</span>
+                </motion.li>
+            ))}
+        </motion.ul>
+    )
 
-	return (
-		<Typography
-			as="figure"
-			className={twJoin(
-				"flex uppercase",
-				smallVariant
-					? 'h-[0.825rem] gap-2 before:content-["▾"]'
-					: 'items-center  justify-center gap-4 before:content-["("] after:content-[")"]',
-				height.className,
-				className,
-			)}
-			variant={smallVariant ? "changing_words_sm" : "changing_words"}
-		>
-			{wordList}
-		</Typography>
-	)
+    return (
+        <Typography
+            as="span"
+            className={twJoin(
+                "flex justify-center items-center uppercase",
+                type === "section"
+                    ? 'gap-2 before:content-["▾"]'
+                    : 'items-center justify-center gap-16 before:content-["("] after:content-[")"] before:z-30 after:z-30',
+                className
+            )}
+            variant={variant}
+        >
+            {wordList}
+        </Typography>
+    )
 }

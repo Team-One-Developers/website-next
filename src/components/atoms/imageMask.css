@@ -1,0 +1,6 @@
+.image-mask {
+    mask-image: url(/images/logo/logoform.svg);
+    mask-repeat: no-repeat;
+    mask-size: contain;
+    mask-position: center;
+}
