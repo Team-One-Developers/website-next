@@ -22,7 +22,7 @@ export const Ticker = (props: TickerProps) => {
 
     const isLg = useMediaQuery("(min-width: 992px)")
 
-    Array.from(Array(1).keys()).forEach((key) => {
+    Array.from(Array(10).keys()).forEach((key) => {
         marqueeItems.push(
             <div className="flex items-center overflow-hidden" aria-hidden="true" key={key}>
                 <p
