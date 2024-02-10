@@ -14,8 +14,8 @@ export const typographyVariants = tv({
             h6: "font-spacegrotesk text-sm font-medium leading-110 lg:text-lg",
             link: "font-abcdiatype text-base hover:text-primary",
             subtitle: "font-abcdiatype text-lg font-medium leading-6",
-            paragraph: "font-abcdiatype text-base font-normal leading-140",
-            description: "font-abcdiatype text-xs font-normal leading-110"
+            paragraph: "font-abcdiatype text-base font-normal",
+            description: "font-abcdiatype text-sm font-normal leading-110"
         }
     },
     defaultVariants: {

@@ -10,7 +10,7 @@ export const mostRelated = ({
     currentItem: Career | Blog
     amount?: number
 }) => {
-    const mostRelatedItems = []
+    const mostRelatedItems: any = []
 
     allItems
         // first filter out the item we are currently on
@@ -25,7 +25,7 @@ export const mostRelated = ({
         })
 
     // sort it based on the score and only keep the best 3 results
-    mostRelatedItems.sort((a, b) => b.score - a.score).splice(amount)
+    mostRelatedItems.sort((a: any, b: any) => b.score - a.score).splice(amount)
 
     return mostRelatedItems
 }

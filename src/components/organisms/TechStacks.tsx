@@ -18,10 +18,9 @@ export type Technology = {
 
 interface TechStackLogosProps {
     isBackendActive: boolean
-    sizeClasses?: string
 }
 
-const FrontendTechnologyLogos = [
+const FrontendTechnologyLogos: IconProps["name"][] = [
     "css",
     "gatsby",
     "graphql",
@@ -34,7 +33,7 @@ const FrontendTechnologyLogos = [
     "typescript"
 ]
 
-const BackendTechnologyLogos = ["aws_lambda", "java", "kotlin", "kubernetes", "python", "spring"]
+const BackendTechnologyLogos: IconProps["name"][] = ["aws_lambda", "java", "kotlin", "kubernetes", "python", "spring"]
 
 export const TechStacks = () => {
     const [isBackendActive, setIsBackendActive] = useState(false)
@@ -122,7 +121,7 @@ export const TechStacks = () => {
 }
 
 const TechStackLogos = (props: TechStackLogosProps) => {
-    const { isBackendActive, sizeClasses = "h-[52px] w-[52px] lg:h-[75px] lg:w-[75px]" } = props
+    const { isBackendActive } = props
     const [ref, inView] = useInView({ triggerOnce: true })
     const logos = isBackendActive ? BackendTechnologyLogos : FrontendTechnologyLogos
 
@@ -132,18 +131,16 @@ const TechStackLogos = (props: TechStackLogosProps) => {
                 <figure
                     key={`${isBackendActive ? "be" : "fe"}-${logoIndex}`}
                     className={twJoin(
-                        "inline-block m-2 md:6",
-                        isBackendActive ? "text-white" : "text-black",
-                        sizeClasses
+                        "inline-block m-2 md:6 h-[52px] w-[52px] lg:h-[75px] lg:w-[75px]",
+                        isBackendActive ? "text-white" : "text-black"
                     )}
                     style={{
-                        animation: `FadeIn 0.25s ease-in-out ${175 * logoIndex}ms 1
-		normal forwards paused`,
+                        animation: `FadeIn 0.25s ease-in-out ${175 * logoIndex}ms 1 normal forwards paused`,
                         animationPlayState: inView ? "running" : "paused",
                         opacity: 0
                     }}
                 >
-                    <Icon name={logo} className={sizeClasses} />
+                    <Icon name={logo} className={"size-[52px] lg:size-[75px]"} />
                 </figure>
             ))}
         </section>

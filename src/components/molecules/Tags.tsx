@@ -8,7 +8,7 @@ import Icon from "../molecules/Icon"
 export const tagsVariants = tv({
     slots: {
         ul: "flex",
-        li: "rounded-md p-1"
+        li: "rounded-md p-1 px-2"
     },
     variants: {
         size: {
@@ -44,12 +44,16 @@ export interface TagsProps
 export const Tags = forwardRef<HTMLUListElement, TagsProps>(
     ({ blog, className, size, gap, color, category = false, ...props }, ref) => {
         return (
-            <ul className={twMerge(tagsVariants({ gap }).ul())} ref={ref} {...props}>
+            <ul className={twMerge(tagsVariants({ gap }).ul(), "flex-wrap")} ref={ref} {...props}>
                 <Typography
                     as="li"
                     variant="description"
                     key="readingTime"
-                    className={twMerge(tagsVariants({ size, color }).li(), "flex items-center gap-1", className)}
+                    className={twMerge(
+                        tagsVariants({ size, color }).li(),
+                        "flex items-center gap-1 font-spacegrotesk uppercase",
+                        className
+                    )}
                 >
                     <Icon name="clock" height={16} width={16} fill="none" stroke="black" />
                     {`${blog.readingTime}min`}
@@ -58,7 +62,7 @@ export const Tags = forwardRef<HTMLUListElement, TagsProps>(
                     as="li"
                     variant="description"
                     key="readingTime"
-                    className={twMerge(tagsVariants({ size, color }).li(), "flex items-center gap-1", className)}
+                    className={twMerge(tagsVariants({ size, color }).li(), "flex items-center gap-1 ", className)}
                 >
                     {blog.language.toLocaleUpperCase()}
                 </Typography>

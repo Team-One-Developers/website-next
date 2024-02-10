@@ -41,8 +41,8 @@ export const ChangingWords = ({
     }, [delay, words])
 
     const [dimensions, setDimensions] = useState<{
-        width: number | string
-        height: string | number
+        width: number
+        height: number
     }>({
         width: 0,
         height: 0
@@ -74,7 +74,7 @@ export const ChangingWords = ({
                 <motion.li
                     className="whitespace-nowrap"
                     animate={{
-                        y: `-${activeListItemIndex * Number(dimensions.height)}px`
+                        y: `-${activeListItemIndex * dimensions.height}px`
                     }}
                     transition={{ duration: 0.5 }}
                     key={index}

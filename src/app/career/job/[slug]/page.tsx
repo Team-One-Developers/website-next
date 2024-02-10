@@ -9,7 +9,7 @@ import { JobType } from "@/components/molecules/JobType"
 import { T1ProseArticle } from "@/components/molecules/T1ProseArticle"
 import { FESTANSTELLUNG_BENEFITS, PRAKTIKUMS_BENEFITS, WERKSTUDENT_BENEFITS } from "@/constants/benefits"
 import { mostRelated } from "@/lib/mostRelated"
-import { allCareers } from "contentlayer/generated"
+import { Career, allCareers } from "contentlayer/generated"
 import { Metadata } from "next"
 import Link from "next/link"
 import { notFound } from "next/navigation"
@@ -163,7 +163,7 @@ export default async function CareerPage({ params }: CareerProps) {
                         </article>
                         <div className="mt-32 flex w-full flex-col gap-4">
                             <Typography variant="h4">Weitere Jobs</Typography>
-                            {mostRelatedCareers.map((career, index) => (
+                            {mostRelatedCareers.map((career: Career, index: number) => (
                                 <Link href={career.slug} key={index} className="group">
                                     <div className="flex flex-col gap-4 rounded-lg bg-t1-darkGray p-8 group-hover:brightness-[140%]">
                                         <div className="flex gap-8 uppercase text-primary">

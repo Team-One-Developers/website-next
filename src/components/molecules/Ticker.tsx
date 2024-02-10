@@ -24,7 +24,7 @@ export const Ticker = (props: TickerProps) => {
 
     Array.from(Array(1).keys()).forEach((key) => {
         marqueeItems.push(
-            <div className="flex items-center overflow-hidden" aria-hidden="true">
+            <div className="flex items-center overflow-hidden" aria-hidden="true" key={key}>
                 <p
                     className={twJoin(
                         " font-spacegrotesk text-[82px] font-normal uppercase leading-none -tracking-[0.01em] sm:text-[120px] md:text-[175px]",
@@ -65,13 +65,15 @@ export const Ticker = (props: TickerProps) => {
     })
 
     return (
-        <Marquee
-            className={twJoin("mx-0 my-16 flex min-w-full shrink-0 grow-0 basis-auto select-none", className)}
-            speed={isLg ? speed : speed / 3}
-            gradient={false}
-            aria-disabled
-        >
-            {marqueeItems}
-        </Marquee>
+        <aside>
+            <Marquee
+                className={twJoin("mx-0 my-16 flex min-w-full shrink-0 grow-0 basis-auto select-none", className)}
+                speed={isLg ? speed : speed / 3}
+                gradient={false}
+                aria-disabled
+            >
+                {marqueeItems}
+            </Marquee>
+        </aside>
     )
 }

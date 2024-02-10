@@ -98,7 +98,6 @@ export default async function BlogPage({ params }: BlogProps) {
                         <Image
                             src={blog.heroImage}
                             alt="Hero Background Image"
-                            placeholder="blur"
                             fill
                             className="absolute left-0 top-0"
                         />

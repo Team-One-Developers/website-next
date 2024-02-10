@@ -3,9 +3,16 @@ import { twJoin, twMerge } from "tailwind-merge"
 import { Link } from "../atoms/Link"
 import Typography from "../atoms/Typography"
 
+type Heading = {
+    level: number
+    text: string
+    slug: string
+}
+
 export const TOC = ({ blog, className }: { blog: Blog; className?: string }) => {
     let lowest = 5
-    blog.headings.forEach((heading) => {
+
+    blog.headings.forEach((heading: Heading) => {
         if (heading.level < lowest) lowest = heading.level
     })
 
@@ -17,7 +24,7 @@ export const TOC = ({ blog, className }: { blog: Blog; className?: string }) => 
                 </Typography>
 
                 <ul className="mt-4 flex flex-col gap-1">
-                    {blog.headings.map((heading) => {
+                    {blog.headings.map((heading: Heading) => {
                         return (
                             <li
                                 key={`#${heading.slug}`}

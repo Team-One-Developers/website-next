@@ -107,7 +107,7 @@ export const Blog = defineDocumentType(() => ({
         tags: { type: "list", of: { type: "string" }, required: false },
         category: {
             type: "enum",
-            options: ["SOFTWARE ENGINEERING", "NEWS/CULTURE/EXPERIENCE"],
+            options: ["SOFTWARE ENGINEERING", "METHODOLOGY", "NEWS", "CULTURE", "EXPERIENCE"],
             required: true
         },
         cta: {

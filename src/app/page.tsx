@@ -46,7 +46,16 @@ const Home = () => {
             />
 
             <Hero
-                imageNode={<Image priority src={HeroIMG} alt="Picture of a man at a laptop" fill placeholder="blur" />}
+                imageNode={
+                    <Image
+                        priority
+                        src={HeroIMG}
+                        alt="Picture of a man at a laptop"
+                        fill
+                        placeholder="blur"
+                        sizes="100vw"
+                    />
+                }
                 overlayNode={
                     <ChangingWords
                         variant="h1"
