@@ -5,45 +5,36 @@ import Link from "next/link"
 import { Button } from "../atoms/Button"
 import { Image } from "../atoms/Image"
 import Typography from "../atoms/Typography"
+import FallbackImg from "/public/images/optimized/nate-johnston-obOin8-m5sw-unspla_optimized.webp"
 
 export const BlogArticle = ({ blog }: { blog: Blog }) => {
     return (
         <Link href={blog.slug} className="w-full">
-            <article className="group relative h-[500px] w-full cursor-pointer overflow-hidden rounded-md bg-t1-darkGray">
-                <div className="absolute h-1/2 w-full opacity-40 duration-200 group-hover:opacity-70">
+            <article className="group relative size-full cursor-pointer overflow-hidden rounded-md bg-white transition-shadow hover:shadow-md">
+                <div className="relative h-[250px] w-full">
                     <Image
-                        src={
-                            blog.heroImage
-                                ? blog.heroImage
-                                : "/images/optimized/nate-johnston-obOin8-m5sw-unspla_optimized.webp"
-                        }
-                        alt="Blogartikel Hero Image"
+                        src={blog.heroImage ?? FallbackImg}
+                        alt={blog.title}
                         fill
+                        sizes="(min-width: 576px) 50vw, (min-width: 992px) 33vw, (min-width: 1400px) 25vw, 90vw"
                     />
+                    <div className="absolute top-0 flex flex-col justify-between gap-2 p-3">
+                        <Tags blog={blog} color="primary" category={true} />
+                    </div>
                 </div>
-                <div className="relative flex h-1/2 flex-col justify-between gap-2 p-3">
-                    <Tags blog={blog} color="primary" category={true} />
-
+                <div className="flex flex-col justify-between rounded-b-md p-3 text-black duration-200 ease-in-out ">
                     <div className="flex flex-col gap-2">
-                        <Typography as="p" variant="description">
+                        <Typography as="span" variant="description" className="text-t1-darkGray">
                             {`${blog.author} - ${formatDate(blog.date)}`}
                         </Typography>
                         <Typography as="h3" variant="h3" className="uppercase">
                             {blog.title}
                         </Typography>
+                        <Typography as="p" variant="paragraph" className="py-4 text-t1-darkGray">
+                            {blog.descriptionLong}
+                        </Typography>
                     </div>
-                </div>
-                <div className="flex h-1/2 flex-col justify-between rounded-b-md p-3 text-white duration-200 ease-in-out group-hover:bg-primary group-hover:text-black">
-                    <Typography as="p" variant="paragraph" className="">
-                        {blog.descriptionLong}
-                    </Typography>
-
-                    <Button
-                        color="primary"
-                        className="duration-200 ease-in-out group-hover:bg-black group-hover:text-primary"
-                    >
-                        Read more
-                    </Button>
+                    <Button color="primary">Read more</Button>
                 </div>
             </article>
         </Link>
