@@ -5,7 +5,7 @@ export const T1ProseArticle = ({ children, className }: { children: ReactNode; c
     return (
         <article
             className={twMerge(
-                `prose-invert max-w-none w-full 
+                `max-w-none w-full 
         prose-headings:font-spacegrotesk prose-headings:font-medium prose-headings:leading-110 prose-headings:mb-2 prose-headings:mt-8 prose-headings:text-inherit
         prose-h1:font-normal prose-h1:uppercase prose-h1:text-3xl prose-h1:lg:text-5xl
         prose-h2:text-2xl prose-h2:lg:text-4xl prose-h2:text-inherit 

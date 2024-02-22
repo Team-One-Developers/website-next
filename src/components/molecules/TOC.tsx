@@ -19,7 +19,7 @@ export const TOC = ({ blog, className }: { blog: Blog; className?: string }) => 
     return (
         <div className={twMerge("w-fit", className)}>
             <div className="sticky top-[140px] rounded bg-white p-4">
-                <Typography as="h3" variant="h3">
+                <Typography as="h3" variant="h4" className="uppercase">
                     Table of Content
                 </Typography>
 
@@ -42,7 +42,7 @@ export const TOC = ({ blog, className }: { blog: Blog; className?: string }) => 
                                     href={`#${heading.slug}`}
                                     label={heading.text}
                                     color="transparent"
-                                    className="w-auto p-1 normal-case md:p-1"
+                                    className="w-auto p-1 normal-case md:p-1 font-abcdiatype"
                                 />
                             </li>
                         )

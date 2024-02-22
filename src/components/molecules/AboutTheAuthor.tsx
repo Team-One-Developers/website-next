@@ -14,7 +14,7 @@ export const AboutTheAuthor = ({ author }: { author: Author }) => {
                     <Typography as="h3" variant="h3">
                         {author.name}
                     </Typography>
-                    <Typography as="p" variant="paragraph" className="text-primary">
+                    <Typography as="p" variant="paragraph" className="">
                         {author.position}
                     </Typography>
                 </div>

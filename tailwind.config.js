@@ -49,7 +49,7 @@ module.exports = {
                             "list-style": "square"
                         },
                         "li::marker": {
-                            color: "var(--theme-primary)"
+                            color: "var(--t1-darkGray)"
                         },
                         pre: null,
                         code: null,

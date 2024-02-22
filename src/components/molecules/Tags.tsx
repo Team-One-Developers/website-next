@@ -8,14 +8,14 @@ import Icon from "../molecules/Icon"
 export const tagsVariants = tv({
     slots: {
         ul: "flex",
-        li: "rounded-md p-1 px-2"
+        li: "rounded-md p-1 px-2 uppercase"
     },
     variants: {
         size: {
             sm: {
                 li: "text-xs"
             },
-            md: { li: "p-2 text-xs" },
+            md: { li: "text-xs" },
             lg: { li: "p-2 text-base" }
         },
         gap: {

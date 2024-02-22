@@ -60,7 +60,7 @@ export const Author = defineDocumentType(() => ({
         position: { type: "string", required: false },
         profileImg: {
             type: "string",
-            default: "/images/logo/t1d-sticker-neongreen.svg",
+            default: "/images/logo/t1d-sticker-darkgray.svg",
             required: false
         },
         profileImgObjectFit: {

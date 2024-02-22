@@ -1,3 +1,4 @@
+/* eslint-disable tailwindcss/classnames-order */
 import { Mdx } from "@/components/MdxComponents"
 import { Link as LinkComponent } from "@/components/atoms/Link"
 import { StructuredData } from "@/components/atoms/StructuredData"
@@ -131,16 +132,16 @@ export default async function CareerPage({ params }: CareerProps) {
                 }
                 right={
                     <div className="">
-                        <article className=" max-w-none font-abcdiatype text-white">
+                        <article className="max-w-none font-abcdiatype prose prose-invert">
                             {career.description && (
                                 <Typography className="mt-0 font-abcdiatype text-xl" variant="h5">
                                     {career.description}
                                 </Typography>
                             )}
-                            <T1ProseArticle>
+                            <T1ProseArticle className="marker:text-primary">
                                 <Mdx code={career.body.code} />
                             </T1ProseArticle>
-                            <Typography as="h2" variant="h2" className="mt-8">
+                            <Typography as="h2" variant="h4" className="mt-8 uppercase">
                                 Unsere Benefits:
                             </Typography>
                             <ul className="flex w-full flex-col pl-0">
@@ -162,7 +163,9 @@ export default async function CareerPage({ params }: CareerProps) {
                             </ul>
                         </article>
                         <div className="mt-32 flex w-full flex-col gap-4">
-                            <Typography variant="h4">Weitere Jobs</Typography>
+                            <Typography variant="h4" className="uppercase">
+                                Weitere Jobs
+                            </Typography>
                             {mostRelatedCareers.map((career: Career, index: number) => (
                                 <Link href={career.slug} key={index} className="group">
                                     <div className="flex flex-col gap-4 rounded-lg bg-t1-darkGray p-8 group-hover:brightness-[140%]">

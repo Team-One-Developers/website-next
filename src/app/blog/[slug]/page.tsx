@@ -1,3 +1,4 @@
+/* eslint-disable tailwindcss/no-custom-classname */
 import { Mdx } from "@/components/MdxComponents"
 import { Image } from "@/components/atoms/Image"
 import { StructuredData } from "@/components/atoms/StructuredData"
@@ -19,6 +20,7 @@ import { Metadata } from "next"
 import { notFound } from "next/navigation"
 import "../../../styles/headings.css"
 import { PAGE_THEME } from "@/constants"
+import { relative } from "path"
 
 interface BlogProps {
     params: {
@@ -93,61 +95,52 @@ export default async function BlogPage({ params }: BlogProps) {
             {
                 // mover under header
             }
-            <div className="relative h-auto w-full">
-                {/* {blog.heroImage && (
-                    <div>
-                        <Image
-                            src={blog.heroImage}
-                            alt="Hero Background Image"
-                            fill
-                            className="absolute left-0 top-0"
-                        />
-                        <div className="absolute left-0 top-0 mt-0 size-full bg-black opacity-70" />
-                    </div>
-                )} */}
-                <Section className="relative -mt-[75px] py-[180px] pb-[80px] md:py-[180px]">
-                    <div className="relative flex max-w-[80%] flex-col gap-4 4xl:max-w-[1920px]">
-                        <Typography as="h1" variant="h1">
-                            {blog.title}
-                        </Typography>
-                        <Typography as="h2" variant="h4" className="text-primary">
-                            {blog.descriptionShort}
-                        </Typography>
 
-                        <Tags blog={blog} size="md" />
-                    </div>
-                    <div className="relative mt-4 flex items-center">
-                        <ProfilePicture imgSrc={author.profileImg} objectFit={author.profileImgObjectFit} />
-                        <div className="ml-4">
-                            <Typography as="p" variant="h5">
-                                {author.name}
-                            </Typography>
-                            <Typography as="p" variant="paragraph" className="text-muted-dark">
-                                {author.position}
-                            </Typography>
-                            <Typography as="time" variant="paragraph">
-                                {formatDate(blog.date)}
-                            </Typography>
-                        </div>
-                    </div>
-                </Section>
-            </div>
             <Section>
                 <div className="grid-rows-auto flex w-full flex-col gap-24 pt-0 lg:grid lg:gap-24 lg:py-4 xl:grid-cols-[600px_1fr] 2xl:grid-cols-[700px_1fr] 3xl:grid-cols-[0.8fr_800px_1fr] 4xl:px-0">
+                    {/* 
+                    // for go-live not relevant. needs to be revisited later
                     {blog.toc && (
                         <TOC blog={blog} className="xl:col-start-2 xl:row-start-1 3xl:col-start-1 3xl:row-start-1 " />
-                    )}
+                    )} */}
                     <div className="scrollMarginTopFix xl:col-start-1 xl:row-start-1 3xl:col-start-2">
-                        <Typography as="h2" variant="h2" className="">
+                        <Typography as="h1" variant="h1" className="uppercase">
                             {blog.title}
                         </Typography>
-                        <Typography as="p" variant="subtitle" className="mt-2">
+                        <Typography as="p" variant="paragraph" className="my-2">
                             {blog.descriptionLong}
                         </Typography>
-
+                        <Tags blog={blog} size="md" className="my-2" color="primary" />
+                        <div className="relative mt-4 flex items-center">
+                            <ProfilePicture imgSrc={author.profileImg} objectFit={author.profileImgObjectFit} />
+                            <div className="ml-4">
+                                <Typography as="p" variant="h6">
+                                    {author.name}
+                                </Typography>
+                                <Typography as="p" variant="paragraph" className="text-muted">
+                                    {author.position}
+                                </Typography>
+                                <Typography as="time" variant="paragraph">
+                                    {formatDate(blog.date)}
+                                </Typography>
+                            </div>
+                        </div>
                         <hr className="my-8" />
+                        {blog.heroImage && (
+                            <div className="relative h-fit w-full">
+                                <Image
+                                    src={blog.heroImage}
+                                    alt="Hero Background Image"
+                                    width={0}
+                                    height={0}
+                                    sizes="100vw"
+                                    style={{ width: "100%", height: "auto" }} // optional
+                                />
+                                <hr className="my-8" />
+                            </div>
+                        )}
 
-                        <T1ProseArticle>
+                        <T1ProseArticle className="text-foreground">
                             <Mdx code={blog.body.code} />
                         </T1ProseArticle>
                         <AboutTheAuthor author={author} />

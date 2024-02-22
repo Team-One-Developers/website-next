@@ -1,3 +1,4 @@
+/* eslint-disable tailwindcss/classnames-order */
 import { Tags } from "@/components/molecules/Tags"
 import { formatDate } from "@/lib/formateDate"
 import { Blog } from "contentlayer/generated"
@@ -22,7 +23,7 @@ export const BlogArticle = ({ blog }: { blog: Blog }) => {
                         <Tags blog={blog} color="primary" category={true} />
                     </div>
                 </div>
-                <div className="relative flex flex-col justify-between rounded-b-md p-3 text-black flex-grow">
+                <div className="relative flex grow flex-col justify-between rounded-b-md p-3 text-black">
                     <div className="flex flex-col gap-2 pb-4">
                         <Typography as="span" variant="description" className="text-t1-darkGray">
                             {`${blog.author} - ${formatDate(blog.date)}`}
