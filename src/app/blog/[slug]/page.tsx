@@ -18,6 +18,7 @@ import { allBlogs } from "contentlayer/generated"
 import { Metadata } from "next"
 import { notFound } from "next/navigation"
 import "../../../styles/headings.css"
+import { PAGE_THEME } from "@/constants"
 
 interface BlogProps {
     params: {
@@ -87,13 +88,13 @@ export default async function BlogPage({ params }: BlogProps) {
     }
 
     return (
-        <PageLayout>
+        <PageLayout theme={PAGE_THEME.light}>
             <StructuredData data={structuredData} />
             {
                 // mover under header
             }
             <div className="relative h-auto w-full">
-                {blog.heroImage && (
+                {/* {blog.heroImage && (
                     <div>
                         <Image
                             src={blog.heroImage}
@@ -103,7 +104,7 @@ export default async function BlogPage({ params }: BlogProps) {
                         />
                         <div className="absolute left-0 top-0 mt-0 size-full bg-black opacity-70" />
                     </div>
-                )}
+                )} */}
                 <Section className="relative -mt-[75px] py-[180px] pb-[80px] md:py-[180px]">
                     <div className="relative flex max-w-[80%] flex-col gap-4 4xl:max-w-[1920px]">
                         <Typography as="h1" variant="h1">
@@ -113,7 +114,7 @@ export default async function BlogPage({ params }: BlogProps) {
                             {blog.descriptionShort}
                         </Typography>
 
-                        <Tags blog={blog} size="lg" />
+                        <Tags blog={blog} size="md" />
                     </div>
                     <div className="relative mt-4 flex items-center">
                         <ProfilePicture imgSrc={author.profileImg} objectFit={author.profileImgObjectFit} />

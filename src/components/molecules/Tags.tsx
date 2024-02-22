@@ -15,7 +15,7 @@ export const tagsVariants = tv({
             sm: {
                 li: "text-xs"
             },
-            md: { li: "text-xs" },
+            md: { li: "p-2 text-xs" },
             lg: { li: "p-2 text-base" }
         },
         gap: {

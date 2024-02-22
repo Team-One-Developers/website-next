@@ -18,7 +18,7 @@ export const TOC = ({ blog, className }: { blog: Blog; className?: string }) => 
 
     return (
         <div className={twMerge("w-fit", className)}>
-            <div className="sticky top-[140px] rounded bg-t1-darkGray p-4">
+            <div className="sticky top-[140px] rounded bg-white p-4">
                 <Typography as="h3" variant="h3">
                     Table of Content
                 </Typography>
