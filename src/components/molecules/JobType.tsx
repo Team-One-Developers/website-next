@@ -18,7 +18,7 @@ export const JobType = ({
                 <Typography variant="paragraph" className="my-0 uppercase">
                     (Type)
                 </Typography>
-                <Typography variant="h4" className="my-0 font-normal">
+                <Typography variant="h5" className="my-0 font-normal uppercase">
                     {`${employmentType}, ${schedule}`}
                 </Typography>
             </div>
@@ -26,7 +26,7 @@ export const JobType = ({
                 <Typography variant="paragraph" className="my-0 uppercase">
                     (Location)
                 </Typography>
-                <Typography variant="h4" className="my-0 font-normal">
+                <Typography variant="h5" className="my-0 font-normal uppercase">
                     {location}
                 </Typography>
             </div>

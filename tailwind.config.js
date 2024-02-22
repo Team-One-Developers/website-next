@@ -39,28 +39,6 @@ module.exports = {
             "4xl": "1921px"
         },
         extend: {
-            typography: {
-                DEFAULT: {
-                    css: {
-                        h2: {
-                            color: "inherit"
-                        },
-                        ul: {
-                            "list-style": "square"
-                        },
-                        "li::marker": {
-                            color: "var(--theme-primary)"
-                        },
-                        pre: null,
-                        code: null,
-                        "code::before": null,
-                        "code::after": null,
-                        "pre code": null,
-                        "pre code::before": null,
-                        "pre code::after": null
-                    }
-                }
-            },
             lineHeight: {
                 100: "100%",
                 110: "110%",

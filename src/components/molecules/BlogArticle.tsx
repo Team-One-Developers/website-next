@@ -1,3 +1,4 @@
+/* eslint-disable tailwindcss/classnames-order */
 import { Tags } from "@/components/molecules/Tags"
 import { formatDate } from "@/lib/formateDate"
 import { Blog } from "contentlayer/generated"
@@ -9,8 +10,8 @@ import FallbackImg from "/public/images/optimized/nate-johnston-obOin8-m5sw-unsp
 
 export const BlogArticle = ({ blog }: { blog: Blog }) => {
     return (
-        <Link href={blog.slug} className="w-full">
-            <article className="group relative size-full cursor-pointer overflow-hidden rounded-md bg-white transition-shadow hover:shadow-md">
+        <Link href={blog.slug} className="size-full">
+            <article className="group relative flex flex-col size-full cursor-pointer overflow-hidden rounded-md bg-white transition-shadow hover:shadow-md">
                 <div className="relative h-[250px] w-full">
                     <Image
                         src={blog.heroImage ?? FallbackImg}
@@ -22,8 +23,8 @@ export const BlogArticle = ({ blog }: { blog: Blog }) => {
                         <Tags blog={blog} color="primary" category={true} />
                     </div>
                 </div>
-                <div className="flex flex-col justify-between rounded-b-md p-3 text-black duration-200 ease-in-out ">
-                    <div className="flex flex-col gap-2">
+                <div className="relative flex grow flex-col justify-between rounded-b-md p-3 text-black">
+                    <div className="flex flex-col gap-2 pb-4">
                         <Typography as="span" variant="description" className="text-t1-darkGray">
                             {`${blog.author} - ${formatDate(blog.date)}`}
                         </Typography>
