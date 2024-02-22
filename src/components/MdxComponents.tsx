@@ -1,13 +1,11 @@
 import { getMDXComponent } from "next-contentlayer/hooks"
+import { ImgHTMLAttributes, memo } from "react"
 import { Image } from "./atoms/Image"
-import { ClassAttributes, ImgHTMLAttributes, JSX, memo } from "react"
 import Typography from "./atoms/Typography"
 
 const components = (theme: string) => ({
     img: (() => {
-        const Img = (
-            props: JSX.IntrinsicAttributes & ClassAttributes<HTMLImageElement> & ImgHTMLAttributes<HTMLImageElement>
-        ) => {
+        const Img = (props: ImgHTMLAttributes<HTMLImageElement>) => {
             return (
                 <Image
                     src={props.src || ""}
@@ -79,7 +77,5 @@ interface MdxProps {
 
 export function Mdx({ code, theme }: MdxProps) {
     const Content = getMDXComponent(code)
-
-    // @ts-ignore
     return <Content components={components(theme)} />
 }
