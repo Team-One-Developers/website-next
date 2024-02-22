@@ -7,7 +7,6 @@ import { PageLayout } from "@/components/layout/PageLayout"
 import { TwoColumnsFullScreenContainer } from "@/components/layout/TwoColumnsFullScreenContainer"
 import Icon, { IconProps } from "@/components/molecules/Icon"
 import { JobType } from "@/components/molecules/JobType"
-import { T1ProseArticle } from "@/components/molecules/T1ProseArticle"
 import { FESTANSTELLUNG_BENEFITS, PRAKTIKUMS_BENEFITS, WERKSTUDENT_BENEFITS } from "@/constants/benefits"
 import { mostRelated } from "@/lib/mostRelated"
 import { Career, allCareers } from "contentlayer/generated"
@@ -132,16 +131,14 @@ export default async function CareerPage({ params }: CareerProps) {
                 }
                 right={
                     <div className="">
-                        <article className="max-w-none font-abcdiatype prose prose-invert">
+                        <article className="max-w-none font-abcdiatype">
                             {career.description && (
                                 <Typography className="mt-0 font-abcdiatype text-xl" variant="h5">
                                     {career.description}
                                 </Typography>
                             )}
-                            <T1ProseArticle className="marker:text-primary">
-                                <Mdx code={career.body.code} />
-                            </T1ProseArticle>
-                            <Typography as="h2" variant="h4" className="mt-8 uppercase">
+                            <Mdx code={career.body.code} theme="dark" />
+                            <Typography as="h2" variant="h4" className="mb-8 mt-12 uppercase">
                                 Unsere Benefits:
                             </Typography>
                             <ul className="flex w-full flex-col pl-0">

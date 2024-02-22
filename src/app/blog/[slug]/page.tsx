@@ -8,8 +8,6 @@ import { Section } from "@/components/layout/Section"
 import { AboutTheAuthor } from "@/components/molecules/AboutTheAuthor"
 import { BlogCTA } from "@/components/molecules/BlogCTA"
 import { ProfilePicture } from "@/components/molecules/ProfilePicture"
-import { T1ProseArticle } from "@/components/molecules/T1ProseArticle"
-import { TOC } from "@/components/molecules/TOC"
 import { Tags } from "@/components/molecules/Tags"
 import { BlogRow } from "@/components/organisms/BlogRow"
 import { formatDate } from "@/lib/formateDate"
@@ -20,7 +18,6 @@ import { Metadata } from "next"
 import { notFound } from "next/navigation"
 import "../../../styles/headings.css"
 import { PAGE_THEME } from "@/constants"
-import { relative } from "path"
 
 interface BlogProps {
     params: {
@@ -139,10 +136,7 @@ export default async function BlogPage({ params }: BlogProps) {
                                 <hr className="my-8" />
                             </div>
                         )}
-
-                        <T1ProseArticle className="text-foreground">
-                            <Mdx code={blog.body.code} />
-                        </T1ProseArticle>
+                        <Mdx code={blog.body.code} theme="light" />
                         <AboutTheAuthor author={author} />
                     </div>
                 </div>

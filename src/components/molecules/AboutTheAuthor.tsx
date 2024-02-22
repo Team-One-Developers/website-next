@@ -5,7 +5,7 @@ import Typography from "../atoms/Typography"
 
 export const AboutTheAuthor = ({ author }: { author: Author }) => {
     return (
-        <div className="not-prose mt-32 flex w-full flex-col rounded-md">
+        <div className="mt-32 flex w-full flex-col rounded-md">
             <Typography as="p" variant="description">
                 Über den Autor
             </Typography>
