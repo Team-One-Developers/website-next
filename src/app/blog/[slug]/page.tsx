@@ -16,6 +16,8 @@ import { mostRelated } from "@/lib/mostRelated"
 import { allBlogs } from "contentlayer/generated"
 import { Metadata } from "next"
 import { notFound } from "next/navigation"
+import type { BlogPosting, WithContext } from "schema-dts"
+
 import "../../../styles/headings.css"
 import { PAGE_THEME } from "@/constants"
 
@@ -73,17 +75,21 @@ export default async function BlogPage({ params }: BlogProps) {
     const author = getAuthor(blog.author)
     // TODO public link for image?
 
-    const structuredData = {
-        "@type": "NewsArticle",
+    const structuredData: WithContext<BlogPosting> = {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
         headline: blog.title,
         image: blog.heroImage ? blog.heroImage : undefined,
-        author: [
-            {
-                "@type": "Person",
-                name: blog.author
-            }
-        ],
-        datePublished: blog.date
+        datePublished: blog.date,
+        author: {
+            "@type": "Person",
+            name: blog.author
+        },
+        publisher: {
+            "@type": "Organization",
+            name: "Team One Developers",
+            url: "https://www.teamonedevelopers.de"
+        }
     }
 
     return (
