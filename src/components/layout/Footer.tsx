@@ -11,7 +11,7 @@ export const Footer = () => {
     const pathname = usePathname()
 
     const navigationSectionHeaderCSS =
-        "font-spacegrotesk uppercase font-medium leading-3 pb-2 text-[11px] opacity-50 mt-4 md:mt-0"
+        "font-spacegrotesk text-foreground uppercase font-medium leading-3 pb-2 text-[11px]  mt-4 md:mt-0"
 
     const navigationLinkCSS = (link: string) =>
         twJoin(
@@ -27,7 +27,7 @@ export const Footer = () => {
     return (
         <footer>
             <Section className="pb-0 md:pb-0">
-                <div className="block pb-8 md:grid md:grid-flow-row  md:grid-cols-[2.5fr_1fr_1fr_1fr] md:grid-rows-[1fr_1fr] md:gap-x-3 md:gap-y-5 md:text-left">
+                <div className="block pb-8 md:grid md:grid-flow-row md:grid-cols-[2.5fr_1fr_1fr_1fr] md:grid-rows-[1fr_1fr] md:gap-x-3 md:gap-y-5 md:text-left">
                     <div className="md:row-span-2 md:mb-0 md:self-end md:justify-self-start">
                         <h2 className={navigationSectionHeaderCSS}>
                             &copy; 2024 Team One Developers. All Rights Reserved.

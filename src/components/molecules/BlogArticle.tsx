@@ -31,7 +31,7 @@ export const BlogArticle = ({ blog }: { blog: Blog }) => {
                         <Typography as="h3" variant="h3" className="uppercase">
                             {blog.title}
                         </Typography>
-                        <Typography as="p" variant="paragraph" className="py-4 text-t1-darkGray">
+                        <Typography as="p" variant="paragraph" className="pt-1 text-t1-darkGray">
                             {blog.descriptionLong}
                         </Typography>
                     </div>

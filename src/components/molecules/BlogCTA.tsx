@@ -70,7 +70,7 @@ export const BlogCTA = ({ variant, className }: BlogCTAProps) => {
             <Link
                 href={BlogCTAValues[variant].link}
                 className="absolute left-0 top-0 z-10 size-full"
-                aria-labelledby={`link-${BlogCTAValues[variant].linkLabel}`}
+                aria-labelledby={`link-${BlogCTAValues[variant].subtitle}`}
             />
             <div className="mb-4 flex items-center">
                 <Icon
@@ -78,13 +78,14 @@ export const BlogCTA = ({ variant, className }: BlogCTAProps) => {
                     height={BlogCTAValues[variant].iconSize}
                     width={BlogCTAValues[variant].iconSize}
                     className="mr-2"
+                    fill="white"
                 />
-                <Typography className="uppercase text-primary" variant="description">
+                <Typography className="uppercase text-white" variant="description">
                     {BlogCTAValues[variant].subtitle}
                 </Typography>
             </div>
 
-            <Typography className={"mb-8"} as="h2" variant="h3">
+            <Typography className="mb-8 uppercase text-white" as="h2" variant="h3">
                 {BlogCTAValues[variant].headline}
             </Typography>
 
@@ -102,7 +103,7 @@ export const BlogCTA = ({ variant, className }: BlogCTAProps) => {
             )}
 
             <LinkComponent
-                id={`link-${BlogCTAValues[variant].linkLabel}`}
+                id={`link-${BlogCTAValues[variant].subtitle}`}
                 href={BlogCTAValues[variant].link}
                 label={BlogCTAValues[variant].linkLabel}
                 className="relative z-20"
