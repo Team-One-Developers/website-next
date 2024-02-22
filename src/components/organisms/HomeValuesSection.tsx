@@ -42,7 +42,7 @@ export const HomeValuesSection = () => {
                         subtitleText="CAREER @ T1D"
                         headlineText="Nur wer Werte vertritt, kann Werte schaffen."
                         contentText={
-                            "Team One Developers ist für uns nicht nur ein Name, sondern ein Versprechen: Das Versprechen den Unterschied zu machen, nicht nur Standard sondern die beste Wahl zu sein. Für unsere Partner und ganz besonders für unsere Kollegen"
+                            "Team One Developers ist für uns nicht nur ein Name, sondern ein Versprechen: Das Versprechen den Unterschied zu machen, nicht nur Standard sondern die beste Wahl zu sein. Für unsere Partner und ganz besonders für unsere Kollegen."
                         }
                         headlineVariant="h1"
                         headlineClassName="mb-[2.875rem] uppercase font-normal"
