@@ -115,7 +115,7 @@ export default async function BlogPage({ params }: BlogProps) {
                         </Typography>
                         <Tags blog={blog} size="md" className="my-2" color="primary" />
                         <div className="relative mt-4 flex items-center">
-                            <ProfilePicture imgSrc={author.profileImg} objectFit={author.profileImgObjectFit} />
+                            <ProfilePicture imgSrc={author.profileImg} authorName={author.name} />
                             <div className="ml-4">
                                 <Typography as="p" variant="h6">
                                     {author.name}

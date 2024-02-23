@@ -1,6 +1,6 @@
 import { Author } from "contentlayer/generated"
 import { Mdx } from "../MdxComponents"
-import { ProfilePicture } from "../atoms/ProfilePicture"
+import { ProfilePicture } from "../molecules/ProfilePicture"
 import Typography from "../atoms/Typography"
 
 export const AboutTheAuthor = ({ author }: { author: Author }) => {
@@ -18,7 +18,7 @@ export const AboutTheAuthor = ({ author }: { author: Author }) => {
                         {author.position}
                     </Typography>
                 </div>
-                <ProfilePicture imgSrc={author.profileImg} objectFit={author.profileImgObjectFit} />
+                <ProfilePicture imgSrc={author.profileImg} authorName={author.name} />
             </div>
             <hr className="my-4" />
             <Mdx code={author.body.code} theme="light" />

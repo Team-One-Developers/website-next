@@ -60,13 +60,6 @@ export const Author = defineDocumentType(() => ({
         position: { type: "string", required: false },
         profileImg: {
             type: "string",
-            default: "/images/logo/t1d-sticker-darkgray.svg",
-            required: false
-        },
-        profileImgObjectFit: {
-            type: "enum",
-            options: ["cover", "contain"],
-            default: "contain",
             required: false
         }
     }
@@ -91,7 +84,7 @@ export const Blog = defineDocumentType(() => ({
         heroImage: { type: "string", required: false },
         status: {
             type: "enum",
-            options: ["DRAFT", "TO REVIEW", "PUBLISHED"],
+            options: ["DRAFT", "TO REVIEW", "PUBLISHED", "TESTING"],
             required: true
         },
         length: {
