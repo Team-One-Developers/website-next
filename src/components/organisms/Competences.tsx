@@ -32,60 +32,40 @@ export const Competences = () => {
             <div className="flex flex-col items-center">
                 <div className="text-center lg:w-1/2">
                     <Typography className="mb-5 uppercase text-primary" variant="description">
-                        ( WE DEVELOP )
+                        ( UNSERE EXPERTISE )
                     </Typography>
                     <Typography as="h2" variant="h1" className="lg:text-6xl">
-                        BUSINESS & <br /> PRODUCT STRATEGY
+                        VON NEW WORK <br /> BIS NEW BUSINESS
                     </Typography>
                     <Typography className="mt-3.5 text-center" variant="paragraph">
-                        Von der digitalen Geschäfts- und Geschäftsfeldstrategie, über die Produktstrategie bis hin zur
-                        UX-Strategie beraten wir branchenübergreifend mit unseren Strategie-Experten Startups von Early
-                        stage bis Grownup ebenso wie Corporates.
+                        Wir sind spezialisierter Beratungspartner für digitale Transformationsprojekte. Neben der
+                        strategischen Transformationsberatung begleiten wir mit hochqualifizierten Beratern und Coaches
+                        agile Entwicklungsteams in der fachlichen sowie methodischen Umsetzung.
                     </Typography>
                 </div>
             </div>
             <div className="mt-8 flex flex-col lg:mt-32">
                 <StrategyItem
                     count={1}
-                    headline="Strategie&shy;beratung mit Nähe zur Umsetzung"
-                    text="Unser Verständnis einer modernen Strategieberatung ist ebenso von
-              Agilität geprägt, wie die moderne Softwareentwicklung. Wir
-              arbeiten hypothesen- und zahlengetrieben und mit einem scharfen
-              Rundumblick für das Ökosystem der jeweiligen Organisation. Agile
-              Strategie ist alles nur kein Wiederspruch, vielmehr ist es der
-              Ausdruck einer Haltung der eigenen Organisation: der Bereitschaft
-              und den Willen sich in kürzester Zeit neuen Markt- &
-              Wettbewerbsbedingungen anzupassen sowie effizient und
-              zukunftsorientiert zu planen."
+                    headline="ORGANISATIONS- ENTWICKLUNG"
+                    text="Wir analysieren und bewerten Transformationspotentiale in Ihrer Organisation. Wir erstellen Bedarfs- &
+                    Situationsanalysen, entwerfen passende Transformationskonzepte und beraten Organisationsgestalter
+                    nachhaltig, ehrlich und immer mit einem klaren Fokus auf die Unternehmensziele."
                 />
                 <StrategyItem
                     count={2}
-                    headline=" Von der Transformations&shy;strategie bis zur
-              Produkt&shy;strategie"
-                    text="Einer Studie des Harvard Business Managers zufolge schlagen 67 %
-              aller gut formulierten Strategien aufgrund mangelnder
-              Umsetzungskompetenz fehl. Das entspricht auch unserer eigenen
-              Erfahrung, weshalb modernes strategisches Vorgehen für uns nicht
-              von der Realisierung entkoppelt sein darf - ganz besonders wichtig
-              für digitale Produkte und Geschäftsmodelle. Wir beteiligen uns
-              daher nicht nur an der theoretischen Ausarbeitung sondern auch
-              gezielt an der praktischen Umsetzung strategischer
-              Digital-Konzepte, von der Transformationsstrategie bis zur
-              Produktstrategie."
+                    headline="AGILITÄT"
+                    text="Agile Vorgehensweisen helfen Organisationen dabei, flexibel in stetig volatileren Marktbedingungen
+					wettbewerbsfähig zu bleiben. Wir unterstützen Teams, Abteilungen oder ganze Resorts bei der Einführung und
+					Weiterentwicklung von agilen Methoden mit erfahrenen Coaches und Trainern."
                 />
                 <StrategyItem
                     count={3}
-                    headline="Unser Spezialgebiet: Digital Organization Design"
-                    text=" Im Laufe der vergangenen Jahre haben wir mehrfach den Umbau ebenso
-              wie den initialen Aufbau von unterschiedlichen digitalen
-              Produktorganisationen begleitet. Daraus hat sich eine einzigartige
-              Beratungskompetenz entwickelt. Wir beraten unsere Kunden bei der
-              strukturellen Ausgestaltung ganzheitlicher digitaler
-              Organisationen ebenso wie bei dem Aufbau hochqualifizierter
-              Produktteams. Und auch hier beraten wir umsetzungsgetrieben und
-              nicht auf theoretischer Basis: Am Ende entsteht immer ein
-              konkretes Bild einer hochperformanten Tech-Organisation oder eines
-              einzelnen Bereiches."
+                    headline="DIGITAL BUSINESS STRATEGY"
+                    text="Mit jahrelanger Expertise in der strategischen und inhaltlichen Ausgestaltung digitaler Produkte beraten wir
+					Organisationen bei der Planung und Umsetzung innovativer Digitalportfolios. Von der strategischen
+					Angebotsgestaltung bis hin zur fachlichen Umsetzung digitaler Produkte unterstützen wir digitale
+					Geschäftsinitiativen in allen Phasen des Produktlebenszykluses."
                 />
             </div>
         </Section>
