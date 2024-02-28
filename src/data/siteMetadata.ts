@@ -16,10 +16,14 @@ export const SiteMetadata = {
             name: "Kultur",
             link: "/culture"
         },
-        {
-            name: "Blog",
-            link: "/blog"
-        },
+        ...(process.env.NEXT_PUBLIC_RENDER_BLOG === "TRUE"
+            ? [
+                  {
+                      name: "Blog",
+                      link: "/blog"
+                  }
+              ]
+            : []),
         {
             name: "Karriere",
             link: "/career"
