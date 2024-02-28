@@ -1,4 +1,3 @@
-/* eslint-disable tailwindcss/no-custom-classname */
 import { Mdx } from "@/components/MdxComponents"
 import { Image } from "@/components/atoms/Image"
 import { StructuredData } from "@/components/atoms/StructuredData"
@@ -10,6 +9,7 @@ import { BlogCTA } from "@/components/molecules/BlogCTA"
 import { ProfilePicture } from "@/components/molecules/ProfilePicture"
 import { Tags } from "@/components/molecules/Tags"
 import { BlogRow } from "@/components/organisms/BlogRow"
+import { PAGE_THEME } from "@/constants"
 import { formatDate } from "@/lib/formateDate"
 import { getAuthor } from "@/lib/getAuthor"
 import { mostRelated } from "@/lib/mostRelated"
@@ -17,9 +17,7 @@ import { allBlogs } from "contentlayer/generated"
 import { Metadata } from "next"
 import { notFound } from "next/navigation"
 import type { BlogPosting, WithContext } from "schema-dts"
-
 import "../../../styles/headings.css"
-import { PAGE_THEME } from "@/constants"
 
 interface BlogProps {
     params: {
@@ -95,12 +93,8 @@ export default async function BlogPage({ params }: BlogProps) {
     return (
         <PageLayout theme={PAGE_THEME.light}>
             <StructuredData data={structuredData} />
-            {
-                // mover under header
-            }
-
             <Section>
-                <div className="grid-rows-auto flex w-full flex-col gap-24 pt-0 lg:grid lg:gap-24 lg:py-4 xl:grid-cols-[600px_1fr] 2xl:grid-cols-[700px_1fr] 3xl:grid-cols-[0.8fr_800px_1fr] 4xl:px-0">
+                <div className="flex w-full auto-rows-auto flex-col gap-24 pt-0 lg:grid lg:gap-24 lg:py-4 xl:grid-cols-[600px_1fr] 2xl:grid-cols-[700px_1fr] 3xl:grid-cols-[0.8fr_800px_1fr] 4xl:px-0">
                     {/* 
                     // for go-live not relevant. needs to be revisited later
                     {blog.toc && (
