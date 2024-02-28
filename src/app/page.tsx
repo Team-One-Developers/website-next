@@ -70,7 +70,7 @@ const Home = () => {
                 <figure className="mb-6 flex h-[129px] w-full justify-center text-primary md:hidden">
                     <DancingFigures />
                 </figure>
-                <Typography className="font-normal normal-case text-black font-abcdiatype" variant="h1">
+                <Typography className="font-normal normal-case text-black" variant="h1">
                     Wir sind Technologie-Experten und verstehen uns als integrativer Entwicklungs- & Beratungspartner in
                     komplexen Softwareprojekten.{" "}
                     <DancingFigures className="hidden h-16 px-4 py-0 align-middle text-primary md:inline" />

@@ -27,7 +27,7 @@ export const CultureBlock = () => {
                 }
                 right={
                     <ImageDecoration
-                        className="-rotate-[12.5deg]"
+                        className="rotate-[-12.5deg]"
                         element={
                             <div className="">
                                 <ImageMask>

@@ -32,7 +32,7 @@ export const HomeHumanSection = () => {
                 />
                 <ImageMask
                     ref={culturePictureRef}
-                    className="relative aspect-[0.75] w-full  lg:-mt-[100px] lg:max-w-[50%]"
+                    className="relative aspect-[0.75] w-full lg:mt-[-100px] lg:max-w-[50%]"
                 >
                     <figure
                         className="size-full"

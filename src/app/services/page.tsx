@@ -1,4 +1,6 @@
+import { ArrowUpIcon } from "@/components/atoms/AnimatedArrowUp"
 import { Image } from "@/components/atoms/Image"
+import { Link } from "@/components/atoms/Link"
 import Typography from "@/components/atoms/Typography"
 import { PageLayout } from "@/components/layout/PageLayout"
 import { Section } from "@/components/layout/Section"
@@ -8,12 +10,8 @@ import { ChangingWords } from "@/components/organisms/ChangingWords"
 import { Competences } from "@/components/organisms/Competences"
 import { ReferencesSlider } from "@/components/organisms/ReferencesSlider"
 import { TechStacks } from "@/components/organisms/TechStacks"
-import { UxDesign } from "@/components/organisms/UxDesign"
-import { UxDesignMobile } from "@/components/organisms/UxDesignMobile"
 import { Metadata } from "next"
 import OfficeImg from "/public/images/optimized/t1d_nov22_149_optimized.webp"
-import { ArrowUpIcon } from "@/components/atoms/AnimatedArrowUp"
-import { Link } from "@/components/atoms/Link"
 
 export const metadata: Metadata = {
     title: "Services"
@@ -79,7 +77,7 @@ const Services = () => {
                         Entwicklungsteams in der fachlichen sowie methodischen Umsetzung nachhaltiger Zukunftsprojekte.
                     </Typography>
                 </div>
-                <div className="mt-12 w-full lg:w-auto lg:mt-0 flex lg:place-self-end lg:pl-8">
+                <div className="mt-12 flex w-full lg:mt-0 lg:w-auto lg:place-self-end lg:pl-8">
                     <div className="flex flex-row justify-start gap-4">
                         <div className="h-full min-w-36">
                             <ArrowUpIcon className="size-36 text-primary" />
