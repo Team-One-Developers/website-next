@@ -13,7 +13,9 @@ import Trophy from "/public/images/optimized/t1d_kai_knoerzer_079_optimized.webp
 import Office from "/public/images/optimized/t1d_nov22_185_optimized.webp"
 
 export const metadata: Metadata = {
-    title: "Career"
+    title: "Karriere",
+    description:
+        "Wir sind immer auf der Suche nach Menschen, die Veränderungen vorantreiben und die Welt von morgen gestalten wollen."
 }
 
 const Career = () => {

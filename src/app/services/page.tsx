@@ -14,7 +14,9 @@ import { Metadata } from "next"
 import OfficeImg from "/public/images/optimized/t1d_nov22_149_optimized.webp"
 
 export const metadata: Metadata = {
-    title: "Services"
+    title: "Leistungen",
+    description:
+        "Wir kombinieren umfassendes Fachwissen mit der Begeisterung für neue Technologien, um innovative, hochmoderne, stabile und skalierbare Enterprise Plattformen zu entwickeln."
 }
 
 const Services = () => {

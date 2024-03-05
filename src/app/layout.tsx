@@ -34,10 +34,9 @@ const SpaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
     title: {
         default: siteConfig.name,
-        template: `%s - ${siteConfig.name}`
+        template: `%s`
     },
     description: siteConfig.description,
-    keywords: ["Consulting", "Tech Consulting", "Software Projekte", "Next.js", "React", "Tailwind CSS"],
     openGraph: {
         type: "website",
         locale: "de",

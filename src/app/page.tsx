@@ -12,10 +12,12 @@ import { CtaSection } from "@/components/organisms/CtaSection"
 import { HomeHumanSection } from "@/components/organisms/HomeHumanSection"
 import { HomeValuesSection } from "@/components/organisms/HomeValuesSection"
 import { PAGE_THEME } from "@/constants"
+import { Organization, WithContext } from "schema-dts"
 import HeroIMG from "/public/images/optimized/hero_optimized.webp"
 
 const Home = () => {
-    const structuredData = {
+    const structuredData: WithContext<Organization> = {
+        "@context": "https://schema.org",
         "@type": "Organization",
         address: {
             "@type": "PostalAddress",
