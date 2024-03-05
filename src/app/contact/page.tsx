@@ -35,8 +35,8 @@ const Contact = () => {
                     <div className={"flex grow-[2] flex-col gap-8 p-4"}>
                         <Typography className="-mt-3 mb-0 font-normal leading-140" variant="h3">
                             Team One Developers GmbH <br />
-                            Hospitalstraße 35 <br />
-                            70174 Stuttgart
+                            Stafflenbergstraße 44 <br />
+                            70184 Stuttgart
                         </Typography>
                         <ExternalLink href="mailto:kontakt@t1dev.de" name="kontakt@t1dev.de" />
                         <ExternalLink href="tel:+4971125298690" name="+49 711 252 98 690" />

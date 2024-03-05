@@ -21,8 +21,8 @@ const Home = () => {
             "@type": "PostalAddress",
             addressLocality: "Stuttgart",
             addressRegion: "BW",
-            postalCode: "70174",
-            streetAddress: "Hospitalstraße 35"
+            postalCode: "70184",
+            streetAddress: "Stafflenbergstraße 44"
         },
         email: "kontak@t1dev.de",
         legalName: "Team One Developers GmbH",

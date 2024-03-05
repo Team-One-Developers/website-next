@@ -30,8 +30,8 @@ const Privacy = () => {
                 </Typography>
                 <Typography as="address" variant="paragraph" className="text-white">
                     Team One Developers GmbH <br />
-                    Hospitalstraße 35 <br />
-                    70174 Stuttgart
+                    Stafflenbergstraße 44 <br />
+                    70184 Stuttgart
                     <br />
                     <a className="text-primary" href="tel:+4971125298690">
                         +49 711 25298690 <br />

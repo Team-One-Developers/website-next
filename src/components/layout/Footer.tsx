@@ -76,8 +76,8 @@ export const Footer = () => {
                             rel="noreferrer"
                         >
                             Team One Developers GmbH <br />
-                            Hospitalstraße 35 <br />
-                            70174 Stuttgart
+                            Stafflenbergstraße 44 <br />
+                            70184 Stuttgart
                         </a>
                     </div>
 
@@ -89,8 +89,8 @@ export const Footer = () => {
                             target="_blank"
                             rel="noreferrer"
                         >
-                            <span>{`N 48° 46' 33.25`}</span>
-                            <span>{`E 9° 10' 15.91`}</span>
+                            <span>{`N 48° 46' 21.601`}</span>
+                            <span>{`E 9° 11' 23.6`}</span>
                         </a>
                     </div>
 

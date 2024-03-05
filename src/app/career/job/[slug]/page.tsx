@@ -76,8 +76,8 @@ export default async function CareerPage({ params }: CareerProps) {
                 addressRegion: "Baden-Württemberg",
                 addressCountry: "Germany",
                 addressLocality: "Stuttgart",
-                postalCode: "70174",
-                streetAddress: "Hospitalstraße 35"
+                postalCode: "70184",
+                streetAddress: "Stafflenbergstraße 44"
             }
         },
         hiringOrganization: {

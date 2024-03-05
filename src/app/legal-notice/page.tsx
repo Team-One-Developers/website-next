@@ -20,8 +20,8 @@ const Legal = () => {
                 </Typography>
                 <Typography as="address" className="text-white" variant="paragraph">
                     Team One Developers GmbH <br />
-                    Hospitalstraße 35 <br />
-                    70174 Stuttgart
+                    Stafflenbergstraße 44 <br />
+                    70184 Stuttgart
                 </Typography>
                 <Typography className="mt-8" as="h2" variant="h4">
                     Vertreten durch die Geschäftsführung
