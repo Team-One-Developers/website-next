@@ -1,4 +1,3 @@
-/* eslint-disable tailwindcss/classnames-order */
 import { Mdx } from "@/components/MdxComponents"
 import { Link as LinkComponent } from "@/components/atoms/Link"
 import { StructuredData } from "@/components/atoms/StructuredData"
@@ -13,6 +12,7 @@ import { Career, allCareers } from "contentlayer/generated"
 import { Metadata } from "next"
 import Link from "next/link"
 import { notFound } from "next/navigation"
+import { JobPosting, WithContext } from "schema-dts"
 
 interface CareerProps {
     params: {
@@ -52,6 +52,12 @@ export async function generateStaticParams(): Promise<CareerProps["params"][]> {
     }))
 }
 
+const employmentTypeMap: Record<Career["employmentType"], JobPosting["employmentType"]> = {
+    Festanstellung: "FULL_TIME",
+    Praktikum: "INTERN",
+    Werkstudent: "INTERN"
+}
+
 export default async function CareerPage({ params }: CareerProps) {
     const career = await getCareerFromParams(params)
 
@@ -64,7 +70,8 @@ export default async function CareerPage({ params }: CareerProps) {
         currentItem: career
     })
 
-    const structuredData = {
+    const structuredData: WithContext<JobPosting> = {
+        "@context": "https://schema.org",
         "@type": "JobPosting",
         title: career.title,
         // Description is a paragraph above a list with all requirements
@@ -82,13 +89,15 @@ export default async function CareerPage({ params }: CareerProps) {
         },
         hiringOrganization: {
             "@type": "Organization",
-            name: "Team One Developers GmbH"
+            name: "Team One Developers GmbH",
+            sameAs: "https://www.teamonedevelopers.de"
         },
-        employmentType: `${career.employmentType} - ${career.schedule}`,
+        employmentType: employmentTypeMap[career.employmentType],
         jobBenefits: (career.employmentType === "Festanstellung" ? FESTANSTELLUNG_BENEFITS : PRAKTIKUMS_BENEFITS).map(
             (benefit) => benefit.text
         ),
-        datePosted: career.date
+        datePosted: career.date,
+        directApply: true
     }
 
     return (
