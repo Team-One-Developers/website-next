@@ -29,13 +29,13 @@ export const Footer = () => {
             <Section className="pb-0 md:pb-0">
                 <div className="block pb-8 md:grid md:grid-flow-row md:grid-cols-[2.5fr_1fr_1fr_1fr] md:grid-rows-[1fr_1fr] md:gap-x-3 md:gap-y-5 md:text-left">
                     <div className="md:row-span-2 md:mb-0 md:self-end md:justify-self-start">
-                        <h2 className={navigationSectionHeaderCSS}>
+                        <span className={navigationSectionHeaderCSS}>
                             &copy; 2024 Team One Developers. All Rights Reserved.
-                        </h2>
+                        </span>
                     </div>
 
                     <div className="row-span-2">
-                        <h2 className={navigationSectionHeaderCSS}>Pages</h2>
+                        <div className={navigationSectionHeaderCSS}>Pages</div>
 
                         <div>
                             {SiteMetadata.menuLinks.map((linkObj, index) => {
@@ -68,7 +68,7 @@ export const Footer = () => {
                     </div>
 
                     <div className="">
-                        <h2 className={navigationSectionHeaderCSS}>Address</h2>
+                        <div className={navigationSectionHeaderCSS}>Address</div>
                         <a
                             className={externalLinkCSS}
                             href="https://g.page/team-one-developers-gmbh?share"
@@ -82,7 +82,7 @@ export const Footer = () => {
                     </div>
 
                     <div className="col-start-3 md:self-end">
-                        <h2 className={navigationSectionHeaderCSS}>GPS</h2>
+                        <div className={navigationSectionHeaderCSS}>GPS</div>
                         <a
                             className={twJoin(externalLinkCSS, "flex flex-col")}
                             href="https://g.page/team-one-developers-gmbh?share"
@@ -95,12 +95,12 @@ export const Footer = () => {
                     </div>
 
                     <div className="col-start-4 row-start-1">
-                        <h2 className={navigationSectionHeaderCSS}>Mail</h2>
+                        <div className={navigationSectionHeaderCSS}>Mail</div>
                         <a className={externalLinkCSS} href="mailto:kontakt@t1dev.de" target="_blank" rel="noreferrer">
                             kontakt@t1dev.de
                         </a>
 
-                        <h2 className={twJoin(navigationSectionHeaderCSS, "md:mt-4")}>Phone</h2>
+                        <div className={twJoin(navigationSectionHeaderCSS, "md:mt-4")}>Phone</div>
                         <a className={externalLinkCSS} href="tel:+4971125298690" target="_blank" rel="noreferrer">
                             +49 711 252 98 690
                         </a>
