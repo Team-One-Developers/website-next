@@ -5,7 +5,8 @@ import { Metadata } from "next"
 import "./style.css"
 
 export const metadata: Metadata = {
-    title: "Legal"
+    title: "Impressum",
+    description: "Impressum der Team One Developers GmbH in Stuttgart."
 }
 
 const Legal = () => {

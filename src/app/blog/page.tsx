@@ -7,7 +7,8 @@ import { Blog, allBlogs } from "contentlayer/generated"
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
-    title: "Blog"
+    title: "Blog",
+    description: "Inside our creative minds."
 }
 
 const BlogOverview = () => {

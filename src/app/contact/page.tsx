@@ -11,7 +11,7 @@ import TRex from "/public/images/optimized/dinosaur_call_optimized.webp"
 
 export const metadata: Metadata = {
     title: "Kontakt",
-    description: "Kontaktiere uns telefonisch oder per E-Mail"
+    description: "Kontaktiere uns telefonisch oder per E-Mail."
 }
 
 const Contact = () => {

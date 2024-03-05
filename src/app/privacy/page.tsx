@@ -5,7 +5,8 @@ import { Metadata } from "next"
 import "../legal-notice/style.css"
 
 export const metadata: Metadata = {
-    title: "Privacy"
+    title: "Datenschutzerklärung",
+    description: "Erahre mehr darüber, wie wir mit deinen Daten umgehen."
 }
 
 const Privacy = () => {
