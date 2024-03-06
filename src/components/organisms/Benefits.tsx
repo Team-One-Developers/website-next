@@ -118,9 +118,8 @@ export const Benefits = () => {
                     index={4}
                     iconName="homeoffice"
                     headline="Home Office"
-                    text="Auch wenn wir tolle Büroräumlichkeiten in der Stuttgarter Innenstadt
-            haben, unterstützen wir flexible Arbeitszeiten ebenso wie
-            Home-Office."
+                    text="Auch wenn wir tolle Büroräumlichkeiten in Stuttgarts Halbhöhenlage
+            haben, unterstützen wir flexible Arbeitszeiten ebenso wie Home-Office."
                 />
 
                 <BenefitElement

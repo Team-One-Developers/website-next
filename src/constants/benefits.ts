@@ -6,7 +6,7 @@ export const FESTANSTELLUNG_BENEFITS = [
     },
     { text: "Eigenständiges, selbstverantwortliches Arbeiten", icon: "person" },
     {
-        text: "Familienfreundliche und flexible Arbeitszeiten, Homeoffice und ein Büro mitten in der Innenstadt",
+        text: "Familienfreundliche und flexible Arbeitszeiten, Homeoffice und ein Büro in Stuttgarts Halbhöhenlage",
         icon: "homeoffice"
     },
     {
@@ -24,7 +24,7 @@ export const WERKSTUDENT_BENEFITS = [
     },
     { text: "Innovative Technologien sowie spannende und fordernde Projekte", icon: "monitor" },
     { text: "Eigenständiges und selbständiges Arbeiten", icon: "person" },
-    { text: "Home-Office und ein Büro in der Innenstadt", icon: "homeoffice" },
+    { text: "Home-Office und ein Büro in Stuttgarts Halbhöhenlage", icon: "homeoffice" },
     { text: "Regelmäßige Teamevents", icon: "workation" }
 ]
 
@@ -36,7 +36,7 @@ export const PRAKTIKUMS_BENEFITS = [
     },
     { text: "Eigenständiges und selbständiges Arbeiten", icon: "person" },
     {
-        text: "Flexible Arbeitszeiten, Home-Office und ein Büro mitten in der Innenstadt",
+        text: "Flexible Arbeitszeiten, Home-Office und ein Büro in Stuttgarts Halbhöhenlage",
         icon: "homeoffice"
     },
     { text: "Regelmäßige Teamevents", icon: "workation" }
