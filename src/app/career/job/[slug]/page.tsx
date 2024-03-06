@@ -54,7 +54,6 @@ export async function generateStaticParams(): Promise<CareerProps["params"][]> {
 
 const employmentTypeMap: Record<Career["employmentType"], JobPosting["employmentType"]> = {
     Festanstellung: "FULL_TIME",
-    Teilzeit: "PART_TIME",
     Praktikum: "INTERN",
     Werkstudent: "INTERN"
 }

@@ -126,11 +126,24 @@ export const Career = defineDocumentType(() => ({
     fields: {
         title: { type: "string", required: true },
         description: { type: "string", required: true },
-        location: { type: "string", required: true },
-        schedule: { type: "string", required: true },
+        location: {
+            type: "enum",
+            options: ["Stuttgart"],
+            required: true
+        },
+        schedule: {
+            type: "enum",
+            options: ["Vollzeit", "Teilzeit"],
+            required: true
+        },
         employmentType: {
             type: "enum",
             options: ["Festanstellung", "Praktikum", "Werkstudent"],
+            required: true
+        },
+        division: {
+            type: "enum",
+            options: ["Engineering", "Transformation", "Business & Operations"],
             required: true
         },
         tags: { type: "list", of: { type: "string" }, required: true },
