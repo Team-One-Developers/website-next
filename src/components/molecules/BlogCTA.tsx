@@ -59,18 +59,23 @@ interface BlogCTAProps {
 
 export const BlogCTA = ({ variant, className }: BlogCTAProps) => {
     return (
-        <div className={twMerge("relative p-8 z-0 rounded-md", className)}>
+        <article
+            className={twMerge("relative p-8 z-0 rounded-md transition-shadow hover:shadow-md", className)}
+            aria-label={BlogCTAValues[variant].linkLabel}
+        >
+            <Link
+                href={BlogCTAValues[variant].link}
+                className="absolute left-0 top-0 z-10 size-full"
+                aria-labelledby={`link-${BlogCTAValues[variant].subtitle}`}
+                aria-hidden
+                tabIndex={-1}
+            />
             <Image
                 src={CTA_BG}
                 className="absolute left-0 top-0 -z-10 rounded-md opacity-[90%]"
                 alt="Background Image"
                 fill
                 placeholder="blur"
-            />
-            <Link
-                href={BlogCTAValues[variant].link}
-                className="absolute left-0 top-0 z-10 size-full"
-                aria-labelledby={`link-${BlogCTAValues[variant].subtitle}`}
             />
             <div className="mb-4 flex items-center">
                 <Icon
@@ -108,6 +113,6 @@ export const BlogCTA = ({ variant, className }: BlogCTAProps) => {
                 label={BlogCTAValues[variant].linkLabel}
                 className="relative z-20"
             />
-        </div>
+        </article>
     )
 }

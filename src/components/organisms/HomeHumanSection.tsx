@@ -26,7 +26,7 @@ export const HomeHumanSection = () => {
                     link="/culture"
                     linkColor="secondary"
                     headlineVariant="h1"
-                    headlineClassName="mb-[1rem] uppercase font-normal"
+                    headlineClassName="mb-4 uppercase font-normal"
                     contentVariant="paragraph"
                     icon={<Icon name="person_small" className="mr-2 brightness-0" />}
                 />

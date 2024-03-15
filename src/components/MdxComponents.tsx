@@ -28,19 +28,26 @@ const components = (theme: string) => ({
         return memo(H2)
     })(),
     h3: (() => {
-        const H3 = (props: any) => <Typography {...props} as="h3" variant="h3" className="mb-8 mt-12" />
+        const H3 = (props: any) => (
+            <Typography
+                {...props}
+                as="h3"
+                variant="subtitle"
+                className="mt-12 text-lg font-medium leading-150 lg:text-2xl"
+            />
+        )
         return memo(H3)
     })(),
     h4: (() => {
-        const H4 = (props: any) => <Typography {...props} as="h4" variant="h4" className="mb-8 mt-12" />
+        const H4 = (props: any) => <Typography {...props} as="h4" variant="subtitle" className="mb-8 mt-12" />
         return memo(H4)
     })(),
     h5: (() => {
-        const H5 = (props: any) => <Typography {...props} as="h5" variant="h5" className="mb-8 mt-12" />
+        const H5 = (props: any) => <Typography {...props} as="h5" variant="subtitle" className="mb-8 mt-12" />
         return memo(H5)
     })(),
     h6: (() => {
-        const H6 = (props: any) => <Typography {...props} as="h6" variant="h6" className="mb-8 mt-12" />
+        const H6 = (props: any) => <Typography {...props} as="h6" variant="subtitle" className="mb-8 mt-12" />
         return memo(H6)
     })(),
     p: (() => {

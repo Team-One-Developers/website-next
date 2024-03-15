@@ -3,8 +3,8 @@ title: AWS IAM Primer
 descriptionShort: Who can do what? Since when?
 descriptionLong: AWS IAM at its core is the central authorization service. This article provides an overview on how to navigate its basic features and how it fits together with other AWS services.
 status: PUBLISHED
-author: MrTea
-date: '2023-11-15'
+author: Patrick
+date: '2024-05-15'
 heroImage: /images/optimized/aws-iam-primer.webp
 length: BLOG
 tags:
@@ -18,13 +18,13 @@ category: SOFTWARE ENGINEERING
 AWS IAM - AWS Identity and Access Management is a set of services for managing who can access what on your AWS account.
 This article will give you a basic overview of what IAM can do and what it provides as a core functionality.
 
-# Introduction
+## Introduction
 
 IAM appears as one of the most essential services. It defines who (the subject) can do what (the actions) on what (the object).
 However, AWS started humbly without dedicated identity and access management.
 AWS introduced IAM later in [2011](https://www.awsgeek.com/AWS-History).
 
-# Purpose
+## Purpose
 
 IAM solves the following problem: Given a subject attempting to do an action on some resources, is the subject allowed
 to do so? It is first and foremost a central authorization service meant to implement mandatory access control ([MAC](https://csrc.nist.gov/glossary/term/mandatory_access_control)).
@@ -32,7 +32,7 @@ to do so? It is first and foremost a central authorization service meant to impl
 In addition, it provides two authentication mechanisms: One for Console Access (split into root user access and account user access) and
 the other for programmatic access (via Access key and secret access key). It outsources other authentication via identity providers and AWS STS.
 
-# Authorization
+## Authorization
 
 At its core, IAM defines what is an _Identity_ (subject), what are _Resources_ (objects)
 and what are _Actions_. These three things are bundled in a policy, which contains a list of statements.

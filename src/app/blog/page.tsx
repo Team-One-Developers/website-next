@@ -4,6 +4,7 @@ import { Section } from "@/components/layout/Section"
 import { BlogRow } from "@/components/organisms/BlogRow"
 import { PAGE_THEME } from "@/constants"
 import { Blog, allBlogs } from "contentlayer/generated"
+import { compareDesc } from "date-fns"
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -11,61 +12,39 @@ export const metadata: Metadata = {
     description: "Inside our creative minds."
 }
 
+const shouldBeShown = (blog: Blog) => {
+    if (blog.status === "PUBLISHED" && blog.length === "BLOG") {
+        return true
+    } else if (blog.status === "TESTING" && process.env.NEXT_PUBLIC_RENDER_DRAFT_BLOGS === "TRUE") {
+        return true
+    } else {
+        return false
+    }
+}
+
+const fitsCategory = (blog: Blog, categories: string[]): boolean => {
+    if (categories.includes(blog.category)) {
+        return true
+    } else {
+        return false
+    }
+}
+
 const BlogOverview = () => {
-    const showTestBlogs = process.env.NEXT_PUBLIC_RENDER_TESTING_BLOGS === "TRUE"
-
-    const fitsCategory = (blog: Blog, categories: string[]): boolean => {
-        if (categories.includes(blog.category)) {
-            return true
-        } else {
-            return false
-        }
-    }
-
-    const shouldBeShown = (blog: Blog): boolean => {
-        if (blog.status === "PUBLISHED" || (blog.status === "TESTING" && showTestBlogs)) {
-            return true
-        } else {
-            return false
-        }
-    }
+    const blogPosts = allBlogs
+        .filter((blog) => shouldBeShown(blog))
+        .sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)))
 
     return (
         <PageLayout theme={PAGE_THEME.light}>
             <Section>
-                <Typography as="h1" variant="h1">
-                    Inside our creative minds
+                <Typography as="h1" variant="h1" className="font-medium">
+                    Team One Developers Blog
                 </Typography>
             </Section>
-            <Section className="pt-0">
+            <Section className="py-0 md:py-0">
                 <div className="flex flex-col gap-4">
-                    <Typography as="h2" variant="h2" className="uppercase">
-                        News / Culture / Experience / Methodology
-                    </Typography>
-                    <Typography as="p" variant="paragraph">
-                        Beyond Code: Einblicke in unser internes Firmenleben, Neuigkeiten und Themen die uns bewegen.
-                    </Typography>
-                    <BlogRow
-                        blogs={allBlogs.filter(
-                            (blog) =>
-                                fitsCategory(blog, ["METHODOLOGY", "NEWS", "CULTURE", "EXPERIENCE"]) &&
-                                shouldBeShown(blog)
-                        )}
-                    />
-                </div>
-                <div className="mt-16 flex flex-col  gap-4">
-                    <Typography as="h2" variant="h2" className="uppercase">
-                        Software Engineering
-                    </Typography>
-                    <Typography as="p" variant="paragraph">
-                        Blogbeiträge über alles was zur Softwareentwicklung gehört. Von Typescript über React hin zu
-                        Produktivität steigernden simplen Shortcuts ist alles dabei.
-                    </Typography>
-                    <BlogRow
-                        blogs={allBlogs.filter(
-                            (blog) => fitsCategory(blog, ["SOFTWARE ENGINEERING"]) && shouldBeShown(blog)
-                        )}
-                    />
+                    <BlogRow blogs={blogPosts} />
                 </div>
             </Section>
         </PageLayout>

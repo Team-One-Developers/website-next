@@ -91,12 +91,13 @@ export default async function BlogPage({ params }: BlogProps) {
         <PageLayout theme={PAGE_THEME.light}>
             <StructuredData data={structuredData} />
             <Section>
-                <div className="flex w-full auto-rows-auto flex-col gap-24 pt-0 lg:grid lg:gap-24 lg:py-4 xl:grid-cols-[600px_1fr] 2xl:grid-cols-[700px_1fr] 3xl:grid-cols-[0.8fr_800px_1fr] 4xl:px-0">
-                    {/* 
-                    // for go-live not relevant. needs to be revisited later
-                    {blog.toc && (
-                        <TOC blog={blog} className="xl:col-start-2 xl:row-start-1 3xl:col-start-1 3xl:row-start-1 " />
-                    )} */}
+                <div className="flex w-full auto-rows-auto flex-col gap-24 pt-0 lg:grid xl:grid-cols-[800px_1fr] 2xl:grid-cols-[800px_1fr] 3xl:grid-cols-[1fr_800px_1fr]">
+                    {/* {blog.toc && (
+                            <TOC
+                                blog={blog}
+                                className="xl:col-start-2 xl:row-start-1 3xl:col-start-1 3xl:row-start-1 "
+                            />
+                        )} */}
                     <div className="scrollMarginTopFix xl:col-start-1 xl:row-start-1 3xl:col-start-2">
                         <Typography as="h1" variant="h1" className="uppercase">
                             {blog.title}
@@ -108,7 +109,7 @@ export default async function BlogPage({ params }: BlogProps) {
                         <div className="relative mt-4 flex items-center">
                             <ProfilePicture imgSrc={author.profileImg} authorName={author.name} />
                             <div className="ml-4">
-                                <Typography as="p" variant="h6">
+                                <Typography as="p" variant="subtitle">
                                     {author.name}
                                 </Typography>
                                 <Typography as="p" variant="paragraph" className="text-muted">
@@ -119,7 +120,7 @@ export default async function BlogPage({ params }: BlogProps) {
                                 </Typography>
                             </div>
                         </div>
-                        <hr className="my-8" />
+                        <hr className=" my-8 h-px border-dashed bg-t1-darkGray" />
                         {blog.heroImage && (
                             <div className="relative h-fit w-full">
                                 <Image
@@ -129,28 +130,37 @@ export default async function BlogPage({ params }: BlogProps) {
                                     height={0}
                                     sizes="100vw"
                                     style={{ width: "100%", height: "auto" }} // optional
+                                    // placeholder="blur"
+                                    // blurDataURL={blog.blurDataURL}
+                                    // TODO: Preprocess contentlayer images
                                 />
-                                <hr className="my-8" />
+                                {/* <hr className="my-8" /> */}
                             </div>
                         )}
                         <Mdx code={blog.body.code} theme="light" />
+                        <hr className=" my-8 h-px border-dashed bg-t1-darkGray" />
                         <AboutTheAuthor author={author} />
                     </div>
                 </div>
             </Section>
-            {blog.cta !== "NONE" && (
-                <Section>
-                    <BlogCTA variant={blog.cta} className="mt-16" />
-                </Section>
-            )}
             <Section>
-                <div className="mt-32 flex flex-col gap-4">
-                    <Typography as="h3" variant="h3">
+                <div className="flex flex-col gap-4">
+                    <Typography as="h3" variant="h3" className="uppercase">
                         Verwandte Artikel
                     </Typography>
                     <BlogRow blogs={mostRelatedBlogs} />
                 </div>
             </Section>
+            {blog.cta !== "NONE" && (
+                <Section>
+                    <div className="flex flex-col gap-4">
+                        <Typography as="h3" variant="h3" className="uppercase">
+                            Dein Job bei Team One Developers?
+                        </Typography>
+                        <BlogCTA variant={blog.cta} />
+                    </div>
+                </Section>
+            )}
         </PageLayout>
     )
 }
