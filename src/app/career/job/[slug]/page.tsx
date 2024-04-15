@@ -6,6 +6,7 @@ import { PageLayout } from "@/components/layout/PageLayout"
 import { TwoColumnsFullScreenContainer } from "@/components/layout/TwoColumnsFullScreenContainer"
 import Icon, { IconProps } from "@/components/molecules/Icon"
 import { JobType } from "@/components/molecules/JobType"
+import { siteConfig } from "@/config/siteConfig"
 import { FESTANSTELLUNG_BENEFITS, PRAKTIKUMS_BENEFITS, WERKSTUDENT_BENEFITS } from "@/constants/benefits"
 import { mostRelated } from "@/lib/mostRelated"
 import { Career, allCareers } from "contentlayer/generated"
@@ -41,7 +42,7 @@ export async function generateMetadata({ params }: CareerProps): Promise<Metadat
         openGraph: {
             images: `/api/og/career?title=${career.title}`,
             type: "website",
-            url: `https://www.teamonedevelopers.de${career.slug}`
+            url: `${siteConfig.url}${career.slug}`
         },
         title: career.title,
         description: career.description
