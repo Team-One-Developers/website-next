@@ -71,7 +71,7 @@ export const Footer = () => {
                         <div className={navigationSectionHeaderCSS}>Address</div>
                         <a
                             className={externalLinkCSS}
-                            href="https://g.page/team-one-developers-gmbh?share"
+                            href="https://maps.app.goo.gl/6onqnVRXTPBjPDUp7"
                             target="_blank"
                             rel="noreferrer"
                         >
@@ -85,7 +85,7 @@ export const Footer = () => {
                         <div className={navigationSectionHeaderCSS}>GPS</div>
                         <a
                             className={twJoin(externalLinkCSS, "flex flex-col")}
-                            href="https://g.page/team-one-developers-gmbh?share"
+                            href="https://maps.app.goo.gl/6onqnVRXTPBjPDUp7"
                             target="_blank"
                             rel="noreferrer"
                         >
