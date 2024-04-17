@@ -133,9 +133,9 @@ export const Benefits = () => {
                 <BenefitElement
                     index={6}
                     iconName="person"
-                    headline="Qualitrain"
+                    headline="Wellpass"
                     text="Alternativ hast Du die Möglichkeit über unseren Fitness-Partner
-            Qualitrain in 6.000 hochwertigen Sport- und
+            Wellpass in 9.000 hochwertigen Sport- und
             Gesundheits&shy;einrichtungen in ganz Deutschland zu trainieren."
                 />
             </div>
