@@ -40,7 +40,7 @@ export async function generateMetadata({ params }: CareerProps): Promise<Metadat
 
     return {
         openGraph: {
-            images: `/api/og/career?title=${career.title}`,
+            images: `${siteConfig.url}/api/og/career?title=${career.title}`,
             type: "website",
             url: `${siteConfig.url}${career.slug}`
         },
