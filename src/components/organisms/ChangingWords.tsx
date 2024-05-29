@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { useEffect, useLayoutEffect, useRef, useState } from "react"
+import { ComponentProps, useEffect, useLayoutEffect, useRef, useState } from "react"
 import { twJoin } from "tailwind-merge"
 import Typography, { TypographyProps } from "../atoms/Typography"
 
@@ -20,7 +20,7 @@ export const ChangingWords = ({
     type = "overview",
     variant = "h1"
 }: ChangingWordsProps) => {
-    const listItemsRefs = useRef<Array<HTMLLIElement | null>>([])
+    const listItemsRefs: ComponentProps<any> = useRef<Array<HTMLLIElement>>([])
     const listRef = useRef<HTMLUListElement | null>(null)
     const [activeListItemIndex, setActiveListItemIndex] = useState(0)
 
