@@ -93,7 +93,8 @@ export default async function CareerPage({ params }: CareerProps) {
         hiringOrganization: {
             "@type": "Organization",
             name: "Team One Developers GmbH",
-            sameAs: "https://www.teamonedevelopers.de"
+            sameAs: "https://www.teamonedevelopers.de",
+            logo: "https://www.teamonedevelopers.de/images/logo/t1d-sticker-darkgray.svg"
         },
         employmentType: employmentTypeMap[career.employmentType],
         jobBenefits: (career.employmentType === "Festanstellung" ? FESTANSTELLUNG_BENEFITS : PRAKTIKUMS_BENEFITS).map(
