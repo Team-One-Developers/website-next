@@ -2,7 +2,7 @@ import { ReactNode } from "react"
 import { tv, VariantProps } from "tailwind-variants"
 
 export const imageDecorationVariants = tv({
-    base: "absolute z-[10] w-[70px] sm:w-[100px]  lg:w-[100px]",
+    base: "absolute z-10 w-[70px] sm:w-[100px]  lg:w-[100px]",
     variants: {
         position: {
             "bottom-left": "bottom-[5%] left-[5%] sm:bottom-[5%] sm:left-[5%]",

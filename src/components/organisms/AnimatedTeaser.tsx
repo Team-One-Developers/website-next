@@ -34,8 +34,8 @@ export const AnimatedTeaser = ({ className, innerClassName }: AnimatedTeaserProp
                         innerClassName
                     )}
                 />
-                <div className="relative w-[85%] text-center md:w-[70%] lg:w-[55%] xl:w-[40%]">
-                    <div className="mb-[0.75rem]">
+                <div className="relative w-[85%] text-center md:w-[70%] lg:w-[55%] xl:w-2/5">
+                    <div className="mb-3">
                         <Typography variant="subtitle" className="m-0 text-black">
                             Wir arbeiten
                         </Typography>

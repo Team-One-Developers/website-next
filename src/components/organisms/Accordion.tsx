@@ -58,10 +58,7 @@ export const Accordion = (props: AccordionProps) => {
                 </svg>
             </summary>
 
-            <Typography
-                variant="paragraph"
-                className="m-0 mt-4 text-base text-white md:ml-[6.6%] md:text-xl lg:w-[40%]"
-            >
+            <Typography variant="paragraph" className="m-0 mt-4 text-base text-white md:ml-[6.6%] md:text-xl lg:w-2/5">
                 {text}
             </Typography>
         </details>

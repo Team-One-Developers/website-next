@@ -25,7 +25,7 @@ export const CareerElement = (props: JobProps) => {
                         </Typography>
                     </div>
                     <div className="m-2 flex flex-wrap items-center justify-center md:m-4 ">
-                        <div className="mb-1 flex basis-[100%]">
+                        <div className="mb-1 flex basis-full">
                             <Typography className="uppercase text-white" variant="subtitle">
                                 {career.employmentType},&nbsp;
                             </Typography>
@@ -33,7 +33,7 @@ export const CareerElement = (props: JobProps) => {
                                 {career.schedule}
                             </Typography>
                         </div>
-                        <div className="mb-1 flex basis-[100%]">
+                        <div className="mb-1 flex basis-full">
                             <Typography className="uppercase text-white" variant="subtitle">
                                 {career.location}
                             </Typography>

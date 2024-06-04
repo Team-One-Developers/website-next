@@ -141,7 +141,7 @@ export const UxDesign = ({ className }: { className: string }) => {
 
                     <div className="col-start-3 row-start-1 flex items-center justify-center text-white">
                         <BubbleContainer
-                            className="after:content-[none]"
+                            className="after:content-none"
                             active={
                                 activeCategory === UX_CATEGORIES.ux_design || activeCategory === UX_CATEGORIES.ui_design
                             }
@@ -159,7 +159,7 @@ export const UxDesign = ({ className }: { className: string }) => {
                     </div>
 
                     <div className="col-span-5 row-start-2 grid grid-cols-7 grid-rows-1 items-center justify-center text-white">
-                        <div className="z-10 w-[80%] rounded-xl border-2 border-[#21754f] bg-[rgb(6,25,17)] px-[12px] py-[6px] text-center font-spacegrotesk text-xs uppercase text-white">
+                        <div className="z-10 w-4/5 rounded-xl border-2 border-[#21754f] bg-[rgb(6,25,17)] px-[12px] py-[6px] text-center font-spacegrotesk text-xs uppercase text-white">
                             Human Focused
                         </div>
                         <BubbleContainer active={activeCategory === UX_CATEGORIES.ux_design}>
@@ -224,14 +224,14 @@ export const UxDesign = ({ className }: { className: string }) => {
                                 />
                             </ImageMask>
                         </BubbleContainer>
-                        <div className="z-10 w-[80%] rounded-xl border-2 border-[#21754f] bg-[rgb(6,25,17)] px-[12px] py-[6px] text-center font-spacegrotesk text-xs uppercase text-white">
+                        <div className="z-10 w-4/5 rounded-xl border-2 border-[#21754f] bg-[rgb(6,25,17)] px-[12px] py-[6px] text-center font-spacegrotesk text-xs uppercase text-white">
                             Tech Focused
                         </div>
                     </div>
 
                     <div className="col-start-3 row-start-3 flex items-center justify-center text-white">
                         <BubbleContainer
-                            className="after:content-[none]"
+                            className="after:content-none"
                             active={
                                 activeCategory === UX_CATEGORIES.ui_development ||
                                 activeCategory === UX_CATEGORIES.ui_design

@@ -44,7 +44,7 @@ const Services = () => {
             </Section>
 
             <Hero
-                className="mt-[4.5rem] lg:mt-[11rem]"
+                className="mt-[4.5rem] lg:mt-44"
                 imageNode={<Image src={OfficeImg} alt="People working in an office" fill placeholder="blur" />}
                 overlayNode={
                     <>
