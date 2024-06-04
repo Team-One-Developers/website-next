@@ -77,7 +77,7 @@ export const TechStacks = () => {
                     </Typography>
 
                     <div className="mt-4 flex justify-center">
-                        <div className="sm:min-h-auto w-full sm:w-4/5 md:w-[70%] lg:w-2/5">
+                        <div className="w-full sm:w-4/5 md:w-[70%] lg:w-2/5">
                             <Typography className="text-inherit" variant="paragraph">
                                 {isBackendActive ? (
                                     <>

@@ -17,7 +17,7 @@ const Home = () => {
     return (
         <PageLayout theme={PAGE_THEME.light}>
             <Section>
-                <Typography as="h1" variant="h1" className="tracking-aBitTighter max-w-[790px] font-medium">
+                <Typography as="h1" variant="h1" className="max-w-[790px] font-medium">
                     WIR <br /> ENTWICKELN <br /> DIE ZUKUNFT <br /> DES WEB.
                 </Typography>
             </Section>

@@ -49,7 +49,7 @@ export const Benefits = () => {
 
     return (
         <div className="bg-black text-white lg:flex">
-            <div className="relative lg:basis-[50%]">
+            <div className="relative lg:basis-1/2">
                 <Typography as="h2" variant="h1" className="lg:max-w-[60%]">
                     Unsere Benefits auf einen Blick
                 </Typography>
@@ -77,7 +77,7 @@ export const Benefits = () => {
                 )}
             </div>
 
-            <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:mt-0  lg:basis-[50%] xl:grid-cols-3">
+            <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:mt-0 lg:basis-1/2 xl:grid-cols-3">
                 <BenefitElement
                     index={0}
                     iconName="monitor"

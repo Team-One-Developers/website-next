@@ -3,7 +3,6 @@ import { Image } from "../atoms/Image"
 import { ImageMask } from "../atoms/ImageMask"
 import Typography from "../atoms/Typography"
 import { Section } from "../layout/Section"
-
 import SpringerImg from "/public/images/optimized/axel-springer_optimized.webp"
 import FinanceImg from "/public/images/optimized/finance_0_optimized.webp"
 import MercedesImg from "/public/images/optimized/mercedes-benz_optimized.webp"
@@ -86,7 +85,7 @@ export const ReferencesSlider = () => {
 const ReferencesSliderEntry = (props: ReferencesSliderEntryProps) => {
     const { imageSrc, technologyList, headline, infoText } = props
     return (
-        <li className="shrink-0 grow-0 basis-[90%] snap-start pr-4 sm:pr-12 md:basis-[75%] md:pb-20 md:pr-20 xl:pb-40 xl:pr-28">
+        <li className="shrink-0 grow-0 basis-[90%] snap-start pr-4 sm:pr-12 md:basis-3/4 md:pb-20 md:pr-20 xl:pb-40 xl:pr-28">
             <figure className="flex h-full flex-col gap-8 xl:flex-row">
                 <ImageMask className="relative aspect-[0.8] max-h-[320px] sm:max-h-[400px] md:max-h-[480px] xl:max-h-none xl:max-w-[650px] xl:basis-[55%]">
                     <Image src={imageSrc} alt={headline} fill placeholder="blur" />

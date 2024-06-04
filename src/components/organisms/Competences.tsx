@@ -10,7 +10,7 @@ export const Competences = () => {
                     "group p-8 lg:flex-row lg:gap-8  flex flex-col rounded-lg hover:text-t1-darkGray hover:bg-primary bg-t1-darkGray mb-4 text-white "
                 )}
             >
-                <span className="tracking-aBitTighter min-w-[7%] font-spacegrotesk text-xs font-medium uppercase not-italic leading-110">
+                <span className="min-w-[7%] font-spacegrotesk text-xs font-medium uppercase not-italic leading-110">
                     ( 0{count} / 03 )
                 </span>
                 <Typography

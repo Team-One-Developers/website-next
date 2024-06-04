@@ -53,7 +53,7 @@ export const UxDesignMobile = ({ className }: { className: string }) => {
             </div>
 
             <div className="mb-8 flex justify-center">
-                <div className="w-[75%] text-center">
+                <div className="w-3/4 text-center">
                     <Typography variant="paragraph" className="text-white">
                         Mindestens so wichtig wie der Code den wir schreiben, ist das Design, in welchem digitale
                         Produkte von ihren Anwendern wahrgenommen und regelmäßig genutzt werden. Die integrative

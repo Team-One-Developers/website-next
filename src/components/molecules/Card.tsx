@@ -9,7 +9,7 @@ export const Card = ({ subTitle, title, text }: { subTitle?: string; title: stri
             )}
         >
             {subTitle && (
-                <span className="tracking-aBitTighter min-w-[7%] font-spacegrotesk text-xs font-medium uppercase not-italic leading-110 text-primary">
+                <span className="min-w-[7%] font-spacegrotesk text-xs font-medium uppercase not-italic leading-110 text-primary">
                     {subTitle}
                 </span>
             )}

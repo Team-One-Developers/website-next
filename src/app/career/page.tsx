@@ -31,7 +31,7 @@ const Career = () => {
                 </Typography>
             </Section>
             <Section className="-mt-8 md:-mt-32 lg:mt-0 lg:flex lg:gap-8 lg:pt-0">
-                <ImageMask className="relative aspect-[0.75] h-full w-2/3 md:mt-8 lg:w-1/2 lg:basis-[50%]">
+                <ImageMask className="relative aspect-[0.75] h-full w-2/3 md:mt-8 lg:w-1/2 lg:basis-1/2">
                     <Image
                         priority
                         src={Trophy}
