@@ -1,6 +1,8 @@
-# *
 User-agent: *
 Allow: /
+Disallow: /_next/
+Disallow: /api/
+
 
 # Host
 Host: https://www.teamonedevelopers.de
