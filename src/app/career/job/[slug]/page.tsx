@@ -8,6 +8,7 @@ import Icon, { IconProps } from "@/components/molecules/Icon"
 import { JobType } from "@/components/molecules/JobType"
 import { siteConfig } from "@/config/siteConfig"
 import { FESTANSTELLUNG_BENEFITS, PRAKTIKUMS_BENEFITS, WERKSTUDENT_BENEFITS } from "@/constants/benefits"
+import { organization } from "@/data/schemaOrg"
 import { mostRelated } from "@/lib/mostRelated"
 import { Career, allCareers } from "contentlayer/generated"
 import { Metadata } from "next"
@@ -76,25 +77,19 @@ export default async function CareerPage({ params }: CareerProps) {
     const structuredData: WithContext<JobPosting> = {
         "@context": "https://schema.org",
         "@type": "JobPosting",
+        hiringOrganization: organization,
         title: career.title,
-        // Description is a paragraph above a list with all requirements
         description: `<p>${career.description}</p>`,
         jobLocation: {
             "@type": "Place",
             address: {
                 "@type": "PostalAddress",
                 addressRegion: "Baden-Württemberg",
-                addressCountry: "Germany",
+                addressCountry: "DE",
                 addressLocality: "Stuttgart",
                 postalCode: "70184",
                 streetAddress: "Stafflenbergstraße 44"
             }
-        },
-        hiringOrganization: {
-            "@type": "Organization",
-            name: "Team One Developers GmbH",
-            sameAs: "https://www.teamonedevelopers.de",
-            logo: "https://www.teamonedevelopers.de/images/logo/t1d-sticker-darkgray.svg"
         },
         employmentType: employmentTypeMap[career.employmentType],
         jobBenefits: (career.employmentType === "Festanstellung" ? FESTANSTELLUNG_BENEFITS : PRAKTIKUMS_BENEFITS).map(

@@ -1,6 +1,5 @@
 import { DancingFigures } from "@/components/atoms/DancingFigures"
 import { Image } from "@/components/atoms/Image"
-import { StructuredData } from "@/components/atoms/StructuredData"
 import { Typography } from "@/components/atoms/Typography"
 import { PageLayout } from "@/components/layout/PageLayout"
 import { Section } from "@/components/layout/Section"
@@ -12,28 +11,11 @@ import { CtaSection } from "@/components/organisms/CtaSection"
 import { HomeHumanSection } from "@/components/organisms/HomeHumanSection"
 import { HomeValuesSection } from "@/components/organisms/HomeValuesSection"
 import { PAGE_THEME } from "@/constants"
-import { Organization, WithContext } from "schema-dts"
 import HeroIMG from "/public/images/optimized/hero_optimized.webp"
 
 const Home = () => {
-    const structuredData: WithContext<Organization> = {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        address: {
-            "@type": "PostalAddress",
-            addressLocality: "Stuttgart",
-            addressRegion: "BW",
-            postalCode: "70184",
-            streetAddress: "Stafflenbergstraße 44"
-        },
-        email: "kontak@t1dev.de",
-        legalName: "Team One Developers GmbH",
-        slogan: "Wir entwickeln die Zukunft des Web"
-    }
-
     return (
         <PageLayout theme={PAGE_THEME.light}>
-            <StructuredData data={structuredData} />
             <Section>
                 <Typography as="h1" variant="h1" className="tracking-aBitTighter max-w-[790px] font-medium">
                     WIR <br /> ENTWICKELN <br /> DIE ZUKUNFT <br /> DES WEB.

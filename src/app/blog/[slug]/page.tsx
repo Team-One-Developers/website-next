@@ -10,6 +10,7 @@ import { ProfilePicture } from "@/components/molecules/ProfilePicture"
 import { Tags } from "@/components/molecules/Tags"
 import { BlogRow } from "@/components/organisms/BlogRow"
 import { PAGE_THEME } from "@/constants"
+import { organization } from "@/data/schemaOrg"
 import { formatDate } from "@/lib/formateDate"
 import { getAuthor } from "@/lib/getAuthor"
 import { mostRelated } from "@/lib/mostRelated"
@@ -77,17 +78,13 @@ export default async function BlogPage({ params }: BlogProps) {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
         headline: blog.title,
-        image: blog.heroImage ? blog.heroImage : undefined,
+        image: blog.heroImage ?? undefined,
         datePublished: blog.date,
         author: {
             "@type": "Person",
             name: blog.author
         },
-        publisher: {
-            "@type": "Organization",
-            name: "Team One Developers",
-            url: "https://www.teamonedevelopers.de"
-        }
+        publisher: organization
     }
 
     return (
