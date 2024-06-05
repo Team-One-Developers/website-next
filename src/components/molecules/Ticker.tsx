@@ -24,7 +24,7 @@ export const Ticker = (props: TickerProps) => {
 
     Array.from(Array(10).keys()).forEach((key) => {
         marqueeItems.push(
-            <div className="flex items-center overflow-hidden" aria-hidden="true" key={key}>
+            <div className="flex items-center overflow-hidden" aria-hidden aria-disabled key={key}>
                 <p
                     className={twJoin(
                         " font-spacegrotesk text-[82px] font-normal uppercase leading-none -tracking-[0.01em] sm:text-[120px] md:text-[175px]",
