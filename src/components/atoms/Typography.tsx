@@ -7,7 +7,7 @@ export const typographyVariants = tv({
     variants: {
         variant: {
             h1: "font-spacegrotesk text-3xl font-normal uppercase leading-110 lg:text-5xl",
-            h2: "font-spacegrotesk text-2xl font-medium leading-110 lg:text-4xl",
+            h2: "font-spacegrotesk text-2xl font-medium uppercase leading-110 lg:text-4xl",
             h3: "font-spacegrotesk text-xl font-medium leading-110 lg:text-3xl",
             h4: "font-spacegrotesk text-lg font-medium leading-110 lg:text-2xl",
             h5: "font-spacegrotesk text-base font-medium leading-110 lg:text-xl",
@@ -15,7 +15,7 @@ export const typographyVariants = tv({
             link: "font-abcdiatype text-base hover:text-primary",
             subtitle: "font-abcdiatype text-lg font-medium leading-6",
             paragraph: "font-abcdiatype text-base font-normal",
-            description: "font-abcdiatype text-sm font-normal leading-110"
+            description: "font-abcdiatype text-sm font-normal"
         }
     },
     defaultVariants: {

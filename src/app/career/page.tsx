@@ -7,7 +7,7 @@ import { Section } from "@/components/layout/Section"
 import { CareerElement } from "@/components/molecules/CareerElement"
 import { Icon } from "@/components/molecules/Icon"
 import { Benefits } from "@/components/organisms/Benefits"
-import { allCareers } from "contentlayer/generated"
+import { Career as CareerType, allCareers } from "contentlayer/generated"
 import { Metadata } from "next"
 import Trophy from "/public/images/optimized/t1d_kai_knoerzer_079_optimized.webp"
 import Office from "/public/images/optimized/t1d_nov22_185_optimized.webp"
@@ -18,10 +18,15 @@ export const metadata: Metadata = {
         "Wir sind immer auf der Suche nach Menschen, die Veränderungen vorantreiben und die Welt von morgen gestalten wollen."
 }
 
+type CareersPerDivision = Record<CareerType["division"], CareerType[]>
+
 const Career = () => {
-    const fulltime_jobs = allCareers.filter((c) => c.employmentType === "Festanstellung")
-    const workstudy_jobs = allCareers.filter((c) => c.employmentType === "Werkstudent")
-    const internship_jobs = allCareers.filter((c) => c.employmentType === "Praktikum")
+    const sortedCareers = allCareers.reduce<Partial<CareersPerDivision>>((acc, career) => {
+        const { division } = career
+        acc[division] ??= []
+        acc[division]?.push(career)
+        return acc
+    }, {})
 
     return (
         <PageLayout>
@@ -41,8 +46,8 @@ const Career = () => {
                     />
                 </ImageMask>
                 <section className="mt-16 md:ml-12 lg:basis-[32.5%]">
-                    <Icon name="person_small" className="mb-4" />
-                    <Typography variant="h4" className="mb-8 leading-140 text-primary">
+                    <Icon name="person_small" className="mb-4 text-primary" />
+                    <Typography variant="h4" className="mb-8 font-abcdiatype leading-140 text-primary">
                         Wir verstehen uns nicht einfach nur als Arbeitgeber, sondern viel mehr als aktiver Begleiter auf
                         dem Weg zu deinen individuellen Zielen. Unser Anspruch ist es, den Menschen in den Mittelpunkt
                         unseres unternehmerischen Handelns zu stellen – und dabei fangen wir bei uns im Team an.
@@ -63,36 +68,39 @@ const Career = () => {
             </Section>
             <Section id="jobs">
                 <div>
-                    <Typography className="m-0 mb-6 mt-24 text-white lg:mt-32" variant="h4">
-                        Wir suchen dich:
+                    <Typography as="h2" variant="h1" className="lg:max-w-[60%]">
+                        Aktuelle Jobs:
                     </Typography>
-                    <div className="">
-                        {fulltime_jobs.map((career, index) => (
-                            <CareerElement listIndex={index + 1} key={career.slug} career={career} />
-                        ))}
-                        {workstudy_jobs.map((career, index) => (
-                            <CareerElement
-                                listIndex={index + fulltime_jobs.length + 1}
-                                key={career.slug}
-                                career={career}
-                            />
-                        ))}
-                        {internship_jobs.map((career, index) => (
-                            <CareerElement
-                                listIndex={index + fulltime_jobs.length + workstudy_jobs.length + 1}
-                                key={career.slug}
-                                career={career}
-                            />
-                        ))}
+                    <div>
+                        {Object.keys(sortedCareers).map((division, index) => {
+                            const category = sortedCareers[division as CareerType["division"]]
+                            return (
+                                <>
+                                    <Typography
+                                        as="h3"
+                                        variant="h2"
+                                        className="mb-4 mt-12 font-normal text-primary lg:max-w-[60%] "
+                                        key={index}
+                                    >
+                                        {division}
+                                    </Typography>
+                                    <div>
+                                        {category?.map((career, index) => (
+                                            <CareerElement listIndex={index + 1} key={career.slug} career={career} />
+                                        ))}
+                                    </div>
+                                </>
+                            )
+                        })}
                     </div>
                 </div>
             </Section>
             <Section className="">
-                <div className="flex flex-col items-baseline gap-4 lg:max-w-[32%]">
-                    <Typography variant="h5" className="text-white">
+                <div className="flex flex-col items-baseline gap-4">
+                    <Typography as="h2" variant="h1" className="">
                         Oder suchst du uns?
                     </Typography>
-                    <Typography variant="paragraph" className="text-white">
+                    <Typography variant="paragraph" className="text-white  lg:max-w-[32%]">
                         Um als Developer nicht nur gut zu sein, sondern es auch zu bleiben, ist Initiative und
                         Selbstständigkeit gefragt. Deshalb wissen wir das auch bei unseren Bewerbern zu schätzen. Wenn
                         du der Meinung bist, dass du das perfekte neue Team-Mitglied für Team One Developers bist, dann
@@ -102,14 +110,7 @@ const Career = () => {
                 </div>
             </Section>
             <Section className="mt-12">
-                <Image
-                    src={Office}
-                    alt="Picture of people in an Office"
-                    width={1920}
-                    height={800}
-                    className="rounded-[25px]"
-                    placeholder="blur"
-                />
+                <Image src={Office} alt="Ppeople in an Office" className="rounded-[25px]" placeholder="blur" />
             </Section>
         </PageLayout>
     )

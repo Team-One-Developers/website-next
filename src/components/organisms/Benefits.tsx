@@ -36,7 +36,7 @@ export const Benefits = () => {
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(undefined)}
             >
-                <Icon name={iconName} height={36} width={36} />
+                <Icon name={iconName} height={36} width={36} className="text-primary" />
                 <Typography className="my-2 text-base uppercase text-primary" as="h3" variant="subtitle">
                     {headline}
                 </Typography>
