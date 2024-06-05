@@ -143,7 +143,7 @@ export const Career = defineDocumentType(() => ({
         },
         division: {
             type: "enum",
-            options: ["Engineering", "Transformation", "Business & Operations"],
+            options: ["Engineering", "Agile Transformation", "Operations", "Marketing"],
             required: true
         },
         tags: { type: "list", of: { type: "string" }, required: true },
