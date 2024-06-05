@@ -47,8 +47,11 @@ export const AnimatedTeaser = ({ className, innerClassName }: AnimatedTeaserProp
 
                     <Typography className="font-abcdiatype text-black" variant="h4">
                         Integrativ bedeutet für uns nicht nur, nah am Kunden zu sein, sondern vor allem auch die
-                        Produkte, an denen wir arbeiten, so zu entwickeln, als wären es unsere eigenen. Team One for One
-                        Team.
+                        Produkte, an denen wir arbeiten, so zu entwickeln, als wären es unsere eigenen.
+                    </Typography>
+
+                    <Typography className="font-abcdiatype text-black" variant="h4">
+                        Team One for One Team.
                     </Typography>
                 </div>
             </div>
