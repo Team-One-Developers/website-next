@@ -45,7 +45,7 @@ export const HomeValuesSection = () => {
                             "Team One Developers ist für uns nicht nur ein Name, sondern ein Versprechen: Das Versprechen den Unterschied zu machen, nicht nur Standard sondern die beste Wahl zu sein. Für unsere Partner und ganz besonders für unsere Kollegen."
                         }
                         headlineVariant="h1"
-                        headlineClassName="mb-[2.875rem] uppercase font-normal"
+                        headlineClassName="mb-[1rem] uppercase font-normal"
                         contentVariant="paragraph"
                         linkLabel="Karriere"
                         link="/career"
