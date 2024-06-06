@@ -1,7 +1,7 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
     siteUrl: process.env.SITE_URL || "https://www.teamonedevelopers.de",
-    generateRobotsTxt: true,
+    generateRobotsTxt: false,
     exclude: ["/icon.png"],
     transform: async (config, path) => {
         if (excludePath(path)) {
