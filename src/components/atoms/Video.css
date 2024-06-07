@@ -1,0 +1,8 @@
+.controls {
+    background: rgba(var(--theme-primary-rgb), 0);
+    transition: all 100ms ease-in;
+}
+
+.controlsVisible {
+    background: rgba(var(--theme-primary-rgb), 0.2);
+}
