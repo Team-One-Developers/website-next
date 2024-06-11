@@ -1,0 +1,73 @@
+/**
+ * Controls
+ */
+ .controls {
+    --bg-color: rgba(var(--t1-darkGreen-rgb), 0.7);
+    --bg-height: 85px;
+    background: linear-gradient(0deg, var(--bg-color) var(--bg-height), transparent var(--bg-height));
+    transition: all 100ms ease-in;
+    z-index: 0;
+    opacity: 0;
+}
+
+.controlsVisible {
+    opacity: 1;
+}
+
+/**
+ * Input Range Styling
+ * see @url https://www.sitepoint.com/css-custom-range-slider/ for explanation
+ */
+
+.inputRange {
+    --c: var(--theme-primary); /* active color */
+    --l: 13px; /* line thickness*/
+    --h: 13px; /* thumb height */
+    --w: 13px; /* thumb width */
+
+    height: var(--s);
+    /* needed for Firefox*/
+    --_c: color-mix(in srgb, var(--c), #000 var(--p, 0%));
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    /* background:
+        linear-gradient(-90deg, #ababab 60%, #0000 0) 100%/8% calc(var(--l) - 1px) repeat-x; */
+    background: transparent;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.inputRange:focus-visible,
+.inputRange:hover {
+    --p: 25%;
+    /* box-shadow: 0px 0px 10px rgba(var(--theme-primary-rgb), 0.77); */
+}
+
+/* chromium */
+.inputRange[type="range" i]::-webkit-slider-thumb {
+    height: var(--h);
+    width: var(--w);
+    background: var(--_c);
+    border-image: linear-gradient(90deg, var(--_c) 50%, #ababab 0) 0 1/calc(50% - var(--l)/2) 100vw/0 100vw;
+    -webkit-appearance: none;
+    appearance: none;
+    transition: .3s;
+}
+
+/* Firefox */
+.inputRange[type="range"]::-moz-range-thumb {
+    height: var(--h);
+    width: var(--w);
+    background: var(--_c);
+    border-image: linear-gradient(90deg, var(--_c) 50%, #ababab 0) 0 1/calc(50% - var(--l)/2) 100vw/0 100vw;
+    -webkit-appearance: none;
+    appearance: none;
+    transition: .3s;
+}
+
+@supports not (color: color-mix(in srgb, red, red)) {
+    .inputRange {
+        --_c: var(--c);
+    }
+}

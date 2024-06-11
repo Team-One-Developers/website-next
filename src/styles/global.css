@@ -7,6 +7,7 @@
   :root {
     --t1-darkGray: #1d1d1d;
     --t1-darkGreen: #21352b;
+    --t1-darkGreen-rgb: 33, 53, 43;
 
     --theme-primary: #46ffad;
     --theme-primary-rgb: 70, 255, 173;
