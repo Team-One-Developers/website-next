@@ -8,9 +8,13 @@ import { CareerElement } from "@/components/molecules/CareerElement"
 import { Icon } from "@/components/molecules/Icon"
 import { Benefits } from "@/components/organisms/Benefits"
 import { Career as CareerType, allCareers } from "contentlayer/generated"
+import Video from "@/components/molecules/Video"
 import { Metadata } from "next"
 import Trophy from "/public/images/optimized/t1d_kai_knoerzer_079_optimized.webp"
 import Office from "/public/images/optimized/t1d_nov22_185_optimized.webp"
+
+import Sample1 from "/public/images/t1d_nov22_205.jpg"
+import Sample2 from "/public/images/optimized/t1d_nov22_153_optimized.webp"
 
 export const metadata: Metadata = {
     title: "Karriere",
@@ -62,6 +66,46 @@ const Career = () => {
                         jedem Fall aber vielseitig und mit unendlich vielen Möglichkeiten.
                     </Typography>
                 </section>
+            </Section>
+            <Section className="max-w-screen-2xl md:mt-24 lg:mt-36">
+                <div className="grid gap-20 lg:grid-cols-2">
+                    <div className="lg:col-span-2">
+                        <Image src={Office} alt="Sample 1" />
+                    </div>
+                    <div>
+                        <Image src={Sample1} alt="Sample 1" />
+                    </div>
+                    <div className="lg:row-span-2">
+                        <Video
+                            className="mb-10"
+                            src={"/videos/team-one-camper.mp4?url"}
+                            muted
+                            autoPlay="visible"
+                            playsInline
+                            variant="mask"
+                            // loop
+                            threshold={0.2}
+                        />
+
+                        <Typography variant="paragraph" className="text-white">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat.
+                        </Typography>
+                    </div>
+                    <div>
+                        <Image src={Sample2} alt="Sample 1" />
+                    </div>
+                    <div className="lg:col-span-2">
+                        <Video
+                            src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4"
+                            muted
+                            autoPlay
+                            playsInline
+                            loop
+                        />
+                    </div>
+                </div>
             </Section>
             <Section className="md:mt-24 lg:mt-36">
                 <Benefits />
