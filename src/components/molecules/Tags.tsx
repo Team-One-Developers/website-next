@@ -3,7 +3,6 @@ import React, { forwardRef } from "react"
 import { twMerge } from "tailwind-merge"
 import { tv, VariantProps } from "tailwind-variants"
 import Typography from "../atoms/Typography"
-import Icon from "../molecules/Icon"
 
 export const tagsVariants = tv({
     slots: {
@@ -24,7 +23,7 @@ export const tagsVariants = tv({
         },
         color: {
             primary: { li: "bg-primary text-black" },
-            secondary: { li: "bg-t1-darkGray text-white" }
+            secondary: { li: "bg-background text-black" }
         }
     },
     defaultVariants: {
@@ -45,7 +44,7 @@ export const Tags = forwardRef<HTMLUListElement, TagsProps>(
     ({ blog, className, size, gap, color, category = false, ...props }, ref) => {
         return (
             <ul className={twMerge(tagsVariants({ gap }).ul(), "flex-wrap")} ref={ref} {...props}>
-                <Typography
+                {/* <Typography
                     as="li"
                     variant="description"
                     key="readingTime"
@@ -65,7 +64,7 @@ export const Tags = forwardRef<HTMLUListElement, TagsProps>(
                     className={twMerge(tagsVariants({ size, color }).li(), "flex items-center gap-1 ", className)}
                 >
                     {blog.language.toLocaleUpperCase()}
-                </Typography>
+                </Typography> */}
 
                 {category ? (
                     <Typography

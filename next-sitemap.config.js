@@ -4,9 +4,9 @@ module.exports = {
     generateRobotsTxt: false,
     exclude: ["/icon.png"],
     transform: async (config, path) => {
-        if (excludePath(path)) {
-            return null
-        }
+        // if (excludePath(path)) {
+        //     return null
+        // }
 
         return {
             loc: path,

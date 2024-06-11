@@ -65,7 +65,7 @@ export const Header = ({ theme }: { theme: PageTheme }) => {
                                                     return (
                                                         <Link
                                                             className={twJoin(
-                                                                "md:w-full text-3xl bg-t1-darkGray uppercase hover:text-primary active:text-primary transition",
+                                                                "md:w-full text-3xl bg-t1-darkGray uppercase hover:text-primary active:text-primary transition hover:shadow-none",
                                                                 pathname === linkObj.link
                                                                     ? "text-primary"
                                                                     : "text-white"

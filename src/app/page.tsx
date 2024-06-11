@@ -23,7 +23,7 @@ const Home = () => {
             </Section>
 
             <ChangingWords
-                className="hidden justify-start p-4 text-t1-darkGray sm:mt-24 sm:flex"
+                className="mt-24 hidden justify-start p-4 text-t1-darkGray sm:flex"
                 variant="description"
                 type="section"
                 words={["Scroll", "Move Smoothly"]}
