@@ -1,6 +1,6 @@
 "use client"
 
-import { useRef } from "react"
+import { DetailedHTMLProps, HTMLAttributes, RefObject, useRef } from "react"
 import { twJoin } from "tailwind-merge"
 
 import { Icon } from "@/components/molecules/Icon"
@@ -9,8 +9,29 @@ import { Duration } from "./Duration"
 import { MediaButton } from "./MediaButton"
 
 import styles from "./index.module.css"
+import { VideoState } from "../Video"
+import { HTMLVideoElementWithProprietaryFunctions } from "./useVideo"
 
-export const Controls = ({ callbacks, videoElement, videoState, isPlaying, showControls, controlsRef, ...props }) => {
+export type VideoControlsProps = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> & {
+    callbacks: {
+        togglePlay: () => void
+        toggleMuted: () => void
+    }
+    controlsRef: RefObject<HTMLDivElement>
+    isPlaying: boolean
+    showControls: boolean
+    videoElement: HTMLVideoElementWithProprietaryFunctions
+    videoState: VideoState
+}
+export const Controls = ({
+    callbacks,
+    videoElement,
+    videoState,
+    isPlaying,
+    showControls,
+    controlsRef,
+    ...props
+}: VideoControlsProps) => {
     const hasVideoState =
         typeof videoState?.currentTime === "number" &&
         typeof videoState?.duration === "number" &&

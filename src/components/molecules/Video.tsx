@@ -21,8 +21,8 @@ import { useVideo } from "./Video/useVideo"
 import { Controls } from "./Video/Controls"
 import { twJoin } from "tailwind-merge"
 
-type VideoDefaultProps = DetailedHTMLProps<VideoHTMLAttributes<HTMLVideoElement>, HTMLVideoElement>
-type VideoState = {
+export type VideoDefaultProps = DetailedHTMLProps<VideoHTMLAttributes<HTMLVideoElement>, HTMLVideoElement>
+export type VideoState = {
     loadedMetadata: boolean
     duration: number | undefined
     currentTime: number | undefined
@@ -94,6 +94,7 @@ export const Video = ({ autoPlay, children, className, variant, threshold = 0, .
         <div className={twJoin(className, "relative w-fit")}>
             <Wrapper variant={variant}>
                 <video
+                    // className={variant === "mask" ? "h-full" : undefined}
                     onPlaying={() => {
                         setIsPlaying(true)
                     }}
@@ -128,13 +129,13 @@ export const Video = ({ autoPlay, children, className, variant, threshold = 0, .
                 onMouseLeave={() => {
                     setShowControls(false)
                 }}
-                onTouchStart={(e: MouseEvent) => {
+                onTouchStart={(e) => {
                     const isThisElement = (e.target as HTMLElement).isEqualNode(controlsRef.current)
                     if (isThisElement) {
                         setShowControls(!showControls)
                     }
                 }}
-                onPointerDown={(e: PointerEvent) => {
+                onPointerDown={(e) => {
                     const isThisElement = (e.target as HTMLElement).isEqualNode(controlsRef.current)
                     console.log("toggle!", isThisElement, e.target, controlsRef.current)
 

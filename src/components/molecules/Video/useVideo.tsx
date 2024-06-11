@@ -1,8 +1,8 @@
 import { useEffect, useState, MutableRefObject } from "react"
-
-interface HTMLVideoElementWithProprietaryFunctions extends HTMLVideoElement {
+export interface HTMLVideoElementWithProprietaryFunctions extends HTMLVideoElement {
     webkitEnterFullScreen(): void
 }
+
 export const useVideo = (ref: MutableRefObject<HTMLVideoElement | null | undefined>) => {
     const [videoElement, setVideoElement] = useState<undefined | HTMLVideoElement>(undefined)
 
