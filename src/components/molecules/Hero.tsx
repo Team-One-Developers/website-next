@@ -2,18 +2,18 @@ import { ReactNode } from "react"
 import { twJoin } from "tailwind-merge"
 
 type HeroProps = {
-    imageNode: ReactNode
+    contentNode: ReactNode
     overlayNode: ReactNode
     overlayPosition?: "center" | "offsetTop"
     className?: string
 }
 
 export const Hero = (props: HeroProps) => {
-    const { imageNode, overlayNode, overlayPosition = "center", className } = props
+    const { contentNode, overlayNode, overlayPosition = "center", className } = props
 
     return (
         <div className={twJoin("w-screen relative h-[50vh] sm:h-[60vh] max-w-full bg-white", className)}>
-            {imageNode}
+            {contentNode}
             <div
                 className={twJoin(
                     "absolute left-1/2 right-0 m-auto w-full text-center",

@@ -25,7 +25,7 @@ const Culture = () => {
             </Section>
             <Hero
                 className="mt-64"
-                imageNode={<Image src={HeroBG} alt="Two guys working on a laptop" fill placeholder="blur" />}
+                contentNode={<Image src={HeroBG} alt="Two guys working on a laptop" fill placeholder="blur" />}
                 overlayNode={null}
             />
             <Section>

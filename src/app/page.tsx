@@ -30,7 +30,6 @@ const Home = () => {
             />
 
             <Hero
-                imageNode={
                     <Image
                         priority
                         src={HeroIMG}
@@ -39,6 +38,7 @@ const Home = () => {
                         placeholder="blur"
                         sizes="100vw"
                     />
+                contentNode={
                 }
                 overlayNode={
                     <ChangingWords

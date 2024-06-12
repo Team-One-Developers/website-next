@@ -45,7 +45,7 @@ const Services = () => {
 
             <Hero
                 className="mt-[4.5rem] lg:mt-44"
-                imageNode={<Image src={OfficeImg} alt="People working in an office" fill placeholder="blur" />}
+                contentNode={<Image src={OfficeImg} alt="People working in an office" fill placeholder="blur" />}
                 overlayNode={
                     <>
                         <Typography variant="subtitle" className="mb-6 font-spacegrotesk uppercase text-white">
