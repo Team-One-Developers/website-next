@@ -13,13 +13,14 @@
 import { useEffect, useState, useRef, DetailedHTMLProps, VideoHTMLAttributes, ReactNode } from "react"
 
 import { IntersectionOptions } from "react-intersection-observer"
+import { twJoin } from "tailwind-merge"
 
 import { useIntersectionRefs } from "./Video/useIntersectionRefs"
 import { Wrapper } from "./Video/Wrapper"
-
 import { useVideo } from "./Video/useVideo"
 import { Controls } from "./Video/Controls"
-import { twJoin } from "tailwind-merge"
+
+import styles from "./Video/index.module.css"
 
 export type VideoDefaultProps = DetailedHTMLProps<VideoHTMLAttributes<HTMLVideoElement>, HTMLVideoElement>
 export type VideoState = {
@@ -35,8 +36,10 @@ export type VideoProps = Omit<VideoDefaultProps, "autoPlay" | "controls"> & {
     autoPlay?: boolean | "visible"
     /* true: standard HTML5, false: no controls, "custom": themed */
     controls?: boolean | "custom"
-    variant?: "mask"
+    /* 'fluid': fills all available space, undefined: up to max width of video */
+    sizing?: "fluid" | "cover"
     threshold?: IntersectionOptions["threshold"]
+    variant?: "mask"
 }
 
 export const Video = ({
@@ -44,8 +47,9 @@ export const Video = ({
     children,
     className,
     controls = false,
-    variant,
+    sizing,
     threshold = 0,
+    variant,
     ...props
 }: VideoProps) => {
     const [videoState, setVideoState] = useState<VideoState>({
@@ -102,7 +106,16 @@ export const Video = ({
     const customAutoPlay = autoPlay === "visible"
 
     return (
-        <div className={twJoin(className, "relative w-fit")}>
+        <div
+            className={twJoin(
+                className,
+                "relative",
+                !sizing ? "w-fit" : undefined,
+                sizing === "fluid" ? styles.sizingFluid : undefined,
+                sizing === "cover" ? styles.sizingCover : undefined,
+                !controls ? styles.controlsHidden : undefined
+            )}
+        >
             <Wrapper variant={variant}>
                 <video
                     // className={variant === "mask" ? "h-full" : undefined}

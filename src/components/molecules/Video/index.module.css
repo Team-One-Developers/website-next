@@ -1,4 +1,24 @@
 /**
+ * Sizing
+ */
+
+.sizingFluid video {
+    max-width: none;
+    width: 100%;
+}
+
+.sizingCover {
+    height: 100%;
+}
+.sizingCover video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/**
  * Controls
  */
  .controls {
@@ -12,6 +32,10 @@
 
 .controlsVisible {
     opacity: 1;
+}
+
+.controlsHidden {
+    pointer-events: none;
 }
 
 /**
