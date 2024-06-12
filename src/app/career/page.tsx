@@ -78,12 +78,12 @@ const Career = () => {
                     <div className="lg:row-span-2">
                         <Video
                             className="mb-10"
-                            src={"/videos/team-one-camper.mp4?url"}
+                            src="/videos/team-one-camper.mp4"
                             muted
                             autoPlay="visible"
                             playsInline
                             variant="mask"
-                            // loop
+                            loop
                             threshold={0.2}
                         />
 
@@ -98,6 +98,7 @@ const Career = () => {
                     </div>
                     <div className="lg:col-span-2">
                         <Video
+                            controls="custom"
                             src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4"
                             muted
                             autoPlay

@@ -29,15 +29,25 @@ export type VideoState = {
     muted: boolean
 }
 
-export type VideoProps = Omit<VideoDefaultProps, "autoPlay"> & {
+export type VideoProps = Omit<VideoDefaultProps, "autoPlay" | "controls"> & {
     children?: ReactNode
     className?: string
-    autoPlay?: boolean | undefined | "visible"
-    variant?: "mask" | undefined
+    autoPlay?: boolean | "visible"
+    /* true: standard HTML5, false: no controls, "custom": themed */
+    controls?: boolean | "custom"
+    variant?: "mask"
     threshold?: IntersectionOptions["threshold"]
 }
 
-export const Video = ({ autoPlay, children, className, variant, threshold = 0, ...props }: VideoProps) => {
+export const Video = ({
+    autoPlay,
+    children,
+    className,
+    controls = false,
+    variant,
+    threshold = 0,
+    ...props
+}: VideoProps) => {
     const [videoState, setVideoState] = useState<VideoState>({
         currentTime: undefined,
         duration: undefined,
@@ -50,6 +60,7 @@ export const Video = ({ autoPlay, children, className, variant, threshold = 0, .
 
     const [isPlaying, setIsPlaying] = useState<boolean>(false)
     const [controlsVisible, setControlsVisible] = useState<boolean>(false)
+    const hasCustomControls = controls === "custom"
 
     const { reactRef, observerRefs, inView } = useIntersectionRefs({ threshold })
     const [videoElement] = useVideo(reactRef)
@@ -110,41 +121,43 @@ export const Video = ({ autoPlay, children, className, variant, threshold = 0, .
                     }}
                     ref={observerRefs}
                     {...props}
-                    // make sure to set autoPlay last to override
-                    // spreaded props
+                    // make sure to set autoPlay& controls last
+                    // to override spreaded props
                     autoPlay={customAutoPlay ? undefined : autoPlay}
+                    controls={!controls || controls === "custom" ? undefined : true}
                 />
             </Wrapper>
 
-            <Controls
-                controlsRef={controlsRef}
-                videoState={videoState}
-                isPlaying={isPlaying}
-                controlsVisible={controlsVisible}
-                videoElement={videoElement}
-                callbacks={{ togglePlay, toggleMuted }}
-                onMouseEnter={() => {
-                    setControlsVisible(true)
-                }}
-                onMouseLeave={() => {
-                    setControlsVisible(false)
-                }}
-                onTouchStart={(e) => {
-                    const isThisElement = (e.target as HTMLElement).isEqualNode(controlsRef.current)
-                    if (isThisElement) {
-                        setControlsVisible(!controlsVisible)
-                    }
-                }}
-                onPointerDown={(e) => {
-                    const isThisElement = (e.target as HTMLElement).isEqualNode(controlsRef.current)
-                    console.log("toggle!", isThisElement, e.target, controlsRef.current)
+            {hasCustomControls ? (
+                <Controls
+                    controlsRef={controlsRef}
+                    videoState={videoState}
+                    isPlaying={isPlaying}
+                    controlsVisible={controlsVisible}
+                    videoElement={videoElement}
+                    callbacks={{ togglePlay, toggleMuted }}
+                    onMouseEnter={() => {
+                        setControlsVisible(true)
+                    }}
+                    onMouseLeave={() => {
+                        setControlsVisible(false)
+                    }}
+                    onTouchStart={(e) => {
+                        const isThisElement = (e.target as HTMLElement).isEqualNode(controlsRef.current)
+                        if (isThisElement) {
+                            setControlsVisible(!controlsVisible)
+                        }
+                    }}
+                    onPointerDown={(e) => {
+                        const isThisElement = (e.target as HTMLElement).isEqualNode(controlsRef.current)
 
-                    // e.button === 0 --> left/default click
-                    if (e.pointerType !== "touch" && isThisElement && e.button === 0) {
-                        togglePlay()
-                    }
-                }}
-            />
+                        // e.button === 0 --> left/default click
+                        if (e.pointerType !== "touch" && isThisElement && e.button === 0) {
+                            togglePlay()
+                        }
+                    }}
+                />
+            ) : null}
         </div>
     )
 }
