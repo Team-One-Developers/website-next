@@ -99,7 +99,7 @@ const Career = () => {
                     <div className="lg:col-span-2">
                         <Video
                             controls="custom"
-                            src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4"
+                            src="/videos/landscape-test-video.webm"
                             muted
                             autoPlay
                             playsInline
