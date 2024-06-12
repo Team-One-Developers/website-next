@@ -125,7 +125,9 @@ export const Video = ({
                     // to override spreaded props
                     autoPlay={customAutoPlay ? undefined : autoPlay}
                     controls={!controls || controls === "custom" ? undefined : true}
-                />
+                >
+                    {children}
+                </video>
             </Wrapper>
 
             {hasCustomControls ? (
