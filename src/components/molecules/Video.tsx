@@ -49,7 +49,7 @@ export const Video = ({ autoPlay, children, className, variant, threshold = 0, .
     }
 
     const [isPlaying, setIsPlaying] = useState<boolean>(false)
-    const [showControls, setShowControls] = useState<boolean>(false)
+    const [controlsVisible, setControlsVisible] = useState<boolean>(false)
 
     const { reactRef, observerRefs, inView } = useIntersectionRefs({ threshold })
     const [videoElement] = useVideo(reactRef)
@@ -120,19 +120,19 @@ export const Video = ({ autoPlay, children, className, variant, threshold = 0, .
                 controlsRef={controlsRef}
                 videoState={videoState}
                 isPlaying={isPlaying}
-                showControls={showControls}
+                controlsVisible={controlsVisible}
                 videoElement={videoElement}
                 callbacks={{ togglePlay, toggleMuted }}
                 onMouseEnter={() => {
-                    setShowControls(true)
+                    setControlsVisible(true)
                 }}
                 onMouseLeave={() => {
-                    setShowControls(false)
+                    setControlsVisible(false)
                 }}
                 onTouchStart={(e) => {
                     const isThisElement = (e.target as HTMLElement).isEqualNode(controlsRef.current)
                     if (isThisElement) {
-                        setShowControls(!showControls)
+                        setControlsVisible(!controlsVisible)
                     }
                 }}
                 onPointerDown={(e) => {

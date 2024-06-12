@@ -19,7 +19,7 @@ export type VideoControlsProps = DetailedHTMLProps<HTMLAttributes<HTMLDivElement
     }
     controlsRef: RefObject<HTMLDivElement>
     isPlaying: boolean
-    showControls: boolean
+    controlsVisible: boolean
     videoElement: HTMLVideoElementWithProprietaryFunctions
     videoState: VideoState
 }
@@ -28,7 +28,7 @@ export const Controls = ({
     videoElement,
     videoState,
     isPlaying,
-    showControls,
+    controlsVisible,
     controlsRef,
     ...props
 }: VideoControlsProps) => {
@@ -44,7 +44,7 @@ export const Controls = ({
             className={twJoin(
                 styles.controls,
                 `absolute inset-0 flex w-full flex-wrap items-end justify-center`,
-                showControls ? styles.controlsVisible : null
+                controlsVisible ? styles.controlsVisible : null
             )}
         >
             <div className="flex grow flex-wrap">
