@@ -12,6 +12,7 @@ import { HomeHumanSection } from "@/components/organisms/HomeHumanSection"
 import { HomeValuesSection } from "@/components/organisms/HomeValuesSection"
 import { PAGE_THEME } from "@/constants"
 import HeroIMG from "/public/images/optimized/hero_optimized.webp"
+import Video from "@/components/molecules/Video"
 
 const Home = () => {
     return (
@@ -30,15 +31,8 @@ const Home = () => {
             />
 
             <Hero
-                    <Image
-                        priority
-                        src={HeroIMG}
-                        alt="Picture of a man at a laptop"
-                        fill
-                        placeholder="blur"
-                        sizes="100vw"
-                    />
                 contentNode={
+                    <Video src="/videos/landscape-test-video.webm" sizing="cover" muted autoPlay playsInline loop />
                 }
                 overlayNode={
                     <ChangingWords
