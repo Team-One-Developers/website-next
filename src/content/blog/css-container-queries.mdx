@@ -1,0 +1,75 @@
+---
+title: Why CSS Container Queries?
+descriptionShort: Responsive CSS styling based on parent containers instead of browser window size.
+descriptionLong: "Making a component behave responsive wherever it's nested in your website can't be achieved with Media Queries - Container Queries are the solution!"
+author: Samuel Mergenthaler
+status: PUBLISHED
+heroImage: /images/blog/css-container-queries-header-image.webp
+date: "2024-08-01"
+length: BLOG
+language: English
+cta: CAREER
+tags:
+    - CSS
+category: SOFTWARE ENGINEERING
+---
+
+Note: In Chrome, CSS Container Queries are supported since version 105 (August 2022).
+
+## Example
+
+Let's say we want to build a component that links to "Sam's Burger Shop". It will be shown in two different places on our website. In cases where the available space of its parent component is small, its text and image should responsively rearrange to still look nice:
+
+![Use-case of CSS container queries](/images/blog/css-container-queries-use-case.webp)
+
+Question: How can we style the component differently depending on its width? (without using Javascript)
+
+## Answer: CSS Container Queries
+
+The component in our example is a clickable box that contains an image and text, which should change it's appearance depending on the available width of its container:
+
+```html
+<div class="samsBurgerShopCard">
+  <div class="samsBurgerShopCardContent">
+    ...image and text...
+  </div>
+<div>
+```
+
+Using a Container Query, we can adjust the layout of the card content based on the available container width:
+
+```css
+.samsBurgerShopCard {
+  /* By setting the container type, child elements using @container will be based on the size of the samsBurgerShopCard div */
+  container-type: inline-size;
+  /* Optional: container-name: sams-burger-shop-card-container; */
+}
+
+.samsBurgerShopCardContent {
+  /* ... styles that place the burger image above the text ... */
+
+  /* Apply following styles depending of the width of the samsBurgerShopCard div */
+  @container (min-width: 600px) {
+    /* ... styles that place the burger image to the left of the text ... */
+  }
+}
+```
+
+## Do I still need Media Queries?
+
+CSS Media Queries will still be relevant to retrieve user preferences, for example the preferred color scheme:
+
+```css
+.landingPage {
+  background: white;
+  
+  @media (prefers-color-scheme: dark) {
+    background: black;
+  }
+
+  @media (update: slow) {
+    /* disable animations on devices that are very slow at rendering content (e.g. e-book readers) */
+  }
+}
+
+```
