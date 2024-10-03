@@ -96,7 +96,12 @@ export const Footer = () => {
 
                     <div className="col-start-4 row-start-1">
                         <div className={navigationSectionHeaderCSS}>Mail</div>
-                        <a className={externalLinkCSS} href="mailto:info@teamonedevelopers.de" target="_blank" rel="noreferrer">
+                        <a
+                            className={externalLinkCSS}
+                            href="mailto:info@teamonedevelopers.de"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
                             info@teamonedevelopers.de
                         </a>
 
