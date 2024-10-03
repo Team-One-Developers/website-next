@@ -82,7 +82,7 @@ export const Header = ({ theme }: { theme: PageTheme }) => {
                                         </div>
 
                                         <div className="self-end p-8 text-white">
-                                            <p>kontakt@t1dev.de</p>
+                                            <p>info@teamonedevelopers.de</p>
                                             <p>+49 711 252 98 690</p>
                                         </div>
                                     </div>

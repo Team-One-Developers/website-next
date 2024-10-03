@@ -39,7 +39,7 @@ const Contact = () => {
                             Stafflenbergstraße 44 <br />
                             70184 Stuttgart
                         </Typography>
-                        <ExternalLink href="mailto:kontakt@t1dev.de" name="kontakt@t1dev.de" />
+                        <ExternalLink href="mailto:info@teamonedevelopers.de" name="info@teamonedevelopers.de" />
                         <ExternalLink href="tel:+4971125298690" name="+49 711 252 98 690" />
                     </div>
                 </section>

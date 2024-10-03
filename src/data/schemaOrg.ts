@@ -16,7 +16,7 @@ export const organization: OrganizationSchema = {
     logo: "https://www.teamonedevelopers.de/images/logo/t1d-sticker-darkgray.svg",
     description:
         "Wir sind Technologie-Experten und verstehen uns als integrativer Entwicklungs- & Beratungspartner in komplexen Softwareprojekten.",
-    email: "kontakt@t1dev.de",
+    email: "info@teamonedevelopers.de",
     telephone: "+4971125298690",
     address: {
         "@type": "PostalAddress",

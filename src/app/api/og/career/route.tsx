@@ -129,7 +129,7 @@ export const GET = async (request: Request) => {
                 />
                 <div style={{ display: "flex", width: "100%", height: "40px" }}>
                     <Globe />
-                    <p style={{ fontSize: 26, marginTop: "0px", paddingLeft: "16px" }}>jobs@t1dev.de</p>
+                    <p style={{ fontSize: 26, marginTop: "0px", paddingLeft: "16px" }}>info@teamonedevelopers.de</p>
                 </div>
                 <p style={{ marginTop: "48px", marginBottom: "96px" }}>{title}</p>
                 <Logo />

@@ -37,11 +37,19 @@ const Privacy = () => {
                     <a className="text-primary" href="tel:+4971125298690">
                         +49 711 25298690 <br />
                     </a>
-                    <a className="text-primary" href="mailto:kontakt@t1dev.de">
-                        kontakt@t1dev.de <br />
+                    <a className="text-primary" href="mailto:info@teamonedevelopers.de">
+                        info@teamonedevelopers.de <br />
                     </a>
                     <br />
                     Geschäftsführer: Timo Brückel, Julian Richter, Michael Krause
+                </Typography>
+                <Typography as="h2" variant="h3" className="mt-8">
+                    Datenschutzbeauftragter
+                </Typography>
+                <Typography as="address" variant="paragraph" className="text-white">
+                    IITR Datenschutz GmbH <br />
+                    Dr. Sebastian Kraska <br />
+                    Marienplatz 2, 80331 München
                 </Typography>
                 <Typography as="h2" variant="h3" className="mt-8">
                     Ihre Rechte nach der DSGVO
@@ -289,16 +297,7 @@ const Privacy = () => {
                     <strong>Rechtsgrundlage:</strong> Berechtigtes Interesse, Art. 6 Abs. 1 lit. f DSGVO
                 </Typography>
                 <Typography as="h3" variant="h5" className="mt-8">
-                    Von uns beauftragte(r) Webhoster: Netlify
-                </Typography>
-                <Typography as="p" variant="paragraph" className="text-white">
-                    Dienstanbieter: VeraSafe United Kingdom Ltd., 37 Albert Embankment London SE1 7TL, Vereinigtes
-                    Königreich
-                    <br />
-                    Internetseite: <a href="https://www.netlify.com/">https://www.netlify.com/</a>
-                    <br />
-                    Datenschutzerklärung:{" "}
-                    <a href="https://www.netlify.com/privacy/">https://www.netlify.com/privacy/</a>
+                    Von uns beauftragter Webhoster: Vercel
                 </Typography>
                 <Typography as="h2" variant="h3" className="mt-8">
                     Kontaktaufnahme
@@ -467,32 +466,6 @@ const Privacy = () => {
                 <Typography as="p" variant="paragraph" className="mt-4 text-white">
                     <strong>Rechtsgrundlage:</strong> Einwilligung über Cookie-Consent-Banner, Art. 6 Abs. 1 lit. a
                     DSGVO, berechtigte Interessen, Art. 6 Abs. 1 lit. f DSGVO
-                </Typography>
-                <Typography as="h3" variant="h5" className="mt-8">
-                    Wir nutzen folgende Content-Dienste: Google Maps
-                </Typography>
-                <Typography as="p" variant="paragraph" className="text-white">
-                    Wir nutzen auf unserer Internetpräsenz Google Maps. Hierbei wird durch Google die IP-Adresse des
-                    Besuchers erhoben und verarbeitet. Wenn Sie eine Internetseite besuchen, auf der Google Maps
-                    eingebunden ist, wird unabhängig davon, ob die Nutzung von Google Maps tatsächlich erfolgt oder Sie
-                    in Ihrem Google Account eingeloggt sind Ihre IP-Adresse sowie Ihre Standortdaten (letztere in der
-                    Regel nicht ohne Ihre Einwilligung) an Google übermittelt. Ihre IP-Adresse wird Ihrem Google Account
-                    zugeordnet, sofern Sie bei dem Besuch unserer Internetpräsenz dort eingeloggt sind.
-                </Typography>
-                <Typography as="p" variant="paragraph" className="text-white">
-                    Dienstanbieter: Google Inc., 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA
-                    <br />
-                    Sitz in der EU: Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland
-                    <br />
-                    Internetseite: <a href="https://www.google.de/maps">https://www.google.de/maps</a>
-                    <br />
-                    Datenschutzerklärung:{" "}
-                    <a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a>
-                    <br />
-                    <strong>Opt-Out-Möglichkeit:</strong>{" "}
-                    <a href="https://tools.google.com/dlpage/gaoptout?hl=de">
-                        https://tools.google.com/dlpage/gaoptout?hl=de
-                    </a>
                 </Typography>
                 <Typography as="h2" variant="h3" className="mt-8">
                     Sicherheitsmaßnahmen

@@ -96,8 +96,8 @@ export const Footer = () => {
 
                     <div className="col-start-4 row-start-1">
                         <div className={navigationSectionHeaderCSS}>Mail</div>
-                        <a className={externalLinkCSS} href="mailto:kontakt@t1dev.de" target="_blank" rel="noreferrer">
-                            kontakt@t1dev.de
+                        <a className={externalLinkCSS} href="mailto:info@teamonedevelopers.de" target="_blank" rel="noreferrer">
+                            info@teamonedevelopers.de
                         </a>
 
                         <div className={twJoin(navigationSectionHeaderCSS, "md:mt-4")}>Phone</div>
