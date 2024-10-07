@@ -6,8 +6,12 @@ import { usePathname } from "next/navigation"
 import { twJoin } from "tailwind-merge"
 import { Icon } from "../molecules/Icon"
 import { Section } from "./Section"
+import { WebsiteCarbonBadge } from "react-websitecarbon-badge"
+import { PageTheme } from "@/types"
+import { PAGE_THEME } from "@/constants"
+import { useRef } from "react"
 
-export const Footer = () => {
+export const Footer = ({ theme }: { theme: PageTheme }) => {
     const pathname = usePathname()
 
     const navigationSectionHeaderCSS =
@@ -27,8 +31,16 @@ export const Footer = () => {
     return (
         <footer>
             <Section className="pb-0 md:pb-0">
-                <div className="block pb-8 md:grid md:grid-flow-row md:grid-cols-[2.5fr_1fr_1fr_1fr] md:grid-rows-[1fr_1fr] md:gap-x-3 md:gap-y-5 md:text-left">
-                    <div className="md:row-span-2 md:mb-0 md:self-end md:justify-self-start">
+                <div className="block pb-8 md:grid md:grid-flow-col md:grid-cols-[2.5fr_1fr_1fr_1fr] md:grid-rows-[1fr_1fr] md:gap-x-3 md:gap-y-5 md:text-left">
+
+                    <div className="md:row-span-1 flex flex-col items-start text-left">
+                        <div className={navigationSectionHeaderCSS}>Carbon Footprint</div>
+                        <div className="border-2 rounded-md border-primary py-0.5 px-[4px] mb-4">
+                            <WebsiteCarbonBadge dark={theme == PAGE_THEME.dark ? true : false} url={window.document.baseURI.substring(0, window.document.baseURI.length) + pathname}/>
+                        </div>
+                    </div>
+                    
+                    <div className="md:row-span-1 md:mb-0 md:self-end md:justify-self-start">
                         <span className={navigationSectionHeaderCSS}>
                             &copy; 2024 Team One Developers. All Rights Reserved.
                         </span>
@@ -67,7 +79,7 @@ export const Footer = () => {
                         </div>
                     </div>
 
-                    <div className="">
+                    <div className="col-start-3">
                         <div className={navigationSectionHeaderCSS}>Address</div>
                         <a
                             className={externalLinkCSS}
@@ -81,7 +93,7 @@ export const Footer = () => {
                         </a>
                     </div>
 
-                    <div className="col-start-3 md:self-end">
+                    <div className="md:self-end">
                         <div className={navigationSectionHeaderCSS}>GPS</div>
                         <a
                             className={twJoin(externalLinkCSS, "flex flex-col")}

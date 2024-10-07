@@ -22,7 +22,7 @@ export const PageLayout = ({
             <Header theme={pageTheme} />
             <main className="mb-16">{children}</main>
             {ticker && <Ticker theme={pageTheme} />}
-            <Footer />
+            <Footer theme={pageTheme} />
         </div>
     )
 }
