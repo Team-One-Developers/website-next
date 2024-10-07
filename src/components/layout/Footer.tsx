@@ -10,14 +10,13 @@ import { WebsiteCarbonBadge } from "react-websitecarbon-badge"
 import { PageTheme } from "@/types"
 import { PAGE_THEME } from "@/constants"
 
-
 export const Footer = ({ theme }: { theme: PageTheme }) => {
     const pathname = usePathname()
 
     // const baseUrl = process.env.NODE_ENV === "production"
     //     ? `${process.env.NEXT_PUBLIC_VERCEL_URL}`  // API not meant for private deployments
     //     : "https://www.teamonedevelopers.de";
-    const baseUrl = "https://www.teamonedevelopers.de";
+    const baseUrl = "https://www.teamonedevelopers.de"
     console.log(baseUrl)
 
     const navigationSectionHeaderCSS =
@@ -38,14 +37,16 @@ export const Footer = ({ theme }: { theme: PageTheme }) => {
         <footer>
             <Section className="pb-0 md:pb-0">
                 <div className="block pb-8 md:grid md:grid-flow-col md:grid-cols-[2.5fr_1fr_1fr_1fr] md:grid-rows-[1fr_1fr] md:gap-x-3 md:gap-y-5 md:text-left">
-
-                    <div className="md:row-span-1 flex flex-col items-start text-left">
+                    <div className="flex flex-col items-start text-left md:row-span-1">
                         <div className={navigationSectionHeaderCSS}>Carbon Footprint</div>
-                        <div className="border-2 rounded-md border-primary py-0.5 px-[4px] mb-4">
-                            <WebsiteCarbonBadge dark={theme == PAGE_THEME.dark ? true : false} url={baseUrl + pathname}/>
+                        <div className="mb-4 py-0.5 px-[4px] border-primary rounded-md border-2">
+                            <WebsiteCarbonBadge
+                                dark={theme == PAGE_THEME.dark ? true : false}
+                                url={baseUrl + pathname}
+                            ></WebsiteCarbonBadge>
                         </div>
                     </div>
-                    
+
                     <div className="md:row-span-1 md:mb-0 md:self-end md:justify-self-start">
                         <span className={navigationSectionHeaderCSS}>
                             &copy; 2024 Team One Developers. All Rights Reserved.
