@@ -14,7 +14,10 @@ import { PAGE_THEME } from "@/constants"
 export const Footer = ({ theme }: { theme: PageTheme }) => {
     const pathname = usePathname()
 
-    const baseUrl = typeof window !== 'undefined' ? window.document.baseURI.substring(0, window.document.baseURI.length) : "https://www.teamonedevelopers.de"
+    // const baseUrl = process.env.NODE_ENV === "production"
+    //     ? `${process.env.NEXT_PUBLIC_VERCEL_URL}`  // API not meant for private deployments
+    //     : "www.teamonedevelopers.de";
+    const baseUrl = "teamonedevelopers.de";
     console.log(baseUrl)
 
     const navigationSectionHeaderCSS =
