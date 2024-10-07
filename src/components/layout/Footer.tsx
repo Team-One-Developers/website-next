@@ -10,8 +10,12 @@ import { WebsiteCarbonBadge } from "react-websitecarbon-badge"
 import { PageTheme } from "@/types"
 import { PAGE_THEME } from "@/constants"
 
+
 export const Footer = ({ theme }: { theme: PageTheme }) => {
     const pathname = usePathname()
+
+    const baseUrl = typeof window !== 'undefined' ? window.document.baseURI.substring(0, window.document.baseURI.length) : "https://www.teamonedevelopers.de"
+    console.log(baseUrl)
 
     const navigationSectionHeaderCSS =
         "font-spacegrotesk text-foreground uppercase font-medium leading-3 pb-2 text-[11px]  mt-4 md:mt-0"
@@ -35,7 +39,7 @@ export const Footer = ({ theme }: { theme: PageTheme }) => {
                     <div className="md:row-span-1 flex flex-col items-start text-left">
                         <div className={navigationSectionHeaderCSS}>Carbon Footprint</div>
                         <div className="border-2 rounded-md border-primary py-0.5 px-[4px] mb-4">
-                            <WebsiteCarbonBadge dark={theme == PAGE_THEME.dark ? true : false} url={window.document.baseURI.substring(0, window.document.baseURI.length) + pathname}/>
+                            <WebsiteCarbonBadge dark={theme == PAGE_THEME.dark ? true : false} url={baseUrl + pathname}/>
                         </div>
                     </div>
                     
