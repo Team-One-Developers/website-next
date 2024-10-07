@@ -16,8 +16,8 @@ export const Footer = ({ theme }: { theme: PageTheme }) => {
 
     // const baseUrl = process.env.NODE_ENV === "production"
     //     ? `${process.env.NEXT_PUBLIC_VERCEL_URL}`  // API not meant for private deployments
-    //     : "www.teamonedevelopers.de";
-    const baseUrl = "teamonedevelopers.de";
+    //     : "https://www.teamonedevelopers.de";
+    const baseUrl = "https://www.teamonedevelopers.de";
     console.log(baseUrl)
 
     const navigationSectionHeaderCSS =
