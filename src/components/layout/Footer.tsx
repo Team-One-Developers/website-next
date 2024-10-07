@@ -9,7 +9,6 @@ import { Section } from "./Section"
 import { WebsiteCarbonBadge } from "react-websitecarbon-badge"
 import { PageTheme } from "@/types"
 import { PAGE_THEME } from "@/constants"
-import { useRef } from "react"
 
 export const Footer = ({ theme }: { theme: PageTheme }) => {
     const pathname = usePathname()
