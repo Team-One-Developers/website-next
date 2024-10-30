@@ -8,7 +8,6 @@ import { Space_Grotesk } from "next/font/google"
 import localFont from "next/font/local"
 import { twJoin } from "tailwind-merge"
 import "../styles/global.css"
-import "../styles/prism.css"
 
 const ABCD = localFont({
     src: [

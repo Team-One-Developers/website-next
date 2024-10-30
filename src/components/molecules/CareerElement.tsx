@@ -10,7 +10,7 @@ interface JobProps {
 export const CareerElement = ({ career, listIndex }: JobProps) => {
     return (
         <div className="border-t-2 border-white last:border-b-2">
-            <Link href={career.slug} aria-label={`Link zur Jobseite ${career.title}`}>
+            <Link href={career.slug.current} aria-label={`Link zur Jobseite ${career.title}`}>
                 <div className="grid cursor-pointer grid-cols-1 gap-[4px] p-3 hover:bg-t1-darkGray md:grid-cols-[0.1fr_2fr_0.5fr] md:gap-0 md:p-0">
                     <div className="shrink-0 grow-0 basis-[2.5%] md:m-4">
                         <Typography className="text-white" variant="description">

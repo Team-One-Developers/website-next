@@ -9,7 +9,9 @@ import { JobType } from "@/components/molecules/JobType"
 import { FESTANSTELLUNG_BENEFITS, PRAKTIKUMS_BENEFITS, WERKSTUDENT_BENEFITS } from "@/constants/benefits"
 import { organization } from "@/data/schemaOrg"
 import { mostRelated } from "@/lib/mostRelated"
-import { Career, allCareers } from "contentlayer/generated"
+import { client } from "@/sanity/lib/client"
+import { QUERY_ALL_CAREERS, QUERY_SPECIFIC_CAREER } from "@/sanity/queries"
+import { QUERY_ALL_CAREERSResult } from "@/sanity/types"
 import { Metadata } from "next"
 import Link from "next/link"
 import { notFound } from "next/navigation"
@@ -22,7 +24,7 @@ interface CareerProps {
 }
 
 async function getCareerFromParams(params: CareerProps["params"]) {
-    const career = allCareers.find((career) => career.slugAsParams === params.slug)
+    const career = await client.fetch(QUERY_SPECIFIC_CAREER)
 
     if (!career) {
         null
@@ -42,7 +44,7 @@ export async function generateMetadata({ params }: CareerProps): Promise<Metadat
         openGraph: {
             images: `/api/og/career?title=${career.title}`,
             type: "website",
-            url: `https://www.teamonedevelopers.de/career/${career.slug}`
+            url: `https://www.teamonedevelopers.de/career/${career.slug.current}`
         },
         title: career.title,
         description: career.description
@@ -50,15 +52,24 @@ export async function generateMetadata({ params }: CareerProps): Promise<Metadat
 }
 
 export async function generateStaticParams(): Promise<CareerProps["params"][]> {
-    return allCareers.map((career) => ({
-        slug: career.slugAsParams
-    }))
+    const allCareers: QUERY_ALL_CAREERSResult = await client.fetch(QUERY_ALL_CAREERS)
+
+    return allCareers
+        .filter((career) => (career.slug?.current ? career : undefined))
+        .filter((it) => it)
+        .map((career) => ({
+            slug: career.slug!.current!
+        }))
 }
 
 const employmentTypeMap: Record<Career["employmentType"], JobPosting["employmentType"]> = {
     Festanstellung: "FULL_TIME",
     Praktikum: "INTERN",
     Werkstudent: "INTERN"
+}
+
+export async function getStaticProps({ params }) {
+    const career = await client.fetch
 }
 
 export default async function CareerPage({ params }: CareerProps) {
