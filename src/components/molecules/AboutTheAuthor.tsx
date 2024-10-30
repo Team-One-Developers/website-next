@@ -1,6 +1,5 @@
-import { Author } from "contentlayer/generated"
+import { Author } from "@/sanity/types"
 import Typography from "../atoms/Typography"
-import { ProfilePicture } from "../molecules/ProfilePicture"
 
 export const AboutTheAuthor = ({ author }: { author: Author }) => {
     return (
@@ -9,7 +8,10 @@ export const AboutTheAuthor = ({ author }: { author: Author }) => {
                 Über den Autor
             </Typography>
             <div className="flex items-center gap-4">
-                <ProfilePicture imgSrc={author.profileImg} authorName={author.name} />
+                {/* <ProfilePicture
+                    imgSrc={author?.profileImg?.asset?.url}
+                    authorName={author.name}
+                /> */}
                 <div className="flex flex-col gap-1">
                     <Typography as="p" variant="subtitle">
                         {author.name}

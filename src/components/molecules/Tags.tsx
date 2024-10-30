@@ -1,8 +1,9 @@
-import { Blog } from "contentlayer/generated"
 import React, { forwardRef } from "react"
 import { twMerge } from "tailwind-merge"
 import { tv, VariantProps } from "tailwind-variants"
 import Typography from "../atoms/Typography"
+import { Blog, QUERY_SPECIFIC_BLOGResult } from "@/sanity/types"
+import { ResultBlogElement } from "./BlogArticle"
 
 export const tagsVariants = tv({
     slots: {
@@ -36,7 +37,7 @@ export const tagsVariants = tv({
 export interface TagsProps
     extends Omit<React.HTMLAttributes<HTMLUListElement>, "color">,
         VariantProps<typeof tagsVariants> {
-    blog: Blog
+    blog: QUERY_SPECIFIC_BLOGResult | ResultBlogElement
     category?: boolean
 }
 
@@ -72,10 +73,10 @@ export const Tags = forwardRef<HTMLUListElement, TagsProps>(
                         variant="description"
                         className={twMerge(tagsVariants({ size, color }).li(), className)}
                     >
-                        {blog.category}
+                        {blog?.category}
                     </Typography>
                 ) : (
-                    blog.tags?.map((tag, index) => (
+                    blog?.tags?.map((tag, index) => (
                         <Typography
                             as="li"
                             variant="description"

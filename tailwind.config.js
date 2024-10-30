@@ -29,14 +29,18 @@ module.exports = {
             spacegrotesk: "var(--font-SpaceGrotesk)"
         },
         screens: {
-            xs: "0px",
-            sm: "576px",
-            md: "768px",
-            lg: "992px",
-            xl: "1200px",
-            "2xl": "1400px",
-            "3xl": "1700px",
-            "4xl": "1921px"
+            xs: "400px",
+            // => @media (min-width: 400px) { ... }
+            sm: "540px",
+            // => @media (min-width: 540px) { ... }
+            md: "720px",
+            // => @media (min-width: 720px) { ... }
+            lg: "960px",
+            // => @media (min-width: 960px) { ... }
+            xl: "1140px",
+            // => @media (min-width: 1240px) { ... }
+            "2xl": "1320px"
+            // => @media (min-width: 1320px) { ... }
         },
         extend: {
             lineHeight: {

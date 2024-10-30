@@ -1,4 +1,4 @@
-import { Mdx } from "@/components/MdxComponents"
+import { T1PortableText } from "@/components/T1PortableText"
 import { Link as LinkComponent } from "@/components/atoms/Link"
 import { StructuredData } from "@/components/atoms/StructuredData"
 import Typography from "@/components/atoms/Typography"
@@ -8,21 +8,25 @@ import Icon, { IconProps } from "@/components/molecules/Icon"
 import { JobType } from "@/components/molecules/JobType"
 import { FESTANSTELLUNG_BENEFITS, PRAKTIKUMS_BENEFITS, WERKSTUDENT_BENEFITS } from "@/constants/benefits"
 import { organization } from "@/data/schemaOrg"
-import { mostRelated } from "@/lib/mostRelated"
-import { Career, allCareers } from "contentlayer/generated"
+import { mostRelatedCareers } from "@/lib/mostRelated"
+import { client } from "@/sanity/lib/client"
+import { QUERY_ALL_CAREERS, QUERY_SPECIFIC_CAREER } from "@/sanity/queries"
+import { Career, QUERY_ALL_CAREERSResult, QUERY_SPECIFIC_CAREERResult } from "@/sanity/types"
 import { Metadata } from "next"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 import { JobPosting, WithContext } from "schema-dts"
 
 interface CareerProps {
-    params: {
-        slug: string
-    }
+    params: Promise<{ slug: string }>
 }
 
-async function getCareerFromParams(params: CareerProps["params"]) {
-    const career = allCareers.find((career) => career.slugAsParams === params.slug)
+async function getCareerFromParams(slug: string): Promise<QUERY_SPECIFIC_CAREERResult | null> {
+    const career = await client.fetch(
+        QUERY_SPECIFIC_CAREER,
+        { slug },
+        { cache: process.env.NODE_ENV === "development" ? "no-store" : "force-cache" }
+    )
 
     if (!career) {
         null
@@ -32,9 +36,10 @@ async function getCareerFromParams(params: CareerProps["params"]) {
 }
 
 export async function generateMetadata({ params }: CareerProps): Promise<Metadata> {
-    const career = await getCareerFromParams(params)
+    const { slug } = await params
+    const career = await getCareerFromParams(slug)
 
-    if (!career) {
+    if (!career || !career.slug?.current) {
         return {}
     }
 
@@ -42,33 +47,37 @@ export async function generateMetadata({ params }: CareerProps): Promise<Metadat
         openGraph: {
             images: `/api/og/career?title=${career.title}`,
             type: "website",
-            url: `https://www.teamonedevelopers.de/career/${career.slug}`
+            url: `https://www.teamonedevelopers.de/career/${career.slug.current}`
         },
         title: career.title,
         description: career.description
     }
 }
 
-export async function generateStaticParams(): Promise<CareerProps["params"][]> {
-    return allCareers.map((career) => ({
-        slug: career.slugAsParams
-    }))
+export async function generateStaticParams() {
+    const allCareers: QUERY_ALL_CAREERSResult = await client.fetch(QUERY_ALL_CAREERS)
+
+    return allCareers
+        .filter((career) => career.slug?.current)
+        .map((career) => ({
+            slug: career.slug!.current!
+        }))
 }
 
-const employmentTypeMap: Record<Career["employmentType"], JobPosting["employmentType"]> = {
-    Festanstellung: "FULL_TIME",
-    Praktikum: "INTERN",
-    Werkstudent: "INTERN"
-}
+// export async function getStaticProps({ params }: CareerProps) {
+//     const career = await client.fetch
+// }
 
 export default async function CareerPage({ params }: CareerProps) {
-    const career = await getCareerFromParams(params)
+    const { slug } = await params
+    const career = await getCareerFromParams(slug)
+    const allCareers = await client.fetch(QUERY_ALL_CAREERS)
 
     if (!career) {
         notFound()
     }
 
-    const mostRelatedCareers = mostRelated({
+    const relatedCareers = mostRelatedCareers({
         allItems: allCareers,
         currentItem: career
     })
@@ -90,7 +99,11 @@ export default async function CareerPage({ params }: CareerProps) {
                 streetAddress: "Stafflenbergstraße 44"
             }
         },
-        employmentType: employmentTypeMap[career.employmentType],
+        employmentType: career.employmentType
+            ? career.employmentType === "Festanstellung"
+                ? "FULL_TIME"
+                : "INTERN"
+            : "FULL_TIME",
         jobBenefits: (career.employmentType === "Festanstellung" ? FESTANSTELLUNG_BENEFITS : PRAKTIKUMS_BENEFITS).map(
             (benefit) => benefit.text
         ),
@@ -120,12 +133,14 @@ export default async function CareerPage({ params }: CareerProps) {
                         <Typography as="h1" variant="h1" className="lg:mt-12">
                             {career.title}
                         </Typography>
-                        <JobType
-                            employmentType={career.employmentType}
-                            schedule={career.schedule}
-                            location={career.location}
-                            className="text-black"
-                        />
+                        {career.employmentType && career.schedule && career.location && (
+                            <JobType
+                                employmentType={career.employmentType}
+                                schedule={career.schedule}
+                                location={career.location}
+                                className="text-black"
+                            />
+                        )}
                         <div className={"mt-12 flex flex-col gap-4"}>
                             <LinkComponent
                                 href="/contact"
@@ -144,7 +159,8 @@ export default async function CareerPage({ params }: CareerProps) {
                                     {career.description}
                                 </Typography>
                             )}
-                            <Mdx code={career.body.code} theme="dark" />
+                            {career.content && <T1PortableText value={career.content} />}
+
                             <Typography as="h2" variant="h4" className="mb-8 mt-12 uppercase">
                                 Unsere Benefits:
                             </Typography>
@@ -170,21 +186,24 @@ export default async function CareerPage({ params }: CareerProps) {
                             <Typography variant="h4" className="uppercase">
                                 Weitere Jobs
                             </Typography>
-                            {mostRelatedCareers.map((career: Career, index: number) => (
-                                <Link href={career.slug} key={index} className="group">
-                                    <div className="flex flex-col gap-4 rounded-lg bg-t1-darkGray p-8 group-hover:brightness-[140%]">
-                                        <div className="flex gap-8 uppercase text-primary">
-                                            <Typography variant="description">{`${career.employmentType}, ${career.schedule}`}</Typography>
-                                            <Typography variant="description">{career.location}</Typography>
-                                        </div>
-                                        <div>
-                                            <Typography variant="h3" className="uppercase">
-                                                {career.title}
-                                            </Typography>
-                                        </div>
-                                    </div>
-                                </Link>
-                            ))}
+                            {relatedCareers.map(
+                                (career: Career, index: number) =>
+                                    career.slug?.current && (
+                                        <Link href={career.slug?.current} key={index} className="group">
+                                            <div className="flex flex-col gap-4 rounded-lg bg-t1-darkGray p-8 group-hover:brightness-[140%]">
+                                                <div className="flex gap-8 uppercase text-primary">
+                                                    <Typography variant="description">{`${career.employmentType}, ${career.schedule}`}</Typography>
+                                                    <Typography variant="description">{career.location}</Typography>
+                                                </div>
+                                                <div>
+                                                    <Typography variant="h3" className="uppercase">
+                                                        {career.title}
+                                                    </Typography>
+                                                </div>
+                                            </div>
+                                        </Link>
+                                    )
+                            )}
                         </div>
                     </div>
                 }

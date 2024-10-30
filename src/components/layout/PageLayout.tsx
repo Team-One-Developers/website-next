@@ -1,5 +1,6 @@
 import { PageTheme } from "@/types"
 import { ReactNode } from "react"
+import { twMerge } from "tailwind-merge"
 import { PAGE_THEME } from "../../constants"
 import { Ticker } from "../molecules/Ticker"
 import Footer from "./Footer"
@@ -8,7 +9,8 @@ import Header from "./Header"
 export const PageLayout = ({
     children,
     theme,
-    ticker = true
+    ticker = true,
+    footer = true
 }: {
     children: ReactNode
     theme?: PageTheme
@@ -20,9 +22,9 @@ export const PageLayout = ({
     return (
         <div data-theme={pageTheme} className="bg-background text-foreground">
             <Header theme={pageTheme} />
-            <main className="mb-16">{children}</main>
+            <main className={twMerge(footer && "mb-16")}>{children}</main>
             {ticker && <Ticker theme={pageTheme} />}
-            <Footer />
+            {footer && <Footer />}
         </div>
     )
 }

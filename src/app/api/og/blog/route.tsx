@@ -16,45 +16,45 @@ export const GET = async (request: Request) => {
         res.arrayBuffer()
     )
 
-    const Blob = () => {
-        return (
-            <svg width="538" height="538" viewBox="0 0 467 538" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g filter="url(#filter0_d_111_8872)">
-                    <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M464.422 525.088C480.99 525.088 494.422 511.657 494.422 495.088L494.422 242.51C494.422 225.942 480.99 212.51 464.422 212.51L415.746 212.51C399.177 212.51 385.746 199.079 385.746 182.51L385.746 42.374C385.746 25.8054 372.314 12.374 355.746 12.374L208.078 12.374C191.509 12.374 178.078 25.8055 178.078 42.374L178.078 59.846C178.078 76.4146 164.646 89.846 148.078 89.846L74.1159 89.846C57.5474 89.846 44.1159 103.277 44.1159 119.846L44.1159 329.384C44.1159 345.953 57.5473 359.384 74.1159 359.384L151.844 359.384C168.412 359.384 181.844 372.815 181.844 389.384L181.844 495.088C181.844 511.657 195.275 525.088 211.844 525.088L464.422 525.088Z"
-                        fill="#46FFAD"
-                    />
-                </g>
-                <defs>
-                    <filter
-                        id="filter0_d_111_8872"
-                        x="-4"
-                        y="0"
-                        width="546"
-                        height="546"
-                        filterUnits="userSpaceOnUse"
-                        color-interpolation-filters="sRGB"
-                    >
-                        <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                        <feColorMatrix
-                            in="SourceAlpha"
-                            type="matrix"
-                            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-                            result="hardAlpha"
-                        />
-                        <feOffset dy="4" />
-                        <feGaussianBlur stdDeviation="2" />
-                        <feComposite in2="hardAlpha" operator="out" />
-                        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
-                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_111_8872" />
-                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_111_8872" result="shape" />
-                    </filter>
-                </defs>
-            </svg>
-        )
-    }
+    // const Blob = () => {
+    //     return (
+    //         <svg width="538" height="538" viewBox="0 0 467 538" fill="none" xmlns="http://www.w3.org/2000/svg">
+    //             <g filter="url(#filter0_d_111_8872)">
+    //                 <path
+    //                     fill-rule="evenodd"
+    //                     clip-rule="evenodd"
+    //                     d="M464.422 525.088C480.99 525.088 494.422 511.657 494.422 495.088L494.422 242.51C494.422 225.942 480.99 212.51 464.422 212.51L415.746 212.51C399.177 212.51 385.746 199.079 385.746 182.51L385.746 42.374C385.746 25.8054 372.314 12.374 355.746 12.374L208.078 12.374C191.509 12.374 178.078 25.8055 178.078 42.374L178.078 59.846C178.078 76.4146 164.646 89.846 148.078 89.846L74.1159 89.846C57.5474 89.846 44.1159 103.277 44.1159 119.846L44.1159 329.384C44.1159 345.953 57.5473 359.384 74.1159 359.384L151.844 359.384C168.412 359.384 181.844 372.815 181.844 389.384L181.844 495.088C181.844 511.657 195.275 525.088 211.844 525.088L464.422 525.088Z"
+    //                     fill="#46FFAD"
+    //                 />
+    //             </g>
+    //             <defs>
+    //                 <filter
+    //                     id="filter0_d_111_8872"
+    //                     x="-4"
+    //                     y="0"
+    //                     width="546"
+    //                     height="546"
+    //                     filterUnits="userSpaceOnUse"
+    //                     color-interpolation-filters="sRGB"
+    //                 >
+    //                     <feFlood flood-opacity="0" result="BackgroundImageFix" />
+    //                     <feColorMatrix
+    //                         in="SourceAlpha"
+    //                         type="matrix"
+    //                         values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+    //                         result="hardAlpha"
+    //                     />
+    //                     <feOffset dy="4" />
+    //                     <feGaussianBlur stdDeviation="2" />
+    //                     <feComposite in2="hardAlpha" operator="out" />
+    //                     <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+    //                     <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_111_8872" />
+    //                     <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_111_8872" result="shape" />
+    //                 </filter>
+    //             </defs>
+    //         </svg>
+    //     )
+    // }
 
     const Logo = () => {
         return (
@@ -122,7 +122,7 @@ export const GET = async (request: Request) => {
                 <img
                     style={{ position: "absolute" }}
                     alt="blob background"
-                    // @ts-ignore
+                    // @ts-expect-error
                     src={bgImage}
                     width={1200}
                     height={630}

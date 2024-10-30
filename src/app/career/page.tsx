@@ -7,10 +7,12 @@ import { Section } from "@/components/layout/Section"
 import { CareerElement } from "@/components/molecules/CareerElement"
 import { Icon } from "@/components/molecules/Icon"
 import { Benefits } from "@/components/organisms/Benefits"
-import { Career as CareerType, allCareers } from "contentlayer/generated"
 import { Metadata } from "next"
 import Trophy from "/public/images/optimized/t1d_kai_knoerzer_079_optimized.webp"
 import Office from "/public/images/optimized/t1d_nov22_185_optimized.webp"
+import { client } from "@/sanity/lib/client"
+import { defineQuery } from "next-sanity"
+import { ALL_CAREER_QUERYResult } from "@/sanity/types"
 
 export const metadata: Metadata = {
     title: "Karriere",
@@ -18,15 +20,26 @@ export const metadata: Metadata = {
         "Wir sind immer auf der Suche nach Menschen, die Veränderungen vorantreiben und die Welt von morgen gestalten wollen."
 }
 
-type CareersPerDivision = Record<CareerType["division"], CareerType[]>
+const ALL_CAREER_QUERY = defineQuery(`*[_type == "career" && !(division in ["", "null"])]`)
 
-const Career = () => {
-    const sortedCareers = allCareers.reduce<Partial<CareersPerDivision>>((acc, career) => {
-        const { division } = career
-        acc[division] ??= []
-        acc[division]?.push(career)
-        return acc
-    }, {})
+const Career = async () => {
+    const careers: ALL_CAREER_QUERYResult = await client.fetch(
+        ALL_CAREER_QUERY,
+        {},
+        { cache: process.env.NODE_ENV === "development" ? "no-store" : "force-cache" }
+    )
+
+    const sortedCareers = careers.reduce(
+        (acc, career) => {
+            const { division } = career
+            if (division) {
+                acc[division] ??= []
+                acc[division].push(career)
+            }
+            return acc
+        },
+        {} as Record<string, ALL_CAREER_QUERYResult>
+    )
 
     return (
         <PageLayout>
@@ -73,20 +86,24 @@ const Career = () => {
                     </Typography>
                     <div>
                         {Object.keys(sortedCareers).map((division, index) => {
-                            const category = sortedCareers[division as CareerType["division"]]
+                            const category = sortedCareers[division]
                             return (
                                 <>
                                     <Typography
                                         as="h3"
                                         variant="h2"
                                         className="mb-4 mt-12 font-normal text-primary lg:max-w-[60%] "
-                                        key={index}
+                                        key={division}
                                     >
                                         {division}
                                     </Typography>
                                     <div>
                                         {category?.map((career, index) => (
-                                            <CareerElement listIndex={index + 1} key={career.slug} career={career} />
+                                            <CareerElement
+                                                listIndex={index + 1}
+                                                key={career.slug?.current}
+                                                career={career}
+                                            />
                                         ))}
                                     </div>
                                 </>

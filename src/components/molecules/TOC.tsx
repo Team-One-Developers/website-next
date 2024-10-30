@@ -1,7 +1,8 @@
-import { Blog } from "contentlayer/generated"
 import { twJoin, twMerge } from "tailwind-merge"
 import { Link } from "../atoms/Link"
 import Typography from "../atoms/Typography"
+import { Blog } from "@/sanity/types"
+import { slugify } from "@/lib/slugify"
 
 type Heading = {
     level: number
@@ -9,12 +10,36 @@ type Heading = {
     slug: string
 }
 
-export const TOC = ({ blog, className }: { blog: Blog; className?: string }) => {
-    let lowest = 5
+type ExtractBlock<T> = T extends { _type: "block" } ? T : never
 
-    blog.headings.forEach((heading: Heading) => {
-        if (heading.level < lowest) lowest = heading.level
-    })
+type BlogBlock = ExtractBlock<NonNullable<Blog["content"]>[number]>
+
+function isBlogBlock(block: any): block is BlogBlock {
+    return block._type === "block"
+}
+
+export const TOC = ({ blog, className }: { blog: Blog; className?: string }) => {
+    if (!blog.content) return null
+
+    const headings: BlogBlock[] = blog.content
+        // filter out images and code
+        .filter(isBlogBlock)
+        // filter out non headings
+        .filter(
+            (block) =>
+                block.children && block.style && (block.style === "h2" || block.style === "h3" || block.style === "h4")
+        )
+
+    const headingsWithAddedTocData = headings.map((headingBlock) => ({
+        ...headingBlock,
+        toc: {
+            headingLevelNumeric: Number(headingBlock.style!.slice(1)),
+            text: headingBlock.children![0]?.text,
+            slug: slugify(headingBlock.children![0].text)
+        }
+    }))
+
+    const lowest = Math.min(...headingsWithAddedTocData.map((heading: any) => heading.toc.headingLevelNumeric))
 
     return (
         <div className={twMerge("w-fit", className)}>
@@ -24,23 +49,29 @@ export const TOC = ({ blog, className }: { blog: Blog; className?: string }) => 
                 </Typography>
 
                 <ul className="mt-4 flex flex-col gap-1">
-                    {blog.headings.map((heading: Heading) => {
+                    {headingsWithAddedTocData.map((heading: any) => {
                         return (
                             <li
-                                key={`#${heading.slug}`}
+                                key={`#${heading.toc.slug}`}
+                                // only h2-4 possible (3 levels), but we keep the logic for future need
                                 className={twJoin(
                                     "flex",
-                                    heading.level === lowest && "ml-0 before:content-['-_'] before:text-primary",
-                                    heading.level === 1 + lowest && "ml-8 before:content-['•_'] before:text-primary",
-                                    heading.level === lowest + 2 && "ml-16 before:content-['·_'] before:text-primary",
-                                    heading.level === lowest + 3 && "ml-24 before:content-['‣_'] before:text-primary",
-                                    heading.level === lowest + 4 && "ml-32 before:content-['-_'] before:text-primary"
+                                    heading.toc.headingLevelNumeric === lowest &&
+                                        "ml-0 before:content-['-_'] before:text-primary",
+                                    heading.toc.headingLevelNumeric === 1 + lowest &&
+                                        "ml-8 before:content-['•_'] before:text-primary",
+                                    heading.toc.headingLevelNumeric === lowest + 2 &&
+                                        "ml-16 before:content-['·_'] before:text-primary",
+                                    heading.toc.headingLevelNumeric === lowest + 3 &&
+                                        "ml-24 before:content-['‣_'] before:text-primary",
+                                    heading.toc.headingLevelNumeric === lowest + 4 &&
+                                        "ml-32 before:content-['-_'] before:text-primary"
                                 )}
                                 //   className="data-[level='1']:pl-0 data-[level='2']:pl-4 data-[level='3']:pl-8 data-[level='4']:pl-12 data-[level='5']:pl-16"
                             >
                                 <Link
-                                    href={`#${heading.slug}`}
-                                    label={heading.text}
+                                    href={`#${heading.toc.slug}`}
+                                    label={heading.toc.text}
                                     color="transparent"
                                     className="w-auto p-1 font-abcdiatype normal-case md:p-1"
                                 />

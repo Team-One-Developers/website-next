@@ -1,3 +1,4 @@
+import Link from "next/link"
 import { twMerge } from "tailwind-merge"
 import Typography from "../atoms/Typography"
 import Icon from "./Icon"
@@ -20,9 +21,9 @@ export const ExternalLink = ({
             variant="h3"
         >
             <Icon name="arrow_to_top_right" className={twMerge("text-primary", arrowClass)} width={40} height={40} />
-            <a href={href} className="self-end pb-3">
+            <Link href={href} className="self-end pb-3">
                 {name}
-            </a>
+            </Link>
         </Typography>
     )
 }

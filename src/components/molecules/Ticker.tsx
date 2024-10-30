@@ -6,6 +6,8 @@ import Marquee from "react-fast-marquee"
 import { twJoin } from "tailwind-merge"
 import { useMediaQuery } from "usehooks-ts"
 import { Image } from "../atoms/Image"
+import DarkGray from "/public/images/logo/t1d-sticker-darkgray.svg"
+import NeonGray from "/public/images/logo/t1d-sticker-neongreen.svg"
 
 interface TickerProps {
     theme: PageTheme
@@ -36,11 +38,7 @@ export const Ticker = (props: TickerProps) => {
                 {includeLogo === true ? (
                     <div className="mx-[60px] my-0">
                         <Image
-                            src={
-                                theme === PAGE_THEME.dark
-                                    ? "/images/logo/t1d-sticker-darkgray.svg"
-                                    : "/images/logo/t1d-sticker-neongreen.svg"
-                            }
+                            src={theme === PAGE_THEME.dark ? DarkGray : NeonGray}
                             alt="Team One Developers Logo"
                             height={80}
                             width={63}
