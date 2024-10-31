@@ -26,6 +26,7 @@
         "react-fast-marquee": "^1.6.5",
         "react-intersection-observer": "^9.13.1",
         "sanity": "3",
+        "speakingurl": "^14.0.1",
         "styled-components": "6",
         "usehooks-ts": "^3.1.0"
     },

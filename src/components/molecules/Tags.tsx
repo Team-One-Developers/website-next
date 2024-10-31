@@ -3,6 +3,7 @@ import { twMerge } from "tailwind-merge"
 import { tv, VariantProps } from "tailwind-variants"
 import Typography from "../atoms/Typography"
 import { Blog } from "@/sanity/types"
+import { ResultBlogElement } from "./BlogArticle"
 
 export const tagsVariants = tv({
     slots: {
@@ -36,7 +37,7 @@ export const tagsVariants = tv({
 export interface TagsProps
     extends Omit<React.HTMLAttributes<HTMLUListElement>, "color">,
         VariantProps<typeof tagsVariants> {
-    blog: Blog
+    blog: Blog | ResultBlogElement
     category?: boolean
 }
 

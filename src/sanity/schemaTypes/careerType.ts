@@ -13,11 +13,13 @@ export const careerType = defineType({
         defineField({
             name: "slug",
             type: "slug",
-            options: {
-                source: "title",
-                maxLength: 96
-            },
-            validation: (Rule) => Rule.required().error("A slug is required for creating the webpage")
+            readOnly: true,
+            hidden: ({ document }) => !document?.slug
+        }),
+        defineField({
+            name: "path",
+            type: "string",
+            hidden: true
         }),
         defineField({
             name: "description",

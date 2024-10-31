@@ -133,6 +133,7 @@ export type Blog = {
     _rev: string
     title?: string
     slug?: Slug
+    path?: string
     author?: {
         _ref: string
         _type: "reference"
@@ -208,6 +209,7 @@ export type Career = {
     _rev: string
     title?: string
     slug?: Slug
+    path?: string
     description?: string
     location?: "Stuttgart"
     schedule?: "Vollzeit" | "Teilzeit"
@@ -269,6 +271,7 @@ export type QUERY_ALL_CAREERSResult = Array<{
     _rev: string
     title?: string
     slug?: Slug
+    path?: string
     description?: string
     location?: "Stuttgart"
     schedule?: "Teilzeit" | "Vollzeit"
@@ -306,6 +309,7 @@ export type QUERY_SPECIFIC_CAREERResult = {
     _rev: string
     title?: string
     slug?: Slug
+    path?: string
     description?: string
     location?: "Stuttgart"
     schedule?: "Teilzeit" | "Vollzeit"
@@ -343,6 +347,7 @@ export type QUERY_ALL_BLOGSResult = Array<{
     _rev: string
     title?: string
     slug?: Slug
+    path?: string
     author: {
         _id: string
         _type: "author"
@@ -412,6 +417,7 @@ export type QUERY_SPECIFIC_BLOGResult = {
     _rev: string
     title?: string
     slug?: Slug
+    path?: string
     author: {
         _id: string
         _type: "author"
@@ -483,6 +489,7 @@ export type ALL_CAREER_QUERYResult = Array<{
     _rev: string
     title?: string
     slug?: Slug
+    path?: string
     description?: string
     location?: "Stuttgart"
     schedule?: "Teilzeit" | "Vollzeit"

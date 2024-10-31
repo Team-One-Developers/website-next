@@ -16,7 +16,13 @@ export const blogType = defineType({
             options: {
                 source: "title",
                 maxLength: 96
-            }
+            },
+            hidden: ({ document }) => !document?.slug
+        }),
+        defineField({
+            name: "path",
+            type: "string",
+            hidden: true
         }),
         defineField({
             name: "author",

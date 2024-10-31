@@ -4,11 +4,11 @@ import Typography from "../atoms/Typography"
 import { Tags } from "./Tags"
 import { Blog, QUERY_ALL_BLOGSResult } from "@/sanity/types"
 
-type ResultBlogElement = QUERY_ALL_BLOGSResult[number]
+export type ResultBlogElement = QUERY_ALL_BLOGSResult[number]
 
 export const BlogArticle = ({ blog }: { blog: ResultBlogElement }) => {
-    return blog.slug?.current ? (
-        <Link href={`/blog/${blog.slug.current}`} className="size-full">
+    return blog.path ? (
+        <Link href={blog.path} className="size-full">
             <article className="group relative flex size-full cursor-pointer flex-col overflow-hidden rounded-md bg-white transition-shadow hover:shadow-md">
                 <div className="flex grow flex-col rounded-b-md p-3 text-black">
                     <div className="flex flex-col gap-2 pb-4">
