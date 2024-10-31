@@ -6,18 +6,11 @@ import { usePathname } from "next/navigation"
 import { twJoin } from "tailwind-merge"
 import { Icon } from "../molecules/Icon"
 import { Section } from "./Section"
-import { WebsiteCarbonBadge } from "react-websitecarbon-badge"
 import { PageTheme } from "@/types"
 import { PAGE_THEME } from "@/constants"
 
-export const Footer = ({ theme }: { theme: PageTheme }) => {
+export const Footer = ({ theme, children }: { theme: PageTheme; children: React.ReactNode }) => {
     const pathname = usePathname()
-
-    // const baseUrl = process.env.NODE_ENV === "production"
-    //     ? `${process.env.NEXT_PUBLIC_VERCEL_URL}`  // API not meant for private deployments
-    //     : "https://www.teamonedevelopers.de";
-    const baseUrl = "https://www.teamonedevelopers.de"
-    console.log(baseUrl)
 
     const navigationSectionHeaderCSS =
         "font-spacegrotesk text-foreground uppercase font-medium leading-3 pb-2 text-[11px]  mt-4 md:mt-0"
@@ -39,12 +32,7 @@ export const Footer = ({ theme }: { theme: PageTheme }) => {
                 <div className="block pb-8 md:grid md:grid-flow-col md:grid-cols-[2.5fr_1fr_1fr_1fr] md:grid-rows-[1fr_1fr] md:gap-x-3 md:gap-y-5 md:text-left">
                     <div className="flex flex-col items-start text-left md:row-span-1">
                         <div className={navigationSectionHeaderCSS}>Carbon Footprint</div>
-                        <div className="mb-4 py-0.5 px-[4px] border-primary rounded-md border-2">
-                            <WebsiteCarbonBadge
-                                dark={theme == PAGE_THEME.dark ? true : false}
-                                url={baseUrl + pathname}
-                            ></WebsiteCarbonBadge>
-                        </div>
+                        <div className="mb-4 rounded-md border-2 border-primary px-[4px] py-0.5">{children}</div>
                     </div>
 
                     <div className="md:row-span-1 md:mb-0 md:self-end md:justify-self-start">

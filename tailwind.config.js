@@ -84,6 +84,13 @@ module.exports = {
                 header_gradient:
                     "linear-gradient(var(--theme-background) -20%, transparent 87%, transparent 98%, transparent 100%)"
             })
+        },
+        keyframes: {
+            shimmer: {
+                "100%": {
+                    transform: "translateX(100%)"
+                }
+            }
         }
     },
     plugins: [
