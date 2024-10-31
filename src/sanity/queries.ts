@@ -1,4 +1,7 @@
 import { defineQuery } from "next-sanity"
 
-export const QUERY_ALL_CAREERS = defineQuery(`*[_type == 'career']`)
-export const QUERY_SPECIFIC_CAREER = defineQuery(`*[_type == 'career' && slug.current == $slug]`)
+export const QUERY_ALL_CAREERS = defineQuery(`*[_type == 'career' && defined(slug) && defined(slug.current)]`)
+export const QUERY_SPECIFIC_CAREER = defineQuery(`*[_type == 'career' && slug.current == $slug][0]`)
+
+export const QUERY_ALL_BLOGS = defineQuery(`*[_type == 'blog' && defined(slug) && defined(slug.current)]{...,author->}`)
+export const QUERY_SPECIFIC_BLOG = defineQuery(`*[_type == 'blog' && slug.current == $slug][0]{...,author->}`)

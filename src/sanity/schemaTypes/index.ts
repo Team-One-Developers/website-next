@@ -1,8 +1,8 @@
 import { type SchemaTypeDefinition } from "sanity"
-import { jobType } from "./jobType"
+import { careerType } from "./careerType"
 import { authorType } from "./authorType"
 import { blogType } from "./blogType"
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-    types: [jobType, authorType, blogType]
+    types: [careerType, authorType, blogType]
 }

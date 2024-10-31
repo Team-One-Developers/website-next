@@ -1,4 +1,4 @@
-import { Blog, Career } from "contentlayer/generated"
+import { Blog, Career } from "@/sanity/types"
 import { intersection } from "lodash"
 
 export const mostRelated = ({
@@ -14,7 +14,7 @@ export const mostRelated = ({
 
     allItems
         // first filter out the item we are currently on
-        .filter((c) => c.slugAsParams !== currentItem.slugAsParams && c.status === "PUBLISHED")
+        .filter((c) => c.slug?.current !== currentItem.slug?.current && c.status === "PUBLISHED")
         // now find the similarities between every other item and the current item
         .forEach((c) => {
             mostRelatedItems.push({

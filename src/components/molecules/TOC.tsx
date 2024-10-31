@@ -1,7 +1,7 @@
-import { Blog } from "contentlayer/generated"
 import { twJoin, twMerge } from "tailwind-merge"
 import { Link } from "../atoms/Link"
 import Typography from "../atoms/Typography"
+import { Blog } from "@/sanity/types"
 
 type Heading = {
     level: number
@@ -9,6 +9,7 @@ type Heading = {
     slug: string
 }
 
+// TODO FIX OLD RICH TEXT NOW WITH PROTBLE TEXT YAY
 export const TOC = ({ blog, className }: { blog: Blog; className?: string }) => {
     let lowest = 5
 

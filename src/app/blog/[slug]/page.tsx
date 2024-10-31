@@ -1,4 +1,3 @@
-import { Mdx } from "@/components/MdxComponents"
 import { Image } from "@/components/atoms/Image"
 import { StructuredData } from "@/components/atoms/StructuredData"
 import Typography from "@/components/atoms/Typography"
@@ -12,12 +11,15 @@ import { BlogRow } from "@/components/organisms/BlogRow"
 import { PAGE_THEME } from "@/constants"
 import { organization } from "@/data/schemaOrg"
 import { formatDate } from "@/lib/formateDate"
-import { getAuthor } from "@/lib/getAuthor"
 import { mostRelated } from "@/lib/mostRelated"
 import { Metadata } from "next"
 import { notFound } from "next/navigation"
 import type { BlogPosting, WithContext } from "schema-dts"
 import "../../../styles/headings.css"
+import { client } from "@/sanity/lib/client"
+import { QUERY_ALL_BLOGS, QUERY_SPECIFIC_BLOG } from "@/sanity/queries"
+import { QUERY_ALL_BLOGSResult } from "@/sanity/types"
+import { PortableText } from "next-sanity"
 
 interface BlogProps {
     params: {
@@ -26,7 +28,7 @@ interface BlogProps {
 }
 
 async function getBlogFromParams(params: BlogProps["params"]) {
-    const blog = allBlogs.find((blog) => blog.slugAsParams === params.slug)
+    const blog = await client.fetch(QUERY_SPECIFIC_BLOG, { slug: params.slug })
 
     if (!blog) {
         null
@@ -52,13 +54,18 @@ export async function generateMetadata({ params }: BlogProps): Promise<Metadata>
 }
 
 export async function generateStaticParams(): Promise<BlogProps["params"][]> {
-    return allBlogs.map((blog) => ({
-        slug: blog.slugAsParams
-    }))
+    const allBlogs: QUERY_ALL_BLOGSResult = await client.fetch(QUERY_ALL_BLOGS)
+
+    return allBlogs
+        .filter((blog) => blog.slug?.current)
+        .map((blog) => ({
+            slug: blog.slug!.current!
+        }))
 }
 
 export default async function BlogPage({ params }: BlogProps) {
     const blog = await getBlogFromParams(params)
+    const allBlogs = await client.fetch(QUERY_ALL_BLOGS)
 
     if (!blog) {
         notFound()
@@ -69,8 +76,6 @@ export default async function BlogPage({ params }: BlogProps) {
         currentItem: blog,
         amount: 4
     })
-
-    const author = getAuthor(blog.author)
     // TODO public link for image?
 
     const structuredData: WithContext<BlogPosting> = {
@@ -81,7 +86,7 @@ export default async function BlogPage({ params }: BlogProps) {
         datePublished: blog.date,
         author: {
             "@type": "Person",
-            name: blog.author
+            name: blog.author.name
         },
         publisher: organization
     }
@@ -106,13 +111,13 @@ export default async function BlogPage({ params }: BlogProps) {
                         </Typography>
                         <Tags blog={blog} size="md" className="my-2" color="primary" />
                         <div className="relative mt-4 flex items-center">
-                            <ProfilePicture imgSrc={author.profileImg} authorName={author.name} />
+                            <ProfilePicture imgSrc={blog.author.profileImg} authorName={blog.author.name} />
                             <div className="ml-4">
                                 <Typography as="p" variant="subtitle">
-                                    {author.name}
+                                    {blog.author.name}
                                 </Typography>
                                 <Typography as="p" variant="paragraph" className="text-muted">
-                                    {author.position}
+                                    {blog.author.position}
                                 </Typography>
                                 <Typography as="time" variant="paragraph">
                                     {formatDate(blog.date)}
@@ -131,14 +136,13 @@ export default async function BlogPage({ params }: BlogProps) {
                                     style={{ width: "100%", height: "auto" }} // optional
                                     // placeholder="blur"
                                     // blurDataURL={blog.blurDataURL}
-                                    // TODO: Preprocess contentlayer images
                                 />
                                 {/* <hr className="my-8" /> */}
                             </div>
                         )}
-                        <Mdx code={blog.body.code} theme="light" />
+                        {blog.body && <PortableText value={blog.body} />}
                         <hr className=" my-8 h-px border-dashed bg-t1-darkGray" />
-                        <AboutTheAuthor author={author} />
+                        <AboutTheAuthor author={blog.author} />
                     </div>
                 </div>
             </Section>

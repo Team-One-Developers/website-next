@@ -1,8 +1,8 @@
-import { Blog } from "contentlayer/generated"
 import React, { forwardRef } from "react"
 import { twMerge } from "tailwind-merge"
 import { tv, VariantProps } from "tailwind-variants"
 import Typography from "../atoms/Typography"
+import { Blog } from "@/sanity/types"
 
 export const tagsVariants = tv({
     slots: {

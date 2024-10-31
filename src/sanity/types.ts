@@ -139,43 +139,9 @@ export type Blog = {
         _weak?: boolean
         [internalGroqTypeReferenceTo]?: "author"
     }
-    positionTItle?: string
-    descriptionShort?: Array<{
-        children?: Array<{
-            marks?: Array<string>
-            text?: string
-            _type: "span"
-            _key: string
-        }>
-        style?: "normal" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "blockquote"
-        listItem?: "bullet" | "number"
-        markDefs?: Array<{
-            href?: string
-            _type: "link"
-            _key: string
-        }>
-        level?: number
-        _type: "block"
-        _key: string
-    }>
-    descriptionLong?: Array<{
-        children?: Array<{
-            marks?: Array<string>
-            text?: string
-            _type: "span"
-            _key: string
-        }>
-        style?: "normal" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "blockquote"
-        listItem?: "bullet" | "number"
-        markDefs?: Array<{
-            href?: string
-            _type: "link"
-            _key: string
-        }>
-        level?: number
-        _type: "block"
-        _key: string
-    }>
+    positionTitle?: string
+    descriptionShort?: string
+    descriptionLong?: string
     body?: Array<{
         children?: Array<{
             marks?: Array<string>
@@ -242,27 +208,10 @@ export type Career = {
     _rev: string
     title?: string
     slug?: Slug
-    description?: Array<{
-        children?: Array<{
-            marks?: Array<string>
-            text?: string
-            _type: "span"
-            _key: string
-        }>
-        style?: "normal" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "blockquote"
-        listItem?: "bullet" | "number"
-        markDefs?: Array<{
-            href?: string
-            _type: "link"
-            _key: string
-        }>
-        level?: number
-        _type: "block"
-        _key: string
-    }>
+    description?: string
     location?: "Stuttgart"
     schedule?: "Vollzeit" | "Teilzeit"
-    eymploymentType?: "Festanstellung" | "Praktikum" | "Werkstudent"
+    employmentType?: "Festanstellung" | "Praktikum" | "Werkstudent"
     division?: "Software Engineering" | "Agile Transformation" | "Operations" | "Marketing"
     tags?: Array<string>
     date?: string
@@ -311,7 +260,7 @@ export type AllSanitySchemaTypes =
 export declare const internalGroqTypeReferenceTo: unique symbol
 // Source: ./src/sanity/queries.ts
 // Variable: QUERY_ALL_CAREERS
-// Query: *[_type == 'career']
+// Query: *[_type == 'career' && defined(slug) && defined(slug.current)]
 export type QUERY_ALL_CAREERSResult = Array<{
     _id: string
     _type: "career"
@@ -320,27 +269,10 @@ export type QUERY_ALL_CAREERSResult = Array<{
     _rev: string
     title?: string
     slug?: Slug
-    description?: Array<{
-        children?: Array<{
-            marks?: Array<string>
-            text?: string
-            _type: "span"
-            _key: string
-        }>
-        style?: "blockquote" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "normal"
-        listItem?: "bullet" | "number"
-        markDefs?: Array<{
-            href?: string
-            _type: "link"
-            _key: string
-        }>
-        level?: number
-        _type: "block"
-        _key: string
-    }>
+    description?: string
     location?: "Stuttgart"
     schedule?: "Teilzeit" | "Vollzeit"
-    eymploymentType?: "Festanstellung" | "Praktikum" | "Werkstudent"
+    employmentType?: "Festanstellung" | "Praktikum" | "Werkstudent"
     division?: "Agile Transformation" | "Marketing" | "Operations" | "Software Engineering"
     tags?: Array<string>
     date?: string
@@ -365,8 +297,8 @@ export type QUERY_ALL_CAREERSResult = Array<{
     status?: "DRAFT" | "PUBLISHED" | "TO REVIEW"
 }>
 // Variable: QUERY_SPECIFIC_CAREER
-// Query: *[_type == 'career' && slug.current == $slug]
-export type QUERY_SPECIFIC_CAREERResult = Array<{
+// Query: *[_type == 'career' && slug.current == $slug][0]
+export type QUERY_SPECIFIC_CAREERResult = {
     _id: string
     _type: "career"
     _createdAt: string
@@ -374,27 +306,10 @@ export type QUERY_SPECIFIC_CAREERResult = Array<{
     _rev: string
     title?: string
     slug?: Slug
-    description?: Array<{
-        children?: Array<{
-            marks?: Array<string>
-            text?: string
-            _type: "span"
-            _key: string
-        }>
-        style?: "blockquote" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "normal"
-        listItem?: "bullet" | "number"
-        markDefs?: Array<{
-            href?: string
-            _type: "link"
-            _key: string
-        }>
-        level?: number
-        _type: "block"
-        _key: string
-    }>
+    description?: string
     location?: "Stuttgart"
     schedule?: "Teilzeit" | "Vollzeit"
-    eymploymentType?: "Festanstellung" | "Praktikum" | "Werkstudent"
+    employmentType?: "Festanstellung" | "Praktikum" | "Werkstudent"
     division?: "Agile Transformation" | "Marketing" | "Operations" | "Software Engineering"
     tags?: Array<string>
     date?: string
@@ -417,20 +332,49 @@ export type QUERY_SPECIFIC_CAREERResult = Array<{
         _key: string
     }>
     status?: "DRAFT" | "PUBLISHED" | "TO REVIEW"
-}>
-
-// Source: ./src/app/career/page.tsx
-// Variable: ALL_CAREER_QUERY
-// Query: *[_type == "career" && !(division in ["", "null"])]
-export type ALL_CAREER_QUERYResult = Array<{
+} | null
+// Variable: QUERY_ALL_BLOGS
+// Query: *[_type == 'blog' && defined(slug) && defined(slug.current)]{...,author->}
+export type QUERY_ALL_BLOGSResult = Array<{
     _id: string
-    _type: "career"
+    _type: "blog"
     _createdAt: string
     _updatedAt: string
     _rev: string
     title?: string
     slug?: Slug
-    description?: Array<{
+    author: {
+        _id: string
+        _type: "author"
+        _createdAt: string
+        _updatedAt: string
+        _rev: string
+        name?: string
+        position?: string
+        profileImg?: string
+        about?: Array<{
+            children?: Array<{
+                marks?: Array<string>
+                text?: string
+                _type: "span"
+                _key: string
+            }>
+            style?: "blockquote" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "normal"
+            listItem?: "bullet" | "number"
+            markDefs?: Array<{
+                href?: string
+                _type: "link"
+                _key: string
+            }>
+            level?: number
+            _type: "block"
+            _key: string
+        }>
+    } | null
+    positionTitle?: string
+    descriptionShort?: string
+    descriptionLong?: string
+    body?: Array<{
         children?: Array<{
             marks?: Array<string>
             text?: string
@@ -448,9 +392,101 @@ export type ALL_CAREER_QUERYResult = Array<{
         _type: "block"
         _key: string
     }>
+    heroImage?: string
+    status?: "DRAFT" | "PUBLISHED" | "TESTING" | "TO REVIEW"
+    length?: "BLOG" | "IGNITE"
+    language?: "Deutsch" | "Englisch"
+    tags?: Array<string>
+    category?: "CULTURE" | "EXPERIENCE" | "METHODOLOGY" | "NEWS" | "SOFTWARE ENGINEERING"
+    cta?: "BLOG" | "CAREER" | "CONTACT" | "NONE"
+    date?: string
+    toc?: boolean
+}>
+// Variable: QUERY_SPECIFIC_BLOG
+// Query: *[_type == 'blog' && slug.current == $slug][0]{...,author->}
+export type QUERY_SPECIFIC_BLOGResult = {
+    _id: string
+    _type: "blog"
+    _createdAt: string
+    _updatedAt: string
+    _rev: string
+    title?: string
+    slug?: Slug
+    author: {
+        _id: string
+        _type: "author"
+        _createdAt: string
+        _updatedAt: string
+        _rev: string
+        name?: string
+        position?: string
+        profileImg?: string
+        about?: Array<{
+            children?: Array<{
+                marks?: Array<string>
+                text?: string
+                _type: "span"
+                _key: string
+            }>
+            style?: "blockquote" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "normal"
+            listItem?: "bullet" | "number"
+            markDefs?: Array<{
+                href?: string
+                _type: "link"
+                _key: string
+            }>
+            level?: number
+            _type: "block"
+            _key: string
+        }>
+    } | null
+    positionTitle?: string
+    descriptionShort?: string
+    descriptionLong?: string
+    body?: Array<{
+        children?: Array<{
+            marks?: Array<string>
+            text?: string
+            _type: "span"
+            _key: string
+        }>
+        style?: "blockquote" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "normal"
+        listItem?: "bullet" | "number"
+        markDefs?: Array<{
+            href?: string
+            _type: "link"
+            _key: string
+        }>
+        level?: number
+        _type: "block"
+        _key: string
+    }>
+    heroImage?: string
+    status?: "DRAFT" | "PUBLISHED" | "TESTING" | "TO REVIEW"
+    length?: "BLOG" | "IGNITE"
+    language?: "Deutsch" | "Englisch"
+    tags?: Array<string>
+    category?: "CULTURE" | "EXPERIENCE" | "METHODOLOGY" | "NEWS" | "SOFTWARE ENGINEERING"
+    cta?: "BLOG" | "CAREER" | "CONTACT" | "NONE"
+    date?: string
+    toc?: boolean
+} | null
+
+// Source: ./src/app/career/page.tsx
+// Variable: ALL_CAREER_QUERY
+// Query: *[_type == "career" && !(division in ["", "null"])]
+export type ALL_CAREER_QUERYResult = Array<{
+    _id: string
+    _type: "career"
+    _createdAt: string
+    _updatedAt: string
+    _rev: string
+    title?: string
+    slug?: Slug
+    description?: string
     location?: "Stuttgart"
     schedule?: "Teilzeit" | "Vollzeit"
-    eymploymentType?: "Festanstellung" | "Praktikum" | "Werkstudent"
+    employmentType?: "Festanstellung" | "Praktikum" | "Werkstudent"
     division?: "Agile Transformation" | "Marketing" | "Operations" | "Software Engineering"
     tags?: Array<string>
     date?: string
@@ -479,8 +515,10 @@ export type ALL_CAREER_QUERYResult = Array<{
 import "@sanity/client"
 declare module "@sanity/client" {
     interface SanityQueries {
-        "*[_type == 'career']": QUERY_ALL_CAREERSResult
-        "*[_type == 'career' && slug.current == $slug]": QUERY_SPECIFIC_CAREERResult
+        "*[_type == 'career' && defined(slug) && defined(slug.current)]": QUERY_ALL_CAREERSResult
+        "*[_type == 'career' && slug.current == $slug][0]": QUERY_SPECIFIC_CAREERResult
+        "*[_type == 'blog' && defined(slug) && defined(slug.current)]{...,author->}": QUERY_ALL_BLOGSResult
+        "*[_type == 'blog' && slug.current == $slug][0]{...,author->}": QUERY_SPECIFIC_BLOGResult
         '*[_type == "career" && !(division in ["", "null"])]': ALL_CAREER_QUERYResult
     }
 }

@@ -1,6 +1,6 @@
 import { defineField, defineType } from "sanity"
 
-export const jobType = defineType({
+export const careerType = defineType({
     name: "career",
     title: "Job Opening",
     type: "document",
@@ -21,8 +21,7 @@ export const jobType = defineType({
         }),
         defineField({
             name: "description",
-            type: "array",
-            of: [{ type: "block" }],
+            type: "string",
             validation: (Rule) => Rule.required()
         }),
         defineField({
@@ -42,7 +41,7 @@ export const jobType = defineType({
             }
         }),
         defineField({
-            name: "eymploymentType",
+            name: "employmentType",
             type: "string",
             options: {
                 list: ["Festanstellung", "Praktikum", "Werkstudent"],
@@ -70,7 +69,8 @@ export const jobType = defineType({
         defineField({
             name: "details",
             type: "array",
-            of: [{ type: "block" }]
+            of: [{ type: "block" }],
+            description: "Details about the job opening, to be displayed on the webpage"
         }),
         defineField({
             name: "status",

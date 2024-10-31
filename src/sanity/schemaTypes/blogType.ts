@@ -24,21 +24,18 @@ export const blogType = defineType({
             to: [{ type: "author" }]
         }),
         defineField({
-            name: "positionTItle",
+            name: "positionTitle",
             type: "string",
             initialValue: "Software Engineer"
         }),
         defineField({
             name: "descriptionShort",
-            type: "array",
-            of: [{ type: "block" }],
+            type: "string",
             validation: (Rule) => Rule.required().error("A short description is required for a blog post")
         }),
         defineField({
             name: "descriptionLong",
-            type: "array",
-            of: [{ type: "block" }],
-            options: { source: "descriptionShort" },
+            type: "string",
             validation: (Rule) => Rule.required().error("A long description is required for a blog post")
         }),
         defineField({

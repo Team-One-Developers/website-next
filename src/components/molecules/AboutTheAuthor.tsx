@@ -1,4 +1,4 @@
-import { Author } from "contentlayer/generated"
+import { Author } from "@/sanity/types"
 import Typography from "../atoms/Typography"
 import { ProfilePicture } from "../molecules/ProfilePicture"
 

@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 const ALL_CAREER_QUERY = defineQuery(`*[_type == "career" && !(division in ["", "null"])]`)
 
 const Career = async () => {
-    const careers: ALL_CAREER_QUERYResult = await client.fetch(ALL_CAREER_QUERY)
+    const careers: ALL_CAREER_QUERYResult = await client.fetch(ALL_CAREER_QUERY, { revalidate: 60 })
 
     const sortedCareers = careers.reduce(
         (acc, career) => {
