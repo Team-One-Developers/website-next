@@ -86,9 +86,15 @@ module.exports = {
             })
         },
         keyframes: {
-            shimmer: {
+            pulse: {
+                "0%": {
+                    opacity: 1
+                },
+                "50%": {
+                    opacity: 0.5
+                },
                 "100%": {
-                    transform: "translateX(100%)"
+                    opacity: 1
                 }
             }
         }

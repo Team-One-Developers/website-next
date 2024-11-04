@@ -43,16 +43,19 @@ async function WebsiteCarbonBadge({ dark, lang }: WebsiteCarbonBadgeProps) {
         let url = encodeURIComponent(baseUrl)
 
         try {
-            await new Promise((resolve) => setTimeout(resolve, 3000)) // simulate delay for testing suspense
-            //const res = { co2: "1.2", percentage: "80" }
-            const res = await fetch("https://api.websitecarbon.com/b?url=" + url)
+            const placeholderData = { co2: "1.2", percentage: "80" }
+            const data: WebsiteCarbonData = await new Promise((resolve) =>
+                setTimeout(() => resolve(placeholderData), 3000)
+            ) // simulate delay for testing suspense
 
-            if (!res.ok) {
-                throw Error(JSON.stringify(await res.json()))
-            }
+            // const res = await fetch("https://api.websitecarbon.com/b?url=" + url)
 
-            // const data = res
-            const data = await res.json()
+            // if (!res.ok) {
+            //     throw Error(JSON.stringify(await res.json()))
+            // }
+
+            // const data = await res.json()
+
             return data
         } catch (e) {
             console.error(e)
@@ -63,7 +66,7 @@ async function WebsiteCarbonBadge({ dark, lang }: WebsiteCarbonBadgeProps) {
     const data: WebsiteCarbonData | null = await fetchData()
 
     return (
-        <div className="text-center text-[15px] leading-[1.15] text-[#0e11a8]">
+        <div className="mb-4 rounded-md border-2 border-primary px-[4px] py-0.5 text-center text-[15px] leading-[1.15] text-[#0e11a8]">
             <div>
                 <a
                     className="mx-0 my-[0.2em] inline-flex min-w-[8.2em] items-center justify-center rounded-l-[0.3em] rounded-r-none border-[0.13em] border-r-0 border-solid border-[#00ffbc] bg-white px-[0.5em] py-[0.3em] text-center text-[1em] leading-[1.15] text-[#0e11a8] no-underline"
@@ -100,14 +103,13 @@ async function WebsiteCarbonBadge({ dark, lang }: WebsiteCarbonBadgeProps) {
     )
 }
 
-// TODO find out why animation not working
-// const shimmer =
-//     "before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:bg-gradient-to-r before:from-transparent before:via-white/60 before:to-transparent"
-
 function WebsiteCarbonBadgeSkeleton() {
     return (
-        <div className={`overflow-hidden bg-primary`}>
-            <div className="h-[66px] w-[280px]"></div>
+        <div
+            className={`mb-4 flex animate-[pulse_2s_infinite] flex-row rounded-md border-2 border-primary px-[4px] py-0.5`}
+        >
+            <div className="mb-[25.3px] mt-[3px] h-[30px] w-[128px] rounded-[0.3em] rounded-r-none border-[0.13em] border-r-0 border-solid border-[#00ffbc] bg-[white]"></div>
+            <div className="mb-[25.3px] mt-[3px] h-[30px] w-[128px] rounded-[0.3em] rounded-l-none bg-[#0e11a8]"></div>
         </div>
     )
 }

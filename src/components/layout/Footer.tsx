@@ -32,7 +32,7 @@ export const Footer = ({ theme, children }: { theme: PageTheme; children: React.
                 <div className="block pb-8 md:grid md:grid-flow-col md:grid-cols-[2.5fr_1fr_1fr_1fr] md:grid-rows-[1fr_1fr] md:gap-x-3 md:gap-y-5 md:text-left">
                     <div className="flex flex-col items-start text-left md:row-span-1">
                         <div className={navigationSectionHeaderCSS}>Carbon Footprint</div>
-                        <div className="mb-4 rounded-md border-2 border-primary px-[4px] py-0.5">{children}</div>
+                        {children}
                     </div>
 
                     <div className="md:row-span-1 md:mb-0 md:self-end md:justify-self-start">
