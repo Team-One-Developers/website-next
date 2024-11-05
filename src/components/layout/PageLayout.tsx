@@ -25,7 +25,7 @@ export const PageLayout = ({
             {ticker && <Ticker theme={pageTheme} />}
             <Footer theme={pageTheme}>
                 <Suspense fallback={<WebsiteCarbonBadgeSkeleton />}>
-                    <WebsiteCarbonBadge dark={theme == PAGE_THEME.dark ? true : false}></WebsiteCarbonBadge>
+                    <WebsiteCarbonBadge dark={pageTheme == PAGE_THEME.dark ? true : false}></WebsiteCarbonBadge>
                 </Suspense>
             </Footer>
         </div>

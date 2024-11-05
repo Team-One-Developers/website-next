@@ -1,3 +1,5 @@
+import { revalidatePath } from "next/cache"
+
 const dict = {
     en: {
         p1: "of",
@@ -45,10 +47,12 @@ async function WebsiteCarbonBadge({ dark, lang }: WebsiteCarbonBadgeProps) {
         try {
             const placeholderData = { co2: "1.2", percentage: "80" }
             const data: WebsiteCarbonData = await new Promise((resolve) =>
-                setTimeout(() => resolve(placeholderData), 3000)
+                setTimeout(() => {
+                    return resolve(placeholderData)
+                }, 3000)
             ) // simulate delay for testing suspense
 
-            // const res = await fetch("https://api.websitecarbon.com/b?url=" + url)
+            // const res = await fetch("https://api.websitecarbon.com/b?url=" + url) // { next: { revalidate: 604800 } })
 
             // if (!res.ok) {
             //     throw Error(JSON.stringify(await res.json()))
@@ -64,6 +68,7 @@ async function WebsiteCarbonBadge({ dark, lang }: WebsiteCarbonBadgeProps) {
     }
 
     const data: WebsiteCarbonData | null = await fetchData()
+    revalidatePath("/")
 
     return (
         <div className="mb-4 rounded-md border-2 border-primary px-[4px] py-0.5 text-center text-[15px] leading-[1.15] text-[#0e11a8]">
