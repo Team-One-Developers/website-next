@@ -23,8 +23,8 @@ export const Accordion = (props: AccordionProps) => {
     return (
         <details
             className={twMerge(
-                "group relative cursor-pointer overflow-hidden border-t-2 mt-0 border-white p-2 text-white last:border-b-2 hover:bg-t1-darkGray md:p-4",
-                open ? "text-primary py-9" : "hover:py-9 hover:text-primary"
+                "group relative mt-0 cursor-pointer overflow-hidden border-t-2 border-white p-2 text-white last:border-b-2 hover:bg-t1-darkGray md:p-4",
+                open ? "py-9 text-primary" : "hover:py-9 hover:text-primary"
             )}
             open={open}
             style={{ transition: "all 0.25s ease-in-out" }}

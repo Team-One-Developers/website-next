@@ -5,7 +5,7 @@ export const Card = ({ subTitle, title, text }: { subTitle?: string; title: stri
     return (
         <div
             className={twJoin(
-                "group p-8 lg:flex-row gap-6 lg:gap-12 flex flex-col rounded-lg bg-card text-card-foreground hover:scale-105 transition-transform duration-500"
+                "bg-card text-card-foreground group flex flex-col gap-6 rounded-lg p-8 transition-transform duration-500 hover:scale-105 lg:flex-row lg:gap-12"
             )}
         >
             {subTitle && (

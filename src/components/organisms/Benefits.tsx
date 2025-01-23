@@ -56,7 +56,7 @@ export const Benefits = () => {
                 {hoveredIndex !== undefined && (
                     <motion.video
                         className={twJoin(
-                            "absolute right-0 h-[200px] aspect-[16/9] object-cover top-[30%] hidden lg:block"
+                            "absolute right-0 top-[30%] hidden aspect-[16/9] h-[200px] object-cover lg:block"
                         )}
                         initial={{ x: 50, y: 50, scale: 0.8 }}
                         animate={{ x: -50, y: -50, scale: 1 }}

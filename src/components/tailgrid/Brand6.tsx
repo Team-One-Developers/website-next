@@ -47,10 +47,10 @@ const Brand6 = () => {
                     <div className="-mx-4 flex flex-wrap items-center">
                         <div className="w-full px-4 lg:w-6/12 xl:w-5/12">
                             <div className="mb-12 lg:mb-0">
-                                <h2 className="mb-5 text-3xl font-bold text-dark sm:text-4xl lg:text-[34px] 2xl:text-[38px]">
+                                <h2 className="text-dark mb-5 text-3xl font-bold sm:text-4xl lg:text-[34px] 2xl:text-[38px]">
                                     Used by the world&apos;s most popular companies
                                 </h2>
-                                <p className="mb-10 text-base leading-relaxed text-body-color">
+                                <p className="text-body-color mb-10 text-base leading-relaxed">
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque lobortis
                                     lectus ut dui dapibus vestibulum. Aenean efficitur fermentum vestibulum.
                                 </p>
@@ -93,7 +93,7 @@ const SingleImage = ({ brand }: any) => {
         <>
             <Link
                 href={link}
-                className="flex h-[110px] max-w-[188px] items-center justify-center border border-stroke px-7 hover:bg-primary/10 dark:border-primary/10 dark:hover:bg-primary/5"
+                className="border-stroke hover:bg-primary/10 dark:border-primary/10 dark:hover:bg-primary/5 flex h-[110px] max-w-[188px] items-center justify-center border px-7"
             >
                 <img src={imageSrc} alt={altText} className="h-10 w-full" />
             </Link>

@@ -62,7 +62,7 @@ export const CultureBlock = () => {
                 right={
                     <>
                         <div className="mb-8 flex w-full flex-row gap-4">
-                            <Icon name="globe" className="mt-1 lg:mt-2 " />
+                            <Icon name="globe" className="mt-1 lg:mt-2" />
                             <Typography
                                 className="shrink grow basis-0 font-abcdiatype leading-150 text-white"
                                 variant="h4"

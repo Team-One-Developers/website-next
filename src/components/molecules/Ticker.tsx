@@ -29,7 +29,7 @@ export const Ticker = (props: TickerProps) => {
             <div className="flex items-center overflow-hidden" aria-hidden aria-disabled key={key}>
                 <p
                     className={twJoin(
-                        " font-spacegrotesk text-[82px] font-normal uppercase leading-none -tracking-[0.01em] sm:text-[120px] md:text-[175px]",
+                        "font-spacegrotesk text-[82px] font-normal uppercase leading-none -tracking-[0.01em] sm:text-[120px] md:text-[175px]",
                         textClassName ? textClassName : theme === PAGE_THEME.dark ? "text-t1-darkGray" : "text-primary"
                     )}
                 >

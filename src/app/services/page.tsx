@@ -35,7 +35,7 @@ const Services = () => {
                         unsere Kunden, im digitalen Wettbewerb erfolgreich zu sein - strategisch, technologisch und
                         methodisch.
                     </Typography>
-                    <Typography className=" text-white" variant="paragraph">
+                    <Typography className="text-white" variant="paragraph">
                         Wir kombinieren umfassendes Fachwissen mit der Begeisterung für neue Technologien, um
                         innovative, hochmoderne, stabile und skalierbare Enterprise Plattformen zu bauen. Vom Startup
                         bis hin zum multinationalen Konzern.

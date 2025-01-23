@@ -36,7 +36,7 @@ const components: PortableTextComponents = {
     marks: {
         link: (() => {
             const A = (props: any) => (
-                <Typography href={props.value.href} as="a" variant="link" className="xd" {...props} />
+                <Typography href={props.value.href} as="a" variant="link" className="" {...props} />
             )
             return memo(A)
         })()
@@ -115,11 +115,11 @@ const components: PortableTextComponents = {
             return memo(H6)
         })(),
         p: (() => {
-            const P = (props: any) => <Typography {...props} as="p" variant="paragraph" className="my-6 xd" />
+            const P = (props: any) => <Typography {...props} as="p" variant="paragraph" className="my-6" />
             return memo(P)
         })(),
         normal: (() => {
-            const P = (props: any) => <Typography {...props} as="p" variant="paragraph" className="my-6 xd" />
+            const P = (props: any) => <Typography {...props} as="p" variant="paragraph" className="my-6" />
             return memo(P)
         })()
     },

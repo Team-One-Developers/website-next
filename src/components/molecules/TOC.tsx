@@ -57,15 +57,15 @@ export const TOC = ({ blog, className }: { blog: Blog; className?: string }) => 
                                 className={twJoin(
                                     "flex",
                                     heading.toc.headingLevelNumeric === lowest &&
-                                        "ml-0 before:content-['-_'] before:text-primary",
+                                        "ml-0 before:text-primary before:content-['-_']",
                                     heading.toc.headingLevelNumeric === 1 + lowest &&
-                                        "ml-8 before:content-['•_'] before:text-primary",
+                                        "ml-8 before:text-primary before:content-['•_']",
                                     heading.toc.headingLevelNumeric === lowest + 2 &&
-                                        "ml-16 before:content-['·_'] before:text-primary",
+                                        "ml-16 before:text-primary before:content-['·_']",
                                     heading.toc.headingLevelNumeric === lowest + 3 &&
-                                        "ml-24 before:content-['‣_'] before:text-primary",
+                                        "ml-24 before:text-primary before:content-['‣_']",
                                     heading.toc.headingLevelNumeric === lowest + 4 &&
-                                        "ml-32 before:content-['-_'] before:text-primary"
+                                        "ml-32 before:text-primary before:content-['-_']"
                                 )}
                                 //   className="data-[level='1']:pl-0 data-[level='2']:pl-4 data-[level='3']:pl-8 data-[level='4']:pl-12 data-[level='5']:pl-16"
                             >

@@ -17,7 +17,7 @@ export const ExternalLink = ({
     return (
         <Typography
             as="div"
-            className={twMerge("mt-0 flex w-fit gap-2 border-b border-primary text-white font-normal", className)}
+            className={twMerge("mt-0 flex w-fit gap-2 border-b border-primary font-normal text-white", className)}
             variant="h3"
         >
             <Icon name="arrow_to_top_right" className={twMerge("text-primary", arrowClass)} width={40} height={40} />

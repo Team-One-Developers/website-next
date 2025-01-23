@@ -13,7 +13,7 @@ export const UxDesignMobile = ({ className }: { className: string }) => {
         return (
             <button
                 className={twMerge(
-                    "relative m-0 cursor-pointer border-none px-[2px] py-2 uppercase text-muted text-center",
+                    "relative m-0 cursor-pointer border-none px-[2px] py-2 text-center uppercase text-muted",
                     activeCategory === category &&
                         "text-primary after:absolute after:left-[50%] after:h-[5px] after:w-[5px] after:-translate-x-[50%] after:translate-y-[425%] after:rounded-full after:bg-primary"
                 )}
@@ -28,7 +28,7 @@ export const UxDesignMobile = ({ className }: { className: string }) => {
         return (
             <div
                 className={twJoin(
-                    " border-[#31b378] border-[5px] box-border flex h-full items-center justify-center rounded-lg bg-primary py-4 px-2",
+                    "box-border flex h-full items-center justify-center rounded-lg border-[5px] border-[#31b378] bg-primary px-2 py-4",
                     active ? "border-[#46ffad]" : "brightness-[35%]"
                 )}
             >

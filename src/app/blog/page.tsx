@@ -1,7 +1,6 @@
 import Typography from "@/components/atoms/Typography"
 import { PageLayout } from "@/components/layout/PageLayout"
 import { Section } from "@/components/layout/Section"
-import { ResultBlogElement } from "@/components/molecules/BlogArticle"
 import { BlogRow } from "@/components/organisms/BlogRow"
 import { PAGE_THEME } from "@/constants"
 import { client } from "@/sanity/lib/client"

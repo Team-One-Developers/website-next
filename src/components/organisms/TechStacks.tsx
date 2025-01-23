@@ -41,7 +41,7 @@ export const TechStacks = () => {
     return (
         <div
             className={twJoin(
-                "flex items-start min-h-[820px] duration-[300ms]",
+                "flex min-h-[820px] items-start duration-[300ms]",
                 isBackendActive ? "bg-black text-white" : "bg-muted text-black"
             )}
         >
@@ -52,8 +52,8 @@ export const TechStacks = () => {
                             as="button"
                             variant="subtitle"
                             className={twMerge(
-                                "items-center font-spacegrotesk uppercase pt-4 flex flex-col md:p-4 pb-0",
-                                isBackendActive ? "text-muted" : 'after:content-["⦁"] after:text-xl text-black'
+                                "flex flex-col items-center pb-0 pt-4 font-spacegrotesk uppercase md:p-4",
+                                isBackendActive ? "text-muted" : 'text-black after:text-xl after:content-["⦁"]'
                             )}
                             onClick={() => setIsBackendActive(false)}
                         >
@@ -64,8 +64,8 @@ export const TechStacks = () => {
                             as="button"
                             variant="subtitle"
                             className={twMerge(
-                                "items-center font-spacegrotesk uppercase pt-4 flex flex-col md:p-4 pb-0",
-                                isBackendActive ? 'after:content-["⦁"] after:text-xl text-primary' : "text-t1-darkGray"
+                                "flex flex-col items-center pb-0 pt-4 font-spacegrotesk uppercase md:p-4",
+                                isBackendActive ? 'text-primary after:text-xl after:content-["⦁"]' : "text-t1-darkGray"
                             )}
                             onClick={() => setIsBackendActive(true)}
                         >
@@ -131,7 +131,7 @@ const TechStackLogos = (props: TechStackLogosProps) => {
                 <figure
                     key={`${isBackendActive ? "be" : "fe"}-${logoIndex}`}
                     className={twJoin(
-                        "inline-block m-2 md:6 h-[52px] w-[52px] lg:h-[75px] lg:w-[75px]",
+                        "md:6 m-2 inline-block h-[52px] w-[52px] lg:h-[75px] lg:w-[75px]",
                         isBackendActive ? "text-white" : "text-black"
                     )}
                     style={{

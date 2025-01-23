@@ -100,11 +100,11 @@ export default async function BlogPage({ params }: BlogProps) {
         <PageLayout theme={PAGE_THEME.light}>
             <StructuredData data={structuredData} />
             <Section>
-                <div className="flex w-full auto-rows-auto flex-col gap-24 pt-0 lg:grid xl:grid-cols-[800px_1fr] 2xl:grid-cols-[800px_1fr] 3xl:grid-cols-[1fr_800px_1fr]">
+                <div className="3xl:grid-cols-[1fr_800px_1fr] flex w-full auto-rows-auto flex-col gap-24 pt-0 lg:grid xl:grid-cols-[800px_1fr] 2xl:grid-cols-[800px_1fr]">
                     {/* {blog.toc && (
                         <TOC blog={blog} className="xl:col-start-2 xl:row-start-1 3xl:col-start-1 3xl:row-start-1 " />
                     )} */}
-                    <div className="scrollMarginTopFix xl:col-start-1 xl:row-start-1 3xl:col-start-2">
+                    <div className="scrollMarginTopFix 3xl:col-start-2 xl:col-start-1 xl:row-start-1">
                         <Typography as="h1" variant="h1" className="uppercase">
                             {blog.title}
                         </Typography>
@@ -126,14 +126,14 @@ export default async function BlogPage({ params }: BlogProps) {
                                 </Typography>
                             </div>
                         </div>
-                        <hr className=" my-8 h-px border-dashed bg-t1-darkGray" />
+                        <hr className="my-8 h-px border-dashed bg-t1-darkGray" />
                         {blog.heroImage?.asset && (
                             <div className="relative h-fit w-full pb-4">
                                 <BlogHeroImage image={blog.heroImage.asset} />
                             </div>
                         )}
                         {blog.content && <T1PortableText value={ptBlocksHighlighted} />}
-                        <hr className=" my-8 h-px border-dashed bg-t1-darkGray" />
+                        <hr className="my-8 h-px border-dashed bg-t1-darkGray" />
                         {/* <AboutTheAuthor author={blog.author} /> */}
                     </div>
                 </div>
