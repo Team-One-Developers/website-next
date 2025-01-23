@@ -41,7 +41,7 @@ const Privacy = () => {
                         info@teamonedevelopers.de <br />
                     </a>
                     <br />
-                    Geschäftsführer: Timo Brückel, Julian Richter, Michael Krause
+                    Geschäftsführer: Timo Brückel, Julian Richter
                 </Typography>
                 <Typography as="h2" variant="h3" className="mt-8">
                     Datenschutzbeauftragter

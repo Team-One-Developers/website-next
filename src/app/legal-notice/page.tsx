@@ -30,7 +30,6 @@ const Legal = () => {
                 <Typography as="ul" className="legalUI text-white" variant="paragraph">
                     <li className="marker legalULLI">Timo Brückel</li>
                     <li className="legalULLI">Julian Richter</li>
-                    <li className="legalULLI">Michael Krause</li>
                 </Typography>
 
                 <Typography className="mt-8" as="h2" variant="h4">
