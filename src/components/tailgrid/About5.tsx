@@ -1,9 +1,9 @@
 const About5 = () => {
     return (
         <>
-            <section className="overflow-hidden bg-white dark:bg-dark pt-20 pb-12 lg:pt-[120px] lg:pb-[90px]">
+            <section className="dark:bg-dark overflow-hidden bg-white pb-12 pt-20 lg:pb-[90px] lg:pt-[120px]">
                 <div className="container mx-auto">
-                    <div className="flex flex-wrap items-center justify-between -mx-4">
+                    <div className="-mx-4 flex flex-wrap items-center justify-between">
                         <div className="w-full px-4 lg:w-6/12">
                             <div className="relative mx-auto flex h-[500px] max-w-[440px]">
                                 <div className="absolute left-0 z-30 mr-14 max-w-[270px] rounded-lg">
@@ -12,7 +12,7 @@ const About5 = () => {
                                         alt="about image"
                                         className="w-full rounded-lg"
                                     />
-                                    <span className="absolute top-6 -right-14 -z-10">
+                                    <span className="absolute -right-14 top-6 -z-10">
                                         <svg
                                             width="61"
                                             height="47"
@@ -163,7 +163,7 @@ const About5 = () => {
                                         </svg>
                                     </span>
 
-                                    <span className="absolute left-5 -bottom-10 z-[-1] sm:left-16">
+                                    <span className="absolute -bottom-10 left-5 z-[-1] sm:left-16">
                                         <svg
                                             width="112"
                                             height="112"
@@ -191,20 +191,20 @@ const About5 = () => {
                         </div>
                         <div className="w-full px-4 lg:w-1/2 2xl:w-5/12">
                             <div className="sm:mt-10 lg:mt-0">
-                                <span className="block mb-2 text-lg font-semibold uppercase text-primary">
+                                <span className="mb-2 block text-lg font-semibold uppercase text-primary">
                                     WHAT WE ACHIEVED
                                 </span>
-                                <h2 className="mb-11 text-3xl font-bold leading-tight text-dark sm:text-4xl sm:leading-tight md:text-[40px]/[48px]">
+                                <h2 className="text-dark mb-11 text-3xl font-bold leading-tight sm:text-4xl sm:leading-tight md:text-[40px]/[48px]">
                                     We grow your business with full potential by the innovation.
                                 </h2>
-                                <h3 className="mb-4 text-lg font-bold text-dark ">Company Benefits</h3>
-                                <p className="text-base text-body-color  mb-9">
+                                <h3 className="text-dark mb-4 text-lg font-bold">Company Benefits</h3>
+                                <p className="text-body-color mb-9 text-base">
                                     Proin gravida nibh vel velit auctor aliquet. aks Aenean sollicitudin, lorem quis
                                     bibendum auctor, nisi elit consequat ipsum, nec sagittis sem, tidiomic consequat
                                     ipsum.
                                 </p>
-                                <h3 className="mb-4 text-lg font-bold text-dark ">Competitive Salary</h3>
-                                <p className="text-base text-body-color dark:text-dark-6">
+                                <h3 className="text-dark mb-4 text-lg font-bold">Competitive Salary</h3>
+                                <p className="text-body-color dark:text-dark-6 text-base">
                                     Proin gravida nibh vel velit auctor aliquet. aks Aenean sollicitudin, lorem quis
                                     bibendum auctor.
                                 </p>

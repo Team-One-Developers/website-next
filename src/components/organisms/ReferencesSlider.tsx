@@ -91,7 +91,7 @@ const ReferencesSliderEntry = (props: ReferencesSliderEntryProps) => {
                     <Image src={imageSrc} alt={headline} fill placeholder="blur" />
                 </ImageMask>
                 <figcaption className="flex flex-col justify-center xl:shrink-0 xl:grow-0 xl:basis-[45%]">
-                    <Typography as="h2" variant="h1" className="text-black ">
+                    <Typography as="h2" variant="h1" className="text-black">
                         {headline}
                     </Typography>
                     <ul className="mt-2 flex flex-wrap justify-between gap-2 text-black lg:gap-6">

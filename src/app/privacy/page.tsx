@@ -429,7 +429,7 @@ const Privacy = () => {
                 <Typography as="h2" variant="h3" className="mt-8">
                     Content-Dienste
                 </Typography>
-                <Typography as="article" variant="paragraph" className="text-white ">
+                <Typography as="article" variant="paragraph" className="text-white">
                     Wir nutzen bestimmte Dienste, um über unsere Internetpräsenz bestimmte Inhalte oder Grafiken
                     (Videos, Bilder, Musik, Schriftarten, Kartenmaterial) ausspielen zu können. Dabei verarbeiten die
                     von uns eingesetzten Dienste die Ihnen zum Zeitpunkt Ihres Besuchs auf unseren Internetseiten

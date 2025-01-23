@@ -92,7 +92,7 @@ const Career = async () => {
                                     <Typography
                                         as="h3"
                                         variant="h2"
-                                        className="mb-4 mt-12 font-normal text-primary lg:max-w-[60%] "
+                                        className="mb-4 mt-12 font-normal text-primary lg:max-w-[60%]"
                                         key={division}
                                     >
                                         {division}
@@ -117,7 +117,7 @@ const Career = async () => {
                     <Typography as="h2" variant="h1" className="">
                         Oder suchst du uns?
                     </Typography>
-                    <Typography variant="paragraph" className="text-white  lg:max-w-[32%]">
+                    <Typography variant="paragraph" className="text-white lg:max-w-[32%]">
                         Um als Developer nicht nur gut zu sein, sondern es auch zu bleiben, ist Initiative und
                         Selbstständigkeit gefragt. Deshalb wissen wir das auch bei unseren Bewerbern zu schätzen. Wenn
                         du der Meinung bist, dass du das perfekte neue Team-Mitglied für Team One Developers bist, dann

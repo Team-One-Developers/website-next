@@ -24,9 +24,9 @@ export const CareerElement = ({ career, listIndex }: JobProps) => {
                             {career.title}
                         </Typography>
                     </div>
-                    <div className="flex flex-wrap  md:m-4 ">
+                    <div className="flex flex-wrap md:m-4">
                         <div className="flex basis-full">
-                            <Typography className="uppercase text-white " variant="paragraph">
+                            <Typography className="uppercase text-white" variant="paragraph">
                                 {career.employmentType},&nbsp;
                             </Typography>
                             <Typography className="uppercase text-white" variant="paragraph">

@@ -7,7 +7,7 @@ interface SectionProps extends React.DetailedHTMLProps<React.HTMLAttributes<HTML
 export const Section = ({ className, children, maxWidthContent = true, ...rest }: SectionProps) => {
     return (
         <section
-            className={twMerge("py-12 px-4 md:py-16 md:px-8 mx-auto", maxWidthContent && "max-w-[1920px]", className)}
+            className={twMerge("mx-auto px-4 py-12 md:px-8 md:py-16", maxWidthContent && "max-w-[1920px]", className)}
             {...rest}
         >
             {children}

@@ -21,7 +21,7 @@ export const AnimatedTeaser = ({ className, innerClassName }: AnimatedTeaserProp
         <div
             ref={animatedTeaserContainerRef}
             className={twJoin(
-                "w-full py-8 2xl:py-0 bg-background duration-[1500ms]",
+                "w-full bg-background py-8 duration-[1500ms] 2xl:py-0",
                 animatedTeaserInView ? "bg-primary" : "bg-background",
                 className
             )}

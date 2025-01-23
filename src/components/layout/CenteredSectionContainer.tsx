@@ -19,7 +19,7 @@ export const CenteredSectionContainer = ({
     return (
         <div
             className={twMerge(
-                "box-border grid w-full grid-cols-1 bg-transparent justify-center gap-8 px-[2vw] py-8 md:grid-cols-2",
+                "box-border grid w-full grid-cols-1 justify-center gap-8 bg-transparent px-[2vw] py-8 md:grid-cols-2",
                 className
             )}
         >

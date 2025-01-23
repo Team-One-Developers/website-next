@@ -3,7 +3,7 @@ import Typography from "../atoms/Typography"
 
 export const AboutTheAuthor = ({ author }: { author: Author }) => {
     return (
-        <div className="flex w-full flex-col  gap-2 rounded-md">
+        <div className="flex w-full flex-col gap-2 rounded-md">
             <Typography as="p" variant="subtitle" className="text-xl font-medium">
                 Über den Autor
             </Typography>

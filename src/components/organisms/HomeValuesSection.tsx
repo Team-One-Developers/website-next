@@ -20,7 +20,7 @@ export const HomeValuesSection = () => {
             <CenteredSectionContainer
                 className="-mt-4 pt-0"
                 left={
-                    <ImageMask ref={careerPictureRef} className="w-full ">
+                    <ImageMask ref={careerPictureRef} className="w-full">
                         <figure
                             style={{
                                 transition: "500ms",

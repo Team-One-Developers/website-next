@@ -90,10 +90,10 @@ export const ChangingWords = ({
         <Typography
             as="span"
             className={twJoin(
-                "flex justify-center items-center uppercase",
+                "flex items-center justify-center uppercase",
                 type === "section"
                     ? 'gap-2 before:content-["▾"]'
-                    : 'items-center justify-center sm:gap-2 lg:gap-16 before:content-["("] after:content-[")"] before:z-30 after:z-30',
+                    : 'items-center justify-center before:z-30 before:content-["("] after:z-30 after:content-[")"] sm:gap-2 lg:gap-16',
                 className
             )}
             variant={variant}

@@ -13,7 +13,7 @@ export const JobType = ({
     className?: string
 }) => {
     return (
-        <div className={twMerge("flex w-full justify-between mt-12 gap-4 flex-wrap sm:flex-nowrap", className)}>
+        <div className={twMerge("mt-12 flex w-full flex-wrap justify-between gap-4 sm:flex-nowrap", className)}>
             <div className="flex w-1/2 flex-col gap-2">
                 <Typography variant="paragraph" className="my-0 uppercase">
                     (Type)

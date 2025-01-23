@@ -71,7 +71,7 @@ export const BlogCTA = async ({ variant, className }: BlogCTAProps) => {
 
     return (
         <article
-            className={twMerge("relative p-8 z-0 rounded-md transition-shadow hover:shadow-md", className)}
+            className={twMerge("relative z-0 rounded-md p-8 transition-shadow hover:shadow-md", className)}
             aria-label={blogCTAValues[variant].linkLabel}
         >
             <Link

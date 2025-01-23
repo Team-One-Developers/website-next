@@ -26,7 +26,7 @@ const Cta7 = () => {
                                 </p>
                                 <Link
                                     href="javascript:void(0)"
-                                    className="inline-block border border-transparent bg-white px-7 py-3 text-base font-medium text-dark transition hover:bg-opacity-90"
+                                    className="text-dark inline-block border border-transparent bg-white px-7 py-3 text-base font-medium transition hover:bg-opacity-90"
                                 >
                                     View Services
                                 </Link>

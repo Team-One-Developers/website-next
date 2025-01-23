@@ -15,7 +15,7 @@ export const HomeHumanSection = () => {
     })
 
     return (
-        <Section className="bg-primary pt-32 sm:pt-48  xl:pt-72" style={{ transition: "500ms" }}>
+        <Section className="bg-primary pt-32 sm:pt-48 xl:pt-72" style={{ transition: "500ms" }}>
             <div className="lg:flex lg:justify-between lg:gap-8">
                 <CtaSection
                     className="basis-[37%] lg:grow-0"

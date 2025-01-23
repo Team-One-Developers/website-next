@@ -31,7 +31,7 @@ export const UxDesign = ({ className }: { className: string }) => {
             <div
                 className={twMerge(
                     "box-border flex h-[180px] w-[140px] items-center justify-center rounded-[40%] bg-primary p-[20px]",
-                    active ? "rounded-[39%] border-[#38d38dc5] border-[5px]" : "brightness-[25%]"
+                    active ? "rounded-[39%] border-[5px] border-[#38d38dc5]" : "brightness-[25%]"
                 )}
             >
                 <div className="text-center font-spacegrotesk text-black">{text}</div>
@@ -63,7 +63,7 @@ export const UxDesign = ({ className }: { className: string }) => {
 
     return (
         <div className={twJoin("transitionAll my-24", className)}>
-            <div className="mb-6 flex flex-col flex-nowrap items-center ">
+            <div className="mb-6 flex flex-col flex-nowrap items-center">
                 <Typography variant="subtitle" className="mb-4 text-primary">
                     ( WE DEVELOP )
                 </Typography>
@@ -124,7 +124,7 @@ export const UxDesign = ({ className }: { className: string }) => {
                     </div>
                     <div
                         className={twJoin(
-                            "absolute left-[25%] right-[13%] top-[10%] ",
+                            "absolute left-[25%] right-[13%] top-[10%]",
                             activeCategory === UX_CATEGORIES.ui_development ? "opacity-25" : "opacity-0"
                         )}
                     >
@@ -132,7 +132,7 @@ export const UxDesign = ({ className }: { className: string }) => {
                     </div>
                     <div
                         className={twJoin(
-                            "absolute left-[28%] right-[0%] top-[1%] ",
+                            "absolute left-[28%] right-[0%] top-[1%]",
                             activeCategory === UX_CATEGORIES.ui_design ? "opacity-25" : "opacity-0"
                         )}
                     >

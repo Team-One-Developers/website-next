@@ -8,20 +8,20 @@ const Hero8 = ({}) => {
                 src="/images/hero.jpg"
                 alt="Hero Image"
                 fill
-                className="absolute top-0 left-0 w-full h-full object-cover z-0"
+                className="absolute left-0 top-0 z-0 h-full w-full object-cover"
             />
-            <div className="absolute top-0 left-0 w-full h-full bg-foreground opacity-50 z-10" />
-            <div className="container mx-auto z-50 relative">
+            <div className="absolute left-0 top-0 z-10 h-full w-full bg-foreground opacity-50" />
+            <div className="container relative z-50 mx-auto">
                 <div className="-mx-4 flex justify-center">
                     <div className="w-full px-4 lg:w-5/12">
-                        <div className="mb-14 lg:mb-0 flex justify-center items-center flex-col">
-                            <span className="mb-4 block text-base font-medium text-white text-center">
+                        <div className="mb-14 flex flex-col items-center justify-center lg:mb-0">
+                            <span className="mb-4 block text-center text-base font-medium text-white">
                                 We are creative team.
                             </span>
-                            <h1 className="mb-3 text-4xl font-bold !leading-[1.208] text-white md:text-5xl text-center lg:text-[40px] xl:text-5xl">
+                            <h1 className="mb-3 text-center text-4xl font-bold !leading-[1.208] text-white md:text-5xl lg:text-[40px] xl:text-5xl">
                                 Tech driven Transformation
                             </h1>
-                            <p className="mb-9 max-w-[460px] text-base font-medium text-white text-center">
+                            <p className="mb-9 max-w-[460px] text-center text-base font-medium text-white">
                                 There are many variations of passages of Lorem Ipsum available, but the majority have
                                 suffered.
                             </p>
@@ -29,7 +29,7 @@ const Hero8 = ({}) => {
                                 <li>
                                     <Link
                                         href="/#"
-                                        className="inline-flex items-center justify-center rounded-full bg-primary px-7 py-3 text-center text-base font-medium text-black hover:bg-blue-dark"
+                                        className="hover:bg-blue-dark inline-flex items-center justify-center rounded-full bg-primary px-7 py-3 text-center text-base font-medium text-black"
                                     >
                                         Discover More
                                     </Link>
@@ -37,7 +37,7 @@ const Hero8 = ({}) => {
                                 <li>
                                     <Link
                                         href="/#"
-                                        className="inline-flex items-center rounded-full bg-white px-6 py-3 text-base font-medium text-black shadow-1 hover:bg-gray-2 hover:text-body-color"
+                                        className="shadow-1 hover:bg-gray-2 hover:text-body-color inline-flex items-center rounded-full bg-white px-6 py-3 text-base font-medium text-black"
                                     >
                                         Explore Services
                                         <span className="ml-2">

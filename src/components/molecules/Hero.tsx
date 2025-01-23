@@ -12,7 +12,7 @@ export const Hero = (props: HeroProps) => {
     const { imageNode, overlayNode, overlayPosition = "center", className } = props
 
     return (
-        <div className={twJoin("w-screen relative h-[50vh] sm:h-[60vh] max-w-full bg-white", className)}>
+        <div className={twJoin("relative h-[50vh] w-screen max-w-full bg-white sm:h-[60vh]", className)}>
             {imageNode}
             <div
                 className={twJoin(
