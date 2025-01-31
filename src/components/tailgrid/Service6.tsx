@@ -73,8 +73,8 @@ const ServiceCard = ({ link, image, button, title, details }: any) => {
                             {title}
                         </Link>
                     </h3>
-                    <p className="border-stroke text-body-color mb-8 border-b pb-8 text-base">{details}</p>
-                    <Link href={link} className="text-body-color inline-flex items-center text-base hover:text-primary">
+                    <p className="border-stroke mb-8 border-b pb-8 text-base text-background">{details}</p>
+                    <Link href={link} className="inline-flex items-center text-base text-background hover:text-primary">
                         {button}
                         <span className="ml-3">
                             <svg

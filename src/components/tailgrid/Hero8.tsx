@@ -4,12 +4,7 @@ import Link from "next/link"
 const Hero8 = ({}) => {
     return (
         <div className="relative pt-[120px] md:pt-[150px] lg:py-[180px]">
-            <Image
-                src="/images/hero.jpg"
-                alt="Hero Image"
-                fill
-                className="absolute left-0 top-0 z-0 h-full w-full object-cover"
-            />
+            <Image src="/images/hero.jpg" alt="Hero Image" fill className="absolute left-0 top-0 z-0" />
             <div className="absolute left-0 top-0 z-10 h-full w-full bg-foreground opacity-50" />
             <div className="container relative z-50 mx-auto">
                 <div className="-mx-4 flex justify-center">
