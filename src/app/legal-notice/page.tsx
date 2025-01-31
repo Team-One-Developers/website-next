@@ -1,6 +1,7 @@
 import Typography from "@/components/atoms/Typography"
 import { PageLayout } from "@/components/layout/PageLayout"
 import { Section } from "@/components/layout/Section"
+import { PAGE_THEME } from "@/constants"
 import { Metadata } from "next"
 import "./style.css"
 
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
 
 const Legal = () => {
     return (
-        <PageLayout>
+        <PageLayout theme={PAGE_THEME.dark}>
             <Section className="mt-20">
                 <Typography className="mt-8" as="h1" variant="h1">
                     Impressum

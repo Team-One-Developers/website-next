@@ -1,6 +1,7 @@
 import Typography from "@/components/atoms/Typography"
 import { PageLayout } from "@/components/layout/PageLayout"
 import { Section } from "@/components/layout/Section"
+import { PAGE_THEME } from "@/constants"
 import { Metadata } from "next"
 import "../legal-notice/style.css"
 
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
 
 const Privacy = () => {
     return (
-        <PageLayout>
+        <PageLayout theme={PAGE_THEME.dark}>
             <Section>
                 <hgroup className="grid gap-4">
                     <Typography as="h1" variant="h1" className="mt-8">

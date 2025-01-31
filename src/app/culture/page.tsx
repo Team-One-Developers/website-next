@@ -6,6 +6,7 @@ import { Section } from "@/components/layout/Section"
 import { Hero } from "@/components/molecules/Hero"
 import { CultureBlock } from "@/components/organisms/CultureBlock"
 import { Values } from "@/components/organisms/Values"
+import { PAGE_THEME } from "@/constants"
 import { Metadata } from "next"
 import HeroBG from "/public/images/optimized/t1d_nov22_153_optimized.webp"
 
@@ -16,7 +17,7 @@ export const metadata: Metadata = {
 
 const Culture = () => {
     return (
-        <PageLayout>
+        <PageLayout theme={PAGE_THEME.dark}>
             <Section className="relative">
                 <Typography as="h1" variant="h1" className="lg:max-w-[calc(50%-2rem)]">
                     WIR MACHEN DAS, WOVON ALLE SPRECHEN: WIR STELLEN DEN MENSCHEN IN DEN MITTELPUNKT.

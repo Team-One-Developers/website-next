@@ -37,6 +37,7 @@ export interface IconProps {
         | "mercedes"
         | "porsche"
         | "recaro"
+        | "spinner"
 
     className?: string
     width?: string | number
@@ -48,6 +49,20 @@ export interface IconProps {
 export const Icon = ({ name, className, height, width, fill = "currentColor", stroke = "none" }: IconProps) => {
     const svg = () => {
         switch (name) {
+            case "spinner":
+                return {
+                    baseHeight: 24,
+                    baseWidth: 24,
+                    element: (
+                        <path
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth={1.5}
+                            d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99"
+                        />
+                    )
+                }
+
             case "instagram":
                 return {
                     baseHeight: 28,
@@ -94,7 +109,7 @@ export const Icon = ({ name, className, height, width, fill = "currentColor", st
                                 fillRule="evenodd"
                                 clipRule="evenodd"
                                 d="M7 1.5H11V2.5H12V3.5L13 3.5V7.5L12 7.5V8.5H11V9.5H7V8.5H6V7.5H5L5 3.5H6V2.5H7V1.5ZM2 14.5H1V16.5H3H5H7H9H11H13H15H17V14.5H16V12.5H15V11.5H14V10.5H11V11.5H7V10.5H4V11.5H3V12.5H2V14.5Z"
-                                fill={fill ? fill : "var(--primary)"}
+                                fill={fill ? fill : "hsl(var(--theme-primary))"}
                             />
                         </>
                     )
@@ -109,7 +124,7 @@ export const Icon = ({ name, className, height, width, fill = "currentColor", st
                                 fillRule="evenodd"
                                 clipRule="evenodd"
                                 d="M19 6H21V8H23V10H25V12V14V16H23V18H21V19H19H17H15V18H13V16H11V14V12V10H13V8H15V6H17H19ZM15 21H12V23H10V25H8V27V28H6V29V31H8H10H12H14H16H18H20H22H24H26H28H30V29V28H28V27V25H26V23H24V21H21V22H15V21Z"
-                                fill={fill ? fill : "var(--primary)"}
+                                fill={fill ? fill : "hsl(var(--theme-primary))"}
                             />
                         </>
                     )
@@ -125,7 +140,7 @@ export const Icon = ({ name, className, height, width, fill = "currentColor", st
                                 fillRule="evenodd"
                                 clipRule="evenodd"
                                 d="M7 0H5V2H3V4H1V6H0V8V10V12H1V14H3V16H5V18H7H9H11H13V16H15V14H17V12H18V10V8V6H17V4H15V2H13V0H11H9H7ZM16 12H15V14H13V16H11H9H7H5V14H3V12H2V10V8H3V10H5V12H7V10V8H5V6H7V4H9V2H11H13V4H15V6H12V4H10V6H9V10H11V12V13H12V12H14V10H16V12Z"
-                                fill={fill ? fill : "var(--primary)"}
+                                fill={fill ? fill : "hsl(var(--theme-primary))"}
                             />
                         </>
                     )
@@ -141,7 +156,7 @@ export const Icon = ({ name, className, height, width, fill = "currentColor", st
                                 fillRule="evenodd"
                                 clipRule="evenodd"
                                 d="M8 7H6V9H4V11V13V15V17V19V21V23H6V25H8H10H12H14H16V27H14H12H10H8V29H10H12H14H16H18H20H22H24H26H28V27H26H24H22H20V25H22H24H26H28H30V23H32V21V19V17V15V13V11V9H30V7H28H26H24H22H20H18H16H14H12H10H8ZM30 9V11V13V15V17V19V21V23H28H26H24H22H20H18H16H14H12H10H8H6V21V19V17V15V13V11V9H8H10H12H14H16H18H20H22H24H26H28H30ZM14 14H12V16V18H14H16H18V16H20H22V18H24V16V14H22H20H18V16H16H14V14Z"
-                                fill={fill ? fill : "var(--primary)"}
+                                fill={fill ? fill : "hsl(var(--theme-primary))"}
                             />
                         </>
                     )
@@ -157,7 +172,7 @@ export const Icon = ({ name, className, height, width, fill = "currentColor", st
                                 fillRule="evenodd"
                                 clipRule="evenodd"
                                 d="M19 8H17V9H15V10H13V11H11V12H9V13H7V14H5V16H7V17H9V24H10V26H12V27H14V28H16H18H20H22V27H24V26H26V24H27V16H29V25H31V14H29V13H27V12H25V11H23V10H21V9H19V8ZM27 16H25V17H23V18H21V19H19V20H17V19H15V18H13V17H11V16H9V15V14H11V13H13V12H15V11H17V10H19V11H21V12H23V13H25V14H27V15V16ZM12 24H11V19H13V20H15V21H17V22H19V21H21V20H23V19H25V24H24V25H22V26H20H18H16H14V25H12V24Z"
-                                fill={fill ? fill : "var(--primary)"}
+                                fill={fill ? fill : "hsl(var(--theme-primary))"}
                             />
                         </>
                     )
@@ -172,7 +187,7 @@ export const Icon = ({ name, className, height, width, fill = "currentColor", st
                                 fillRule="evenodd"
                                 clipRule="evenodd"
                                 d="M25 5H27V7H25V5ZM23 9V7H25V9H23ZM25 15H27V13V11H25H23V9H21V11H19H17H15H13H11H9V13V15H11V17H13V19H15V21H17V23V25V27V29H15H13H11V31H13H15H17H19H21H23H25V29H23H21H19V27V25V23V21H21V19H23V17H25V15ZM11 13H13H15H17H19H21H23H25V15H23V17H21V19H19V21H17V19H15V17H13V15H11V13Z"
-                                fill={fill ? fill : "var(--primary)"}
+                                fill={fill ? fill : "hsl(var(--theme-primary))"}
                             />
                         </>
                     )
@@ -187,7 +202,7 @@ export const Icon = ({ name, className, height, width, fill = "currentColor", st
                                 fillRule="evenodd"
                                 clipRule="evenodd"
                                 d="M6 9H8H10H12H14H16H18H20H22H24H26H28H30V11H28V13H26V11H24H22H20H18H16H14H12H10V13H8V11H6V9ZM6 13V11H4V13V15V17V19V21V23V25H6V27H8H10H12H14H16H18H20H22H24H26H28H30V25H32V23V21V19V17V15V13V11H30V13H28V15H30V17V19V21H28V23H26V25H24H22H20H18H16H14H12H10V23H8V21H6V19V17V15H8V13H6ZM28 23V25H30V23H28ZM8 23V25H6V23H8ZM21 13V15H19H17V13H19H21ZM17 21H15V19V17V15H17V17H19H21V19H19H17V21ZM17 21H19H21V23H19H17V21Z"
-                                fill={fill ? fill : "var(--primary)"}
+                                fill={fill ? fill : "hsl(var(--theme-primary))"}
                             />
                         </>
                     )
@@ -202,7 +217,7 @@ export const Icon = ({ name, className, height, width, fill = "currentColor", st
                                 fillRule="evenodd"
                                 clipRule="evenodd"
                                 d="M21 7H19V9H17V11V13H19V15H21H22V17H21H19H17H15H13H11V15H9V17H7H5V19H7V21V23V25V27V29H9H11H13H15H17V27H18V23V21V19H19H21H23H25H27V21V23V25V27V29H29V27V25V23V21V19H31V17H29H27H25H24V15H25H27V13H29V11V9H27V7H25H23H21ZM27 9V11V13H25H23H21H19V11V9H21H23H25H27ZM10 21H9V19H11H13H15H16V21H14H12H10ZM9 25V27H11H13H15H16V23H14H12H10H9V25Z"
-                                fill={fill ? fill : "var(--primary)"}
+                                fill={fill ? fill : "hsl(var(--theme-primary))"}
                             />
                         </>
                     )
@@ -217,7 +232,7 @@ export const Icon = ({ name, className, height, width, fill = "currentColor", st
                                 fillRule="evenodd"
                                 clipRule="evenodd"
                                 d="M11.5 8V10H13.5V12H11.5H9.5V14H11.5H13.5H14.5V16H12.5V18H10.5V16H8.5H6.5V18H4.5V20H2.5V22V24H4.5V26H6.5V28H8.5H10.5V26H12.5V24H14.5V22H16.5H17.5V20H19.5V18H21.5V20V22V24H23.5V26H25.5V28H27.5H29.5V26H31.5V24H33.5V22V20H31.5V18H29.5V16H27.5H25.5V18H23.5H21.5V16H23.5V14H25.5H27.5V11H29.5V13H31.5V9H29.5H27.5V11H25.5V12H23.5H21.5H19.5H17.5H15.5V10L17.5 10V8H11.5ZM25.5 18H27.5H29.5V20H31.5V22V24H29.5V26H27.5H25.5V24H23.5V22V20H25.5V18ZM21.5 16H19.5V18H17.5V20H16.5H14.5H12.5V18H14.5V16H16.5V14H17.5H19.5H21.5V16ZM12.5 24V22H10.5H8.5V23H6.5V21H8.5V20H10.5V18H8.5H6.5V20H4.5V22V24H6.5V26H8.5H10.5V24H12.5ZM26.5 21H28.5V23H26.5V21Z"
-                                fill={fill ? fill : "var(--primary)"}
+                                fill={fill ? fill : "hsl(var(--theme-primary))"}
                             />
                         </>
                     )
@@ -233,7 +248,7 @@ export const Icon = ({ name, className, height, width, fill = "currentColor", st
                                 fillRule="evenodd"
                                 clipRule="evenodd"
                                 d="M25.5 5.5H23.5V7.5H21.5V9.5V11.5H22.5V13.5H24.5V11.5H23.5V9.5V7.5H25.5V5.5ZM18.5 11.5H17.5V9.5H18.5V7.5H16.5V9.5H15.5V11.5H16.5V13.5H18.5V11.5ZM15.5 15.5H13.5V16.5H11.5V18.5H9.5V20.5H8.5V22.5V24.5H9.5V26.5H11.5V28.5H13.5V30.5H15.5H17.5H19.5H21.5H23.5H25H25.5H27V15.5H25.5H25H23.5H21.5H19.5H17.5H15.5ZM11.5 26.5H13.5V18.5H11.5V20.5H10.5V22.5V24.5H11.5V26.5Z"
-                                fill={fill ? fill : "var(--primary)"}
+                                fill={fill ? fill : "hsl(var(--theme-primary))"}
                             />
                         </>
                     )
@@ -248,7 +263,7 @@ export const Icon = ({ name, className, height, width, fill = "currentColor", st
                                 fillRule="evenodd"
                                 clipRule="evenodd"
                                 d="M12 1.5H16V2.5H17V3.5L18 3.5V7.5L17 7.5V8.5H16V9.5H12V8.5H11V7.5H10V3.5H11V2.5H12V1.5ZM6.00002 13.6666H7V13.6667H6.00002H6H4.66669V15.0001H6V16.5H8H10H12H14H16H18H20H22V15.0001H22H23.3333V13.6667H22H22H21V13.6666H22H22H23.3333H24.6667H26H26.6667V12.3333H26H26V11.6667H20V11.6667H20.6667V11H19V10.5H16V11.5H12V10.5H9V11H7.33334V11.6667H8V11.6667H2V12.3333H1.33333V13.6666H2H3.33333V12.3334H3.33334V13.6666H4.66668V12.3334H4.66669V13.6666H6H6.00002ZM7.33334 12.3334H7.33333V12.5H7.33334V12.3334ZM20.6667 5H23.3333L23.3333 5.66659H24V6.33325H23.3333L23.3333 6.33333H24.6666V9H23.3333L23.3333 9.00008H24V9.66675H23.3333L23.3333 10.3333H20.6667L20.6667 9.66675H20V9.00008H20.6667L20.6667 9H19.3333V6.33333H20.6667L20.6667 6.33325H20V5.66659H20.6667L20.6667 5ZM24.6667 13.6667H23.3333V15.0001H24.6667V13.6667ZM26 15.0001H26H24.6667V13.6667H26H26H27.3333V15.0001H26ZM25.3333 11H23.3333V11.6667H25.3333V11ZM7.33332 5H4.66666V5.66659H4V6.33325H4.66666V6.33333H3.33331V9H4.66666V9.00008H4V9.66675H4.66666V10.3333H7.33332V9.66675H7.99998V9.00008H7.33332V9H8.66665V6.33333H7.33332V6.33325H7.99998V5.66659H7.33332V5ZM2 13.6667H0.666687V15.0001H2H2.00002H3.33333V13.6667H2.00002H2ZM4.66668 13.6667H3.33334V15.0001H4.66668V13.6667ZM4.66669 11H2.66669V11.6667H4.66669V11Z"
-                                fill={fill ? fill : "var(--primary)"}
+                                fill={fill ? fill : "hsl(var(--theme-primary))"}
                             />
                         </>
                     )

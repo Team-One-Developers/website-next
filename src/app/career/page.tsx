@@ -7,11 +7,12 @@ import { Section } from "@/components/layout/Section"
 import { CareerElement } from "@/components/molecules/CareerElement"
 import { Icon } from "@/components/molecules/Icon"
 import { Benefits } from "@/components/organisms/Benefits"
+import { PAGE_THEME } from "@/constants"
 import { client } from "@/sanity/lib/client"
 import { QUERY_ALL_CAREERS } from "@/sanity/queries"
 import { QUERY_ALL_CAREERSResult } from "@/sanity/types"
 import { Metadata } from "next"
-import React from "react"
+import { Fragment } from "react"
 import Trophy from "/public/images/optimized/t1d_kai_knoerzer_079_optimized.webp"
 import Office from "/public/images/optimized/t1d_nov22_185_optimized.webp"
 
@@ -43,7 +44,7 @@ const Career = async () => {
     )
 
     return (
-        <PageLayout>
+        <PageLayout theme={PAGE_THEME.dark}>
             <Section className="pb-0">
                 <Typography as="h1" variant="h1">
                     Unser Team <br />- Dein Playground
@@ -89,7 +90,7 @@ const Career = async () => {
                         {Object.keys(sortedCareers).map((division, index) => {
                             const category = sortedCareers[division]
                             return (
-                                <React.Fragment key={division}>
+                                <Fragment key={division}>
                                     <Typography
                                         as="h3"
                                         variant="h2"
@@ -107,7 +108,7 @@ const Career = async () => {
                                             />
                                         ))}
                                     </div>
-                                </React.Fragment>
+                                </Fragment>
                             )
                         })}
                     </div>

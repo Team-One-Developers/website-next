@@ -1,13 +1,9 @@
-import { Image } from "@/components/atoms/Image"
-import { ImageMask } from "@/components/atoms/ImageMask"
-import Typography from "@/components/atoms/Typography"
 import { PageLayout } from "@/components/layout/PageLayout"
-import { Section } from "@/components/layout/Section"
-import { ExternalLink } from "@/components/molecules/ExternalLink"
 import { Ticker } from "@/components/molecules/Ticker"
+import Contact11 from "@/components/tailgrid/Contact11"
+import Contact5Special from "@/components/tailgrid/Contact5Special"
 import { PAGE_THEME } from "@/constants"
 import { Metadata } from "next"
-import TRex from "/public/images/optimized/dinosaur_call_optimized.webp"
 
 export const metadata: Metadata = {
     title: "Kontakt",
@@ -16,11 +12,10 @@ export const metadata: Metadata = {
 
 const Contact = () => {
     return (
-        <PageLayout ticker={false}>
-            <Section>
-                <Typography as="h1" variant="h1">
-                    Die Eins ist man <br /> niemals alleine.
-                </Typography>
+        <PageLayout theme={PAGE_THEME.dark} ticker={false}>
+            <Contact11 />
+            <Contact5Special />
+            {/* <Section>
                 <section className="mb-40 mt-20 flex flex-wrap items-center gap-16">
                     <div className="relative min-w-[260px] max-w-[460px] grow">
                         <ImageMask>
@@ -43,7 +38,8 @@ const Contact = () => {
                         <ExternalLink href="tel:+4971125298690" name="+49 711 252 98 690" />
                     </div>
                 </section>
-            </Section>
+            </Section> */}
+
             <Ticker
                 theme={PAGE_THEME.dark}
                 text="Get In Touch"

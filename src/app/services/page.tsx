@@ -10,6 +10,7 @@ import { ReferencesSlider } from "@/components/organisms/ReferencesSlider"
 import { TechStacks } from "@/components/organisms/TechStacks"
 import { UxDesign } from "@/components/organisms/UxDesign"
 import { UxDesignMobile } from "@/components/organisms/UxDesignMobile"
+import { PAGE_THEME } from "@/constants"
 import { Metadata } from "next"
 import OfficeImg from "/public/images/optimized/t1d_nov22_149_optimized.webp"
 
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
 
 const Services = () => {
     return (
-        <PageLayout>
+        <PageLayout theme={PAGE_THEME.dark}>
             <Section className="gap-[15%] lg:flex">
                 <Typography className="lg:basis-[35%]" as="h1" variant="h1">
                     Wir schaffen nachhaltige Mehrwerte durch exzellente Software & menschenzentrierte Arbeitsweisen.

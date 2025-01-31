@@ -25,8 +25,8 @@ module.exports = {
             "10xl": "11rem"
         },
         fontFamily: {
-            abcdiatype: "var(--font-ABCD)",
-            spacegrotesk: "var(--font-SpaceGrotesk)"
+            abcdiatype: "hsl(var(--font-ABCD)",
+            spacegrotesk: "hsl(var(--font-SpaceGrotesk)"
         },
         screens: {
             xs: "400px",
@@ -66,27 +66,27 @@ module.exports = {
             },
             colors: {
                 t1: {
-                    darkGray: "var(--t1-darkGray)",
-                    black: "var(--black)",
-                    darkGreen: "var(--t1-darkGreen)"
+                    darkGray: "hsl(var(--t1-darkGray))",
+                    black: "hsl(var(--black))",
+                    darkGreen: "hsl(var(--t1-darkGreen))"
                 },
-                background: "var(--theme-background)",
+                background: "hsl(var(--theme-background))",
                 primary: {
-                    DEFAULT: "var(--theme-primary)",
-                    foreground: "var(--theme-primary-foreground)"
+                    DEFAULT: "hsl(var(--theme-primary))",
+                    foreground: "hsl(var(--theme-primary-foreground)"
                 },
                 muted: {
-                    DEFAULT: "var(--theme-muted-foreground)",
-                    dark: "var(--theme-muted-dark)"
+                    DEFAULT: "hsl(var(--theme-muted-foreground))",
+                    dark: "hsl(var(--theme-muted-dark))"
                 },
                 foreground: {
-                    DEFAULT: "var(--theme-foreground)",
-                    hover: "var(--theme-foreground-hover)"
+                    DEFAULT: "hsl(var(--theme-foreground))",
+                    hover: "hsl(var(--theme-foreground-hover))"
                 }
             },
             backgroundImage: (theme) => ({
                 header_gradient:
-                    "linear-gradient(var(--theme-background) -20%, transparent 87%, transparent 98%, transparent 100%)"
+                    "linear-gradient(hsl(var(--theme-background) -20%, transparent 87%, transparent 98%, transparent 100%)"
             })
         }
     },

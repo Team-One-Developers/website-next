@@ -27,6 +27,7 @@
         "lodash": "^4.17.21",
         "next": "^15.1.6",
         "next-sanity": "^9.8.40",
+        "nodemailer": "^6.10.0",
         "react": "^19.0.0",
         "react-dom": "^19.0.0",
         "react-fast-marquee": "^1.6.5",
@@ -35,7 +36,8 @@
         "rehype-prism-plus": "^2.0.0",
         "sanity": "^3.71.2",
         "speakingurl": "^14.0.1",
-        "usehooks-ts": "^3.1.0"
+        "usehooks-ts": "^3.1.0",
+        "zod": "^3.24.1"
     },
     "devDependencies": {
         "@eslint/eslintrc": "^3.2.0",
@@ -45,6 +47,7 @@
         "@tailwindcss/typography": "^0.5.16",
         "@types/lodash": "^4.17.14",
         "@types/node": "^20.17.16",
+        "@types/nodemailer": "^6.4.17",
         "@types/react": "^19.0.8",
         "@types/react-dom": "^19.0.3",
         "@types/speakingurl": "^13.0.6",

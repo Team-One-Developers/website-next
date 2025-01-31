@@ -2,72 +2,71 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer base {
-  :root {
-    --t1-darkGray: #1d1d1d;
-    --t1-darkGreen: #21352b;
+    :root {
+        --t1-darkGray: 0 0% 11%;
+        --t1-darkGreen: 152 23% 18%;
 
-    --theme-primary: #46ffad;
-    --theme-primary-foreground: #000000;
+        --theme-primary: 158 100% 64%;
+        --theme-primary-foreground: 0 0% 0%;
 
-    --theme-background: #f2f2f2;
+        --theme-background: 0 0% 95%;
 
-    --theme-foreground: #000000;
-    --theme-foreground-hover: #1d1d1d80;
+        --theme-foreground: 0 0% 0%;
+        --theme-foreground-hover: 0 0% 11% / 0.5;
 
-    --theme-muted-foreground: #1d1d1d;
-    --theme-muted-dark: #f2f2f2;
+        --theme-muted-foreground: 0 0% 11%;
+        --theme-muted-dark: 0 0% 95%;
 
-    --theme-selectionBgColor: rgba(70, 255, 173, 0.6);
-  }
-
-  [data-theme="dark"] {
-    --theme-background: #000000;
-
-    --theme-foreground: #ffffff;
-    --theme-foreground-hover: #46ffad;
-
-    --theme-muted-foreground: #f2f2f2;
-    --theme-muted-dark: #585858;
-
-    --theme-selectionBgColor: rgba(70, 255, 173, 1);
-  }
-
-  ::selection {
-    color: var(--theme-background);
-    background-color: var(--theme-foreground);
-  }
-  ::moz-selection {
-    color: var(--theme-background);
-    background-color: var(--theme-foreground);
-  }
-
-  ::-webkit-scrollbar {
-    width: 12px;
-    opacity: 0;
-  }
-
-  ::-webkit-scrollbar-track {
-    background: rgba(0, 0, 0, 0);
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background: #ffffffab;
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    background: #72ffc0b1;
-  }
-
-  @keyframes FadeIn {
-    0% {
-      opacity: 0;
-      transform: translateY(10px);
+        --theme-selectionBgColor: 158 100% 64% / 0.6;
     }
-    100% {
-      opacity: 100%;
-      transform: translateY(0);
+
+    [data-theme="dark"] {
+        --theme-background: 0 0% 0%;
+
+        --theme-foreground: 0 0% 100%;
+        --theme-foreground-hover: 158 100% 64%;
+
+        --theme-muted-foreground: 0 0% 95%;
+        --theme-muted-dark: 0 0% 35%;
+
+        --theme-selectionBgColor: 158 100% 64% / 1;
     }
-  }
+
+    ::selection {
+        color: hsl(var(--theme-background));
+        background-color: hsl(var(--theme-foreground));
+    }
+    ::moz-selection {
+        color: hsl(var(--theme-background));
+        background-color: hsl(var(--theme-foreground));
+    }
+
+    ::-webkit-scrollbar {
+        width: 12px;
+        opacity: 0;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: rgba(0, 0, 0, 0);
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #ffffffab;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #72ffc0b1;
+    }
+
+    @keyframes FadeIn {
+        0% {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        100% {
+            opacity: 100%;
+            transform: translateY(0);
+        }
+    }
 }

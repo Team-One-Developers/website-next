@@ -6,6 +6,7 @@ import { PageLayout } from "@/components/layout/PageLayout"
 import { TwoColumnsFullScreenContainer } from "@/components/layout/TwoColumnsFullScreenContainer"
 import Icon, { IconProps } from "@/components/molecules/Icon"
 import { JobType } from "@/components/molecules/JobType"
+import { PAGE_THEME } from "@/constants"
 import { FESTANSTELLUNG_BENEFITS, PRAKTIKUMS_BENEFITS, WERKSTUDENT_BENEFITS } from "@/constants/benefits"
 import { organization } from "@/data/schemaOrg"
 import { mostRelatedCareers } from "@/lib/mostRelated"
@@ -118,7 +119,7 @@ export default async function CareerPage({ params }: CareerProps) {
     }
 
     return (
-        <PageLayout>
+        <PageLayout theme={PAGE_THEME.dark}>
             <StructuredData data={structuredData} />
 
             <TwoColumnsFullScreenContainer
