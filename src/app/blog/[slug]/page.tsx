@@ -16,10 +16,10 @@ import { mostRelatedBlogs } from "@/lib/mostRelated"
 import { client } from "@/sanity/lib/client"
 import { QUERY_ALL_BLOGS, QUERY_SPECIFIC_BLOG } from "@/sanity/queries"
 import { QUERY_ALL_BLOGSResult } from "@/sanity/types"
+import "@/styles/headings.css"
 import { Metadata } from "next"
 import { notFound } from "next/navigation"
 import type { BlogPosting, WithContext } from "schema-dts"
-import "../../../styles/headings.css"
 
 interface BlogProps {
     params: Promise<{ slug: string }>

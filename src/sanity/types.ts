@@ -438,7 +438,7 @@ export type QUERY_SPECIFIC_CAREERResult = {
     link?: string
 } | null
 // Variable: QUERY_ALL_BLOGS
-// Query: *[_type == 'blog' && defined(slug) && defined(slug.current)]{...,author->}
+// Query: *[_type == 'blog' && defined(slug) && defined(slug.current)]{...,author->,heroImage{asset->}}
 export type QUERY_ALL_BLOGSResult = Array<{
     _id: string
     _type: "blog"
@@ -493,17 +493,30 @@ export type QUERY_ALL_BLOGSResult = Array<{
     descriptionShort?: string
     descriptionLong?: string
     date?: string
-    heroImage?: {
-        asset?: {
-            _ref: string
-            _type: "reference"
-            _weak?: boolean
-            [internalGroqTypeReferenceTo]?: "sanity.imageAsset"
-        }
-        hotspot?: SanityImageHotspot
-        crop?: SanityImageCrop
-        _type: "image"
-    }
+    heroImage: {
+        asset: {
+            _id: string
+            _type: "sanity.imageAsset"
+            _createdAt: string
+            _updatedAt: string
+            _rev: string
+            originalFilename?: string
+            label?: string
+            title?: string
+            description?: string
+            altText?: string
+            sha1hash?: string
+            extension?: string
+            mimeType?: string
+            size?: number
+            assetId?: string
+            uploadId?: string
+            path?: string
+            url?: string
+            metadata?: SanityImageMetadata
+            source?: SanityAssetSourceData
+        } | null
+    } | null
     toc?: boolean
     content?: Array<
         | ({
@@ -705,7 +718,7 @@ declare module "@sanity/client" {
     interface SanityQueries {
         '*[_type == \'career\' && defined(slug) && defined(slug.current) && !(division in ["", "null"])]': QUERY_ALL_CAREERSResult
         "*\n  [_type == 'career' && slug.current == $slug][0]\n  {\n    ...,\n    content\n  }": QUERY_SPECIFIC_CAREERResult
-        "*[_type == 'blog' && defined(slug) && defined(slug.current)]{...,author->}": QUERY_ALL_BLOGSResult
+        "*[_type == 'blog' && defined(slug) && defined(slug.current)]{...,author->,heroImage{asset->}}": QUERY_ALL_BLOGSResult
         "*\n    [_type == 'blog' && slug.current == $slug][0]\n    {\n      ...,\n      author->{\n        ...,\n        profileImg{\n          asset->\n        }\n      },\n      heroImage{\n        asset->,\n      },\n      content[]{\n        ...,\n        _type == \"image\" => {\n          ...,\n          asset->\n        }\n      }\n    }\n    ": QUERY_SPECIFIC_BLOGResult
     }
 }

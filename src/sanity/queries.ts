@@ -10,7 +10,9 @@ export const QUERY_SPECIFIC_CAREER = defineQuery(`*
     content
   }`)
 
-export const QUERY_ALL_BLOGS = defineQuery(`*[_type == 'blog' && defined(slug) && defined(slug.current)]{...,author->}`)
+export const QUERY_ALL_BLOGS = defineQuery(
+    `*[_type == 'blog' && defined(slug) && defined(slug.current)]{...,author->,heroImage{asset->}}`
+)
 export const QUERY_SPECIFIC_BLOG = defineQuery(`*
     [_type == 'blog' && slug.current == $slug][0]
     {
