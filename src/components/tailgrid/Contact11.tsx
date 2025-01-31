@@ -122,6 +122,9 @@ export default function Contact11() {
                                 )}
                             </div>
                         </div>
+                        {
+                            // TODO dont clear fields on submit
+                        }
                         <div className="w-full px-4">
                             <button
                                 disabled={isPending}
