@@ -1,8 +1,8 @@
+import { slugify } from "@/lib/slugify"
+import { Blog } from "@/sanity/types"
 import { twJoin, twMerge } from "tailwind-merge"
 import { Link } from "../atoms/Link"
 import Typography from "../atoms/Typography"
-import { Blog } from "@/sanity/types"
-import { slugify } from "@/lib/slugify"
 
 type Heading = {
     level: number

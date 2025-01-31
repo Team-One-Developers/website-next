@@ -25,8 +25,8 @@ module.exports = {
             "10xl": "11rem"
         },
         fontFamily: {
-            abcdiatype: "hsl(var(--font-ABCD)",
-            spacegrotesk: "hsl(var(--font-SpaceGrotesk)"
+            abcdiatype: "var(--font-ABCD)",
+            spacegrotesk: "var(--font-SpaceGrotesk)"
         },
         screens: {
             xs: "400px",
@@ -73,7 +73,7 @@ module.exports = {
                 background: "hsl(var(--theme-background))",
                 primary: {
                     DEFAULT: "hsl(var(--theme-primary))",
-                    foreground: "hsl(var(--theme-primary-foreground)"
+                    foreground: "hsl(var(--theme-primary-foreground))"
                 },
                 muted: {
                     DEFAULT: "hsl(var(--theme-muted-foreground))",

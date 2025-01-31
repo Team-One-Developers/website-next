@@ -1,8 +1,9 @@
+import Image from "next/image"
 import Link from "next/link"
 
 export const Service6 = () => {
     return (
-        <section className="dark:bg-dark bg-primary-foreground pb-12 pt-20 lg:pb-[90px] lg:pt-[120px]">
+        <section className="bg-primary-foreground pb-12 pt-20 lg:pb-[90px] lg:pt-[120px]">
             <div className="container mx-auto">
                 <div className="-mx-4 mb-10 flex flex-wrap items-end lg:mb-[70px]">
                     <div className="w-full px-4 lg:w-8/12">
@@ -59,26 +60,21 @@ export default Service6
 const ServiceCard = ({ link, image, button, title, details }: any) => {
     return (
         <div className="w-full px-4 md:w-1/2 lg:w-1/3">
-            <div className="dark:bg-dark-2 mb-10 bg-white">
+            <div className="mb-10 bg-background">
                 <Link href={link} className="block w-full">
-                    <img src={image} alt="image" className="w-full" />
+                    <Image src={image} alt="image" className="w-full" fill />
                 </Link>
                 <div className="p-8 sm:p-11 md:p-8 lg:px-6 xl:p-10 2xl:p-11">
                     <h3>
                         <Link
                             href={link}
-                            className="mb-4 block text-lg font-bold text-primary-foreground hover:text-primary sm:text-[22px] sm:leading-[35px] dark:text-primary-foreground"
+                            className="mb-4 block text-lg font-bold text-primary-foreground hover:text-primary sm:text-[22px] sm:leading-[35px]"
                         >
                             {title}
                         </Link>
                     </h3>
-                    <p className="border-stroke text-body-color dark:border-dark-3 dark:text-dark-6 mb-8 border-b pb-8 text-base">
-                        {details}
-                    </p>
-                    <Link
-                        href={link}
-                        className="text-body-color dark:text-dark-6 inline-flex items-center text-base hover:text-primary"
-                    >
+                    <p className="border-stroke text-body-color mb-8 border-b pb-8 text-base">{details}</p>
+                    <Link href={link} className="text-body-color inline-flex items-center text-base hover:text-primary">
                         {button}
                         <span className="ml-3">
                             <svg

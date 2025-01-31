@@ -37,27 +37,30 @@ export async function submitContactForm(currentState: any, formData: FormData) {
     })
 
     try {
-        // Send email
-        await transporter.sendMail({
-            from: process.env.EMAIL_FROM,
-            to: process.env.EMAIL_TO,
-            subject: `Website Kontaktformular - ${firstName} ${lastName}`,
-            text: `
-        Name: ${firstName} ${lastName}
-        E-Mail: ${email}
-        Telefon: ${phone}
-        Nachricht: ${message}
-      `,
-            html: `
-        <h1>Neue Kontaktformular-Einreichung</h1>
-        <p><strong>Name:</strong> ${firstName} ${lastName}</p>
-        <p><strong>E-Mail:</strong> ${email}</p>
-        <p><strong>Telefon:</strong> ${phone}</p>
-        <p><strong>Nachricht:</strong> ${message}</p>
-      `
-        })
+        //     // Send email
+        //     await transporter.sendMail({
+        //         from: process.env.EMAIL_FROM,
+        //         to: process.env.EMAIL_TO,
+        //         subject: `Website Kontaktformular - ${firstName} ${lastName}`,
+        //         text: `
+        //     Name: ${firstName} ${lastName}
+        //     E-Mail: ${email}
+        //     Telefon: ${phone}
+        //     Nachricht: ${message}
+        //   `,
+        //         html: `
+        //     <h1>Neue Kontaktformular-Einreichung</h1>
+        //     <p><strong>Name:</strong> ${firstName} ${lastName}</p>
+        //     <p><strong>E-Mail:</strong> ${email}</p>
+        //     <p><strong>Telefon:</strong> ${phone}</p>
+        //     <p><strong>Nachricht:</strong> ${message}</p>
+        //   `
+        //     })
 
-        return { success: true, message: "Vielen Dank für Ihre Nachricht. Wir werden uns bald bei Ihnen melden!" }
+        return {
+            success: true,
+            message: "DEV! Noch nicht verbunden. Vielen Dank für Ihre Nachricht. Wir werden uns bald bei Ihnen melden!"
+        }
     } catch (error) {
         console.error("E-Mail senden fehlgeschlagen:", error)
         return {

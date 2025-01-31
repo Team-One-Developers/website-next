@@ -1,11 +1,12 @@
 import { PageLayout } from "@/components/layout/PageLayout"
+import { PAGE_THEME } from "@/constants"
 import { Link } from "../components/atoms/Link"
 import Typography from "../components/atoms/Typography"
 import { Section } from "../components/layout/Section"
 
 const NotFound = () => {
     return (
-        <PageLayout>
+        <PageLayout theme={PAGE_THEME.dark}>
             <Section>
                 <Typography variant="h1" as="h1">
                     404

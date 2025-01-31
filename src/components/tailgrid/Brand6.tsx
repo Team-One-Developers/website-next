@@ -93,7 +93,7 @@ const SingleImage = ({ brand }: any) => {
         <>
             <Link
                 href={link}
-                className="border-stroke hover:bg-primary/10 dark:border-primary/10 dark:hover:bg-primary/5 flex h-[110px] max-w-[188px] items-center justify-center border px-7"
+                className="border-stroke flex h-[110px] max-w-[188px] items-center justify-center border px-7 hover:bg-primary/10 dark:border-primary/10 dark:hover:bg-primary/5"
             >
                 <img src={imageSrc} alt={altText} className="h-10 w-full" />
             </Link>

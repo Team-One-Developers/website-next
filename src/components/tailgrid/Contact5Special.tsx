@@ -13,10 +13,10 @@ const Contact5Special = () => {
                             href="mailto:info@teamonedevelopers.de"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="hover:bg-foreground/5 w-full rounded p-4 px-4 md:w-1/3"
+                            className="w-full rounded p-4 px-4 hover:bg-foreground/5 md:w-1/3"
                         >
                             <div className="text-center">
-                                <div className="bg-foreground/10 mx-auto mb-5 flex h-[100px] w-[100px] items-center justify-center rounded-full text-primary sm:h-[130px] sm:w-[130px]">
+                                <div className="mx-auto mb-5 flex h-[100px] w-[100px] items-center justify-center rounded-full bg-foreground/10 text-primary sm:h-[130px] sm:w-[130px]">
                                     <svg
                                         width="43"
                                         height="42"
@@ -44,10 +44,10 @@ const Contact5Special = () => {
                             href="tel:+4971125298690"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="hover:bg-foreground/5 w-full rounded p-4 px-4 md:w-1/3"
+                            className="w-full rounded p-4 px-4 hover:bg-foreground/5 md:w-1/3"
                         >
                             <div className="text-center">
-                                <div className="bg-foreground/10 mx-auto mb-5 flex h-[100px] w-[100px] items-center justify-center rounded-full text-primary sm:h-[130px] sm:w-[130px]">
+                                <div className="mx-auto mb-5 flex h-[100px] w-[100px] items-center justify-center rounded-full bg-foreground/10 text-primary sm:h-[130px] sm:w-[130px]">
                                     <svg
                                         width="42"
                                         height="42"
@@ -83,10 +83,10 @@ const Contact5Special = () => {
                             href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent("Team One Developers GmbH, Stafflenbergstraße 44, 70184 Stuttgart")}`}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="hover:bg-foreground/5 w-full rounded p-4 px-4 md:w-1/3"
+                            className="w-full rounded p-4 px-4 hover:bg-foreground/5 md:w-1/3"
                         >
                             <div className="text-center">
-                                <div className="bg-foreground/10 mx-auto mb-5 flex h-[100px] w-[100px] items-center justify-center rounded-full text-primary sm:h-[130px] sm:w-[130px]">
+                                <div className="mx-auto mb-5 flex h-[100px] w-[100px] items-center justify-center rounded-full bg-foreground/10 text-primary sm:h-[130px] sm:w-[130px]">
                                     <svg
                                         width="42"
                                         height="42"

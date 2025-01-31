@@ -44,7 +44,7 @@ export default function Contact11() {
                                     name="firstName"
                                     type="text"
                                     placeholder="Vorname"
-                                    className="border-stroke placeholder-foreground/50 w-full rounded-lg border bg-transparent px-5 py-3 text-foreground outline-none duration-200 focus:border-primary"
+                                    className="border-stroke w-full rounded-lg border bg-transparent px-5 py-3 text-foreground placeholder-foreground/50 outline-none duration-200 focus:border-primary"
                                 />
                                 {state.errors?.firstName && (
                                     <p className="mt-1 text-sm text-red-500">{state.errors.firstName[0]}</p>
@@ -64,7 +64,7 @@ export default function Contact11() {
                                     name="lastName"
                                     type="text"
                                     placeholder="Nachname"
-                                    className="border-stroke placeholder-foreground/50 h-[46px] w-full rounded-lg border bg-transparent px-5 py-3 text-foreground outline-none duration-200 focus:border-primary"
+                                    className="border-stroke h-[46px] w-full rounded-lg border bg-transparent px-5 py-3 text-foreground placeholder-foreground/50 outline-none duration-200 focus:border-primary"
                                 />
                                 {state.errors?.lastName && (
                                     <p className="mt-1 text-sm text-red-500">{state.errors.lastName[0]}</p>
@@ -81,7 +81,7 @@ export default function Contact11() {
                                     name="email"
                                     type="email"
                                     placeholder="name@email.com"
-                                    className="border-stroke placeholder-foreground/50 h-[46px] w-full rounded-lg border bg-transparent px-5 py-3 text-foreground outline-none duration-200 focus:border-primary"
+                                    className="border-stroke h-[46px] w-full rounded-lg border bg-transparent px-5 py-3 text-foreground placeholder-foreground/50 outline-none duration-200 focus:border-primary"
                                 />
                                 {state.errors?.email && (
                                     <p className="mt-1 text-sm text-red-500">{state.errors.email[0]}</p>
@@ -98,7 +98,7 @@ export default function Contact11() {
                                     name="phone"
                                     type="text"
                                     placeholder="+49 157 3333 4444"
-                                    className="border-stroke placeholder-foreground/50 h-[46px] w-full rounded-lg border bg-transparent px-5 py-3 text-foreground outline-none duration-200 focus:border-primary"
+                                    className="border-stroke h-[46px] w-full rounded-lg border bg-transparent px-5 py-3 text-foreground placeholder-foreground/50 outline-none duration-200 focus:border-primary"
                                 />
                                 {state.errors?.phone && (
                                     <p className="mt-1 text-sm text-red-500">{state.errors.phone[0]}</p>
@@ -115,7 +115,7 @@ export default function Contact11() {
                                     name="message"
                                     rows={6}
                                     placeholder="Deine Nachricht an uns"
-                                    className="border-stroke placeholder-foreground/50 w-full rounded-lg border bg-transparent p-5 text-foreground outline-none duration-200 focus:border-primary"
+                                    className="border-stroke w-full rounded-lg border bg-transparent p-5 text-foreground placeholder-foreground/50 outline-none duration-200 focus:border-primary"
                                 ></textarea>
                                 {state.errors?.message && (
                                     <p className="mt-1 text-sm text-red-500">{state.errors.message[0]}</p>
