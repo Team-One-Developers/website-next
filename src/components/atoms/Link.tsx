@@ -1,6 +1,6 @@
+import cn from "@/lib/cn"
 import { default as NextLink } from "next/link"
 import React, { forwardRef, ReactNode } from "react"
-import { twMerge } from "tailwind-merge"
 import { tv, VariantProps } from "tailwind-variants"
 
 export const linkVariants = tv({
@@ -31,7 +31,7 @@ export interface ButtonProps
 
 export const Link = forwardRef<HTMLAnchorElement, ButtonProps>(
     ({ className, color, size, label, href, ...props }, ref) => (
-        <NextLink ref={ref} href={href} className={twMerge(linkVariants({ color, size }), className)} {...props}>
+        <NextLink ref={ref} href={href} className={cn(linkVariants({ color, size }), className)} {...props}>
             {label}
         </NextLink>
     )

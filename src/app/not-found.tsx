@@ -1,8 +1,8 @@
+import { Link } from "@/components/atoms/Link"
+import Typography from "@/components/atoms/Typography"
 import { PageLayout } from "@/components/layout/PageLayout"
+import { Section } from "@/components/layout/Section"
 import { PAGE_THEME } from "@/constants"
-import { Link } from "../components/atoms/Link"
-import Typography from "../components/atoms/Typography"
-import { Section } from "../components/layout/Section"
 
 const NotFound = () => {
     return (

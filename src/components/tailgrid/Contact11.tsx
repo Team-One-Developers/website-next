@@ -2,11 +2,12 @@
 import { submitContactForm } from "@/app/actions/contact"
 import Typography from "@/components/atoms/Typography"
 import Icon from "@/components/molecules/Icon"
+import cn from "@/lib/cn"
 import Image from "next/image"
 import { useActionState } from "react"
 
 export default function Contact11() {
-    const initialState = { success: false, message: "", errors: undefined }
+    const initialState = { success: false, message: "", errors: undefined, formData: undefined }
     const [state, formAction, isPending] = useActionState(submitContactForm, initialState)
 
     return (
@@ -29,8 +30,8 @@ export default function Contact11() {
                     </Typography>
                 </div>
 
-                <form action={formAction} className="mx-auto w-full max-w-[540px]">
-                    <div className="-mx-4 flex flex-wrap">
+                <form action={formAction} className="mx-auto w-full max-w-[540px]" inert={state.success || isPending}>
+                    <div className={cn("-mx-4 flex flex-wrap", (state.success || isPending) && "opacity-50")}>
                         <div className="w-full px-4 sm:w-1/2">
                             <div className="mb-6">
                                 <label
@@ -43,7 +44,9 @@ export default function Contact11() {
                                     id="firstName"
                                     name="firstName"
                                     type="text"
+                                    // if theres data for this field (after a non-successfull "Send") use it. Otherwise use a placeholder
                                     placeholder="Vorname"
+                                    defaultValue={state.formData?.get("firstName") as string}
                                     className="border-stroke w-full rounded-lg border bg-transparent px-5 py-3 text-foreground placeholder-foreground/50 outline-none duration-200 focus:border-primary"
                                 />
                                 {state.errors?.firstName && (
@@ -64,6 +67,7 @@ export default function Contact11() {
                                     name="lastName"
                                     type="text"
                                     placeholder="Nachname"
+                                    defaultValue={state.formData?.get("lastName") as string}
                                     className="border-stroke h-[46px] w-full rounded-lg border bg-transparent px-5 py-3 text-foreground placeholder-foreground/50 outline-none duration-200 focus:border-primary"
                                 />
                                 {state.errors?.lastName && (
@@ -81,6 +85,7 @@ export default function Contact11() {
                                     name="email"
                                     type="email"
                                     placeholder="name@email.com"
+                                    defaultValue={state.formData?.get("email") as string}
                                     className="border-stroke h-[46px] w-full rounded-lg border bg-transparent px-5 py-3 text-foreground placeholder-foreground/50 outline-none duration-200 focus:border-primary"
                                 />
                                 {state.errors?.email && (
@@ -98,6 +103,7 @@ export default function Contact11() {
                                     name="phone"
                                     type="text"
                                     placeholder="+49 157 3333 4444"
+                                    defaultValue={state.formData?.get("phone") as string}
                                     className="border-stroke h-[46px] w-full rounded-lg border bg-transparent px-5 py-3 text-foreground placeholder-foreground/50 outline-none duration-200 focus:border-primary"
                                 />
                                 {state.errors?.phone && (
@@ -115,6 +121,7 @@ export default function Contact11() {
                                     name="message"
                                     rows={6}
                                     placeholder="Deine Nachricht an uns"
+                                    defaultValue={state.formData?.get("message") as string}
                                     className="border-stroke w-full rounded-lg border bg-transparent p-5 text-foreground placeholder-foreground/50 outline-none duration-200 focus:border-primary"
                                 ></textarea>
                                 {state.errors?.message && (
@@ -122,9 +129,7 @@ export default function Contact11() {
                                 )}
                             </div>
                         </div>
-                        {
-                            // TODO dont clear fields on submit
-                        }
+
                         <div className="w-full px-4">
                             <button
                                 disabled={isPending}

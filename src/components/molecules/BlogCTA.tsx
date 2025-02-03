@@ -1,8 +1,8 @@
+import cn from "@/lib/cn"
 import { client } from "@/sanity/lib/client"
 import { QUERY_ALL_CAREERS } from "@/sanity/queries"
 import { QUERY_ALL_CAREERSResult } from "@/sanity/types"
 import Link from "next/link"
-import { twMerge } from "tailwind-merge"
 import { Image } from "../atoms/Image"
 import { Link as LinkComponent } from "../atoms/Link"
 import Typography from "../atoms/Typography"
@@ -71,7 +71,7 @@ export const BlogCTA = async ({ variant, className }: BlogCTAProps) => {
 
     return (
         <article
-            className={twMerge("relative z-0 rounded-md p-8 transition-shadow hover:shadow-md", className)}
+            className={cn("relative z-0 rounded-md p-8 transition-shadow hover:shadow-md", className)}
             aria-label={blogCTAValues[variant].linkLabel}
         >
             <Link

@@ -1,8 +1,8 @@
+import cn from "@/lib/cn"
+import { QUERY_SPECIFIC_BLOGResult } from "@/sanity/types"
 import React, { forwardRef } from "react"
-import { twMerge } from "tailwind-merge"
 import { tv, VariantProps } from "tailwind-variants"
 import Typography from "../atoms/Typography"
-import { Blog, QUERY_SPECIFIC_BLOGResult } from "@/sanity/types"
 import { ResultBlogElement } from "./BlogArticle"
 
 export const tagsVariants = tv({
@@ -44,12 +44,12 @@ export interface TagsProps
 export const Tags = forwardRef<HTMLUListElement, TagsProps>(
     ({ blog, className, size, gap, color, category = false, ...props }, ref) => {
         return (
-            <ul className={twMerge(tagsVariants({ gap }).ul(), "flex-wrap")} ref={ref} {...props}>
+            <ul className={cn(tagsVariants({ gap }).ul(), "flex-wrap")} ref={ref} {...props}>
                 {/* <Typography
                     as="li"
                     variant="description"
                     key="readingTime"
-                    className={twMerge(
+                    className={cn(
                         tagsVariants({ size, color }).li(),
                         "flex items-center gap-1 font-spacegrotesk uppercase",
                         className
@@ -62,7 +62,7 @@ export const Tags = forwardRef<HTMLUListElement, TagsProps>(
                     as="li"
                     variant="description"
                     key="readingTime"
-                    className={twMerge(tagsVariants({ size, color }).li(), "flex items-center gap-1 ", className)}
+                    className={cn(tagsVariants({ size, color }).li(), "flex items-center gap-1 ", className)}
                 >
                     {blog.language.toLocaleUpperCase()}
                 </Typography> */}
@@ -71,7 +71,7 @@ export const Tags = forwardRef<HTMLUListElement, TagsProps>(
                     <Typography
                         as="li"
                         variant="description"
-                        className={twMerge(tagsVariants({ size, color }).li(), className)}
+                        className={cn(tagsVariants({ size, color }).li(), className)}
                     >
                         {blog?.category}
                     </Typography>
@@ -81,7 +81,7 @@ export const Tags = forwardRef<HTMLUListElement, TagsProps>(
                             as="li"
                             variant="description"
                             key={index}
-                            className={twMerge(tagsVariants({ size, color }).li(), className)}
+                            className={cn(tagsVariants({ size, color }).li(), className)}
                         >
                             {tag}
                         </Typography>

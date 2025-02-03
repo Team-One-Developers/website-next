@@ -1,8 +1,9 @@
 "use client"
 
 import { UX_CATEGORIES } from "@/constants"
+import cn from "@/lib/cn"
 import { ReactNode, useState } from "react"
-import { twJoin, twMerge } from "tailwind-merge"
+import { twJoin } from "tailwind-merge"
 import Typography from "../atoms/Typography"
 import "./style.css"
 
@@ -12,7 +13,7 @@ export const UxDesignMobile = ({ className }: { className: string }) => {
     const CategoryButton = ({ category }: { category: UX_CATEGORIES }) => {
         return (
             <button
-                className={twMerge(
+                className={cn(
                     "relative m-0 cursor-pointer border-none px-[2px] py-2 text-center uppercase text-muted",
                     activeCategory === category &&
                         "text-primary after:absolute after:left-[50%] after:h-[5px] after:w-[5px] after:-translate-x-[50%] after:translate-y-[425%] after:rounded-full after:bg-primary"

@@ -1,5 +1,5 @@
+import cn from "@/lib/cn"
 import { forwardRef, ReactNode } from "react"
-import { twMerge } from "tailwind-merge"
 
 interface ContentWrapperProps {
     children: ReactNode
@@ -20,7 +20,7 @@ export const ContentWrapper = forwardRef<HTMLDivElement, ContentWrapperProps>(fu
         <div
             id={id}
             ref={ref}
-            className={twMerge("mx-auto my-0 block", className)}
+            className={cn("mx-auto my-0 block", className)}
             style={
                 useMaxWidth
                     ? {
