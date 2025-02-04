@@ -20,7 +20,7 @@ const Footer7 = () => {
                                         <input
                                             type="email"
                                             placeholder="Enter your email address"
-                                            className="placeholder-dark-8 h-[52px] w-full rounded-md border border-black bg-black/5 pl-14 pr-5 text-black outline-none focus:border-black/40 focus-visible:shadow-none"
+                                            className="placeholder:text-dark-8 h-[52px] w-full rounded-md border border-black bg-black/5 pl-14 pr-5 text-black outline-none focus:border-black/40 focus-visible:shadow-none"
                                         />
                                         <label className="absolute left-5 top-1/2 -translate-y-1/2">
                                             <svg

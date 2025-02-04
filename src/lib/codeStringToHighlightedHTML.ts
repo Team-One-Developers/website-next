@@ -30,8 +30,8 @@ const formatCode = async (code: string, language: string) => {
     return code
 }
 
-export async function highlightCode(content: any) {
-    const newContentPromises = content.map(async (block: any) => {
+export async function highlightCode(content: QUERY_SPECIFIC_BLOGResult["content"]) {
+    const newContentPromises = content.map(async (block) => {
         if (block._type === "code") {
             // Process code with Prism for syntax highlighting
             const highlightedHtml = await rehype()

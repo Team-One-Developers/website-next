@@ -8,9 +8,9 @@ const Hero8 = ({}) => {
                 src="/images/hero.jpg"
                 alt="Hero Image"
                 fill
-                className="absolute left-0 top-0 z-0 h-full w-full object-cover"
+                className="absolute left-0 top-0 z-0 size-full object-cover"
             />
-            <div className="absolute left-0 top-0 z-10 h-full w-full bg-foreground opacity-50" />
+            <div className="absolute left-0 top-0 z-10 size-full bg-foreground opacity-50" />
             <div className="container relative z-50 mx-auto">
                 <div className="-mx-4 flex justify-center">
                     <div className="w-full px-4 lg:w-5/12">

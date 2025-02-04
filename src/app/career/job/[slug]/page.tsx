@@ -29,7 +29,7 @@ async function getCareerFromParams(slug: string): Promise<QUERY_SPECIFIC_CAREERR
     )
 
     if (!career) {
-        null
+        return null
     }
 
     return career
@@ -114,7 +114,6 @@ export default async function CareerPage({ params }: CareerProps) {
     return (
         <PageLayout>
             <StructuredData data={structuredData} />
-
             <TwoColumnsFullScreenContainer
                 left={
                     <div className="sticky top-0 flex flex-col">

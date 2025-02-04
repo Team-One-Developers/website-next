@@ -98,12 +98,12 @@ const ServiceCard = ({ icon, title, details }) => {
         <div className="w-full px-4 sm:w-4/5 md:w-1/2 lg:w-1/3">
             <div className="border-stroke dark:border-dark-3 dark:bg-dark-2 group relative mb-8 rounded-xl border bg-white p-10 text-center md:px-8 lg:px-6 lg:py-9 xl:px-[43px] xl:py-[45px]">
                 <div className="relative z-10 mx-auto mb-10 inline-flex h-11 items-center">
-                    <span className="absolute -right-3 top-0 z-[-1] h-[34px] w-[34px] rounded-full bg-primary opacity-10"></span>
+                    <span className="absolute -right-3 top-0 z-[-1] size-[34px] rounded-full bg-primary opacity-10"></span>
                     {icon}
                 </div>
                 <h4 className="text-dark mb-[14px] text-2xl font-bold dark:text-white">{title}</h4>
                 <p className="text-body-color dark:text-dark-6">{details}</p>
-                <span className="absolute -bottom-2 left-0 right-0 z-[-1] mx-auto h-12 w-3/4 bg-primary opacity-0 blur-[12px] transition group-hover:opacity-[14%]"></span>
+                <span className="absolute inset-x-0 -bottom-2 z-[-1] mx-auto h-12 w-3/4 bg-primary opacity-0 blur-md transition group-hover:opacity-[14%]"></span>
             </div>
         </div>
     )

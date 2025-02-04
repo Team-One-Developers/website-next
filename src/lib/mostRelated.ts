@@ -1,13 +1,10 @@
 import {
-    Blog,
-    Career,
     QUERY_ALL_BLOGSResult,
     QUERY_ALL_CAREERSResult,
     QUERY_SPECIFIC_BLOGResult,
     QUERY_SPECIFIC_CAREERResult
 } from "@/sanity/types"
 import { intersection } from "lodash"
-import { Car } from "schema-dts"
 
 export const mostRelatedBlogs = ({
     allItems,

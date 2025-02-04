@@ -8,7 +8,7 @@ const Cta7 = () => {
                     <img
                         src="https://cdn.tailgrids.com/2.0/image/marketing/images/cta/image-03.jpg"
                         alt="image"
-                        className="h-full w-full object-cover object-center"
+                        className="size-full object-cover object-center"
                     />
                 </div>
                 <div className="container mx-auto">

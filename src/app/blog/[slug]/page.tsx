@@ -15,7 +15,7 @@ import { formatDate } from "@/lib/formateDate"
 import { mostRelatedBlogs } from "@/lib/mostRelated"
 import { client } from "@/sanity/lib/client"
 import { QUERY_ALL_BLOGS, QUERY_SPECIFIC_BLOG } from "@/sanity/queries"
-import { QUERY_ALL_BLOGSResult } from "@/sanity/types"
+import { QUERY_ALL_BLOGSResult, QUERY_SPECIFIC_BLOGResult } from "@/sanity/types"
 import { Metadata } from "next"
 import { notFound } from "next/navigation"
 import type { BlogPosting, WithContext } from "schema-dts"
@@ -26,14 +26,14 @@ interface BlogProps {
 }
 
 async function getBlogFromParams(slug: string) {
-    const blog = await client.fetch(
+    const blog = await client.fetch<QUERY_SPECIFIC_BLOGResult>(
         QUERY_SPECIFIC_BLOG,
         { slug },
         { cache: process.env.NODE_ENV === "development" ? "no-store" : "force-cache" }
     )
 
     if (!blog) {
-        null
+        return null
     }
 
     return blog
@@ -108,6 +108,7 @@ export default async function BlogPage({ params }: BlogProps) {
                         <Typography as="h1" variant="h1" className="uppercase">
                             {blog.title}
                         </Typography>
+
                         <Typography as="p" variant="paragraph" className="my-2">
                             {blog.descriptionLong}
                         </Typography>
@@ -121,9 +122,11 @@ export default async function BlogPage({ params }: BlogProps) {
                                 <Typography as="p" variant="paragraph" className="text-muted">
                                     {blog?.author?.position}
                                 </Typography>
-                                <Typography as="time" variant="paragraph">
-                                    {formatDate(blog?.date!)}
-                                </Typography>
+                                {blog?.date && (
+                                    <Typography as="time" variant="paragraph">
+                                        {formatDate(blog.date)}
+                                    </Typography>
+                                )}
                             </div>
                         </div>
                         <hr className="my-8 h-px border-dashed bg-t1-darkGray" />
@@ -149,13 +152,13 @@ export default async function BlogPage({ params }: BlogProps) {
                     <BlogRow blogs={relatedBlogs} />
                 </div>
             </Section>
-            {blog.cta !== "NONE" && (
+            {blog.cta && blog.cta !== "NONE" && (
                 <Section>
                     <div className="flex flex-col gap-4">
                         <Typography as="h3" variant="h3" className="uppercase">
                             Dein Job bei Team One Developers?
                         </Typography>
-                        <BlogCTA variant={blog?.cta!} />
+                        <BlogCTA variant={blog?.cta} />
                     </div>
                 </Section>
             )}

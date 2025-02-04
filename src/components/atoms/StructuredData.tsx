@@ -1,5 +1,5 @@
 interface StructuedDataProps {
-    data: Object
+    data: object
 }
 
 export const StructuredData = ({ data }: StructuedDataProps) => {
