@@ -7,19 +7,17 @@ import { z } from "zod"
 const resend = new Resend(process.env.RESEND_API_KEY)
 
 const contactSchema = z.object({
-    firstName: z.string().min(1, "Vorname ist erforderlich"),
-    lastName: z.string().min(1, "Nachname ist erforderlich"),
+    name: z.string().min(1, "name ist erforderlich"),
     email: z.string().email("Ungültige E-Mail-Adresse"),
-    phone: z.string().min(1, "Telefonnummer ist erforderlich"),
     message: z.string().min(1, "Nachricht ist erforderlich")
 })
 
+// TODO copy to user
+
 export async function submitContactForm(currentState: any, formData: FormData) {
     const validatedFields = contactSchema.safeParse({
-        firstName: formData.get("firstName"),
-        lastName: formData.get("lastName"),
+        name: formData.get("name"),
         email: formData.get("email"),
-        phone: formData.get("phone"),
         message: formData.get("message")
     })
 
@@ -27,20 +25,23 @@ export async function submitContactForm(currentState: any, formData: FormData) {
         return { success: false, errors: validatedFields.error.flatten().fieldErrors, formData }
     }
 
-    const { firstName, lastName, email, phone, message } = validatedFields.data
+    const { name, email, message } = validatedFields.data
 
     try {
         const { error } = await resend.emails.send({
             from: CONTACT_FORM_SENDER,
             to: [CONTACT_FORM_RECIPIENT],
+            // TODO enable as soon as we have a decent email template visually
+            // bcc: [email],
             subject: "Neue Kontaktanfrage",
-            react: await EmailTemplate({ firstName, lastName, email, phone, message })
+            react: await EmailTemplate({ name, email, message })
         })
 
         if (!error) {
             return {
                 success: true,
-                message: "Vielen Dank für Ihre Nachricht. Wir werden uns bald bei Ihnen melden!"
+                message: `Vielen Dank für Ihre Nachricht. Wir werden uns bald bei Ihnen melden!`
+                // Sie haben eine Kopie Ihrer Nachricht an ihre E-Mail Adresse \"${email}\" erhalten.
             }
         } else {
             throw error

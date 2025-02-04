@@ -7,8 +7,9 @@
 3. Navigate to the `React` tab on the Tailgrid component page.
 4. Identify the component's name in the displayed code (e.g., `About1()`).
 5. Create a file named `About1.tsx` under `src/components/tailgrid`.
-6. Copy the code provided on the Tailgrid website.
-7. Paste the copied code into the newly created file.
+6. Click on the filter/settings button to the right of the Copy button and disable the "Copy code with dark: classes" option.
+7. Click copy to copy
+8. Paste the copied code into the newly created file.
 
 ## Step 2: Adapting the Component
 
@@ -21,8 +22,6 @@
 
 ### Styling Adjustments
 
-- Remove all `dark:` prefixed classes. (e.g. `dark:bg-dark-6`)
-    - We implement dark mode via the `data-theme` attribute on the HTML tag and adjust CSS variables accordingly, rather than using Tailwind's `dark:` classes.
 - Look for explicit color names like `white` or `dark`. Use `background` and `foreground` classes instead:
 
     - Replace instances of:
