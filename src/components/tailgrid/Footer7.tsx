@@ -10,7 +10,7 @@ const Footer7 = () => {
         <footer className="relative z-10 bg-primary">
             <Section className="py-4 md:py-4">
                 <div className="border-b border-foreground/20 pb-10 pt-[70px]">
-                    <div className="-mx-4 flex flex-col items-center lg:flex-row">
+                    <div className="flex flex-col items-center lg:flex-row">
                         <div className="w-full px-4 lg:w-1/2">
                             <div className="mb-5 w-full">
                                 <h3 className="text-2xl font-bold text-foreground sm:text-[28px] sm:leading-snug">
@@ -56,8 +56,8 @@ const Footer7 = () => {
             </Section>
 
             <Section className="py-4 md:py-4">
-                <div className="-mx-4 flex justify-between">
-                    <div className="w-full px-4 sm:w-2/3 lg:w-4/12 xl:w-3/12">
+                <div className="flex justify-between">
+                    <div className="w-full px-4 sm:w-2/3 lg:w-1/4 xl:w-fit">
                         <div className="mb-10 w-full">
                             <Link href="/#" className="mb-6 inline-block">
                                 <Image
@@ -69,10 +69,10 @@ const Footer7 = () => {
                                 />
                             </Link>
                             <p className="mb-7 text-base text-foreground/70">Tech driven Transformation</p>
-                            <div className="-mx-3 flex items-center">
+                            <div className="flex items-center gap-x-2">
                                 <Link
                                     href="https://www.instagram.com/teamonedevelopers/"
-                                    className="px-3 text-foreground hover:text-foreground"
+                                    className="rounded-full border border-transparent p-3 text-foreground hover:border-foreground hover:bg-foreground/5"
                                 >
                                     <svg width="18" height="18" viewBox="0 0 18 18" className="fill-current">
                                         <path d="M8.91688 12.4995C10.6918 12.4995 12.1306 11.0911 12.1306 9.35385C12.1306 7.61655 10.6918 6.20819 8.91688 6.20819C7.14197 6.20819 5.70312 7.61655 5.70312 9.35385C5.70312 11.0911 7.14197 12.4995 8.91688 12.4995Z" />
@@ -82,7 +82,7 @@ const Footer7 = () => {
                                 </Link>
                                 <Link
                                     href="https://www.linkedin.com/company/team-one-developers/"
-                                    className="px-3 text-foreground hover:text-foreground"
+                                    className="rounded-full border border-transparent p-3 text-foreground hover:border-foreground hover:bg-foreground/5"
                                 >
                                     <svg width="18" height="18" viewBox="0 0 18 18" className="fill-current">
                                         <path d="M16.7821 0.947388H1.84847C1.14272 0.947388 0.578125 1.49747 0.578125 2.18508V16.7623C0.578125 17.4224 1.14272 18 1.84847 18H16.7257C17.4314 18 17.996 17.4499 17.996 16.7623V2.15757C18.0525 1.49747 17.4879 0.947388 16.7821 0.947388ZM5.7442 15.4421H3.17528V7.32837H5.7442V15.4421ZM4.44563 6.2007C3.59873 6.2007 2.94944 5.5406 2.94944 4.74297C2.94944 3.94535 3.62696 3.28525 4.44563 3.28525C5.26429 3.28525 5.94181 3.94535 5.94181 4.74297C5.94181 5.5406 5.32075 6.2007 4.44563 6.2007ZM15.4835 15.4421H12.9146V11.509C12.9146 10.5739 12.8864 9.33618 11.5596 9.33618C10.2045 9.33618 10.0069 10.3813 10.0069 11.4265V15.4421H7.438V7.32837H9.95046V8.45605H9.9787C10.3457 7.79594 11.1644 7.13584 12.4347 7.13584C15.0601 7.13584 15.54 8.7861 15.54 11.0414V15.4421H15.4835Z" />
@@ -92,7 +92,7 @@ const Footer7 = () => {
                         </div>
                     </div>
 
-                    <div className="w-full px-4 md:w-1/2 lg:w-4/12 xl:w-3/12">
+                    <div className="w-full px-4 md:w-1/2 lg:w-1/4 xl:w-fit">
                         <div className="mb-10 w-full">
                             <h4 className="mb-9 text-lg font-semibold text-foreground">Neueste Blogs</h4>
 
@@ -128,14 +128,14 @@ const Footer7 = () => {
                         <NavLink link="/contact" label="Kontakt" />
                     </LinkGroup>
 
-                    <div className="w-full px-4 sm:w-1/2 lg:w-4/12 2xl:w-2/12">
+                    <div className="w-full px-4 sm:w-1/2 lg:w-1/4 2xl:w-fit">
                         <div className="mb-10 w-full">
                             <h4 className="mb-9 text-lg font-semibold text-foreground">Kontakt</h4>
                             <ul className="flex flex-col gap-4">
                                 <li>
                                     <ContactLink
                                         type="email"
-                                        className="flex items-center gap-3 text-base leading-loose text-foreground/70"
+                                        className="flex items-center gap-3 text-base leading-loose text-foreground/70 hover:underline"
                                     >
                                         <span className="">
                                             <svg
@@ -158,7 +158,7 @@ const Footer7 = () => {
                                 <li>
                                     <ContactLink
                                         type="phone"
-                                        className="flex items-center gap-3 text-base leading-loose text-foreground/70"
+                                        className="flex items-center gap-3 text-base leading-loose text-foreground/70 hover:underline"
                                     >
                                         <span className="">
                                             <svg
@@ -196,7 +196,7 @@ const Footer7 = () => {
                                 <li>
                                     <ContactLink
                                         type="address"
-                                        className="flex items-center gap-3 text-base leading-loose text-foreground/70"
+                                        className="flex items-center gap-3 text-base leading-loose text-foreground/70 hover:underline"
                                     >
                                         <span className="">
                                             <svg
@@ -226,7 +226,7 @@ const Footer7 = () => {
             </Section>
 
             <Section className="py-4 md:py-4">
-                <div className="-mx-4 flex flex-wrap">
+                <div className="flex flex-wrap">
                     <div className="w-full px-4 md:w-1/3 lg:w-1/2">
                         <div className="my-1 flex justify-center md:justify-start">
                             <p className="font-spacegrotesk text-base text-foreground">
@@ -236,7 +236,7 @@ const Footer7 = () => {
                     </div>
                     <div className="w-full px-4 md:w-1/3 lg:w-1/2">
                         <div className="my-1">
-                            <div className="-mx-3 flex flex-wrap items-center justify-center md:justify-end">
+                            <div className="flex flex-wrap items-center justify-center md:justify-end">
                                 <BottomNavLink link="/privacy" label="Datenschutz" />
                                 <BottomNavLink link="/legal-notice" label="Impressum" />
                             </div>
@@ -276,7 +276,7 @@ const NavLink = ({ label, link }: { label: string; link: string }) => {
 
 const BottomNavLink = ({ label, link }: { label: string; link: string }) => {
     return (
-        <Link href={link} className="px-3 text-base text-foreground hover:text-primary">
+        <Link href={link} className="px-3 text-base text-foreground hover:underline">
             {label}
         </Link>
     )
