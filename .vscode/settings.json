@@ -1,3 +1,4 @@
 {
-  "hazel.pagesDir": "src/app"
+    "hazel.pagesDir": "src/app",
+    "typescript.preferences.importModuleSpecifier": "non-relative"
 }

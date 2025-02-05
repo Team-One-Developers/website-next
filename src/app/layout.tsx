@@ -1,4 +1,5 @@
 import StructuredData from "@/components/atoms/StructuredData"
+import Footer7 from "@/components/tailgrid/Footer7"
 import { siteConfig } from "@/config/siteConfig"
 import { organization } from "@/data/schemaOrg"
 import { Analytics } from "@vercel/analytics/react"
@@ -72,8 +73,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <html lang="de">
-            <body className={twJoin(ABCD.variable, SpaceGrotesk.variable, "bg-black")}>
+            <body className={twJoin(ABCD.variable, SpaceGrotesk.variable, "flex flex-col bg-background")}>
                 {children}
+                <Footer7 />
                 <StructuredData data={organization} />
                 <Analytics />
                 <SpeedInsights />

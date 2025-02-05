@@ -1,7 +1,7 @@
 // this is only the first part of the Contact5 component, with addition of links for the three elements
 
-import Link from "next/link"
-import Typography from "../atoms/Typography"
+import { ContactLink } from "@/components/atoms/ContactLink"
+import Typography from "@/components/atoms/Typography"
 
 const Contact5Special = () => {
     return (
@@ -9,12 +9,7 @@ const Contact5Special = () => {
             <div className="bg-background pb-10 pt-20 lg:pb-[70px] lg:pt-[110px]">
                 <div className="container mx-auto">
                     <div className="-mx-4 flex flex-wrap">
-                        <Link
-                            href="mailto:info@teamonedevelopers.de"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="w-full rounded p-4 px-4 hover:bg-foreground/5 md:w-1/3"
-                        >
+                        <ContactLink type="email" className="w-full rounded p-4 px-4 hover:bg-foreground/5 md:w-1/3">
                             <div className="text-center">
                                 <div className="mx-auto mb-5 flex h-[100px] w-[100px] items-center justify-center rounded-full bg-foreground/10 text-primary sm:h-[130px] sm:w-[130px]">
                                     <svg
@@ -39,13 +34,8 @@ const Contact5Special = () => {
                                     </Typography>
                                 </div>
                             </div>
-                        </Link>
-                        <Link
-                            href="tel:+4971125298690"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="w-full rounded p-4 px-4 hover:bg-foreground/5 md:w-1/3"
-                        >
+                        </ContactLink>
+                        <ContactLink type="phone" className="w-full rounded p-4 px-4 hover:bg-foreground/5 md:w-1/3">
                             <div className="text-center">
                                 <div className="mx-auto mb-5 flex h-[100px] w-[100px] items-center justify-center rounded-full bg-foreground/10 text-primary sm:h-[130px] sm:w-[130px]">
                                     <svg
@@ -78,13 +68,8 @@ const Contact5Special = () => {
                                     </Typography>
                                 </div>
                             </div>
-                        </Link>
-                        <Link
-                            href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent("Team One Developers GmbH, Stafflenbergstraße 44, 70184 Stuttgart")}`}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="w-full rounded p-4 px-4 hover:bg-foreground/5 md:w-1/3"
-                        >
+                        </ContactLink>
+                        <ContactLink type="address" className="w-full rounded p-4 px-4 hover:bg-foreground/5 md:w-1/3">
                             <div className="text-center">
                                 <div className="mx-auto mb-5 flex h-[100px] w-[100px] items-center justify-center rounded-full bg-foreground/10 text-primary sm:h-[130px] sm:w-[130px]">
                                     <svg
@@ -116,7 +101,7 @@ const Contact5Special = () => {
                                     </Typography>
                                 </div>
                             </div>
-                        </Link>
+                        </ContactLink>
                     </div>
                 </div>
             </div>
