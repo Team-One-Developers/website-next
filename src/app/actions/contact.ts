@@ -31,17 +31,15 @@ export async function submitContactForm(currentState: any, formData: FormData) {
         const { error } = await resend.emails.send({
             from: CONTACT_FORM_SENDER,
             to: [CONTACT_FORM_RECIPIENT],
-            // TODO enable as soon as we have a decent email template visually
-            // bcc: [email],
-            subject: "Neue Kontaktanfrage",
+            bcc: [email],
+            subject: "Team One - Kontaktanfrage",
             react: await EmailTemplate({ name, email, message })
         })
 
         if (!error) {
             return {
                 success: true,
-                message: `Vielen Dank für Ihre Nachricht. Wir werden uns bald bei Ihnen melden!`
-                // Sie haben eine Kopie Ihrer Nachricht an ihre E-Mail Adresse \"${email}\" erhalten.
+                message: `Vielen Dank für Ihre Nachricht. Wir werden uns bald bei Ihnen melden! Sie haben eine Kopie Ihrer Nachricht an ihre E-Mail Adresse \"${email}\" erhalten.`
             }
         } else {
             throw error
