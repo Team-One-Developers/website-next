@@ -49,7 +49,7 @@ const Brand6 = () => {
                         <div className="w-full px-4 lg:w-6/12 xl:w-5/12">
                             <div className="mb-12 lg:mb-0">
                                 <Typography as="h2" variant="h2" className="mb-5 text-background">
-                                    Used by the world's most popular companies
+                                    Used by the world&apos;s most popular companies
                                 </Typography>
                                 <Typography as="p" variant="paragraph" className="mb-10 text-background">
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque lobortis

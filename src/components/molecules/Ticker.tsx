@@ -16,7 +16,7 @@ interface TickerProps {
     textClassName?: string | undefined
     includeLogo?: boolean
     className?: string
-    themeSameAsPage: boolean
+    themeSameAsPage?: boolean
 }
 
 export const Ticker = (props: TickerProps) => {
@@ -27,7 +27,7 @@ export const Ticker = (props: TickerProps) => {
         theme,
         className,
         textClassName,
-        themeSameAsPage
+        themeSameAsPage = true
     } = props
     const marqueeItems: any[] = []
 
