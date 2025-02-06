@@ -6,17 +6,19 @@ import Header from "./Header"
 export const PageLayout = ({
     children,
     theme,
-    ticker = true
+    ticker = true,
+    tickerTheme = theme
 }: {
     children: ReactNode
     theme: PageTheme
     ticker?: boolean
+    tickerTheme?: PageTheme
 }) => {
     return (
         <div data-theme={theme} className="bg-background text-foreground">
             <Header theme={theme} />
-            <main className="mb-16">{children}</main>
-            {ticker && <Ticker theme={theme} />}
+            <main>{children}</main>
+            {ticker && <Ticker theme={tickerTheme} themeSameAsPage={theme === tickerTheme} />}
         </div>
     )
 }

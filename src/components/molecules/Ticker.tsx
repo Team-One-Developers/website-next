@@ -16,10 +16,19 @@ interface TickerProps {
     textClassName?: string | undefined
     includeLogo?: boolean
     className?: string
+    themeSameAsPage: boolean
 }
 
 export const Ticker = (props: TickerProps) => {
-    const { text = "Team One Developers", speed = 300, includeLogo = true, theme, className, textClassName } = props
+    const {
+        text = "Team One Developers",
+        speed = 300,
+        includeLogo = true,
+        theme,
+        className,
+        textClassName,
+        themeSameAsPage
+    } = props
     const marqueeItems: any[] = []
 
     const isLg = useMediaQuery("(min-width: 992px)")
@@ -63,9 +72,13 @@ export const Ticker = (props: TickerProps) => {
     })
 
     return (
-        <aside>
+        <aside className="">
             <Marquee
-                className={twJoin("mx-0 my-16 flex min-w-full shrink-0 grow-0 basis-auto select-none", className)}
+                className={twJoin(
+                    "mx-0 flex min-w-full shrink-0 grow-0 basis-auto select-none py-16",
+                    themeSameAsPage ? "bg-background" : "bg-foreground",
+                    className
+                )}
                 speed={isLg ? speed : speed / 3}
                 gradient={false}
                 aria-disabled

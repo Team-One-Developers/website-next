@@ -42,7 +42,8 @@
 - text styling:
     - Use our <Typography> component for all text if possible. It applies the correct font and styling to fit our design system. Make sure to remove tailgrids text based stylings so that it does not override our classes.
 - for buttons: try to use ou <Button>. Otherwise make sure to use `font-spacegrotesk` and `uppercase` for consistency.
-- we use our <Section> component to have a consistent max content width
+- for LinkButtons: try to use our <Link> component under /atoms/Link
+- we use our <Section> component to have a consistent max content width and padding between sections. Try to use it around a component if possible, replacing e.g. the most outer div/section
 - prettier/eslint:
     - Run prettier on the file to ensure it is formatted correctly.
     - Run eslint on the file to ensure it is free of warnings if possible
