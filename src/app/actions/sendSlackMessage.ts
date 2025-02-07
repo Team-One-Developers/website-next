@@ -54,7 +54,7 @@ export async function sendSlackMessage({ name, email, message }: FormData, chann
         }
 
         return {
-            success: true,
+            success: true
         }
     } catch (error) {
         console.error("Error sending Slack message:", {
