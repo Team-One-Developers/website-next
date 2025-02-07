@@ -33,7 +33,7 @@ async function getBlogFromParams(slug: string) {
     )
 
     if (!blog) {
-        null
+        return null
     }
 
     return blog

@@ -1,5 +1,6 @@
 "use client"
-import { submitContactForm } from "@/app/actions/contact"
+
+import { submitContactForm } from "@/app/actions/submitContactForm"
 import Typography from "@/components/atoms/Typography"
 import Icon from "@/components/molecules/Icon"
 import cn from "@/lib/cn"
@@ -7,7 +8,7 @@ import Image from "next/image"
 import { useActionState } from "react"
 
 export default function Contact11() {
-    const initialState = { success: false, message: "", errors: undefined, formData: undefined }
+    const initialState = { success: false, message: "", errors: undefined, formData: new FormData() }
     const [state, formAction, isPending] = useActionState(submitContactForm, initialState)
 
     return (
