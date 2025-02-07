@@ -82,7 +82,7 @@ export async function sendSlackMessage({ name, email, message }: FormData, chann
     }
 }
 
-const getIpAddress = async (): Promise<string | null> => {
+const getIpAddress = async () => {
     const fallbackIpAddress = "0.0.0.0"
     const headerList = await headers()
     const forwardedFor = headerList.get("x-forwarded-for")
