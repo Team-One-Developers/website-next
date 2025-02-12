@@ -1,8 +1,8 @@
-interface StructuedDataProps {
+interface StructuredDataProps {
     data: Object
 }
 
-export const StructuredData = ({ data }: StructuedDataProps) => {
+export const StructuredData = ({ data }: StructuredDataProps) => {
     return (
         <script
             type="application/ld+json"

@@ -14,11 +14,13 @@ export function createAsyncPublishAction(originalAction: DocumentActionComponent
             ...originalResult,
             onHandle: async () => {
                 const title = props.draft!.title
+                const draft = props.draft!.visibility === "Draft" ? "draft-" : ""
 
-                const slug = slugify(title)
+                const slug = draft + slugify(title)
                 const path = `${props.type === "blog" ? "/blog" : "/career/job"}/${slug}`
+                const link = `https://www.teamonedevelopers.de${path}`
 
-                await patch.execute([{ set: { slug: { current: slug }, path } }])
+                await patch.execute([{ set: { slug: { current: slug }, path, link } }])
                 originalResult.onHandle!()
             }
         }

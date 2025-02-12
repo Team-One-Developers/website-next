@@ -7,12 +7,13 @@ import { Section } from "@/components/layout/Section"
 import { CareerElement } from "@/components/molecules/CareerElement"
 import { Icon } from "@/components/molecules/Icon"
 import { Benefits } from "@/components/organisms/Benefits"
+import { client } from "@/sanity/lib/client"
+import { QUERY_ALL_CAREERS } from "@/sanity/queries"
+import { QUERY_ALL_CAREERSResult } from "@/sanity/types"
 import { Metadata } from "next"
+import React from "react"
 import Trophy from "/public/images/optimized/t1d_kai_knoerzer_079_optimized.webp"
 import Office from "/public/images/optimized/t1d_nov22_185_optimized.webp"
-import { client } from "@/sanity/lib/client"
-import { defineQuery } from "next-sanity"
-import { ALL_CAREER_QUERYResult } from "@/sanity/types"
 
 export const metadata: Metadata = {
     title: "Karriere",
@@ -20,16 +21,16 @@ export const metadata: Metadata = {
         "Wir sind immer auf der Suche nach Menschen, die Veränderungen vorantreiben und die Welt von morgen gestalten wollen."
 }
 
-const ALL_CAREER_QUERY = defineQuery(`*[_type == "career" && !(division in ["", "null"])]`)
-
 const Career = async () => {
-    const careers: ALL_CAREER_QUERYResult = await client.fetch(
-        ALL_CAREER_QUERY,
+    const careers: QUERY_ALL_CAREERSResult = await client.fetch(
+        QUERY_ALL_CAREERS,
         {},
         { cache: process.env.NODE_ENV === "development" ? "no-store" : "force-cache" }
     )
 
-    const sortedCareers = careers.reduce(
+    const publicCareers = careers.filter((career) => career.visibility === "Public")
+
+    const sortedCareers = publicCareers.reduce(
         (acc, career) => {
             const { division } = career
             if (division) {
@@ -38,7 +39,7 @@ const Career = async () => {
             }
             return acc
         },
-        {} as Record<string, ALL_CAREER_QUERYResult>
+        {} as Record<string, QUERY_ALL_CAREERSResult>
     )
 
     return (
@@ -88,7 +89,7 @@ const Career = async () => {
                         {Object.keys(sortedCareers).map((division, index) => {
                             const category = sortedCareers[division]
                             return (
-                                <>
+                                <React.Fragment key={division}>
                                     <Typography
                                         as="h3"
                                         variant="h2"
@@ -106,7 +107,7 @@ const Career = async () => {
                                             />
                                         ))}
                                     </div>
-                                </>
+                                </React.Fragment>
                             )
                         })}
                     </div>

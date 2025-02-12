@@ -1,3 +1,6 @@
+import { client } from "@/sanity/lib/client"
+import { QUERY_ALL_CAREERS } from "@/sanity/queries"
+import { QUERY_ALL_CAREERSResult } from "@/sanity/types"
 import Link from "next/link"
 import { twMerge } from "tailwind-merge"
 import { Image } from "../atoms/Image"
@@ -6,9 +9,6 @@ import Typography from "../atoms/Typography"
 import Icon, { IconProps } from "../molecules/Icon"
 import { JobType } from "./JobType"
 import CTA_BG from "/public/images/optimized/hero_optimized.webp"
-import { client } from "@/sanity/lib/client"
-import { QUERY_ALL_CAREERS } from "@/sanity/queries"
-import { ALL_CAREER_QUERYResult } from "@/sanity/types"
 
 type Variant = "CAREER" | "CONTACT" | "BLOG"
 
@@ -24,7 +24,7 @@ type BlogCTAValueObject = {
     }
 }
 
-const BlogCTAValues = (allCareers: ALL_CAREER_QUERYResult): BlogCTAValueObject => {
+const BlogCTAValues = (allCareers: QUERY_ALL_CAREERSResult): BlogCTAValueObject => {
     return {
         BLOG: {
             icon: "globe",

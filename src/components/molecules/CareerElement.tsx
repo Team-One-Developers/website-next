@@ -1,6 +1,6 @@
+import { Career } from "@/sanity/types"
 import Link from "next/link"
 import Typography from "../atoms/Typography"
-import { Career } from "@/sanity/types"
 
 interface JobProps {
     career: Career

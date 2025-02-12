@@ -43,6 +43,8 @@ export async function generateMetadata({ params }: CareerProps): Promise<Metadat
         return {}
     }
 
+    const isPublic = career.visibility === "Public"
+
     return {
         openGraph: {
             images: `/api/og/career?title=${career.title}`,
@@ -50,7 +52,11 @@ export async function generateMetadata({ params }: CareerProps): Promise<Metadat
             url: `https://www.teamonedevelopers.de/career/${career.slug.current}`
         },
         title: career.title,
-        description: career.description
+        description: career.description,
+        robots: {
+            index: isPublic,
+            follow: isPublic
+        }
     }
 }
 
