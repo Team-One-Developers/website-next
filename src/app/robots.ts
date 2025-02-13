@@ -5,7 +5,7 @@ export default function robots(): MetadataRoute.Robots {
         rules: {
             userAgent: "*",
             allow: "/",
-            disallow: ["/_nextjs/", "/api/", "/studio", "/testing"]
+            disallow: ["/_nextjs/", "/api/", "/studio"]
         },
         sitemap: "https://www.teamonedevelopers.de/sitemap.xml"
     }

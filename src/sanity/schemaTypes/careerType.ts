@@ -1,5 +1,6 @@
-import { defineField, defineType } from "sanity"
+import { DIVISIONS } from "@/constants/divisions"
 import { CaseIcon } from "@sanity/icons"
+import { defineField, defineType } from "sanity"
 
 export const careerType = defineType({
     name: "career",
@@ -60,7 +61,7 @@ export const careerType = defineType({
             name: "division",
             type: "string",
             options: {
-                list: ["Software Engineering", "Agile Transformation", "Operations", "Marketing"],
+                list: DIVISIONS,
                 layout: "radio"
             },
             validation: (rule) => rule.required()
@@ -96,24 +97,50 @@ export const careerType = defineType({
                     type: "code"
                 }
             ]
+        }),
+        defineField({
+            name: "visibility",
+            type: "string",
+            description:
+                "Wether to display this post publically on the website (in overview pages, search results, etc.) or only under the specific link (See below for the link once published).",
+            options: {
+                list: ["Draft", "Public"],
+                layout: "radio"
+            },
+            initialValue: "Draft"
+        }),
+        defineField({
+            name: "link",
+            type: "url",
+            description:
+                'The link to this post on the website. When the Visibility is set "Draft" only people with this link can see this post.',
+            readOnly: true,
+            hidden: ({ document }) => !document?.link
         })
     ],
     preview: {
         select: {
             title: "title",
             employmentType: "employmentType",
-            location: "location"
+            location: "location",
+            visibility: "visibility"
         },
-        prepare({ title, employmentType, location }) {
-            const subtitle = `${employmentType} - ${location}`
+        prepare({ title, employmentType, location, visibility }) {
+            const previewTitle = visibility === "Public" ? title : `DRAFT: ${title}`
+            const previewSubtitle = `${employmentType} - ${location}`
 
             return {
-                title,
-                subtitle
+                title: previewTitle,
+                subtitle: previewSubtitle
             }
         }
     },
     orderings: [
+        {
+            title: "Visibility (DRAFT first)",
+            name: "visibility",
+            by: [{ field: "visibility", direction: "asc" }]
+        },
         {
             title: "Publishing Date (Newest)",
             name: "dateDesc",

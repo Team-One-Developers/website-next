@@ -33,7 +33,7 @@ const BlogOverview = async () => {
 
     const categoryOrder = ["SOFTWARE ENGINEERING", "METHODOLOGY", "NEWS", "CULTURE", "EXPERIENCE"]
     const filteredBlogs = allBlogs
-        .filter((blog) => blog && blog.date && blog.category)
+        .filter((blog) => blog && blog.date && blog.category && blog.visibility === "Public")
         .sort((a, b) => {
             const categoryComparison = categoryOrder.indexOf(a.category!) - categoryOrder.indexOf(b.category!)
 

@@ -451,15 +451,19 @@
             },
             {
               "type": "string",
-              "value": "Agile Transformation"
+              "value": "AI & Data Analytics"
             },
             {
               "type": "string",
-              "value": "Operations"
+              "value": "Strategy & Transformation"
             },
             {
               "type": "string",
               "value": "Marketing"
+            },
+            {
+              "type": "string",
+              "value": "Operations"
             }
           ]
         },
@@ -731,6 +735,30 @@
               }
             ]
           }
+        },
+        "optional": true
+      },
+      "visibility": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "union",
+          "of": [
+            {
+              "type": "string",
+              "value": "Draft"
+            },
+            {
+              "type": "string",
+              "value": "Public"
+            }
+          ]
+        },
+        "optional": true
+      },
+      "link": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
         },
         "optional": true
       }
@@ -1247,6 +1275,30 @@
               "value": "NONE"
             }
           ]
+        },
+        "optional": true
+      },
+      "visibility": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "union",
+          "of": [
+            {
+              "type": "string",
+              "value": "Draft"
+            },
+            {
+              "type": "string",
+              "value": "Public"
+            }
+          ]
+        },
+        "optional": true
+      },
+      "link": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
         },
         "optional": true
       }

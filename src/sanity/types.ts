@@ -81,7 +81,7 @@ export type Career = {
     location?: "Stuttgart"
     schedule?: "Vollzeit" | "Teilzeit"
     employmentType?: "Festanstellung" | "Praktikum" | "Werkstudent"
-    division?: "Software Engineering" | "Agile Transformation" | "Operations" | "Marketing"
+    division?: "Software Engineering" | "AI & Data Analytics" | "Strategy & Transformation" | "Marketing" | "Operations"
     tags?: Array<string>
     date?: string
     content?: Array<
@@ -119,6 +119,8 @@ export type Career = {
               _key: string
           } & Code)
     >
+    visibility?: "Draft" | "Public"
+    link?: string
 }
 
 export type Blog = {
@@ -190,6 +192,8 @@ export type Blog = {
           } & Code)
     >
     cta?: "CONTACT" | "CAREER" | "BLOG" | "NONE"
+    visibility?: "Draft" | "Public"
+    link?: string
 }
 
 export type Author = {
@@ -322,7 +326,7 @@ export type AllSanitySchemaTypes =
 export declare const internalGroqTypeReferenceTo: unique symbol
 // Source: ./src/sanity/queries.ts
 // Variable: QUERY_ALL_CAREERS
-// Query: *[_type == 'career' && defined(slug) && defined(slug.current)]
+// Query: *[_type == 'career' && defined(slug) && defined(slug.current) && !(division in ["", "null"])]
 export type QUERY_ALL_CAREERSResult = Array<{
     _id: string
     _type: "career"
@@ -336,7 +340,7 @@ export type QUERY_ALL_CAREERSResult = Array<{
     location?: "Stuttgart"
     schedule?: "Teilzeit" | "Vollzeit"
     employmentType?: "Festanstellung" | "Praktikum" | "Werkstudent"
-    division?: "Agile Transformation" | "Marketing" | "Operations" | "Software Engineering"
+    division?: "AI & Data Analytics" | "Marketing" | "Operations" | "Software Engineering" | "Strategy & Transformation"
     tags?: Array<string>
     date?: string
     content?: Array<
@@ -374,6 +378,8 @@ export type QUERY_ALL_CAREERSResult = Array<{
               _key: string
           }
     >
+    visibility?: "Draft" | "Public"
+    link?: string
 }>
 // Variable: QUERY_SPECIFIC_CAREER
 // Query: *  [_type == 'career' && slug.current == $slug][0]  {    ...,    content  }
@@ -390,7 +396,7 @@ export type QUERY_SPECIFIC_CAREERResult = {
     location?: "Stuttgart"
     schedule?: "Teilzeit" | "Vollzeit"
     employmentType?: "Festanstellung" | "Praktikum" | "Werkstudent"
-    division?: "Agile Transformation" | "Marketing" | "Operations" | "Software Engineering"
+    division?: "AI & Data Analytics" | "Marketing" | "Operations" | "Software Engineering" | "Strategy & Transformation"
     tags?: Array<string>
     date?: string
     content: Array<
@@ -428,6 +434,8 @@ export type QUERY_SPECIFIC_CAREERResult = {
               _key: string
           }
     > | null
+    visibility?: "Draft" | "Public"
+    link?: string
 } | null
 // Variable: QUERY_ALL_BLOGS
 // Query: *[_type == 'blog' && defined(slug) && defined(slug.current)]{...,author->}
@@ -533,6 +541,8 @@ export type QUERY_ALL_BLOGSResult = Array<{
           }
     >
     cta?: "BLOG" | "CAREER" | "CONTACT" | "NONE"
+    visibility?: "Draft" | "Public"
+    link?: string
 }>
 // Variable: QUERY_SPECIFIC_BLOG
 // Query: *    [_type == 'blog' && slug.current == $slug][0]    {      ...,      author->{        ...,        profileImg{          asset->        }      },      heroImage{        asset->,      },      content[]{        ...,        _type == "image" => {          ...,          asset->        }      }    }
@@ -685,72 +695,17 @@ export type QUERY_SPECIFIC_BLOGResult = {
           }
     > | null
     cta?: "BLOG" | "CAREER" | "CONTACT" | "NONE"
+    visibility?: "Draft" | "Public"
+    link?: string
 } | null
-
-// Source: ./src/app/career/page.tsx
-// Variable: ALL_CAREER_QUERY
-// Query: *[_type == "career" && !(division in ["", "null"])]
-export type ALL_CAREER_QUERYResult = Array<{
-    _id: string
-    _type: "career"
-    _createdAt: string
-    _updatedAt: string
-    _rev: string
-    title?: string
-    slug?: Slug
-    path?: string
-    description?: string
-    location?: "Stuttgart"
-    schedule?: "Teilzeit" | "Vollzeit"
-    employmentType?: "Festanstellung" | "Praktikum" | "Werkstudent"
-    division?: "Agile Transformation" | "Marketing" | "Operations" | "Software Engineering"
-    tags?: Array<string>
-    date?: string
-    content?: Array<
-        | ({
-              _key: string
-          } & Code)
-        | {
-              children?: Array<{
-                  marks?: Array<string>
-                  text?: string
-                  _type: "span"
-                  _key: string
-              }>
-              style?: "blockquote" | "h4" | "h5" | "normal"
-              listItem?: "bullet" | "number"
-              markDefs?: Array<{
-                  href?: string
-                  _type: "link"
-                  _key: string
-              }>
-              level?: number
-              _type: "block"
-              _key: string
-          }
-        | {
-              asset?: {
-                  _ref: string
-                  _type: "reference"
-                  _weak?: boolean
-                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset"
-              }
-              hotspot?: SanityImageHotspot
-              crop?: SanityImageCrop
-              _type: "image"
-              _key: string
-          }
-    >
-}>
 
 // Query TypeMap
 import "@sanity/client"
 declare module "@sanity/client" {
     interface SanityQueries {
-        "*[_type == 'career' && defined(slug) && defined(slug.current)]": QUERY_ALL_CAREERSResult
+        '*[_type == \'career\' && defined(slug) && defined(slug.current) && !(division in ["", "null"])]': QUERY_ALL_CAREERSResult
         "*\n  [_type == 'career' && slug.current == $slug][0]\n  {\n    ...,\n    content\n  }": QUERY_SPECIFIC_CAREERResult
         "*[_type == 'blog' && defined(slug) && defined(slug.current)]{...,author->}": QUERY_ALL_BLOGSResult
         "*\n    [_type == 'blog' && slug.current == $slug][0]\n    {\n      ...,\n      author->{\n        ...,\n        profileImg{\n          asset->\n        }\n      },\n      heroImage{\n        asset->,\n      },\n      content[]{\n        ...,\n        _type == \"image\" => {\n          ...,\n          asset->\n        }\n      }\n    }\n    ": QUERY_SPECIFIC_BLOGResult
-        '*[_type == "career" && !(division in ["", "null"])]': ALL_CAREER_QUERYResult
     }
 }

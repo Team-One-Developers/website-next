@@ -1,3 +1,4 @@
+import { T1PortableText } from "@/components/T1PortableText"
 import { StructuredData } from "@/components/atoms/StructuredData"
 import Typography from "@/components/atoms/Typography"
 import { PageLayout } from "@/components/layout/PageLayout"
@@ -7,7 +8,6 @@ import { ProfilePicture } from "@/components/molecules/ProfilePicture"
 import { Tags } from "@/components/molecules/Tags"
 import { BlogHeroImage } from "@/components/organisms/BlogHeroImage"
 import { BlogRow } from "@/components/organisms/BlogRow"
-import { T1PortableText } from "@/components/T1PortableText"
 import { PAGE_THEME } from "@/constants"
 import { organization } from "@/data/schemaOrg"
 import { highlightCode } from "@/lib/codeStringToHighlightedHTML"
@@ -47,12 +47,18 @@ export async function generateMetadata({ params }: BlogProps): Promise<Metadata>
         return {}
     }
 
+    const isPublic = blog.visibility === "Public"
+
     return {
         openGraph: {
             images: `/api/og/blog?title=${blog.title}`
         },
         title: blog.title,
-        description: blog.descriptionShort
+        description: blog.descriptionShort,
+        robots: {
+            index: isPublic,
+            follow: isPublic
+        }
     }
 }
 
