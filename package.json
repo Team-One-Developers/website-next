@@ -35,7 +35,8 @@
         "rehype-prism-plus": "^2.0.0",
         "sanity": "^3.71.2",
         "speakingurl": "^14.0.1",
-        "usehooks-ts": "^3.1.0"
+        "usehooks-ts": "^3.1.0",
+        "zod": "^3.24.2"
     },
     "devDependencies": {
         "@eslint/eslintrc": "^3.2.0",
