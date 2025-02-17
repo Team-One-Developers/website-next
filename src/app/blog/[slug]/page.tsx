@@ -1,4 +1,5 @@
 import { T1PortableText } from "@/components/T1PortableText"
+import { DraftMarker } from "@/components/atoms/DraftMarker"
 import { StructuredData } from "@/components/atoms/StructuredData"
 import Typography from "@/components/atoms/Typography"
 import { PageLayout } from "@/components/layout/PageLayout"
@@ -107,13 +108,7 @@ export default async function BlogPage({ params }: BlogProps) {
     return (
         <PageLayout theme={PAGE_THEME.light}>
             <StructuredData data={structuredData} />
-            {isDraft ? (
-                <div className="fixed left-1/2 top-0 z-[1000] w-fit bg-red-600 p-4">
-                    <Typography as="h2" variant="h2">
-                        DRAFT
-                    </Typography>
-                </div>
-            ) : null}
+            {isDraft ? <DraftMarker /> : null}
             <Section>
                 <div className="3xl:grid-cols-[1fr_800px_1fr] flex w-full auto-rows-auto flex-col gap-24 pt-0 lg:grid xl:grid-cols-[800px_1fr] 2xl:grid-cols-[800px_1fr]">
                     {/* {blog.toc && (
