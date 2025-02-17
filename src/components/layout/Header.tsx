@@ -26,7 +26,7 @@ export const Header = ({ theme }: { theme: PageTheme }) => {
     }, [burgerNavigationOpened])
 
     return (
-        <header className="sticky top-0 z-50">
+        <header className="sticky top-0 z-[999]">
             <div
                 className="absolute -z-10 size-full backdrop-blur-sm"
                 style={{ mask: "linear-gradient(#1d1d1d 80%, transparent)" }}

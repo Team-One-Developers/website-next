@@ -80,6 +80,8 @@ export default async function BlogPage({ params }: BlogProps) {
         notFound()
     }
 
+    const isDraft = blog.visibility !== "Public"
+
     const allBlogs = await client.fetch(QUERY_ALL_BLOGS)
     const ptBlocksHighlighted = await highlightCode(blog.content)
 
@@ -105,6 +107,13 @@ export default async function BlogPage({ params }: BlogProps) {
     return (
         <PageLayout theme={PAGE_THEME.light}>
             <StructuredData data={structuredData} />
+            {isDraft ? (
+                <div className="fixed left-1/2 top-0 z-[1000] w-fit bg-red-600 p-4">
+                    <Typography as="h2" variant="h2">
+                        DRAFT
+                    </Typography>
+                </div>
+            ) : null}
             <Section>
                 <div className="3xl:grid-cols-[1fr_800px_1fr] flex w-full auto-rows-auto flex-col gap-24 pt-0 lg:grid xl:grid-cols-[800px_1fr] 2xl:grid-cols-[800px_1fr]">
                     {/* {blog.toc && (
