@@ -39,12 +39,18 @@ export async function generateMetadata({ params }: BlogProps): Promise<Metadata>
         return {}
     }
 
+    const isPublic = blog.visibility === "Public"
+
     return {
         openGraph: {
             images: `/api/og/blog?title=${blog.title}`
         },
         title: blog.title,
-        description: blog.descriptionShort
+        description: blog.descriptionShort,
+        robots: {
+            index: isPublic,
+            follow: isPublic
+        }
     }
 }
 
