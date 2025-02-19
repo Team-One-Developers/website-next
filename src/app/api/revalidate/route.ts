@@ -13,7 +13,7 @@ export async function POST(req: NextRequest) {
         }>(req, process.env.SANITY_HOOK_SECRET)
 
         if (!isValidSignature) {
-            console.log("/revalidate triggered with invalid signature");
+            console.log("/revalidate triggered with invalid signature")
             return new Response("Error", { status: 404 })
         }
 
