@@ -1,5 +1,6 @@
 import { Link } from "@/components/atoms/Link"
 import Typography from "@/components/atoms/Typography"
+import { PAGE_THEME } from "@/constants"
 
 const brandsData = [
     {
@@ -40,39 +41,37 @@ const brandsData = [
     }
 ]
 
-const Brand6 = () => {
+const Brand6 = ({ pageTheme }: { pageTheme: PAGE_THEME }) => {
     return (
-        <>
-            <section className="bg-foreground py-20 lg:py-[120px]">
-                <div className="container mx-auto">
-                    <div className="-mx-4 flex flex-wrap items-center">
-                        <div className="w-full px-4 lg:w-6/12 xl:w-5/12">
-                            <div className="mb-12 lg:mb-0">
-                                <Typography as="h2" variant="h2" className="mb-5 text-background">
-                                    Used by the world&apos;s most popular companies
-                                </Typography>
-                                <Typography as="p" variant="paragraph" className="mb-10 text-background">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque lobortis
-                                    lectus ut dui dapibus vestibulum. Aenean efficitur fermentum vestibulum.
-                                </Typography>
+        <section data-theme={pageTheme} className="bg-foreground py-20 lg:py-[120px]">
+            <div className="container mx-auto">
+                <div className="-mx-4 flex flex-wrap items-center">
+                    <div className="w-full px-4 lg:w-6/12 xl:w-5/12">
+                        <div className="mb-12 lg:mb-0">
+                            <Typography as="h2" variant="h2" className="mb-5 text-background">
+                                Used by the world&apos;s most popular companies
+                            </Typography>
+                            <Typography as="p" variant="paragraph" className="mb-10 text-background">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque lobortis lectus ut
+                                dui dapibus vestibulum. Aenean efficitur fermentum vestibulum.
+                            </Typography>
 
-                                <div className="flex gap-4">
-                                    <Link href="/services" color="primary" label="Know more" />
-                                    <Link href="/contact" color="white" label="Contact Us" />
-                                </div>
-                            </div>
-                        </div>
-                        <div className="w-full px-4 lg:w-6/12 xl:w-7/12">
-                            <div className="flex flex-wrap items-center justify-center">
-                                {brandsData.map((brand, i) => (
-                                    <SingleImage key={i} brand={brand} />
-                                ))}
+                            <div className="flex gap-4">
+                                <Link href="/services" color="primary" label="Know more" />
+                                <Link href="/contact" color="white" label="Contact Us" />
                             </div>
                         </div>
                     </div>
+                    <div className="w-full px-4 lg:w-6/12 xl:w-7/12">
+                        <div className="flex flex-wrap items-center justify-center">
+                            {brandsData.map((brand, i) => (
+                                <SingleImage key={i} brand={brand} />
+                            ))}
+                        </div>
+                    </div>
                 </div>
-            </section>
-        </>
+            </div>
+        </section>
     )
 }
 

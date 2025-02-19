@@ -64,7 +64,7 @@ const Navbar8 = () => {
                                         <LinkItem NavLink="/culture">Kultur</LinkItem>
                                     </ListItem>
                                     <ListItem>
-                                        <LinkItem NavLink="/Blog">Blog</LinkItem>
+                                        <LinkItem NavLink="/blog">Blog</LinkItem>
                                     </ListItem>
                                     <ListItem>
                                         <LinkItem NavLink="/career">Karriere</LinkItem>

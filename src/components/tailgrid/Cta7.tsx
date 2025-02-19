@@ -1,10 +1,11 @@
 import { Link } from "@/components/atoms/Link"
 import Typography from "@/components/atoms/Typography"
+import { PAGE_THEME } from "@/constants"
 
-const Cta7 = () => {
+const Cta7 = ({ pageTheme }: { pageTheme: PAGE_THEME }) => {
     return (
         <>
-            <section className="relative z-10 bg-background">
+            <section data-theme={pageTheme} className="relative z-10 bg-background">
                 <div className="left-0 top-0 h-full lg:absolute lg:w-1/2">
                     <img
                         src="https://cdn.tailgrids.com/2.0/image/marketing/images/cta/image-03.jpg"

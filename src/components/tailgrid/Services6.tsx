@@ -1,10 +1,11 @@
 import Typography from "@/components/atoms/Typography"
+import { PAGE_THEME } from "@/constants"
 import Image from "next/image"
 import Link from "next/link"
 
-const Service6 = () => {
+const Service6 = ({ pageTheme }: { pageTheme: PAGE_THEME }) => {
     return (
-        <section className="bg-background pb-12 pt-20 lg:pb-[90px] lg:pt-[120px]">
+        <section data-theme={pageTheme} className="bg-background pb-12 pt-20 lg:pb-[90px] lg:pt-[120px]">
             <div className="container mx-auto">
                 <div className="-mx-4 mb-10 flex flex-wrap items-end lg:mb-[70px]">
                     <div className="w-full px-4 lg:w-8/12">

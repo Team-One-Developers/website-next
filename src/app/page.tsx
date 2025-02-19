@@ -11,11 +11,11 @@ const Home = () => {
     return (
         <PageLayout theme={PAGE_THEME.light} tickerTheme={PAGE_THEME.light}>
             <Hero8 />
-            <Service6 />
-            <Brand6 />
-            <About1 />
-            <Cta7 />
-            <About5 />
+            <Service6 pageTheme={PAGE_THEME.dark} />
+            <Brand6 pageTheme={PAGE_THEME.dark} />
+            <About1 pageTheme={PAGE_THEME.dark} />
+            <Cta7 pageTheme={PAGE_THEME.dark} />
+            <About5 pageTheme={PAGE_THEME.dark} />
         </PageLayout>
     )
 }
