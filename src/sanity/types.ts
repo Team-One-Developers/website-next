@@ -140,7 +140,7 @@ export type Blog = {
     }
     language?: "Deutsch" | "Englisch"
     tags?: Array<string>
-    category?: "SOFTWARE ENGINEERING" | "METHODOLOGY" | "NEWS" | "CULTURE" | "EXPERIENCE"
+    category?: "SOFTWARE ENGINEERING" | "BUSINESS TECHNOLOGY" | "METHODOLOGY" | "NEWS" | "CULTURE" | "EXPERIENCE"
     descriptionShort?: string
     descriptionLong?: string
     date?: string
@@ -489,7 +489,7 @@ export type QUERY_ALL_BLOGSResult = Array<{
     } | null
     language?: "Deutsch" | "Englisch"
     tags?: Array<string>
-    category?: "CULTURE" | "EXPERIENCE" | "METHODOLOGY" | "NEWS" | "SOFTWARE ENGINEERING"
+    category?: "BUSINESS TECHNOLOGY" | "CULTURE" | "EXPERIENCE" | "METHODOLOGY" | "NEWS" | "SOFTWARE ENGINEERING"
     descriptionShort?: string
     descriptionLong?: string
     date?: string
@@ -609,7 +609,7 @@ export type QUERY_SPECIFIC_BLOGResult = {
     } | null
     language?: "Deutsch" | "Englisch"
     tags?: Array<string>
-    category?: "CULTURE" | "EXPERIENCE" | "METHODOLOGY" | "NEWS" | "SOFTWARE ENGINEERING"
+    category?: "BUSINESS TECHNOLOGY" | "CULTURE" | "EXPERIENCE" | "METHODOLOGY" | "NEWS" | "SOFTWARE ENGINEERING"
     descriptionShort?: string
     descriptionLong?: string
     date?: string

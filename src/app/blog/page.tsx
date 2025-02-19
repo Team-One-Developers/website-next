@@ -31,7 +31,15 @@ const BlogOverview = async () => {
         { cache: process.env.NODE_ENV === "development" ? "no-store" : "force-cache" }
     )
 
-    const categoryOrder = ["SOFTWARE ENGINEERING", "METHODOLOGY", "NEWS", "CULTURE", "EXPERIENCE"]
+    const categoryOrder = [
+        "SOFTWARE ENGINEERING",
+        "BUSINESS TECHNOLOGY",
+        "METHODOLOGY",
+        "NEWS",
+        "CULTURE",
+        "EXPERIENCE"
+    ] as const satisfies Blog["category"][]
+
     const filteredBlogs = allBlogs
         .filter((blog) => blog && blog.date && blog.category && blog.visibility === "Public")
         .sort((a, b) => {

@@ -46,7 +46,7 @@ export const blogType = defineType({
             name: "category",
             type: "string",
             options: {
-                list: ["SOFTWARE ENGINEERING", "METHODOLOGY", "NEWS", "CULTURE", "EXPERIENCE"],
+                list: ["SOFTWARE ENGINEERING", "BUSINESS TECHNOLOGY", "METHODOLOGY", "NEWS", "CULTURE", "EXPERIENCE"],
                 layout: "radio"
             }
         }),
