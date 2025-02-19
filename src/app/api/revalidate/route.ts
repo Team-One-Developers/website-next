@@ -1,6 +1,6 @@
+import { parseBody } from "next-sanity/webhook"
 import { revalidatePath } from "next/cache"
 import { type NextRequest, NextResponse } from "next/server"
-import { parseBody } from "next-sanity/webhook"
 
 /*
     nice starting point: https://victoreke.com/blog/sanity-webhooks-and-on-demand-revalidation-in-nextjs
@@ -10,10 +10,10 @@ export async function POST(req: NextRequest) {
         const { body, isValidSignature } = await parseBody<{
             _type: string
             slug?: string | undefined
-        }>(req, process.env.NEXT_PUBLIC_SANITY_HOOK_SECRET)
+        }>(req, process.env.SANITY_HOOK_SECRET)
 
         if (!isValidSignature) {
-            // to be safe we dont tell the person that they have a bad signature
+            console.log("/revalidate triggered with invalid signature");
             return new Response("Error", { status: 404 })
         }
 
