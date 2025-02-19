@@ -1,7 +1,7 @@
+import { HeaderCombined } from "@/components/tailgrid/HeaderCombined"
 import { PageTheme } from "@/types"
 import { ReactNode } from "react"
 import { Ticker } from "../molecules/Ticker"
-import Header from "./Header"
 
 export const PageLayout = ({
     children,
@@ -15,8 +15,8 @@ export const PageLayout = ({
     tickerTheme?: PageTheme
 }) => {
     return (
-        <div data-theme={theme} className="bg-background text-foreground">
-            <Header theme={theme} />
+        <div data-theme={theme} className="relative w-full bg-background text-foreground">
+            <HeaderCombined />
             <main>{children}</main>
             {ticker && <Ticker theme={tickerTheme} themeSameAsPage={theme === tickerTheme} />}
         </div>

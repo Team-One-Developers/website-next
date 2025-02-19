@@ -57,8 +57,8 @@ const Brand6 = () => {
                                 </Typography>
 
                                 <div className="flex gap-4">
-                                    <Link href="/services" color="secondary" label="Know more" />
-                                    <Link href="/contact" className="text-background" label="Contact Us" />
+                                    <Link href="/services" color="primary" label="Know more" />
+                                    <Link href="/contact" color="white" label="Contact Us" />
                                 </div>
                             </div>
                         </div>

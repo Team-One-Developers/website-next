@@ -9,7 +9,7 @@ import { PAGE_THEME } from "@/constants"
 
 const Home = () => {
     return (
-        <PageLayout theme={PAGE_THEME.dark} tickerTheme={PAGE_THEME.light}>
+        <PageLayout theme={PAGE_THEME.light} tickerTheme={PAGE_THEME.light}>
             <Hero8 />
             <Service6 />
             <Brand6 />
