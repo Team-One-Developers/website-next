@@ -36,9 +36,10 @@ export const careerType = defineType({
             type: "string",
             options: {
                 list: ["Stuttgart"],
-                layout: "radio"
+                layout: "dropdown"
             },
-            initialValue: "Stuttgart"
+            initialValue: "Stuttgart",
+            validation: (Rule) => Rule.required()
         }),
         defineField({
             name: "schedule",
@@ -46,34 +47,38 @@ export const careerType = defineType({
             description: "",
             options: {
                 list: ["Vollzeit", "Teilzeit"],
-                layout: "radio"
-            }
+                layout: "dropdown"
+            },
+            validation: (Rule) => Rule.required()
         }),
         defineField({
             name: "employmentType",
             type: "string",
             options: {
                 list: ["Festanstellung", "Praktikum", "Werkstudent"],
-                layout: "radio"
-            }
+                layout: "dropdown"
+            },
+            validation: (Rule) => Rule.required()
         }),
         defineField({
             name: "division",
             type: "string",
             options: {
                 list: DIVISIONS,
-                layout: "radio"
+                layout: "dropdown"
             },
             validation: (rule) => rule.required()
         }),
         defineField({
             name: "tags",
             type: "array",
-            of: [{ type: "string" }]
+            of: [{ type: "string" }],
+            validation: (Rule) => Rule.required().error("Please add atleast one tag")
         }),
         defineField({
             name: "date",
-            type: "date"
+            type: "date",
+            validation: (Rule) => Rule.required()
         }),
         defineField({
             name: "content",
@@ -96,7 +101,8 @@ export const careerType = defineType({
                 {
                     type: "code"
                 }
-            ]
+            ],
+            validation: (Rule) => Rule.required()
         }),
         defineField({
             name: "visibility",
@@ -105,9 +111,10 @@ export const careerType = defineType({
                 "Wether to display this post publically on the website (in overview pages, search results, etc.) or only under the specific link (See below for the link once published).",
             options: {
                 list: ["Draft", "Public"],
-                layout: "radio"
+                layout: "dropdown"
             },
-            initialValue: "Draft"
+            initialValue: "Draft",
+            validation: (Rule) => Rule.required()
         }),
         defineField({
             name: "link",
