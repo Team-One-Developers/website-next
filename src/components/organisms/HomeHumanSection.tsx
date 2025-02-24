@@ -24,7 +24,7 @@ export const HomeHumanSection = () => {
                     contentText='Wir glauben an Fortschritt durch Technologie, an Nachhaltigkeit durch Qualität sowie an die Prinzipien des agilen Manifests. Und vor allem glauben wir an die "Zielgruppe Mensch", die im Mittelpunkt unseres Handelns stehen muss.'
                     linkLabel="Unsere Kultur"
                     link="/culture"
-                    linkColor="secondary"
+                    linkColor="black"
                     headlineVariant="h1"
                     headlineClassName="mb-4 uppercase font-normal"
                     contentVariant="paragraph"

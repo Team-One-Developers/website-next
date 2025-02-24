@@ -73,7 +73,8 @@ export const TOC = ({ blog, className }: { blog: Blog; className?: string }) => 
                                 <Link
                                     href={`#${heading.toc.slug}`}
                                     label={heading.toc.text}
-                                    color="transparent"
+                                    color="black"
+                                    variant="ghost"
                                     className="w-auto p-1 font-abcdiatype normal-case md:p-1"
                                 />
                             </li>

@@ -115,7 +115,7 @@ const components: PortableTextComponents = {
             return memo(H6)
         })(),
         normal: (() => {
-            const P = (props: any) => <Typography {...props} as="p" variant="paragraph" className="font-inter my-6" />
+            const P = (props: any) => <Typography {...props} as="p" variant="paragraph" className="my-6 font-inter" />
             return memo(P)
         })()
     },

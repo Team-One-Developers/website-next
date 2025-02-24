@@ -152,12 +152,7 @@ export default async function CareerPage({ params }: CareerProps) {
                             />
                         )}
                         <div className={"mt-12 flex flex-col gap-4"}>
-                            <LinkComponent
-                                href="/contact"
-                                color="secondary"
-                                label="JETZT BEWERBEN"
-                                className="md:w-fit"
-                            />
+                            <LinkComponent href="/contact" color="black" label="JETZT BEWERBEN" className="md:w-fit" />
                         </div>
                     </div>
                 }
