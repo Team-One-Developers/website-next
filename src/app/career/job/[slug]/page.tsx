@@ -1,4 +1,5 @@
 import { T1PortableText } from "@/components/T1PortableText"
+import { DraftMarker } from "@/components/atoms/DraftMarker"
 import { Link as LinkComponent } from "@/components/atoms/Link"
 import { StructuredData } from "@/components/atoms/StructuredData"
 import Typography from "@/components/atoms/Typography"
@@ -84,6 +85,8 @@ export default async function CareerPage({ params }: CareerProps) {
         notFound()
     }
 
+    const isDraft = career.visibility !== "Public"
+
     const relatedCareers = mostRelatedCareers({
         allItems: allCareers,
         currentItem: career
@@ -121,7 +124,7 @@ export default async function CareerPage({ params }: CareerProps) {
     return (
         <PageLayout theme={PAGE_THEME.dark}>
             <StructuredData data={structuredData} />
-
+            {isDraft ? <DraftMarker /> : null}
             <TwoColumnsFullScreenContainer
                 left={
                     <div className="sticky top-0 flex flex-col">

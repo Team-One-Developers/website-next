@@ -27,28 +27,32 @@ export const blogType = defineType({
         defineField({
             name: "author",
             type: "reference",
-            to: [{ type: "author" }]
+            to: [{ type: "author" }],
+            validation: (Rule) => Rule.required()
         }),
         defineField({
             name: "language",
             type: "string",
             options: {
                 list: ["Deutsch", "Englisch"],
-                layout: "radio"
-            }
+                layout: "dropdown"
+            },
+            validation: (Rule) => Rule.required()
         }),
         defineField({
             name: "tags",
             type: "array",
-            of: [{ type: "string" }]
+            of: [{ type: "string" }],
+            validation: (Rule) => Rule.required().error("Please add atleast one tag")
         }),
         defineField({
             name: "category",
             type: "string",
             options: {
                 list: ["SOFTWARE ENGINEERING", "BUSINESS TECHNOLOGY", "METHODOLOGY", "NEWS", "CULTURE", "EXPERIENCE"],
-                layout: "radio"
-            }
+                layout: "dropdown"
+            },
+            validation: (Rule) => Rule.required()
         }),
         defineField({
             name: "descriptionShort",
@@ -64,12 +68,14 @@ export const blogType = defineType({
         }),
         defineField({
             name: "date",
-            type: "date"
+            type: "date",
+            validation: (Rule) => Rule.required()
         }),
         defineField({
             name: "heroImage",
             type: "image",
-            description: "This image is the header image for the blog post."
+            description: "This image is the header image for the blog post.",
+            validation: (Rule) => Rule.required()
         }),
         defineField({
             name: "toc",
@@ -101,7 +107,8 @@ export const blogType = defineType({
                 defineArrayMember({
                     type: "code"
                 })
-            ]
+            ],
+            validation: (Rule) => Rule.required()
         }),
         defineField({
             name: "cta",
@@ -110,8 +117,9 @@ export const blogType = defineType({
                 "Call to action: Adds a small section according to the selected type at the end of the post (e.g. a career post).",
             options: {
                 list: ["CONTACT", "CAREER", "BLOG", "NONE"],
-                layout: "radio"
-            }
+                layout: "dropdown"
+            },
+            validation: (Rule) => Rule.required()
         }),
         defineField({
             name: "visibility",
@@ -120,9 +128,10 @@ export const blogType = defineType({
                 "Wether to display this post publically on the website (in overview pages, search results, etc.) or only under the specific link (See below for the link once published).",
             options: {
                 list: ["Draft", "Public"],
-                layout: "radio"
+                layout: "dropdown"
             },
-            initialValue: "Draft"
+            initialValue: "Draft",
+            validation: (Rule) => Rule.required()
         }),
         defineField({
             name: "link",

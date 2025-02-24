@@ -1,6 +1,6 @@
+import { parseBody } from "next-sanity/webhook"
 import { revalidatePath } from "next/cache"
 import { type NextRequest, NextResponse } from "next/server"
-import { parseBody } from "next-sanity/webhook"
 
 /*
     nice starting point: https://victoreke.com/blog/sanity-webhooks-and-on-demand-revalidation-in-nextjs
@@ -10,22 +10,27 @@ export async function POST(req: NextRequest) {
         const { body, isValidSignature } = await parseBody<{
             _type: string
             slug?: string | undefined
-        }>(req, process.env.NEXT_PUBLIC_SANITY_HOOK_SECRET)
+        }>(req, process.env.SANITY_HOOK_SECRET)
 
         if (!isValidSignature) {
-            // to be safe we dont tell the person that they have a bad signature
+            console.log("/revalidate triggered with invalid signature")
             return new Response("Error", { status: 404 })
         }
 
         if (!body?.slug || !body._type || (body._type !== "blog" && body._type !== "career")) {
             return new Response("Bad Request", { status: 400 })
         }
+        const isDraftSlug = body.slug.startsWith("draft-")
 
         const overviewPagePath = `/${body._type === "blog" ? "blog" : "career"}`
-        const specificPath = `/${body._type === "blog" ? "blog" : "career/job"}/${body.slug}`
+
+        // we need to revalidate the possible other variant of the slug to remove old versions
+        const specificPath = `/${body._type === "blog" ? "blog" : "career/job"}/${isDraftSlug ? body.slug.slice(6) : body.slug}`
+        const specificPathDraft = `/${body._type === "blog" ? "blog" : "career/job"}/${isDraftSlug ? body.slug : "draft-" + body.slug}`
 
         await revalidatePath(specificPath)
         await revalidatePath(overviewPagePath)
+        await revalidatePath(specificPathDraft)
 
         // Vercel logging
         console.log(`/revalidate triggered succesfully. Revalidated for slug ${body.slug}`)

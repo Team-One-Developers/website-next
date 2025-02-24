@@ -26,7 +26,8 @@ module.exports = {
         },
         fontFamily: {
             abcdiatype: "var(--font-ABCD)",
-            spacegrotesk: "var(--font-SpaceGrotesk)"
+            spacegrotesk: "var(--font-SpaceGrotesk)",
+            inter: "var(--font-Inter)"
         },
         screens: {
             xs: "400px",

@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+import { T1PortableText } from "@/components/T1PortableText"
+import { DraftMarker } from "@/components/atoms/DraftMarker"
+>>>>>>> main
 import { StructuredData } from "@/components/atoms/StructuredData"
 import { PageLayout } from "@/components/layout/PageLayout"
 import BlogDetails2 from "@/components/tailgrid/BlogDetails2"
@@ -10,8 +15,15 @@ import { QUERY_ALL_BLOGS, QUERY_SPECIFIC_BLOG } from "@/sanity/queries"
 import { QUERY_ALL_BLOGSResult } from "@/sanity/types"
 import "@/styles/headings.css"
 import { Metadata } from "next"
+import { Inter as Inter_Google } from "next/font/google"
 import { notFound } from "next/navigation"
 import type { BlogPosting, WithContext } from "schema-dts"
+
+const Inter = Inter_Google({
+    subsets: ["latin"],
+    variable: "--font-Inter",
+    display: "swap"
+})
 
 interface BlogProps {
     params: Promise<{ slug: string }>
@@ -71,6 +83,8 @@ export default async function BlogPage({ params }: BlogProps) {
     if (!blog) {
         notFound()
     }
+
+    const isDraft = blog.visibility !== "Public"
 
     const allBlogs = await client.fetch(QUERY_ALL_BLOGS)
     const ptBlocksHighlighted = await highlightCode(blog.content)
