@@ -18,9 +18,16 @@ import { client } from "@/sanity/lib/client"
 import { QUERY_ALL_BLOGS, QUERY_SPECIFIC_BLOG } from "@/sanity/queries"
 import { QUERY_ALL_BLOGSResult } from "@/sanity/types"
 import { Metadata } from "next"
+import { Inter as Inter_Google } from "next/font/google"
 import { notFound } from "next/navigation"
 import type { BlogPosting, WithContext } from "schema-dts"
 import "../../../styles/headings.css"
+
+const Inter = Inter_Google({
+    subsets: ["latin"],
+    variable: "--font-Inter",
+    display: "swap"
+})
 
 interface BlogProps {
     params: Promise<{ slug: string }>
@@ -109,7 +116,7 @@ export default async function BlogPage({ params }: BlogProps) {
         <PageLayout theme={PAGE_THEME.light}>
             <StructuredData data={structuredData} />
             {isDraft ? <DraftMarker /> : null}
-            <Section>
+            <Section className={Inter.variable}>
                 <div className="3xl:grid-cols-[1fr_800px_1fr] flex w-full auto-rows-auto flex-col gap-24 pt-0 lg:grid xl:grid-cols-[800px_1fr] 2xl:grid-cols-[800px_1fr]">
                     {/* {blog.toc && (
                         <TOC blog={blog} className="xl:col-start-2 xl:row-start-1 3xl:col-start-1 3xl:row-start-1 " />
