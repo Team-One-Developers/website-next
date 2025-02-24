@@ -139,7 +139,7 @@ export default function About9() {
                     </div>
                 </div>
 
-                <div className="mt-0 lg:-mt-32">
+                <div className="mt-0 lg:-mt-48">
                     <div className="mb-11 w-full max-w-[970px]">
                         <span className="mb-2 block text-lg font-semibold uppercase text-primary">OUR MISSION</span>
                         <Typography as="h1" variant="h1" className="mb-3 text-foreground">

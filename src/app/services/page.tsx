@@ -66,7 +66,7 @@ const Services = () => {
             <Competences />
             <UxDesign className="hidden xl:block" />
             <UxDesignMobile className="block xl:hidden" />
-            <Testimonial3 />
+            <Testimonial3 person="timo" />
         </PageLayout>
     )
 }
