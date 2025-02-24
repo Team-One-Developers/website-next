@@ -1,10 +1,13 @@
 "use client"
 import { Section } from "@/components/layout/Section"
+import cn from "@/lib/cn"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 import React, { ReactNode, useState } from "react"
 
 const Navbar8 = () => {
     const [open, setOpen] = useState(false)
+    const path = usePathname()
 
     return (
         <header className="fixed z-[9999] flex w-full items-center bg-background font-spacegrotesk uppercase">
@@ -27,25 +30,34 @@ const Navbar8 = () => {
                         <div>
                             <button
                                 onClick={() => setOpen(!open)}
-                                className={` ${
-                                    open && "navbarTogglerActive"
-                                } absolute right-4 top-1/2 block -translate-y-1/2 rounded-lg px-3 py-[6px] ring-primary focus:ring-2 lg:hidden`}
+                                className={cn(
+                                    open && "navbarTogglerActive",
+                                    "absolute right-4 top-1/2 block -translate-y-1/2 rounded-lg px-3 py-[6px] ring-primary focus:ring-2 lg:hidden"
+                                )}
                             >
                                 <span className="relative my-[6px] block h-[2px] w-[30px] bg-foreground"></span>
                                 <span className="relative my-[6px] block h-[2px] w-[30px] bg-foreground"></span>
                                 <span className="relative my-[6px] block h-[2px] w-[30px] bg-foreground"></span>
                             </button>
                             <nav
-                                className={`absolute right-4 top-full z-50 w-full max-w-[350px] rounded-lg bg-background py-5 shadow lg:static lg:block lg:w-full lg:max-w-full lg:bg-transparent lg:py-0 lg:shadow-none ${
+                                className={`fixed left-0 top-0 z-[9999] h-screen w-screen rounded-lg bg-background py-5 shadow lg:static lg:block lg:h-auto lg:w-full lg:max-w-full lg:bg-transparent lg:py-0 lg:shadow-none ${
                                     !open && "hidden"
                                 } `}
                             >
-                                <ul className="block lg:flex">
+                                <button
+                                    onClick={() => setOpen(false)}
+                                    className="font-mediu absolute right-8 top-8 size-16 rounded text-3xl text-foreground hover:bg-foreground/10 lg:hidden"
+                                >
+                                    X
+                                </button>
+                                <ul className="lg:height-auto flex size-full flex-col items-center justify-center lg:w-auto lg:max-w-none lg:flex-row lg:items-start lg:justify-start lg:bg-transparent lg:py-0 lg:shadow-none">
                                     <ListItem>
-                                        <LinkItem NavLink="/">Home</LinkItem>
+                                        <LinkItem current={path} NavLink="/">
+                                            Home
+                                        </LinkItem>
                                     </ListItem>
                                     <ListItem>
-                                        <LinkItem dropdown={true} NavLink="/services">
+                                        <LinkItem current={path} dropdown={true} NavLink="/services">
                                             Leistungen
                                         </LinkItem>
                                         <Dropdown>
@@ -61,16 +73,24 @@ const Navbar8 = () => {
                                         </Dropdown>
                                     </ListItem>
                                     <ListItem>
-                                        <LinkItem NavLink="/culture">Kultur</LinkItem>
+                                        <LinkItem current={path} NavLink="/culture">
+                                            Kultur
+                                        </LinkItem>
                                     </ListItem>
                                     <ListItem>
-                                        <LinkItem NavLink="/blog">Blog</LinkItem>
+                                        <LinkItem current={path} NavLink="/blog">
+                                            Blog
+                                        </LinkItem>
                                     </ListItem>
                                     <ListItem>
-                                        <LinkItem NavLink="/career">Karriere</LinkItem>
+                                        <LinkItem current={path} NavLink="/career">
+                                            Karriere
+                                        </LinkItem>
                                     </ListItem>
                                     <ListItem>
-                                        <LinkItem NavLink="/contact">Kontakt</LinkItem>
+                                        <LinkItem current={path} NavLink="/contact">
+                                            Kontakt
+                                        </LinkItem>
                                     </ListItem>
                                 </ul>
                             </nav>
@@ -101,12 +121,14 @@ const ListItem = ({ children }: { children: ReactNode | ReactNode[] }) => {
 }
 
 const LinkItem = ({
+    current,
     children,
     NavLink,
     subMenu,
     setSubMenu,
     dropdown = false
 }: {
+    current: string
     children: React.ReactNode
     NavLink: string
     subMenu?: boolean
@@ -122,10 +144,12 @@ const LinkItem = ({
         <Link
             href={NavLink}
             onClick={dropdown ? handleClick : () => {}}
-            className={`relative flex px-6 py-2 text-base font-medium text-foreground hover:underline lg:inline-flex lg:py-6 lg:pl-0 lg:pr-4 ${
+            className={cn(
+                "relative flex px-6 py-2 text-5xl font-medium text-foreground hover:underline lg:inline-flex lg:py-6 lg:pl-0 lg:pr-4 lg:text-base",
+                current === NavLink && "underline",
                 dropdown &&
-                "after:absolute after:right-5 after:top-1/2 after:mt-[-2px] after:h-2 after:w-2 after:translate-y-[-50%] after:rotate-45 after:border-b-2 after:border-r-2 after:border-current lg:after:right-0"
-            }`}
+                    "after:absolute after:-right-2 after:top-1/2 after:mt-[-2px] after:h-4 after:w-4 after:translate-y-[-50%] after:rotate-45 after:border-b-4 after:border-r-4 after:border-current lg:after:right-0 lg:after:h-2 lg:after:w-2 lg:after:border-b-2 lg:after:border-r-2"
+            )}
         >
             {children}
         </Link>
@@ -135,7 +159,7 @@ const LinkItem = ({
 const Dropdown = ({ children, subMenu }: { children: React.ReactNode; subMenu?: boolean }) => {
     return (
         <div
-            className={`relative left-0 top-full rounded-lg border-foreground bg-background px-4 transition-all group-hover:opacity-100 lg:invisible lg:absolute lg:top-[115%] lg:w-[250px] lg:border lg:p-4 lg:opacity-0 lg:shadow-lg lg:group-hover:visible lg:group-hover:top-full ${subMenu ? "hidden lg:block" : "block"}`}
+            className={`relative rounded-lg border-foreground bg-background px-4 transition-all group-hover:opacity-100 lg:invisible lg:absolute lg:top-[115%] lg:w-[250px] lg:border lg:p-4 lg:opacity-0 lg:shadow-lg lg:group-hover:visible lg:group-hover:top-full ${subMenu ? "hidden lg:block" : "flex flex-col items-center lg:block"}`}
         >
             {children}
         </div>
@@ -146,7 +170,7 @@ const DropdownItem = ({ dropdownLink, dropdownText }: { dropdownLink: string; dr
     return (
         <Link
             href={dropdownLink}
-            className="block rounded px-4 py-[10px] text-sm font-medium text-foreground hover:underline"
+            className="block rounded px-4 py-[10px] text-xl font-medium text-foreground hover:underline lg:text-sm"
         >
             {dropdownText}
         </Link>

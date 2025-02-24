@@ -1,11 +1,9 @@
-import Typography from "@/components/atoms/Typography"
 import { PageLayout } from "@/components/layout/PageLayout"
-import { Section } from "@/components/layout/Section"
-import { BlogRow } from "@/components/organisms/BlogRow"
+import Blog from "@/components/tailgrid/Blog"
 import { PAGE_THEME } from "@/constants"
 import { client } from "@/sanity/lib/client"
 import { QUERY_ALL_BLOGS } from "@/sanity/queries"
-import { Blog, QUERY_ALL_BLOGSResult } from "@/sanity/types"
+import { Blog as BlogType, QUERY_ALL_BLOGSResult } from "@/sanity/types"
 import { compareDesc } from "date-fns"
 import { Metadata } from "next"
 
@@ -14,7 +12,7 @@ export const metadata: Metadata = {
     description: "Inside our creative minds."
 }
 
-const fitsCategory = (blog: Blog, categories: string[]): boolean => {
+const fitsCategory = (blog: BlogType, categories: string[]): boolean => {
     if (!blog.category) return false
 
     if (categories.includes(blog.category)) {
@@ -38,7 +36,7 @@ const BlogOverview = async () => {
         "NEWS",
         "CULTURE",
         "EXPERIENCE"
-    ] as const satisfies Blog["category"][]
+    ] as const satisfies BlogType["category"][]
 
     const filteredBlogs = allBlogs
         .filter((blog) => blog && blog.date && blog.category && blog.visibility === "Public")
@@ -54,16 +52,7 @@ const BlogOverview = async () => {
 
     return (
         <PageLayout theme={PAGE_THEME.light}>
-            <Section>
-                <Typography as="h1" variant="h1" className="font-medium">
-                    Team One Developers Blog
-                </Typography>
-            </Section>
-            <Section className="py-0 md:py-0">
-                <div className="flex flex-col gap-4">
-                    <BlogRow blogs={filteredBlogs} />
-                </div>
-            </Section>
+            <Blog blogs={filteredBlogs} />
         </PageLayout>
     )
 }

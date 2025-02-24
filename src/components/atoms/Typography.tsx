@@ -7,8 +7,8 @@ export const typographyVariants = tv({
         variant: {
             h1: "font-spacegrotesk text-3xl font-normal uppercase leading-110 lg:text-5xl",
             h2: "font-spacegrotesk text-2xl font-medium uppercase leading-110 lg:text-4xl",
-            h3: "font-spacegrotesk text-xl font-medium leading-110 lg:text-3xl",
-            h4: "font-spacegrotesk text-lg font-medium leading-110 lg:text-2xl",
+            h3: "font-spacegrotesk text-xl font-medium uppercase leading-110 lg:text-3xl",
+            h4: "font-spacegrotesk text-lg font-medium uppercase leading-110 lg:text-2xl",
             h5: "font-spacegrotesk text-base font-medium leading-110 lg:text-xl",
             h6: "font-spacegrotesk text-sm font-medium leading-110 lg:text-lg",
             link: "font-abcdiatype text-base underline cursor-pointer",

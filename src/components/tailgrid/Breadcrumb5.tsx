@@ -7,7 +7,8 @@ import React from "react"
 const Breadcrumb5 = () => {
     const path = usePathname()
 
-    if (path === "/") {
+    // dont show breadcrumbs on level 0/1 pages
+    if (path.split("/").length <= 2) {
         return null
     }
 

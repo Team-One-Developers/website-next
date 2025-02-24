@@ -10,6 +10,7 @@ import { ReferencesSlider } from "@/components/organisms/ReferencesSlider"
 import { TechStacks } from "@/components/organisms/TechStacks"
 import { UxDesign } from "@/components/organisms/UxDesign"
 import { UxDesignMobile } from "@/components/organisms/UxDesignMobile"
+import Testimonial3 from "@/components/tailgrid/Testimonial3"
 import { PAGE_THEME } from "@/constants"
 import { Metadata } from "next"
 import OfficeImg from "/public/images/optimized/t1d_nov22_149_optimized.webp"
@@ -65,6 +66,7 @@ const Services = () => {
             <Competences />
             <UxDesign className="hidden xl:block" />
             <UxDesignMobile className="block xl:hidden" />
+            <Testimonial3 />
         </PageLayout>
     )
 }

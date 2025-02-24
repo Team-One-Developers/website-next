@@ -7,7 +7,8 @@ export const buttonVariants = tv({
     variants: {
         variant: {
             outline: "border",
-            solid: ""
+            solid: "",
+            ghost: ""
         },
         color: {
             primary: "bg-primary text-t1-darkGray",
@@ -34,6 +35,21 @@ export const buttonVariants = tv({
             variant: "outline",
             color: "white",
             className: "border-white text-white bg-transparent"
+        },
+        {
+            variant: "ghost",
+            color: "primary",
+            className: "bg-transparent text-primary hover:bg-primary/10 "
+        },
+        {
+            variant: "ghost",
+            color: "black",
+            className: "bg-transparent text-black hover:bg-black/10"
+        },
+        {
+            variant: "ghost",
+            color: "white",
+            className: "bg-transparent text-white hover:bg-black/ "
         }
     ],
     defaultVariants: {

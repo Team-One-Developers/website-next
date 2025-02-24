@@ -22,13 +22,14 @@ const BlogDetails2 = async ({ blog, highlightedContent, relatedBlogs }: BlogDeta
                         <div className="w-full px-4">
                             <div className="relative z-20 mb-[60px] overflow-hidden rounded">
                                 <Image
-                                    src={blog?.heroImage?.asset?.url ?? ""}
+                                    // @ts-expect-error - next image prefers a null instead of an empty string
+                                    src={blog?.heroImage?.asset?.url ?? null}
                                     alt="Hero Image"
                                     width={blog?.heroImage?.asset?.metadata?.dimensions?.width ?? 0}
                                     height={blog?.heroImage?.asset?.metadata?.dimensions?.height ?? 0}
                                     className="lg:min-h-auto min-h-[250px] w-full object-cover"
                                 />
-                                <div className="from-foreground/70 absolute left-0 top-0 z-10 flex h-full w-full items-end bg-gradient-to-t to-transparent">
+                                <div className="absolute left-0 top-0 z-10 flex h-full w-full items-end bg-gradient-to-t from-foreground/70 to-transparent">
                                     <div className="flex flex-wrap items-center p-5 pb-4 sm:p-8 sm:pb-4">
                                         <div className="mb-4 mr-5 flex items-center md:mr-10">
                                             <div className="mr-4 h-10 w-10 overflow-hidden rounded-full">
@@ -258,7 +259,7 @@ const BlogDetails2 = async ({ blog, highlightedContent, relatedBlogs }: BlogDeta
                                                 <input
                                                     type="email"
                                                     placeholder="Your email address"
-                                                    className="placeholder-foreground/30 mb-4 w-full rounded border border-transparent bg-background bg-opacity-20 p-3 text-center text-sm font-medium text-foreground outline-none focus:border-background focus-visible:shadow-none"
+                                                    className="mb-4 w-full rounded border border-transparent bg-background bg-opacity-20 p-3 text-center text-sm font-medium text-foreground placeholder-foreground/30 outline-none focus:border-background focus-visible:shadow-none"
                                                 />
                                                 <input
                                                     type="submit"
@@ -619,7 +620,7 @@ const PopularArticleItem = ({
     authorName: string
 }) => {
     return (
-        <Link href={href} className="hover:bg-foreground/5 w-full rounded px-4 pt-5 md:w-1/2 lg:w-full">
+        <Link href={href} className="w-full rounded px-4 pt-5 hover:bg-foreground/5 md:w-1/2 lg:w-full">
             <div className="border-stroke flex w-full items-center border-b pb-5">
                 <div className="mr-5 h-20 w-full max-w-[80px] overflow-hidden rounded-full">
                     <Image
@@ -657,7 +658,7 @@ const RelatedArticleItem = ({
     href: string
 }) => {
     return (
-        <Link href={href} className="hover:bg-foreground/5 w-full rounded px-4 pt-4 md:w-1/2 lg:w-1/3">
+        <Link href={href} className="w-full rounded px-4 pt-4 hover:bg-foreground/5 md:w-1/2 lg:w-1/3">
             <div className="mb-10 w-full">
                 <div className="mb-8 overflow-hidden rounded">
                     <Image
