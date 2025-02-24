@@ -1,8 +1,9 @@
 "use client"
 
 import { UX_CATEGORIES } from "@/constants"
+import cn from "@/lib/cn"
 import { ReactNode, useState } from "react"
-import { twJoin, twMerge } from "tailwind-merge"
+import { twJoin } from "tailwind-merge"
 import { Image } from "../atoms/Image"
 import { ImageMask } from "../atoms/ImageMask"
 import Typography from "../atoms/Typography"
@@ -14,7 +15,7 @@ export const UxDesign = ({ className }: { className: string }) => {
     const CategoryButton = ({ category }: { category: UX_CATEGORIES }) => {
         return (
             <button
-                className={twMerge(
+                className={cn(
                     "relative m-0 cursor-pointer border-none px-1 py-4 uppercase text-muted-dark",
                     activeCategory === category &&
                         "text-primary after:absolute after:left-[50%] after:h-[5px] after:w-[5px] after:-translate-x-[50%] after:translate-y-[425%] after:rounded-full after:bg-primary"
@@ -29,7 +30,7 @@ export const UxDesign = ({ className }: { className: string }) => {
     const Bubble = ({ active, text }: { active: boolean; text: string }) => {
         return (
             <div
-                className={twMerge(
+                className={cn(
                     "box-border flex h-[180px] w-[140px] items-center justify-center rounded-[40%] bg-primary p-[20px]",
                     active ? "rounded-[39%] border-[5px] border-[#38d38dc5]" : "brightness-[25%]"
                 )}

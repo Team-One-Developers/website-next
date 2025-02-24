@@ -1,7 +1,7 @@
 "use client"
 
+import cn from "@/lib/cn"
 import { useEffect, useState } from "react"
-import { twMerge } from "tailwind-merge"
 import Typography from "../atoms/Typography"
 
 interface AccordionProps {
@@ -22,7 +22,7 @@ export const Accordion = (props: AccordionProps) => {
 
     return (
         <details
-            className={twMerge(
+            className={cn(
                 "group relative mt-0 cursor-pointer overflow-hidden border-t-2 border-white p-2 text-white last:border-b-2 hover:bg-t1-darkGray md:p-4",
                 open ? "py-9 text-primary" : "hover:py-9 hover:text-primary"
             )}
@@ -45,7 +45,7 @@ export const Accordion = (props: AccordionProps) => {
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="228.99 210.87 137.3 173.53"
                     fill="currentColor"
-                    className={twMerge(
+                    className={cn(
                         "absolute left-[2.5%] w-[100px] translate-y-[100%] -rotate-[10deg] text-primary opacity-0",
                         !open &&
                             "2xl:group-hover:translate-y-[10%] 2xl:group-hover:-rotate-[10deg] 2xl:group-hover:opacity-100"

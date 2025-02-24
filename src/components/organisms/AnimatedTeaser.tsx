@@ -1,7 +1,8 @@
 "use client"
 
+import cn from "@/lib/cn"
 import { useInView } from "react-intersection-observer"
-import { twJoin, twMerge } from "tailwind-merge"
+import { twJoin } from "tailwind-merge"
 import Typography from "../atoms/Typography"
 import "./style.css"
 
@@ -28,7 +29,7 @@ export const AnimatedTeaser = ({ className, innerClassName }: AnimatedTeaserProp
         >
             <div className="relative mx-auto my-0 flex aspect-[1.5] w-full max-w-[1680px] items-center justify-center">
                 <div
-                    className={twMerge(
+                    className={cn(
                         "bgDancers absolute inset-0 h-full w-full bg-primary transition-all duration-[1500ms]",
                         animatedTeaserInView ? "bg-white" : "bg-primary",
                         innerClassName

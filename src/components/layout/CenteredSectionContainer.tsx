@@ -1,5 +1,5 @@
+import cn from "@/lib/cn"
 import { ReactNode } from "react"
-import { twMerge } from "tailwind-merge"
 
 type CenteredSectionContainerProps = {
     left: ReactNode
@@ -18,16 +18,16 @@ export const CenteredSectionContainer = ({
 }: CenteredSectionContainerProps) => {
     return (
         <div
-            className={twMerge(
+            className={cn(
                 "box-border grid w-full grid-cols-1 justify-center gap-8 bg-transparent px-[2vw] py-8 md:grid-cols-2",
                 className
             )}
         >
             <div>
-                <div className={twMerge("w-full", leftComponentClass)}>{left}</div>
+                <div className={cn("w-full", leftComponentClass)}>{left}</div>
             </div>
             <div className="flex items-center">
-                <div className={twMerge("w-full", rightComponentClass)}>{right}</div>
+                <div className={cn("w-full", rightComponentClass)}>{right}</div>
             </div>
         </div>
     )

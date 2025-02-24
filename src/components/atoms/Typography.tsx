@@ -1,5 +1,5 @@
+import cn from "@/lib/cn"
 import { ReactNode } from "react"
-import { twMerge } from "tailwind-merge"
 import { tv, VariantProps } from "tailwind-variants"
 
 export const typographyVariants = tv({
@@ -38,7 +38,7 @@ export function Typography({ as, variant, children, className, style, id, onClic
         <Component
             id={id}
             style={style}
-            className={twMerge(typographyVariants({ variant }), className)}
+            className={cn(typographyVariants({ variant }), className)}
             onClick={onClick}
             {...props}
         >

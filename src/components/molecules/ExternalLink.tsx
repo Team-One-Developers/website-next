@@ -1,5 +1,5 @@
+import cn from "@/lib/cn"
 import Link from "next/link"
-import { twMerge } from "tailwind-merge"
 import Typography from "../atoms/Typography"
 import Icon from "./Icon"
 
@@ -17,10 +17,10 @@ export const ExternalLink = ({
     return (
         <Typography
             as="div"
-            className={twMerge("mt-0 flex w-fit gap-2 border-b border-primary font-normal text-white", className)}
+            className={cn("mt-0 flex w-fit gap-2 border-b border-primary font-normal text-white", className)}
             variant="h3"
         >
-            <Icon name="arrow_to_top_right" className={twMerge("text-primary", arrowClass)} width={40} height={40} />
+            <Icon name="arrow_to_top_right" className={cn("text-primary", arrowClass)} width={40} height={40} />
             <Link href={href} className="self-end pb-3">
                 {name}
             </Link>
