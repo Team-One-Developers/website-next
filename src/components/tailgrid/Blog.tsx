@@ -29,6 +29,7 @@ const Blog = ({ blogs }: { blogs: QUERY_ALL_BLOGSResult }) => {
                         {blogs.map((blog) => {
                             return (
                                 <BlogCard
+                                    key={blog.slug?.current}
                                     date={blog.date ?? new Date().toLocaleDateString()}
                                     CardTitle={blog.title ?? ""}
                                     CardDescription={blog.descriptionShort ?? ""}

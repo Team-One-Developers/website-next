@@ -106,7 +106,12 @@ export default async function BlogPage({ params }: BlogProps) {
     return (
         <PageLayout theme={PAGE_THEME.light}>
             <StructuredData data={structuredData} />
-            <BlogDetails2 blog={blog} highlightedContent={ptBlocksHighlighted} relatedBlogs={relatedBlogs} />
+            <BlogDetails2
+                blog={blog}
+                highlightedContent={ptBlocksHighlighted}
+                relatedBlogs={relatedBlogs}
+                className={Inter.variable}
+            />
         </PageLayout>
     )
 }

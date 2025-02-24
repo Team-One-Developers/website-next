@@ -1,5 +1,6 @@
 import { T1PortableText } from "@/components/T1PortableText"
 import Typography from "@/components/atoms/Typography"
+import { Section } from "@/components/layout/Section"
 import { ResultBlogElement } from "@/components/molecules/BlogArticle"
 import { formatDate } from "@/lib/formateDate"
 import { QUERY_ALL_BLOGSResult, QUERY_SPECIFIC_BLOGResult } from "@/sanity/types"
@@ -11,12 +12,13 @@ export interface BlogDetails2Props {
     blog: QUERY_SPECIFIC_BLOGResult
     highlightedContent: any[]
     relatedBlogs: QUERY_ALL_BLOGSResult
+    className?: string
 }
 
-const BlogDetails2 = async ({ blog, highlightedContent, relatedBlogs }: BlogDetails2Props) => {
+const BlogDetails2 = async ({ blog, highlightedContent, relatedBlogs, className }: BlogDetails2Props) => {
     return (
         <>
-            <section className="bg-background pb-10 pt-20 lg:pb-20 lg:pt-[120px]">
+            <Section className={className}>
                 <div className="container mx-auto">
                     <div className="-mx-4 flex flex-wrap justify-center">
                         <div className="w-full px-4">
@@ -601,7 +603,7 @@ const BlogDetails2 = async ({ blog, highlightedContent, relatedBlogs }: BlogDeta
                         ))}
                     </div>
                 </div>
-            </section>
+            </Section>
         </>
     )
 }
