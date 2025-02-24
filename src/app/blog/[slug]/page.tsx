@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-=======
-import { T1PortableText } from "@/components/T1PortableText"
-import { DraftMarker } from "@/components/atoms/DraftMarker"
->>>>>>> main
 import { StructuredData } from "@/components/atoms/StructuredData"
 import { PageLayout } from "@/components/layout/PageLayout"
 import BlogDetails2 from "@/components/tailgrid/BlogDetails2"
