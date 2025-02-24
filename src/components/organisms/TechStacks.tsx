@@ -1,8 +1,9 @@
 "use client"
 
+import cn from "@/lib/cn"
 import { useState } from "react"
 import { useInView } from "react-intersection-observer"
-import { twJoin, twMerge } from "tailwind-merge"
+import { twJoin } from "tailwind-merge"
 import Typography from "../atoms/Typography"
 import { Section } from "../layout/Section"
 import Icon, { IconProps } from "../molecules/Icon"
@@ -51,7 +52,7 @@ export const TechStacks = () => {
                         <Typography
                             as="button"
                             variant="subtitle"
-                            className={twMerge(
+                            className={cn(
                                 "flex flex-col items-center pb-0 pt-4 font-spacegrotesk uppercase md:p-4",
                                 isBackendActive ? "text-muted" : 'text-black after:text-xl after:content-["⦁"]'
                             )}
@@ -63,7 +64,7 @@ export const TechStacks = () => {
                         <Typography
                             as="button"
                             variant="subtitle"
-                            className={twMerge(
+                            className={cn(
                                 "flex flex-col items-center pb-0 pt-4 font-spacegrotesk uppercase md:p-4",
                                 isBackendActive ? 'text-primary after:text-xl after:content-["⦁"]' : "text-t1-darkGray"
                             )}

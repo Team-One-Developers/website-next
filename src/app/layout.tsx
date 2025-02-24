@@ -4,7 +4,7 @@ import { organization } from "@/data/schemaOrg"
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Metadata } from "next"
-import { Space_Grotesk } from "next/font/google"
+import { Inter as Inter_Google, Space_Grotesk } from "next/font/google"
 import localFont from "next/font/local"
 import { twJoin } from "tailwind-merge"
 import "../styles/global.css"
@@ -30,6 +30,12 @@ const ABCD = localFont({
 const SpaceGrotesk = Space_Grotesk({
     subsets: ["latin"],
     variable: "--font-SpaceGrotesk",
+    display: "swap"
+})
+
+const Inter = Inter_Google({
+    subsets: ["latin"],
+    variable: "--font-Inter",
     display: "swap"
 })
 
@@ -72,7 +78,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <html lang="de">
-            <body className={twJoin(ABCD.variable, SpaceGrotesk.variable, "bg-black")}>
+            <body className={twJoin(ABCD.variable, SpaceGrotesk.variable, Inter.variable, "bg-black")}>
                 {children}
                 <StructuredData data={organization} />
                 <Analytics />

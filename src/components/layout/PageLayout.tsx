@@ -1,6 +1,6 @@
+import cn from "@/lib/cn"
 import { PageTheme } from "@/types"
 import { ReactNode } from "react"
-import { twMerge } from "tailwind-merge"
 import { PAGE_THEME } from "../../constants"
 import { Ticker } from "../molecules/Ticker"
 import Footer from "./Footer"
@@ -22,7 +22,7 @@ export const PageLayout = ({
     return (
         <div data-theme={pageTheme} className="bg-background text-foreground">
             <Header theme={pageTheme} />
-            <main className={twMerge(footer && "mb-16")}>{children}</main>
+            <main className={cn(footer && "mb-16")}>{children}</main>
             {ticker && <Ticker theme={pageTheme} />}
             {footer && <Footer />}
         </div>

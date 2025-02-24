@@ -1,4 +1,4 @@
-import { twMerge } from "tailwind-merge"
+import cn from "@/lib/cn"
 import Typography from "../atoms/Typography"
 
 export const JobType = ({
@@ -13,7 +13,7 @@ export const JobType = ({
     className?: string
 }) => {
     return (
-        <div className={twMerge("mt-12 flex w-full flex-wrap justify-between gap-4 sm:flex-nowrap", className)}>
+        <div className={cn("mt-12 flex w-full flex-wrap justify-between gap-4 sm:flex-nowrap", className)}>
             <div className="flex w-1/2 flex-col gap-2">
                 <Typography variant="paragraph" className="my-0 uppercase">
                     (Type)

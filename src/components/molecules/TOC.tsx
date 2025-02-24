@@ -1,8 +1,9 @@
-import { twJoin, twMerge } from "tailwind-merge"
+import cn from "@/lib/cn"
+import { slugify } from "@/lib/slugify"
+import { Blog } from "@/sanity/types"
+import { twJoin } from "tailwind-merge"
 import { Link } from "../atoms/Link"
 import Typography from "../atoms/Typography"
-import { Blog } from "@/sanity/types"
-import { slugify } from "@/lib/slugify"
 
 type Heading = {
     level: number
@@ -42,7 +43,7 @@ export const TOC = ({ blog, className }: { blog: Blog; className?: string }) => 
     const lowest = Math.min(...headingsWithAddedTocData.map((heading: any) => heading.toc.headingLevelNumeric))
 
     return (
-        <div className={twMerge("w-fit", className)}>
+        <div className={cn("w-fit", className)}>
             <div className="sticky top-[140px] rounded bg-white p-4">
                 <Typography as="h3" variant="h4" className="uppercase">
                     Outline
