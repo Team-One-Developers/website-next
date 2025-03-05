@@ -30,7 +30,7 @@ export const Footer = () => {
                 <div className="block pb-8 md:grid md:grid-flow-row md:grid-cols-[2.5fr_1fr_1fr_1fr] md:grid-rows-[1fr_1fr] md:gap-x-3 md:gap-y-5 md:text-left">
                     <div className="md:row-span-2 md:mb-0 md:self-end md:justify-self-start">
                         <span className={navigationSectionHeaderCSS}>
-                            &copy; 2024 Team One Developers. All Rights Reserved.
+                            &copy; {new Date().getFullYear()} Team One Developers. All Rights Reserved.
                         </span>
                     </div>
 

@@ -85,9 +85,10 @@ export default async function CareerPage({ params }: CareerProps) {
     }
 
     const isDraft = career.visibility !== "Public"
+    const publicCareers = allCareers.filter((career) => career.visibility === "Public")
 
     const relatedCareers = mostRelatedCareers({
-        allItems: allCareers,
+        allItems: publicCareers,
         currentItem: career
     })
 

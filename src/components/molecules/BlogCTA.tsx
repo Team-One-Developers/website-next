@@ -24,7 +24,7 @@ type BlogCTAValueObject = {
     }
 }
 
-const BlogCTAValues = (allCareers: QUERY_ALL_CAREERSResult): BlogCTAValueObject => {
+const BlogCTAValues = (career: QUERY_ALL_CAREERSResult[number]): BlogCTAValueObject => {
     return {
         BLOG: {
             icon: "globe",
@@ -48,9 +48,9 @@ const BlogCTAValues = (allCareers: QUERY_ALL_CAREERSResult): BlogCTAValueObject 
             icon: "person_small",
             iconSize: 18,
             subtitle: "Career",
-            headline: allCareers[0].title || "",
+            headline: career.title || "",
             text: "",
-            link: allCareers[0].slug?.current || "",
+            link: career.slug?.current || "",
             linkLabel: "Zur Stellenanzeige"
         }
     }
@@ -67,7 +67,13 @@ export const BlogCTA = async ({ variant, className }: BlogCTAProps) => {
         {},
         { cache: process.env.NODE_ENV === "development" ? "no-store" : "force-cache" }
     )
-    const blogCTAValues = BlogCTAValues(allCareers)
+    const firstCareer = allCareers.filter((c) => c.visibility === "Public")[0]
+
+    if (!firstCareer && variant === "CAREER") {
+        return null
+    }
+
+    const blogCTAValues = BlogCTAValues(firstCareer)
 
     return (
         <article
@@ -107,9 +113,9 @@ export const BlogCTA = async ({ variant, className }: BlogCTAProps) => {
 
             {variant === "CAREER" ? (
                 <JobType
-                    employmentType={allCareers[0].employmentType!}
-                    schedule={allCareers[0].schedule!}
-                    location={allCareers[0].location!}
+                    employmentType={firstCareer.employmentType!}
+                    schedule={firstCareer.schedule!}
+                    location={firstCareer.location!}
                     className="m-0 mb-6 text-white lg:w-1/2"
                 />
             ) : (
