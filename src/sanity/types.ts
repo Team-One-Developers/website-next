@@ -293,6 +293,15 @@ export type SanityImageMetadata = {
     isOpaque?: boolean
 }
 
+export type MediaTag = {
+    _id: string
+    _type: "media.tag"
+    _createdAt: string
+    _updatedAt: string
+    _rev: string
+    name?: Slug
+}
+
 export type Slug = {
     _type: "slug"
     current?: string
@@ -321,6 +330,7 @@ export type AllSanitySchemaTypes =
     | SanityImageAsset
     | SanityAssetSourceData
     | SanityImageMetadata
+    | MediaTag
     | Slug
     | Code
 export declare const internalGroqTypeReferenceTo: unique symbol

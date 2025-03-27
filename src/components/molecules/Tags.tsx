@@ -76,16 +76,18 @@ export const Tags = forwardRef<HTMLUListElement, TagsProps>(
                         {blog?.category}
                     </Typography>
                 ) : (
-                    blog?.tags?.map((tag, index) => (
-                        <Typography
-                            as="li"
-                            variant="description"
-                            key={index}
-                            className={cn(tagsVariants({ size, color }).li(), className)}
-                        >
-                            {tag}
-                        </Typography>
-                    ))
+                    blog?.tags
+                        ?.filter((tag) => tag)
+                        .map((tag, index) => (
+                            <Typography
+                                as="li"
+                                variant="description"
+                                key={index}
+                                className={cn(tagsVariants({ size, color }).li(), className)}
+                            >
+                                {tag}
+                            </Typography>
+                        ))
                 )}
             </ul>
         )
