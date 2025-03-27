@@ -31,7 +31,7 @@ const BlogCTAValues = (career: QUERY_ALL_CAREERSResult[number]): BlogCTAValueObj
             iconSize: 18,
             subtitle: "Blog",
             headline: "Auf der Suche nach mehr spannenden Artikeln?",
-            text: "Dann schau mal hier vorbei:",
+            text: "Dann schau gerne mal hier vorbei:",
             link: "/blog",
             linkLabel: "Blog"
         },
@@ -76,60 +76,65 @@ export const BlogCTA = async ({ variant, className }: BlogCTAProps) => {
     const blogCTAValues = BlogCTAValues(firstCareer)
 
     return (
-        <article
-            className={cn("relative z-0 rounded-md p-8 transition-shadow hover:shadow-md", className)}
-            aria-label={blogCTAValues[variant].linkLabel}
-        >
-            <Link
-                href={blogCTAValues[variant].link}
-                className="absolute left-0 top-0 z-10 size-full"
-                aria-labelledby={`link-${blogCTAValues[variant].subtitle}`}
-                aria-hidden
-                tabIndex={-1}
-            />
-            <Image
-                src={CTA_BG}
-                className="absolute left-0 top-0 -z-10 rounded-md opacity-[90%]"
-                alt="Background Image"
-                fill
-                placeholder="blur"
-            />
-            <div className="mb-4 flex items-center">
-                <Icon
-                    name={blogCTAValues[variant].icon}
-                    height={blogCTAValues[variant].iconSize}
-                    width={blogCTAValues[variant].iconSize}
-                    className="mr-2"
-                    fill="white"
+        <div className="flex flex-col gap-4">
+            {/* <Typography as="h3" variant="h3" className="uppercase">
+                Dein Job bei Team One Developers?
+            </Typography> */}
+            <article
+                className={cn("relative z-0 rounded-md p-8 transition-shadow hover:shadow-md", className)}
+                aria-label={blogCTAValues[variant].linkLabel}
+            >
+                <Link
+                    href={blogCTAValues[variant].link}
+                    className="absolute left-0 top-0 z-10 size-full"
+                    aria-labelledby={`link-${blogCTAValues[variant].subtitle}`}
+                    aria-hidden
+                    tabIndex={-1}
                 />
-                <Typography className="uppercase text-white" variant="description">
-                    {blogCTAValues[variant].subtitle}
-                </Typography>
-            </div>
-
-            <Typography className="mb-8 uppercase text-white" as="h2" variant="h3">
-                {blogCTAValues[variant].headline}
-            </Typography>
-
-            {variant === "CAREER" ? (
-                <JobType
-                    employmentType={firstCareer.employmentType!}
-                    schedule={firstCareer.schedule!}
-                    location={firstCareer.location!}
-                    className="m-0 mb-6 text-white lg:w-1/2"
+                <Image
+                    src={CTA_BG}
+                    className="absolute left-0 top-0 -z-10 rounded-md opacity-[90%]"
+                    alt="Background Image"
+                    fill
+                    placeholder="blur"
                 />
-            ) : (
-                <Typography className="m-0 mb-6" variant="paragraph">
-                    {blogCTAValues[variant].text}
-                </Typography>
-            )}
+                <div className="mb-4 flex items-center">
+                    <Icon
+                        name={blogCTAValues[variant].icon}
+                        height={blogCTAValues[variant].iconSize}
+                        width={blogCTAValues[variant].iconSize}
+                        className="mr-2"
+                        fill="white"
+                    />
+                    <Typography className="uppercase text-white" variant="description">
+                        {blogCTAValues[variant].subtitle}
+                    </Typography>
+                </div>
 
-            <LinkComponent
-                id={`link-${blogCTAValues[variant].subtitle}`}
-                href={blogCTAValues[variant].link}
-                label={blogCTAValues[variant].linkLabel}
-                className="relative z-20"
-            />
-        </article>
+                <Typography className="mb-8 uppercase text-white" as="h2" variant="h3">
+                    {blogCTAValues[variant].headline}
+                </Typography>
+
+                {variant === "CAREER" ? (
+                    <JobType
+                        employmentType={firstCareer.employmentType!}
+                        schedule={firstCareer.schedule!}
+                        location={firstCareer.location!}
+                        className="m-0 mb-6 text-white lg:w-1/2"
+                    />
+                ) : (
+                    <Typography className="m-0 mb-6" variant="paragraph">
+                        {blogCTAValues[variant].text}
+                    </Typography>
+                )}
+
+                <LinkComponent
+                    id={`link-${blogCTAValues[variant].subtitle}`}
+                    href={blogCTAValues[variant].link}
+                    label={blogCTAValues[variant].linkLabel}
+                    className="relative z-20"
+                />
+            </article>
+        </div>
     )
 }

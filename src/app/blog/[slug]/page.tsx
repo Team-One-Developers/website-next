@@ -168,12 +168,7 @@ export default async function BlogPage({ params }: BlogProps) {
             </Section>
             {blog.cta !== "NONE" && (
                 <Section>
-                    <div className="flex flex-col gap-4">
-                        <Typography as="h3" variant="h3" className="uppercase">
-                            Dein Job bei Team One Developers?
-                        </Typography>
-                        <BlogCTA variant={blog?.cta!} />
-                    </div>
+                    <BlogCTA variant={blog?.cta!} />
                 </Section>
             )}
         </PageLayout>

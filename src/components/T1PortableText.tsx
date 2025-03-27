@@ -122,6 +122,17 @@ const components: PortableTextComponents = {
             )
             return memo(H6)
         })(),
+        blockquote: (() => {
+            const Blockquote = (props: any) => (
+                <Typography
+                    {...props}
+                    as="blockquote"
+                    variant="paragraph"
+                    className="my-8 border-l-4 border-primary pl-4"
+                />
+            )
+            return memo(Blockquote)
+        })(),
         normal: (() => {
             const P = (props: any) => <Typography {...props} as="p" variant="paragraph" className="my-6 font-inter" />
             return memo(P)
