@@ -36,7 +36,15 @@ const components: PortableTextComponents = {
     marks: {
         link: (() => {
             const A = (props: any) => (
-                <Typography href={props.value.href} as="a" variant="link" className="" {...props} />
+                <Typography
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={props.value.href}
+                    as="a"
+                    variant="link"
+                    className=""
+                    {...props}
+                />
             )
             return memo(A)
         })()
