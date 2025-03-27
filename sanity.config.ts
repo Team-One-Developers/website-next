@@ -7,6 +7,7 @@
 import { codeInput } from "@sanity/code-input"
 import { visionTool } from "@sanity/vision"
 import { defineConfig, isDev } from "sanity"
+import { media } from "sanity-plugin-media"
 import { structureTool } from "sanity/structure"
 import { theme } from "./src/sanity/studioTheme"
 // Go to https://www.sanity.io/docs/api-versioning to learn how API versioning works
@@ -29,11 +30,12 @@ export default defineConfig({
         ? [
               codeInput(),
               structureTool({ structure }),
+              media(),
               // Vision is for querying with GROQ from inside the Studio
               // https://www.sanity.io/docs/the-vision-plugin
               visionTool({ defaultApiVersion: apiVersion })
           ]
-        : [codeInput(), structureTool({ structure })],
+        : [codeInput(), structureTool({ structure }), media()],
     document: {
         // @ts-ignore
         actions: (prev, context) =>
