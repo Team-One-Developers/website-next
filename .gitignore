@@ -36,3 +36,7 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 dist/career.txt
+
+# vs code
+## can be used for uncommited workspace settings
+*.code-workspace
