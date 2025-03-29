@@ -91,10 +91,11 @@ export default async function BlogPage({ params }: BlogProps) {
     const isDraft = blog.visibility !== "Public"
 
     const allBlogs = await client.fetch(QUERY_ALL_BLOGS)
+    const allPublicBlogs = allBlogs.filter((blog) => blog.visibility === "Public")
     const ptBlocksHighlighted = await highlightCode(blog.content)
 
     const relatedBlogs = mostRelatedBlogs({
-        allItems: allBlogs,
+        allItems: allPublicBlogs,
         currentItem: blog,
         amount: 4
     })
