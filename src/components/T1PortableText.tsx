@@ -42,7 +42,7 @@ const components: PortableTextComponents = {
                     href={props.value.href}
                     as="a"
                     variant="link"
-                    className=""
+                    className="font-inter"
                     {...props}
                 />
             )
