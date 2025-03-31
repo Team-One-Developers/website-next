@@ -11,10 +11,10 @@ const Service6 = ({ pageTheme }: { pageTheme: PAGE_THEME }) => {
                     <div className="w-full px-4 lg:w-8/12">
                         <div className="mb-5 max-w-[625px]">
                             <Typography as="span" variant="subtitle" className="mb-2 block text-primary">
-                                Project Planing
+                                team one
                             </Typography>
                             <Typography as="h2" variant="h2" className="text-foreground">
-                                We help our clients to build There Dream Projects
+                                We help our clients to build their Dream Projects
                             </Typography>
                         </div>
                     </div>
@@ -34,23 +34,24 @@ const Service6 = ({ pageTheme }: { pageTheme: PAGE_THEME }) => {
                     <ServiceCard
                         link="/#"
                         image="https://cdn.tailgrids.com/2.0/image/marketing/images/services/services-06/image-01.jpg"
-                        title="Website Development"
-                        details="Lorem ipsum is simply dummy text of the printing typesetting lorem ipsum been dummy text."
-                        button="View Details"
+                        title="Development"
+                        details="Wir helfen Organisationen bei der Entwicklung von Softwarelösungen. Wir bieten maßgeschneiderte Softwareentwicklung um den spezifischen Anforderungen unserer Kunden gerecht zu werden."
+                        button="Mehr Details"
                     />
                     <ServiceCard
                         link="/#"
                         image="https://cdn.tailgrids.com/2.0/image/marketing/images/services/services-06/image-02.jpg"
-                        title="Graphic Design"
-                        details="Lorem ipsum is simply dummy text of the printing typesetting lorem ipsum been dummy text."
-                        button="View Details"
+                        title="AI & DATA"
+                        details="Wir bilden Organisation im Bereich technischer und konzeptioneller KI-Kompetenzen aus und unterstützen bei der Identifikation und Umsetzung komplexer KI-Lösungen. 
+"
+                        button="Mehr Details"
                     />
                     <ServiceCard
                         link="/#"
                         image="https://cdn.tailgrids.com/2.0/image/marketing/images/services/services-06/image-03.jpg"
-                        title="App Development"
-                        details="Lorem ipsum is simply dummy text of the printing typesetting lorem ipsum been dummy text."
-                        button="View Details"
+                        title="Transformation"
+                        details="Wir gestalten das nächste Level der Digitalisierung mit messbaren Transformationserfolgen. Strategie, Methode, Umsetzung - ganzheitlich und pragmatisch."
+                        button="Mehr Details"
                     />
                 </div>
             </div>
@@ -75,7 +76,7 @@ const ServiceCard = ({
 }) => {
     return (
         <Link href={link} className="relative w-full px-4 md:w-1/2 lg:w-1/3">
-            <div className="mb-10 bg-foreground hover:bg-primary/90">
+            <div className="hover:bg-primary/90 mb-10 bg-foreground">
                 <div className="block w-full">
                     <Image src={image} width={400} height={300} alt="image" className="w-full" />
                 </div>

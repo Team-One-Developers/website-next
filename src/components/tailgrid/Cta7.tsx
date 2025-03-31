@@ -1,15 +1,18 @@
 import { Link } from "@/components/atoms/Link"
 import Typography from "@/components/atoms/Typography"
 import { PAGE_THEME } from "@/constants"
+import Image from "next/image"
 
 const Cta7 = ({ pageTheme }: { pageTheme: PAGE_THEME }) => {
     return (
         <>
             <section data-theme={pageTheme} className="relative z-10 bg-background">
                 <div className="left-0 top-0 h-full lg:absolute lg:w-1/2">
-                    <img
-                        src="https://cdn.tailgrids.com/2.0/image/marketing/images/cta/image-03.jpg"
+                    <Image
+                        src="/images/optimized/t1d_nov22_185_optimized.webp"
                         alt="image"
+                        height={400}
+                        width={600}
                         className="h-full w-full object-cover object-center"
                     />
                 </div>
@@ -18,17 +21,17 @@ const Cta7 = ({ pageTheme }: { pageTheme: PAGE_THEME }) => {
                         <div className="w-full px-4 lg:w-1/2">
                             <div className="py-20 lg:px-0 lg:py-[120px] xl:px-10 2xl:px-20">
                                 <Typography as="span" className="mb-4 block text-primary">
-                                    We are creative team
+                                    We are AI
                                 </Typography>
                                 <Typography as="h2" variant="h2" className="mb-6 text-foreground">
-                                    Innovative solutions to boost your projects
+                                    KI & Automatisierung
                                 </Typography>
                                 <Typography className="mb-10 text-foreground lg:mb-12">
-                                    Lorem ipsum dolor sit amet consectetur adipiscing elitdo eiusmod tempor incididunt
-                                    ut labore dolore magna utenim minim veniam nostrud exercitation ullamco laboris nisi
-                                    ut aliquip ex ea commodo consequat.
+                                    Team One unterstützt Kunden aus Industrie, Handel und Mittelstand bei der
+                                    Identifikation und Umsetzung von gewinnbringenden Anwendungsfällen im Bereich der
+                                    künstlichen Intelligenz
                                 </Typography>
-                                <Link href="/services" label="View Services" />
+                                <Link href="/services" label="Mehr Informationen" />
                             </div>
                         </div>
                     </div>
