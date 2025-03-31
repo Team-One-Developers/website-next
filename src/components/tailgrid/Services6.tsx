@@ -30,7 +30,7 @@ const Service6 = ({ pageTheme }: { pageTheme: PAGE_THEME }) => {
                     </div>
                 </div>
 
-                <div className="-mx-4 flex flex-wrap justify-center">
+                <div className="-mx-4 grid grid-cols-1 justify-center gap-x-6 lg:grid-cols-3">
                     <ServiceCard
                         link="/#"
                         image="https://cdn.tailgrids.com/2.0/image/marketing/images/services/services-06/image-01.jpg"
@@ -75,12 +75,12 @@ const ServiceCard = ({
     details: string
 }) => {
     return (
-        <Link href={link} className="relative w-full px-4 md:w-1/2 lg:w-1/3">
-            <div className="mb-10 bg-foreground hover:bg-primary/90">
+        <Link href={link} className="relative h-full w-full">
+            <div className="mb-10 flex h-full flex-col bg-foreground hover:bg-primary/90">
                 <div className="block w-full">
                     <Image src={image} width={400} height={300} alt="image" className="w-full" />
                 </div>
-                <div className="p-8 sm:p-11 md:p-8 lg:px-6 xl:p-10 2xl:p-11">
+                <div className="flex grow flex-col justify-between p-8 sm:p-11 md:p-8 lg:px-6 xl:p-10 2xl:p-11">
                     <Typography as="h3" variant="h4" className="mb-4 block text-background">
                         {title}
                     </Typography>
