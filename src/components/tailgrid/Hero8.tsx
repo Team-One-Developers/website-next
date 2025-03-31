@@ -12,7 +12,7 @@ const Hero8 = () => {
                 <div className="absolute size-full">
                     <Image src={HeroBG} alt="Hero Background Image" className="size-full object-cover" />
                 </div>
-                <div className="bg-foreground/40 absolute left-0 top-0 size-full" />
+                <div className="absolute left-0 top-0 size-full bg-foreground/40" />
                 <Section className="relative z-50 h-full">
                     <div className="flex size-full flex-col items-center justify-center gap-4">
                         <Typography as="span" variant="paragraph" className="mb-4 block text-background">

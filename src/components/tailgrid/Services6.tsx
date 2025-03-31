@@ -76,7 +76,7 @@ const ServiceCard = ({
 }) => {
     return (
         <Link href={link} className="relative w-full px-4 md:w-1/2 lg:w-1/3">
-            <div className="hover:bg-primary/90 mb-10 bg-foreground">
+            <div className="mb-10 bg-foreground hover:bg-primary/90">
                 <div className="block w-full">
                     <Image src={image} width={400} height={300} alt="image" className="w-full" />
                 </div>
