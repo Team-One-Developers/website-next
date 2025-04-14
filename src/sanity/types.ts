@@ -110,6 +110,7 @@ export type Career = {
                   _weak?: boolean
                   [internalGroqTypeReferenceTo]?: "sanity.imageAsset"
               }
+              media?: unknown
               hotspot?: SanityImageHotspot
               crop?: SanityImageCrop
               _type: "image"
@@ -151,6 +152,7 @@ export type Blog = {
             _weak?: boolean
             [internalGroqTypeReferenceTo]?: "sanity.imageAsset"
         }
+        media?: unknown
         hotspot?: SanityImageHotspot
         crop?: SanityImageCrop
         _type: "image"
@@ -182,6 +184,7 @@ export type Blog = {
                   _weak?: boolean
                   [internalGroqTypeReferenceTo]?: "sanity.imageAsset"
               }
+              media?: unknown
               hotspot?: SanityImageHotspot
               crop?: SanityImageCrop
               _type: "image"
@@ -212,6 +215,7 @@ export type Author = {
             _weak?: boolean
             [internalGroqTypeReferenceTo]?: "sanity.imageAsset"
         }
+        media?: unknown
         hotspot?: SanityImageHotspot
         crop?: SanityImageCrop
         _type: "image"
@@ -382,6 +386,7 @@ export type QUERY_ALL_CAREERSResult = Array<{
                   _weak?: boolean
                   [internalGroqTypeReferenceTo]?: "sanity.imageAsset"
               }
+              media?: unknown
               hotspot?: SanityImageHotspot
               crop?: SanityImageCrop
               _type: "image"
@@ -438,6 +443,7 @@ export type QUERY_SPECIFIC_CAREERResult = {
                   _weak?: boolean
                   [internalGroqTypeReferenceTo]?: "sanity.imageAsset"
               }
+              media?: unknown
               hotspot?: SanityImageHotspot
               crop?: SanityImageCrop
               _type: "image"
@@ -474,6 +480,7 @@ export type QUERY_ALL_BLOGSResult = Array<{
                 _weak?: boolean
                 [internalGroqTypeReferenceTo]?: "sanity.imageAsset"
             }
+            media?: unknown
             hotspot?: SanityImageHotspot
             crop?: SanityImageCrop
             _type: "image"
@@ -510,6 +517,7 @@ export type QUERY_ALL_BLOGSResult = Array<{
             _weak?: boolean
             [internalGroqTypeReferenceTo]?: "sanity.imageAsset"
         }
+        media?: unknown
         hotspot?: SanityImageHotspot
         crop?: SanityImageCrop
         _type: "image"
@@ -544,6 +552,7 @@ export type QUERY_ALL_BLOGSResult = Array<{
                   _weak?: boolean
                   [internalGroqTypeReferenceTo]?: "sanity.imageAsset"
               }
+              media?: unknown
               hotspot?: SanityImageHotspot
               crop?: SanityImageCrop
               _type: "image"
@@ -698,6 +707,7 @@ export type QUERY_SPECIFIC_BLOGResult = {
                   metadata?: SanityImageMetadata
                   source?: SanityAssetSourceData
               } | null
+              media?: unknown
               hotspot?: SanityImageHotspot
               crop?: SanityImageCrop
               _type: "image"
