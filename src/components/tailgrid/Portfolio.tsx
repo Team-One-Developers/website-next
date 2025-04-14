@@ -13,7 +13,7 @@ const Portfolio = ({ careers, usedDivisions }: { careers: QUERY_ALL_CAREERSResul
         setShowCard(category)
     }
 
-    console.log(careers)
+    // console.log(careers)
     return (
         <>
             <section className="pb-12 pt-20 lg:pb-[90px] lg:pt-[120px]">

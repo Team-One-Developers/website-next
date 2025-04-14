@@ -10,7 +10,7 @@ const About5 = ({ pageTheme }: { pageTheme: PAGE_THEME }) => {
                     <div className="relative mx-auto flex h-[500px] max-w-[440px]">
                         <div className="absolute left-0 z-30 mr-14 max-w-[270px] rounded-lg">
                             <img
-                                src="https://i.ibb.co/CvVpnCZ/image-01.jpg"
+                                src="https://i.ibb.co/qpHSL3Z/image-02.jpg"
                                 alt="about image"
                                 className="w-full rounded-lg"
                             />
