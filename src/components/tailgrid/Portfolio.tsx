@@ -118,7 +118,14 @@ const PortfolioCard = ({
             >
                 <div className="relative mb-12">
                     <div className="overflow-hidden rounded-[10px]">
-                        <Image src={image} alt="portfolio" className="w-full" width={500} height={800} />
+                        <Image
+                            suppressHydrationWarning
+                            src={image}
+                            alt="portfolio"
+                            className="w-full"
+                            width={500}
+                            height={800}
+                        />
                     </div>
                     <div className="shadow-portfolio relative z-10 mx-7 -mt-20 rounded-lg bg-white px-3 py-[34px] text-center">
                         <Typography as="span" className="mb-2 block text-t1-darkGreen">

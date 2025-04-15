@@ -193,26 +193,27 @@ const Footer7 = () => {
                     </div>
                 </div>
             </Section>
-
-            <Section className="bg-primary py-4 md:py-4">
-                <div className="flex flex-wrap">
-                    <div className="w-full px-4 md:w-1/3 lg:w-1/2">
-                        <div className="my-1 flex justify-center md:justify-start">
-                            <p className="font-spacegrotesk text-base text-foreground">
-                                &copy; {new Date().getFullYear()} Team One
-                            </p>
+            <div className="w-full bg-primary">
+                <Section className="py-4 md:py-4">
+                    <div className="flex flex-wrap">
+                        <div className="w-full px-4 md:w-1/3 lg:w-1/2">
+                            <div className="my-1 flex justify-center md:justify-start">
+                                <p className="font-spacegrotesk text-base text-foreground">
+                                    &copy; {new Date().getFullYear()} Team One
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                    <div className="w-full px-4 md:w-1/3 lg:w-1/2">
-                        <div className="my-1">
-                            <div className="flex flex-wrap items-center justify-center md:justify-end">
-                                <BottomNavLink link="/privacy" label="Datenschutz" />
-                                <BottomNavLink link="/legal-notice" label="Impressum" />
+                        <div className="w-full px-4 md:w-1/3 lg:w-1/2">
+                            <div className="my-1">
+                                <div className="flex flex-wrap items-center justify-center md:justify-end">
+                                    <BottomNavLink link="/privacy" label="Datenschutz" />
+                                    <BottomNavLink link="/legal-notice" label="Impressum" />
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </Section>
+                </Section>
+            </div>
         </footer>
     )
 }
