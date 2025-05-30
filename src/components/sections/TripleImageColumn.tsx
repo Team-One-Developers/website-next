@@ -100,22 +100,21 @@ export const TripleImageColumn = (props: TripleImageColumnProps) => {
         href: string
     }) => {
         return (
-            <Link href={href} className="hover:scale-101">
-                <div className="flex w-full flex-col gap-6 lg:row-span-4 lg:grid lg:grid-cols-1 lg:grid-rows-subgrid lg:gap-4">
-                    <Image
-                        src={image}
-                        alt={title}
-                        width={300}
-                        height={200}
-                        className="row-start-1 h-64 w-full object-cover"
-                    />
-                    <Tags className="row-start-2" tags={tags} />
-                    <h3 className="font-spacegrotesk text-t1-black row-start-3 text-xl font-semibold uppercase">
-                        {title}
-                    </h3>
-                    <div className="text-t1-black row-start-4">
-                        <p>{description}</p>
-                    </div>
+            <Link
+                href={href}
+                className="flex w-full flex-col gap-6 hover:scale-101 lg:row-span-4 lg:grid lg:grid-cols-1 lg:grid-rows-subgrid lg:gap-4"
+            >
+                <Image
+                    src={image}
+                    alt={title}
+                    width={300}
+                    height={200}
+                    className="row-start-1 h-64 w-full object-cover"
+                />
+                <Tags className="row-start-2" tags={tags} />
+                <h3 className="font-spacegrotesk text-t1-black row-start-3 text-xl font-semibold uppercase">{title}</h3>
+                <div className="text-t1-black row-start-4">
+                    <p>{description}</p>
                 </div>
             </Link>
         )
