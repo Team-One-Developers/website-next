@@ -1,14 +1,11 @@
-import StructuredData from "@/components/atoms/StructuredData"
-import { siteConfig } from "@/config/siteConfig"
+import StructuredData from "@/components/layout/StructuredData"
 import { organization } from "@/data/schemaOrg"
+import { siteConfig } from "@/data/siteConfig"
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
-import { Metadata } from "next"
-import { Space_Grotesk } from "next/font/google"
+import type { Metadata } from "next"
 import localFont from "next/font/local"
-import { twJoin } from "tailwind-merge"
-import "../styles/global.css"
-import "../styles/prism.css"
+import "./globals.css"
 
 const ABCD = localFont({
     src: [
@@ -23,13 +20,29 @@ const ABCD = localFont({
             style: "italic"
         }
     ],
-    variable: "--font-ABCD",
+    variable: "--abcdiatype",
     display: "swap"
 })
 
-const SpaceGrotesk = Space_Grotesk({
-    subsets: ["latin"],
-    variable: "--font-SpaceGrotesk",
+const SpaceGrotesk = localFont({
+    src: [
+        {
+            path: "../fonts/space-grotesk-regular.ttf",
+            weight: "400",
+            style: "normal"
+        },
+        {
+            path: "../fonts/space-grotesk-light.ttf",
+            weight: "200",
+            style: "normal"
+        },
+        {
+            path: "../fonts/space-grotesk-medium.ttf",
+            weight: "600",
+            style: "normal"
+        }
+    ],
+    variable: "--spacegrotesk",
     display: "swap"
 })
 
@@ -69,12 +82,16 @@ export const metadata: Metadata = {
     manifest: `${siteConfig.url}/site.webmanifest`
 }
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+    children
+}: Readonly<{
+    children: React.ReactNode
+}>) {
     return (
-        <html lang="de">
-            <body className={twJoin(ABCD.variable, SpaceGrotesk.variable, "bg-black")}>
+        <html lang="en">
+            <body className={`${ABCD.variable} ${SpaceGrotesk.variable} font-abcd relative antialiased`}>
                 {children}
-                <StructuredData data={organization} />
+                <StructuredData data={organization as object} />
                 <Analytics />
                 <SpeedInsights />
             </body>

@@ -74,17 +74,17 @@ export type Career = {
     _createdAt: string
     _updatedAt: string
     _rev: string
-    title?: string
+    title: string
     slug?: Slug
     path?: string
-    description?: string
-    location?: "Stuttgart"
-    schedule?: "Vollzeit" | "Teilzeit"
-    employmentType?: "Festanstellung" | "Praktikum" | "Werkstudent"
-    division?: "Software Engineering" | "AI & Data Analytics" | "Strategy & Transformation" | "Marketing" | "Operations"
-    tags?: Array<string>
-    date?: string
-    content?: Array<
+    description: string
+    location: "Stuttgart"
+    schedule: "Vollzeit" | "Teilzeit"
+    employmentType: "Festanstellung" | "Praktikum" | "Werkstudent"
+    division: "Software Engineering" | "AI & Data Analytics" | "Strategy & Transformation" | "Marketing" | "Operations"
+    tags: Array<string>
+    date: string
+    content: Array<
         | {
               children?: Array<{
                   marks?: Array<string>
@@ -120,7 +120,7 @@ export type Career = {
               _key: string
           } & Code)
     >
-    visibility?: "Draft" | "Public"
+    visibility: "Draft" | "Public"
     link?: string
 }
 
@@ -130,22 +130,22 @@ export type Blog = {
     _createdAt: string
     _updatedAt: string
     _rev: string
-    title?: string
+    title: string
     slug?: Slug
     path?: string
-    author?: {
+    author: {
         _ref: string
         _type: "reference"
         _weak?: boolean
         [internalGroqTypeReferenceTo]?: "author"
     }
-    language?: "Deutsch" | "Englisch"
-    tags?: Array<string>
-    category?: "SOFTWARE ENGINEERING" | "BUSINESS TECHNOLOGY" | "METHODOLOGY" | "NEWS" | "CULTURE" | "EXPERIENCE"
-    descriptionShort?: string
-    descriptionLong?: string
-    date?: string
-    heroImage?: {
+    language: "Deutsch" | "Englisch"
+    tags: Array<string>
+    category: "SOFTWARE ENGINEERING" | "BUSINESS TECHNOLOGY" | "METHODOLOGY" | "NEWS" | "CULTURE" | "EXPERIENCE"
+    descriptionShort: string
+    descriptionLong: string
+    date: string
+    heroImage: {
         asset?: {
             _ref: string
             _type: "reference"
@@ -158,7 +158,7 @@ export type Blog = {
         _type: "image"
     }
     toc?: boolean
-    content?: Array<
+    content: Array<
         | {
               children?: Array<{
                   marks?: Array<string>
@@ -194,8 +194,8 @@ export type Blog = {
               _key: string
           } & Code)
     >
-    cta?: "CONTACT" | "CAREER" | "BLOG" | "NONE"
-    visibility?: "Draft" | "Public"
+    cta: "CONTACT" | "CAREER" | "BLOG" | "NONE"
+    visibility: "Draft" | "Public"
     link?: string
 }
 
@@ -205,9 +205,9 @@ export type Author = {
     _createdAt: string
     _updatedAt: string
     _rev: string
-    name?: string
+    name: string
     surname?: string
-    position?: string
+    position: string
     profileImg?: {
         asset?: {
             _ref: string
@@ -308,7 +308,7 @@ export type MediaTag = {
 
 export type Slug = {
     _type: "slug"
-    current?: string
+    current: string
     source?: string
 }
 
@@ -339,129 +339,15 @@ export type AllSanitySchemaTypes =
     | Code
 export declare const internalGroqTypeReferenceTo: unique symbol
 // Source: ./src/sanity/queries.ts
-// Variable: QUERY_ALL_CAREERS
-// Query: *[_type == 'career' && defined(slug) && defined(slug.current) && !(division in ["", "null"])]
-export type QUERY_ALL_CAREERSResult = Array<{
-    _id: string
-    _type: "career"
-    _createdAt: string
-    _updatedAt: string
-    _rev: string
-    title?: string
-    slug?: Slug
-    path?: string
-    description?: string
-    location?: "Stuttgart"
-    schedule?: "Teilzeit" | "Vollzeit"
-    employmentType?: "Festanstellung" | "Praktikum" | "Werkstudent"
-    division?: "AI & Data Analytics" | "Marketing" | "Operations" | "Software Engineering" | "Strategy & Transformation"
-    tags?: Array<string>
-    date?: string
-    content?: Array<
-        | ({
-              _key: string
-          } & Code)
-        | {
-              children?: Array<{
-                  marks?: Array<string>
-                  text?: string
-                  _type: "span"
-                  _key: string
-              }>
-              style?: "blockquote" | "h4" | "h5" | "normal"
-              listItem?: "bullet" | "number"
-              markDefs?: Array<{
-                  href?: string
-                  _type: "link"
-                  _key: string
-              }>
-              level?: number
-              _type: "block"
-              _key: string
-          }
-        | {
-              asset?: {
-                  _ref: string
-                  _type: "reference"
-                  _weak?: boolean
-                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset"
-              }
-              media?: unknown
-              hotspot?: SanityImageHotspot
-              crop?: SanityImageCrop
-              _type: "image"
-              _key: string
-          }
-    >
-    visibility?: "Draft" | "Public"
-    link?: string
-}>
-// Variable: QUERY_SPECIFIC_CAREER
-// Query: *  [_type == 'career' && slug.current == $slug][0]  {    ...,    content  }
-export type QUERY_SPECIFIC_CAREERResult = {
-    _id: string
-    _type: "career"
-    _createdAt: string
-    _updatedAt: string
-    _rev: string
-    title?: string
-    slug?: Slug
-    path?: string
-    description?: string
-    location?: "Stuttgart"
-    schedule?: "Teilzeit" | "Vollzeit"
-    employmentType?: "Festanstellung" | "Praktikum" | "Werkstudent"
-    division?: "AI & Data Analytics" | "Marketing" | "Operations" | "Software Engineering" | "Strategy & Transformation"
-    tags?: Array<string>
-    date?: string
-    content: Array<
-        | ({
-              _key: string
-          } & Code)
-        | {
-              children?: Array<{
-                  marks?: Array<string>
-                  text?: string
-                  _type: "span"
-                  _key: string
-              }>
-              style?: "blockquote" | "h4" | "h5" | "normal"
-              listItem?: "bullet" | "number"
-              markDefs?: Array<{
-                  href?: string
-                  _type: "link"
-                  _key: string
-              }>
-              level?: number
-              _type: "block"
-              _key: string
-          }
-        | {
-              asset?: {
-                  _ref: string
-                  _type: "reference"
-                  _weak?: boolean
-                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset"
-              }
-              media?: unknown
-              hotspot?: SanityImageHotspot
-              crop?: SanityImageCrop
-              _type: "image"
-              _key: string
-          }
-    > | null
-    visibility?: "Draft" | "Public"
-    link?: string
-} | null
 // Variable: QUERY_ALL_BLOGS
-// Query: *[_type == 'blog' && defined(slug) && defined(slug.current)]{...,author->}
+// Query: *[_type == 'blog' && defined(slug) && defined(slug.current)]{...,author->,heroImage{asset->}}
 export type QUERY_ALL_BLOGSResult = Array<{
     _id: string
     _type: "blog"
     _createdAt: string
     _updatedAt: string
     _rev: string
-    title?: string
+    title: string
     slug?: Slug
     path?: string
     author: {
@@ -470,9 +356,9 @@ export type QUERY_ALL_BLOGSResult = Array<{
         _createdAt: string
         _updatedAt: string
         _rev: string
-        name?: string
+        name: string
         surname?: string
-        position?: string
+        position: string
         profileImg?: {
             asset?: {
                 _ref: string
@@ -503,27 +389,39 @@ export type QUERY_ALL_BLOGSResult = Array<{
             _type: "block"
             _key: string
         }>
-    } | null
-    language?: "Deutsch" | "Englisch"
-    tags?: Array<string>
-    category?: "BUSINESS TECHNOLOGY" | "CULTURE" | "EXPERIENCE" | "METHODOLOGY" | "NEWS" | "SOFTWARE ENGINEERING"
-    descriptionShort?: string
-    descriptionLong?: string
-    date?: string
-    heroImage?: {
-        asset?: {
-            _ref: string
-            _type: "reference"
-            _weak?: boolean
-            [internalGroqTypeReferenceTo]?: "sanity.imageAsset"
-        }
-        media?: unknown
-        hotspot?: SanityImageHotspot
-        crop?: SanityImageCrop
-        _type: "image"
+    }
+    language: "Deutsch" | "Englisch"
+    tags: Array<string>
+    category: "BUSINESS TECHNOLOGY" | "CULTURE" | "EXPERIENCE" | "METHODOLOGY" | "NEWS" | "SOFTWARE ENGINEERING"
+    descriptionShort: string
+    descriptionLong: string
+    date: string
+    heroImage: {
+        asset: {
+            _id: string
+            _type: "sanity.imageAsset"
+            _createdAt: string
+            _updatedAt: string
+            _rev: string
+            originalFilename?: string
+            label?: string
+            title?: string
+            description?: string
+            altText?: string
+            sha1hash?: string
+            extension?: string
+            mimeType?: string
+            size?: number
+            assetId?: string
+            uploadId?: string
+            path?: string
+            url?: string
+            metadata?: SanityImageMetadata
+            source?: SanityAssetSourceData
+        } | null
     }
     toc?: boolean
-    content?: Array<
+    content: Array<
         | ({
               _key: string
           } & Code)
@@ -559,54 +457,37 @@ export type QUERY_ALL_BLOGSResult = Array<{
               _key: string
           }
     >
-    cta?: "BLOG" | "CAREER" | "CONTACT" | "NONE"
-    visibility?: "Draft" | "Public"
+    cta: "BLOG" | "CAREER" | "CONTACT" | "NONE"
+    visibility: "Draft" | "Public"
     link?: string
 }>
-// Variable: QUERY_SPECIFIC_BLOG
-// Query: *    [_type == 'blog' && slug.current == $slug][0]    {      ...,      author->{        ...,        profileImg{          asset->        }      },      heroImage{        asset->,      },      content[]{        ...,        _type == "image" => {          ...,          asset->        }      }    }
-export type QUERY_SPECIFIC_BLOGResult = {
+// Variable: QUERY_ALL_PUBLIC_BLOGS
+// Query: *[_type == 'blog' && defined(slug) && defined(slug.current) && visibility == 'Public']{_id,descriptionShort,descriptionLong,author->,heroImage{asset->},title,category,date,slug,tags}
+export type QUERY_ALL_PUBLIC_BLOGSResult = Array<{
     _id: string
-    _type: "blog"
-    _createdAt: string
-    _updatedAt: string
-    _rev: string
-    title?: string
-    slug?: Slug
-    path?: string
+    descriptionShort: string
+    descriptionLong: string
     author: {
         _id: string
         _type: "author"
         _createdAt: string
         _updatedAt: string
         _rev: string
-        name?: string
+        name: string
         surname?: string
-        position?: string
-        profileImg: {
-            asset: {
-                _id: string
-                _type: "sanity.imageAsset"
-                _createdAt: string
-                _updatedAt: string
-                _rev: string
-                originalFilename?: string
-                label?: string
-                title?: string
-                description?: string
-                altText?: string
-                sha1hash?: string
-                extension?: string
-                mimeType?: string
-                size?: number
-                assetId?: string
-                uploadId?: string
-                path?: string
-                url?: string
-                metadata?: SanityImageMetadata
-                source?: SanityAssetSourceData
-            } | null
-        } | null
+        position: string
+        profileImg?: {
+            asset?: {
+                _ref: string
+                _type: "reference"
+                _weak?: boolean
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset"
+            }
+            media?: unknown
+            hotspot?: SanityImageHotspot
+            crop?: SanityImageCrop
+            _type: "image"
+        }
         about?: Array<{
             children?: Array<{
                 marks?: Array<string>
@@ -625,13 +506,7 @@ export type QUERY_SPECIFIC_BLOGResult = {
             _type: "block"
             _key: string
         }>
-    } | null
-    language?: "Deutsch" | "Englisch"
-    tags?: Array<string>
-    category?: "BUSINESS TECHNOLOGY" | "CULTURE" | "EXPERIENCE" | "METHODOLOGY" | "NEWS" | "SOFTWARE ENGINEERING"
-    descriptionShort?: string
-    descriptionLong?: string
-    date?: string
+    }
     heroImage: {
         asset: {
             _id: string
@@ -655,77 +530,52 @@ export type QUERY_SPECIFIC_BLOGResult = {
             metadata?: SanityImageMetadata
             source?: SanityAssetSourceData
         } | null
-    } | null
-    toc?: boolean
-    content: Array<
-        | {
-              children?: Array<{
-                  marks?: Array<string>
-                  text?: string
-                  _type: "span"
-                  _key: string
-              }>
-              style?: "blockquote" | "h2" | "h3" | "h4" | "normal"
-              listItem?: "bullet" | "number"
-              markDefs?: Array<{
-                  href?: string
-                  _type: "link"
-                  _key: string
-              }>
-              level?: number
-              _type: "block"
-              _key: string
-          }
-        | {
-              _key: string
-              _type: "code"
-              language?: string
-              filename?: string
-              code?: string
-              highlightedLines?: Array<number>
-          }
-        | {
-              asset: {
-                  _id: string
-                  _type: "sanity.imageAsset"
-                  _createdAt: string
-                  _updatedAt: string
-                  _rev: string
-                  originalFilename?: string
-                  label?: string
-                  title?: string
-                  description?: string
-                  altText?: string
-                  sha1hash?: string
-                  extension?: string
-                  mimeType?: string
-                  size?: number
-                  assetId?: string
-                  uploadId?: string
-                  path?: string
-                  url?: string
-                  metadata?: SanityImageMetadata
-                  source?: SanityAssetSourceData
-              } | null
-              media?: unknown
-              hotspot?: SanityImageHotspot
-              crop?: SanityImageCrop
-              _type: "image"
-              _key: string
-          }
-    > | null
-    cta?: "BLOG" | "CAREER" | "CONTACT" | "NONE"
-    visibility?: "Draft" | "Public"
-    link?: string
-} | null
+    }
+    title: string
+    category: "BUSINESS TECHNOLOGY" | "CULTURE" | "EXPERIENCE" | "METHODOLOGY" | "NEWS" | "SOFTWARE ENGINEERING"
+    date: string
+    slug: Slug | null
+    tags: Array<string>
+}>
+// Variable: QUERY_NEWEST_BLOGS
+// Query: *[_type == 'blog' && defined(slug) && defined(slug.current) && visibility == 'Public'] | order(_createdAt desc)[0...3]{heroImage{asset->},date,title,descriptionLong,slug}
+export type QUERY_NEWEST_BLOGSResult = Array<{
+    heroImage: {
+        asset: {
+            _id: string
+            _type: "sanity.imageAsset"
+            _createdAt: string
+            _updatedAt: string
+            _rev: string
+            originalFilename?: string
+            label?: string
+            title?: string
+            description?: string
+            altText?: string
+            sha1hash?: string
+            extension?: string
+            mimeType?: string
+            size?: number
+            assetId?: string
+            uploadId?: string
+            path?: string
+            url?: string
+            metadata?: SanityImageMetadata
+            source?: SanityAssetSourceData
+        } | null
+    }
+    date: string
+    title: string
+    descriptionLong: string
+    slug: Slug | null
+}>
 
 // Query TypeMap
 import "@sanity/client"
 declare module "@sanity/client" {
     interface SanityQueries {
-        '*[_type == \'career\' && defined(slug) && defined(slug.current) && !(division in ["", "null"])]': QUERY_ALL_CAREERSResult
-        "*\n  [_type == 'career' && slug.current == $slug][0]\n  {\n    ...,\n    content\n  }": QUERY_SPECIFIC_CAREERResult
-        "*[_type == 'blog' && defined(slug) && defined(slug.current)]{...,author->}": QUERY_ALL_BLOGSResult
-        "*\n    [_type == 'blog' && slug.current == $slug][0]\n    {\n      ...,\n      author->{\n        ...,\n        profileImg{\n          asset->\n        }\n      },\n      heroImage{\n        asset->,\n      },\n      content[]{\n        ...,\n        _type == \"image\" => {\n          ...,\n          asset->\n        }\n      }\n    }\n    ": QUERY_SPECIFIC_BLOGResult
+        "*[_type == 'blog' && defined(slug) && defined(slug.current)]{...,author->,heroImage{asset->}}": QUERY_ALL_BLOGSResult
+        "*[_type == 'blog' && defined(slug) && defined(slug.current) && visibility == 'Public']{_id,descriptionShort,descriptionLong,author->,heroImage{asset->},title,category,date,slug,tags}": QUERY_ALL_PUBLIC_BLOGSResult
+        "*[_type == 'blog' && defined(slug) && defined(slug.current) && visibility == 'Public'] | order(_createdAt desc)[0...3]{heroImage{asset->},date,title,descriptionLong,slug}": QUERY_NEWEST_BLOGSResult
     }
 }

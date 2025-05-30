@@ -1,16 +1,14 @@
 import cn from "@/lib/cn"
+import { ReactNode } from "react"
 
-interface SectionProps extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> {
-    maxWidthContent?: boolean
-}
-
-export const Section = ({ className, children, maxWidthContent = true, ...rest }: SectionProps) => {
+export const Section = ({ children, className }: { children: ReactNode; className?: string }) => {
     return (
-        <section
-            className={cn("mx-auto px-4 py-12 md:px-8 md:py-16", maxWidthContent && "max-w-[1920px]", className)}
-            {...rest}
-        >
-            {children}
+        // full width section with bg-color and padding
+        <section className={cn("bg-t1-black relative z-0 overflow-x-hidden", className)}>
+            {/* container with max content width */}
+            <div className="mx-auto max-w-7xl px-6 2xl:px-0">{children}</div>
         </section>
     )
 }
+
+export default Section

@@ -37,7 +37,7 @@ export default defineConfig({
           ]
         : [codeInput(), structureTool({ structure }), media()],
     document: {
-        // @ts-ignore
+        // @ts-expect-error - sanity typing shit?
         actions: (prev, context) =>
             // when a blog or career post is published, we want to use our extended publish action for calculating the slug
             context.schemaType === "blog" || context.schemaType === "career"
