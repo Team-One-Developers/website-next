@@ -120,21 +120,15 @@ export default function Header() {
                                         key={item.name}
                                         href={item.href}
                                         className={cn(
-                                            "text-t1-white hover:text-primary -mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold",
-                                            pathname === item.href && "underline"
+                                            "text-t1-white hover:text-primary font-spacegrotesk -mx-3 block rounded-lg px-3 py-2 text-lg/7 font-semibold uppercase",
+                                            (pathname === item.href ||
+                                                (item.href !== "/" && pathname.includes(item.href))) &&
+                                                "underline"
                                         )}
                                     >
                                         {item.name}
                                     </Link>
                                 ))}
-                            </div>
-                            <div className="py-6">
-                                <Link
-                                    href="#"
-                                    className="text-t1-white hover:text-primary -mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold"
-                                >
-                                    Kontakt
-                                </Link>
                             </div>
                         </div>
                     </div>
