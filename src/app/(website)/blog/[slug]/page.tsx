@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import Section from "@/components/layout/Section"
 import StructuredData from "@/components/layout/StructuredData"
 import { organization } from "@/data/schemaOrg"

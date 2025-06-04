@@ -8,13 +8,11 @@ export const GET = async (request: Request) => {
 
     const title = searchParams.get("title") || "Team One Developers"
 
-    const fontData = await fetch(new URL("../../../../fonts/SpaceGrotesk-Regular.ttf", import.meta.url)).then((res) =>
+    const fontData = await fetch(new URL("../../../../fonts/space-grotesk-regular.ttf", import.meta.url)).then((res) =>
         res.arrayBuffer()
     )
 
-    const bgImage = await fetch(new URL("../../../../../public/images/ogbg.png", import.meta.url)).then((res) =>
-        res.arrayBuffer()
-    )
+    const bgImage = await fetch("/images/ogbg.png").then((res) => res.arrayBuffer())
 
     // const Blob = () => {
     //     return (
