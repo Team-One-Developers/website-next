@@ -15,113 +15,118 @@ export const BlogOverview = ({ blogs }: { blogs: QUERY_ALL_PUBLIC_BLOGSResult })
         setShowTags(category)
     }
 
-    const getTagsWithMoreThanOneOccurence = () => {
-        const tagCount: Record<string, number> = {}
+    const usedCategories = blogs
+        .map((blog) => blog.category)
+        .filter((category) => category !== undefined && category !== null)
+    const uniqueCategories = Array.from(new Set(usedCategories))
 
-        // Count occurrences of each tag
-        blogs.forEach((blog) => {
-            if (!blog.tags) return
+    // const getTagsWithMoreThanOneOccurence = () => {
+    //     const tagCount: Record<string, number> = {}
 
-            blog.tags.forEach((tag) => {
-                tagCount[tag] = (tagCount[tag] || 0) + 1
-            })
-        })
+    //     // Count occurrences of each tag
+    //     blogs.forEach((blog) => {
+    //         if (!blog.tags) return
 
-        // Filter tags that occur more than once
-        return Object.keys(tagCount).filter((tag) => tagCount[tag] > 1)
-    }
-    const tagsWithMoreThanOneOccurence = getTagsWithMoreThanOneOccurence()
+    //         blog.tags.forEach((tag) => {
+    //             tagCount[tag] = (tagCount[tag] || 0) + 1
+    //         })
+    //     })
+
+    //     // Filter tags that occur more than once
+    //     return Object.keys(tagCount).filter((tag) => tagCount[tag] > 1)
+    // }
+    // const tagsWithMoreThanOneOccurence = getTagsWithMoreThanOneOccurence()
 
     return (
         <Section className="bg-t1-white py-24 sm:py-32">
-            <h1 className="text-t1-black font-spacegrotesk text-4xl font-semibold tracking-tight text-pretty uppercase sm:text-5xl">
-                From Our Blog
-            </h1>
-            <p className="mt-2 text-lg/8 text-gray-600">Lorem ipsum totallum fidibus.</p>
+            <div className="py-16 sm:py-24">
+                <div className="mx-auto max-w-2xl lg:mx-0">
+                    <h2 className="font-spacegrotesk text-t1-black text-4xl font-semibold tracking-tight text-pretty uppercase sm:text-5xl">
+                        From the blog
+                    </h2>
+                    <p className="mt-2 text-lg/8 text-gray-600">
+                        Insights into our creative minds, latest trends, and innovative solutions.
+                    </p>
+                </div>
 
-            <div className="mt-12 w-full">
-                <p className="text-t1-black font-spacegrotesk text-lg font-bold uppercase">Themen:</p>
-                <ul className="mt-4 mb-12 flex flex-wrap gap-x-4 space-x-1">
-                    <li className="mb-1">
-                        <button
-                            className={cn(
-                                "font-spacegrotesk text-t1-black rounded-xs px-4 py-2 uppercase hover:cursor-pointer",
-                                showTags === "all" ? "bg-primary" : ""
-                            )}
-                            onClick={() => handleTagClick("all")}
-                            disabled={showTags === "all"}
-                        >
-                            {"Alle"}
-                        </button>
-                    </li>
-                    {tagsWithMoreThanOneOccurence.map((tag) => (
-                        <li className="mb-1" key={tag}>
+                <div className="mx-auto mt-12 max-w-2xl lg:mx-0">
+                    <p className="text-t1-black font-spacegrotesk text-lg font-bold uppercase">Themenfelder:</p>
+                    <ul className="mt-4 mb-12 flex flex-wrap gap-x-4 space-x-1">
+                        <li className="mb-1">
                             <button
                                 className={cn(
-                                    "font-spacegrotesk text-t1-black hover:cursor-pointe rounded-xs px-4 py-2 uppercase",
-                                    showTags === tag ? "bg-primary" : ""
+                                    "font-spacegrotesk text-t1-black rounded-xs px-4 py-2 uppercase hover:cursor-pointer",
+                                    showTags === "all" ? "bg-primary" : "hover:cursor-pointer hover:bg-white"
                                 )}
-                                onClick={() => handleTagClick(tag)}
-                                disabled={showTags === tag}
+                                onClick={() => handleTagClick("all")}
+                                disabled={showTags === "all"}
                             >
-                                {tag}
+                                {"Alle"}
                             </button>
                         </li>
-                    ))}
-                </ul>
-            </div>
+                        {uniqueCategories.map((category) => (
+                            <li className="mb-1" key={category}>
+                                <button
+                                    className={cn(
+                                        "font-spacegrotesk text-t1-black hover:cursor-pointe rounded-xs px-4 py-2 uppercase",
+                                        showTags === category ? "bg-primary" : "hover:cursor-pointer hover:bg-white"
+                                    )}
+                                    onClick={() => handleTagClick(category)}
+                                    disabled={showTags === category}
+                                >
+                                    {category}
+                                </button>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
 
-            <div className="mt-16 space-y-20 lg:mt-20 lg:space-y-24">
-                {blogs.map((blog) => (
-                    <Link
-                        href={`/blog/${blog.slug?.current}`}
-                        key={blog._id}
-                        className={cn(
-                            "group hidden transition-all duration-300 hover:scale-101",
-                            (showTags === "all" || blog.tags.includes(showTags)) && "block"
-                        )}
-                    >
-                        <article key={blog._id} className="relative isolate flex flex-col gap-8 lg:flex-row">
-                            <div className="relative aspect-video sm:aspect-2/1 lg:aspect-square lg:w-64 lg:shrink-0">
-                                <Image
-                                    alt=""
-                                    src={blog.heroImage.asset?.url || "/images/culture/coffetalk.webp"}
-                                    className="bg-t1-white absolute inset-0 size-full rounded-2xl object-cover"
-                                    width={256}
-                                    height={256}
-                                />
-                                <div className="ring-t1-black/10 absolute inset-0 rounded-2xl ring-1 ring-inset" />
-                            </div>
-                            <div>
+                <div className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-32 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+                    {blogs.map((blog) => (
+                        <Link
+                            href={`/blog/${blog.slug?.current}`}
+                            key={blog._id}
+                            className={cn(
+                                "relative hidden transition-all duration-300 ease-in-out hover:scale-102",
+                                (blog.category === showTags || showTags === "all") && "flex"
+                            )}
+                        >
+                            <article className={cn("max-w-xl flex-col items-start justify-between")}>
                                 <div className="flex items-center gap-x-4 text-xs">
-                                    <p className="h relative z-10 rounded-full py-1.5 font-medium text-gray-600">
-                                        {blog.category + " | " + formatDate(blog.date)}
-                                    </p>
+                                    <time dateTime={blog.date} className="text-gray-500">
+                                        {formatDate(blog.date)}
+                                    </time>
+                                    <span className="relative z-10 rounded-full bg-white px-3 py-1.5 font-medium text-gray-600">
+                                        {blog.category}
+                                    </span>
                                 </div>
-                                <div className="group relative max-w-xl">
-                                    <h3 className="text-t1-black mt-3 text-lg/6 font-semibold">
-                                        <div>
-                                            <span className="absolute inset-0" />
-                                            {blog.title}
-                                        </div>
+                                <div className="group relative">
+                                    <h3 className="mt-3 text-lg/6 font-semibold text-gray-900">
+                                        <span className="absolute inset-0" />
+                                        {blog.title}
                                     </h3>
-                                    <p className="text-t1-black mt-5 text-sm/6">{blog.descriptionLong}</p>
+                                    <p className="mt-5 line-clamp-3 text-sm/6 text-gray-600">{blog.descriptionLong}</p>
                                 </div>
-                                <div className="border-t1-black/20 mt-6 flex border-t pt-6">
-                                    <div className="relative flex items-center gap-x-4">
-                                        <div className="text-sm/6">
-                                            <p className="text-t1-black font-semibold">
-                                                <span className="absolute inset-0" />
-                                                {blog.author.name}
-                                            </p>
-                                            <p className="text-t1-black/60">{blog.author.position}</p>
-                                        </div>
+                                <div className="relative mt-8 flex items-center gap-x-4">
+                                    <Image
+                                        alt={blog.title}
+                                        height={100}
+                                        width={100}
+                                        src={blog.author.profileImg?.asset?.url || "/images/logos/t1-only-dark.svg"}
+                                        className="size-10 rounded-full bg-gray-50"
+                                    />
+                                    <div className="text-sm/6">
+                                        <p className="font-semibold text-gray-900">
+                                            <span className="absolute inset-0" />
+                                            {blog.author.name}
+                                        </p>
+                                        <p className="text-gray-600">{blog.author.position}</p>
                                     </div>
                                 </div>
-                            </div>
-                        </article>
-                    </Link>
-                ))}
+                            </article>
+                        </Link>
+                    ))}
+                </div>
             </div>
         </Section>
     )

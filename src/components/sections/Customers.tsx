@@ -1,3 +1,4 @@
+import Typography from "@/components/atoms/Typography"
 import Section from "@/components/layout/Section"
 import Image from "next/image"
 
@@ -5,7 +6,9 @@ export default function Customers() {
     return (
         <Section className="bg-t1-black py-24 sm:py-32">
             <div className="mx-auto">
-                <h2 className="text-3xl font-semibold">EIN AUSZUG UNSERER PARTNERSCHAFTEN</h2>
+                <Typography variant="h3" className="">
+                    EIN AUSZUG UNSERER PARTNERSCHAFTEN
+                </Typography>
                 <div className="mt-16 flex flex-wrap items-center justify-between gap-8">
                     <Image
                         src="/images/customers/porscheLogo.svg"

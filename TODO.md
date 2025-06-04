@@ -1,8 +1,12 @@
 metadata/structureddata/siteConfig - adjust for current pages and new ones
 
-button unifying PLS
+button unifying PLS typography PLS
 
-magazine/logos fixen
+blog
+
+culture
+
+meetup page paul
 
 cookie banner
 

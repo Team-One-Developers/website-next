@@ -1,3 +1,4 @@
+import Typography from "@/components/atoms/Typography"
 import Section from "@/components/layout/Section"
 import cn from "@/lib/cn"
 import Image from "next/image"
@@ -77,9 +78,11 @@ export const TripleImageColumn = (props: TripleImageColumnProps) => {
                     className="row-start-1 h-64 w-full object-cover"
                 />
 
-                <h3 className="font-spacegrotesk text-t1-black row-start-2 text-xl font-semibold uppercase">{title}</h3>
+                <Typography variant="h5" className="text-t1-black row-start-2">
+                    {title}
+                </Typography>
                 <div className="text-t1-black row-start-3">
-                    <p>{description}</p>
+                    <Typography className="text-md sm:text-lg">{description}</Typography>
                     <Tags className="mt-4" tags={tags} />
                 </div>
             </div>
@@ -112,9 +115,11 @@ export const TripleImageColumn = (props: TripleImageColumnProps) => {
                     className="row-start-1 h-64 w-full object-cover"
                 />
                 <Tags className="row-start-2" tags={tags} />
-                <h3 className="font-spacegrotesk text-t1-black row-start-3 text-xl font-semibold uppercase">{title}</h3>
+                <Typography variant="h5" className="text-t1-black row-start-3">
+                    {title}
+                </Typography>
                 <div className="text-t1-black row-start-4">
-                    <p>{description}</p>
+                    <Typography className="text-md sm:text-lg">{description}</Typography>
                 </div>
             </Link>
         )
@@ -122,7 +127,9 @@ export const TripleImageColumn = (props: TripleImageColumnProps) => {
 
     return (
         <Section className="bg-t1-white py-24 sm:py-32">
-            <h2 className="font-spacegrotesk text-t1-black text-3xl font-semibold uppercase">{props.title}</h2>
+            <Typography variant="h3" className="text-t1-black">
+                {props.title}
+            </Typography>
             <div
                 className={cn(
                     "mt-16 grid grid-cols-1 gap-24 lg:grid-cols-3 lg:grid-rows-[auto_auto_auto_auto] lg:gap-4"

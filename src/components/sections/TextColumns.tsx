@@ -1,3 +1,4 @@
+import Typography from "@/components/atoms/Typography"
 import Section from "@/components/layout/Section"
 import cn from "@/lib/cn"
 import Link from "next/link"
@@ -29,15 +30,10 @@ export const TextColumns = ({ title, subtitle, description, link, columns, divid
         const Content = () => {
             return (
                 <div className="group flex w-full flex-col gap-y-4">
-                    <h3
-                        className={cn(
-                            "font-spacegrotesk text-xl font-extrabold uppercase",
-                            href && "group-hover:text-primary cursor-pointer"
-                        )}
-                    >
+                    <Typography variant="h5" className={cn("", href && "group-hover:text-primary cursor-pointer")}>
                         {title}
-                    </h3>
-                    <p className="">{description}</p>
+                    </Typography>
+                    <Typography className="text-md sm:text-lg">{description}</Typography>
                 </div>
             )
         }
@@ -59,7 +55,9 @@ export const TextColumns = ({ title, subtitle, description, link, columns, divid
             )}
         >
             <div className="flex w-full justify-between">
-                <p className={cn("text-lg", bg === "primary" ? "text-t1-black" : "text-primary")}>{subtitle}</p>
+                <Typography variant="subtitle" className={cn("", bg === "primary" ? "text-t1-black" : "text-primary")}>
+                    {subtitle}
+                </Typography>
                 <div className="">
                     <Link
                         href={link.href}
@@ -72,8 +70,10 @@ export const TextColumns = ({ title, subtitle, description, link, columns, divid
                     </Link>
                 </div>
             </div>
-            <h2 className="font-spacegrotesk mt-8 text-3xl font-bold uppercase sm:text-5xl">{title}</h2>
-            {description && <p className="mt-12">{description}</p>}
+            <Typography variant="h2" className="mt-8">
+                {title}
+            </Typography>
+            {description && <Typography className="mt-12">{description}</Typography>}
             <div className="mt-24 flex flex-wrap gap-8 lg:mt-36 lg:flex-nowrap">
                 {columns.map((column, index) => (
                     <React.Fragment key={index}>

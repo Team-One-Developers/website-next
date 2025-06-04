@@ -1,5 +1,6 @@
 "use client"
 
+import Typography from "@/components/atoms/Typography"
 import cn from "@/lib/cn"
 import Link from "next/link"
 import { useEffect, useRef } from "react"
@@ -76,14 +77,18 @@ export default function Hero({
                     )}
                 >
                     <div className="w-full lg:w-4/5">
-                        {subtitle && <p className="text-primary text-xl uppercase">{subtitle}</p>}
-                        <h1 className="font-spacegrotesk text-t1-white mt-4 text-5xl font-semibold tracking-tight text-balance uppercase sm:text-6xl">
+                        {subtitle && (
+                            <Typography variant="subtitle" className="text-primary uppercase">
+                                {subtitle}
+                            </Typography>
+                        )}
+                        <Typography variant="h1" className="text-t1-white mt-4">
                             {title}
-                        </h1>
+                        </Typography>
                         {description && (
-                            <p className="text-t1-white mt-8 text-lg font-medium text-pretty sm:text-xl/8">
+                            <Typography variant="paragraph" className="text-t1-white mt-8">
                                 {description}
-                            </p>
+                            </Typography>
                         )}
                         {link && (
                             <div className="mt-12">

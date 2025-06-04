@@ -57,7 +57,7 @@ export const Magazine = () => {
                     </p>
                     <Link
                         href="/downloads&q=magazine"
-                        className="group text-t1-black font-semibold transition-all duration-300"
+                        className="bg-t1-black group text-primary font-spacegrotesk w-fit rounded-sm px-4 py-2 font-semibold uppercase transition-all duration-300"
                     >
                         Download PDF
                         <span aria-hidden="true" className="ml-2 transition-all duration-300 group-hover:ml-3">

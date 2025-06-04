@@ -14,8 +14,6 @@ const Home = async () => {
         { cache: process.env.NODE_ENV === "development" ? "no-store" : "force-cache" }
     )
 
-    console.log("Newest Blogs:", newestBlogs)
-
     return (
         <div>
             <Hero

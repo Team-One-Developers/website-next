@@ -3,6 +3,7 @@ import Expert from "@/components/sections/Expert"
 import Hero from "@/components/sections/Hero"
 import Magazine from "@/components/sections/Magazine"
 import TextColumns from "@/components/sections/TextColumns"
+import TripleImageColumn from "@/components/sections/TripleImageColumn"
 
 export default function Services() {
     return (
@@ -68,6 +69,33 @@ export default function Services() {
                 bg="primary"
             />
             <Magazine />
+            <TripleImageColumn
+                title="CONFERENCES & KEYNOTES"
+                layout="blog"
+                columns={[
+                    {
+                        title: "KI BIG BANG FESTIVAL",
+                        text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et",
+                        image: "/images/assets/k5.png",
+                        tags: ["24+25. Juni 2025"],
+                        href: "https://www.k5.de/"
+                    },
+                    {
+                        title: "K5 BERLIN",
+                        text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et",
+                        image: "/images/assets/k5.png",
+                        tags: ["24+25. Juni 2025"],
+                        href: "https://www.k5.de/"
+                    },
+                    {
+                        title: "ANOTHER BLOG ARTICLE",
+                        text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et",
+                        image: "/images/assets/k5.png",
+                        tags: ["24+25. Juni 2025"],
+                        href: "https://www.k5.de/"
+                    }
+                ]}
+            />
             <Expert
                 image="/images/culture/paul.png"
                 text="„Angetrieben von dem Ziel, digitale Zukunftsprojekte erfolgreich zu gestalten und jeden Tag ein bisschen besser zu werden, beraten wir unsere Kunden pragmatisch und mit klarem Blick auf die jeweiligen Unternehmensziele.“"

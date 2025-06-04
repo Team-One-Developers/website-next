@@ -20,7 +20,8 @@ const navigation = [
         ]
     },
     { name: "Karriere", href: "/career" },
-    { name: "Blog", href: "/blog" }
+    { name: "Blog", href: "/blog" },
+    { name: "kontakt", href: "/contact" }
 ]
 
 export default function Header() {
@@ -60,14 +61,15 @@ export default function Header() {
                                 href={item.href}
                                 className={cn(
                                     // p-3 & -m-3 for some more clickable area without changing the size
-                                    "text-t1-white hover:text-primary -m-3 p-3 text-sm/6 font-semibold uppercase",
-                                    pathname === item.href && "underline"
+                                    "text-t1-white hover:text-primary -m-3 p-3 text-lg/6 font-semibold uppercase",
+                                    (pathname === item.href || (item.href !== "/" && pathname.includes(item.href))) &&
+                                        "underline"
                                 )}
                             >
                                 {item.name}
                             </Link>
                             {item.children && (
-                                <div className="bg-t1-black shadow-t1-white border-t1-white absolute left-0 z-10 mt-2 hidden w-52 border group-hover:block">
+                                <div className="bg-t1-black shadow-t1-white absolute left-0 z-10 mt-2 hidden w-52 group-hover:block">
                                     {item.children.map((child) => (
                                         <Link
                                             key={child.name}
@@ -84,11 +86,6 @@ export default function Header() {
                             ) : null} */}
                         </div>
                     ))}
-                </div>
-                <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-                    <Link href="/contact" className="text-t1-white hover:text-primary text-sm/6 font-semibold">
-                        Kontakt <span aria-hidden="true">&rarr;</span>
-                    </Link>
                 </div>
             </nav>
             <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">

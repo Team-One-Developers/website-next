@@ -462,7 +462,7 @@ export type QUERY_ALL_BLOGSResult = Array<{
     link?: string
 }>
 // Variable: QUERY_ALL_PUBLIC_BLOGS
-// Query: *[_type == 'blog' && defined(slug) && defined(slug.current) && visibility == 'Public']{_id,descriptionShort,descriptionLong,author->,heroImage{asset->},title,category,date,slug,tags}
+// Query: *[_type == 'blog' && defined(slug) && defined(slug.current) && visibility == 'Public']{        _id,        descriptionShort,        descriptionLong,        author->{...,profileImg{asset->}},        heroImage{asset->},        title,        category,        date,        slug,        tags    }
 export type QUERY_ALL_PUBLIC_BLOGSResult = Array<{
     _id: string
     descriptionShort: string
@@ -476,18 +476,30 @@ export type QUERY_ALL_PUBLIC_BLOGSResult = Array<{
         name: string
         surname?: string
         position: string
-        profileImg?: {
-            asset?: {
-                _ref: string
-                _type: "reference"
-                _weak?: boolean
-                [internalGroqTypeReferenceTo]?: "sanity.imageAsset"
-            }
-            media?: unknown
-            hotspot?: SanityImageHotspot
-            crop?: SanityImageCrop
-            _type: "image"
-        }
+        profileImg: {
+            asset: {
+                _id: string
+                _type: "sanity.imageAsset"
+                _createdAt: string
+                _updatedAt: string
+                _rev: string
+                originalFilename?: string
+                label?: string
+                title?: string
+                description?: string
+                altText?: string
+                sha1hash?: string
+                extension?: string
+                mimeType?: string
+                size?: number
+                assetId?: string
+                uploadId?: string
+                path?: string
+                url?: string
+                metadata?: SanityImageMetadata
+                source?: SanityAssetSourceData
+            } | null
+        } | null
         about?: Array<{
             children?: Array<{
                 marks?: Array<string>
@@ -569,13 +581,169 @@ export type QUERY_NEWEST_BLOGSResult = Array<{
     descriptionLong: string
     slug: Slug | null
 }>
+// Variable: QUERY_SPECIFIC_BLOG
+// Query: *    [_type == 'blog' && slug.current == $slug][0]    {      ...,      author->{        ...,        profileImg{          asset->        }      },      heroImage{        asset->,      },      content[]{        ...,        _type == "image" => {          ...,          asset->        }      }    }
+export type QUERY_SPECIFIC_BLOGResult = {
+    _id: string
+    _type: "blog"
+    _createdAt: string
+    _updatedAt: string
+    _rev: string
+    title: string
+    slug?: Slug
+    path?: string
+    author: {
+        _id: string
+        _type: "author"
+        _createdAt: string
+        _updatedAt: string
+        _rev: string
+        name: string
+        surname?: string
+        position: string
+        profileImg: {
+            asset: {
+                _id: string
+                _type: "sanity.imageAsset"
+                _createdAt: string
+                _updatedAt: string
+                _rev: string
+                originalFilename?: string
+                label?: string
+                title?: string
+                description?: string
+                altText?: string
+                sha1hash?: string
+                extension?: string
+                mimeType?: string
+                size?: number
+                assetId?: string
+                uploadId?: string
+                path?: string
+                url?: string
+                metadata?: SanityImageMetadata
+                source?: SanityAssetSourceData
+            } | null
+        } | null
+        about?: Array<{
+            children?: Array<{
+                marks?: Array<string>
+                text?: string
+                _type: "span"
+                _key: string
+            }>
+            style?: "blockquote" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "normal"
+            listItem?: "bullet" | "number"
+            markDefs?: Array<{
+                href?: string
+                _type: "link"
+                _key: string
+            }>
+            level?: number
+            _type: "block"
+            _key: string
+        }>
+    }
+    language: "Deutsch" | "Englisch"
+    tags: Array<string>
+    category: "BUSINESS TECHNOLOGY" | "CULTURE" | "EXPERIENCE" | "METHODOLOGY" | "NEWS" | "SOFTWARE ENGINEERING"
+    descriptionShort: string
+    descriptionLong: string
+    date: string
+    heroImage: {
+        asset: {
+            _id: string
+            _type: "sanity.imageAsset"
+            _createdAt: string
+            _updatedAt: string
+            _rev: string
+            originalFilename?: string
+            label?: string
+            title?: string
+            description?: string
+            altText?: string
+            sha1hash?: string
+            extension?: string
+            mimeType?: string
+            size?: number
+            assetId?: string
+            uploadId?: string
+            path?: string
+            url?: string
+            metadata?: SanityImageMetadata
+            source?: SanityAssetSourceData
+        } | null
+    }
+    toc?: boolean
+    content: Array<
+        | {
+              children?: Array<{
+                  marks?: Array<string>
+                  text?: string
+                  _type: "span"
+                  _key: string
+              }>
+              style?: "blockquote" | "h2" | "h3" | "h4" | "normal"
+              listItem?: "bullet" | "number"
+              markDefs?: Array<{
+                  href?: string
+                  _type: "link"
+                  _key: string
+              }>
+              level?: number
+              _type: "block"
+              _key: string
+          }
+        | {
+              _key: string
+              _type: "code"
+              language?: string
+              filename?: string
+              code?: string
+              highlightedLines?: Array<number>
+          }
+        | {
+              asset: {
+                  _id: string
+                  _type: "sanity.imageAsset"
+                  _createdAt: string
+                  _updatedAt: string
+                  _rev: string
+                  originalFilename?: string
+                  label?: string
+                  title?: string
+                  description?: string
+                  altText?: string
+                  sha1hash?: string
+                  extension?: string
+                  mimeType?: string
+                  size?: number
+                  assetId?: string
+                  uploadId?: string
+                  path?: string
+                  url?: string
+                  metadata?: SanityImageMetadata
+                  source?: SanityAssetSourceData
+              } | null
+              media?: unknown
+              hotspot?: SanityImageHotspot
+              crop?: SanityImageCrop
+              _type: "image"
+              _key: string
+          }
+    >
+    cta: "BLOG" | "CAREER" | "CONTACT" | "NONE"
+    visibility: "Draft" | "Public"
+    link?: string
+} | null
 
 // Query TypeMap
 import "@sanity/client"
 declare module "@sanity/client" {
     interface SanityQueries {
         "*[_type == 'blog' && defined(slug) && defined(slug.current)]{...,author->,heroImage{asset->}}": QUERY_ALL_BLOGSResult
-        "*[_type == 'blog' && defined(slug) && defined(slug.current) && visibility == 'Public']{_id,descriptionShort,descriptionLong,author->,heroImage{asset->},title,category,date,slug,tags}": QUERY_ALL_PUBLIC_BLOGSResult
+        "*[_type == 'blog' && defined(slug) && defined(slug.current) && visibility == 'Public']{\n        _id,\n        descriptionShort,\n        descriptionLong,\n        author->{...,profileImg{asset->}},\n        heroImage{asset->},\n        title,\n        category,\n        date,\n        slug,\n        tags\n    }": QUERY_ALL_PUBLIC_BLOGSResult
         "*[_type == 'blog' && defined(slug) && defined(slug.current) && visibility == 'Public'] | order(_createdAt desc)[0...3]{heroImage{asset->},date,title,descriptionLong,slug}": QUERY_NEWEST_BLOGSResult
+        "*\n    [_type == 'blog' && slug.current == $slug][0]\n    {\n      ...,\n      author->{\n        ...,\n        profileImg{\n          asset->\n        }\n      },\n      heroImage{\n        asset->,\n      },\n      content[]{\n        ...,\n        _type == \"image\" => {\n          ...,\n          asset->\n        }\n      }\n    }\n    ": QUERY_SPECIFIC_BLOGResult
     }
 }

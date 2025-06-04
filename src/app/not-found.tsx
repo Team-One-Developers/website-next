@@ -19,7 +19,7 @@ const NotFound = () => {
                 </div>
                 <div className="text-center">
                     <p className="text-primary text-base font-semibold">404</p>
-                    <h1 className="text-t1-white mt-4 text-5xl font-semibold tracking-tight text-balance sm:text-7xl">
+                    <h1 className="font-spacegrotesk text-t1-white mt-4 text-5xl font-semibold tracking-tight text-balance uppercase sm:text-7xl">
                         Seite nicht gefunden
                     </h1>
                     <p className="text-t1-white/90 mt-6 text-lg font-medium text-pretty sm:text-xl/8">
