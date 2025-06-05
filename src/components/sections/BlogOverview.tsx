@@ -1,9 +1,9 @@
 "use client"
 
 import Section from "@/components/layout/Section"
-import cn from "@/lib/cn"
-import { formatDate } from "@/lib/formateDate"
 import { QUERY_ALL_PUBLIC_BLOGSResult } from "@/sanity/types"
+import cn from "@/utils/cn"
+import { formatDate } from "@/utils/formateDate"
 import Image from "next/image"
 import Link from "next/link"
 import { SetStateAction, useState } from "react"

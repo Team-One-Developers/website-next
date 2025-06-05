@@ -1,4 +1,4 @@
-import cn from "@/lib/cn"
+import cn from "@/utils/cn"
 import { ElementType, ReactNode } from "react"
 import { tv, VariantProps } from "tailwind-variants"
 

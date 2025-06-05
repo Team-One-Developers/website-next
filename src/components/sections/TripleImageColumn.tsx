@@ -1,6 +1,6 @@
 import Typography from "@/components/atoms/Typography"
 import Section from "@/components/layout/Section"
-import cn from "@/lib/cn"
+import cn from "@/utils/cn"
 import Image from "next/image"
 import Link from "next/link"
 

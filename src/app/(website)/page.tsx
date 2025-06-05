@@ -2,10 +2,10 @@ import Customers from "@/components/sections/Customers"
 import Hero from "@/components/sections/Hero"
 import TextColumns from "@/components/sections/TextColumns"
 import TripleImageColumn from "@/components/sections/TripleImageColumn"
-import { formatDate } from "@/lib/formateDate"
 import { client } from "@/sanity/lib/client"
 import { QUERY_NEWEST_BLOGS } from "@/sanity/queries"
 import { QUERY_NEWEST_BLOGSResult } from "@/sanity/types"
+import { formatDate } from "@/utils/formateDate"
 
 const Home = async () => {
     const newestBlogs: QUERY_NEWEST_BLOGSResult = await client.fetch(

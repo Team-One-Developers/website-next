@@ -1,6 +1,6 @@
 "use client"
 
-import cn from "@/lib/cn"
+import cn from "@/utils/cn"
 import { Dialog, DialogPanel } from "@headlessui/react"
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline"
 import Image from "next/image"

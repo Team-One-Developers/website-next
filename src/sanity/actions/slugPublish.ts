@@ -1,4 +1,4 @@
-import { slugify } from "@/lib/slugify"
+import { slugify } from "@/utils/slugify"
 import { DocumentActionComponent, DocumentActionProps, useDocumentOperation } from "sanity"
 
 export function createAsyncPublishAction(originalAction: DocumentActionComponent) {

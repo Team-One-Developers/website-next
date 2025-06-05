@@ -1,7 +1,7 @@
 "use client"
 
 import Typography from "@/components/atoms/Typography"
-import cn from "@/lib/cn"
+import cn from "@/utils/cn"
 import Link from "next/link"
 import { useEffect, useRef } from "react"
 

@@ -1,4 +1,4 @@
-import cn from "@/lib/cn"
+import cn from "@/utils/cn"
 import { ReactNode } from "react"
 
 export const Section = ({ children, className }: { children: ReactNode; className?: string }) => {
