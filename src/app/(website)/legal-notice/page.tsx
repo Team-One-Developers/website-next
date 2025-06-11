@@ -1,5 +1,6 @@
 import { Section } from "@/components/layout/Section"
 import { Metadata } from "next"
+import Link from "next/link"
 
 export const metadata: Metadata = {
     title: "Impressum",
@@ -44,9 +45,9 @@ const Legal = () => {
                 ausdrücklich angeforderten Informationen ist nicht gestattet. Rechtliche Schritte gegen die Versender
                 von so genannten Spam-Mails bei Verstößen gegen dieses Verbot sind ausdrücklich vorbehalten. Für
                 detaillierte Informationen siehe{" "}
-                <a href="/privacy" className="text-primary">
+                <Link href="/privacy" className="text-primary">
                     Datenschutz
-                </a>
+                </Link>
                 .
             </p>
 

@@ -81,8 +81,6 @@ export default async function LeadCapturePage({ params }: LeadcaptureProps) {
         publisher: organization
     }
 
-    console.log(leadcapture)
-
     return (
         <Section>
             <StructuredData data={structuredData} />
