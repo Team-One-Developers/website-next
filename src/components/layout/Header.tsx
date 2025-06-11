@@ -8,16 +8,25 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { useState } from "react"
 
-const navigation = [
+interface NavigationItem {
+    name: string
+    href: string
+    children?: {
+        name: string
+        href: string
+    }[]
+}
+
+const navigation: NavigationItem[] = [
     { name: "Home", href: "/" },
     {
         name: "Leistungen",
-        href: "/services",
-        children: [
-            { name: "Software Engineering", href: "/services/software-engineering" },
-            { name: "AI & Data Analytics", href: "/services/ai-data-analytics" },
-            { name: "Digital Strategy & Transformation", href: "/services/digital-strategy-transformation" }
-        ]
+        href: "/services"
+        // children: [
+        //     { name: "Software Engineering", href: "/services/software-engineering" },
+        //     { name: "AI & Data Analytics", href: "/services/ai-data-analytics" },
+        //     { name: "Digital Strategy & Transformation", href: "/services/digital-strategy-transformation" }
+        // ]
     },
     { name: "Karriere", href: "/career" },
     { name: "Blog", href: "/blog" },

@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
+import BlogDetailPageTemp from "@/app/(website)/blog/[slug]/_partials/BlogDetailPageTemp"
 import Section from "@/components/layout/Section"
 import StructuredData from "@/components/layout/StructuredData"
 import { organization } from "@/data/schemaOrg"
@@ -102,8 +103,12 @@ export default async function BlogPage({ params }: BlogProps) {
     return (
         <Section>
             <StructuredData data={structuredData} />
-            <h1 className="pb-[1000px]">{blog.title}</h1>
-            <p></p>
+            <BlogDetailPageTemp
+                blog={blog}
+                highlightedContent={ptBlocksHighlighted}
+                relatedBlogs={relatedBlogs}
+                className="font-inter"
+            />
         </Section>
     )
 }

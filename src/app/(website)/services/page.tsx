@@ -28,10 +28,10 @@ export default function Services() {
                             " Wir bauen skalierbare Backend-Systeme für datengetriebene Produkte – mit Fokus auf Performance, Security und Automatisierung. Ideal für komplexe Geschäftsprozesse und dynamische Plattformanforderungen."
                     }
                 ]}
-                link={{
-                    href: "/services/software-engineering",
-                    label: "Mehr erfahren"
-                }}
+                // link={{
+                //     href: "/services/software-engineering",
+                //     label: "Mehr erfahren"
+                // }}
             />
             <ServiceInfo
                 title="OPERATIONAL AI & DATA ANALYTICS"
@@ -50,10 +50,10 @@ export default function Services() {
                             "Ob Digitalstrategie, Portfolio-Governance oder Product Coaching: Wir verbinden Analyse, Strategiearbeit und Schulung zu einem klaren Ziel - Selbstwirksamkeit in einer dynamischen Welt."
                     }
                 ]}
-                link={{
-                    href: "/services/ai-data-analytics",
-                    label: "Mehr erfahren"
-                }}
+                // link={{
+                //     href: "/services/ai-data-analytics",
+                //     label: "Mehr erfahren"
+                // }}
             />
             <ServiceInfo
                 title="BUSINESS & DIGITAL-STRATEGIE & TRANSFORMATION"
@@ -72,10 +72,10 @@ export default function Services() {
                             "Ob Aufbau oder Umbau: Wir begleiten Unternehmen bei der strukturellen Gestaltung digitaler Organisationen – mit klarem Zielbild und Fokus auf Umsetzung. Statt Theorie liefern wir ein belastbares Modell für performante Teams und skalierbare Produktbereiche."
                     }
                 ]}
-                link={{
-                    href: "/services/digital-strategy-transformation",
-                    label: "Mehr erfahren"
-                }}
+                // link={{
+                //     href: "/services/digital-strategy-transformation",
+                //     label: "Mehr erfahren"
+                // }}
             />
             <TripleImageColumn
                 title="Auszug Referenzen"

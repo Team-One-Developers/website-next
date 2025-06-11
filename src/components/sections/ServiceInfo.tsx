@@ -12,7 +12,7 @@ export interface ServiceInfoProps {
         title: string
         description: string
     }[]
-    link: {
+    link?: {
         href: string
         label: string
     }
@@ -37,15 +37,17 @@ export const ServiceInfo = ({ title, description, image, alt, textBlocks, link }
                             <p className="text-t1-black mt-2">{block.description}</p>
                         </div>
                     ))}
-                    <Link
-                        href={link.href}
-                        className="group text-t1-black border-t1-black hover:bg-primary mt-12 w-fit border p-2"
-                    >
-                        {link.label}
-                        <span aria-hidden="true" className="ml-2 transition-all duration-300 group-hover:ml-3">
-                            &rarr;
-                        </span>
-                    </Link>
+                    {link && (
+                        <Link
+                            href={link.href}
+                            className="group text-t1-black border-t1-black hover:bg-primary mt-12 w-fit border p-2"
+                        >
+                            {link.label}
+                            <span aria-hidden="true" className="ml-2 transition-all duration-300 group-hover:ml-3">
+                                &rarr;
+                            </span>
+                        </Link>
+                    )}
                 </div>
             </div>
         </Section>

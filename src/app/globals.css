@@ -1,8 +1,7 @@
 @import "tailwindcss";
 
-/* disable standard device preference oriented dark mode and base it on dark being set in the data-theme or className */
+/* disable standard device preference oriented dark mode and base it on dark being set in the className */
 @custom-variant dark (&:where(.dark, .dark *));
-@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 :root {
     --t1-primary: #46ffad;

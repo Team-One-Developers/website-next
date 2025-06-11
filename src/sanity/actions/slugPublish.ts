@@ -15,8 +15,10 @@ export function createAsyncPublishAction(originalAction: DocumentActionComponent
             onHandle: async () => {
                 const title = props.draft!.title
                 const draft = props.draft!.visibility === "Draft" ? "draft-" : ""
+                // @ts-expect-error no time to fix this right now
+                const currentSlug = props.draft!.slug?.current || ""
 
-                const slug = draft + slugify(title)
+                const slug = currentSlug ? currentSlug : draft + slugify(title)
                 const path = `${props.type === "blog" ? "/blog" : "/career/job"}/${slug}`
                 const link = `https://www.teamonedevelopers.de${path}`
 

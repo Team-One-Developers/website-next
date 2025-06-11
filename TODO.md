@@ -13,3 +13,11 @@ cookie banner
 tracking
 
 hubspot forms
+
+blogbeitrag sticky side item
+
+check metadata in prod
+
+portanle text fixes
+
+career -> replace learn more svg

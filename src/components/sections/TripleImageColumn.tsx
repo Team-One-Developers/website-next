@@ -25,11 +25,13 @@ export type TripleImageColumnProps =
           layout: "blog"
           title: string
           columns: [TripleImageColumnBlogItem, TripleImageColumnBlogItem, TripleImageColumnBlogItem]
+          className?: string
       }
     | {
           layout: "default"
           title: string
           columns: [TripleImageColumnDefaultItem, TripleImageColumnDefaultItem, TripleImageColumnDefaultItem]
+          className?: string
       }
 
 export function isBlogLayout(
@@ -78,10 +80,10 @@ export const TripleImageColumn = (props: TripleImageColumnProps) => {
                     className="row-start-1 h-64 w-full object-cover"
                 />
 
-                <Typography variant="h5" className="text-t1-black row-start-2">
+                <Typography variant="h5" className="text-t1-black dark:text-t1-white row-start-2">
                     {title}
                 </Typography>
-                <div className="text-t1-black row-start-3">
+                <div className="text-t1-black dark:text-t1-white row-start-3">
                     <Typography className="text-md sm:text-lg">{description}</Typography>
                     <Tags className="mt-4" tags={tags} />
                 </div>
@@ -115,10 +117,10 @@ export const TripleImageColumn = (props: TripleImageColumnProps) => {
                     className="row-start-1 h-64 w-full object-cover"
                 />
                 <Tags className="row-start-2" tags={tags} />
-                <Typography variant="h5" className="text-t1-black row-start-3">
+                <Typography variant="h5" className="text-t1-black dark:text-t1-white row-start-3">
                     {title}
                 </Typography>
-                <div className="text-t1-black row-start-4">
+                <div className="text-t1-black dark:text-t1-white row-start-4">
                     <Typography className="text-md sm:text-lg">{description}</Typography>
                 </div>
             </Link>
@@ -126,8 +128,8 @@ export const TripleImageColumn = (props: TripleImageColumnProps) => {
     }
 
     return (
-        <Section className="bg-t1-white py-24 sm:py-32">
-            <Typography variant="h3" className="text-t1-black">
+        <Section className={cn("bg-t1-white dark:bg-t1-black py-24 sm:py-32", props.className)}>
+            <Typography variant="h3" className="text-t1-black dark:text-t1-white">
                 {props.title}
             </Typography>
             <div

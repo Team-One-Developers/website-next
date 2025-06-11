@@ -1,47 +1,101 @@
 import { defineQuery } from "next-sanity"
 
-export const QUERY_ALL_BLOGS = defineQuery(
-    `*[_type == 'blog' && defined(slug) && defined(slug.current)]{...,author->,heroImage{asset->}}`
-)
+export const QUERY_ALL_CAREERS_DANGER_ONLY_FOR_STATIC_PARAMS = defineQuery(`*
+  [_type == 'career' && defined(slug) && defined(slug.current) && division != null && !(division in [""])]
+`)
 
-export const QUERY_ALL_PUBLIC_BLOGS = defineQuery(
-    `*[_type == 'blog' && defined(slug) && defined(slug.current) && visibility == 'Public']{
-        _id,
-        descriptionShort,
-        descriptionLong,
-        author->{...,profileImg{asset->}},
-        heroImage{asset->},
-        title,
-        category,
-        date,
-        slug,
-        tags
-    }`
-)
+export const QUERY_ALL_PUBLIC_CAREERS = defineQuery(`*
+  [_type == 'career' && defined(slug) && defined(slug.current) && visibility == 'Public']
+  `)
 
-export const QUERY_NEWEST_BLOGS = defineQuery(
-    `*[_type == 'blog' && defined(slug) && defined(slug.current) && visibility == 'Public'] | order(_createdAt desc)[0...3]{heroImage{asset->},date,title,descriptionLong,slug}`
-)
+export const QUERY_ALL_LEADCAPTURES = defineQuery(`*
+  [_type == 'leadcapture' && defined(slug) && defined(slug.current)]
+  {
+    ...,
+    heroImage{
+      asset->
+    }
+  }
+`)
+
+export const QUERY_ALL_BLOGS_DANGER_ONLY_FOR_STATIC_PARAMS = defineQuery(`*
+  [_type == 'blog' && defined(slug) && defined(slug.current)]
+  {
+    ...,
+    author->,
+    heroImage{
+      asset->
+    }
+  }
+`)
+
+export const QUERY_ALL_PUBLIC_BLOGS = defineQuery(`*
+  [_type == 'blog' && defined(slug) && defined(slug.current) && visibility == 'Public']
+  {
+    _id,
+    descriptionShort,
+    descriptionLong,
+    author->{
+      ...,
+      profileImg{
+        asset->
+      }
+    },
+    heroImage{
+      asset->
+    },
+    title,
+    category,
+    date,
+    slug,
+    tags
+  }
+`)
+
+export const QUERY_NEWEST_BLOGS = defineQuery(`*
+  [_type == 'blog' && defined(slug) && defined(slug.current) && visibility == 'Public']
+  | order(_createdAt desc)[0...3]
+  {
+    heroImage{
+      asset->
+    },
+    date,
+    title,
+    descriptionLong,
+    slug
+  }
+`)
 
 export const QUERY_SPECIFIC_BLOG = defineQuery(`*
-    [_type == 'blog' && slug.current == $slug][0]
-    {
+  [_type == 'blog' && slug.current == $slug][0]
+  {
+    ...,
+    author->{
       ...,
-      author->{
+      profileImg{
+        asset->
+      }
+    },
+    heroImage{
+      asset->
+    },
+    content[]{
+      ...,
+      _type == "image" => {
         ...,
-        profileImg{
-          asset->
-        }
-      },
-      heroImage{
-        asset->,
-      },
-      content[]{
-        ...,
-        _type == "image" => {
-          ...,
-          asset->
-        }
+        asset->
       }
     }
-    `)
+  }
+`)
+
+export const QUERY_SPECIFIC_LEADCAPTURE = defineQuery(`*
+  [_type == 'leadcapture' && slug.current == $slug][0]
+  {
+    ...,
+    heroImage{
+      asset->
+    }
+
+  }
+`)

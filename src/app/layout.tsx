@@ -80,6 +80,7 @@ export const metadata: Metadata = {
         shortcut: "/favicon-16x16.png",
         apple: "/apple-touch-icon.png"
     },
+    metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"),
     manifest: `${siteConfig.url}/site.webmanifest`
 }
 
