@@ -81,7 +81,7 @@ export const BlogOverview = ({ blogs }: { blogs: QUERY_ALL_PUBLIC_BLOGSResult })
                     </ul>
                 </div>
 
-                <div className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-32 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+                <div className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-32 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-2">
                     {blogs.map((blog) => (
                         <Link
                             href={`/blog/${blog.slug?.current}`}
@@ -96,7 +96,7 @@ export const BlogOverview = ({ blogs }: { blogs: QUERY_ALL_PUBLIC_BLOGSResult })
                                     <time dateTime={blog.date} className="text-gray-500">
                                         {formatDate(blog.date)}
                                     </time>
-                                    <span className="relative z-10 rounded-full bg-white px-3 py-1.5 font-medium text-gray-600">
+                                    <span className="relative z-10 rounded-sm bg-white px-3 py-1.5 font-medium text-gray-600">
                                         {blog.category}
                                     </span>
                                 </div>

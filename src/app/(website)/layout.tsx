@@ -1,5 +1,6 @@
 import Footer from "@/components/layout/Footer"
 import Header from "@/components/layout/Header"
+import { HubspotProvider } from "next-hubspot"
 
 export default function WebsiteLayout({
     children
@@ -8,9 +9,11 @@ export default function WebsiteLayout({
 }>) {
     return (
         <>
-            <Header />
-            <main className="mt-24">{children}</main>
-            <Footer />
+            <HubspotProvider>
+                <Header />
+                <main className="mt-24">{children}</main>
+                <Footer />
+            </HubspotProvider>
         </>
     )
 }

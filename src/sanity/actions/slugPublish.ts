@@ -20,7 +20,7 @@ export function createAsyncPublishAction(originalAction: DocumentActionComponent
 
                 const slug = currentSlug ? currentSlug : draft + slugify(title)
                 const path = `${props.type === "blog" ? "/blog" : "/career/job"}/${slug}`
-                const link = `https://www.teamonedevelopers.de${path}`
+                const link = `https://www.team-one.de${path}`
 
                 await patch.execute([{ set: { slug: { current: slug }, path, link } }])
                 originalResult.onHandle!()

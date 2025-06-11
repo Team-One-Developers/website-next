@@ -1,5 +1,6 @@
+import { combinations } from "@/components/sections/CTA"
 import { TextIcon } from "@sanity/icons"
-import { defineField, defineType } from "sanity"
+import { defineArrayMember, defineField, defineType } from "sanity"
 
 export const leadcaptureType = defineType({
     name: "leadcapture",
@@ -29,11 +30,54 @@ export const leadcaptureType = defineType({
             type: "string",
             validation: (Rule) => Rule.required().error("A description is required for a lead capture page")
         }),
-
         defineField({
             name: "heroImage",
             type: "image",
             description: "This image is the header image for the lead capture page.",
+            validation: (Rule) => Rule.required()
+        }),
+        defineField({
+            name: "portalId",
+            type: "string",
+            description: "The HubSpot portal ID for the hero-form. This is used to connect the form from HubSpot.",
+            validation: (Rule) => Rule.required()
+        }),
+        defineField({
+            name: "formId",
+            type: "string",
+            description: "The HubSpot form ID for the hero-form. This is used to connect the form from HubSpot.",
+            validation: (Rule) => Rule.required()
+        }),
+        defineField({
+            name: "content",
+            title: "Content",
+            type: "array",
+            description:
+                "The content section of the lead capture page. The content will be displayed as formatted here.",
+            of: [
+                defineArrayMember({
+                    type: "block",
+                    styles: [
+                        { title: "Normal", value: "normal" },
+                        { title: "H2", value: "h2" },
+                        { title: "H3", value: "h3" },
+                        { title: "H4", value: "h4" },
+                        { title: "Quote", value: "blockquote" }
+                    ]
+                })
+            ],
+            validation: (Rule) => Rule.required()
+        }),
+        defineField({
+            name: "cta",
+            type: "string",
+            description: "The CTA that will be displayed on the lead capture page.",
+            options: {
+                list: combinations.map((combination) => ({
+                    title: combination,
+                    value: combination
+                }))
+            },
             validation: (Rule) => Rule.required()
         }),
         defineField({

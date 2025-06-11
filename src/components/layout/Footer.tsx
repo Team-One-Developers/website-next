@@ -1,14 +1,17 @@
+import Typography from "@/components/atoms/Typography"
 import Link from "next/link"
 import { JSX, SVGProps } from "react"
 
 const navigation = {
     services: [
-        { name: "Software Engineering", href: "/services/software-engineering" },
-        { name: "AI & Data Analytics", href: "/services/ai-data-analytics" },
-        { name: "Digital Strategy & Transformation", href: "/services/digital-strategy-transformation" }
+        { name: "Leistungen", href: "/services" },
+        { name: "Kontakt", href: "/contact" }
+        // { name: "Software Engineering", href: "/services/software-engineering" },
+        // { name: "AI & Data Analytics", href: "/services/ai-data-analytics" },
+        // { name: "Digital Strategy & Transformation", href: "/services/digital-strategy-transformation" }
     ],
     company: [
-        { name: "About us", href: "/about-us" },
+        { name: "Culture", href: "/culture" },
         { name: "Career", href: "/career" }
     ],
     resources: [
@@ -63,25 +66,35 @@ export default function Footer() {
                     <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
                         <div className="md:grid md:grid-cols-2 md:gap-8">
                             <div>
-                                <h3 className="text-sm/6 font-semibold text-gray-900">Services</h3>
+                                <Typography variant="h6" className="text-t1-black text-sm/6 font-semibold">
+                                    Leistungen
+                                </Typography>
                                 <ul role="list" className="mt-6 space-y-4">
                                     {navigation.services.map((item) => (
                                         <li key={item.name}>
-                                            <a href={item.href} className="text-sm/6 text-gray-600 hover:text-gray-900">
+                                            <Link
+                                                href={item.href}
+                                                className="text-sm/6 text-gray-600 hover:text-gray-900"
+                                            >
                                                 {item.name}
-                                            </a>
+                                            </Link>
                                         </li>
                                     ))}
                                 </ul>
                             </div>
                             <div className="mt-10 md:mt-0">
-                                <h3 className="text-sm/6 font-semibold text-gray-900">Company</h3>
+                                <Typography variant="h6" className="text-t1-black text-sm/6 font-semibold">
+                                    Team One
+                                </Typography>
                                 <ul role="list" className="mt-6 space-y-4">
                                     {navigation.company.map((item) => (
                                         <li key={item.name}>
-                                            <a href={item.href} className="text-sm/6 text-gray-600 hover:text-gray-900">
+                                            <Link
+                                                href={item.href}
+                                                className="text-sm/6 text-gray-600 hover:text-gray-900"
+                                            >
                                                 {item.name}
-                                            </a>
+                                            </Link>
                                         </li>
                                     ))}
                                 </ul>
@@ -89,25 +102,35 @@ export default function Footer() {
                         </div>
                         <div className="md:grid md:grid-cols-2 md:gap-8">
                             <div>
-                                <h3 className="text-sm/6 font-semibold text-gray-900">Resources</h3>
+                                <Typography variant="h6" className="text-t1-black text-sm/6 font-semibold">
+                                    Resources
+                                </Typography>
                                 <ul role="list" className="mt-6 space-y-4">
                                     {navigation.resources.map((item) => (
                                         <li key={item.name}>
-                                            <a href={item.href} className="text-sm/6 text-gray-600 hover:text-gray-900">
+                                            <Link
+                                                href={item.href}
+                                                className="text-sm/6 text-gray-600 hover:text-gray-900"
+                                            >
                                                 {item.name}
-                                            </a>
+                                            </Link>
                                         </li>
                                     ))}
                                 </ul>
                             </div>
                             <div className="mt-10 md:mt-0">
-                                <h3 className="text-sm/6 font-semibold text-gray-900">Legal</h3>
+                                <Typography variant="h6" className="text-t1-black text-sm/6 font-semibold">
+                                    Legal
+                                </Typography>
                                 <ul role="list" className="mt-6 space-y-4">
                                     {navigation.legal.map((item) => (
                                         <li key={item.name}>
-                                            <a href={item.href} className="text-sm/6 text-gray-600 hover:text-gray-900">
+                                            <Link
+                                                href={item.href}
+                                                className="text-sm/6 text-gray-600 hover:text-gray-900"
+                                            >
                                                 {item.name}
-                                            </a>
+                                            </Link>
                                         </li>
                                     ))}
                                 </ul>

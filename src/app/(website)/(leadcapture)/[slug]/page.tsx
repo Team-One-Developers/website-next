@@ -1,6 +1,9 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import Section from "@/components/layout/Section"
 import StructuredData from "@/components/layout/StructuredData"
+import { T1PortableText } from "@/components/molecules/T1PortableText"
+import CTA from "@/components/sections/CTA"
+import LeadCaptureHero from "@/components/sections/LeadCaptureHero"
 import { organization } from "@/data/schemaOrg"
 import { client } from "@/sanity/lib/client"
 import { QUERY_ALL_LEADCAPTURES, QUERY_SPECIFIC_LEADCAPTURE } from "@/sanity/queries"
@@ -68,8 +71,6 @@ export default async function LeadCapturePage({ params }: LeadcaptureProps) {
         notFound()
     }
 
-    const allLeadCaptures = await client.fetch(QUERY_ALL_LEADCAPTURES)
-
     // Structured data for a lead capture page (WebPage type)
     const structuredData: WithContext<WebPage> = {
         "@context": "https://schema.org",
@@ -80,11 +81,27 @@ export default async function LeadCapturePage({ params }: LeadcaptureProps) {
         publisher: organization
     }
 
+    console.log(leadcapture)
+
     return (
         <Section>
             <StructuredData data={structuredData} />
-            <h1 className="pb-[1000px]">{leadcapture.title}</h1>
-            <p></p>
+            <LeadCaptureHero
+                image={{
+                    src: leadcapture.heroImage?.asset?.url ?? "",
+                    alt: leadcapture.title,
+                    width: 1200,
+                    height: 630
+                }}
+                title={leadcapture.title}
+                description={leadcapture.description}
+                portalId={leadcapture.portalId}
+                formId={leadcapture.formId}
+            />
+            <div className="py-32 sm:py-42">
+                <T1PortableText value={leadcapture.content} />
+            </div>
+            <CTA variant={leadcapture.cta} />
         </Section>
     )
 }

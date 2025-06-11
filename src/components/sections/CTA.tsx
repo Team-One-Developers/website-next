@@ -1,0 +1,59 @@
+import { LinkComponent } from "@/components/atoms/LinkComponent"
+import Typography from "@/components/atoms/Typography"
+import Section from "@/components/layout/Section"
+import cn from "@/utils/cn"
+import Image from "next/image"
+
+const PERSONS = ["paul"] as const
+const THEMES = ["dark", "light"] as const
+
+export const combinations: string[] = PERSONS.flatMap((person) => THEMES.map((theme) => `${person}-${theme}`))
+
+export const parseCombination = (combination: string): { person: string; theme: string } => {
+    const [person, theme] = combination.split("-").map((s) => s.trim())
+    return { person, theme }
+}
+
+interface CTAProps {
+    variant: `${(typeof PERSONS)[number]}-${(typeof THEMES)[number]}`
+}
+
+export const CTA = ({ variant }: CTAProps) => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const { person, theme } = parseCombination(variant)
+
+    return (
+        <Section
+            className={cn(
+                "py-24 md:py-32",
+                theme === "dark" ? "bg-t1-black text-t1-white" : "bg-t1-white text-t1-black"
+            )}
+        >
+            <div className="flex flex-col items-center justify-between gap-8 sm:flex-row">
+                <Image
+                    alt="Paul Headshot"
+                    src="/images/culture/paul.png"
+                    className="w-full rounded-sm sm:w-1/4"
+                    width={400}
+                    height={600}
+                />
+                <div className="flex w-full flex-col gap-8 sm:w-2/3">
+                    <Typography variant="paragraph" className="text-2xl sm:text-3xl">
+                        Die entscheidenden Fragen stellt man sich selten allein. Ein klarer Blick von außen hilft oft
+                        mehr als der nächste Use Case.
+                    </Typography>
+                    <Typography variant="paragraph" className={cn(theme === "dark" ? "text-primary" : "text-t1-black")}>
+                        Paul Krauss, Partner AI
+                    </Typography>
+                    <LinkComponent
+                        href="https://meetings-eu1.hubspot.com/paul-krauss"
+                        label="Let's talk"
+                        className="text-t1-black w-fit md:w-fit"
+                    />
+                </div>
+            </div>
+        </Section>
+    )
+}
+
+export default CTA

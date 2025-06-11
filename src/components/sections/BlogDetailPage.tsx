@@ -3,7 +3,11 @@ import { Section } from "@/components/layout/Section"
 import { T1PortableText } from "@/components/molecules/T1PortableText"
 import TripleImageColumn from "@/components/sections/TripleImageColumn"
 
-import { QUERY_ALL_BLOGSResult, QUERY_SPECIFIC_BLOGResult } from "@/sanity/types"
+import {
+    QUERY_ALL_BLOGS_DANGER_ONLY_FOR_STATIC_PARAMSResult,
+    QUERY_ALL_PUBLIC_BLOGSResult,
+    QUERY_SPECIFIC_BLOGResult
+} from "@/sanity/types"
 import { formatDate } from "@/utils/formateDate"
 import Image from "next/image"
 import Link from "next/link"
@@ -12,7 +16,7 @@ export interface BlogDetailPageTempProps {
     blog: QUERY_SPECIFIC_BLOGResult
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     highlightedContent: any[]
-    relatedBlogs: QUERY_ALL_BLOGSResult
+    relatedBlogs: QUERY_ALL_BLOGS_DANGER_ONLY_FOR_STATIC_PARAMSResult | QUERY_ALL_PUBLIC_BLOGSResult
     className?: string
 }
 
@@ -618,7 +622,7 @@ const PopularArticleItem = ({
     title,
     authorName
 }: {
-    image: QUERY_ALL_BLOGSResult[number]["heroImage"]
+    image: QUERY_ALL_PUBLIC_BLOGSResult[number]["heroImage"]
     href: string
     title: string
     authorName: string

@@ -1,3 +1,4 @@
+import Benefits from "@/components/sections/Benefits"
 import Careers from "@/components/sections/Careers"
 import DoubleImageHero from "@/components/sections/DoubleImageHero"
 import { client } from "@/sanity/lib/client"
@@ -32,6 +33,7 @@ const Career = async () => {
     return (
         <div>
             <DoubleImageHero />
+            <Benefits />
             <div id="careers">
                 <Careers careers={sortedCareers} />
             </div>

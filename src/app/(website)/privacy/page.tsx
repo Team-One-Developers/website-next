@@ -30,8 +30,8 @@ const Privacy = () => {
                 <a className="text-primary" href="tel:+4971125298690">
                     +49 711 25298690 <br />
                 </a>
-                <a className="text-primary" href="mailto:info@teamonedevelopers.de">
-                    info@teamonedevelopers.de <br />
+                <a className="text-primary" href="mailto:info@team-one.de">
+                    info@team-one.de <br />
                 </a>
                 <br />
                 Geschäftsführer: Timo Brückel, Julian Richter

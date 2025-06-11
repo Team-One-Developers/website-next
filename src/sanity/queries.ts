@@ -6,7 +6,11 @@ export const QUERY_ALL_CAREERS_DANGER_ONLY_FOR_STATIC_PARAMS = defineQuery(`*
 
 export const QUERY_ALL_PUBLIC_CAREERS = defineQuery(`*
   [_type == 'career' && defined(slug) && defined(slug.current) && visibility == 'Public']
-  `)
+`)
+
+export const QUERY_SPECIFIC_CAREER = defineQuery(`*
+  [_type == 'career' && slug.current == $slug][0]
+`)
 
 export const QUERY_ALL_LEADCAPTURES = defineQuery(`*
   [_type == 'leadcapture' && defined(slug) && defined(slug.current)]
@@ -32,9 +36,7 @@ export const QUERY_ALL_BLOGS_DANGER_ONLY_FOR_STATIC_PARAMS = defineQuery(`*
 export const QUERY_ALL_PUBLIC_BLOGS = defineQuery(`*
   [_type == 'blog' && defined(slug) && defined(slug.current) && visibility == 'Public']
   {
-    _id,
-    descriptionShort,
-    descriptionLong,
+    ...,
     author->{
       ...,
       profileImg{
@@ -44,11 +46,6 @@ export const QUERY_ALL_PUBLIC_BLOGS = defineQuery(`*
     heroImage{
       asset->
     },
-    title,
-    category,
-    date,
-    slug,
-    tags
   }
 `)
 
@@ -56,13 +53,11 @@ export const QUERY_NEWEST_BLOGS = defineQuery(`*
   [_type == 'blog' && defined(slug) && defined(slug.current) && visibility == 'Public']
   | order(_createdAt desc)[0...3]
   {
+    ...,
     heroImage{
       asset->
     },
-    date,
-    title,
-    descriptionLong,
-    slug
+   
   }
 `)
 

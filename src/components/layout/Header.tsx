@@ -29,6 +29,7 @@ const navigation: NavigationItem[] = [
         // ]
     },
     { name: "Karriere", href: "/career" },
+    { name: "Kultur", href: "/culture" },
     { name: "Blog", href: "/blog" },
     { name: "kontakt", href: "/contact" }
 ]

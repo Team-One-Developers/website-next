@@ -1,11 +1,15 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import BlogDetailPageTemp from "@/app/(website)/blog/[slug]/_partials/BlogDetailPageTemp"
 import Section from "@/components/layout/Section"
 import StructuredData from "@/components/layout/StructuredData"
+import BlogDetailPageTemp from "@/components/sections/BlogDetailPage"
 import { organization } from "@/data/schemaOrg"
 import { client } from "@/sanity/lib/client"
-import { QUERY_ALL_BLOGS, QUERY_SPECIFIC_BLOG } from "@/sanity/queries"
-import { QUERY_ALL_BLOGSResult } from "@/sanity/types"
+import {
+    QUERY_ALL_BLOGS_DANGER_ONLY_FOR_STATIC_PARAMS,
+    QUERY_ALL_PUBLIC_BLOGS,
+    QUERY_SPECIFIC_BLOG
+} from "@/sanity/queries"
+import { QUERY_ALL_BLOGS_DANGER_ONLY_FOR_STATIC_PARAMSResult } from "@/sanity/types"
 import { highlightCode } from "@/utils/codeStringToHighlightedHTML"
 import { mostRelatedBlogs } from "@/utils/mostRelated"
 import { Metadata } from "next"
@@ -61,7 +65,9 @@ export async function generateMetadata({ params }: BlogProps): Promise<Metadata>
 }
 
 export async function generateStaticParams() {
-    const allBlogs: QUERY_ALL_BLOGSResult = await client.fetch(QUERY_ALL_BLOGS)
+    const allBlogs: QUERY_ALL_BLOGS_DANGER_ONLY_FOR_STATIC_PARAMSResult = await client.fetch(
+        QUERY_ALL_BLOGS_DANGER_ONLY_FOR_STATIC_PARAMS
+    )
 
     return allBlogs
         .filter((blog) => blog.slug?.current)
@@ -78,7 +84,7 @@ export default async function BlogPage({ params }: BlogProps) {
         notFound()
     }
 
-    const allBlogs = await client.fetch(QUERY_ALL_BLOGS)
+    const allBlogs = await client.fetch(QUERY_ALL_PUBLIC_BLOGS)
     const ptBlocksHighlighted = await highlightCode(blog.content)
 
     const relatedBlogs = mostRelatedBlogs({
