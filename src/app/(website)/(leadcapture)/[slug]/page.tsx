@@ -8,6 +8,7 @@ import { organization } from "@/data/schemaOrg"
 import { client } from "@/sanity/lib/client"
 import { QUERY_ALL_LEADCAPTURES, QUERY_SPECIFIC_LEADCAPTURE } from "@/sanity/queries"
 import { QUERY_ALL_LEADCAPTURESResult } from "@/sanity/types"
+import cn from "@/utils/cn"
 import { Metadata } from "next"
 import { notFound } from "next/navigation"
 import type { WebPage, WithContext } from "schema-dts"
@@ -82,7 +83,7 @@ export default async function LeadCapturePage({ params }: LeadcaptureProps) {
     }
 
     return (
-        <Section>
+        <div>
             <StructuredData data={structuredData} />
             <LeadCaptureHero
                 image={{
@@ -96,10 +97,15 @@ export default async function LeadCapturePage({ params }: LeadcaptureProps) {
                 portalId={leadcapture.portalId}
                 formId={leadcapture.formId}
             />
-            <div className="py-32 sm:py-42">
+            <Section
+                className={cn(
+                    "py-32 sm:py-42",
+                    leadcapture.contentTheme === "dark" ? "bg-t1-black text-t1-white" : "bg-t1-white text-t1-black"
+                )}
+            >
                 <T1PortableText value={leadcapture.content} />
-            </div>
+            </Section>
             <CTA variant={leadcapture.cta} />
-        </Section>
+        </div>
     )
 }

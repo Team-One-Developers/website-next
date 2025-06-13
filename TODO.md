@@ -22,14 +22,4 @@ portanle text fixes
 
 career -> replace learn more svg
 
-loading skeleton form
-
-replace culture hero with standard hero or make less detailed
-
-fullwidth image mainpage bwteeen doible triple image
-
-ai subpage texte
-
-expert image smaller - bavkground more y padding - adjust quote
-
-lead capture pages anlegen - (draft name in list?? doesnt get removed)
+lead capture pages anlegen

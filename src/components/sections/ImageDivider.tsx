@@ -1,10 +1,14 @@
 import Section from "@/components/layout/Section"
 import Image from "next/image"
 
-export default function ImageDivider() {
+interface ImageDividerProps {
+    fullWidth?: boolean
+}
+
+export default function ImageDivider({ fullWidth = false }: ImageDividerProps) {
     return (
         <div className="bg-t1-white">
-            <Section className="bg-transparent py-32 sm:py-40">
+            <Section className="bg-transparent py-32 sm:py-40" fullWidth={fullWidth}>
                 <Image
                     alt="Image Banner"
                     src="/images/culture/officelife.webp"

@@ -1,5 +1,6 @@
 import Customers from "@/components/sections/Customers"
 import Hero from "@/components/sections/Hero"
+import ImageDivider from "@/components/sections/ImageDivider"
 import TextColumns from "@/components/sections/TextColumns"
 import TripleImageColumn from "@/components/sections/TripleImageColumn"
 import { client } from "@/sanity/lib/client"
@@ -71,6 +72,7 @@ const Home = async () => {
                 ]}
                 layout="default"
             />
+            <ImageDivider fullWidth />
             <TripleImageColumn
                 title="Blog & News Update"
                 columns={[

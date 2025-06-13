@@ -69,6 +69,15 @@ export const leadcaptureType = defineType({
             validation: (Rule) => Rule.required()
         }),
         defineField({
+            name: "contentTheme",
+            type: "string",
+            description: "The theme of the content section.",
+            options: {
+                list: ["dark", "light"]
+            },
+            validation: (Rule) => Rule.required()
+        }),
+        defineField({
             name: "cta",
             type: "string",
             description: "The CTA that will be displayed on the lead capture page.",

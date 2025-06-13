@@ -639,6 +639,23 @@
         },
         "optional": false
       },
+      "contentTheme": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "union",
+          "of": [
+            {
+              "type": "string",
+              "value": "dark"
+            },
+            {
+              "type": "string",
+              "value": "light"
+            }
+          ]
+        },
+        "optional": false
+      },
       "cta": {
         "type": "objectAttribute",
         "value": {

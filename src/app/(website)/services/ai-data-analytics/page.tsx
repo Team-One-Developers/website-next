@@ -23,17 +23,17 @@ export default function Services() {
                     {
                         title: "AI STRATEGY",
                         description:
-                            "Lorem ipsum dolor sit amet consectetur adipiscing elitdo eiusmod tempor incididunt ut labore dolore magna utenim minim veniam nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                            "Wir identifizieren wertschöpfende Einsatzfelder für GenAI in Ihrem Unternehmen – mit Fokus auf skalierbare Use Cases, klare Business-Ziele und organisationales Alignment. Von der Use-Case-Discovery bis zur Roadmap für KI-getriebene Geschäftsmodelle."
                     },
                     {
                         title: "AI OPERATIONS",
                         description:
-                            "Lorem ipsum dolor sit amet consectetur adipiscing elitdo eiusmod tempor incididunt ut labore dolore magna utenim minim veniam nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                            "Wir helfen beim Aufbau robuster KI-Infrastrukturen – von der Tool-Auswahl über Datenanbindung bis zu Prompt-Chains und Governance-Strukturen. Für alle, die GenAI nicht nur testen, sondern sicher und skalierbar betreiben wollen."
                     },
                     {
                         title: "AI TRAININGS",
                         description:
-                            "Lorem ipsum dolor sit amet consectetur adipiscing elitdo eiusmod tempor incididunt ut labore dolore magna utenim minim veniam nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                            "Wir qualifizieren Fach- und Führungskräfte entlang realer Workflows – nicht mit PowerPoint, sondern mit Prompts, Praxis und produktivem Output. Mit individuellen Sessions, kompakten Team-Trainings oder skalierbaren Akademie-Formaten."
                     }
                 ]}
             />

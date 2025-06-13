@@ -31,6 +31,7 @@ const values = [
 
 export default function Values() {
     return (
+        // extra div for making the blobs scroll and be visible behind this
         <div className="bg-t1-white">
             <Section className="bg-transparent py-32 sm:py-40">
                 {/* Values section */}

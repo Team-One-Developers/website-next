@@ -110,6 +110,7 @@ export type Leadcapture = {
         _type: "block"
         _key: string
     }>
+    contentTheme: "dark" | "light"
     cta: "paul-dark" | "paul-light"
     visibility: "Draft" | "Public"
     link?: string
@@ -614,6 +615,7 @@ export type QUERY_ALL_LEADCAPTURESResult = Array<{
         _type: "block"
         _key: string
     }>
+    contentTheme: "dark" | "light"
     cta: "paul-dark" | "paul-light"
     visibility: "Draft" | "Public"
     link?: string
@@ -1173,6 +1175,7 @@ export type QUERY_SPECIFIC_LEADCAPTUREResult = {
         _type: "block"
         _key: string
     }>
+    contentTheme: "dark" | "light"
     cta: "paul-dark" | "paul-light"
     visibility: "Draft" | "Public"
     link?: string
