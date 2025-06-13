@@ -40,29 +40,29 @@ export default function Services() {
             <Customers />
             <TextColumns
                 title="OUR AI INTEGRATION FRAMEWORK"
-                subtitle="AI Subline"
-                description="Lorem ipsum dolor sit amet consectetur adipiscing elitdo eiusmod tempor incididunt ut labore dolore magna utenim minim veniam nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                subtitle="Vom POC bis zum Rollout"
+                description="Unser AI Integration Framework adressiert genau das: Es liefert den strukturierten Weg von der Idee zur wirkungsvollen Umsetzung – mit klarem Fokus auf Priorisierung, Skalierung und sichere Integration in bestehende Systeme."
                 link={{ label: "Kontakt", href: "/contact" }}
                 columns={[
                     {
                         title: "Initiate",
                         description:
-                            "Lorem ipsum dolor sit amet consectetur adipiscing elitdo eiusmod tempor incididunt ut labore dolore magna utenim minim veniam nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                            "Wir schaffen die Grundlagen. Ziel ist eine praxisnahe fundierte Integrations-Roadmap – inklusive Use Case-Priorisierung und Architektur-Empfehlung."
                     },
                     {
                         title: "Test",
                         description:
-                            "Lorem ipsum dolor sit amet consectetur adipiscing elitdo eiusmod tempor incididunt ut labore dolore magna utenim minim veniam nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                            "Wir entwickeln funktionierende MVPs mit echten Daten, realen Nutzer:innen und sofort sichtbarem Nutzen. Kernfokus auf Schnelligkeit, Machbarkeit und internes Alignment."
                     },
                     {
                         title: "Implement",
                         description:
-                            "Lorem ipsum dolor sit amet consectetur adipiscing elitdo eiusmod tempor incididunt ut labore dolore magna utenim minim veniam nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                            "Wir überführen KI-Lösungen in produktive Systeme – mit stabiler Architektur, klaren Schnittstellen und sauberer Datenanbindung. Ziel: belastbarer Betrieb mit messbarem Business Impact."
                     },
                     {
                         title: "Optimize",
                         description:
-                            "Lorem ipsum dolor sit amet consectetur adipiscing elitdo eiusmod tempor incididunt ut labore dolore magna utenim minim veniam nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                            "Wir sichern den Betrieb produktiver KI-Anwendungen – mit MLOps, Performance-Monitoring und Analytics. Für skalierbare Modelle, bessere Nutzererlebnisse und kontinuierliche Feature-Erweiterung."
                     }
                 ]}
                 divider={false}
