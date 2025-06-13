@@ -56,7 +56,7 @@ export default function DoubleImageHero() {
                         </Link>
                         <div className="hidden overflow-hidden rounded-sm lg:block">
                             <Image
-                                src="/images/culture/paul.png"
+                                src="/images/culture/coding.webp"
                                 alt="about image"
                                 width={500}
                                 height={800}
