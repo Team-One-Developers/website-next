@@ -139,7 +139,10 @@ export default function Contact() {
                     <button
                         disabled={isPending || !agreed}
                         type="submit"
-                        className="focus-visible:outline-primary bg-primary text-t1-black hover:bg-primary/90 flex w-full items-center justify-center rounded-md px-3.5 py-2.5 text-center text-sm font-semibold shadow-xs hover:cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2"
+                        className={cn(
+                            "focus-visible:outline-primary bg-primary text-t1-black hover:bg-primary/90 flex w-full items-center justify-center rounded-md px-3.5 py-2.5 text-center text-sm font-semibold shadow-xs hover:cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2",
+                            (isPending || !agreed || state.success) && "cursor-not-allowed opacity-50"
+                        )}
                     >
                         {isPending ? "Sende..." : "Senden"}
                     </button>
