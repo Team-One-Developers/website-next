@@ -12,6 +12,7 @@ const contactSchema = z.object({
 
 // TODO copy to user
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export async function submitContactForm(currentState: any, formData: FormData) {
     const validatedFields = contactSchema.safeParse({
         name: formData.get("name"),

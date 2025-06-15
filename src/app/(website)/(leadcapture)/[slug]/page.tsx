@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import Section from "@/components/layout/Section"
 import StructuredData from "@/components/layout/StructuredData"
 import { T1PortableText } from "@/components/molecules/T1PortableText"
