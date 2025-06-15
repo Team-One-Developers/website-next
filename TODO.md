@@ -1,25 +1,18 @@
-metadata/structureddata/siteConfig - adjust for current pages and new ones
+## metadata/structureddata/siteConfig - adjust for current pages and new ones
 
-button unifying PLS typography PLS
+## cookie banner
 
-blog
+## tracking
 
-culture
+## Make Contact Form usable :D
 
-meetup page paul
+## Lead Capture Pages:
 
-cookie banner
+- K5 Slides Form/Portal ID pflegen
+- Win - anlegen sobald Content/Image von Hannah
 
-tracking
+### Blogbeitrag sticky side item
 
-hubspot forms
+### Portable Text
 
-blogbeitrag sticky side item
-
-check metadata in prod
-
-portanle text fixes
-
-career -> replace learn more svg
-
-lead capture pages anlegen
+- fix next/react problems (could take longer, mean problem)

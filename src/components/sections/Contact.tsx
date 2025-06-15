@@ -1,11 +1,15 @@
 "use client"
 
+import { submitContactForm } from "@/app/actions/submitContactForm"
 import Section from "@/components/layout/Section"
+import cn from "@/utils/cn"
 import { Field, Label, Switch } from "@headlessui/react"
 import Link from "next/link"
-import { useEffect, useRef, useState } from "react"
+import { useActionState, useEffect, useRef, useState } from "react"
 
 export default function Contact() {
+    const initialState = { success: false, message: "", errors: undefined, formData: new FormData() }
+    const [state, formAction, isPending] = useActionState(submitContactForm, initialState)
     const [agreed, setAgreed] = useState(false)
     const topBlobRef = useRef<HTMLDivElement>(null)
 
@@ -47,8 +51,13 @@ export default function Contact() {
                     Egal ob Fragen, Auskünfte oder Anregungen - wir sind für Sie da!
                 </p>
             </div>
-            <form action="#" method="POST" className="mx-auto mt-16 max-w-xl sm:mt-20">
-                <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+            <form action={formAction} className="mx-auto mt-16 max-w-xl sm:mt-20" inert={state.success || isPending}>
+                <div
+                    className={cn(
+                        "grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2",
+                        (state.success || isPending) && "opacity-50"
+                    )}
+                >
                     <div className="sm:col-span-2">
                         <label htmlFor="name" className="text-t1-white block text-sm/6 font-semibold">
                             Name
@@ -58,25 +67,15 @@ export default function Contact() {
                                 id="name"
                                 name="name"
                                 type="text"
+                                placeholder="Name"
                                 autoComplete="given-name"
+                                defaultValue={state.formData.get("name") as string}
                                 className="focus:outline-primary bg-t1-white block w-full rounded-md px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2"
                             />
                         </div>
+                        {state.errors?.name && <p className="mt-1 text-sm text-red-500">{state.errors.name[0]}</p>}
                     </div>
-                    {/* <div className="sm:col-span-2">
-                        <label htmlFor="company" className="text-t1-white block text-sm/6 font-semibold">
-                            Company
-                        </label>
-                        <div className="mt-2.5">
-                            <input
-                                id="company"
-                                name="company"
-                                type="text"
-                                autoComplete="organization"
-                                className="focus:outline-primary bg-t1-white block w-full rounded-md px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2"
-                            />
-                        </div>
-                    </div> */}
+
                     <div className="sm:col-span-2">
                         <label htmlFor="email" className="text-t1-white block text-sm/6 font-semibold">
                             Email
@@ -87,43 +86,14 @@ export default function Contact() {
                                 name="email"
                                 type="email"
                                 autoComplete="email"
+                                placeholder="name@email.com"
+                                defaultValue={state.formData.get("email") as string}
                                 className="focus:outline-primary bg-t1-white block w-full rounded-md px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2"
                             />
                         </div>
+                        {state.errors?.email && <p className="mt-1 text-sm text-red-500">{state.errors.email[0]}</p>}
                     </div>
-                    {/* <div className="sm:col-span-2">
-                        <label htmlFor="phone-number" className="text-t1-white block text-sm/6 font-semibold">
-                            Phone number
-                        </label>
-                        <div className="mt-2.5">
-                            <div className="has-[input:focus-within]:outline-primary bg-t1-white flex rounded-md outline-1 -outline-offset-1 outline-gray-300 has-[input:focus-within]:outline-2 has-[input:focus-within]:-outline-offset-2">
-                                <div className="grid shrink-0 grid-cols-1 focus-within:relative">
-                                    <select
-                                        id="country"
-                                        name="country"
-                                        autoComplete="country"
-                                        aria-label="Country"
-                                        className="focus:outline-primary col-start-1 row-start-1 w-full appearance-none rounded-md py-2 pr-7 pl-3.5 text-base text-gray-500 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 sm:text-sm/6"
-                                    >
-                                        <option>US</option>
-                                        <option>CA</option>
-                                        <option>EU</option>
-                                    </select>
-                                    <ChevronDownIcon
-                                        aria-hidden="true"
-                                        className="pointer-events-none col-start-1 row-start-1 mr-2 size-5 self-center justify-self-end text-gray-500 sm:size-4"
-                                    />
-                                </div>
-                                <input
-                                    id="phone-number"
-                                    name="phone-number"
-                                    type="text"
-                                    placeholder="123-456-7890"
-                                    className="block min-w-0 grow py-1.5 pr-3 pl-1 text-base text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6"
-                                />
-                            </div>
-                        </div>
-                    </div> */}
+
                     <div className="sm:col-span-2">
                         <label htmlFor="message" className="text-t1-white block text-sm/6 font-semibold">
                             Message
@@ -133,10 +103,14 @@ export default function Contact() {
                                 id="message"
                                 name="message"
                                 rows={4}
+                                placeholder="Deine Nachricht an uns"
+                                defaultValue={state.formData.get("message") as string}
                                 className="focus:outline-primary bg-t1-white block w-full rounded-md px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2"
-                                defaultValue={""}
                             />
                         </div>
+                        {state.errors?.message && (
+                            <p className="mt-1 text-sm text-red-500">{state.errors.message[0]}</p>
+                        )}
                     </div>
                     <Field className="flex gap-x-4 sm:col-span-2">
                         <div className="flex h-6 items-center">
@@ -163,12 +137,17 @@ export default function Contact() {
                 </div>
                 <div className="mt-10">
                     <button
+                        disabled={isPending || !agreed}
                         type="submit"
-                        className="focus-visible:outline-primary bg-primary text-t1-black hover:bg-primary/90 block w-full rounded-md px-3.5 py-2.5 text-center text-sm font-semibold shadow-xs hover:cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2"
+                        className="focus-visible:outline-primary bg-primary text-t1-black hover:bg-primary/90 flex w-full items-center justify-center rounded-md px-3.5 py-2.5 text-center text-sm font-semibold shadow-xs hover:cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2"
                     >
-                        Let&apos;s talk
+                        {isPending ? "Sende..." : "Senden"}
                     </button>
                 </div>
+                {state.success && <div className="mt-4 text-center text-green-500">{state.message}</div>}
+                {!state.success && state.message && (
+                    <div className="mt-4 text-center text-red-500">{state.message}</div>
+                )}
             </form>
         </Section>
     )
