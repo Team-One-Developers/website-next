@@ -7,8 +7,9 @@ import { QUERY_ALL_PUBLIC_CAREERSResult } from "@/sanity/types"
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
-    title: "Blog",
-    description: "Inside our creative minds."
+    title: "Karriere",
+    description:
+        "Wir sind immer auf der Suche nach Menschen, die Veränderungen vorantreiben und die Welt von morgen gestalten wollen."
 }
 
 const Career = async () => {

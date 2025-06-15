@@ -1,6 +1,12 @@
 import Hero from "@/components/sections/Hero"
 import ImageDivider from "@/components/sections/ImageDivider"
 import Values from "@/components/sections/Values"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+    title: "Kultur",
+    description: "Wir machen das, wovon alle sprechen: Wir stellen den Menschen in den Mittelpunkt."
+}
 
 export default function CulturePage() {
     return (

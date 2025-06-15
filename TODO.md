@@ -1,10 +1,8 @@
-## metadata/structureddata/siteConfig - adjust for current pages and new ones
+## adjust metadata services page to reflect new services?
 
 ## cookie banner
 
 ## tracking
-
-## Make Contact Form usable :D
 
 ## Lead Capture Pages:
 

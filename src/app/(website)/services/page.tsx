@@ -2,6 +2,13 @@ import Customers from "@/components/sections/Customers"
 import Hero from "@/components/sections/Hero"
 import ServiceInfo from "@/components/sections/ServiceInfo"
 import TripleImageColumn from "@/components/sections/TripleImageColumn"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+    title: "Leistungen",
+    description:
+        "Wir kombinieren umfassendes Fachwissen mit der Begeisterung für neue Technologien, um innovative, hochmoderne, stabile und skalierbare Enterprise Plattformen zu entwickeln."
+}
 
 export default function Services() {
     return (
