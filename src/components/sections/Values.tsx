@@ -44,7 +44,7 @@ export default function Values() {
                         Unsere High Five - Die Werte die wir uns auf die Fahne schreiben.
                     </Typography>
                 </div>
-                <dl className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-16 gap-y-16 text-base/7 sm:grid-cols-2 lg:mx-0 lg:max-w-none">
+                <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-16 gap-y-16 text-base/7 sm:grid-cols-2 lg:mx-0 lg:max-w-none">
                     {values.map((value) => (
                         <div key={value.name}>
                             <Typography variant="h5" className="font-semibold text-gray-900">
@@ -53,7 +53,7 @@ export default function Values() {
                             <Typography className="mt-1 text-gray-600">{value.description}</Typography>
                         </div>
                     ))}
-                </dl>
+                </div>
             </Section>
         </div>
     )

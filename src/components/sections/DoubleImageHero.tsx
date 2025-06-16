@@ -10,6 +10,7 @@ export default function DoubleImageHero() {
                 <div className="w-full px-4 lg:w-8/12">
                     <div className="overflow-hidden rounded-sm">
                         <Image
+                            priority
                             src="/images/culture/officelife.webp"
                             alt="Büro Bild"
                             className=""
@@ -56,6 +57,7 @@ export default function DoubleImageHero() {
                         </Link>
                         <div className="hidden overflow-hidden rounded-sm lg:block">
                             <Image
+                                priority
                                 src="/images/culture/coding.webp"
                                 alt="about image"
                                 width={500}

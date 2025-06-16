@@ -93,7 +93,7 @@ export const BlogOverview = ({ blogs }: { blogs: QUERY_ALL_PUBLIC_BLOGSResult })
                         >
                             <article className={cn("max-w-xl flex-col items-start justify-between")}>
                                 <div className="flex items-center gap-x-4 text-xs">
-                                    <time dateTime={blog.date} className="text-gray-500">
+                                    <time dateTime={blog.date} className="text-gray-800">
                                         {formatDate(blog.date)}
                                     </time>
                                     <span className="relative z-10 rounded-sm bg-white px-3 py-1.5 font-medium text-gray-600">
