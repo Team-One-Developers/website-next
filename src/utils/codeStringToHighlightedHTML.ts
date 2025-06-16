@@ -22,8 +22,7 @@ const formatCode = async (code: string, language: string) => {
             return await prettier.format(code, {
                 parser: prettierParsers[language]
             })
-            // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        } catch (e) {
+        } catch {
             // formatting failed, return original code
             return code
         }

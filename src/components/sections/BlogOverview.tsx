@@ -3,12 +3,17 @@
 import Section from "@/components/layout/Section"
 import { QUERY_ALL_PUBLIC_BLOGSResult } from "@/sanity/types"
 import cn from "@/utils/cn"
-import { formatDate } from "@/utils/formateDate"
 import Image from "next/image"
 import Link from "next/link"
 import { SetStateAction, useState } from "react"
 
-export const BlogOverview = ({ blogs }: { blogs: QUERY_ALL_PUBLIC_BLOGSResult }) => {
+type BlogWithFormattedDate = QUERY_ALL_PUBLIC_BLOGSResult[number] & { formattedDate: string }
+
+interface BlogOverviewProps {
+    blogs: BlogWithFormattedDate[]
+}
+
+export const BlogOverview = ({ blogs }: BlogOverviewProps) => {
     const [showTags, setShowTags] = useState("all")
 
     const handleTagClick = (category: SetStateAction<string>) => {
@@ -94,7 +99,7 @@ export const BlogOverview = ({ blogs }: { blogs: QUERY_ALL_PUBLIC_BLOGSResult })
                             <article className={cn("max-w-xl flex-col items-start justify-between")}>
                                 <div className="flex items-center gap-x-4 text-xs">
                                     <time dateTime={blog.date} className="text-gray-800">
-                                        {formatDate(blog.date)}
+                                        {blog.formattedDate}
                                     </time>
                                     <span className="relative z-10 rounded-sm bg-white px-3 py-1.5 font-medium text-gray-600">
                                         {blog.category}

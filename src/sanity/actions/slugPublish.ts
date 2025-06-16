@@ -13,7 +13,7 @@ export function createAsyncPublishAction(originalAction: DocumentActionComponent
         return {
             ...originalResult,
             onHandle: async () => {
-                const title = props.draft!.title
+                const title = props.draft!.title as string
                 const draft = props.draft!.visibility === "Draft" ? "draft-" : ""
                 // @ts-expect-error no time to fix this right now
                 const currentSlug = props.draft!.slug?.current || ""

@@ -123,8 +123,7 @@ export default async function CareerPage({ params }: CareerProps) {
                 : "INTERN"
             : "FULL_TIME",
         jobBenefits: (career.employmentType === "Festanstellung" ? FESTANSTELLUNG_BENEFITS : PRAKTIKUMS_BENEFITS).map(
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            (benefit: any) => benefit.text
+            (benefit: { text: string }) => benefit.text
         ),
         datePosted: career.date,
         directApply: true

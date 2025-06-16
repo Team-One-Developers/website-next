@@ -47,10 +47,9 @@ export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({ name, em
         marginBottom: "20px"
     }
 
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const anchor = {
-        textDecoration: "underline"
-    }
+    // const anchor = {
+    //     textDecoration: "underline"
+    // }
 
     return (
         <Html>

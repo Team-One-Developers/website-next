@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import Section from "@/components/layout/Section"
 import StructuredData from "@/components/layout/StructuredData"
 import BlogDetailPageTemp from "@/components/sections/BlogDetailPage"
@@ -113,7 +112,7 @@ export default async function BlogPage({ params }: BlogProps) {
                 blog={blog}
                 highlightedContent={ptBlocksHighlighted}
                 relatedBlogs={relatedBlogs}
-                className="font-inter"
+                className={Inter.className}
             />
         </Section>
     )

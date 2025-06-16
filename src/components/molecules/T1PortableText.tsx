@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client"
 
+import "@/app/prism.css"
 import Typography from "@/components/atoms/Typography"
 import { slugify } from "@/utils/slugify"
 import { PortableText, PortableTextComponents, PortableTextProps } from "@portabletext/react"

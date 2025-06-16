@@ -6,7 +6,6 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 import type { Metadata } from "next"
 import localFont from "next/font/local"
 import "./globals.css"
-import "./prism.css"
 
 const ABCD = localFont({
     src: [

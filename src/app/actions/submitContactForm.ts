@@ -10,8 +10,6 @@ const contactSchema = z.object({
     message: z.string().min(1, "Nachricht ist erforderlich")
 })
 
-// TODO copy to user
-
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export async function submitContactForm(currentState: any, formData: FormData) {
     const validatedFields = contactSchema.safeParse({

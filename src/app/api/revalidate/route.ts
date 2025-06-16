@@ -56,9 +56,11 @@ export async function POST(req: NextRequest) {
         return NextResponse.json({
             status: 200
         })
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    } catch (error: any) {
+    } catch (error: unknown) {
         console.error(error)
-        return new Response(error.message, { status: 500 })
+        if (error && typeof error === "object" && "message" in error) {
+            return new Response((error as { message: string }).message, { status: 500 })
+        }
+        return new Response("Unknown error", { status: 500 })
     }
 }

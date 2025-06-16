@@ -1,7 +1,6 @@
 import speakingurl from "speakingurl"
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export function slugify(sourceValue: any): string {
+export function slugify(sourceValue: string): string {
     const slugifyOpts = { truncate: 200, symbols: true }
     return sourceValue ? speakingurl(sourceValue, slugifyOpts) : ""
 }

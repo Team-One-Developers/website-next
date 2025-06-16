@@ -19,8 +19,8 @@ interface CTAProps {
 }
 
 export const CTA = ({ variant }: CTAProps) => {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { person, theme } = parseCombination(variant)
+    // person is also available but not used at this point
+    const { theme } = parseCombination(variant)
 
     return (
         <div className={cn("w-full", theme === "dark" ? "bg-t1-black text-t1-white" : "bg-t1-white text-t1-black")}>

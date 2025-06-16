@@ -2,6 +2,7 @@ import BlogOverview from "@/components/sections/BlogOverview"
 import { client } from "@/sanity/lib/client"
 import { QUERY_ALL_PUBLIC_BLOGS } from "@/sanity/queries"
 import { QUERY_ALL_PUBLIC_BLOGSResult } from "@/sanity/types"
+import { formatDate } from "@/utils/formateDate"
 import { compareDesc } from "date-fns"
 import { Metadata } from "next"
 
@@ -22,6 +23,10 @@ const Blog = async () => {
         .sort((a, b) => {
             return compareDesc(new Date(a.date!), new Date(b.date!))
         })
+        .map((blog) => ({
+            ...blog,
+            formattedDate: formatDate(blog.date!)
+        }))
 
     return (
         <div>
