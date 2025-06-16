@@ -12,6 +12,8 @@ import { Metadata } from "next"
 import { notFound } from "next/navigation"
 import type { WebPage, WithContext } from "schema-dts"
 
+import { HubspotProvider } from "next-hubspot"
+
 interface LeadcaptureProps {
     params: Promise<{ slug: string }>
 }
@@ -82,29 +84,31 @@ export default async function LeadCapturePage({ params }: LeadcaptureProps) {
     }
 
     return (
-        <div>
-            <StructuredData data={structuredData} />
-            <LeadCaptureHero
-                image={{
-                    src: leadcapture.heroImage?.asset?.url ?? "",
-                    alt: leadcapture.title,
-                    width: 1200,
-                    height: 630
-                }}
-                title={leadcapture.title}
-                description={leadcapture.description}
-                portalId={leadcapture.portalId}
-                formId={leadcapture.formId}
-            />
-            <Section
-                className={cn(
-                    "py-32 sm:py-42",
-                    leadcapture.contentTheme === "dark" ? "bg-t1-black text-t1-white" : "bg-t1-white text-t1-black"
-                )}
-            >
-                <T1PortableText value={leadcapture.content} />
-            </Section>
-            <CTA variant={leadcapture.cta} />
-        </div>
+        <HubspotProvider>
+            <div>
+                <StructuredData data={structuredData} />
+                <LeadCaptureHero
+                    image={{
+                        src: leadcapture.heroImage?.asset?.url ?? "",
+                        alt: leadcapture.title,
+                        width: 1200,
+                        height: 630
+                    }}
+                    title={leadcapture.title}
+                    description={leadcapture.description}
+                    portalId={leadcapture.portalId}
+                    formId={leadcapture.formId}
+                />
+                <Section
+                    className={cn(
+                        "py-32 sm:py-42",
+                        leadcapture.contentTheme === "dark" ? "bg-t1-black text-t1-white" : "bg-t1-white text-t1-black"
+                    )}
+                >
+                    <T1PortableText value={leadcapture.content} />
+                </Section>
+                <CTA variant={leadcapture.cta} />
+            </div>
+        </HubspotProvider>
     )
 }

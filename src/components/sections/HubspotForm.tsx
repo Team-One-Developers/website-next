@@ -26,7 +26,7 @@ export const HubspotForm = ({ portalId, formId }: HubspotFormProps) => {
     // }
 
     return (
-        <div className="-mx-10 h-[500px]" id={`hubspot-form-${portalId}-${formId}`}>
+        <div className="-mx-10 min-h-[500px]" id={`hubspot-form-${portalId}-${formId}`}>
             <div className={cn("flex size-full items-center justify-center", isScriptLoaded && "hidden")}>
                 <SpinnerIcon className="text-t1-black size-9 animate-spin" />
             </div>
