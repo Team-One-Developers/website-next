@@ -89,7 +89,9 @@ export default function RootLayout({
     children: React.ReactNode
 }>) {
     return (
-        <html lang="en">
+        <html lang="de">
+            <GoogleTagManager gtmId="GTM-PJ6KXJJZ" />
+
             <body className={`${ABCD.variable} ${SpaceGrotesk.variable} font-abcd relative antialiased`}>
                 {children}
                 <StructuredData data={organization as object} />

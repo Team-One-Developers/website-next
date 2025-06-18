@@ -15,6 +15,7 @@
     "dependencies": {
         "@headlessui/react": "^2.2.4",
         "@heroicons/react": "^2.2.0",
+        "@next/third-parties": "^15.3.3",
         "@portabletext/react": "^3.2.1",
         "@react-email/components": "^0.0.42",
         "@sanity/asset-utils": "^2.2.1",
