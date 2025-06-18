@@ -1,6 +1,7 @@
 import StructuredData from "@/components/layout/StructuredData"
 import { organization } from "@/data/schemaOrg"
 import { siteConfig } from "@/data/siteConfig"
+import { GoogleTagManager } from "@next/third-parties/google"
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import type { Metadata } from "next"
@@ -49,7 +50,7 @@ const SpaceGrotesk = localFont({
 export const metadata: Metadata = {
     title: {
         default: siteConfig.name,
-        template: `%s`
+        template: "%s | team one"
     },
     description: siteConfig.description,
     openGraph: {
@@ -79,8 +80,7 @@ export const metadata: Metadata = {
         shortcut: "/favicon-16x16.png",
         apple: "/apple-touch-icon.png"
     },
-    metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"),
-    manifest: `${siteConfig.url}/site.webmanifest`
+    metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000")
 }
 
 export default function RootLayout({
