@@ -196,7 +196,7 @@ export default async function CareerPage({ params }: CareerProps) {
                             </ul>
                         </article>
                         <div className="mt-32 flex w-full flex-col gap-4">
-                            <Typography variant="h4" className="uppercase">
+                            <Typography as="h4" variant="h4" className="uppercase">
                                 Weitere Jobs
                             </Typography>
                             {relatedCareers.map(
@@ -209,7 +209,7 @@ export default async function CareerPage({ params }: CareerProps) {
                                                     <Typography variant="paragraph">{career.location}</Typography>
                                                 </div>
                                                 <div>
-                                                    <Typography variant="h3" className="uppercase">
+                                                    <Typography as="h3" variant="h3" className="uppercase">
                                                         {career.title}
                                                     </Typography>
                                                 </div>

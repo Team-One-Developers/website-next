@@ -6,7 +6,7 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline"
 import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 interface NavigationItem {
     name: string
@@ -37,6 +37,10 @@ const navigation: NavigationItem[] = [
 export default function Header() {
     const pathname = usePathname()
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+
+    useEffect(() => {
+        setMobileMenuOpen(false)
+    }, [pathname])
 
     return (
         <header className="font-spacegrotesk bg-t1-black/70 fixed top-0 left-0 z-50 w-full backdrop-blur-3xl">
@@ -100,9 +104,9 @@ export default function Header() {
             </nav>
             <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">
                 <div className="fixed inset-0 z-10" />
-                <DialogPanel className="bg-t1-black fixed inset-y-0 right-0 z-10 w-full overflow-y-auto px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+                <DialogPanel className="bg-t1-black fixed inset-y-0 right-0 z-60 w-full overflow-y-auto px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
                     <div className="flex items-center justify-between">
-                        <a href="#" className="-m-1.5 p-1.5">
+                        <Link href="#" className="-m-1.5 p-1.5">
                             <span className="sr-only">Team One Company Logo</span>
 
                             <Image
@@ -112,7 +116,7 @@ export default function Header() {
                                 width={164}
                                 className="h-12 w-auto"
                             />
-                        </a>
+                        </Link>
                         <button
                             type="button"
                             onClick={() => setMobileMenuOpen(false)}

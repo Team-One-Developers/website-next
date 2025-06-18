@@ -82,7 +82,7 @@ export default function Hero({
                                 {subtitle}
                             </Typography>
                         )}
-                        <Typography variant="h1" className="text-t1-white mt-4">
+                        <Typography variant="h1" className="text-t1-white mt-4 text-wrap">
                             {title}
                         </Typography>
                         {description && (
