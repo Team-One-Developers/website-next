@@ -85,8 +85,8 @@ const GewinnspielTeilnahme = () => {
                     <p className="mt-2 whitespace-pre-line">
                         Der Veranstalter behält sich das Recht vor, das Gewinnspiel jederzeit ohne Vorankündigung und
                         ohne Angabe von Gründen abzubrechen oder zu ändern, wenn die ordnungsgemäße Durchführung nicht
-                        gewährleistet werden kann (z. B. aus technischen Gründen oder Manipulationen). Ein
-                        Rechtsanspruch auf Teilnahme oder Gewinn besteht nicht.
+                        gewährleistet werden kann (z.B. aus technischen Gründen oder Manipulationen). Ein Rechtsanspruch
+                        auf Teilnahme oder Gewinn besteht nicht.
                     </p>
                 </div>
                 <div>
@@ -101,7 +101,7 @@ const GewinnspielTeilnahme = () => {
                     <h2 className="mt-8 text-2xl font-semibold">9. Kontakt</h2>
                     <p className="mt-2 whitespace-pre-line">
                         Bei Fragen zum Gewinnspiel oder zur Verarbeitung Ihrer Daten wenden Sie sich bitte an:
-                        hannah.hahnke@team-one.de
+                        info@team-one.de
                     </p>
                 </div>
             </div>
