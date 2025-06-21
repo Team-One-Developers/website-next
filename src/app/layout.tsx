@@ -90,7 +90,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="de">
-            <GoogleTagManager gtmId="GTM-PJ6KXJJZ" />
+            <GoogleTagManager gtmId="GTM-M6HQZGMQ" />
 
             <body className={`${ABCD.variable} ${SpaceGrotesk.variable} font-abcd relative antialiased`}>
                 {children}
