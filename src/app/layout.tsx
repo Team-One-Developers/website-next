@@ -1,6 +1,7 @@
 import StructuredData from "@/components/atoms/StructuredData"
 import { siteConfig } from "@/config/siteConfig"
 import { organization } from "@/data/schemaOrg"
+import { GoogleTagManager } from "@next/third-parties/google"
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Metadata } from "next"
@@ -72,6 +73,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <html lang="de">
+            <GoogleTagManager gtmId="GTM-M6HQZGMQ" />
             <body className={twJoin(ABCD.variable, SpaceGrotesk.variable, "bg-black")}>
                 {children}
                 <StructuredData data={organization} />
