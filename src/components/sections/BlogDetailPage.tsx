@@ -1,6 +1,7 @@
 import Typography from "@/components/atoms/Typography"
 import { Section } from "@/components/layout/Section"
 import { T1PortableText } from "@/components/molecules/T1PortableText"
+import { BlogImage } from "@/components/sections/Blog/BlogImage"
 import TripleImageColumn from "@/components/sections/TripleImageColumn"
 
 import {
@@ -26,26 +27,15 @@ const BlogDetailPageTemp = async ({ blog, highlightedContent, relatedBlogs, clas
             <div className="-mx-4 flex flex-wrap justify-center">
                 <div className="w-full px-4">
                     <div className="relative z-20 mb-[60px] overflow-hidden rounded">
-                        <Image
-                            priority
-                            // @ts-expect-error - next image prefers a null instead of an empty string
-                            src={blog?.heroImage?.asset?.url ?? null}
-                            alt="Hero Image"
-                            width={blog?.heroImage?.asset?.metadata?.dimensions?.width ?? 0}
-                            height={blog?.heroImage?.asset?.metadata?.dimensions?.height ?? 0}
-                            className="min-h-[250px] w-full object-cover lg:min-h-auto"
-                        />
+                        {blog?.heroImage.asset && <BlogImage image={blog.heroImage.asset} priority />}
+
                         <div className="absolute top-0 left-0 z-10 flex h-full w-full items-end">
                             <div className="flex flex-wrap items-center p-5 pb-4 sm:p-8 sm:pb-4">
                                 <div className="mr-5 mb-4 flex items-center md:mr-10">
                                     <div className="mr-4 h-10 w-10 overflow-hidden rounded-full">
-                                        <Image
-                                            src={blog?.author?.profileImg?.asset?.url ?? ""}
-                                            alt="image"
-                                            width={blog?.author?.profileImg?.asset?.metadata?.dimensions?.width ?? 0}
-                                            height={blog?.author?.profileImg?.asset?.metadata?.dimensions?.height ?? 0}
-                                            className="w-full"
-                                        />
+                                        {blog?.author?.profileImg?.asset && (
+                                            <BlogImage image={blog.author.profileImg.asset} className="w-full" />
+                                        )}
                                     </div>
 
                                     <Typography as="p" variant="paragraph" className="text-background">
