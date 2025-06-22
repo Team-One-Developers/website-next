@@ -46,11 +46,11 @@ export const TripleImageColumn = (props: TripleImageColumnProps) => {
     const Tags = ({ tags, className }: { tags?: string[]; className: string }) => {
         if (!tags || tags.length === 0) return null
         return (
-            <div className={cn("flex flex-wrap gap-2", className)}>
+            <div className={cn("flex flex-wrap items-center gap-2", className)}>
                 {tags.map((tag, index) => (
                     <span
                         key={index}
-                        className="bg-primary text-t1-black font-spacegrotesk rounded-sm px-2 py-1 text-sm uppercase"
+                        className="bg-primary text-t1-black font-spacegrotesk flex rounded-sm p-1 text-sm uppercase"
                     >
                         {tag}
                     </span>
@@ -83,7 +83,7 @@ export const TripleImageColumn = (props: TripleImageColumnProps) => {
                     {title}
                 </Typography>
                 <div className="text-t1-black dark:text-t1-white row-start-3">
-                    <Typography className="text-md sm:text-md">{description}</Typography>
+                    <Typography className="text-base">{description}</Typography>
                     <Tags className="mt-4" tags={tags} />
                 </div>
             </div>
@@ -106,7 +106,7 @@ export const TripleImageColumn = (props: TripleImageColumnProps) => {
         return (
             <Link
                 href={href}
-                className="flex w-full flex-col gap-6 hover:scale-101 lg:row-span-4 lg:grid lg:grid-cols-1 lg:grid-rows-subgrid lg:gap-4"
+                className="flex w-full flex-col gap-6 transition-transform hover:scale-101 lg:row-span-4 lg:grid lg:grid-cols-1 lg:grid-rows-subgrid lg:gap-4"
             >
                 <Image
                     src={image}
@@ -120,7 +120,7 @@ export const TripleImageColumn = (props: TripleImageColumnProps) => {
                     {title}
                 </Typography>
                 <div className="text-t1-black dark:text-t1-white row-start-4">
-                    <Typography className="text-md sm:text-lg">{description}</Typography>
+                    <Typography className="text-base">{description}</Typography>
                 </div>
             </Link>
         )
@@ -131,11 +131,7 @@ export const TripleImageColumn = (props: TripleImageColumnProps) => {
             <Typography variant="h3" className="text-t1-black dark:text-t1-white">
                 {props.title}
             </Typography>
-            <div
-                className={cn(
-                    "mt-8 grid grid-cols-1 gap-12 lg:grid-cols-3 lg:grid-rows-[auto_auto_auto_auto] lg:gap-4"
-                )}
-            >
+            <div className={cn("mt-8 grid grid-cols-1 gap-12 lg:grid-cols-3 lg:grid-rows-[auto_auto_auto_auto]")}>
                 {props.columns.map((column, index) =>
                     isBlog ? (
                         <BlogCard

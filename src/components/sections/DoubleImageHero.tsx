@@ -13,7 +13,6 @@ export default function DoubleImageHero() {
                             priority
                             src="/images/culture/officelife.webp"
                             alt="Büro Bild"
-                            className=""
                             width={1200}
                             height={800}
                         />
@@ -21,7 +20,7 @@ export default function DoubleImageHero() {
                 </div>
                 <div className="w-full px-4 lg:w-4/12">
                     <div>
-                        <Link href="/career#careers" className="text-foreground mb-7">
+                        <Link href="/career#jobs" className="text-foreground mb-7">
                             <svg
                                 width="120"
                                 height="120"
@@ -75,8 +74,20 @@ export default function DoubleImageHero() {
                     <Typography as="h1" variant="h1" className="text-t1-white mb-3">
                         Unser Team - <span className="font-bold">Dein </span> Playground
                     </Typography>
-
-                    <Typography className="">Your journey to digital excellence starts here.</Typography>
+                    <Typography className="">
+                        Wir verstehen uns nicht einfach nur als Arbeitgeber, sondern viel mehr als aktiver Begleiter auf
+                        dem Weg zu deinen individuellen Zielen. Unser Anspruch ist es, den Menschen in den Mittelpunkt
+                        unseres unternehmerischen Handelns zu stellen – und dabei fangen wir bei uns im Team an.
+                    </Typography>
+                    <Typography className="pt-8">
+                        Oft sagen wir in Gesprächen „wir sind Playground für den modernen und ambitionierten
+                        Softwareentwickler“ – das beschreibt unser Arbeitsumfeld am besten. Wir arbeiten in
+                        anspruchsvollen Kundenprojekten mit spannenden Themen und modernen Tech-Stacks und agilem
+                        Selbstverständnis. Weiterentwicklung ist für uns ein fester Bestandteil unserer
+                        Unternehmensphilosophie: von Trainings und Konferenzbesuchen über eigene Open-Source-Projekte
+                        bis hin zum Spin-Off von eigenständiger Produktideen . Alles ein „Kann“ und kein „Muss“, in
+                        jedem Fall aber vielseitig und mit unendlich vielen Möglichkeiten.
+                    </Typography>
                 </div>
 
                 {/* <div className="grid gap-8 md:grid-cols-2 lg:gap-[70px]">
