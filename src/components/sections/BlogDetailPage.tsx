@@ -537,10 +537,10 @@ const BlogDetailPageTemp = async ({ blog, highlightedContent, relatedBlogs, clas
                                         </span>
                                     </div>
                                 </div> */}
-
+                                {/* 
                                 <div className="-mx-4 mb-8 flex flex-wrap">
                                     <div className="w-full px-4">
-                                        <Typography as="h3" variant="h3" className="pb-5">
+                                        <Typography as="div" variant="h4" className="pb-5">
                                             Beliebte Beiträge
                                         </Typography>
                                         <span className="bg-primary mb-10 inline-block h-[2px] w-20"></span>
@@ -555,7 +555,7 @@ const BlogDetailPageTemp = async ({ blog, highlightedContent, relatedBlogs, clas
                                             image={blog.heroImage}
                                         />
                                     ))}
-                                </div>
+                                </div> */}
 
                                 {/* <div className="mb-12 overflow-hidden rounded">
                                             <img
