@@ -1,5 +1,6 @@
 import Customers from "@/components/sections/Customers"
 import Hero from "@/components/sections/Hero"
+import Hero from "@/components/sections/Hero/Hero"
 import ImageDivider from "@/components/sections/ImageDivider"
 import TextColumns from "@/components/sections/TextColumns"
 import TripleImageColumn from "@/components/sections/TripleImageColumn"

@@ -1,5 +1,5 @@
 import Customers from "@/components/sections/Customers"
-import Hero from "@/components/sections/Hero"
+import Hero from "@/components/sections/Hero/Hero"
 import ServiceInfo from "@/components/sections/ServiceInfo"
 import TripleImageColumn from "@/components/sections/TripleImageColumn"
 import { Metadata } from "next"

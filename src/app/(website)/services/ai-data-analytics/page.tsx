@@ -1,6 +1,6 @@
 import Customers from "@/components/sections/Customers"
 import Expert from "@/components/sections/Expert"
-import Hero from "@/components/sections/Hero"
+import Hero from "@/components/sections/Hero/Hero"
 import Magazine from "@/components/sections/Magazine"
 import TextColumns from "@/components/sections/TextColumns"
 import TripleImageColumn from "@/components/sections/TripleImageColumn"

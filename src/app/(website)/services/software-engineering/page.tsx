@@ -1,4 +1,4 @@
-import Hero from "@/components/sections/Hero"
+import Hero from "@/components/sections/Hero/Hero"
 
 export default function Services() {
     return (
