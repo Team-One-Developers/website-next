@@ -13,7 +13,7 @@ export const typographyVariants = tv({
             h6: "wrap-break-word font-spacegrotesk text-base xs:text-lg font-medium uppercase sm:text-xl",
             link: "font-abcdiatype text-lg underline cursor-pointer sm:text-xl",
             subtitle: "font-abcdiatype text-lg font-medium sm:text-xl",
-            paragraph: "font-abcdiatype text-lg font-normal sm:text-xl"
+            paragraph: "font-abcdiatype text-lg font-normal"
         }
     },
     defaultVariants: {
