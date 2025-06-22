@@ -10,8 +10,6 @@ import {
     QUERY_SPECIFIC_BLOGResult
 } from "@/sanity/types"
 import { formatDate } from "@/utils/formatDate"
-import Image from "next/image"
-import Link from "next/link"
 
 export interface BlogDetailPageTempProps {
     blog: QUERY_SPECIFIC_BLOGResult
@@ -606,41 +604,41 @@ const BlogDetailPageTemp = async ({ blog, highlightedContent, relatedBlogs, clas
 
 export default BlogDetailPageTemp
 
-const PopularArticleItem = ({
-    image,
-    href,
-    title,
-    authorName
-}: {
-    image: QUERY_ALL_PUBLIC_BLOGSResult[number]["heroImage"]
-    href: string
-    title: string
-    authorName: string
-}) => {
-    return (
-        <Link href={href} className="hover:bg-foreground/5 w-full rounded px-4 pt-5 md:w-1/2 lg:w-full">
-            <div className="border-stroke flex w-full items-center border-b pb-5">
-                <div className="mr-5 h-20 w-full max-w-[80px] overflow-hidden rounded-full">
-                    <Image
-                        src={image?.asset?.url ?? "/images/optimized/hero_optimized.webp"}
-                        alt="image"
-                        width={100}
-                        height={100}
-                        className="h-full w-full object-cover object-center"
-                    />
-                </div>
-                <div className="w-full">
-                    <Typography as="p" variant="paragraph" className="mb-1 font-bold">
-                        {title}
-                    </Typography>
-                    <Typography as="p" variant="paragraph" className="text-foreground">
-                        {authorName}
-                    </Typography>
-                </div>
-            </div>
-        </Link>
-    )
-}
+// const PopularArticleItem = ({
+//     image,
+//     href,
+//     title,
+//     authorName
+// }: {
+//     image: QUERY_ALL_PUBLIC_BLOGSResult[number]["heroImage"]
+//     href: string
+//     title: string
+//     authorName: string
+// }) => {
+//     return (
+//         <Link href={href} className="hover:bg-foreground/5 w-full rounded px-4 pt-5 md:w-1/2 lg:w-full">
+//             <div className="border-stroke flex w-full items-center border-b pb-5">
+//                 <div className="mr-5 h-20 w-full max-w-[80px] overflow-hidden rounded-full">
+//                     <Image
+//                         src={image?.asset?.url ?? "/images/optimized/hero_optimized.webp"}
+//                         alt="image"
+//                         width={100}
+//                         height={100}
+//                         className="h-full w-full object-cover object-center"
+//                     />
+//                 </div>
+//                 <div className="w-full">
+//                     <Typography as="p" variant="paragraph" className="mb-1 font-bold">
+//                         {title}
+//                     </Typography>
+//                     <Typography as="p" variant="paragraph" className="text-foreground">
+//                         {authorName}
+//                     </Typography>
+//                 </div>
+//             </div>
+//         </Link>
+//     )
+// }
 
 const MetaTagItem = ({ name }: { name: string }) => {
     return (
