@@ -66,7 +66,7 @@ export default function HeroWithImages() {
                                     </Typography> */}
                                     <div className="mt-10 flex items-center gap-x-6">
                                         <LinkComponent
-                                            href="/career#careers"
+                                            href="/career#jobs"
                                             label="Unsere offenen Stellen"
                                             variant="solid"
                                             className="text-t1-black"
