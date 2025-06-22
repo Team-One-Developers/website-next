@@ -8,7 +8,7 @@ import {
     QUERY_ALL_PUBLIC_BLOGSResult,
     QUERY_SPECIFIC_BLOGResult
 } from "@/sanity/types"
-import { formatDate } from "@/utils/formateDate"
+import { formatDate } from "@/utils/formatDate"
 import Image from "next/image"
 import Link from "next/link"
 
