@@ -29,7 +29,7 @@ export const TextColumns = ({ title, subtitle, description, link, columns, divid
     const Block = ({ title, description, href }: { title: string; description: string; href?: string }) => {
         const Content = () => {
             return (
-                <div className="group flex w-full flex-col gap-y-4">
+                <div className="group bg-t1-darkgray flex w-full flex-col gap-y-4 rounded-lg p-8">
                     <Typography
                         variant="h5"
                         as="div"
@@ -78,7 +78,7 @@ export const TextColumns = ({ title, subtitle, description, link, columns, divid
                 {title}
             </Typography>
             {description && <Typography className="mt-12">{description}</Typography>}
-            <div className="mt-24 flex flex-wrap gap-8 lg:mt-36 lg:flex-nowrap">
+            <div className="mt-6 flex flex-wrap gap-8 lg:mt-16 lg:flex-nowrap">
                 {columns.map((column, index) => (
                     <React.Fragment key={index}>
                         <Block title={column.title} description={column.description} href={column.href} />

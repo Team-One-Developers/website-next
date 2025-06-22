@@ -47,8 +47,8 @@ const Home = () => {
                     {
                         title: "PORSCHE ONLINE-VERTRIEBSPLATTFORM",
                         text: "„Porsche-Enthusiasten die bestmögliche Such- und Kauferfahrung zu bieten“. Nicht weniger war und ist unser Anspruch im Rahmen der Entwicklung der Porsche Vertriebsplattform für Neu- und Gebrauchtfahrzeuge.",
-                        image: "/images/customers/porsche-cropped.jpg",
-                        tags: ["Typescript", "AWS", "React"]
+                        image: "/images/customers/porsche-cropped.jpg"
+                        // tags: ["Typescript", "AWS", "React"]
                     },
                     {
                         title: "MERCEDES-BENZ DIGITAL SERVICE STRATEGY",
