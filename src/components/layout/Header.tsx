@@ -1,5 +1,6 @@
 "use client"
 
+import { Logo } from "@/components/atoms/Logo"
 import cn from "@/utils/cn"
 import { Dialog, DialogPanel } from "@headlessui/react"
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline"
@@ -46,16 +47,8 @@ export default function Header() {
         <header className="font-spacegrotesk bg-t1-black/70 fixed top-0 left-0 z-50 w-full backdrop-blur-3xl">
             <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between p-6 2xl:px-0">
                 <div className="flex lg:flex-1">
-                    <Link href="/" className="text-t1-white -m-1.5 p-1.5">
-                        <span className="sr-only">Team One Company Logo</span>
-
-                        <Image
-                            src="/images/logos/team-one-logo.svg"
-                            alt="Team One Logo"
-                            height={130}
-                            width={300}
-                            className="text-t1-white h-12 w-auto"
-                        />
+                    <Link href="/" className="text-t1-white">
+                        <Logo className="h-9 fill-current" />
                     </Link>
                 </div>
                 <div className="flex lg:hidden">
@@ -75,9 +68,9 @@ export default function Header() {
                                 href={item.href}
                                 className={cn(
                                     // p-3 & -m-3 for some more clickable area without changing the size
-                                    "text-t1-white hover:text-primary -m-3 p-3 text-lg/6 font-semibold uppercase",
+                                    "text-t1-white hover:text-primary transition-color -m-3 p-3 text-base font-semibold uppercase underline-offset-4 duration-200",
                                     (pathname === item.href || (item.href !== "/" && pathname.includes(item.href))) &&
-                                        "underline"
+                                        "text-primary underline"
                                 )}
                             >
                                 {item.name}
