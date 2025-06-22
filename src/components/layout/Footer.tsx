@@ -4,8 +4,7 @@ import { JSX, SVGProps } from "react"
 
 const navigation = {
     services: [
-        { name: "Leistungen", href: "/services" },
-        { name: "Kontakt", href: "/contact" }
+        { name: "Alle Leistungen", href: "/services" }
         // { name: "Software Engineering", href: "/services/software-engineering" },
         // { name: "AI & Data Analytics", href: "/services/ai-data-analytics" },
         // { name: "Digital Strategy & Transformation", href: "/services/digital-strategy-transformation" }
@@ -16,12 +15,13 @@ const navigation = {
     ],
     resources: [
         { name: "Blog", href: "/blog" },
-        { name: "AI:D Magazin", href: "/magazin" },
-        { name: "Webinare", href: "/webinare" }
+        { name: "AI:D Magazin", href: "/aid-magazin" }
+        // { name: "Webinare", href: "/webinare" }
     ],
     legal: [
         { name: "Datenschutz", href: "/privacy" },
-        { name: "Impressum", href: "/legal-notice" }
+        { name: "Impressum", href: "/legal-notice" },
+        { name: "Kontakt", href: "/contact" }
     ],
     social: [
         {
@@ -49,7 +49,7 @@ const navigation = {
                         />
                         <path
                             d="M62,62 L51.315625,62 L51.315625,43.8021149 C51.315625,38.8127542 49.4197917,36.0245323 45.4707031,36.0245323 C41.1746094,36.0245323 38.9300781,38.9261103 38.9300781,43.8021149 L38.9300781,62 L28.6333333,62 L28.6333333,27.3333333 L38.9300781,27.3333333 L38.9300781,32.0029283 C38.9300781,32.0029283 42.0260417,26.2742151 49.3825521,26.2742151 C56.7356771,26.2742151 62,30.7644705 62,40.051212 L62,62 Z M16.349349,22.7940133 C12.8420573,22.7940133 10,19.9296567 10,16.3970067 C10,12.8643566 12.8420573,10 16.349349,10 C19.8566406,10 22.6970052,12.8643566 22.6970052,16.3970067 C22.6970052,19.9296567 19.8566406,22.7940133 16.349349,22.7940133 Z M11.0325521,62 L21.769401,62 L21.769401,27.3333333 L11.0325521,27.3333333 L11.0325521,62 Z"
-                            fill="white"
+                            fill="black"
                         />
                     </g>
                 </svg>
@@ -61,88 +61,81 @@ const navigation = {
 export default function Footer() {
     return (
         <footer className="font-abcd bg-t1-white relative z-50">
-            <div className="mx-auto max-w-7xl px-6 pt-16 pb-8 xl:px-0">
-                <div className="xl:grid xl:grid-cols-2 xl:gap-8">
-                    <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
-                        <div className="md:grid md:grid-cols-2 md:gap-8">
-                            <div>
-                                <Typography variant="h6" className="text-t1-black text-sm/6 font-semibold">
-                                    Leistungen
-                                </Typography>
-                                <ul role="list" className="mt-6 space-y-4">
-                                    {navigation.services.map((item) => (
-                                        <li key={item.name}>
-                                            <Link
-                                                href={item.href}
-                                                className="text-sm/6 text-gray-600 hover:text-gray-900"
-                                            >
-                                                {item.name}
-                                            </Link>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                            <div className="mt-10 md:mt-0">
-                                <Typography variant="h6" className="text-t1-black text-sm/6 font-semibold">
-                                    Team One
-                                </Typography>
-                                <ul role="list" className="mt-6 space-y-4">
-                                    {navigation.company.map((item) => (
-                                        <li key={item.name}>
-                                            <Link
-                                                href={item.href}
-                                                className="text-sm/6 text-gray-600 hover:text-gray-900"
-                                            >
-                                                {item.name}
-                                            </Link>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
+            <div className="bg-white">
+                <div className="mx-auto max-w-7xl px-6 py-16 xl:grid xl:grid-cols-2 xl:gap-8">
+                    <div className="grid grid-cols-3 gap-8 xl:col-span-2 xl:mt-0">
+                        <div>
+                            <Typography variant="h6" className="text-t1-black text-sm/6 font-semibold">
+                                Leistungen
+                            </Typography>
+                            <ul role="list" className="mt-6 space-y-4">
+                                {navigation.services.map((item) => (
+                                    <li key={item.name}>
+                                        <Link href={item.href} className="text-sm/6 text-gray-600 hover:text-gray-900">
+                                            {item.name}
+                                        </Link>
+                                    </li>
+                                ))}
+                            </ul>
                         </div>
-                        <div className="md:grid md:grid-cols-2 md:gap-8">
-                            <div>
-                                <Typography variant="h6" className="text-t1-black text-sm/6 font-semibold">
-                                    Resources
-                                </Typography>
-                                <ul role="list" className="mt-6 space-y-4">
-                                    {navigation.resources.map((item) => (
-                                        <li key={item.name}>
-                                            <Link
-                                                href={item.href}
-                                                className="text-sm/6 text-gray-600 hover:text-gray-900"
-                                            >
-                                                {item.name}
-                                            </Link>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                            <div className="mt-10 md:mt-0">
-                                <Typography variant="h6" className="text-t1-black text-sm/6 font-semibold">
-                                    Legal
-                                </Typography>
-                                <ul role="list" className="mt-6 space-y-4">
-                                    {navigation.legal.map((item) => (
-                                        <li key={item.name}>
-                                            <Link
-                                                href={item.href}
-                                                className="text-sm/6 text-gray-600 hover:text-gray-900"
-                                            >
-                                                {item.name}
-                                            </Link>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
+                        <div>
+                            <Typography variant="h6" className="text-t1-black text-sm/6 font-semibold">
+                                Team One
+                            </Typography>
+                            <ul role="list" className="mt-6 space-y-4">
+                                {navigation.company.map((item) => (
+                                    <li key={item.name}>
+                                        <Link href={item.href} className="text-sm/6 text-gray-600 hover:text-gray-900">
+                                            {item.name}
+                                        </Link>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                        <div>
+                            <Typography variant="h6" className="text-t1-black text-sm/6 font-semibold">
+                                Resources
+                            </Typography>
+                            <ul role="list" className="mt-6 space-y-4">
+                                {navigation.resources.map((item) => (
+                                    <li key={item.name}>
+                                        <Link href={item.href} className="text-sm/6 text-gray-600 hover:text-gray-900">
+                                            {item.name}
+                                        </Link>
+                                    </li>
+                                ))}
+                            </ul>
                         </div>
                     </div>
                 </div>
-                <div className="border-t1-black/20 mt-16 flex justify-between gap-4 border-t pt-8 sm:mt-20 lg:mt-24">
-                    <p className="text-sm/6 text-gray-600">&copy; {new Date().getFullYear()} Team One</p>
-                    <div className="flex gap-x-6">
+            </div>
+
+            <div className="bg-t1-black px-6 pb-8 xl:px-0">
+                <div className="lg:px-px-60 mx-auto flex max-w-7xl flex-row items-end gap-2 pt-8 lg:items-center">
+                    <div className="grid grid-cols-1 gap-3 lg:grid-cols-[auto_1fr] lg:gap-8">
+                        <p className="text-t1-white text-sm/6 font-semibold">
+                            &copy; {new Date().getFullYear()} Team One
+                        </p>
+                        <div className="flex flex-col gap-3 lg:flex-row lg:gap-8">
+                            {navigation.legal.map((item) => (
+                                <Link
+                                    key={item.name}
+                                    href={item.href}
+                                    className="text-t1-white hover:text-primary text-sm/6 transition-colors duration-200"
+                                >
+                                    {item.name}
+                                </Link>
+                            ))}
+                        </div>
+                    </div>
+                    <div className="ml-auto flex flex-row items-center gap-5">
                         {navigation.social.map((item) => (
-                            <Link key={item.name} href={item.href} className="text-t1-black hover:scale-115">
+                            <Link
+                                key={item.name}
+                                href={item.href}
+                                className="text-t1-white hover:text-primary transition-colors duration-200"
+                                target="_blank"
+                            >
                                 <span className="sr-only">{item.name}</span>
                                 <item.icon aria-hidden="true" className="size-6" />
                             </Link>
