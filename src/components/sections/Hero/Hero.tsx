@@ -83,15 +83,9 @@ export default function Hero({ title, subtitle, description, link, blobs }: Hero
                             <div className="mt-12">
                                 <Link
                                     href={link.url}
-                                    className="group text-t1-white hover:text-primary font-semibold transition-all duration-300"
+                                    className="bg-primary text-t1-black font-spacegrotesk hover:bg-primary/90 focus-visible:outline-primary rounded-xs px-3.5 py-2.5 text-sm font-semibold uppercase focus-visible:outline-2 focus-visible:outline-offset-2"
                                 >
                                     {link.label}
-                                    <span
-                                        aria-hidden="true"
-                                        className="ml-2 transition-all duration-300 group-hover:ml-3"
-                                    >
-                                        &rarr;
-                                    </span>
                                 </Link>
                             </div>
                         )}
