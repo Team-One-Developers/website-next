@@ -5,7 +5,7 @@ import { sendSlackMessage } from "@/app/actions/sendSlackMessage"
 import { z } from "zod"
 
 const contactSchema = z.object({
-    name: z.string().min(1, "name ist erforderlich"),
+    name: z.string().min(1, "Name ist erforderlich"),
     email: z.string().email("Ungültige E-Mail-Adresse"),
     message: z.string().min(1, "Nachricht ist erforderlich")
 })
@@ -34,7 +34,7 @@ export async function submitContactForm(currentState: any, formData: FormData) {
         if (slack.success || mail.success) {
             return {
                 success: true,
-                message: `Vielen Dank für Ihre Nachricht. Wir werden uns bald bei Ihnen melden!`,
+                message: `Vielen Dank für Deine Nachricht. Wir werden uns bald bei Dir melden!`,
                 formData
             }
         } else {

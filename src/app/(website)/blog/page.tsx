@@ -28,11 +28,7 @@ const Blog = async () => {
             formattedDate: formatDate(blog.date!)
         }))
 
-    return (
-        <div>
-            <BlogOverview blogs={filteredBlogs} />
-        </div>
-    )
+    return <BlogOverview blogs={filteredBlogs} />
 }
 
 export default Blog

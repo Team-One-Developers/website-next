@@ -47,9 +47,9 @@ export default function Contact() {
                 <h2 className="font-spacegrotesk text-t1-white text-4xl font-semibold tracking-tight text-balance uppercase sm:text-5xl">
                     Kontakt
                 </h2>
-                <p className="text-t1-white mt-2 text-lg/8">
+                {/* <p className="text-t1-white mt-2 text-lg/8">
                     Egal ob Fragen, Auskünfte oder Anregungen - wir sind für Sie da!
-                </p>
+                </p> */}
             </div>
             <form action={formAction} className="mx-auto mt-16 max-w-xl sm:mt-20" inert={state.success || isPending}>
                 <div
@@ -67,6 +67,7 @@ export default function Contact() {
                                 id="name"
                                 name="name"
                                 type="text"
+                                required
                                 placeholder="Name"
                                 autoComplete="given-name"
                                 defaultValue={state.formData.get("name") as string}
@@ -78,15 +79,16 @@ export default function Contact() {
 
                     <div className="sm:col-span-2">
                         <label htmlFor="email" className="text-t1-white block text-sm/6 font-semibold">
-                            Email
+                            E-Mail
                         </label>
                         <div className="mt-2.5">
                             <input
                                 id="email"
                                 name="email"
                                 type="email"
+                                required
                                 autoComplete="email"
-                                placeholder="name@email.com"
+                                placeholder="example@email.com"
                                 defaultValue={state.formData.get("email") as string}
                                 className="focus:outline-primary bg-t1-white block w-full rounded-md px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2"
                             />
@@ -96,10 +98,11 @@ export default function Contact() {
 
                     <div className="sm:col-span-2">
                         <label htmlFor="message" className="text-t1-white block text-sm/6 font-semibold">
-                            Message
+                            Nachricht
                         </label>
                         <div className="mt-2.5">
                             <textarea
+                                required
                                 id="message"
                                 name="message"
                                 rows={4}
@@ -127,11 +130,12 @@ export default function Contact() {
                             </Switch>
                         </div>
                         <Label className="text-t1-white text-sm/6">
-                            By selecting this, you agree to our{" "}
+                            Mit dem Absenden des Formulars bestätige ich, die{" "}
                             <Link href="/privacy" className="text-primary font-semibold hover:underline">
-                                privacy&nbsp;policy
-                            </Link>
-                            .
+                                Datenschutzerklärung
+                            </Link>{" "}
+                            gelesen zu haben und willige in die Verarbeitung meiner Daten zur Bearbeitung meines
+                            Anliegens ein.
                         </Label>
                     </Field>
                 </div>
@@ -144,7 +148,7 @@ export default function Contact() {
                             (isPending || !agreed || state.success) && "cursor-not-allowed opacity-50"
                         )}
                     >
-                        {isPending ? "Sende..." : "Senden"}
+                        {isPending ? "Sende..." : "Absenden"}
                     </button>
                 </div>
                 {state.success && <div className="mt-4 text-center text-green-500">{state.message}</div>}

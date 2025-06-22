@@ -5,7 +5,7 @@ import Link from "next/link"
 
 export default function DoubleImageHero() {
     return (
-        <Section className="bg-background overflow-hidden pt-20 pb-12 lg:pt-8 lg:pb-[90px]">
+        <Section className="bg-background overflow-hidden pb-12 lg:pt-8 lg:pb-[90px]">
             <div className="-mx-4 mb-16 flex flex-wrap">
                 <div className="w-full px-4 lg:w-8/12">
                     <div className="overflow-hidden rounded-sm">

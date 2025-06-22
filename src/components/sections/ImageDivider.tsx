@@ -8,7 +8,7 @@ interface ImageDividerProps {
 export default function ImageDivider({ fullWidth = false }: ImageDividerProps) {
     return (
         <div className="bg-t1-white">
-            <Section className="bg-transparent py-4 md:py-24 lg:py-32 xl:py-40" fullWidth={fullWidth}>
+            <Section className="bg-transparent py-4 md:py-12" fullWidth={fullWidth}>
                 <Image
                     alt="Image Banner"
                     src="/images/culture/officelife.webp"

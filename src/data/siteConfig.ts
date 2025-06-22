@@ -1,5 +1,5 @@
 export const siteConfig = {
-    name: "Team One Developers - Partner für agile Produktentwicklung",
+    name: "Team One - Tech-driven business transformation",
     url: "https://www.team-one.de",
     ogImage: "https://www.team-one.de/og.png",
     description:

@@ -50,7 +50,7 @@ const SpaceGrotesk = localFont({
 export const metadata: Metadata = {
     title: {
         default: siteConfig.name,
-        template: "%s | team one"
+        template: "%s | team one - Tech-driven business transformation"
     },
     description: siteConfig.description,
     openGraph: {

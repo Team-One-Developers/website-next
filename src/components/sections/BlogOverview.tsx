@@ -43,7 +43,7 @@ export const BlogOverview = ({ blogs }: BlogOverviewProps) => {
     // const tagsWithMoreThanOneOccurence = getTagsWithMoreThanOneOccurence()
 
     return (
-        <Section className="bg-t1-white py-24 sm:py-32">
+        <Section className="bg-t1-white pb-24">
             <div className="py-16 sm:py-24">
                 <div className="mx-auto max-w-2xl lg:mx-0">
                     <h2 className="font-spacegrotesk text-t1-black text-4xl font-semibold tracking-tight text-pretty uppercase sm:text-5xl">

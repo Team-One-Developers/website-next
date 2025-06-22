@@ -32,13 +32,13 @@ const Career = async () => {
     )
 
     return (
-        <div>
+        <>
             <DoubleImageHero />
             <Benefits />
             <div id="jobs">
                 <Careers careers={sortedCareers} />
             </div>
-        </div>
+        </>
     )
 }
 
