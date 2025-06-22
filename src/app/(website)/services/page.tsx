@@ -15,13 +15,18 @@ export default function Services() {
         <div>
             <Hero
                 subtitle="Unsere Leistungen"
-                title="VON DER VISION BIS ZUR UMSETZUNG (AUF EINEN PUNKT END TO END)"
+                title="VON DER VISION BIS ZUR UMSETZUNG."
+                description="Wir schaffen nachhaltige Mehrwerte durch exzellente Software & menschenzentrierte Arbeitsweisen."
                 blobs={{ active: true, className: "from-[#21352b] to-[#46ffad] opacity-50", shape: "organic" }}
             />
+
             <ServiceInfo
                 title="ENTERPRISE SOFTWARE ENGINEERING"
-                description="Als Software-Beratung befähigen wir unsere Kunden, im digitalen Wettbewerb erfolgreich zu sein - strategisch, technologisch und methodisch."
-                image="/images/culture/coding.webp"
+                description="Als Software-Beratung befähigen wir unsere Kunden, im digitalen Wettbewerb erfolgreich zu sein: 
+                        Strategisch, technologisch und methodisch. Unser Ziel ist es, Unternehmen dabei zu unterstützen,
+                        die Chancen und Herausforderungen neuer Technologien zu nutzen und ihre Geschäftsmodelle
+                        zukunftssicher zu machen. Von der strategischen Planung bis zur technologischen Umsetzung."
+                // image="/images/culture/coding.webp"
                 alt="Enterprise Software Engineering"
                 textBlocks={[
                     {
@@ -40,10 +45,11 @@ export default function Services() {
                 //     label: "Mehr erfahren"
                 // }}
             />
+
             <ServiceInfo
                 title="OPERATIONAL AI & DATA ANALYTICS"
                 description="Vom Aufbau interner Kompetenzen bis zur Entwicklung produktionsreifer Systeme. Unsere Leistungen decken das gesamte Spektrum ab: von klassischen Ansätzen bis hin zu Gen AI-Anwendungen mit integriertem Governance-Modell."
-                image="/images/culture/coffetalk.webp"
+                // image="/images/culture/coffetalk.webp"
                 alt="Enterprise AI & DATA"
                 textBlocks={[
                     {
@@ -62,10 +68,11 @@ export default function Services() {
                 //     label: "Mehr erfahren"
                 // }}
             />
+
             <ServiceInfo
                 title="BUSINESS & DIGITAL-STRATEGIE & TRANSFORMATION"
                 description="Wir machen Organisationen handlungsfähig für digitale Produkte – strategisch, technologisch und operativ. Von der Reifegradanalyse bis zum produktbasierten Operating Model oder Produktstrategie."
-                image="/images/culture/officelife.webp"
+                // image="/images/culture/officelife.webp"
                 alt="Enterprise Strategy & Transformation"
                 textBlocks={[
                     {
@@ -85,18 +92,18 @@ export default function Services() {
                 // }}
             />
             <TripleImageColumn
-                title="Auszug Referenzen"
+                title="Auszug unserer Referenzen"
                 columns={[
                     {
                         title: "PORSCHE ONLINE-VERTRIEBSPLATTFORM",
                         text: "„Porsche-Enthusiasten die bestmögliche Such- und Kauferfahrung zu bieten“. Nicht weniger war und ist unser Anspruch im Rahmen der Entwicklung der Porsche Vertriebsplattform für Neu- und Gebrauchtfahrzeuge.",
-                        image: "/images/customers/porsche.jpg",
+                        image: "/images/customers/porsche-cropped.jpg",
                         tags: ["Typescript", "AWS", "React"]
                     },
                     {
                         title: "MERCEDES-BENZ DIGITAL SERVICE STRATEGY",
                         text: "Gemeinsam mit Mercedes-Benz haben wir eine innovative Serviceportfolio-Strategie entwickelt, die nicht nur vollkommen neue Umsatzpotentiale eröffnet, sondern auch echte Probleme von Kunden und Partnern löst. Von der Geschäftsfeldanalyse bis hin zur Businesscaseerstellung und dem MVP-Scoping gelang es uns Strategie & Umsetzung nahtlos zu verknüpfen.",
-                        image: "/images/customers/mercedes.jpg"
+                        image: "/images/customers/mercedes-cropped.jpg"
                     },
                     {
                         title: "RECARO PEER REVIEW COACHING",

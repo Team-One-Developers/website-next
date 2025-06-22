@@ -1,4 +1,3 @@
-import HorizontalDivider from "@/components/layout/HorizontalDivider"
 import Section from "@/components/layout/Section"
 import Image from "next/image"
 import Link from "next/link"
@@ -6,7 +5,7 @@ import Link from "next/link"
 export interface ServiceInfoProps {
     title: string
     description: string
-    image: string
+    image?: string
     alt: string
     textBlocks: {
         title: string
@@ -20,13 +19,20 @@ export interface ServiceInfoProps {
 
 export const ServiceInfo = ({ title, description, image, alt, textBlocks, link }: ServiceInfoProps) => {
     return (
-        <Section className="bg-t1-white py-16 sm:py-20">
-            <HorizontalDivider />
-            <div className="text-t1-black mt-16 grid grid-cols-1 gap-8 md:grid-cols-2">
+        <Section className="bg-t1-white pt-6">
+            <div className="text-t1-black grid grid-cols-1 gap-14 rounded-lg bg-white p-12 md:grid-cols-2">
                 <div className="flex flex-col gap-8">
                     <h2 className="font-spacegrotesk text-t1-black text-3xl font-bold uppercase">{title}</h2>
                     <p>{description}</p>
-                    <Image src={image} alt={alt} width={300} height={200} className="w-full object-cover lg:w-1/2" />
+                    {image && (
+                        <Image
+                            src={image}
+                            alt={alt}
+                            width={300}
+                            height={200}
+                            className="w-full object-cover lg:w-1/2"
+                        />
+                    )}
                 </div>
                 <div className="flex flex-col gap-8">
                     {textBlocks.map((block, index) => (

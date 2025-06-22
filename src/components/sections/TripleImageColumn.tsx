@@ -79,12 +79,11 @@ export const TripleImageColumn = (props: TripleImageColumnProps) => {
                     height={200}
                     className="row-start-1 h-64 w-full object-cover"
                 />
-
                 <Typography variant="h5" className="text-t1-black dark:text-t1-white row-start-2">
                     {title}
                 </Typography>
                 <div className="text-t1-black dark:text-t1-white row-start-3">
-                    <Typography className="text-md sm:text-lg">{description}</Typography>
+                    <Typography className="text-md sm:text-md">{description}</Typography>
                     <Tags className="mt-4" tags={tags} />
                 </div>
             </div>
@@ -134,7 +133,7 @@ export const TripleImageColumn = (props: TripleImageColumnProps) => {
             </Typography>
             <div
                 className={cn(
-                    "mt-16 grid grid-cols-1 gap-24 lg:grid-cols-3 lg:grid-rows-[auto_auto_auto_auto] lg:gap-4"
+                    "mt-8 grid grid-cols-1 gap-12 lg:grid-cols-3 lg:grid-rows-[auto_auto_auto_auto] lg:gap-4"
                 )}
             >
                 {props.columns.map((column, index) =>
