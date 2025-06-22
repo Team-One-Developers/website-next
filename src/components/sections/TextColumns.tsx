@@ -30,7 +30,11 @@ export const TextColumns = ({ title, subtitle, description, link, columns, divid
         const Content = () => {
             return (
                 <div className="group flex w-full flex-col gap-y-4">
-                    <Typography variant="h5" className={cn("", href && "group-hover:text-primary cursor-pointer")}>
+                    <Typography
+                        variant="h5"
+                        as="div"
+                        className={cn("", href && "group-hover:text-primary cursor-pointer")}
+                    >
                         {title}
                     </Typography>
                     <Typography className="text-md sm:text-lg">{description}</Typography>

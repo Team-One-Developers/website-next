@@ -79,7 +79,7 @@ export const TripleImageColumn = (props: TripleImageColumnProps) => {
                     height={200}
                     className="row-start-1 h-64 w-full object-cover"
                 />
-                <Typography variant="h5" className="text-t1-black dark:text-t1-white row-start-2">
+                <Typography variant="h5" as="div" className="text-t1-black dark:text-t1-white row-start-2">
                     {title}
                 </Typography>
                 <div className="text-t1-black dark:text-t1-white row-start-3">
@@ -116,7 +116,7 @@ export const TripleImageColumn = (props: TripleImageColumnProps) => {
                     className="row-start-1 h-64 w-full object-cover"
                 />
                 <Tags className="row-start-2" tags={tags} />
-                <Typography variant="h5" className="text-t1-black dark:text-t1-white row-start-3">
+                <Typography variant="h5" as="div" className="text-t1-black dark:text-t1-white row-start-3">
                     {title}
                 </Typography>
                 <div className="text-t1-black dark:text-t1-white row-start-4">
