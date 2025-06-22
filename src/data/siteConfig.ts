@@ -3,7 +3,7 @@ export const siteConfig = {
     url: "https://www.team-one.de",
     ogImage: "https://www.team-one.de/og.png",
     description:
-        "Wir sind Technologie-Experten und verstehen uns als integrativer Entwicklungs- & Beratungspartner in komplexen Softwareprojekten.",
+        "Team One ist Technologie-Beratungspartner für digitale Produkte, skalierbare Architekturen und KI-gestützte Geschäftsmodelle",
     links: {
         //   twitter: "https://twitter.com/teamone",
         github: "https://github.com/Team-One-Developers"

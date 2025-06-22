@@ -14,7 +14,7 @@ export default function Services() {
     return (
         <div>
             <Hero
-                subtitle="Unsere Services"
+                subtitle="Unsere Leistungen"
                 title="VON DER VISION BIS ZUR UMSETZUNG (AUF EINEN PUNKT END TO END)"
                 blobs={{ active: true, className: "from-[#21352b] to-[#46ffad] opacity-50", shape: "organic" }}
             />

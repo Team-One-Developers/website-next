@@ -17,8 +17,8 @@ export default function Services() {
             />
             <TextColumns
                 title="OUR AI SERVICEPORTFOLIO"
-                subtitle="Our Services"
-                link={{ label: "All Services", href: "/services" }}
+                subtitle="Unsere Leistungen"
+                link={{ label: "Alle Leistungen", href: "/services" }}
                 columns={[
                     {
                         title: "AI STRATEGY",

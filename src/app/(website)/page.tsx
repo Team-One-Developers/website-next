@@ -9,7 +9,7 @@ const Home = () => {
     return (
         <>
             <Hero
-                subtitle="Tech driven business transformation"
+                subtitle="Tech-driven business transformation"
                 title="Strategisch, datengetrieben, umsetzungsstark."
                 description="Team One ist Technologie-Beratungspartner für digitale Produkte, skalierbare Architekturen und KI-gestützte Geschäftsmodelle - mit Tech-Expertise, die in echten Projekten wirkt."
                 link={{ label: "About us", url: "/about-us" }}
@@ -17,8 +17,8 @@ const Home = () => {
             />
             <TextColumns
                 title="WIR STEIGERN DIE WETTBEWERBSFÄHIGKEIT VON UNTERNEHMEN IN EINER DIGITALEN WELT."
-                subtitle="Our Services"
-                link={{ label: "All Services", href: "/services" }}
+                subtitle="Unsere Leistungen"
+                link={{ label: "Alle Leistungen", href: "/services" }}
                 columns={[
                     {
                         title: "Software Engineering",

@@ -5,7 +5,7 @@ export const organization: OrganizationSchema = {
     image: ["https://www.team-one.de/images/logos/t1-only-dark.svg"],
     name: "Team One",
     legalName: "Team One Developers GmbH",
-    slogan: "Wir entwickeln die Zukunft des Web",
+    slogan: "Tech-driven business transformation",
     url: "https://www.team-one.de",
     sameAs: [
         "https://www.kununu.com/de/team-one-developers1",
@@ -15,7 +15,7 @@ export const organization: OrganizationSchema = {
     ],
     logo: "https://www.team-one.de/images/logos/t1-only-dark.svg",
     description:
-        "Wir sind Technologie-Experten und verstehen uns als integrativer Entwicklungs- & Beratungspartner in komplexen Softwareprojekten.",
+        "Team One ist Technologie-Beratungspartner für digitale Produkte, skalierbare Architekturen und KI-gestützte Geschäftsmodelle",
     email: "info@team-one.de",
     telephone: "+4971125298690",
     address: {
