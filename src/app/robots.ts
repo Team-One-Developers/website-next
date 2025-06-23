@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
             allow: "/",
             disallow: ["/_nextjs/", "/api/", "/studio"]
         },
-        sitemap: "https://www.teamonedevelopers.de/sitemap.xml"
+        sitemap: "https://www.team-one.de/sitemap.xml"
     }
 }

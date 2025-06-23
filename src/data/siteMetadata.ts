@@ -1,6 +1,6 @@
 export const SiteMetadata = {
     title: "Team One Developers - Partner für agile Produktentwicklung",
-    siteUrl: "http://www.teamonedevelopers.de",
+    siteUrl: "http://www.team-one.de",
     description:
         "Wir sind die Technologieberatung für agile Produktentwicklung. Mit unserer jahrelangen Expertise gestalten wir Produkte und digitalisieren Geschäftsprozesse unserer Kunden.",
     menuLinks: [

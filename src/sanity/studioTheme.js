@@ -1,3 +1,4 @@
+/* eslint-disable */
 // Generated 2024-11-18T10:32:03.671Z
 // Minified build, append `?min=0` for easier debugging
 

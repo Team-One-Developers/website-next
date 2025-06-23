@@ -1,5 +1,5 @@
-import cn from "@/lib/cn"
-import Typography from "../atoms/Typography"
+import Typography from "@/components/atoms/Typography"
+import cn from "@/utils/cn"
 
 export const JobType = ({
     employmentType,

@@ -8,21 +8,19 @@ export const GET = async (request: Request) => {
 
     const title = searchParams.get("title") || "Team One Developers"
 
-    const fontData = await fetch(new URL("../../../../fonts/SpaceGrotesk-Regular.ttf", import.meta.url)).then((res) =>
+    const fontData = await fetch(new URL("../../../../fonts/space-grotesk-regular.ttf", import.meta.url)).then((res) =>
         res.arrayBuffer()
     )
 
-    const bgImage = await fetch(new URL("../../../../../public/images/ogbg.png", import.meta.url)).then((res) =>
-        res.arrayBuffer()
-    )
+    const bgImage = await fetch("/images/ogbg.png").then((res) => res.arrayBuffer())
 
     // const Blob = () => {
     //     return (
     //         <svg width="538" height="538" viewBox="0 0 467 538" fill="none" xmlns="http://www.w3.org/2000/svg">
     //             <g filter="url(#filter0_d_111_8872)">
     //                 <path
-    //                     fill-rule="evenodd"
-    //                     clip-rule="evenodd"
+    //                     fillRule="evenodd"
+    //                     clipRule="evenodd"
     //                     d="M464.422 525.088C480.99 525.088 494.422 511.657 494.422 495.088L494.422 242.51C494.422 225.942 480.99 212.51 464.422 212.51L415.746 212.51C399.177 212.51 385.746 199.079 385.746 182.51L385.746 42.374C385.746 25.8054 372.314 12.374 355.746 12.374L208.078 12.374C191.509 12.374 178.078 25.8055 178.078 42.374L178.078 59.846C178.078 76.4146 164.646 89.846 148.078 89.846L74.1159 89.846C57.5474 89.846 44.1159 103.277 44.1159 119.846L44.1159 329.384C44.1159 345.953 57.5473 359.384 74.1159 359.384L151.844 359.384C168.412 359.384 181.844 372.815 181.844 389.384L181.844 495.088C181.844 511.657 195.275 525.088 211.844 525.088L464.422 525.088Z"
     //                     fill="#46FFAD"
     //                 />
@@ -93,8 +91,8 @@ export const GET = async (request: Request) => {
         return (
             <svg width="40" height="40" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
+                    fillRule="evenodd"
+                    clipRule="evenodd"
                     d="M7 0H5V2H3V4H1V6H0V8V10V12H1V14H3V16H5V18H7H9H11H13V16H15V14H17V12H18V10V8V6H17V4H15V2H13V0H11H9H7ZM16 12H15V14H13V16H11H9H7H5V14H3V12H2V10V8H3V10H5V12H7V10V8H5V6H7V4H9V2H11H13V4H15V6H12V4H10V6H9V10H11V12V13H12V12H14V10H16V12Z"
                     fill="black"
                 />
@@ -122,14 +120,14 @@ export const GET = async (request: Request) => {
                 <img
                     style={{ position: "absolute" }}
                     alt="blob background"
-                    // @ts-expect-error
+                    // @ts-expect-error idk
                     src={bgImage}
                     width={1200}
                     height={630}
                 />
                 <div style={{ display: "flex", width: "100%", height: "40px" }}>
                     <Globe />
-                    <p style={{ fontSize: 26, marginTop: "0px", paddingLeft: "16px" }}>info@teamonedevelopers.de</p>
+                    <p style={{ fontSize: 26, marginTop: "0px", paddingLeft: "16px" }}>info@team-one.de</p>
                 </div>
                 <p style={{ marginTop: "48px", marginBottom: "96px" }}>{title}</p>
                 <Logo />

@@ -1,15 +1,12 @@
-import StructuredData from "@/components/atoms/StructuredData"
-import { siteConfig } from "@/config/siteConfig"
+import StructuredData from "@/components/layout/StructuredData"
 import { organization } from "@/data/schemaOrg"
+import { siteConfig } from "@/data/siteConfig"
 import { GoogleTagManager } from "@next/third-parties/google"
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
-import { Metadata } from "next"
-import { Space_Grotesk } from "next/font/google"
+import type { Metadata } from "next"
 import localFont from "next/font/local"
-import { twJoin } from "tailwind-merge"
-import "../styles/global.css"
-import "../styles/prism.css"
+import "./globals.css"
 
 const ABCD = localFont({
     src: [
@@ -24,20 +21,36 @@ const ABCD = localFont({
             style: "italic"
         }
     ],
-    variable: "--font-ABCD",
+    variable: "--abcdiatype",
     display: "swap"
 })
 
-const SpaceGrotesk = Space_Grotesk({
-    subsets: ["latin"],
-    variable: "--font-SpaceGrotesk",
+const SpaceGrotesk = localFont({
+    src: [
+        {
+            path: "../fonts/space-grotesk-regular.ttf",
+            weight: "400",
+            style: "normal"
+        },
+        {
+            path: "../fonts/space-grotesk-light.ttf",
+            weight: "200",
+            style: "normal"
+        },
+        {
+            path: "../fonts/space-grotesk-medium.ttf",
+            weight: "600",
+            style: "normal"
+        }
+    ],
+    variable: "--spacegrotesk",
     display: "swap"
 })
 
 export const metadata: Metadata = {
     title: {
         default: siteConfig.name,
-        template: `%s`
+        template: "%s | team one - Tech-driven business transformation"
     },
     description: siteConfig.description,
     openGraph: {
@@ -67,16 +80,21 @@ export const metadata: Metadata = {
         shortcut: "/favicon-16x16.png",
         apple: "/apple-touch-icon.png"
     },
-    manifest: `${siteConfig.url}/site.webmanifest`
+    metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000")
 }
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+    children
+}: Readonly<{
+    children: React.ReactNode
+}>) {
     return (
         <html lang="de">
             <GoogleTagManager gtmId="GTM-M6HQZGMQ" />
-            <body className={twJoin(ABCD.variable, SpaceGrotesk.variable, "bg-black")}>
+
+            <body className={`${ABCD.variable} ${SpaceGrotesk.variable} font-abcd relative antialiased`}>
                 {children}
-                <StructuredData data={organization} />
+                <StructuredData data={organization as object} />
                 <Analytics />
                 <SpeedInsights />
             </body>

@@ -1,6 +1,3 @@
-import { PAGE_THEME } from "@/constants"
-import { PageTheme } from "@/types"
-
 export const SanityT1Logo = () => {
     return (
         <svg

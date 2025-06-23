@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+/* disable standard device preference oriented dark mode and base it on dark being set in the className */
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+    --t1-primary: #46ffad;
+
+    --t1-darkgreen: #21352b;
+    --t1-darkgray: #171717;
+
+    --t1-white: #f2f2f2;
+    --t1-black: #1d1d1d;
+}
+
+@theme inline {
+    --font-abcd: var(--abcdiatype);
+    --font-spacegrotesk: var(--spacegrotesk);
+
+    --color-primary: var(--t1-primary);
+
+    --color-t1-darkgreen: var(--t1-darkgreen);
+    --color-t1-darkgray: var(--t1-darkgray);
+
+    --color-t1-white: var(--t1-white);
+    --color-t1-black: var(--t1-black);
+
+    --breakpoint-xs: 32rem;
+    --breakpoint-sm: 40rem;
+    --breakpoint-md: 48rem;
+    --breakpoint-lg: 64rem;
+    --breakpoint-xl: 80rem;
+    --breakpoint-2xl: 96rem;
+}
+
+body {
+    background: var(--t1-black);
+    color: var(--t1-white);
+    font-family: var(--abcdiatype);
+}
