@@ -5,12 +5,12 @@ import { tv, VariantProps } from "tailwind-variants"
 export const typographyVariants = tv({
     variants: {
         variant: {
-            h1: "hyphens-auto break-words font-spacegrotesk text-4xl xs:text-5xl font-normal uppercase sm:text-6xl font-medium",
-            h2: "hyphens-auto break-words font-spacegrotesk text-3xl xs:text-4xl font-medium uppercase sm:text-5xl font-bold",
-            h3: "hyphens-auto break-words font-spacegrotesk text-2xl xs:text-3xl font-medium uppercase sm:text-4xl font-bold",
-            h4: "hyphens-auto break-words font-spacegrotesk text-xl xs:text-xl font-medium uppercase sm:text-3xl font-bold",
-            h5: "hyphens-auto break-words font-spacegrotesk text-lg xs:text-xl font-medium uppercase sm:text-2xl font-bold",
-            h6: "hyphens-auto break-words font-spacegrotesk text-base xs:text-lg font-medium uppercase sm:text-xl",
+            h1: "hyphens-manual break-words font-spacegrotesk text-4xl xs:text-5xl font-normal uppercase sm:text-6xl font-medium",
+            h2: "hyphens-manual break-words font-spacegrotesk text-3xl xs:text-4xl font-medium uppercase sm:text-5xl font-bold",
+            h3: "hyphens-manual break-words font-spacegrotesk text-2xl xs:text-3xl font-medium uppercase sm:text-4xl font-bold",
+            h4: "hyphens-manual break-words font-spacegrotesk text-xl xs:text-xl font-medium uppercase sm:text-3xl font-bold",
+            h5: "hyphens-manual break-words font-spacegrotesk text-lg xs:text-xl font-medium uppercase sm:text-2xl font-bold",
+            h6: "hyphens-manual break-words font-spacegrotesk text-base xs:text-lg font-medium uppercase sm:text-xl",
             link: "font-abcdiatype text-lg underline cursor-pointer sm:text-xl",
             subtitle: "font-abcdiatype text-lg font-medium sm:text-xl",
             paragraph: "font-abcdiatype text-lg font-normal"

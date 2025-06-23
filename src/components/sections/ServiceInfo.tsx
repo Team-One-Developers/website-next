@@ -1,3 +1,4 @@
+import Typography from "@/components/atoms/Typography"
 import Section from "@/components/layout/Section"
 import Image from "next/image"
 import Link from "next/link"
@@ -22,8 +23,14 @@ export const ServiceInfo = ({ title, description, image, alt, textBlocks, link }
         <Section className="bg-t1-white pt-6">
             <div className="text-t1-black grid grid-cols-1 gap-14 rounded-lg bg-white p-12 md:grid-cols-2">
                 <div className="flex flex-col gap-8">
-                    <h2 className="font-spacegrotesk text-t1-black text-3xl font-bold uppercase">{title}</h2>
-                    <p>{description}</p>
+                    <Typography
+                        as="h2"
+                        variant="h4"
+                        className="font-spacegrotesk text-t1-black text-3xl font-bold uppercase"
+                    >
+                        {title}
+                    </Typography>
+                    <Typography variant="paragraph">{description}</Typography>
                     {image && (
                         <Image
                             src={image}
@@ -37,10 +44,16 @@ export const ServiceInfo = ({ title, description, image, alt, textBlocks, link }
                 <div className="flex flex-col gap-8">
                     {textBlocks.map((block, index) => (
                         <div key={index}>
-                            <h2 className="font-spacegrotesk text-t1-black text-lg font-extrabold uppercase">
+                            <Typography
+                                as="h2"
+                                variant="h6"
+                                className="font-spacegrotesk text-t1-black text-lg font-extrabold uppercase"
+                            >
                                 {block.title}
-                            </h2>
-                            <p className="text-t1-black mt-2">{block.description}</p>
+                            </Typography>
+                            <Typography variant="paragraph" className="text-t1-black mt-2">
+                                {block.description}
+                            </Typography>
                         </div>
                     ))}
                     {link && (

@@ -31,7 +31,7 @@ const Careers = ({ careers }: CareersProps) => {
                             </Typography>
                         </div>
                         <div className="flex flex-wrap md:m-4">
-                            <div className="flex basis-full">
+                            <div className="flex basis-full flex-wrap md:flex-nowrap">
                                 <Typography className="uppercase" variant="paragraph">
                                     {career.employmentType},&nbsp;
                                 </Typography>

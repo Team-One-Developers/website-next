@@ -10,13 +10,13 @@ const Home = () => {
         <>
             <Hero
                 subtitle="Tech-driven business transformation"
-                title="Strategisch, datengetrieben, umsetzungsstark."
+                title="Stra&shy;te&shy;gisch, daten&shy;getrieben, um&shy;setzungs&shy;stark."
                 description="Team One ist Technologie-Beratungspartner für digitale Produkte, skalierbare Architekturen und KI-gestützte Geschäftsmodelle - mit Tech-Expertise, die in echten Projekten wirkt."
                 link={{ label: "Unsere Leistungen", url: "/services" }}
                 blobs={{ active: true, className: "from-[#21352b] to-[#46ffad] opacity-40", shape: "organic" }}
             />
             <TextColumns
-                title="WIR STEIGERN DIE WETTBEWERBSFÄHIGKEIT VON UNTERNEHMEN IN EINER DIGITALEN WELT."
+                title="WIR STEIGERN DIE WETT&shy;BEWERBS&shy;FÄHIGKEIT VON UN&shy;TER&shy;NEHMEN IN EINER DIGITALEN WELT."
                 subtitle="Unsere Leistungen"
                 link={{ label: "Alle Leistungen", href: "/services" }}
                 columns={[

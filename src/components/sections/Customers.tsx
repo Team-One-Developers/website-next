@@ -7,7 +7,7 @@ export default function Customers() {
         <Section className="bg-t1-black py-24 sm:py-32">
             <div className="mx-auto">
                 <Typography variant="h3" className="">
-                    EIN AUSZUG UNSERER PARTNERSCHAFTEN
+                    EIN AUSZUG UNSERER PARTNER&shy;SCHAFTEN
                 </Typography>
                 <div className="mt-16 flex flex-wrap items-center justify-between gap-8">
                     <Image
