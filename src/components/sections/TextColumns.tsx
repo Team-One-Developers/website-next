@@ -58,7 +58,7 @@ export const TextColumns = ({ title, subtitle, description, link, columns, divid
                 bg === "primary" ? "bg-primary text-t1-black" : "bg-t1-black text-t1-white"
             )}
         >
-            <div className="flex w-full justify-between">
+            <div className="flex w-full items-center justify-between">
                 <Typography variant="subtitle" className={cn("", bg === "primary" ? "text-t1-black" : "text-primary")}>
                     {subtitle}
                 </Typography>
