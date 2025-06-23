@@ -70,8 +70,6 @@ export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({ name, em
 
                         <Text style={text}>Nachricht:</Text>
                         <Text style={messageStyle}>{message}</Text>
-
-                        <Text style={text}>Wir melden uns schnellstmöglich!</Text>
                     </Section>
                 </Container>
             </Body>

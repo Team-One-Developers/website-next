@@ -14,7 +14,6 @@ export const sendEmail = async ({ name, email, message }: FormData) => {
     const { error } = await resend.emails.send({
         from: CONTACT_FORM_SENDER,
         to: [CONTACT_FORM_RECIPIENT],
-        bcc: [email],
         subject: "Team One - Kontaktanfrage",
         react: await EmailTemplate({ name, email, message })
     })
