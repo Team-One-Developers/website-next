@@ -42,7 +42,7 @@ const Privacy = () => {
 
 export default Privacy
 
-export const DataPrivacy = () => {
+const DataPrivacy = () => {
     return (
         <>
             <h2 className="mt-4 text-2xl font-bold">Allgemeines zur Datenverarbeitung</h2>
