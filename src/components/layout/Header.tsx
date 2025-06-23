@@ -4,10 +4,9 @@ import { Logo } from "@/components/atoms/Logo"
 import cn from "@/utils/cn"
 import { Dialog, DialogPanel } from "@headlessui/react"
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline"
-import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 
 interface NavigationItem {
     name: string
@@ -38,10 +37,6 @@ const navigation: NavigationItem[] = [
 export default function Header() {
     const pathname = usePathname()
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-
-    useEffect(() => {
-        setMobileMenuOpen(false)
-    }, [pathname])
 
     return (
         <header className="font-spacegrotesk bg-t1-black/70 fixed top-0 left-0 z-50 w-full backdrop-blur-3xl">
@@ -102,13 +97,7 @@ export default function Header() {
                         <Link href="#" className="-m-1.5 p-1.5">
                             <span className="sr-only">Team One Company Logo</span>
 
-                            <Image
-                                src="/images/logos/t1-only-dark.svg"
-                                alt="Team One Logo"
-                                height={86}
-                                width={164}
-                                className="h-12 w-auto"
-                            />
+                            <Logo className="h-9 fill-current" />
                         </Link>
                         <button
                             type="button"
@@ -121,22 +110,24 @@ export default function Header() {
                     </div>
                     <div className="mt-6 flow-root">
                         <div className="divide-t1-white/10 -my-6 divide-y">
-                            <div className="space-y-2 py-6">
+                            <ul className="space-y-4 py-6">
                                 {navigation.map((item) => (
-                                    <Link
-                                        key={item.name}
-                                        href={item.href}
-                                        className={cn(
-                                            "text-t1-white hover:text-primary font-spacegrotesk -mx-3 block rounded-lg px-3 py-2 text-lg/7 font-semibold uppercase",
-                                            (pathname === item.href ||
-                                                (item.href !== "/" && pathname.includes(item.href))) &&
-                                                "underline"
-                                        )}
-                                    >
-                                        {item.name}
-                                    </Link>
+                                    <li key={item.name}>
+                                        <Link
+                                            href={item.href}
+                                            className={cn(
+                                                "text-t1-white hover:text-primary font-spacegrotesk -mx-3 block rounded-lg px-3 py-2 text-2xl font-semibold uppercase",
+                                                (pathname === item.href ||
+                                                    (item.href !== "/" && pathname.includes(item.href))) &&
+                                                    "underline"
+                                            )}
+                                            onClick={() => setMobileMenuOpen(false)}
+                                        >
+                                            {item.name}
+                                        </Link>
+                                    </li>
                                 ))}
-                            </div>
+                            </ul>
                         </div>
                     </div>
                 </DialogPanel>

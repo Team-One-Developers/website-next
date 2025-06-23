@@ -63,7 +63,7 @@ export default function Footer() {
         <footer className="font-abcd bg-t1-white relative z-50">
             <div className="bg-white">
                 <div className="mx-auto max-w-7xl px-6 py-16 xl:grid xl:grid-cols-2 xl:gap-8">
-                    <div className="grid grid-cols-3 gap-8 xl:col-span-2 xl:mt-0">
+                    <div className="xs:grid-cols-2 grid grid-cols-1 gap-8 sm:grid-cols-3 xl:col-span-2 xl:mt-0">
                         <div>
                             <Typography variant="h6" className="text-t1-black text-sm/6 font-semibold">
                                 Leistungen

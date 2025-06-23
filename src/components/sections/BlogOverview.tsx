@@ -70,7 +70,7 @@ export const BlogOverview = ({ blogs }: BlogOverviewProps) => {
                             </button>
                         </li>
                         {uniqueCategories.map((category) => (
-                            <li className="mb-1" key={category}>
+                            <li className="mb-1 flex" key={category}>
                                 <button
                                     className={cn(
                                         "font-spacegrotesk text-t1-black hover:cursor-pointe rounded-xs px-4 py-2 uppercase",
