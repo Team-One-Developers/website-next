@@ -1,9 +1,9 @@
 import Typography from "@/components/atoms/Typography"
 import Section from "@/components/layout/Section"
+import CodingImage from "@public/images/culture/coding.webp"
+import OfficeLifeImage from "@public/images/culture/officelife.webp"
 import Image from "next/image"
 import Link from "next/link"
-import CodingImage from "/public/images/culture/coding.webp"
-import OfficeLifeImage from "/public/images/culture/officelife.webp"
 
 const DoubleImageHero = () => {
     return (
