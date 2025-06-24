@@ -1,9 +1,9 @@
-import codingImage from "@/../public/images/culture/coding.webp"
-import officelifeImage from "@/../public/images/culture/officelife.webp"
 import Typography from "@/components/atoms/Typography"
 import Section from "@/components/layout/Section"
 import Image from "next/image"
 import Link from "next/link"
+import codingImage from "../../../public/images/culture/coding.webp"
+import officelifeImage from "../../../public/images/culture/officelife.webp"
 
 export default function DoubleImageHero() {
     return (
