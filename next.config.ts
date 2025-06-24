@@ -7,7 +7,8 @@ const nextConfig: NextConfig = {
                 protocol: "https",
                 hostname: "cdn.sanity.io"
             }
-        ]
+        ],
+        minimumCacheTTL: 2678400 // 31 days
     }
 }
 
