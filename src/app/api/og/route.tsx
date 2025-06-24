@@ -8,7 +8,7 @@ export const GET = async (request: Request) => {
 
     const blogTitle = searchParams.get("title") || ""
 
-    const fontData = await fetch(new URL("../../../../fonts/space-grotesk-regular.ttf", import.meta.url)).then((res) =>
+    const fontData = await fetch(new URL("../../../fonts/space-grotesk-regular.ttf", import.meta.url)).then((res) =>
         res.arrayBuffer()
     )
 
