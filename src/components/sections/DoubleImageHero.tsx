@@ -5,7 +5,7 @@ import Link from "next/link"
 import CodingImage from "/public/images/culture/coding.webp"
 import OfficeLifeImage from "/public/images/culture/officelife.webp"
 
-export default function DoubleImageHero() {
+const DoubleImageHero = () => {
     return (
         <Section className="bg-background overflow-hidden pb-12 lg:pt-8 lg:pb-[90px]">
             <div className="-mx-4 mb-16 flex flex-wrap">
@@ -115,3 +115,5 @@ export default function DoubleImageHero() {
         </Section>
     )
 }
+
+export default DoubleImageHero
