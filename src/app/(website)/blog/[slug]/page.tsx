@@ -52,7 +52,7 @@ export async function generateMetadata({ params }: BlogProps): Promise<Metadata>
 
     return {
         openGraph: {
-            images: `/api/og/blog?title=${blog.title}`
+            images: `/api/og?title=${blog.title}`
         },
         title: blog.title,
         description: blog.descriptionShort,
