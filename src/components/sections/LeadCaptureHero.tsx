@@ -4,7 +4,7 @@ import HubspotForm from "@/components/sections/HubspotForm"
 import Image from "next/image"
 
 export interface LeadCaptureHeroProps {
-    image: { src: string; alt: string; width: number; height: number }
+    image: { src: string; alt: string; width: number; height: number; blurDataURL: string }
     title: string
     description: string
     formId: string
@@ -21,6 +21,8 @@ export const LeadCaptureHero = ({ image, title, description, formId, portalId }:
                     alt={image.alt}
                     width={image.width}
                     height={image.height}
+                    placeholder="blur"
+                    blurDataURL={image.blurDataURL}
                     className="w-full md:w-[45%]"
                 />
                 <div className="bg-t1-white flex w-full flex-col gap-4 rounded-xl px-10 py-12 md:w-[45%]">

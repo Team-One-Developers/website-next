@@ -91,6 +91,7 @@ export default async function LeadCapturePage({ params }: LeadcaptureProps) {
                     image={{
                         src: leadcapture.heroImage?.asset?.url ?? "",
                         alt: leadcapture.title,
+                        blurDataURL: leadcapture.heroImage?.asset?.metadata?.lqip ?? "",
                         width: 1200,
                         height: 630
                     }}

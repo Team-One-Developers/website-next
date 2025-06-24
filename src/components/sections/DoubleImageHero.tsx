@@ -2,6 +2,8 @@ import Typography from "@/components/atoms/Typography"
 import Section from "@/components/layout/Section"
 import Image from "next/image"
 import Link from "next/link"
+import codingImage from "/public/images/culture/coding.webp"
+import officelifeImage from "/public/images/culture/officelife.webp"
 
 export default function DoubleImageHero() {
     return (
@@ -11,10 +13,11 @@ export default function DoubleImageHero() {
                     <div className="overflow-hidden rounded-sm">
                         <Image
                             priority
-                            src="/images/culture/officelife.webp"
+                            src={officelifeImage}
                             alt="Büro Bild"
                             width={1200}
                             height={800}
+                            placeholder="blur"
                         />
                     </div>
                 </div>
@@ -57,10 +60,11 @@ export default function DoubleImageHero() {
                         <div className="hidden overflow-hidden rounded-sm lg:block">
                             <Image
                                 priority
-                                src="/images/culture/coding.webp"
+                                src={codingImage}
                                 alt="about image"
                                 width={500}
                                 height={800}
+                                placeholder="blur"
                                 className="w-full object-cover object-center"
                             />
                         </div>
