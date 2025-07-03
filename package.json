@@ -30,7 +30,7 @@
         "@vercel/speed-insights": "^1.2.0",
         "clsx": "^2.1.1",
         "lodash": "^4.17.21",
-        "next": "15.3.2",
+        "next": "15.3.3",
         "next-hubspot": "^2.0.0",
         "next-sanity": "^9.11.1",
         "react": "19.1.0",
