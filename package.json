@@ -1,6 +1,6 @@
 {
-    "name": "nextfolio",
-    "version": "0.1.0",
+    "name": "team-one-website",
+    "version": "1.0.0",
     "private": true,
     "scripts": {
         "tsc": "tsc",
