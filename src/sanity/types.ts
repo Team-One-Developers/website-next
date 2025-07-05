@@ -13,61 +13,6 @@
  */
 
 // Source: schema.json
-export type SanityImagePaletteSwatch = {
-    _type: "sanity.imagePaletteSwatch"
-    background?: string
-    foreground?: string
-    population?: number
-    title?: string
-}
-
-export type SanityImagePalette = {
-    _type: "sanity.imagePalette"
-    darkMuted?: SanityImagePaletteSwatch
-    lightVibrant?: SanityImagePaletteSwatch
-    darkVibrant?: SanityImagePaletteSwatch
-    vibrant?: SanityImagePaletteSwatch
-    dominant?: SanityImagePaletteSwatch
-    lightMuted?: SanityImagePaletteSwatch
-    muted?: SanityImagePaletteSwatch
-}
-
-export type SanityImageDimensions = {
-    _type: "sanity.imageDimensions"
-    height?: number
-    width?: number
-    aspectRatio?: number
-}
-
-export type SanityFileAsset = {
-    _id: string
-    _type: "sanity.fileAsset"
-    _createdAt: string
-    _updatedAt: string
-    _rev: string
-    originalFilename?: string
-    label?: string
-    title?: string
-    description?: string
-    altText?: string
-    sha1hash?: string
-    extension?: string
-    mimeType?: string
-    size?: number
-    assetId?: string
-    uploadId?: string
-    path?: string
-    url?: string
-    source?: SanityAssetSourceData
-}
-
-export type Geopoint = {
-    _type: "geopoint"
-    lat?: number
-    lng?: number
-    alt?: number
-}
-
 export type Leadcapture = {
     _id: string
     _type: "leadcapture"
@@ -288,12 +233,47 @@ export type Author = {
     }>
 }
 
-export type SanityImageCrop = {
-    _type: "sanity.imageCrop"
-    top?: number
-    bottom?: number
-    left?: number
-    right?: number
+export type MediaTag = {
+    _id: string
+    _type: "media.tag"
+    _createdAt: string
+    _updatedAt: string
+    _rev: string
+    name?: Slug
+}
+
+export type Code = {
+    _type: "code"
+    language?: string
+    filename?: string
+    code?: string
+    highlightedLines?: Array<number>
+}
+
+export type SanityImagePaletteSwatch = {
+    _type: "sanity.imagePaletteSwatch"
+    background?: string
+    foreground?: string
+    population?: number
+    title?: string
+}
+
+export type SanityImagePalette = {
+    _type: "sanity.imagePalette"
+    darkMuted?: SanityImagePaletteSwatch
+    lightVibrant?: SanityImagePaletteSwatch
+    darkVibrant?: SanityImagePaletteSwatch
+    vibrant?: SanityImagePaletteSwatch
+    dominant?: SanityImagePaletteSwatch
+    lightMuted?: SanityImagePaletteSwatch
+    muted?: SanityImagePaletteSwatch
+}
+
+export type SanityImageDimensions = {
+    _type: "sanity.imageDimensions"
+    height?: number
+    width?: number
+    aspectRatio?: number
 }
 
 export type SanityImageHotspot = {
@@ -302,6 +282,36 @@ export type SanityImageHotspot = {
     y?: number
     height?: number
     width?: number
+}
+
+export type SanityImageCrop = {
+    _type: "sanity.imageCrop"
+    top?: number
+    bottom?: number
+    left?: number
+    right?: number
+}
+
+export type SanityFileAsset = {
+    _id: string
+    _type: "sanity.fileAsset"
+    _createdAt: string
+    _updatedAt: string
+    _rev: string
+    originalFilename?: string
+    label?: string
+    title?: string
+    description?: string
+    altText?: string
+    sha1hash?: string
+    extension?: string
+    mimeType?: string
+    size?: number
+    assetId?: string
+    uploadId?: string
+    path?: string
+    url?: string
+    source?: SanityAssetSourceData
 }
 
 export type SanityImageAsset = {
@@ -327,13 +337,6 @@ export type SanityImageAsset = {
     source?: SanityAssetSourceData
 }
 
-export type SanityAssetSourceData = {
-    _type: "sanity.assetSourceData"
-    name?: string
-    id?: string
-    url?: string
-}
-
 export type SanityImageMetadata = {
     _type: "sanity.imageMetadata"
     location?: Geopoint
@@ -345,13 +348,11 @@ export type SanityImageMetadata = {
     isOpaque?: boolean
 }
 
-export type MediaTag = {
-    _id: string
-    _type: "media.tag"
-    _createdAt: string
-    _updatedAt: string
-    _rev: string
-    name?: Slug
+export type Geopoint = {
+    _type: "geopoint"
+    lat?: number
+    lng?: number
+    alt?: number
 }
 
 export type Slug = {
@@ -360,32 +361,31 @@ export type Slug = {
     source?: string
 }
 
-export type Code = {
-    _type: "code"
-    language?: string
-    filename?: string
-    code?: string
-    highlightedLines?: Array<number>
+export type SanityAssetSourceData = {
+    _type: "sanity.assetSourceData"
+    name?: string
+    id?: string
+    url?: string
 }
 
 export type AllSanitySchemaTypes =
-    | SanityImagePaletteSwatch
-    | SanityImagePalette
-    | SanityImageDimensions
-    | SanityFileAsset
-    | Geopoint
     | Leadcapture
     | Career
     | Blog
     | Author
-    | SanityImageCrop
-    | SanityImageHotspot
-    | SanityImageAsset
-    | SanityAssetSourceData
-    | SanityImageMetadata
     | MediaTag
-    | Slug
     | Code
+    | SanityImagePaletteSwatch
+    | SanityImagePalette
+    | SanityImageDimensions
+    | SanityImageHotspot
+    | SanityImageCrop
+    | SanityFileAsset
+    | SanityImageAsset
+    | SanityImageMetadata
+    | Geopoint
+    | Slug
+    | SanityAssetSourceData
 export declare const internalGroqTypeReferenceTo: unique symbol
 // Source: ./src/sanity/queries.ts
 // Variable: QUERY_ALL_CAREERS_DANGER_ONLY_FOR_STATIC_PARAMS
