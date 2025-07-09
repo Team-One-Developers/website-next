@@ -52,7 +52,7 @@ export default function Hero({ title, subtitle, description, link, blobs }: Hero
 
     return (
         <div className="bg-t1-black -mt-24 overflow-hidden pt-24">
-            <div className="relative isolate w-full px-6 pt-14 lg:px-8">
+            <div className="relative isolate w-full pt-14">
                 {blobs?.active && (
                     <>
                         <HeroBlob ref={topBlobRef} position="top" clipPath={clipPath} className={blobs.className} />
@@ -61,7 +61,7 @@ export default function Hero({ title, subtitle, description, link, blobs }: Hero
 
                 <div
                     className={cn(
-                        "mx-auto w-full max-w-7xl py-32 sm:py-48 lg:pt-56 lg:pb-84",
+                        "mx-auto w-full max-w-7xl px-6 py-32 sm:py-48 lg:pt-56 lg:pb-84 2xl:px-0",
                         !description && "pb-72 lg:pb-96"
                     )}
                 >
