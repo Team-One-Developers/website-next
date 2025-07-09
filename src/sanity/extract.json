@@ -668,6 +668,10 @@
             {
               "type": "string",
               "value": "paul-light"
+            },
+            {
+              "type": "string",
+              "value": "none"
             }
           ]
         },

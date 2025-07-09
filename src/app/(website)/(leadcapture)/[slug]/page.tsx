@@ -104,7 +104,7 @@ export default async function LeadCapturePage({ params }: LeadcaptureProps) {
                 />
                 <Section
                     className={cn(
-                        "py-32 sm:py-42",
+                        "py-16 md:py-24 lg:py-36",
                         leadcapture.contentTheme === "dark" ? "bg-t1-black text-t1-white" : "bg-t1-white text-t1-black"
                     )}
                 >

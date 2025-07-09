@@ -111,7 +111,7 @@ export type Leadcapture = {
         _key: string
     }>
     contentTheme: "dark" | "light"
-    cta: "paul-dark" | "paul-light"
+    cta: "paul-dark" | "paul-light" | "none"
     visibility: "Draft" | "Public"
     link?: string
 }
@@ -616,7 +616,7 @@ export type QUERY_ALL_LEADCAPTURESResult = Array<{
         _key: string
     }>
     contentTheme: "dark" | "light"
-    cta: "paul-dark" | "paul-light"
+    cta: "none" | "paul-dark" | "paul-light"
     visibility: "Draft" | "Public"
     link?: string
 }>
@@ -1176,7 +1176,7 @@ export type QUERY_SPECIFIC_LEADCAPTUREResult = {
         _key: string
     }>
     contentTheme: "dark" | "light"
-    cta: "paul-dark" | "paul-light"
+    cta: "none" | "paul-dark" | "paul-light"
     visibility: "Draft" | "Public"
     link?: string
 } | null

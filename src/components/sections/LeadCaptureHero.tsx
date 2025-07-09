@@ -23,7 +23,7 @@ export const LeadCaptureHero = ({ image, title, description, formId, portalId }:
                     height={image.height}
                     placeholder="blur"
                     blurDataURL={image.blurDataURL}
-                    className="w-full md:w-[45%]"
+                    className="hidden md:block md:w-[45%]"
                 />
                 <div className="bg-t1-white flex w-full flex-col gap-4 rounded-xl px-10 py-12 md:w-[45%]">
                     <Typography variant="h3" className="text-t1-black">

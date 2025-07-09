@@ -7,20 +7,30 @@ import Image from "next/image"
 const PERSONS = ["paul"] as const
 const THEMES = ["dark", "light"] as const
 
-export const combinations: string[] = PERSONS.flatMap((person) => THEMES.map((theme) => `${person}-${theme}`))
+export const combinations = [
+    ...PERSONS.flatMap((person) => THEMES.map((theme) => `${person}-${theme}`)),
+    "none"
+] as const
 
-export const parseCombination = (combination: string): { person: string; theme: string } => {
+export const parseCombination = (combination: string): { person?: string; theme?: string } => {
+    if (combination === "none") {
+        return { person: undefined, theme: undefined }
+    }
     const [person, theme] = combination.split("-").map((s) => s.trim())
     return { person, theme }
 }
 
 interface CTAProps {
-    variant: `${(typeof PERSONS)[number]}-${(typeof THEMES)[number]}`
+    variant: (typeof combinations)[number]
 }
 
 export const CTA = ({ variant }: CTAProps) => {
     // person is also available but not used at this point
     const { theme } = parseCombination(variant)
+
+    if (!theme) {
+        return null
+    }
 
     return (
         <div className={cn("w-full", theme === "dark" ? "bg-t1-black text-t1-white" : "bg-t1-white text-t1-black")}>
