@@ -12,7 +12,7 @@ export const QUERY_SPECIFIC_CAREER = defineQuery(`*
   [_type == 'career' && slug.current == $slug][0]
 `)
 
-export const QUERY_ALL_LEADCAPTURES = defineQuery(`*
+export const QUERY_ALL_LEADCAPTURES_DANGER_ONLY_FOR_STATIC_PARAMS = defineQuery(`*
   [_type == 'leadcapture' && defined(slug) && defined(slug.current)]
   {
     ...,

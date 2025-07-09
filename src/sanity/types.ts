@@ -559,9 +559,9 @@ export type QUERY_SPECIFIC_CAREERResult = {
     visibility: "Draft" | "Public"
     link?: string
 } | null
-// Variable: QUERY_ALL_LEADCAPTURES
+// Variable: QUERY_ALL_LEADCAPTURES_DANGER_ONLY_FOR_STATIC_PARAMS
 // Query: *  [_type == 'leadcapture' && defined(slug) && defined(slug.current)]  {    ...,    heroImage{      asset->    }  }
-export type QUERY_ALL_LEADCAPTURESResult = Array<{
+export type QUERY_ALL_LEADCAPTURES_DANGER_ONLY_FOR_STATIC_PARAMSResult = Array<{
     _id: string
     _type: "leadcapture"
     _createdAt: string
@@ -1188,7 +1188,7 @@ declare module "@sanity/client" {
         "*\n  [_type == 'career' && defined(slug) && defined(slug.current) && division != null && !(division in [\"\"])]\n": QUERY_ALL_CAREERS_DANGER_ONLY_FOR_STATIC_PARAMSResult
         "*\n  [_type == 'career' && defined(slug) && defined(slug.current) && visibility == 'Public']\n": QUERY_ALL_PUBLIC_CAREERSResult
         "*\n  [_type == 'career' && slug.current == $slug][0]\n": QUERY_SPECIFIC_CAREERResult
-        "*\n  [_type == 'leadcapture' && defined(slug) && defined(slug.current)]\n  {\n    ...,\n    heroImage{\n      asset->\n    }\n  }\n": QUERY_ALL_LEADCAPTURESResult
+        "*\n  [_type == 'leadcapture' && defined(slug) && defined(slug.current)]\n  {\n    ...,\n    heroImage{\n      asset->\n    }\n  }\n": QUERY_ALL_LEADCAPTURES_DANGER_ONLY_FOR_STATIC_PARAMSResult
         "*\n  [_type == 'blog' && defined(slug) && defined(slug.current)]\n  {\n    ...,\n    author->,\n    heroImage{\n      asset->\n    }\n  }\n": QUERY_ALL_BLOGS_DANGER_ONLY_FOR_STATIC_PARAMSResult
         "*\n  [_type == 'blog' && defined(slug) && defined(slug.current) && visibility == 'Public']\n  {\n    ...,\n    author->{\n      ...,\n      profileImg{\n        asset->\n      }\n    },\n    heroImage{\n      asset->\n    },\n  }\n": QUERY_ALL_PUBLIC_BLOGSResult
         "*\n  [_type == 'blog' && defined(slug) && defined(slug.current) && visibility == 'Public']\n  | order(_createdAt desc)[0...3]\n  {\n    ...,\n    heroImage{\n      asset->\n    },\n   \n  }\n": QUERY_NEWEST_BLOGSResult

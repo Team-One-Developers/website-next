@@ -12,11 +12,7 @@ export const metadata: Metadata = {
 }
 
 const Blog = async () => {
-    const allBlogs: QUERY_ALL_PUBLIC_BLOGSResult = await client.fetch(
-        QUERY_ALL_PUBLIC_BLOGS,
-        {},
-        { cache: process.env.NODE_ENV === "development" ? "no-store" : "force-cache" }
-    )
+    const allBlogs: QUERY_ALL_PUBLIC_BLOGSResult = await client.fetch(QUERY_ALL_PUBLIC_BLOGS)
 
     const filteredBlogs = allBlogs
         .filter((blog) => blog)

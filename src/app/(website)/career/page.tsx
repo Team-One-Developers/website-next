@@ -13,11 +13,7 @@ export const metadata: Metadata = {
 }
 
 const Career = async () => {
-    const careers: QUERY_ALL_PUBLIC_CAREERSResult = await client.fetch(
-        QUERY_ALL_PUBLIC_CAREERS,
-        {},
-        { cache: process.env.NODE_ENV === "development" ? "no-store" : "force-cache" }
-    )
+    const careers: QUERY_ALL_PUBLIC_CAREERSResult = await client.fetch(QUERY_ALL_PUBLIC_CAREERS, {})
 
     const sortedCareers = careers.reduce(
         (acc, career) => {

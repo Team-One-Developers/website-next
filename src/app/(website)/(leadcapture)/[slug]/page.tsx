@@ -5,8 +5,8 @@ import CTA from "@/components/sections/CTA"
 import LeadCaptureHero from "@/components/sections/LeadCaptureHero"
 import { organization } from "@/data/schemaOrg"
 import { client } from "@/sanity/lib/client"
-import { QUERY_ALL_LEADCAPTURES, QUERY_SPECIFIC_LEADCAPTURE } from "@/sanity/queries"
-import { QUERY_ALL_LEADCAPTURESResult } from "@/sanity/types"
+import { QUERY_ALL_LEADCAPTURES_DANGER_ONLY_FOR_STATIC_PARAMS, QUERY_SPECIFIC_LEADCAPTURE } from "@/sanity/queries"
+import { QUERY_ALL_LEADCAPTURES_DANGER_ONLY_FOR_STATIC_PARAMSResult } from "@/sanity/types"
 import cn from "@/utils/cn"
 import { Metadata } from "next"
 import { notFound } from "next/navigation"
@@ -20,11 +20,7 @@ interface LeadcaptureProps {
 }
 
 async function getLeadcaptureFromParams(slug: string) {
-    const leadcapture = await client.fetch(
-        QUERY_SPECIFIC_LEADCAPTURE,
-        { slug },
-        { cache: process.env.NODE_ENV === "development" ? "no-store" : "force-cache" }
-    )
+    const leadcapture = await client.fetch(QUERY_SPECIFIC_LEADCAPTURE, { slug })
 
     if (!leadcapture) {
         return null
@@ -57,7 +53,9 @@ export async function generateMetadata({ params }: LeadcaptureProps): Promise<Me
 }
 
 export async function generateStaticParams() {
-    const allLeadCaptures: QUERY_ALL_LEADCAPTURESResult = await client.fetch(QUERY_ALL_LEADCAPTURES)
+    const allLeadCaptures: QUERY_ALL_LEADCAPTURES_DANGER_ONLY_FOR_STATIC_PARAMSResult = await client.fetch(
+        QUERY_ALL_LEADCAPTURES_DANGER_ONLY_FOR_STATIC_PARAMS
+    )
 
     return allLeadCaptures
         .filter((leadCapture) => leadCapture.slug?.current)
