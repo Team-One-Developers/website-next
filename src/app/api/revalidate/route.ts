@@ -10,6 +10,7 @@ export async function POST(req: NextRequest) {
         const { body, isValidSignature } = await parseBody<{
             _type: string
             slug?: string | undefined
+            previousSlug?: string | undefined
         }>(req, process.env.SANITY_HOOK_SECRET)
 
         if (!isValidSignature) {
@@ -34,6 +35,11 @@ export async function POST(req: NextRequest) {
 
             await revalidatePath(specificPath)
             await revalidatePath(specificPathDraft)
+
+            // revalidate old slug (=> delete the path)
+            if (body.previousSlug && body.previousSlug !== body.slug) {
+                await revalidatePath(`/${body.previousSlug}`)
+            }
         }
 
         if (body._type === "blog" || body._type === "career") {
@@ -48,6 +54,11 @@ export async function POST(req: NextRequest) {
             await revalidatePath(specificPath)
             await revalidatePath(overviewPagePath)
             await revalidatePath(specificPathDraft)
+
+            // revalidate old slug (=> delete the path)
+            if (body.previousSlug && body.previousSlug !== body.slug) {
+                await revalidatePath(`/${body.previousSlug}`)
+            }
         }
 
         // Vercel logging
