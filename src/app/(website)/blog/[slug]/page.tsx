@@ -1,4 +1,4 @@
-import Section from "@/components/layout/Section"
+import { DraftMarker } from "@/components/atoms/DraftMarker"
 import StructuredData from "@/components/layout/StructuredData"
 import BlogDetailPageTemp from "@/components/sections/BlogDetailPage"
 import { organization } from "@/data/schemaOrg"
@@ -106,14 +106,15 @@ export default async function BlogPage({ params }: BlogProps) {
     }
 
     return (
-        <Section>
+        <div>
             <StructuredData data={structuredData} />
+            {blog.visibility !== "Public" && <DraftMarker />}
             <BlogDetailPageTemp
                 blog={blog}
                 highlightedContent={ptBlocksHighlighted}
                 relatedBlogs={relatedBlogs}
                 className={Inter.className}
             />
-        </Section>
+        </div>
     )
 }

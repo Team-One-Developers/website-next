@@ -12,6 +12,7 @@ import { Metadata } from "next"
 import { notFound } from "next/navigation"
 import type { WebPage, WithContext } from "schema-dts"
 
+import { DraftMarker } from "@/components/atoms/DraftMarker"
 import { HubspotProvider } from "next-hubspot"
 
 interface LeadcaptureProps {
@@ -87,6 +88,7 @@ export default async function LeadCapturePage({ params }: LeadcaptureProps) {
         <HubspotProvider>
             <div>
                 <StructuredData data={structuredData} />
+                {leadcapture.visibility !== "Public" && <DraftMarker />}
                 <LeadCaptureHero
                     image={{
                         src: leadcapture.heroImage?.asset?.url ?? "",

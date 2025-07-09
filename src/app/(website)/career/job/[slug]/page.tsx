@@ -132,7 +132,7 @@ export default async function CareerPage({ params }: CareerProps) {
     return (
         <>
             <StructuredData data={structuredData} />
-            {isDraft ? <DraftMarker /> : null}
+            {isDraft && <DraftMarker />}
             <TwoColumnsFullScreenContainer
                 left={
                     <div className="sticky top-0 flex flex-col">

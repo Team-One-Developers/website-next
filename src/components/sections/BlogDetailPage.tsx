@@ -22,8 +22,8 @@ export interface BlogDetailPageTempProps {
 const BlogDetailPageTemp = async ({ blog, highlightedContent, relatedBlogs, className }: BlogDetailPageTempProps) => {
     return (
         <Section className={className}>
-            <div className="-mx-4 flex flex-wrap justify-center">
-                <div className="w-full px-4">
+            <div className="flex flex-wrap justify-center">
+                <div className="w-full">
                     <div className="relative z-20 mb-[60px] overflow-hidden rounded">
                         {blog?.heroImage.asset && <BlogImage image={blog.heroImage.asset} priority />}
 
