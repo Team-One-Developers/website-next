@@ -20,49 +20,34 @@ export async function POST(req: NextRequest) {
 
         if (
             !body?.slug ||
+            !body.previousSlug ||
             !body._type ||
             (body._type !== "blog" && body._type !== "career" && body._type !== "leadcapture")
         ) {
             return new Response("Bad Request", { status: 400 })
         }
 
+        const slugChanged = body.previousSlug !== body.slug
+
         if (body._type === "leadcapture") {
-            const isDraftSlug = body.slug.startsWith("draft-")
-
-            // revalidate the draft and non draft version in case the visibility changed
-            const specificPath = `/${isDraftSlug ? body.slug.slice(6) : body.slug}`
-            const specificPathDraft = `/${isDraftSlug ? body.slug : "draft-" + body.slug}`
-
-            await revalidatePath(specificPath)
-            await revalidatePath(specificPathDraft)
-
-            // revalidate old slug (=> delete the path)
-            if (body.previousSlug && body.previousSlug !== body.slug) {
-                await revalidatePath(`/${body.previousSlug}`)
-            }
+            await revalidatePath(`/${body.slug}`)
+            if (slugChanged) await revalidatePath(`/${body.previousSlug}`)
         }
 
         if (body._type === "blog" || body._type === "career") {
-            const isDraftSlug = body.slug.startsWith("draft-")
+            const pagePath = body._type === "blog" ? "/blog" : "/career/job"
+            const overviewPagePath = body._type === "blog" ? "/blog" : "/career"
 
-            const overviewPagePath = `/${body._type === "blog" ? "blog" : "career"}`
+            await revalidatePath(pagePath + "/" + body.slug)
+            if (slugChanged) await revalidatePath(pagePath + "/" + body.previousSlug)
 
-            // revalidate the draft and non draft version in case the visibility changed
-            const specificPath = `/${body._type === "blog" ? "blog" : "career/job"}/${isDraftSlug ? body.slug.slice(6) : body.slug}`
-            const specificPathDraft = `/${body._type === "blog" ? "blog" : "career/job"}/${isDraftSlug ? body.slug : "draft-" + body.slug}`
-
-            await revalidatePath(specificPath)
             await revalidatePath(overviewPagePath)
-            await revalidatePath(specificPathDraft)
-
-            // revalidate old slug (=> delete the path)
-            if (body.previousSlug && body.previousSlug !== body.slug) {
-                await revalidatePath(`/${body.previousSlug}`)
-            }
         }
 
         // Vercel logging
-        console.log(`/revalidate triggered succesfully. Revalidated for slug ${body.slug}`)
+        console.log(
+            `/revalidate triggered succesfully. Revalidated for slug ${body.slug}${slugChanged && ` and previous slug ${body.previousSlug}`}`
+        )
 
         return NextResponse.json({
             status: 200
