@@ -13,17 +13,27 @@ export function createAsyncPublishAction(originalAction: DocumentActionComponent
         return {
             ...originalResult,
             onHandle: async () => {
-                const title = props.draft!.title as string
-                const draft = props.draft!.visibility === "Draft" ? "draft-" : ""
                 // @ts-expect-error no time to fix this right now
-                const currentSlug = props.draft!.slug?.current || ""
+                // user adjusted the slug manually, so we trust them
+                if (props.published!.slug?.current !== props.draft!.slug?.current) {
+                    // @ts-expect-error no time to fix this right now
+                    const slug = props.draft!.slug?.current as string
+                    const path = `${props.type === "blog" ? "/blog" : props.type === "career" ? "/career/job" : ""}/${slug}`
+                    const link = `https://www.team-one.de${path}`
 
-                const slug = currentSlug ? currentSlug : draft + slugify(title)
-                const path = `${props.type === "blog" ? "/blog" : props.type === "career" ? "/career/job" : ""}/${slug}`
-                const link = `https://www.team-one.de${path}`
+                    await patch.execute([{ set: { slug: { current: slug }, path, link } }])
+                    originalResult.onHandle!()
+                } else {
+                    const title = props.draft!.title as string
+                    const draftPrefix = props.draft!.visibility === "Draft" ? "draft-" : ""
 
-                await patch.execute([{ set: { slug: { current: slug }, path, link } }])
-                originalResult.onHandle!()
+                    const slug = draftPrefix + slugify(title)
+                    const path = `${props.type === "blog" ? "/blog" : props.type === "career" ? "/career/job" : ""}/${slug}`
+                    const link = `https://www.team-one.de${path}`
+
+                    await patch.execute([{ set: { slug: { current: slug }, path, link } }])
+                    originalResult.onHandle!()
+                }
             }
         }
     }
