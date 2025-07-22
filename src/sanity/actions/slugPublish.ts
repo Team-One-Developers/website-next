@@ -19,7 +19,7 @@ export function createAsyncPublishAction(originalAction: DocumentActionComponent
                 const draftPrefix = props.draft!.visibility === "Draft" ? "draft-" : ""
 
                 // custom slug? ==> if so we want to keep it
-                if (cleanSlug !== slugify(title)) {
+                if (cleanSlug && cleanSlug !== slugify(title)) {
                     const combinedSlug = draftPrefix + cleanSlug
                     const path = `${props.type === "blog" ? "/blog" : props.type === "career" ? "/career/job" : ""}/${combinedSlug}`
                     const link = `https://www.team-one.de${path}`

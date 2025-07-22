@@ -46,7 +46,7 @@ export async function POST(req: NextRequest) {
 
         // Vercel logging
         console.log(
-            `/revalidate triggered succesfully. Revalidated for slug ${body.slug}${slugChanged && ` and previous slug ${body.previousSlug}`}`
+            `/revalidate triggered succesfully. Revalidated for slug ${body.slug}${slugChanged ? ` and previous slug ${body.previousSlug}` : ""}`
         )
 
         return NextResponse.json({
