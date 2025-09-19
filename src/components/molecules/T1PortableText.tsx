@@ -123,10 +123,16 @@ const components: PortableTextComponents = {
         })()
     },
     list: {
-        bullet: ({ children }: any) => <ul className="mb-5 list-[square] pl-5">{children}</ul>
+        bullet: ({ children }: any) => <ul className="mb-5 list-inside list-[square]">{children}</ul>,
+        number: ({ children }: any) => <ol className="mb-5 list-inside list-decimal">{children}</ol>
     },
     listItem: {
         bullet: ({ children }: any) => (
+            <Typography as="li" variant="paragraph" className="marker: marker:text-primary my-4 pl-4 marker:block">
+                {children}
+            </Typography>
+        ),
+        number: ({ children }: any) => (
             <Typography as="li" variant="paragraph" className="marker: marker:text-primary my-4 pl-4 marker:block">
                 {children}
             </Typography>
