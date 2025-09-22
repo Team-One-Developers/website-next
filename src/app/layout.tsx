@@ -75,11 +75,6 @@ export const metadata: Metadata = {
         description: siteConfig.description,
         images: [siteConfig.ogImage]
     },
-    icons: {
-        icon: "/favicon.ico",
-        shortcut: "/favicon-16x16.png",
-        apple: "/apple-touch-icon.png"
-    },
     metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000")
 }
 
