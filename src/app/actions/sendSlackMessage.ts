@@ -61,7 +61,8 @@ export async function sendSlackMessage({ name, email, message }: FormData, chann
                 }
             ],
             text: `New Contact Form Submission: ${message}`,
-            unfurl_links: true
+            unfurl_links: false,
+            unfurl_media: false
         })
 
         if (!result.ok) {
