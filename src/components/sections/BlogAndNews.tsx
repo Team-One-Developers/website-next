@@ -16,21 +16,21 @@ export const BlogAndNews = async () => {
                 columns={[
                     {
                         title: newestBlogs[0].title,
-                        text: newestBlogs[0].descriptionLong,
+                        text: newestBlogs[0].descriptionShort,
                         image: newestBlogs[0].heroImage?.asset?.url || "/images/culture/coffetalk.webp",
                         tags: [formatDate(newestBlogs[0].date)],
                         href: `/blog/${newestBlogs[0].slug?.current}`
                     },
                     {
                         title: newestBlogs[1].title,
-                        text: newestBlogs[1].descriptionLong,
+                        text: newestBlogs[1].descriptionShort,
                         image: newestBlogs[1].heroImage?.asset?.url || "/images/culture/coffetalk.webp",
                         tags: [formatDate(newestBlogs[1].date)],
                         href: `/blog/${newestBlogs[1].slug?.current}`
                     },
                     {
                         title: newestBlogs[2].title,
-                        text: newestBlogs[2].descriptionLong,
+                        text: newestBlogs[2].descriptionShort,
                         image: newestBlogs[2].heroImage?.asset?.url || "/images/culture/coffetalk.webp",
                         tags: [formatDate(newestBlogs[2].date)],
                         href: `/blog/${newestBlogs[2].slug?.current}`
