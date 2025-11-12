@@ -118,7 +118,7 @@ export const BlogOverview = ({ blogs }: BlogOverviewProps) => {
                                         height={100}
                                         width={100}
                                         src={blog.author.profileImg?.asset?.url || "/images/logos/t1-only-dark.svg"}
-                                        className="size-10 rounded-full bg-gray-50"
+                                        className="size-10 rounded-full bg-gray-50 object-cover"
                                     />
                                     <div className="text-sm/6">
                                         <p className="font-semibold text-gray-900">

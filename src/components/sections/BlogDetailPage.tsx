@@ -27,8 +27,8 @@ const BlogDetailPageTemp = async ({ blog, highlightedContent, relatedBlogs, clas
                     <div className="relative z-20 mb-[60px] overflow-hidden rounded">
                         {blog?.heroImage.asset && <BlogImage image={blog.heroImage.asset} priority />}
 
-                        <div className="absolute top-0 left-0 z-10 flex h-full w-full items-end">
-                            <div className="flex flex-wrap items-center p-5 pb-4 sm:p-8 sm:pb-4">
+                        <div className="relative z-10 flex h-full w-full items-end">
+                            <div className="flex flex-wrap items-center py-4 sm:py-8">
                                 <div className="mr-5 mb-4 flex items-center md:mr-10">
                                     <div className="mr-4 h-10 w-10 overflow-hidden rounded-full">
                                         {blog?.author?.profileImg?.asset && (
