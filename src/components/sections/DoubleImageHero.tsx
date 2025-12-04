@@ -76,7 +76,7 @@ const DoubleImageHero = () => {
                 <div className="mb-11 w-full max-w-[970px]">
                     <span className="text-primary mb-2 block text-lg font-semibold uppercase">OUR MISSION</span>
                     <Typography as="h1" variant="h1" className="text-t1-white mb-3">
-                        Unser Team - <span className="font-bold">Dein </span> Play&shy;ground
+                        Unser Team - <span className="font-bold">Dein </span> Playground
                     </Typography>
                     <Typography className="">
                         Wir verstehen uns nicht einfach nur als Arbeitgeber, sondern viel mehr als aktiver Begleiter auf

@@ -15,13 +15,13 @@ export default function Services() {
         <div>
             <Hero
                 subtitle="Unsere Leistungen"
-                title="VON DER VISION BIS ZUR UM&shy;SETZ&shy;UNG."
+                title="VON DER VISION BIS ZUR UMSETZUNG."
                 description="Wir schaffen nachhaltige Mehrwerte durch exzellente Software & menschenzentrierte Arbeitsweisen."
                 blobs={{ active: true, className: "from-[#21352b] to-[#46ffad] opacity-50", shape: "organic" }}
             />
 
             <ServiceInfo
-                title="ENTER&shy;PRISE SOFT&shy;WARE ENGI&shy;NEERING"
+                title="ENTERPRISE SOFTWARE ENGINEERING"
                 description="Als Software-Beratung befähigen wir unsere Kunden, im digitalen Wettbewerb erfolgreich zu sein: 
                         Strategisch, technologisch und methodisch. Unser Ziel ist es, Unternehmen dabei zu unterstützen,
                         die Chancen und Herausforderungen neuer Technologien zu nutzen und ihre Geschäftsmodelle
@@ -47,7 +47,7 @@ export default function Services() {
             />
 
             <ServiceInfo
-                title="OPE&shy;RATIONAL AI & DATA ANA&shy;LYTICS"
+                title="OPERATIONAL AI & DATA ANALYTICS"
                 description="Vom Aufbau interner Kompetenzen bis zur Entwicklung produktionsreifer Systeme. Unsere Leistungen decken das gesamte Spektrum ab: von klassischen Ansätzen bis hin zu Gen AI-Anwendungen mit integriertem Governance-Modell."
                 // image="/images/culture/coffetalk.webp"
                 alt="Enterprise AI & DATA"
@@ -70,7 +70,7 @@ export default function Services() {
             />
 
             <ServiceInfo
-                title="BUSINESS & DIGITAL-STRA&shy;TEGIE & TRANS&shy;FOR&shy;MATION"
+                title="BUSINESS & DIGITAL-STRATEGIE & TRANSFORMATION"
                 description="Wir machen Organisationen handlungsfähig für digitale Produkte – strategisch, technologisch und operativ. Von der Reifegradanalyse bis zum produktbasierten Operating Model oder Produktstrategie."
                 // image="/images/culture/officelife.webp"
                 alt="Enterprise Strategy & Transformation"

@@ -10,7 +10,7 @@ const Privacy = () => {
     return (
         <>
             <Section className="pb-56">
-                <h1 className="mt-8 text-3xl font-bold">Datenschutz&shy;erklärung</h1>
+                <h1 className="mt-8 text-3xl font-bold">Datenschutzerklärung</h1>
                 <h2 className="mt-8">Wer bei uns für die Datenverarbeitung verantwortlich ist:</h2> <br />
                 <div>
                     <address className="not-italic">

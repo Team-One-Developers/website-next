@@ -12,7 +12,7 @@ export default function CulturePage() {
     return (
         <div>
             <Hero
-                title="Wir stel&shy;len den Men&shy;schen in den Mittel&shy;punkt."
+                title="Wir stellen den Menschen in den Mittelpunkt."
                 subtitle="Wir machen das, wovon alle sprechen:"
                 link={{ label: "Unsere offenen Stellen", url: "/career#jobs" }}
                 blobs={{ active: true, className: "from-primary to-primary opacity-40", shape: "organic" }}
