@@ -2,6 +2,7 @@
 
 import { sendEmail } from "@/app/actions/sendEmail"
 import { sendSlackMessage } from "@/app/actions/sendSlackMessage"
+import { checkBotId } from "botid/server"
 import { z } from "zod"
 
 const contactSchema = z.object({
@@ -12,6 +13,16 @@ const contactSchema = z.object({
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export async function submitContactForm(currentState: any, formData: FormData) {
+    const verification = await checkBotId()
+
+    if (verification.isBot) {
+        return {
+            success: false,
+            message: `Ein technischer Fehler ist aufgetreten. Die Nachricht konnte nicht gesendet werden.`,
+            formData
+        }
+    }
+
     const validatedFields = contactSchema.safeParse({
         name: formData.get("name"),
         email: formData.get("email"),
