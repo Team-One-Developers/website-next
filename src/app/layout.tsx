@@ -8,42 +8,27 @@ import type { Metadata } from "next"
 import localFont from "next/font/local"
 import "./globals.css"
 
-const ABCD = localFont({
+const GTEraText = localFont({
     src: [
         {
-            path: "../fonts/abc-diatype-regular.woff2",
+            path: "../fonts/gt-era-text-regular.woff2",
             weight: "400",
             style: "normal"
-        },
-        {
-            path: "../fonts/abc-diatype-regular-italic.woff2",
-            weight: "400",
-            style: "italic"
         }
     ],
-    variable: "--abcdiatype",
+    variable: "--font-gteratext",
     display: "swap"
 })
 
-const SpaceGrotesk = localFont({
+const GTEraDisplay = localFont({
     src: [
         {
-            path: "../fonts/space-grotesk-regular.ttf",
+            path: "../fonts/gt-era-display-regular.woff2",
             weight: "400",
-            style: "normal"
-        },
-        {
-            path: "../fonts/space-grotesk-light.ttf",
-            weight: "200",
-            style: "normal"
-        },
-        {
-            path: "../fonts/space-grotesk-medium.ttf",
-            weight: "600",
             style: "normal"
         }
     ],
-    variable: "--spacegrotesk",
+    variable: "--font-gteradisplay",
     display: "swap"
 })
 
@@ -87,7 +72,7 @@ export default function RootLayout({
         <html lang="de">
             <GoogleTagManager gtmId="GTM-M6HQZGMQ" />
 
-            <body className={`${ABCD.variable} ${SpaceGrotesk.variable} font-abcd relative antialiased`}>
+            <body className={`${GTEraText.variable} ${GTEraDisplay.variable} font-gteratext relative antialiased`}>
                 {children}
                 <StructuredData data={organization as object} />
                 <Analytics />
