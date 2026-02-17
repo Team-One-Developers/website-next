@@ -1,5 +1,5 @@
-import Footer from "@/components/layout/Footer"
-import Header from "@/components/layout/Header"
+import FooterNew from "@/components/layout/FooterNew"
+import HeaderNew from "@/components/layout/HeaderNew"
 
 export default function WebsiteLayout({
     children
@@ -8,9 +8,9 @@ export default function WebsiteLayout({
 }>) {
     return (
         <>
-            <Header />
+            <HeaderNew />
             <main className="mt-24">{children}</main>
-            <Footer />
+            <FooterNew />
         </>
     )
 }

@@ -4,37 +4,241 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-    --t1-primary: #46ffad;
+    /* All the following variables are copied from the Figma design */
 
-    --t1-darkgreen: #21352b;
+    /* Colors */
+    --overlay: #21352bcc;
+    --background-soft: #21352bcc;
+    --black: #000000ff;
+    --black-soft: #00000099;
+    --grey-soft: #f8f8f899;
+    --t1-darkgreen: #21352bff;
+    --t1-primary: #46ffadff;
+    --t1-primary-soft: #46ffad33;
+    --white: #ffffffff;
+    --white-soft: #ffffff99;
+
+    /* Legacy colors (keeping for backwards compatibility) */
     --t1-darkgray: #171717;
-
+    --t1-lightgray: #9d9d9d;
     --t1-white: #f2f2f2;
     --t1-black: #1d1d1d;
+    --t1-black-pure: #000000;
+
+    /* Border Radius */
+    --radius-small: 8px;
+    --radius-medium: 12px;
+    --radius-large: 24px;
+    --radius-xlarge: 32px;
+
+    /* Typography - Font Sizes (Fluid scaling from mobile to desktop) */
+    --font-size-d1: clamp(50px, 3.125vw + 30px, 100px);
+    --font-size-d2: clamp(33px, 0.9375vw + 24px, 48px);
+    --font-size-h1: clamp(37px, 0.9375vw + 28px, 52px);
+    --font-size-h2: clamp(30px, 0.625vw + 22px, 40px);
+    --font-size-h3: clamp(26px, 0.375vw + 20px, 32px);
+    --font-size-h4: clamp(20px, 0.25vw + 16px, 24px);
+    --font-size-text-large: clamp(24px, 0.5vw + 18px, 32px);
+    --font-size-text-medium: clamp(18px, 0.375vw + 14px, 24px);
+    --font-size-text-small: clamp(16px, 0.125vw + 14px, 18px);
+    --font-size-text-xsmall: 16px;
+    --font-size-text-xxsmall: 13px;
+
+    /* Typography - Line Heights (Fluid scaling) */
+    --line-height-d1-lh: clamp(60px, 3.75vw + 36px, 120px);
+    --line-height-d2-lh: clamp(40px, 1.125vw + 29px, 58px);
+    --line-height-h1-lh: clamp(44px, 1.125vw + 33px, 62px);
+    --line-height-h2-lh: clamp(42px, 0.875vw + 32px, 56px);
+    --line-height-h3-lh: clamp(36px, 0.5625vw + 28px, 45px);
+    --line-height-h4-lh: clamp(28px, 0.375vw + 22px, 34px);
+    --line-height-text-large-lh: clamp(38px, 0.8125vw + 28px, 51px);
+    --line-height-text-medium-lh: clamp(26px, 0.5vw + 20px, 34px);
+    --line-height-text-small-lh: clamp(26px, 0.1875vw + 23px, 29px);
+    --line-height-text-xsmall-lh: 26px;
+    --line-height-text-xxsmall-lh: 21px;
+
+    /* Grid/Layout (Mobile/Default) */
+    --grid-inset: 0px;
+    --grid-columns: 6px;
+    --grid-gutter: 24px;
+    --grid-gutter-half: 12px;
+    --grid-safezone: 32px;
+
+    /* Padding (Mobile/Default) */
+    --padding-padding-small: 4px;
+    --padding-padding-medium: 12px;
+    --padding-padding-large: 16px;
+    --padding-padding-xlarge: 24px;
+    --padding-padding-xxlarge: 24px;
+    --padding-padding-xsmall: 4px;
+
+    /* Spacing (Mobile/Default) */
+    --spacing-large: 24px;
+    --spacing-spacing-small: 16px;
+    --spacing-spacing-medium: 16px;
+    --spacing-spacing-large: 24px;
+    --spacing-spacing-xlarge: 40px;
+    --spacing-spacing-xsmall: 8px;
+
+    /* Vertical Spacing */
+    --vertical-inner: 96px;
+    --vertical-outer: 192px;
+
+    --max-content-width: 1476px;
+}
+
+/* Tablet/Medium Breakpoint (760px - 1299px) */
+@media (min-width: 760px) {
+    :root {
+        --grid-gutter: 40px;
+        --grid-gutter-half: 20px;
+        --grid-safezone: 60px;
+
+        --padding-padding-small: 8px;
+        --padding-padding-medium: 12px;
+        --padding-padding-large: 18px;
+        --padding-padding-xlarge: 24px;
+        --padding-padding-xxlarge: 40px;
+        --padding-padding-xsmall: 4px;
+    }
+}
+
+/* Desktop/Large Breakpoint (1300px - 1919px) */
+@media (min-width: 1300px) {
+    :root {
+        --grid-inset: 92px;
+        --grid-columns: 12px;
+        --grid-gutter: 60px;
+        --grid-gutter-half: 30px;
+        --grid-safezone: 128px;
+
+        --padding-padding-small: 12px;
+        --padding-padding-medium: 18px;
+        --padding-padding-large: 24px;
+        --padding-padding-xlarge: 40px;
+        --padding-padding-xxlarge: 60px;
+        --padding-padding-xsmall: 6px;
+
+        --spacing-spacing-medium: 24px;
+    }
+}
+
+/* XL Breakpoint (1920px and above) */
+@media (min-width: 1920px) {
+    :root {
+        --grid-inset: 128px;
+        --grid-gutter: 80px;
+        --grid-gutter-half: 40px;
+        --grid-safezone: 222px;
+
+        --padding-padding-small: 16px;
+        --padding-padding-medium: 24px;
+        --padding-padding-large: 32px;
+        --padding-padding-xlarge: 60px;
+        --padding-padding-xxlarge: 80px;
+        --padding-padding-xsmall: 8px;
+
+        --spacing-large: 32px;
+        --spacing-spacing-large: 32px;
+        --spacing-spacing-medium: 24px;
+    }
 }
 
 @theme inline {
-    --font-abcd: var(--abcdiatype);
-    --font-spacegrotesk: var(--spacegrotesk);
+    /* Font Families - generates font-* utilities */
+    --font-gteratext: var(--font-gteratext);
+    --font-gteradisplay: var(--font-gteradisplay);
 
+    /* Colors - generates bg-*, text-*, border-* utilities */
     --color-primary: var(--t1-primary);
+    --color-primary-soft: var(--t1-primary-soft);
+
+    --color-overlay: var(--overlay);
+    --color-background-soft: var(--background-soft);
+    --color-black: var(--black);
+    --color-black-soft: var(--black-soft);
+    --color-grey-soft: var(--grey-soft);
+    --color-white: var(--white);
+    --color-white-soft: var(--white-soft);
 
     --color-t1-darkgreen: var(--t1-darkgreen);
     --color-t1-darkgray: var(--t1-darkgray);
-
+    --color-t1-lightgray: var(--t1-lightgray);
     --color-t1-white: var(--t1-white);
     --color-t1-black: var(--t1-black);
+    --color-t1-black-pure: var(--t1-black-pure);
 
-    --breakpoint-xs: 32rem;
-    --breakpoint-sm: 40rem;
-    --breakpoint-md: 48rem;
-    --breakpoint-lg: 64rem;
-    --breakpoint-xl: 80rem;
-    --breakpoint-2xl: 96rem;
+    /* Border Radius - generates rounded-* utilities */
+    --radius-sm: var(--radius-small);
+    --radius-md: var(--radius-medium);
+    --radius-lg: var(--radius-large);
+    --radius-xl: var(--radius-xlarge);
+
+    /* Font Sizes - generates text-* utilities with automatic line-height */
+    --text-d1: var(--font-size-d1);
+    --text-d1--line-height: var(--line-height-d1-lh);
+
+    --text-d2: var(--font-size-d2);
+    --text-d2--line-height: var(--line-height-d2-lh);
+
+    --text-h1: var(--font-size-h1);
+    --text-h1--line-height: var(--line-height-h1-lh);
+
+    --text-h2: var(--font-size-h2);
+    --text-h2--line-height: var(--line-height-h2-lh);
+
+    --text-h3: var(--font-size-h3);
+    --text-h3--line-height: var(--line-height-h3-lh);
+
+    --text-h4: var(--font-size-h4);
+    --text-h4--line-height: var(--line-height-h4-lh);
+
+    --text-large: var(--font-size-text-large);
+    --text-large--line-height: var(--line-height-text-large-lh);
+
+    --text-medium: var(--font-size-text-medium);
+    --text-medium--line-height: var(--line-height-text-medium-lh);
+
+    --text-small: var(--font-size-text-small);
+    --text-small--line-height: var(--line-height-text-small-lh);
+
+    --text-xsmall: var(--font-size-text-xsmall);
+    --text-xsmall--line-height: var(--line-height-text-xsmall-lh);
+
+    --text-xxsmall: var(--font-size-text-xxsmall);
+    --text-xxsmall--line-height: var(--line-height-text-xxsmall-lh);
+
+    /* Spacing - generates p-*, m-*, gap-*, space-*, w-*, h-*, max-w-*, etc. utilities */
+    --spacing-xs: var(--spacing-spacing-xsmall);
+    --spacing-sm: var(--spacing-spacing-small);
+    --spacing-md: var(--spacing-spacing-medium);
+    --spacing-lg: var(--spacing-spacing-large);
+    --spacing-xl: var(--spacing-spacing-xlarge);
+
+    --spacing-padding-xs: var(--padding-padding-xsmall);
+    --spacing-padding-sm: var(--padding-padding-small);
+    --spacing-padding-md: var(--padding-padding-medium);
+    --spacing-padding-lg: var(--padding-padding-large);
+    --spacing-padding-xl: var(--padding-padding-xlarge);
+    --spacing-padding-2xl: var(--padding-padding-xxlarge);
+
+    --spacing-grid-inset: var(--grid-inset);
+    --spacing-grid-columns: var(--grid-columns);
+    --spacing-grid-gutter: var(--grid-gutter);
+    --spacing-grid-gutter-half: var(--grid-gutter-half);
+    --spacing-grid-safezone: var(--grid-safezone);
+
+    --spacing-vertical-inner: var(--vertical-inner);
+    --spacing-vertical-outer: var(--vertical-outer);
+
+    /* Breakpoints - generates md:*, lg:*, xl:* responsive variants */
+    --breakpoint-md: 760px;
+    --breakpoint-lg: 1300px;
+    --breakpoint-xl: 1920px;
 }
 
 body {
-    background: var(--t1-black);
-    color: var(--t1-white);
-    font-family: var(--abcdiatype);
+    background: var(--t1-white);
+    color: var(--t1-black);
+    font-family: var(--font-gteratext);
 }
