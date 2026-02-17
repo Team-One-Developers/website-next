@@ -459,6 +459,185 @@ const DataPrivacy = () => {
                 </p>
             </div>
 
+            <h3 className="mt-4 text-2xl font-bold">Verarbeitung im Rahmen von Schulungsbuchungen</h3>
+            <div>
+                <div className="text-1xl mt-4 font-bold">Art und Umfang der Verarbeitung</div>
+                <div>
+                    Wenn Sie über unsere Website oder andere digitale Kanäle eine Schulung buchen oder eine
+                    entsprechende Anfrage stellen, verarbeiten wir personenbezogene Daten, die zur Durchführung
+                    vorvertraglicher Maßnahmen, zum Vertragsabschluss sowie zur Vertragsabwicklung erforderlich sind.
+                    <br />
+                    <br />
+                    Dabei können insbesondere folgende Daten verarbeitet werden:
+                    <br />
+                    <br />
+                    <ul>
+                        <li>Vor- und Nachname</li>
+                        <li>Unternehmensname</li>
+                        <li>Kontaktdaten (E-Mail, Telefon)</li>
+                        <li>Rechnungsanschrift</li>
+                        <li>Vertrags- und Leistungsdaten</li>
+                        <li>Zahlungsdaten, soweit gesetzlich erforderlich</li>
+                        <li>ggf. sonstige im Buchungsprozess angegebene Daten</li>
+                    </ul>
+                    <br />
+                    Diese Daten werden über unser Buchungs- und CRM-System verarbeitet, um Ihre Anfrage zu bearbeiten,
+                    den Vertrag abzuschließen und die Schulung durchzuführen. Die Verarbeitung erfolgt zudem zur
+                    Erfüllung vorvertraglicher Maßnahmen, zur Vertragserfüllung und zur Kundenbetreuung. Grundlage ist
+                    Art. 6 Abs. 1 lit. b DSGVO.
+                </div>
+            </div>
+            <div>
+                <div className="text-1xl mt-4 font-bold">Zwecke der Verarbeitung</div>
+                <div>
+                    Die Verarbeitung erfolgt zu folgenden Zwecken:
+                    <br />
+                    <br />
+                    <ul>
+                        <li>Durchführung vorvertraglicher Maßnahmen</li>
+                        <li>Vertragsabschluss und Vertragserfüllung</li>
+                        <li>Organisation und Durchführung der Schulung</li>
+                        <li>Rechnungsstellung und Zahlungszuordnung</li>
+                        <li>Kundenkommunikation</li>
+                        <li>Nachweis- und Dokumentationspflichten</li>
+                    </ul>
+                    <br />
+                    Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung und vorvertragliche Maßnahmen).
+                    <br />
+                    <br />
+                    Soweit Daten zur Wahrung berechtigter Interessen verarbeitet werden (z. B. zur effizienten
+                    Organisation interner Prozesse), erfolgt dies auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO.
+                </div>
+            </div>
+            <div>
+                <div className="text-1xl mt-4 font-bold">Einsatz unseres CRM-Systems (HubSpot)</div>
+                <div>
+                    Zur Verwaltung von Buchungen, Kundenbeziehungen, Anfragen sowie zur Organisation der
+                    Schulungsdurchführung setzen wir ein CRM- und Marketing-Automation-System ein.
+                    <br />
+                    <br />
+                    Im Rahmen der Schulungsbuchung werden die oben genannten Daten in diesem System gespeichert und
+                    verarbeitet. Dies dient insbesondere:
+                    <br />
+                    <br />
+                    <ul>
+                        <li>der strukturierten Verwaltung von Kunden- und Vertragsdaten</li>
+                        <li>der Dokumentation von Kommunikationsverläufen</li>
+                        <li>der internen Organisation von Schulungsterminen</li>
+                        <li>der Nachverfolgung von Buchungs- und Leistungsständen</li>
+                    </ul>
+                    <br />
+                    Wir haben mit dem Anbieter einen Vertrag zur Auftragsverarbeitung abgeschlossen.
+                    <br />
+                    <br />
+                    Soweit personenbezogene Daten in Staaten außerhalb des Europäischen Wirtschaftsraums übertragen
+                    werden, erfolgt dies ausschließlich auf Grundlage geeigneter Garantien gemäß Art. 44 ff. DSGVO (z.
+                    B. EU-Standardvertragsklauseln oder vergleichbare Absicherungsmechanismen).
+                </div>
+            </div>
+
+            <h3 className="mt-4 text-2xl font-bold">Zahlungsabwicklung über Stripe</h3>
+            <div>
+                <p>
+                    Zur Abwicklung von Zahlungen im Zusammenhang mit Schulungsbuchungen nutzen wir einen externen
+                    Zahlungsdienstleister.
+                </p>
+            </div>
+            <div>
+                <div className="text-1xl mt-4 font-bold">Art der verarbeiteten Daten</div>
+                <div>
+                    Im Rahmen der Zahlungsabwicklung werden insbesondere folgende Daten verarbeitet:
+                    <br />
+                    <br />
+                    <ul>
+                        <li>Name</li>
+                        <li>Rechnungsbetrag</li>
+                        <li>Währung</li>
+                        <li>Transaktions-ID</li>
+                        <li>Zahlungsstatus</li>
+                    </ul>
+                    <br />
+                    Die Eingabe und Verarbeitung von Zahlungsinstrumentdaten (z. B. Kreditkarteninformationen) erfolgt
+                    direkt durch den Zahlungsdienstleister. Wir erhalten keinen Zugriff auf vollständige
+                    Zahlungsinstrumentdaten wie Kreditkartennummern oder Sicherheitscodes.
+                </div>
+            </div>
+            <div>
+                <div className="text-1xl mt-4 font-bold">Zwecke der Verarbeitung</div>
+                <div>
+                    Die Verarbeitung dient:
+                    <br />
+                    <br />
+                    <ul>
+                        <li>der Durchführung der Zahlung</li>
+                        <li>der Zuordnung der Zahlung zur jeweiligen Buchung</li>
+                        <li>der Betrugsprävention</li>
+                        <li>der Einhaltung gesetzlicher Verpflichtungen</li>
+                    </ul>
+                    <br />
+                    Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung).
+                    <br />
+                    <br />
+                    Der Zahlungsdienstleister kann Daten eigenverantwortlich weiterverarbeiten, insbesondere zur
+                    Betrugsprävention oder zur Erfüllung regulatorischer Anforderungen. Weitere Informationen zur
+                    Datenverarbeitung durch den Zahlungsdienstleister sind in dessen Datenschutzhinweisen einsehbar.
+                    <br />
+                    <br />
+                    Soweit eine Übermittlung in Drittstaaten erfolgt, geschieht diese auf Grundlage geeigneter Garantien
+                    gemäß Art. 44 ff. DSGVO.
+                </div>
+            </div>
+            <div>
+                <div className="text-1xl mt-4 font-bold">Speicherdauer</div>
+                <div>
+                    Personenbezogene Daten aus Schulungsbuchungen werden grundsätzlich gelöscht, sobald der Zweck der
+                    Verarbeitung entfällt und keine gesetzlichen Aufbewahrungspflichten entgegenstehen.
+                    <br />
+                    <br />
+                    Insbesondere gelten:
+                    <br />
+                    <br />
+                    <ul>
+                        <li>
+                            Vertrags- und Rechnungsdaten: Aufbewahrung gemäß handels- und steuerrechtlichen Vorgaben (in
+                            der Regel 6 bzw. 10 Jahre)
+                        </li>
+                        <li>Kommunikationsdaten: Löschung nach Wegfall des Zwecks</li>
+                        <li>Marketingdaten: Speicherung bis zum Widerruf der Einwilligung oder Widerspruch</li>
+                    </ul>
+                    <br />
+                    Nach Ablauf der jeweiligen Fristen werden die Daten gelöscht oder anonymisiert.
+                </div>
+            </div>
+            <div>
+                <div className="text-1xl mt-4 font-bold">Empfänger und Drittlandübermittlungen</div>
+                <div>
+                    Im Rahmen der Schulungsbuchungen können personenbezogene Daten an folgende Kategorien von Empfängern
+                    übermittelt werden:
+                    <br />
+                    <br />
+                    <ul>
+                        <li>CRM- und IT-Dienstleister</li>
+                        <li>Zahlungsdienstleister</li>
+                        <li>Hosting-Anbieter</li>
+                        <li>Steuerberater und Buchhaltungsdienstleister (im Rahmen gesetzlicher Verpflichtungen)</li>
+                    </ul>
+                    <br />
+                    Soweit dabei eine Übermittlung in Drittstaaten erfolgt, stellen wir durch geeignete vertragliche
+                    oder gesetzliche Mechanismen sicher, dass ein angemessenes Datenschutzniveau gewährleistet ist.
+                </div>
+            </div>
+            <div>
+                <div className="text-1xl mt-4 font-bold">Betroffenenrechte</div>
+                <div>
+                    Die in dieser Datenschutzerklärung beschriebenen Betroffenenrechte (Auskunft, Berichtigung,
+                    Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit, Widerspruch, Widerruf erteilter
+                    Einwilligungen sowie Beschwerderecht bei einer Aufsichtsbehörde) gelten uneingeschränkt auch für
+                    personenbezogene Daten, die im Rahmen von Schulungsbuchungen und Zahlungsabwicklungen verarbeitet
+                    werden.
+                </div>
+            </div>
+
             <h3 className="mt-4 text-2xl font-bold">Whitepaper</h3>
             <div>
                 <p>
