@@ -8,6 +8,7 @@ interface ImageTeaserProps {
     description: string
     buttonLabel?: string
     buttonHref?: string
+    buttonVariant?: "primary" | "outline" | "light"
     image: string
     author?: {
         name: string
@@ -22,6 +23,7 @@ export default function ImageTeaser({
     description,
     buttonLabel = "Mehr erfahren",
     buttonHref,
+    buttonVariant = "primary",
     image,
     author,
     className
@@ -36,9 +38,14 @@ export default function ImageTeaser({
                 <div className="gap-padding-lg bg-background-soft px-padding-xl py-grid-gutter relative flex w-full max-w-[579px] flex-col rounded-lg backdrop-blur-[16px]">
                     <h3 className="font-gteradisplay text-h3 text-white">{title}</h3>
                     <p className="text-small text-white-soft">{description}</p>
-                    <ButtonNew label={buttonLabel} variant="primary" href={buttonHref} />
+                    <ButtonNew label={buttonLabel} variant={buttonVariant} href={buttonHref} />
                     {author && (
-                        <AuthorInfo name={author.name} role={author.role} avatarUrl={author.avatarUrl} variant="dark" />
+                        <AuthorInfo
+                            name={author.name}
+                            role={author.role}
+                            avatarUrl={author.avatarUrl}
+                            variant="light"
+                        />
                     )}
                 </div>
             </div>

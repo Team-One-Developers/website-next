@@ -34,7 +34,7 @@ const navigation = {
 
 function FooterColumn({ title, links }: { title: string; links: { name: string; href: string }[] }) {
     return (
-        <div className="gap-lg flex flex-1 flex-col">
+        <div className="gap-lg flex flex-col">
             <p className="text-xxsmall text-[#9d9d9d]">{title}</p>
             {links.map((link) => (
                 <Link
@@ -83,7 +83,7 @@ export default function FooterNew() {
                 </div>
 
                 {/* Navigation columns */}
-                <div className="gap-grid-gutter pt-grid-safezone flex">
+                <div className="gap-grid-gutter pt-grid-safezone grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
                     <FooterColumn title="Leistungen" links={navigation.leistungen} />
                     <FooterColumn title="Erfolge" links={navigation.erfolge} />
                     <FooterColumn title="Kultur" links={navigation.kultur} />
@@ -92,60 +92,74 @@ export default function FooterNew() {
                 </div>
 
                 {/* Bottom bar */}
-                <div className="pb-grid-gutter pt-grid-safezone flex items-center justify-between">
+                <div className="pb-grid-gutter pt-grid-safezone flex flex-col gap-6 md:flex-row md:flex-wrap md:items-center md:justify-between">
                     {/* Contact info */}
-                    <div className="gap-xl flex items-center">
-                        <div className="flex items-center gap-2">
-                            <Image src="/new/logos/phone.svg" alt="" width={32} height={32} className="size-8" />
-                            <span className="text-medium text-black">+49 182 9983882</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                            <Image src="/new/logos/mail.svg" alt="" width={32} height={32} className="size-8" />
-                            <span className="text-medium text-black">hello@team-one.com</span>
-                        </div>
+                    <div className="md:gap-xl flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                        <a href="tel:+491829983882" className="flex items-center gap-2 hover:underline">
+                            <Image
+                                src="/new/logos/phone.svg"
+                                alt=""
+                                width={32}
+                                height={32}
+                                className="size-6 md:size-8"
+                            />
+                            <span className="text-small md:text-medium text-black">+49 182 9983882</span>
+                        </a>
+                        <a href="mailto:hello@team-one.com" className="flex items-center gap-2 hover:underline">
+                            <Image
+                                src="/new/logos/mail.svg"
+                                alt=""
+                                width={32}
+                                height={32}
+                                className="size-6 md:size-8"
+                            />
+                            <span className="text-small md:text-medium text-black">hello@team-one.com</span>
+                        </a>
                     </div>
 
-                    {/* Social icons */}
-                    <div className="gap-xl flex items-center">
-                        <Link href="https://www.youtube.com/@team-one" target="_blank" rel="noopener noreferrer">
-                            <Image
-                                src="/new/logos/youtube.svg"
-                                alt="YouTube"
-                                width={32}
-                                height={32}
-                                className="size-8"
-                            />
-                        </Link>
-                        <Link
-                            href="https://www.linkedin.com/company/team-one-developers"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            <Image
-                                src="/new/logos/linkedin.svg"
-                                alt="LinkedIn"
-                                width={32}
-                                height={32}
-                                className="size-8"
-                            />
-                        </Link>
-                        <Link
-                            href="https://www.instagram.com/teamonedevelopers/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            <Image
-                                src="/new/logos/instagram.svg"
-                                alt="Instagram"
-                                width={32}
-                                height={32}
-                                className="size-8"
-                            />
-                        </Link>
+                    {/* Social icons + Copyright — stacked on tiny, same row below tablet, inline above */}
+                    <div className="xs:flex-row xs:items-center xs:justify-between flex flex-col gap-4 md:contents">
+                        <div className="gap-xl flex items-center">
+                            <Link href="https://www.youtube.com/@team-one" target="_blank" rel="noopener noreferrer">
+                                <Image
+                                    src="/new/logos/youtube.svg"
+                                    alt="YouTube"
+                                    width={32}
+                                    height={32}
+                                    className="size-6 md:size-8"
+                                />
+                            </Link>
+                            <Link
+                                href="https://www.linkedin.com/company/team-one-developers"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <Image
+                                    src="/new/logos/linkedin.svg"
+                                    alt="LinkedIn"
+                                    width={32}
+                                    height={32}
+                                    className="size-6 md:size-8"
+                                />
+                            </Link>
+                            <Link
+                                href="https://www.instagram.com/teamonedevelopers/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <Image
+                                    src="/new/logos/instagram.svg"
+                                    alt="Instagram"
+                                    width={32}
+                                    height={32}
+                                    className="size-6 md:size-8"
+                                />
+                            </Link>
+                        </div>
+                        <p className="text-small md:text-medium text-black md:ml-auto">
+                            © {new Date().getFullYear()} Team One
+                        </p>
                     </div>
-
-                    {/* Copyright */}
-                    <p className="text-medium text-black">© {new Date().getFullYear()} Team One</p>
                 </div>
             </div>
         </footer>

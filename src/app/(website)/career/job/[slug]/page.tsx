@@ -1,11 +1,13 @@
+import ButtonNew from "@/components/atoms/ButtonNew"
 import { DraftMarker } from "@/components/atoms/DraftMarker"
-import Icon, { IconProps } from "@/components/atoms/Icon"
-import { LinkComponent } from "@/components/atoms/LinkComponent"
-import Typography from "@/components/atoms/Typography"
+import ContentBlock from "@/components/layout/ContentBlock"
 import { StructuredData } from "@/components/layout/StructuredData"
-import { TwoColumnsFullScreenContainer } from "@/components/layout/TwoColumnsFullScreenContainer"
-import { JobType } from "@/components/molecules/JobType"
 import { T1PortableText } from "@/components/molecules/T1PortableText"
+import ContactSectionNew from "@/components/sections/ContactSectionNew"
+import ContentAccordion from "@/components/sections/ContentAccordion"
+import HeroGradientBackdrop from "@/components/sections/HeroGradientBackdrop"
+import HeroNew from "@/components/sections/HeroNew"
+import JobAccordion from "@/components/sections/JobAccordion"
 import { FESTANSTELLUNG_BENEFITS, PRAKTIKUMS_BENEFITS, WERKSTUDENT_BENEFITS } from "@/constants/benefits"
 import { organization } from "@/data/schemaOrg"
 import { client } from "@/sanity/lib/client"
@@ -21,11 +23,10 @@ import {
 } from "@/sanity/types"
 import { mostRelatedCareers } from "@/utils/mostRelated"
 import { Metadata } from "next"
-import Link from "next/link"
 import { notFound } from "next/navigation"
 import { JobPosting, WithContext } from "schema-dts"
 
-interface CareerProps {
+interface CareerDetailProps {
     params: Promise<{ slug: string }>
 }
 
@@ -43,7 +44,7 @@ async function getCareerFromParams(slug: string): Promise<QUERY_SPECIFIC_CAREERR
     return career
 }
 
-export async function generateMetadata({ params }: CareerProps): Promise<Metadata> {
+export async function generateMetadata({ params }: CareerDetailProps): Promise<Metadata> {
     const { slug } = await params
     const career = await getCareerFromParams(slug)
 
@@ -57,7 +58,7 @@ export async function generateMetadata({ params }: CareerProps): Promise<Metadat
         openGraph: {
             images: `/api/og?title=${career.title}`,
             type: "website",
-            url: `https://www.team-one.de/career/${career.slug.current}`
+            url: `https://www.team-one.de/career/job/${career.slug.current}`
         },
         title: career.title,
         description: career.description,
@@ -80,11 +81,61 @@ export async function generateStaticParams() {
         }))
 }
 
-// export async function getStaticProps({ params }: CareerProps) {
-//     const career = await client.fetch
-// }
+/**
+ * Split portable text content into sections by h4 headings.
+ * Each section gets the heading text as title and the blocks until the next heading as content.
+ */
+function splitContentByHeadings(content: Career["content"]) {
+    const sections: { title: string; blocks: Career["content"] }[] = []
+    let currentTitle = ""
+    let currentBlocks: Career["content"] = []
 
-export default async function CareerPage({ params }: CareerProps) {
+    for (const block of content) {
+        if (block._type === "block" && (block.style === "h4" || block.style === "h5") && block.children?.[0]?.text) {
+            // Save previous section if it exists
+            if (currentTitle && currentBlocks.length > 0) {
+                sections.push({ title: currentTitle, blocks: currentBlocks })
+            }
+            currentTitle = block.children[0].text
+            currentBlocks = []
+        } else {
+            currentBlocks.push(block)
+        }
+    }
+
+    // Push the last section
+    if (currentTitle && currentBlocks.length > 0) {
+        sections.push({ title: currentTitle, blocks: currentBlocks })
+    }
+
+    return sections
+}
+
+/**
+ * Group careers by division for the JobAccordion component.
+ */
+function groupCareersByDivision(careers: Career[]) {
+    const groups = new Map<string, Career[]>()
+
+    for (const career of careers) {
+        if (!career.division || !career.slug?.current) continue
+        const existing = groups.get(career.division) || []
+        existing.push(career)
+        groups.set(career.division, existing)
+    }
+
+    return Array.from(groups.entries()).map(([division, items]) => ({
+        label: division,
+        count: items.length,
+        jobs: items.map((c) => ({
+            title: c.title,
+            type: `${c.employmentType}, ${c.schedule}`,
+            href: `/career/job/${c.slug!.current!}`
+        }))
+    }))
+}
+
+export default async function CareerDetailPage({ params }: CareerDetailProps) {
     const { slug } = await params
     const career = await getCareerFromParams(slug)
     const allCareers = await client.fetch(QUERY_ALL_PUBLIC_CAREERS)
@@ -100,6 +151,45 @@ export default async function CareerPage({ params }: CareerProps) {
         currentItem: career
     })
 
+    // Build eyebrow tags from career metadata
+    const eyebrows = [career.employmentType, career.schedule, career.location].filter(Boolean) as string[]
+
+    // Split content into accordion sections
+    const contentSections = career.content ? splitContentByHeadings(career.content) : []
+
+    // Build benefits section
+    const benefitsList =
+        career.employmentType === "Festanstellung"
+            ? FESTANSTELLUNG_BENEFITS
+            : career.employmentType === "Werkstudent"
+              ? WERKSTUDENT_BENEFITS
+              : PRAKTIKUMS_BENEFITS
+
+    // Build accordion sections: content sections + benefits
+    const accordionSections = [
+        ...contentSections.map((section) => ({
+            title: section.title,
+            content: <T1PortableText value={section.blocks} />
+        })),
+        {
+            title: "Benefits",
+            content: (
+                <ul className="flex flex-col gap-2">
+                    {benefitsList.map((benefit) => (
+                        <li key={benefit.text} className="text-xsmall flex items-start gap-2 text-black">
+                            <span className="bg-primary mt-2 size-2 shrink-0 rounded-full" />
+                            {benefit.text}
+                        </li>
+                    ))}
+                </ul>
+            )
+        }
+    ]
+
+    // Group related careers by division for "Weitere Jobs" accordion
+    const weitereJobsCategories = relatedCareers ? groupCareersByDivision(relatedCareers) : []
+
+    // Structured data for SEO
     const structuredData: WithContext<JobPosting> = {
         "@context": "https://schema.org",
         "@type": "JobPosting",
@@ -117,110 +207,65 @@ export default async function CareerPage({ params }: CareerProps) {
                 streetAddress: "Stafflenbergstraße 44"
             }
         },
-        employmentType: career.employmentType
-            ? career.employmentType === "Festanstellung"
-                ? "FULL_TIME"
-                : "INTERN"
-            : "FULL_TIME",
-        jobBenefits: (career.employmentType === "Festanstellung" ? FESTANSTELLUNG_BENEFITS : PRAKTIKUMS_BENEFITS).map(
-            (benefit: { text: string }) => benefit.text
-        ),
+        employmentType: career.employmentType === "Festanstellung" ? "FULL_TIME" : "INTERN",
+        jobBenefits: benefitsList.map((b) => b.text),
         datePosted: career.date,
         directApply: true
     }
 
     return (
-        <>
+        <div className="relative">
             <StructuredData data={structuredData} />
             {isDraft && <DraftMarker />}
-            <TwoColumnsFullScreenContainer
-                left={
-                    <div className="sticky top-0 flex flex-col">
-                        <LinkComponent
-                            href="/career#jobs"
-                            className="w-fit md:w-fit md:py-0"
-                            label={
-                                <div className="flex items-center">
-                                    <Icon name="backarrow" className="text-t1-black -ml-8 md:-ml-6" />
-                                    <Typography className="text-t1-black -ml-2 uppercase" variant="link">
-                                        Zurück zu den Jobs
-                                    </Typography>
-                                </div>
-                            }
-                        />
-                        <Typography as="h1" variant="h2" className="text-t1-black lg:mt-12">
-                            {career.title}
-                        </Typography>
-                        {career.employmentType && career.schedule && career.location && (
-                            <JobType
-                                employmentType={career.employmentType}
-                                schedule={career.schedule}
-                                location={career.location}
-                                className="text-black"
-                            />
-                        )}
-                        <div className={"mt-12 flex flex-col gap-4"}>
-                            <LinkComponent href="/contact" color="black" label="JETZT BEWERBEN" className="md:w-fit" />
-                        </div>
-                    </div>
-                }
-                right={
-                    <div className="">
-                        <article className="font-abcdiatype max-w-none">
-                            {career.description && (
-                                <Typography className="font-abcdiatype mt-0 text-xl" variant="paragraph">
-                                    {career.description}
-                                </Typography>
-                            )}
-                            {career.content && <T1PortableText value={career.content} />}
+            <HeroGradientBackdrop />
 
-                            <Typography as="h2" variant="h4" className="mt-12 mb-8 uppercase">
-                                Unsere Benefits:
-                            </Typography>
-                            <ul className="flex w-full flex-col pl-0">
-                                {(career.employmentType === "Festanstellung"
-                                    ? FESTANSTELLUNG_BENEFITS
-                                    : career.employmentType === "Werkstudent"
-                                      ? WERKSTUDENT_BENEFITS
-                                      : PRAKTIKUMS_BENEFITS
-                                ).map((benefit, index) => (
-                                    <li className="my-1 flex items-center gap-2" key={index}>
-                                        <div className="text-primary mt-0">
-                                            <Icon name={benefit.icon as IconProps["name"]} height={32} width={32} />
-                                        </div>
-                                        <Typography as="p" className="my-0">
-                                            {benefit.text}
-                                        </Typography>
-                                    </li>
-                                ))}
-                            </ul>
-                        </article>
-                        <div className="mt-32 flex w-full flex-col gap-4">
-                            <Typography as="h4" variant="h4" className="uppercase">
-                                Weitere Jobs
-                            </Typography>
-                            {relatedCareers.map(
-                                (career: Career, index: number) =>
-                                    career.slug?.current && (
-                                        <Link href={career.slug?.current} key={index} className="group">
-                                            <div className="bg-t1-darkgray flex flex-col gap-4 rounded-lg p-8 transition-all duration-300 group-hover:scale-103">
-                                                <div className="text-primary flex gap-8 uppercase">
-                                                    <Typography variant="paragraph">{`${career.employmentType}, ${career.schedule}`}</Typography>
-                                                    <Typography variant="paragraph">{career.location}</Typography>
-                                                </div>
-                                                <div>
-                                                    <Typography as="h3" variant="h3" className="uppercase">
-                                                        {career.title}
-                                                    </Typography>
-                                                </div>
-                                            </div>
-                                        </Link>
-                                    )
-                            )}
+            <main className="gap-vertical-inner relative z-10 flex flex-col">
+                {/* Hero */}
+                <ContentBlock>
+                    <HeroNew
+                        title={career.title.toUpperCase()}
+                        eyebrows={eyebrows}
+                        backLink={{ label: "Zurück zur Übersicht", href: "/career" }}
+                    />
+                </ContentBlock>
+
+                {/* Two-column: Description + Content Accordions */}
+                <ContentBlock>
+                    <section className="gap-grid-gutter px-grid-safezone flex flex-col lg:flex-row">
+                        {/* Left: sticky description + CTA */}
+                        <div className="gap-md sticky top-20 flex flex-1 flex-col self-start pt-8">
+                            <p className="text-medium text-black">{career.description}</p>
+                            <ButtonNew label="Jetzt bewerben" href="/contact" variant="primary" />
                         </div>
-                    </div>
-                }
-            />
-        </>
+
+                        {/* Right: content accordions */}
+                        <div className="flex-1">
+                            <ContentAccordion sections={accordionSections} />
+                        </div>
+                    </section>
+                </ContentBlock>
+
+                {/* Weitere Jobs */}
+                {weitereJobsCategories.length > 0 && (
+                    <ContentBlock>
+                        <JobAccordion title={"Weitere Jobs"} categories={weitereJobsCategories} />
+                    </ContentBlock>
+                )}
+
+                {/* Contact */}
+                <ContentBlock>
+                    <ContactSectionNew
+                        title="Lass uns über Software sprechen, die Wachstum schafft."
+                        contact={{
+                            name: "Klaus Kleber",
+                            role: "Director Business Development",
+                            imageUrl: "/images/culture/paul.png",
+                            phone: "+49 182 9983882",
+                            email: "hello@team-one.com"
+                        }}
+                    />
+                </ContentBlock>
+            </main>
+        </div>
     )
 }

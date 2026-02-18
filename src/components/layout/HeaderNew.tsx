@@ -29,16 +29,18 @@ const navigation: NavigationItem[] = [
         name: "Offerings",
         href: "/services",
         flyout: {
-            items: [
-                { name: "Software Engineering", href: "/services/software-engineering" },
-                { name: "Business Consulting", href: "/services/business-consulting" },
-                { name: "AI&Data Analytics", href: "/services/ai-data-analytics" },
-                { name: "Car IT Technologies", href: "/services/car-it-technologies" }
-            ],
-            image: "/new/images/image-1.jpg"
+            items: [{ name: "Software Engineering", href: "/services/software-engineering" }],
+            image: "/images/culture/coding.webp"
         }
     },
-    { name: "Success Stories", href: "/customers" },
+    {
+        name: "Success Stories",
+        href: "/customers",
+        flyout: {
+            items: [{ name: "Porsche", href: "/customers/porsche" }],
+            image: "/images/customers/porsche-cropped.jpg"
+        }
+    },
     { name: "Values", href: "/culture" },
     {
         name: "Insights",
@@ -111,7 +113,7 @@ export default function HeaderNew() {
                                                 {/* Menu items */}
                                                 <div
                                                     className={cn(
-                                                        "gap-xs p-padding-xl flex shrink-0 flex-col justify-center",
+                                                        "gap-xs p-padding-xl flex shrink-0 flex-col justify-start",
                                                         !item.flyout.image && "pr-50"
                                                     )}
                                                 >
@@ -285,12 +287,12 @@ export default function HeaderNew() {
 
                 <DialogPanel
                     className={cn(
-                        "fixed inset-y-0 right-0 z-60 flex w-full flex-col overflow-y-auto bg-t1-darkgreen transition-transform duration-300",
+                        "bg-t1-darkgreen fixed inset-y-0 right-0 z-60 flex w-full flex-col overflow-y-auto transition-transform duration-300",
                         "md:max-w-[448px]"
                     )}
                 >
                     {/* Top: Logo + Close */}
-                    <div className="flex items-center justify-between px-padding-xl py-padding-2xl">
+                    <div className="px-padding-xl py-padding-2xl flex items-center justify-between">
                         <Link href="/" onClick={() => setMobileMenuOpen(false)} className="text-white">
                             <LogoNoText className="h-16 w-auto fill-current" />
                         </Link>
@@ -329,8 +331,7 @@ export default function HeaderNew() {
                     <div className="flex flex-1 flex-col items-center justify-center gap-12.25">
                         {navigation.map((item) => {
                             const isActive =
-                                pathname === item.href ||
-                                (item.href !== "/" && pathname.includes(item.href))
+                                pathname === item.href || (item.href !== "/" && pathname.includes(item.href))
 
                             return (
                                 <div key={item.name} className="flex flex-col items-center">
@@ -339,11 +340,9 @@ export default function HeaderNew() {
                                             <button
                                                 type="button"
                                                 onClick={() =>
-                                                    setExpandedItem(
-                                                        expandedItem === item.name ? null : item.name
-                                                    )
+                                                    setExpandedItem(expandedItem === item.name ? null : item.name)
                                                 }
-                                                className="flex cursor-pointer items-center gap-xs"
+                                                className="gap-xs flex cursor-pointer items-center"
                                             >
                                                 <Eyebrow
                                                     label={item.name}
@@ -351,9 +350,7 @@ export default function HeaderNew() {
                                                     showDot={false}
                                                     className={cn(
                                                         "py-0 transition-colors duration-200",
-                                                        isActive
-                                                            ? "[&>span]:text-primary"
-                                                            : "[&>span]:text-white"
+                                                        isActive ? "[&>span]:text-primary" : "[&>span]:text-white"
                                                     )}
                                                 />
                                                 <svg
@@ -381,13 +378,11 @@ export default function HeaderNew() {
                                             <div
                                                 className={cn(
                                                     "grid transition-[grid-template-rows] duration-200",
-                                                    expandedItem === item.name
-                                                        ? "grid-rows-[1fr]"
-                                                        : "grid-rows-[0fr]"
+                                                    expandedItem === item.name ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
                                                 )}
                                             >
                                                 <div className="overflow-hidden">
-                                                    <div className="flex flex-col items-center gap-sm pt-md">
+                                                    <div className="gap-sm pt-md flex flex-col items-center">
                                                         {item.flyout.items.map((sub) => (
                                                             <Link
                                                                 key={sub.href}
@@ -408,19 +403,14 @@ export default function HeaderNew() {
                                             </div>
                                         </>
                                     ) : (
-                                        <Link
-                                            href={item.href}
-                                            onClick={() => setMobileMenuOpen(false)}
-                                        >
+                                        <Link href={item.href} onClick={() => setMobileMenuOpen(false)}>
                                             <Eyebrow
                                                 label={item.name}
                                                 size="medium"
                                                 showDot={false}
                                                 className={cn(
                                                     "py-0 transition-colors duration-200",
-                                                    isActive
-                                                        ? "[&>span]:text-primary"
-                                                        : "[&>span]:text-white"
+                                                    isActive ? "[&>span]:text-primary" : "[&>span]:text-white"
                                                 )}
                                             />
                                         </Link>
@@ -432,8 +422,8 @@ export default function HeaderNew() {
 
                     {/* Bottom CTA */}
                     <div className="px-padding-xl pb-padding-2xl">
-                        <div className="flex items-center gap-5 rounded-xl bg-[#014527] px-padding-xl py-padding-lg backdrop-blur-[17px]">
-                            <p className="flex-1 font-gteratext text-[17px] leading-6.5 text-white">
+                        <div className="px-padding-xl py-padding-lg flex items-center gap-5 rounded-xl bg-[#014527] backdrop-blur-[17px]">
+                            <p className="font-gteratext flex-1 text-[17px] leading-6.5 text-white">
                                 Need a Quick Consultation?
                             </p>
                             <ButtonNew
