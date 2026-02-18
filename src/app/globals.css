@@ -231,7 +231,9 @@
     --spacing-vertical-inner: var(--vertical-inner);
     --spacing-vertical-outer: var(--vertical-outer);
 
-    /* Breakpoints - generates md:*, lg:*, xl:* responsive variants */
+    /* Breakpoints - generates xs:*, sm:*, md:*, lg:*, xl:* responsive variants */
+    --breakpoint-xs: 400px;
+    --breakpoint-sm: 480px;
     --breakpoint-md: 760px;
     --breakpoint-lg: 1300px;
     --breakpoint-xl: 1920px;

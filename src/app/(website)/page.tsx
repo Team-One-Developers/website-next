@@ -1,4 +1,4 @@
-import StickyContactBar from "@/components/molecules/StickyContactBar"
+import ContentBlock from "@/components/layout/ContentBlock"
 import BlogSectionNew from "@/components/sections/BlogSectionNew"
 import ContactSectionNew from "@/components/sections/ContactSectionNew"
 import CustomersShowcase from "@/components/sections/CustomersShowcase"
@@ -8,14 +8,6 @@ import HeroNew from "@/components/sections/HeroNew"
 import ImageTeaser from "@/components/sections/ImageTeaserNew"
 import ServicesGrid from "@/components/sections/ServicesGrid"
 import StatementSection from "@/components/sections/StatementSection"
-
-function ContentBlock({ children, className }: { children: React.ReactNode; className?: string }) {
-    return (
-        <div className={`px-grid-safezone mx-auto w-full max-w-(--max-content-width) ${className ?? ""}`}>
-            {children}
-        </div>
-    )
-}
 
 const Home = () => {
     return (
@@ -223,12 +215,12 @@ const Home = () => {
                     />
                 </ContentBlock>
 
-                <StickyContactBar
+                {/* <StickyContactBar
                     text="Starten wir gemeinsam?"
                     buttonLabel="Kontakt"
                     buttonHref="/contact"
                     imageUrl="/images/culture/paul.png"
-                />
+                /> */}
             </main>
         </div>
     )
