@@ -29,7 +29,7 @@ export default function ButtonNew({ label, href, variant, className, onClick, ty
 
     if (href) {
         return (
-            <Link href={href} className={classes}>
+            <Link href={href} className={classes} onClick={onClick}>
                 {label}
             </Link>
         )
