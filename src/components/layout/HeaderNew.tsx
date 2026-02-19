@@ -283,7 +283,7 @@ export default function HeaderNew() {
             {/* Mobile menu */}
             <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">
                 {/* Backdrop */}
-                <div className="fixed inset-0 z-50 bg-black/20" />
+                <div className="fixed inset-0 z-50 bg-black/5 backdrop-blur-sm" />
 
                 <DialogPanel
                     className={cn(
@@ -337,22 +337,28 @@ export default function HeaderNew() {
                                 <div key={item.name} className="flex flex-col items-center">
                                     {item.flyout ? (
                                         <>
-                                            <button
-                                                type="button"
-                                                onClick={() =>
-                                                    setExpandedItem(expandedItem === item.name ? null : item.name)
-                                                }
-                                                className="gap-xs flex cursor-pointer items-center"
-                                            >
-                                                <Eyebrow
-                                                    label={item.name}
-                                                    size="medium"
-                                                    showDot={false}
-                                                    className={cn(
-                                                        "py-0 transition-colors duration-200",
-                                                        isActive ? "[&>span]:text-primary" : "[&>span]:text-white"
-                                                    )}
-                                                />
+                                            <div className="gap-xs flex items-center">
+                                                <Link
+                                                    href={item.href}
+                                                    onClick={() => setMobileMenuOpen(false)}
+                                                >
+                                                    <Eyebrow
+                                                        label={item.name}
+                                                        size="medium"
+                                                        showDot={false}
+                                                        className={cn(
+                                                            "py-0 transition-colors duration-200",
+                                                            isActive ? "[&>span]:text-primary" : "[&>span]:text-white"
+                                                        )}
+                                                    />
+                                                </Link>
+                                                <button
+                                                    type="button"
+                                                    onClick={() =>
+                                                        setExpandedItem(expandedItem === item.name ? null : item.name)
+                                                    }
+                                                    className="cursor-pointer"
+                                                >
                                                 <svg
                                                     width="12"
                                                     height="8"
@@ -372,7 +378,8 @@ export default function HeaderNew() {
                                                         strokeLinejoin="round"
                                                     />
                                                 </svg>
-                                            </button>
+                                                </button>
+                                            </div>
 
                                             {/* Flyout sub-items */}
                                             <div
