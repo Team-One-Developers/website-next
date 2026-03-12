@@ -46,16 +46,6 @@ export default function SoftwareEngineeringPage() {
                 <ContentBlock>
                     <ServiceDetailSection
                         sectionTitle={"Unsere Schwerpunkte im\nSoftware Engineering"}
-                        eyebrowLabel="Software Engineering"
-                        navItems={[
-                            "Engineering",
-                            "Transformation",
-                            "Architecture Advisory & Due Diligence",
-                            "Consulting",
-                            "Cloud Security",
-                            "Accessibility Auditing",
-                            "AI-powered Engineering Productivity"
-                        ]}
                         items={[
                             {
                                 title: "Digital Platforms & Application Engineering",

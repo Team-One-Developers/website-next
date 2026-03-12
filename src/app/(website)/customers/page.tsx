@@ -118,12 +118,6 @@ export default function SuccessStoriesPage() {
                         buttonLabel="Case study"
                         buttonHref="/customers/porsche"
                         backgroundImage="/images/customers/porsche-cropped.jpg"
-                        rightLogoUrl="/images/customers/mercedesLogo.svg"
-                        rightLogoAlt="Mercedes-Benz"
-                        rightTitle="Internationale Verkaufs-Plattform für Neu- und Gebrauchtfahrzeuge"
-                        rightDescription="Gemeinsam mit unserem Kunden entwickeln wir eine ganzheitliche Lösung für Online-Finanzdienstleistungen im internationalen Online-Retail von Neu- und Gebrauchtfahrzeugen."
-                        rightButtonLabel="Case study"
-                        rightButtonHref="/customers/mercedes"
                     />
                 </ContentBlock>
 

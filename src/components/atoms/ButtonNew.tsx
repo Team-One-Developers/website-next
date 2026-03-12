@@ -22,9 +22,18 @@ interface ButtonNewProps extends VariantProps<typeof buttonNewVariants> {
     className?: string
     onClick?: () => void
     type?: "button" | "submit"
+    disabled?: boolean
 }
 
-export default function ButtonNew({ label, href, variant, className, onClick, type = "button" }: ButtonNewProps) {
+export default function ButtonNew({
+    label,
+    href,
+    variant,
+    className,
+    onClick,
+    type = "button",
+    disabled
+}: ButtonNewProps) {
     const classes = cn(buttonNewVariants({ variant }), className)
 
     if (href) {
@@ -36,7 +45,7 @@ export default function ButtonNew({ label, href, variant, className, onClick, ty
     }
 
     return (
-        <button type={type} className={classes} onClick={onClick}>
+        <button type={type} className={classes} onClick={onClick} disabled={disabled}>
             {label}
         </button>
     )

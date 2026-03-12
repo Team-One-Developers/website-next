@@ -52,18 +52,26 @@ export default function ContentAccordion({ sections, className }: ContentAccordi
         <div className={cn("flex flex-col", className)}>
             {sections.map((section, i) => {
                 const isOpen = openIndices.has(i)
+                const panelId = `accordion-panel-${i}`
+                const triggerId = `accordion-trigger-${i}`
                 return (
                     <div key={section.title} className="border-t border-black/10">
                         <button
+                            id={triggerId}
                             type="button"
                             onClick={() => toggle(i)}
                             className="flex w-full cursor-pointer items-center justify-between py-8"
+                            aria-expanded={isOpen}
+                            aria-controls={panelId}
                         >
                             <span className="font-gteradisplay text-h3 text-black">{section.title}</span>
                             <ChevronIcon open={isOpen} />
                         </button>
 
                         <div
+                            id={panelId}
+                            role="region"
+                            aria-labelledby={triggerId}
                             className={cn(
                                 "grid transition-[grid-template-rows] duration-300",
                                 isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"

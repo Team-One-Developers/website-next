@@ -1,4 +1,6 @@
-import { Section } from "@/components/layout/Section"
+import ContentBlock from "@/components/layout/ContentBlock"
+import HeroGradientBackdrop from "@/components/sections/HeroGradientBackdrop"
+import HeroNew from "@/components/sections/HeroNew"
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -8,35 +10,45 @@ export const metadata: Metadata = {
 
 const Privacy = () => {
     return (
-        <>
-            <Section className="pb-56">
-                <h1 className="mt-8 text-3xl font-bold">Datenschutzerklärung</h1>
-                <h2 className="mt-8">Wer bei uns für die Datenverarbeitung verantwortlich ist:</h2> <br />
-                <div>
-                    <address className="not-italic">
-                        Team One Developers GmbH <br />
-                        Stafflenbergstraße 44 <br />
-                        70184 Stuttgart
-                        <br />
-                        <p>
-                            +49 711 25298690 <br />
-                        </p>
-                        <p>
-                            info@team-one.de <br />
-                        </p>
-                        <br />
-                        Geschäftsführer: Timo Brückel, Julian Richter
-                    </address>
-                    <h2 className="mt-8 font-bold">Datenschutzbeauftragter</h2>
-                    <address className="not-italic">
-                        IITR Datenschutz GmbH <br />
-                        Dr. Sebastian Kraska <br />
-                        Marienplatz 2, 80331 München
-                    </address>
-                </div>
-                <DataPrivacy />
-            </Section>
-        </>
+        <div className="relative">
+            <HeroGradientBackdrop />
+
+            <div className="gap-vertical-inner relative z-10 flex flex-col">
+                <ContentBlock>
+                    <HeroNew title="Datenschutzerklärung" />
+                </ContentBlock>
+
+                <ContentBlock>
+                    <div className="font-gteratext text-small max-w-200 space-y-6 text-black/60">
+                        <section>
+                            <h2 className="font-gteradisplay text-h3 mb-4 text-black">
+                                Wer bei uns für die Datenverarbeitung verantwortlich ist:
+                            </h2>
+                            <address className="not-italic">
+                                Team One Developers GmbH <br />
+                                Stafflenbergstraße 44 <br />
+                                70184 Stuttgart
+                                <p>+49 711 25298690</p>
+                                <p>info@team-one.de</p>
+                                <br />
+                                Geschäftsführer: Timo Brückel, Julian Richter
+                            </address>
+                        </section>
+
+                        <section>
+                            <h3 className="font-gteradisplay text-h4 mb-2 text-black">Datenschutzbeauftragter</h3>
+                            <address className="not-italic">
+                                IITR Datenschutz GmbH <br />
+                                Dr. Sebastian Kraska <br />
+                                Marienplatz 2, 80331 München
+                            </address>
+                        </section>
+
+                        <DataPrivacy />
+                    </div>
+                </ContentBlock>
+            </div>
+        </div>
     )
 }
 
@@ -45,10 +57,12 @@ export default Privacy
 const DataPrivacy = () => {
     return (
         <>
-            <h2 className="mt-4 text-2xl font-bold">Allgemeines zur Datenverarbeitung</h2>
+            <h2 className="font-gteradisplay text-h3 mt-8 mb-4 text-black">Allgemeines zur Datenverarbeitung</h2>
 
             <div>
-                <div className="text-1xl mt-4 font-bold">Umfang der Verarbeitung personenbezogener Daten</div>
+                <h4 className="font-gteradisplay text-h4 mt-6 mb-2 text-black">
+                    Umfang der Verarbeitung personenbezogener Daten
+                </h4>
                 <div>
                     Wir verarbeiten personenbezogene Daten unserer Nutzer nur, soweit dies erforderlich ist, um unsere
                     Website, Inhalte und Dienstleistungen bereitzustellen. Die Verarbeitung erfolgt in der Regel nur,
@@ -58,9 +72,9 @@ const DataPrivacy = () => {
                 </div>
             </div>
             <div>
-                <div className="text-1xl mt-4 font-bold">
+                <h4 className="font-gteradisplay text-h4 mt-6 mb-2 text-black">
                     Rechtsgrundlage für die Verarbeitung personenbezogener Daten
-                </div>
+                </h4>
                 <div>
                     Soweit wir für die Verarbeitung personenbezogener Daten eine Einwilligung der betroffenen Person
                     einholen, ist Art. 6 Abs. 1 lit. a DSGVO die Rechtsgrundlage. Erfolgt die Verarbeitung zur Erfüllung
@@ -76,7 +90,7 @@ const DataPrivacy = () => {
                 </div>
             </div>
             <div>
-                <div className="text-1xl mt-4 font-bold">Datenlöschung und Speicherdauer</div>
+                <h4 className="font-gteradisplay text-h4 mt-6 mb-2 text-black">Datenlöschung und Speicherdauer</h4>
                 <div>
                     Die personenbezogenen Daten der betroffenen Person werden gelöscht oder gesperrt, sobald der Zweck
                     der Speicherung entfällt. Darüber hinaus kann eine Speicherung erfolgen, wenn dies durch europäische
@@ -87,9 +101,13 @@ const DataPrivacy = () => {
                 </div>
             </div>
 
-            <h3 className="mt-4 text-2xl font-bold">Bereitstellung der Website und Erstellung von Logfiles</h3>
+            <h3 className="font-gteradisplay text-h3 mt-8 mb-4 text-black">
+                Bereitstellung der Website und Erstellung von Logfiles
+            </h3>
             <div>
-                <div className="text-1xl mt-4 font-bold">Beschreibung und Umfang der Datenverarbeitung</div>
+                <h4 className="font-gteradisplay text-h4 mt-6 mb-2 text-black">
+                    Beschreibung und Umfang der Datenverarbeitung
+                </h4>
                 <div>
                     Bei jedem Aufruf unserer Website erfasst unser System automatisch Daten und Informationen vom
                     Computersystem des aufrufenden Rechners.
@@ -119,14 +137,16 @@ const DataPrivacy = () => {
                 </div>
             </div>
             <div>
-                <div className="text-1xl mt-4 font-bold">Rechtsgrundlage für die Datenverarbeitung</div>
+                <h4 className="font-gteradisplay text-h4 mt-6 mb-2 text-black">
+                    Rechtsgrundlage für die Datenverarbeitung
+                </h4>
                 <div>
                     Rechtsgrundlage für die vorübergehende Speicherung der Daten und der Logfiles ist Art. 6 Abs. 1 lit.
                     f DSGVO.
                 </div>
             </div>
             <div>
-                <div className="text-1xl mt-4 font-bold">Zweck der Datenverarbeitung</div>
+                <h4 className="font-gteradisplay text-h4 mt-6 mb-2 text-black">Zweck der Datenverarbeitung</h4>
                 <div>
                     Die vorübergehende Speicherung der IP-Adresse durch das System ist notwendig, um die Website an den
                     Rechner des Nutzers auszuliefern. Dafür muss die IP-Adresse des Nutzers für die Dauer der Sitzung
@@ -144,7 +164,7 @@ const DataPrivacy = () => {
                 </div>
             </div>
             <div>
-                <div className="text-1xl mt-4 font-bold">Dauer der Speicherung</div>
+                <h4 className="font-gteradisplay text-h4 mt-6 mb-2 text-black">Dauer der Speicherung</h4>
                 <div>
                     Die Daten werden gelöscht, sobald sie für den Zweck, zu dem sie erhoben wurden, nicht mehr benötigt
                     werden. Bei der Erfassung der Daten zur Bereitstellung der Website ist dies der Fall, wenn die
@@ -158,7 +178,9 @@ const DataPrivacy = () => {
                 </div>
             </div>
             <div>
-                <div className="text-1xl mt-4 font-bold">Widerspruchs- und Beseitigungsmöglichkeit</div>
+                <h4 className="font-gteradisplay text-h4 mt-6 mb-2 text-black">
+                    Widerspruchs- und Beseitigungsmöglichkeit
+                </h4>
                 <div>
                     Die Erfassung der Daten zur Bereitstellung der Website und die Speicherung in Logfiles sind für den
                     Betrieb der Website zwingend erforderlich. Daher besteht für den Nutzer keine
@@ -166,10 +188,12 @@ const DataPrivacy = () => {
                 </div>
             </div>
 
-            <h3 className="mt-4 text-2xl font-bold">Verwendung von Cookies</h3>
+            <h3 className="font-gteradisplay text-h3 mt-8 mb-4 text-black">Verwendung von Cookies</h3>
 
             <div>
-                <div className="text-1xl mt-4 font-bold">Beschreibung und Umfang der Datenverarbeitung</div>
+                <h4 className="font-gteradisplay text-h4 mt-6 mb-2 text-black">
+                    Beschreibung und Umfang der Datenverarbeitung
+                </h4>
                 <div>
                     Unsere Website verwendet Cookies. Cookies sind Textdateien, die im oder durch den Internetbrowser
                     auf dem Computersystem des Nutzers gespeichert werden. Wenn ein Nutzer unsere Website aufruft, kann
@@ -202,7 +226,9 @@ const DataPrivacy = () => {
                 </div>
             </div>
             <div>
-                <div className="text-1xl mt-4 font-bold">Rechtsgrundlage für die Datenverarbeitung</div>
+                <h4 className="font-gteradisplay text-h4 mt-6 mb-2 text-black">
+                    Rechtsgrundlage für die Datenverarbeitung
+                </h4>
                 <div>
                     Die Rechtsgrundlage für die Verarbeitung personenbezogener Daten beim Einsatz technisch notwendiger
                     Cookies im Sinne von § 25 Abs. 2 TTDSG ist Art. 6 Abs. 1 lit. f DSGVO. Unser berechtigtes Interesse
@@ -218,7 +244,7 @@ const DataPrivacy = () => {
                 </div>
             </div>
             <div>
-                <div className="text-1xl mt-4 font-bold">Zweck der Datenverarbeitung</div>
+                <h4 className="font-gteradisplay text-h4 mt-6 mb-2 text-black">Zweck der Datenverarbeitung</h4>
                 <div>
                     Der Zweck der Verwendung technisch notwendiger Cookies ist es, die Nutzung unserer Website zu
                     ermöglichen und deren Funktionen sicherzustellen. Einige Funktionen unserer Website können ohne
@@ -255,9 +281,9 @@ const DataPrivacy = () => {
                 </div>
             </div>
             <div>
-                <div className="text-1xl mt-4 font-bold">
+                <h4 className="font-gteradisplay text-h4 mt-6 mb-2 text-black">
                     Dauer der Speicherung, Widerspruchs- und Beseitigungsmöglichkeit
-                </div>
+                </h4>
                 <div>
                     Cookies werden auf dem Rechner des Nutzers gespeichert und von dort an unsere Website übermittelt.
                     Sie haben als Nutzer die volle Kontrolle über die Verwendung von Cookies. Durch eine entsprechende
@@ -268,7 +294,7 @@ const DataPrivacy = () => {
                 </div>
             </div>
 
-            <h3 className="mt-4 text-2xl font-bold">Kontaktformular</h3>
+            <h3 className="font-gteradisplay text-h3 mt-8 mb-4 text-black">Kontaktformular</h3>
 
             <p>
                 Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Formular
@@ -286,7 +312,7 @@ const DataPrivacy = () => {
                 auffordern, Ihre Einwilligung widerrufen oder der Zweck für die Speicherung entfällt (z. B. nach
                 abgeschlossener Bearbeitung Ihrer Anfrage). Gesetzliche Aufbewahrungspflichten bleiben unberührt.
             </p>
-            <h3 className="mt-4 text-2xl font-bold">Google Analytics</h3>
+            <h3 className="font-gteradisplay text-h3 mt-8 mb-4 text-black">Google Analytics</h3>
             <div>
                 <p>
                     Soweit Sie Ihre Einwilligung erteilt haben, wird auf dieser Website Google Analytics 4 eingesetzt,
@@ -297,7 +323,7 @@ const DataPrivacy = () => {
             </div>
 
             <div>
-                <div className="text-1xl mt-4 font-bold">Umfang der Verarbeitung</div>
+                <h4 className="font-gteradisplay text-h4 mt-6 mb-2 text-black">Umfang der Verarbeitung</h4>
                 <div>
                     Google Analytics verwendet Cookies, die eine Analyse Ihrer Nutzung unserer Website ermöglichen. Die
                     durch die Cookies erhobenen Informationen über Ihre Nutzung dieser Website werden in der Regel an
@@ -351,7 +377,7 @@ const DataPrivacy = () => {
                 </div>
             </div>
             <div>
-                <div className="text-1xl mt-4 font-bold">Zwecke der Verarbeitung</div>
+                <h4 className="font-gteradisplay text-h4 mt-6 mb-2 text-black">Zwecke der Verarbeitung</h4>
                 <div>
                     Im Auftrag des Betreibers dieser Website verwendet Google die Informationen, um Ihre Nutzung der
                     Website auszuwerten, Reports über die Website-Aktivitäten zusammenzustellen und weitere mit der
@@ -361,7 +387,7 @@ const DataPrivacy = () => {
                 </div>
             </div>
             <div>
-                <div className="text-1xl mt-4 font-bold">Empfänger</div>
+                <h4 className="font-gteradisplay text-h4 mt-6 mb-2 text-black">Empfänger</h4>
                 <div>
                     Empfänger der Daten sind bzw. können sein:
                     <br />
@@ -376,7 +402,7 @@ const DataPrivacy = () => {
                 </div>
             </div>
             <div>
-                <div className="text-1xl mt-4 font-bold">Drittlandtransfer</div>
+                <h4 className="font-gteradisplay text-h4 mt-6 mb-2 text-black">Drittlandtransfer</h4>
                 <div>
                     Soweit Daten außerhalb der EU bzw. des EWR verarbeitet werden und kein dem europäischen Standard
                     entsprechendes Datenschutzniveau besteht, haben wir zur Herstellung eines angemessenen
@@ -390,14 +416,14 @@ const DataPrivacy = () => {
                 </div>
             </div>
             <div>
-                <div className="text-1xl mt-4 font-bold">Speicherdauer</div>
+                <h4 className="font-gteradisplay text-h4 mt-6 mb-2 text-black">Speicherdauer</h4>
                 <div>
                     Die von uns gesendeten und mit Cookies verknüpften Daten werden nach 2 Monaten automatisch gelöscht.
                     Die Löschung von Daten, deren Aufbewahrungsdauer erreicht ist, erfolgt automatisch einmal im Monat.
                 </div>
             </div>
             <div>
-                <div className="text-1xl mt-4 font-bold">Rechtsgrundlage</div>
+                <h4 className="font-gteradisplay text-h4 mt-6 mb-2 text-black">Rechtsgrundlage</h4>
                 <div>
                     Rechtsgrundlage für diese Datenverarbeitung ist Ihre Einwilligung gemäß Art. 6 Abs. 1 S. 1 lit. a
                     DSGVO in Verbindung mit Art. 49 Abs. 1 lit. a DSGVO.
@@ -405,7 +431,7 @@ const DataPrivacy = () => {
             </div>
 
             <div>
-                <div className="text-1xl mt-4 font-bold">Widerruf</div>
+                <h4 className="font-gteradisplay text-h4 mt-6 mb-2 text-black">Widerruf</h4>
                 <div>
                     Sie können Ihre Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen, indem Sie die
                     Cookie-Einstellungen aufrufen und dort Ihre Auswahl ändern. Die Rechtmäßigkeit der bis zum Widerruf
@@ -446,7 +472,7 @@ const DataPrivacy = () => {
                 </div>
             </div>
 
-            <h3 className="mt-4 text-2xl font-bold">HubSpot</h3>
+            <h3 className="font-gteradisplay text-h3 mt-8 mb-4 text-black">HubSpot</h3>
             <div>
                 <p>
                     Die Daten, die Sie uns über das Kontaktformular übermitteln, werden an HubSpot weitergeleitet.
@@ -459,6 +485,7 @@ const DataPrivacy = () => {
                 </p>
             </div>
 
+<<<<<<< HEAD
             <h3 className="mt-4 text-2xl font-bold">Verarbeitung im Rahmen von Schulungsbuchungen</h3>
             <div>
                 <div className="text-1xl mt-4 font-bold">Art und Umfang der Verarbeitung</div>
@@ -639,6 +666,9 @@ const DataPrivacy = () => {
             </div>
 
             <h3 className="mt-4 text-2xl font-bold">Whitepaper</h3>
+=======
+            <h3 className="font-gteradisplay text-h3 mt-8 mb-4 text-black">Whitepaper</h3>
+>>>>>>> 58cc672 (base pages)
             <div>
                 <p>
                     Wenn Sie über unsere Website ein Whitepaper anfordern, werden die von Ihnen im Formular angegebenen
@@ -654,7 +684,7 @@ const DataPrivacy = () => {
                     Ende des Mailings.
                 </p>
             </div>
-            <h3 className="mt-4 text-2xl font-bold">Usercentrics</h3>
+            <h3 className="font-gteradisplay text-h3 mt-8 mb-4 text-black">Usercentrics</h3>
             <div>
                 <p>
                     Diese Website nutzt das Cookie-Einwilligungsmanagement von Usercentrics, um Ihre Einwilligung gemäß
@@ -689,7 +719,7 @@ const DataPrivacy = () => {
                 </p>
             </div>
 
-            <h3 className="mt-4 text-2xl font-bold">Google Tag Manager</h3>
+            <h3 className="font-gteradisplay text-h3 mt-8 mb-4 text-black">Google Tag Manager</h3>
             <div>
                 <p>
                     Soweit Sie Ihre Einwilligung erteilt haben, nutzen wir den Google Tag Manager. Anbieter ist Google
@@ -759,13 +789,13 @@ const DataPrivacy = () => {
                 </p>
             </div>
 
-            <h3 className="mt-4 text-2xl font-bold">Rechte der betroffenen Person</h3>
+            <h3 className="font-gteradisplay text-h3 mt-8 mb-4 text-black">Rechte der betroffenen Person</h3>
             <p>
                 Werden personenbezogene Daten von Ihnen verarbeitet, sind Sie Betroffener im Sinne der DSGVO und es
                 stehen Ihnen folgende Rechte gegenüber dem Verantwortlichen zu:
             </p>
 
-            <div className="text-1xl mt-4 font-bold">Auskunftsrecht</div>
+            <h4 className="font-gteradisplay text-h4 mt-6 mb-2 text-black">Auskunftsrecht</h4>
             <div>
                 Sie können von dem Verantwortlichen eine Bestätigung darüber verlangen, ob personenbezogene Daten, die
                 Sie betreffen, von uns verarbeitet werden.
@@ -803,14 +833,14 @@ const DataPrivacy = () => {
                 verlangen, über die geeigneten Garantien gemäß Art. 46 DSGVO im Zusammenhang mit der Übermittlung
                 unterrichtet zu werden.
             </div>
-            <div className="text-1xl mt-4 font-bold">Recht auf Berichtigung</div>
+            <h4 className="font-gteradisplay text-h4 mt-6 mb-2 text-black">Recht auf Berichtigung</h4>
             <div>
                 Sie haben das Recht, vom Verantwortlichen die Berichtigung und/oder Vervollständigung Ihrer
                 personenbezogenen Daten zu verlangen, sofern die Sie betreffenden Daten unrichtig oder unvollständig
                 sind. Der Verantwortliche hat die Berichtigung unverzüglich vorzunehmen.
             </div>
 
-            <div className="text-1xl mt-4 font-bold">Recht auf Einschränkung der Verarbeitung</div>
+            <h4 className="font-gteradisplay text-h4 mt-6 mb-2 text-black">Recht auf Einschränkung der Verarbeitung</h4>
             <div>
                 Unter den folgenden Voraussetzungen können Sie die Einschränkung der Verarbeitung Ihrer
                 personenbezogenen Daten verlangen:
@@ -841,7 +871,7 @@ const DataPrivacy = () => {
             </div>
 
             <div>
-                <div className="text-1xl mt-4 font-bold">Recht auf Löschung</div>
+                <h4 className="font-gteradisplay text-h4 mt-6 mb-2 text-black">Recht auf Löschung</h4>
                 <div>
                     <strong>Löschungspflicht</strong>
                     <br />
@@ -907,7 +937,7 @@ const DataPrivacy = () => {
             </div>
 
             <div>
-                <div className="text-1xl mt-4 font-bold">Recht auf Unterrichtung</div>
+                <h4 className="font-gteradisplay text-h4 mt-6 mb-2 text-black">Recht auf Unterrichtung</h4>
                 <div>
                     Haben Sie gegenüber dem Verantwortlichen das Recht auf Berichtigung, Löschung oder Einschränkung der
                     Verarbeitung geltend gemacht, ist dieser verpflichtet, allen Empfängern, denen Ihre
@@ -920,7 +950,7 @@ const DataPrivacy = () => {
                 </div>
             </div>
             <div>
-                <div className="text-1xl mt-4 font-bold">Recht auf Datenübertragbarkeit</div>
+                <h4 className="font-gteradisplay text-h4 mt-6 mb-2 text-black">Recht auf Datenübertragbarkeit</h4>
                 <div>
                     Sie haben das Recht, die personenbezogenen Daten, die Sie dem Verantwortlichen bereitgestellt haben,
                     in einem strukturierten, gängigen und maschinenlesbaren Format zu erhalten. Zudem haben Sie das
@@ -946,7 +976,7 @@ const DataPrivacy = () => {
                 </div>
             </div>
             <div>
-                <div className="text-1xl mt-4 font-bold">Widerspruchsrecht</div>
+                <h4 className="font-gteradisplay text-h4 mt-6 mb-2 text-black">Widerspruchsrecht</h4>
                 <div>
                     Sie haben das Recht, aus Gründen, die sich aus Ihrer besonderen Situation ergeben, jederzeit
                     Widerspruch gegen die Verarbeitung Ihrer personenbezogenen Daten einzulegen, die aufgrund von Art. 6
@@ -976,9 +1006,9 @@ const DataPrivacy = () => {
             </div>
 
             <div>
-                <div className="text-1xl mt-4 font-bold">
+                <h4 className="font-gteradisplay text-h4 mt-6 mb-2 text-black">
                     Recht auf Widerruf der datenschutzrechtlichen Einwilligungserklärung
-                </div>
+                </h4>
                 <div>
                     Sie haben das Recht, Ihre datenschutzrechtliche Einwilligungserklärung jederzeit zu widerrufen.
                     Durch den Widerruf wird die Rechtmäßigkeit der bis zum Widerruf aufgrund der Einwilligung erfolgten
@@ -987,9 +1017,9 @@ const DataPrivacy = () => {
             </div>
 
             <div>
-                <div className="text-1xl mt-4 font-bold">
+                <h4 className="font-gteradisplay text-h4 mt-6 mb-2 text-black">
                     Automatisierte Entscheidung im Einzelfall einschließlich Profiling
-                </div>
+                </h4>
                 <div>
                     Sie haben das Recht, nicht einer ausschließlich auf einer automatisierten Verarbeitung –
                     einschließlich Profiling – beruhenden Entscheidung unterworfen zu werden, die Ihnen gegenüber
@@ -1021,7 +1051,9 @@ const DataPrivacy = () => {
             </div>
 
             <div>
-                <div className="text-1xl mt-4 font-bold">Recht auf Beschwerde bei einer Aufsichtsbehörde</div>
+                <h4 className="font-gteradisplay text-h4 mt-6 mb-2 text-black">
+                    Recht auf Beschwerde bei einer Aufsichtsbehörde
+                </h4>
                 <div>
                     Unbeschadet eines anderweitigen verwaltungsrechtlichen oder gerichtlichen Rechtsbehelfs steht Ihnen
                     das Recht auf Beschwerde bei einer Aufsichtsbehörde, insbesondere in dem Mitgliedstaat Ihres

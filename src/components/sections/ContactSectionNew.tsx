@@ -54,7 +54,14 @@ export default function ContactSectionNew({ title, contact, className }: Contact
                             href={`tel:${contact.phone}`}
                             className="text-small flex items-center gap-2 text-black hover:underline"
                         >
-                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" className="shrink-0">
+                            <svg
+                                width="32"
+                                height="32"
+                                viewBox="0 0 32 32"
+                                fill="none"
+                                className="shrink-0"
+                                aria-hidden="true"
+                            >
                                 <path
                                     d="M20.01 21.41L21.82 19.6C22.1 19.32 22.48 19.18 22.86 19.18C23.12 19.18 23.38 19.25 23.62 19.4L27.21 21.61C27.71 21.92 28.01 22.47 28.01 23.06V26C28.01 27.1 27.11 28 26.01 28H25.01C12.33 28 4.01 19.67 4.01 7V6C4.01 4.9 4.91 4 6.01 4H9.01C9.6 4 10.14 4.3 10.45 4.79L12.66 8.38C12.96 8.86 12.94 9.46 12.6 9.92L10.6 12.01"
                                     stroke="currentColor"
@@ -69,7 +76,14 @@ export default function ContactSectionNew({ title, contact, className }: Contact
                             href={`mailto:${contact.email}`}
                             className="text-small flex items-center gap-2 text-black hover:underline"
                         >
-                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" className="shrink-0">
+                            <svg
+                                width="32"
+                                height="32"
+                                viewBox="0 0 32 32"
+                                fill="none"
+                                className="shrink-0"
+                                aria-hidden="true"
+                            >
                                 <rect
                                     x="4"
                                     y="6"
@@ -168,15 +182,18 @@ export default function ContactSectionNew({ title, contact, className }: Contact
                     </label>
                 </div>
 
+                <div aria-live="polite">
+                    {state.success && <p className="text-small text-primary">{state.message}</p>}
+                    {!state.success && state.message && <p className="text-small text-red-500">{state.message}</p>}
+                </div>
+
                 <ButtonNew
                     label={isPending ? "Sende..." : "Absenden"}
                     variant="primary"
                     type="submit"
+                    disabled={!agreed}
                     className={cn(!agreed && "cursor-not-allowed opacity-50")}
                 />
-
-                {state.success && <p className="text-small text-primary">{state.message}</p>}
-                {!state.success && state.message && <p className="text-small text-red-500">{state.message}</p>}
             </form>
         </section>
     )

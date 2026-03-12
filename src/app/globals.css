@@ -85,6 +85,7 @@
     --vertical-outer: 192px;
 
     --max-content-width: 1476px;
+    --footer-spacing: 32px;
 }
 
 /* Tablet/Medium Breakpoint (760px - 1299px) */
@@ -93,6 +94,8 @@
         --grid-gutter: 40px;
         --grid-gutter-half: 20px;
         --grid-safezone: 60px;
+
+        --footer-spacing: 60px;
 
         --padding-padding-small: 8px;
         --padding-padding-medium: 12px;
@@ -110,7 +113,9 @@
         --grid-columns: 12px;
         --grid-gutter: 60px;
         --grid-gutter-half: 30px;
-        --grid-safezone: 128px;
+        --grid-safezone: 80px;
+
+        --footer-spacing: 128px;
 
         --padding-padding-small: 12px;
         --padding-padding-medium: 18px;
@@ -129,7 +134,9 @@
         --grid-inset: 128px;
         --grid-gutter: 80px;
         --grid-gutter-half: 40px;
-        --grid-safezone: 222px;
+        --grid-safezone: 80px;
+
+        --footer-spacing: 222px;
 
         --padding-padding-small: 16px;
         --padding-padding-medium: 24px;

@@ -1,4 +1,6 @@
-import { Section } from "@/components/layout/Section"
+import ContentBlock from "@/components/layout/ContentBlock"
+import HeroGradientBackdrop from "@/components/sections/HeroGradientBackdrop"
+import HeroNew from "@/components/sections/HeroNew"
 import { Metadata } from "next"
 import Link from "next/link"
 
@@ -9,64 +11,94 @@ export const metadata: Metadata = {
 
 const Legal = () => {
     return (
-        <Section className="pb-56">
-            <h1 className="mt-8 text-3xl font-bold">Impressum</h1>
+        <div className="relative">
+            <HeroGradientBackdrop />
 
-            <h2 className="mt-8 text-2xl font-semibold">Verantwortlich für den Inhalt dieser Website</h2>
-            <address className="text-white not-italic">
-                Team One Developers GmbH <br />
-                Stafflenbergstraße 44 <br />
-                70184 Stuttgart
-            </address>
+            <div className="gap-vertical-inner relative z-10 flex flex-col">
+                <ContentBlock>
+                    <HeroNew title="Impressum" />
+                </ContentBlock>
 
-            <h2 className="mt-8 text-2xl font-semibold">Vertreten durch die Geschäftsführung</h2>
-            <ul className="text-white">
-                <li className="marker legalULLI">Timo Brückel</li>
-                <li className="legalULLI">Julian Richter</li>
-            </ul>
+                <ContentBlock>
+                    <div className="font-gteratext text-small max-w-200 space-y-8 text-black">
+                        <section>
+                            <h2 className="font-gteradisplay text-h3 mb-4 text-black">
+                                Verantwortlich für den Inhalt dieser Website
+                            </h2>
+                            <address className="text-black/60 not-italic">
+                                Team One Developers GmbH <br />
+                                Stafflenbergstraße 44 <br />
+                                70184 Stuttgart
+                            </address>
+                        </section>
 
-            <h2 className="mt-8 text-2xl font-semibold">Registereintrag</h2>
-            <article className="text-white">
-                Eintragung im Handelsregister. <br />
-                Registergericht: Amtsgericht Stuttgart <br />
-                Registernummer: HRB 777716
-            </article>
+                        <section>
+                            <h2 className="font-gteradisplay text-h3 mb-4 text-black">
+                                Vertreten durch die Geschäftsführung
+                            </h2>
+                            <ul className="list-disc pl-5 text-black/60">
+                                <li>Timo Brückel</li>
+                                <li>Julian Richter</li>
+                            </ul>
+                        </section>
 
-            <h2 className="mt-8 text-2xl font-semibold">Datenschutz</h2>
-            <p className="text-white">
-                Sofern innerhalb des Internetangebotes die Möglichkeit zur Eingabe persönlicher oder geschäftlicher
-                Daten (E-Mail Adressen, Namen, Anschriften) besteht, so erfolgt die Preisgabe dieser Daten seitens des
-                Nutzers auf ausdrücklich freiwilliger Basis. Ihre Daten werden bei uns für die Abwicklung der
-                gewünschten Transaktion gespeichert. Alle Daten werden vertraulich behandelt und nicht weitergegeben.
-                Die Inanspruchnahme und Bezahlung aller angebotenen Dienste ist – soweit technisch möglich und zumutbar
-                – auch ohne Angabe solcher Daten bzw. unter Angabe anonymisierter Daten oder eines Pseudonyms gestattet.
-                Die Nutzung der im Rahmen des Impressums oder vergleichbarer Angaben veröffentlichten Kontaktdaten wie
-                Postanschriften, Telefon- und Faxnummern sowie E-Mail Adressen durch Dritte zur Übersendung von nicht
-                ausdrücklich angeforderten Informationen ist nicht gestattet. Rechtliche Schritte gegen die Versender
-                von so genannten Spam-Mails bei Verstößen gegen dieses Verbot sind ausdrücklich vorbehalten. Für
-                detaillierte Informationen siehe{" "}
-                <Link href="/privacy" className="text-primary">
-                    Datenschutz
-                </Link>
-                .
-            </p>
+                        <section>
+                            <h2 className="font-gteradisplay text-h3 mb-4 text-black">Registereintrag</h2>
+                            <p className="text-black/60">
+                                Eintragung im Handelsregister. <br />
+                                Registergericht: Amtsgericht Stuttgart <br />
+                                Registernummer: HRB 777716
+                            </p>
+                        </section>
 
-            <h2 className="mt-8 text-2xl font-semibold">
-                Verbraucherinformation gemäß Verbraucherstreitbeilegungsgesetz
-            </h2>
-            <p className="text-white">
-                Die Team One Developers GmbH ist nicht bereit und verpflichtet, an Streitbeilegungsverfahren vor einer
-                Verbraucherschlichtungsstelle teilzunehmen.
-            </p>
+                        <section>
+                            <h2 className="font-gteradisplay text-h3 mb-4 text-black">Datenschutz</h2>
+                            <p className="text-black/60">
+                                Sofern innerhalb des Internetangebotes die Möglichkeit zur Eingabe persönlicher oder
+                                geschäftlicher Daten (E-Mail Adressen, Namen, Anschriften) besteht, so erfolgt die
+                                Preisgabe dieser Daten seitens des Nutzers auf ausdrücklich freiwilliger Basis. Ihre
+                                Daten werden bei uns für die Abwicklung der gewünschten Transaktion gespeichert. Alle
+                                Daten werden vertraulich behandelt und nicht weitergegeben. Die Inanspruchnahme und
+                                Bezahlung aller angebotenen Dienste ist – soweit technisch möglich und zumutbar – auch
+                                ohne Angabe solcher Daten bzw. unter Angabe anonymisierter Daten oder eines Pseudonyms
+                                gestattet. Die Nutzung der im Rahmen des Impressums oder vergleichbarer Angaben
+                                veröffentlichten Kontaktdaten wie Postanschriften, Telefon- und Faxnummern sowie E-Mail
+                                Adressen durch Dritte zur Übersendung von nicht ausdrücklich angeforderten Informationen
+                                ist nicht gestattet. Rechtliche Schritte gegen die Versender von so genannten Spam-Mails
+                                bei Verstößen gegen dieses Verbot sind ausdrücklich vorbehalten. Für detaillierte
+                                Informationen siehe{" "}
+                                <Link href="/privacy" className="text-primary underline">
+                                    Datenschutz
+                                </Link>
+                                .
+                            </p>
+                        </section>
 
-            <h2 className="mt-8 text-2xl font-semibold">Verlinkungen</h2>
-            <p className="text-white">
-                Diese Webseite enthält Verlinkungen zu Webseiten Dritter. Für die Inhalte der Webseiten Dritter
-                übernimmt die Team One Developers GmbH keine Haftung.
-            </p>
+                        <section>
+                            <h2 className="font-gteradisplay text-h3 mb-4 text-black">
+                                Verbraucherinformation gemäß Verbraucherstreitbeilegungsgesetz
+                            </h2>
+                            <p className="text-black/60">
+                                Die Team One Developers GmbH ist nicht bereit und verpflichtet, an
+                                Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
+                            </p>
+                        </section>
 
-            <strong className="text-white">Keine Gewähr für Richtigkeit, Vollständigkeit und Aktualität.</strong>
-        </Section>
+                        <section>
+                            <h2 className="font-gteradisplay text-h3 mb-4 text-black">Verlinkungen</h2>
+                            <p className="text-black/60">
+                                Diese Webseite enthält Verlinkungen zu Webseiten Dritter. Für die Inhalte der Webseiten
+                                Dritter übernimmt die Team One Developers GmbH keine Haftung.
+                            </p>
+                        </section>
+
+                        <p className="font-semibold text-black/60">
+                            Keine Gewähr für Richtigkeit, Vollständigkeit und Aktualität.
+                        </p>
+                    </div>
+                </ContentBlock>
+            </div>
+        </div>
     )
 }
 
