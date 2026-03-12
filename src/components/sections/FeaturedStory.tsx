@@ -16,8 +16,8 @@ interface FeaturedStoryProps {
     backgroundImage: string
     rightLogoUrl?: string
     rightLogoAlt?: string
-    rightTitle: string
-    rightDescription: string
+    rightTitle?: string
+    rightDescription?: string
     rightButtonLabel?: string
     rightButtonHref?: string
     className?: string
@@ -41,6 +41,8 @@ export default function FeaturedStory({
     rightButtonHref,
     className
 }: FeaturedStoryProps) {
+    const hasRightOverlay = rightTitle && rightDescription
+
     return (
         <section className={cn("flex gap-3 lg:h-225", className)}>
             {/* Left: green info card */}
@@ -59,31 +61,36 @@ export default function FeaturedStory({
                 </div>
             </div>
 
-            {/* Right: image card with gradient overlay */}
-            <div className="relative flex flex-1 flex-col items-start justify-between rounded-xl px-15 py-20">
+            {/* Right: image card */}
+            <div className="relative flex flex-1 flex-col items-start justify-between overflow-hidden rounded-xl px-15 py-20">
                 <div aria-hidden="true" className="pointer-events-none absolute inset-0 rounded-xl">
                     <Image src={backgroundImage} alt="" fill className="rounded-xl object-cover" />
-                    <div
-                        className="absolute inset-0 rounded-xl mix-blend-multiply"
-                        style={{
-                            backgroundImage: "linear-gradient(180deg, rgba(70, 255, 173, 0) 12%, rgb(13, 49, 33) 72%)"
-                        }}
-                    />
+                    {hasRightOverlay && (
+                        <div
+                            className="absolute inset-0 rounded-xl mix-blend-multiply"
+                            style={{
+                                backgroundImage:
+                                    "linear-gradient(180deg, rgba(70, 255, 173, 0) 12%, rgb(13, 49, 33) 72%)"
+                            }}
+                        />
+                    )}
                 </div>
 
                 {/* Logo */}
-                {rightLogoUrl && (
+                {rightLogoUrl && hasRightOverlay && (
                     <div className="relative z-10">
                         <Image src={rightLogoUrl} alt={rightLogoAlt || ""} width={87} height={15} className="h-auto" />
                     </div>
                 )}
 
                 {/* Content */}
-                <div className="gap-padding-md relative z-10 flex w-full flex-col">
-                    <h3 className="font-gteradisplay text-h3 text-white">{rightTitle}</h3>
-                    <p className="text-small text-white-soft">{rightDescription}</p>
-                    <ButtonNew label={rightButtonLabel} variant="light" href={rightButtonHref} />
-                </div>
+                {hasRightOverlay && (
+                    <div className="gap-padding-md relative z-10 flex w-full flex-col">
+                        <h3 className="font-gteradisplay text-h3 text-white">{rightTitle}</h3>
+                        <p className="text-small text-white-soft">{rightDescription}</p>
+                        <ButtonNew label={rightButtonLabel} variant="light" href={rightButtonHref} />
+                    </div>
+                )}
             </div>
         </section>
     )

@@ -43,7 +43,19 @@ function ChevronIcon({ open }: { open: boolean }) {
 }
 
 export default function JobAccordion({ title, categories, className }: JobAccordionProps) {
-    const [openIndex, setOpenIndex] = useState<number>(0)
+    const [openIndices, setOpenIndices] = useState<Set<number>>(() => new Set())
+
+    function toggle(index: number) {
+        setOpenIndices((prev) => {
+            const next = new Set(prev)
+            if (next.has(index)) {
+                next.delete(index)
+            } else {
+                next.add(index)
+            }
+            return next
+        })
+    }
 
     return (
         <section
@@ -56,28 +68,31 @@ export default function JobAccordion({ title, categories, className }: JobAccord
             <div className="bg-grey absolute inset-x-0 inset-y-0 -mx-[calc((100vw-100%)/2)] rounded-4xl" />
 
             {/* Left: title */}
-            <div className="relative flex flex-1 items-center py-8">
+            <div className="relative flex shrink-0 items-center py-8 lg:w-1/3">
                 <h2 className="font-gteradisplay text-h2 whitespace-pre-line text-black">{title}</h2>
             </div>
 
             {/* Right: accordion */}
-            <div className="relative flex flex-1 flex-col">
+            <div className="relative flex min-w-0 flex-1 flex-col">
                 {categories.map((category, i) => {
-                    const isOpen = openIndex === i
+                    const isOpen = openIndices.has(i)
                     return (
                         <div key={category.label} className="border-t border-black/10">
                             <button
                                 type="button"
-                                onClick={() => setOpenIndex(isOpen ? -1 : i)}
-                                className="gap-lg flex w-full cursor-pointer items-center justify-between py-8"
+                                onClick={() => toggle(i)}
+                                className="gap-lg flex w-full cursor-pointer items-center py-8"
+                                aria-expanded={isOpen}
                             >
-                                <div className="gap-lg flex flex-1 items-center">
-                                    <span className="font-gteradisplay text-h3 text-black">{category.label}</span>
+                                <span className="font-gteradisplay text-h3 min-w-0 text-left whitespace-nowrap text-black">
+                                    {category.label}
+                                </span>
+                                <span className="ml-auto flex shrink-0 items-center gap-4">
                                     <span className="bg-primary text-small flex size-10 items-center justify-center rounded-full font-medium text-black">
                                         {category.count}
                                     </span>
-                                </div>
-                                <ChevronIcon open={isOpen} />
+                                    <ChevronIcon open={isOpen} />
+                                </span>
                             </button>
 
                             {/* Expanded job listings */}

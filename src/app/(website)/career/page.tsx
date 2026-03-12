@@ -68,7 +68,7 @@ export default async function CareerPage() {
 
                 {/* Open Positions */}
                 <ContentBlock>
-                    <JobAccordion title="Open Position" categories={jobCategories} />
+                    <JobAccordion title="Open Positions" categories={jobCategories} />
                 </ContentBlock>
 
                 {/* Benefits */}
@@ -133,8 +133,6 @@ export default async function CareerPage() {
                     <div className="bg-primary-soft absolute inset-x-0 inset-y-0 -mx-[calc((100vw-100%)/2)] rounded-4xl" />
                     <ServiceDetailSection
                         sectionTitle={"Recruitment\nProcess"}
-                        eyebrowLabel="Bewerbungsprozess"
-                        navItems={["Interview invitation", "The interview", "Test task", "Now you're one of us!"]}
                         items={[
                             {
                                 title: "Interview Invitation",

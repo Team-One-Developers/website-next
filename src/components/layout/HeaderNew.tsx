@@ -44,7 +44,7 @@ const navigation: NavigationItem[] = [
     { name: "Values", href: "/culture" },
     {
         name: "Insights",
-        href: "/blog",
+        href: "/insights",
         flyout: {
             items: [
                 { name: "Blog", href: "/blog" },
@@ -77,10 +77,13 @@ export default function HeaderNew() {
                 {/* Background blur overlay */}
                 <div className="absolute inset-0 -z-10 backdrop-blur-[20px]" />
 
-                <nav className="px-grid-safezone mx-auto flex max-w-(--max-content-width) items-center justify-between py-(--radius-xlarge)">
+                <nav
+                    aria-label="Main navigation"
+                    className="px-grid-safezone mx-auto flex max-w-(--max-content-width) items-center justify-between py-(--radius-xlarge)"
+                >
                     {/* Logo */}
                     <div className="flex flex-1 items-center">
-                        <Link href="/" className="text-black">
+                        <Link href="/" className="text-black" aria-label="Home">
                             <LogoNoText className="h-16 w-auto fill-current" />
                         </Link>
                     </div>
@@ -103,6 +106,7 @@ export default function HeaderNew() {
                                                 (item.href !== "/" && pathname.includes(item.href))) &&
                                                 "font-medium underline"
                                         )}
+                                        {...(item.flyout ? { "aria-haspopup": "true" } : {})}
                                     >
                                         {item.name}
                                     </Link>
@@ -133,7 +137,7 @@ export default function HeaderNew() {
                                                     <div className="relative w-[340px] shrink-0 overflow-hidden rounded-lg">
                                                         <Image
                                                             src={item.flyout.image}
-                                                            alt={item.name}
+                                                            alt=""
                                                             width={340}
                                                             height={255}
                                                             className="aspect-4/3 h-full w-full object-cover"
@@ -293,7 +297,12 @@ export default function HeaderNew() {
                 >
                     {/* Top: Logo + Close */}
                     <div className="px-padding-xl py-padding-2xl flex items-center justify-between">
-                        <Link href="/" onClick={() => setMobileMenuOpen(false)} className="text-white">
+                        <Link
+                            href="/"
+                            onClick={() => setMobileMenuOpen(false)}
+                            className="text-white"
+                            aria-label="Home"
+                        >
                             <LogoNoText className="h-16 w-auto fill-current" />
                         </Link>
                         <button
@@ -338,10 +347,7 @@ export default function HeaderNew() {
                                     {item.flyout ? (
                                         <>
                                             <div className="gap-xs flex items-center">
-                                                <Link
-                                                    href={item.href}
-                                                    onClick={() => setMobileMenuOpen(false)}
-                                                >
+                                                <Link href={item.href} onClick={() => setMobileMenuOpen(false)}>
                                                     <Eyebrow
                                                         label={item.name}
                                                         size="medium"
@@ -358,26 +364,28 @@ export default function HeaderNew() {
                                                         setExpandedItem(expandedItem === item.name ? null : item.name)
                                                     }
                                                     className="cursor-pointer"
+                                                    aria-expanded={expandedItem === item.name}
+                                                    aria-label={`Expand ${item.name} submenu`}
                                                 >
-                                                <svg
-                                                    width="12"
-                                                    height="8"
-                                                    viewBox="0 0 12 8"
-                                                    fill="none"
-                                                    className={cn(
-                                                        "transition-transform duration-200",
-                                                        isActive ? "text-primary" : "text-white",
-                                                        expandedItem === item.name && "rotate-180"
-                                                    )}
-                                                >
-                                                    <path
-                                                        d="M1 1.5L6 6.5L11 1.5"
-                                                        stroke="currentColor"
-                                                        strokeWidth="1.5"
-                                                        strokeLinecap="round"
-                                                        strokeLinejoin="round"
-                                                    />
-                                                </svg>
+                                                    <svg
+                                                        width="12"
+                                                        height="8"
+                                                        viewBox="0 0 12 8"
+                                                        fill="none"
+                                                        className={cn(
+                                                            "transition-transform duration-200",
+                                                            isActive ? "text-primary" : "text-white",
+                                                            expandedItem === item.name && "rotate-180"
+                                                        )}
+                                                    >
+                                                        <path
+                                                            d="M1 1.5L6 6.5L11 1.5"
+                                                            stroke="currentColor"
+                                                            strokeWidth="1.5"
+                                                            strokeLinecap="round"
+                                                            strokeLinejoin="round"
+                                                        />
+                                                    </svg>
                                                 </button>
                                             </div>
 

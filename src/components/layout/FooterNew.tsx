@@ -51,7 +51,7 @@ function FooterColumn({ title, links }: { title: string; links: { name: string; 
 
 export default function FooterNew() {
     return (
-        <footer className="pt-grid-safezone relative overflow-hidden">
+        <footer className="relative overflow-hidden pt-(--footer-spacing)">
             {/* Green gradient — extends outward beyond content width */}
             <div
                 className="pointer-events-none absolute inset-0 z-0"
@@ -83,16 +83,19 @@ export default function FooterNew() {
                 </div>
 
                 {/* Navigation columns */}
-                <div className="gap-grid-gutter pt-grid-safezone grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
+                <nav
+                    aria-label="Footer navigation"
+                    className="gap-grid-gutter grid grid-cols-2 pt-(--footer-spacing) md:grid-cols-3 lg:grid-cols-5"
+                >
                     <FooterColumn title="Leistungen" links={navigation.leistungen} />
                     <FooterColumn title="Erfolge" links={navigation.erfolge} />
                     <FooterColumn title="Kultur" links={navigation.kultur} />
                     <FooterColumn title="Career" links={navigation.career} />
                     <FooterColumn title="Blog" links={navigation.blog} />
-                </div>
+                </nav>
 
                 {/* Bottom bar */}
-                <div className="pb-grid-gutter pt-grid-safezone flex flex-col gap-6 md:flex-row md:flex-wrap md:items-center md:justify-between">
+                <div className="pb-grid-gutter flex flex-col gap-6 pt-(--footer-spacing) md:flex-row md:flex-wrap md:items-center md:justify-between">
                     {/* Contact info */}
                     <div className="md:gap-xl flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                         <a href="tel:+491829983882" className="flex items-center gap-2 hover:underline">
@@ -120,10 +123,15 @@ export default function FooterNew() {
                     {/* Social icons + Copyright — stacked on tiny, same row below tablet, inline above */}
                     <div className="xs:flex-row xs:items-center xs:justify-between flex flex-col gap-4 md:contents">
                         <div className="gap-xl flex items-center">
-                            <Link href="https://www.youtube.com/@team-one" target="_blank" rel="noopener noreferrer">
+                            <Link
+                                href="https://www.youtube.com/@team-one"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="YouTube"
+                            >
                                 <Image
                                     src="/new/logos/youtube.svg"
-                                    alt="YouTube"
+                                    alt=""
                                     width={32}
                                     height={32}
                                     className="size-6 md:size-8"
@@ -133,10 +141,11 @@ export default function FooterNew() {
                                 href="https://www.linkedin.com/company/team-one-developers"
                                 target="_blank"
                                 rel="noopener noreferrer"
+                                aria-label="LinkedIn"
                             >
                                 <Image
                                     src="/new/logos/linkedin.svg"
-                                    alt="LinkedIn"
+                                    alt=""
                                     width={32}
                                     height={32}
                                     className="size-6 md:size-8"
@@ -146,10 +155,11 @@ export default function FooterNew() {
                                 href="https://www.instagram.com/teamonedevelopers/"
                                 target="_blank"
                                 rel="noopener noreferrer"
+                                aria-label="Instagram"
                             >
                                 <Image
                                     src="/new/logos/instagram.svg"
-                                    alt="Instagram"
+                                    alt=""
                                     width={32}
                                     height={32}
                                     className="size-6 md:size-8"

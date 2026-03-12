@@ -1,4 +1,5 @@
 import ButtonNew from "@/components/atoms/ButtonNew"
+import Tag from "@/components/atoms/Tag"
 import cn from "@/utils/cn"
 import Image from "next/image"
 
@@ -6,9 +7,10 @@ interface EventCardProps {
     title: string
     description: string
     date: string
-    speakerName: string
-    speakerRole: string
+    speakerName?: string
+    speakerRole?: string
     speakerImage: string
+    speakerAvatar?: string
     speakerBadge?: string
     buttonLabel?: string
     href?: string
@@ -22,45 +24,65 @@ export default function EventCard({
     speakerName,
     speakerRole,
     speakerImage,
+    speakerAvatar,
     speakerBadge = "Speaker",
-    buttonLabel = "Mehr erfahren",
+    buttonLabel = "Mehr Erfahren",
     href,
     className
 }: EventCardProps) {
+    const showSpeakerBar = speakerName || speakerRole || speakerAvatar
+
     return (
-        <div className={cn("gap-grid-gutter flex flex-col lg:flex-row lg:items-center", className)}>
-            {/* Speaker Image Card */}
-            <div className="relative aspect-square flex-1 overflow-hidden rounded-lg">
-                <Image src={speakerImage} alt={speakerName} fill className="object-cover" />
-                {/* Gradient overlay */}
+        <div className={cn("gap-sm row-span-5 grid grid-rows-subgrid", className)}>
+            {/* Square image with gradient overlay + speaker badge */}
+            <div className="relative aspect-square w-full overflow-hidden rounded-lg">
+                <Image src={speakerImage} alt={speakerName ?? title} fill className="object-cover" />
+                {/* Green gradient overlay */}
                 <div
-                    className="absolute inset-0 mix-blend-multiply"
+                    className="absolute inset-0 rounded-lg mix-blend-multiply"
                     style={{
-                        backgroundImage: "linear-gradient(160deg, rgba(255, 255, 255, 0) 6%, rgb(70, 255, 173) 69%)"
+                        backgroundImage: "linear-gradient(165deg, rgba(255, 255, 255, 0) 6%, rgb(70, 255, 173) 69%)"
                     }}
                 />
-                {/* Speaker info bar */}
-                <div className="inset-x-padding-lg bottom-padding-lg absolute">
-                    <div className="flex items-center justify-between rounded-lg bg-[rgba(0,255,172,0.17)] px-7.5 py-5 backdrop-blur-[27px]">
-                        <div className="flex flex-col">
-                            <span className="text-small text-white">{speakerName}</span>
-                            <span className="text-xsmall text-white/70">{speakerRole}</span>
+                {/* Speaker badge bar */}
+                {showSpeakerBar && (
+                    <div className="gap-xs absolute inset-x-2 bottom-2 flex items-center">
+                        {/* Speaker avatar */}
+                        {speakerAvatar && (
+                            <div className="relative h-17.75 w-29.5 shrink-0 overflow-hidden rounded-lg">
+                                <Image src={speakerAvatar} alt={speakerName ?? ""} fill className="object-cover" />
+                            </div>
+                        )}
+                        {/* Name / role / badge */}
+                        <div className="flex min-w-0 flex-1 items-center justify-between rounded-lg bg-[#014527] px-6 py-3 backdrop-blur-[17px]">
+                            <div className="flex flex-col">
+                                {speakerName && (
+                                    <span className="text-small leading-7.25 text-white">{speakerName}</span>
+                                )}
+                                {speakerRole && <span className="text-xxsmall text-white/60">{speakerRole}</span>}
+                            </div>
+                            <span className="bg-primary-soft rounded-[60px] px-3 text-[13px] leading-5.25 whitespace-nowrap text-white">
+                                {speakerBadge}
+                            </span>
                         </div>
-                        <span className="bg-primary-soft rounded-[60px] px-4 text-[14px] leading-7.25 text-white">
-                            {speakerBadge}
-                        </span>
                     </div>
-                </div>
+                )}
             </div>
 
-            {/* Event Details */}
-            <div className="gap-lg flex flex-1 flex-col">
-                <span className="text-xsmall text-black">{date}</span>
-                <div className="gap-sm flex flex-col">
-                    <h3 className="font-gteradisplay text-h3 text-black">{title}</h3>
-                    <p className="text-xsmall text-black-soft">{description}</p>
-                </div>
-                <ButtonNew label={buttonLabel} variant="outline" href={href} />
+            {/* Title */}
+            <h3 className="font-gteradisplay text-h3 px-padding-lg pt-lg max-w-130 self-end text-black">{title}</h3>
+
+            {/* Date tag */}
+            <div className="px-padding-lg">
+                <Tag label={date} />
+            </div>
+
+            {/* Description */}
+            <p className="text-xsmall px-padding-lg max-w-130 text-black opacity-60">{description}</p>
+
+            {/* Button */}
+            <div className="px-padding-lg">
+                <ButtonNew label={buttonLabel} variant="primary" href={href} />
             </div>
         </div>
     )

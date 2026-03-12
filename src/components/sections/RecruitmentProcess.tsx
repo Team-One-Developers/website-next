@@ -1,6 +1,9 @@
+"use client"
+
 import Eyebrow from "@/components/atoms/Eyebrow"
 import cn from "@/utils/cn"
 import Image from "next/image"
+import { useEffect, useRef, useState } from "react"
 
 interface ProcessStep {
     title: string
@@ -16,6 +19,33 @@ interface RecruitmentProcessProps {
 }
 
 export default function RecruitmentProcess({ title, eyebrowLabel, steps, className }: RecruitmentProcessProps) {
+    const [activeIndex, setActiveIndex] = useState(0)
+    const stepRefs = useRef<(HTMLDivElement | null)[]>([])
+
+    useEffect(() => {
+        const observers: IntersectionObserver[] = []
+
+        stepRefs.current.forEach((el, i) => {
+            if (!el) return
+            const observer = new IntersectionObserver(
+                ([entry]) => {
+                    if (entry.isIntersecting) {
+                        setActiveIndex(i)
+                    }
+                },
+                { rootMargin: "-40% 0px -40% 0px", threshold: 0 }
+            )
+            observer.observe(el)
+            observers.push(observer)
+        })
+
+        return () => observers.forEach((o) => o.disconnect())
+    }, [steps.length])
+
+    function scrollToStep(index: number) {
+        stepRefs.current[index]?.scrollIntoView({ behavior: "smooth", block: "center" })
+    }
+
     return (
         <section
             className={cn(
@@ -27,14 +57,22 @@ export default function RecruitmentProcess({ title, eyebrowLabel, steps, classNa
             <div className="bg-primary-soft absolute inset-x-0 inset-y-0 -mx-[calc((100vw-100%)/2)] rounded-4xl" />
 
             {/* Left: sticky sidebar */}
-            <div className="relative top-0 flex w-full shrink-0 flex-col gap-10 pt-20 lg:sticky lg:w-[570px]">
+            <div className="relative top-20 flex w-full shrink-0 flex-col gap-10 self-start pt-20 lg:sticky lg:w-[570px]">
                 <h2 className="font-gteradisplay text-h2 max-w-[457px] text-black">{title}</h2>
                 <div className="flex flex-col gap-5">
                     <Eyebrow label={eyebrowLabel} size="small" />
                     {steps.map((step, i) => (
-                        <span key={`step-nav-${i}`} className="text-small text-black">
+                        <button
+                            key={`step-nav-${i}`}
+                            type="button"
+                            onClick={() => scrollToStep(i)}
+                            className={cn(
+                                "text-small cursor-pointer text-left transition-colors duration-200",
+                                activeIndex === i ? "font-medium text-black" : "text-black/40"
+                            )}
+                        >
                             {step.title}
-                        </span>
+                        </button>
                     ))}
                 </div>
             </div>
@@ -42,7 +80,13 @@ export default function RecruitmentProcess({ title, eyebrowLabel, steps, classNa
             {/* Right: stacked image blocks */}
             <div className="relative flex w-full flex-col gap-35 lg:w-[570px]">
                 {steps.map((step, i) => (
-                    <div key={`step-${i}`} className="gap-lg flex flex-col items-center">
+                    <div
+                        key={`step-${i}`}
+                        ref={(el) => {
+                            stepRefs.current[i] = el
+                        }}
+                        className="gap-lg flex flex-col items-center"
+                    >
                         <div className="relative aspect-[340.25/255.19] w-full overflow-hidden rounded-lg">
                             <Image src={step.image} alt={step.title} fill className="object-cover" />
                         </div>
