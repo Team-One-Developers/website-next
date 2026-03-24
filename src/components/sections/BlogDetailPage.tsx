@@ -3,11 +3,11 @@ import Eyebrow from "@/components/atoms/Eyebrow"
 import Tag from "@/components/atoms/Tag"
 import ContentBlock from "@/components/layout/ContentBlock"
 import AuthorInfo from "@/components/molecules/AuthorInfo"
-import BlogCardNew from "@/components/molecules/BlogCardNew"
-import { T1PortableTextNew } from "@/components/molecules/T1PortableTextNew"
+import BlogCard from "@/components/molecules/BlogCard"
+import { T1PortableText } from "@/components/molecules/T1PortableText"
 import ContactSection from "@/components/sections/ContactSection"
 import HeroGradientBackdrop from "@/components/sections/HeroGradientBackdrop"
-import ImageTeaser from "@/components/sections/ImageTeaserNew"
+import ImageTeaser from "@/components/sections/ImageTeaser"
 import {
     QUERY_ALL_BLOGS_DANGER_ONLY_FOR_STATIC_PARAMSResult,
     QUERY_ALL_PUBLIC_BLOGSResult,
@@ -121,22 +121,13 @@ const BlogDetailPage = async ({ blog, highlightedContent, relatedBlogs, classNam
                 {/* Article body */}
                 <ContentBlock>
                     <div className="mx-auto max-w-180">
-                        <T1PortableTextNew value={highlightedContent} />
+                        <T1PortableText value={highlightedContent} />
                     </div>
                 </ContentBlock>
 
                 {/* Contact section */}
                 <ContentBlock>
-                    <ContactSection
-                        title="Lass uns über Software sprechen, die Wachstum schafft."
-                        contact={{
-                            name: "Klaus Kleber",
-                            role: "Director Business Development",
-                            imageUrl: "/images/culture/coding.webp",
-                            phone: "+49 182 9983882",
-                            email: "hello@team-one.com"
-                        }}
-                    />
+                    <ContactSection title="Lass uns über Software sprechen, die Wachstum schafft." />
                 </ContentBlock>
 
                 {/* Related articles */}
@@ -146,7 +137,7 @@ const BlogDetailPage = async ({ blog, highlightedContent, relatedBlogs, classNam
                             <h2 className="font-gteradisplay text-d2 text-black">Ähnliche Artikel</h2>
                             <div className="gap-grid-gutter grid grid-cols-1 grid-rows-[repeat(6,auto)] md:grid-cols-2 md:grid-rows-[repeat(6,auto)] lg:grid-cols-3 lg:grid-rows-[repeat(6,auto)]">
                                 {relatedBlogCards.map((post: any) => (
-                                    <BlogCardNew key={post.href} {...post} />
+                                    <BlogCard key={post.href} {...post} />
                                 ))}
                             </div>
                         </section>

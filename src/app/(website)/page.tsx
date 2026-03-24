@@ -3,11 +3,18 @@ import ContactSection from "@/components/sections/ContactSection"
 import EventsSection from "@/components/sections/EventsSection"
 import Hero from "@/components/sections/Hero"
 import HeroGradientBackdrop from "@/components/sections/HeroGradientBackdrop"
-import ImageTeaser from "@/components/sections/ImageTeaserNew"
+import ImageTeaser from "@/components/sections/ImageTeaser"
 import ServicesOverview from "@/components/sections/ServicesOverview"
 import StatementSection from "@/components/sections/StatementSection"
 import { StoryCard } from "@/components/sections/SuccessStoriesGrid"
 import { storyList } from "@/data/stories"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+    title: "Team One – Tech-driven Business Transformation",
+    description:
+        "Team One ist Technologie-Beratungspartner für digitale Produkte, skalierbare Architekturen und KI-gestützte Geschäftsmodelle – strategisch, datengetrieben, umsetzungsstark."
+}
 
 const Home = () => {
     return (
@@ -52,7 +59,7 @@ const Home = () => {
                         description="Nachhaltigkeit, Transparenz und partnerschaftliche Zusammenarbeit – das sind die Grundpfeiler unserer Arbeit."
                         buttonLabel="Mehr über uns"
                         buttonHref="/unternehmen"
-                        image="/new/images/image-1.jpg"
+                        image="/images/teaser-1.jpg"
                     />
                 </ContentBlock>
 
@@ -76,7 +83,7 @@ const Home = () => {
                                 dateLocation: "15. März 2026 • Stuttgart",
                                 speakerName: "Andreas Zander",
                                 speakerRole: "Managing Director",
-                                speakerImage: "/new/images/image-2.jpg",
+                                speakerImage: "/images/teaser-2.jpg",
                                 speakerBadge: "Speaker",
                                 href: "/veranstaltungen/ki-praxis"
                             },
@@ -87,7 +94,7 @@ const Home = () => {
                                 dateLocation: "22. April 2026 • Berlin",
                                 speakerName: "Team One",
                                 speakerRole: "Engineering",
-                                speakerImage: "/new/images/image-3.jpg",
+                                speakerImage: "/images/teaser-3.jpg",
                                 href: "/veranstaltungen/platform-engineering"
                             }
                         ]}
@@ -100,7 +107,7 @@ const Home = () => {
                         description="Von Enterprise Software Engineering über Operational AI Implementierung bis hin zur Strategieberatung - wir sind ein spezialisiertes Tech-Powerhouse für komplexe und nachhaltige Technologie- und Geschäftstransformation."
                         buttonLabel="Unsere Leistungen"
                         buttonHref="/leistungen"
-                        image="/new/images/kaprun-2.jpg"
+                        image="/images/kaprun.jpg"
                     />
                 </ContentBlock>
 

@@ -4,8 +4,8 @@ import HeroGradientBackdrop from "@/components/sections/HeroGradientBackdrop"
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
-    title: "Contest Terms and Conditions",
-    description: "Terms and conditions for the Team One Developers GmbH contest."
+    title: "Teilnahmebedingungen Gewinnspiel",
+    description: "Teilnahmebedingungen für das Gewinnspiel der Team One Developers GmbH."
 }
 
 const GewinnspielTeilnahme = () => {

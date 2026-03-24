@@ -60,11 +60,9 @@ export const BlogOverview = ({ blogs }: BlogOverviewProps) => {
                             <EventCard
                                 key={blog._id}
                                 title={blog.title}
-                                description={blog.descriptionShort ?? blog.descriptionLong ?? ""}
                                 date={blog.formattedDate}
-                                speakerImage={blog.heroImage?.asset?.url ?? "/images/logos/t1-only-dark.svg"}
-                                buttonLabel="Weiterlesen"
-                                href={`/blog/${blog.slug?.current}`}
+                                category={blog.category ?? undefined}
+                                image={blog.heroImage?.asset?.url ?? undefined}
                             />
                         ))}
                     </div>

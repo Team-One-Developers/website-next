@@ -3,14 +3,14 @@ import Eyebrow from "@/components/atoms/Eyebrow"
 import ContentBlock from "@/components/layout/ContentBlock"
 import Hero from "@/components/sections/Hero"
 import HeroGradientBackdrop from "@/components/sections/HeroGradientBackdrop"
-import ImageTeaser from "@/components/sections/ImageTeaserNew"
+import ImageTeaser from "@/components/sections/ImageTeaser"
 import { Metadata } from "next"
 import Image from "next/image"
 
 export const metadata: Metadata = {
-    title: "Über uns",
+    title: "Unternehmen",
     description:
-        "Team One ist ein Technologie-Beratungspartner für Tech-getriebene Geschäftstransformation. Wir steigern die Wettbewerbsfähigkeit von Unternehmen in einer digitalen Welt."
+        "Team One ist eine Technologie- & Transformations-Beratung mit Fokus auf menschenzentrierte Arbeitsweisen und datengetriebene Geschäftsmodelle."
 }
 
 const values = [
@@ -43,22 +43,22 @@ const managementTeam = [
     {
         name: "Timo Brückel",
         role: "Founding Partner & CEO",
-        image: "/new/images/people/timo.png"
+        image: "/images/people/timo.png"
     },
     {
         name: "Julian Richter",
         role: "Founding Partner & CEO",
-        image: "/new/images/people/julian-card.png"
+        image: "/images/people/julian-card.png"
     },
     {
         name: "Johannes Aehling",
         role: "CEO Team One Inframotive",
-        image: "/new/images/people/johannes-close.png"
+        image: "/images/people/johannes-close.png"
     },
     {
         name: "Paul Krauss",
         role: "Partner AI",
-        image: "/new/images/people/paul-closeclose.png"
+        image: "/images/people/paul-closeclose.png"
     }
 ]
 
@@ -95,7 +95,12 @@ export default function CulturePage() {
 
                 {/* Hero Image */}
                 <ContentBlock>
-                    <ImageTeaser image="/new/images/_DSF1725.jpg" alt="Team One Office" showOverlay={false} />
+                    <ImageTeaser
+                        image="/images/office-interior.jpg"
+                        alt="Team One Office"
+                        showOverlay={false}
+                        priority
+                    />
                 </ContentBlock>
 
                 {/* Content Block — two-column text */}
@@ -187,7 +192,7 @@ export default function CulturePage() {
                         buttonLabel="Karriere"
                         buttonVariant="primary"
                         buttonHref="/karriere"
-                        image="/new/images/_DSF1627.JPG"
+                        image="/images/team-collaboration.jpg"
                     />
                 </ContentBlock>
 

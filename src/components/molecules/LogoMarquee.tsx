@@ -9,12 +9,12 @@ interface LogoMarqueeProps {
 }
 
 const logos = [
-    { src: "/new/logos/references/porsche.svg", alt: "Porsche", width: 314, height: 22 },
-    { src: "/new/logos/references/mercedes.svg", alt: "Mercedes-Benz", width: 291, height: 35 },
-    { src: "/new/logos/references/recaro.svg", alt: "Recaro", width: 269, height: 58 },
-    { src: "/new/logos/references/dm.svg", alt: "dm", width: 107, height: 107 },
-    { src: "/new/logos/references/otto.svg", alt: "Otto", width: 125, height: 125 },
-    { src: "/new/logos/references/schwarz.svg", alt: "Schwarz", width: 269, height: 51 }
+    { src: "/logos/porsche.svg", alt: "Porsche", width: 314, height: 22 },
+    { src: "/logos/mercedes.svg", alt: "Mercedes-Benz", width: 291, height: 35 },
+    { src: "/logos/recaro.svg", alt: "Recaro", width: 269, height: 58 },
+    { src: "/logos/dm.svg", alt: "dm", width: 107, height: 107 },
+    { src: "/logos/otto.svg", alt: "Otto", width: 125, height: 125 },
+    { src: "/logos/schwarz.svg", alt: "Schwarz", width: 269, height: 51 }
 ]
 
 export default function LogoMarquee({ fadeColor = "white", className }: LogoMarqueeProps) {

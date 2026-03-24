@@ -7,6 +7,13 @@ import Hero from "@/components/sections/Hero"
 import HeroGradientBackdrop from "@/components/sections/HeroGradientBackdrop"
 import { StoryCard } from "@/components/sections/SuccessStoriesGrid"
 import { stories, storyList } from "@/data/stories"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+    title: "Referenzen",
+    description:
+        "Ausgewählte Kundenreferenzen – erfahre, wie Team One digitale Produkte und Plattformen für führende Unternehmen entwickelt."
+}
 
 const featured = stories.vertriebsplattform
 const cardStories = storyList.filter((s) => s !== featured)

@@ -2,7 +2,7 @@
 
 import Button from "@/components/atoms/Button"
 import Eyebrow from "@/components/atoms/Eyebrow"
-import { LogoNoText } from "@/components/atoms/LogoNoText"
+import { Logo } from "@/components/atoms/Logo"
 import cn from "@/utils/cn"
 import { Dialog, DialogPanel } from "@headlessui/react"
 import Image from "next/image"
@@ -37,7 +37,7 @@ const navigation: NavigationItem[] = [
                 { name: "Car-IT Technologies", href: "/leistungen/car-it-technologies" },
                 { name: "Kundenreferenzen", href: "/referenzen", highlight: true }
             ],
-            image: "/new/images/_DSF1416.JPG"
+            image: "/images/office-team.jpg"
         }
     },
     { name: "Unternehmen", href: "/unternehmen" },
@@ -74,9 +74,9 @@ export default function Header() {
                     className="px-grid-safezone mx-auto flex max-w-(--max-content-width) items-center justify-between py-(--radius-xlarge)"
                 >
                     {/* Logo */}
-                    <div className="flex flex-1 items-center">
+                    <div className="flex items-center">
                         <Link href="/" className="text-black" aria-label="Home">
-                            <LogoNoText className="h-16 w-auto fill-current" />
+                            <Logo className="h-16 w-auto fill-current" />
                         </Link>
                     </div>
 
@@ -278,8 +278,6 @@ export default function Header() {
                             </div>
                         </button>
                     </div>
-
-                    <div className="hidden flex-1 lg:block" />
                 </nav>
             </header>
 
@@ -302,7 +300,7 @@ export default function Header() {
                             className="text-white"
                             aria-label="Home"
                         >
-                            <LogoNoText className="h-16 w-auto fill-current" />
+                            <Logo className="h-16 w-auto fill-current" />
                         </Link>
                         <button
                             type="button"

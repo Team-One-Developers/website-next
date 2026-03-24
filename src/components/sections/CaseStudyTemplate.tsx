@@ -1,7 +1,7 @@
 import ContentBlock from "@/components/layout/ContentBlock"
 import ContactSection from "@/components/sections/ContactSection"
 import HeroGradientBackdrop from "@/components/sections/HeroGradientBackdrop"
-import ImageTeaser from "@/components/sections/ImageTeaserNew"
+import ImageTeaser from "@/components/sections/ImageTeaser"
 import { StoryCard, type SuccessStory } from "@/components/sections/SuccessStoriesGrid"
 import cn from "@/utils/cn"
 import Image from "next/image"
@@ -19,7 +19,7 @@ const DEFAULT_SECOND_TEASER = {
         "Als Early Adopter zentraler technologischer und methodischer Frameworks agieren wir als integrativer Beratungs- und Implementierungspartner für datengetriebene Geschäftsmodelle.",
     buttonLabel: "Unternehmen",
     buttonVariant: "light" as const,
-    image: "/new/images/_DSF1273.JPG"
+    image: "/images/office-meeting.jpg"
 }
 
 interface CaseStudyTemplateProps {
@@ -79,7 +79,7 @@ export default function CaseStudyTemplate({
                         {backLabel}
                     </Link>
 
-                    <ImageTeaser title={heroTitle} description={heroDescription} image={heroImage} />
+                    <ImageTeaser title={heroTitle} description={heroDescription} image={heroImage} priority />
                 </ContentBlock>
 
                 {textSection && (

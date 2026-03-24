@@ -2,10 +2,17 @@ import ContentBlock from "@/components/layout/ContentBlock"
 import ContactSection from "@/components/sections/ContactSection"
 import Hero from "@/components/sections/Hero"
 import HeroGradientBackdrop from "@/components/sections/HeroGradientBackdrop"
-import ImageTeaser from "@/components/sections/ImageTeaserNew"
+import ImageTeaser from "@/components/sections/ImageTeaser"
 import ServiceDetailSection from "@/components/sections/ServiceDetailSection"
 import { StoryCard } from "@/components/sections/SuccessStoriesGrid"
 import { storyList } from "@/data/stories"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+    title: "Car-IT Technologies",
+    description:
+        "Automotive Platform Engineering, Vehicle Data & IoT und digitale Mobilitätsservices – Infrastruktur-Frameworks für die nächste Generation automobiler Plattformen."
+}
 
 export default function CarItTechnologiesPage() {
     return (
@@ -52,13 +59,13 @@ export default function CarItTechnologiesPage() {
                                 title: "Automotive Platform Engineering",
                                 description:
                                     "Wir entwickeln skalierbare Plattformen für den digitalen Fahrzeugvertrieb, After-Sales-Services und Connected-Car-Ökosysteme. Unsere Architekturansätze ermöglichen die Integration heterogener Systeme und schaffen die Basis für neue digitale Geschäftsmodelle im Automobilumfeld.",
-                                image: "/new/images/image-1.jpg"
+                                image: "/images/teaser-1.jpg"
                             },
                             {
                                 title: "Vehicle Data & IoT Integration",
                                 description:
                                     "Wir konzipieren und implementieren Lösungen für die Erfassung, Verarbeitung und Analyse von Fahrzeugdaten in Echtzeit. Von Telematik-Plattformen über kameragestützte Fahrzeugerkennung bis hin zu IoT-Cloud-Architekturen – wir machen Fahrzeugdaten zu einem strategischen Asset.",
-                                image: "/new/images/image-3.jpg"
+                                image: "/images/teaser-3.jpg"
                             },
                             {
                                 title: "Digital Mobility Services",

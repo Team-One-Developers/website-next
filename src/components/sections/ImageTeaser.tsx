@@ -17,6 +17,7 @@ interface ImageTeaserProps {
         avatarUrl: string
     }
     showOverlay?: boolean
+    priority?: boolean
     className?: string
 }
 
@@ -30,6 +31,7 @@ export default function ImageTeaser({
     alt,
     author,
     showOverlay = true,
+    priority = false,
     className
 }: ImageTeaserProps) {
     const hasOverlay = showOverlay && title && description
@@ -38,7 +40,7 @@ export default function ImageTeaser({
         <section className={cn("w-full", className)}>
             <div className="relative flex aspect-1728/900 w-full items-end overflow-hidden rounded-lg p-[8px]">
                 {/* Background image */}
-                <Image src={image} alt={alt ?? title ?? ""} fill className="object-cover" priority />
+                <Image src={image} alt={alt ?? title ?? ""} fill className="object-cover" priority={priority} />
 
                 {/* Overlay card */}
                 {hasOverlay && (

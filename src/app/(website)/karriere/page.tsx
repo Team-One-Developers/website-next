@@ -4,11 +4,12 @@ import ContactSection from "@/components/sections/ContactSection"
 import Hero from "@/components/sections/Hero"
 import HeroGradientBackdrop from "@/components/sections/HeroGradientBackdrop"
 import ImageMarquee from "@/components/sections/ImageMarquee"
-import ImageTeaser from "@/components/sections/ImageTeaserNew"
+import ImageTeaser from "@/components/sections/ImageTeaser"
 import JobAccordion from "@/components/sections/JobAccordion"
 import { client } from "@/sanity/lib/client"
 import { QUERY_ALL_PUBLIC_CAREERS } from "@/sanity/queries"
 import { Career } from "@/sanity/types"
+import type { Metadata } from "next"
 
 function groupCareersByDivision(careers: Career[]) {
     const groups = new Map<string, Career[]>()
@@ -31,6 +32,12 @@ function groupCareersByDivision(careers: Career[]) {
     }))
 }
 
+export const metadata: Metadata = {
+    title: "Karriere",
+    description:
+        "Werde Teil von Team One – attraktive Jobs in Software Engineering, AI, Strategieberatung und Car-IT Technologies in Stuttgart."
+}
+
 export default async function CareerPage() {
     const allCareers = await client.fetch(QUERY_ALL_PUBLIC_CAREERS)
     const jobCategories = groupCareersByDivision(allCareers)
@@ -50,19 +57,20 @@ export default async function CareerPage() {
                     <ImageTeaser
                         title="Unser Team - Dein Playground"
                         description="Wir verstehen uns nicht einfach nur als Arbeitgeber, sondern viel mehr als aktiver Begleiter auf dem Weg zu deinen individuellen Zielen. Unser Anspruch ist es, den Menschen in den Mittelpunkt unseres unternehmerischen Handelns zu stellen – und dabei fangen wir bei uns im Team an."
-                        image="/new/images/_DSF1627.JPG"
+                        image="/images/team-collaboration.jpg"
+                        priority
                     />
                 </ContentBlock>
 
                 <ContentBlock>
                     <h3 className="font-gteradisplay text-h3 max-w-[700px]">
-                        Oft sagen wir in Gesprächen „wir sind Playground für den modernen und ambitionierten
-                        Softwareentwickler" – das beschreibt unser Arbeitsumfeld am besten. Wir arbeiten in
+                        Oft sagen wir in Gesprächen &bdquo;wir sind Playground für den modernen und ambitionierten
+                        Softwareentwickler&ldquo; – das beschreibt unser Arbeitsumfeld am besten. Wir arbeiten in
                         anspruchsvollen Kundenprojekten mit spannenden Themen und modernen Tech-Stacks und agilem
                         Selbstverständnis. Weiterentwicklung ist für uns ein fester Bestandteil unserer
                         Unternehmensphilosophie: von Trainings und Konferenzbesuchen über eigene Open-Source-Projekte
-                        bis hin zum Spin-Off von eigenständiger Produktideen . Alles ein „Kann" und kein „Muss", in
-                        jedem Fall aber vielseitig und mit unendlich vielen Möglichkeiten.
+                        bis hin zum Spin-Off von eigenständiger Produktideen. Alles ein &bdquo;Kann&ldquo; und kein
+                        &bdquo;Muss&ldquo;, in jedem Fall aber vielseitig und mit unendlich vielen Möglichkeiten.
                     </h3>
                 </ContentBlock>
 
@@ -79,43 +87,43 @@ export default async function CareerPage() {
                                 title: "Bonus",
                                 description:
                                     "Neben Weihnachts- und Urlaubsgeld erhältst Du bei uns erfolgsabhängige Prämien.",
-                                iconUrl: "/new/images/pictograms/verwinkelt.svg"
+                                iconUrl: "/pictograms/verwinkelt.svg"
                             },
                             {
                                 title: "Home Office",
                                 description:
                                     "Auch wenn wir tolle Büroräumlichkeiten in Stuttgarts Halbhöhenlage haben, unterstützen wir flexible Arbeitszeiten ebenso wie Home Office.",
-                                iconUrl: "/new/images/pictograms/verwinkelt.svg"
+                                iconUrl: "/pictograms/verwinkelt.svg"
                             },
                             {
                                 title: "Weiterbildung",
                                 description:
                                     "Von internationalen Konferenz-Besuchen bis hin zu regelmäßigen Work-Retreats und Persönlichkeitscoachings, den Möglichkeiten zur individuellen fachlichen wie persönlichen Weiterentwicklung sind bei uns keine Grenzen gesetzt.",
-                                iconUrl: "/new/images/pictograms/verwinkelt.svg"
+                                iconUrl: "/pictograms/verwinkelt.svg"
                             },
                             {
                                 title: "Worktation",
                                 description:
                                     "Wir haben Gefallen daran gefunden dort zu arbeiten wo andere Urlaub machen. Ein bis zweimal jährlich wechseln wir unser Arbeitsumfeld und reisen gemeinsam an spannenden Locations im In- und Ausland.",
-                                iconUrl: "/new/images/pictograms/verwinkelt.svg"
+                                iconUrl: "/pictograms/verwinkelt.svg"
                             },
                             {
                                 title: "Jobrad",
                                 description:
                                     "Bei uns erhältst Du attraktive Konditionen für dein Jobrad durch unser hauseigenes und selbst-finanziertes Firmenradprogramm.",
-                                iconUrl: "/new/images/pictograms/verwinkelt.svg"
+                                iconUrl: "/pictograms/verwinkelt.svg"
                             },
                             {
                                 title: "Wellness",
                                 description:
                                     "Alternativ hast Du die Möglichkeit über unseren Fitness-Partner Wellpass in 10.000 hochwertigen Sport- und Gesundheitseinrichtungen in ganz Deutschland zu trainieren.",
-                                iconUrl: "/new/images/pictograms/verwinkelt.svg"
+                                iconUrl: "/pictograms/verwinkelt.svg"
                             },
                             {
                                 title: "Hardware",
                                 description:
                                     "Du erhältst bei uns natürlich alles was Du zum Arbeiten brauchst. Du wählst dabei deine Arbeitsmittel selbst aus damit Du vom Start weg bestmöglich arbeitsfähig bist.",
-                                iconUrl: "/new/images/pictograms/verwinkelt.svg"
+                                iconUrl: "/pictograms/verwinkelt.svg"
                             }
                         ]}
                         cta={{
@@ -138,19 +146,19 @@ export default async function CareerPage() {
                                 title: "Interview Invitation",
                                 description:
                                     "Wir entwickeln skalierbare, modulare Plattformen und Anwendungen für komplexe Enterprise-Ökosysteme. Unsere Lösungen verbinden Daten, Prozesse und Nutzererlebnisse zu performanten, zukunftsfähigen Systemen. Dabei setzen wir auf moderne Architekturprinzipien, API-first-Design und nachhaltige Softwarequalität.",
-                                image: "/new/images/image-4.jpg"
+                                image: "/images/teaser-4.jpg"
                             },
                             {
                                 title: "The Interview",
                                 description:
                                     "Wir entwickeln skalierbare, modulare Plattformen und Anwendungen für komplexe Enterprise-Ökosysteme. Unsere Lösungen verbinden Daten, Prozesse und Nutzererlebnisse zu performanten, zukunftsfähigen Systemen. Dabei setzen wir auf moderne Architekturprinzipien, API-first-Design und nachhaltige Softwarequalität.",
-                                image: "/new/images/image-5.jpg"
+                                image: "/images/teaser-5.jpg"
                             },
                             {
                                 title: "Test Task",
                                 description:
                                     "Wir entwickeln skalierbare, modulare Plattformen und Anwendungen für komplexe Enterprise-Ökosysteme. Unsere Lösungen verbinden Daten, Prozesse und Nutzererlebnisse zu performanten, zukunftsfähigen Systemen. Dabei setzen wir auf moderne Architekturprinzipien, API-first-Design und nachhaltige Softwarequalität.",
-                                image: "/new/images/image-6.jpg"
+                                image: "/images/teaser-6.jpg"
                             }
                         ]}
                         className="relative py-20"
@@ -176,9 +184,9 @@ export default async function CareerPage() {
                 {/* Image Gallery Marquee */}
                 <ImageMarquee
                     images={[
-                        { src: "/new/images/image-1.jpg", alt: "Team One Kultur", width: 355, height: 375 },
-                        { src: "/new/images/image-2.jpg", alt: "Team One Zusammenarbeit", width: 500, height: 375 },
-                        { src: "/new/images/image-3.jpg", alt: "Team One Office", width: 390, height: 375 },
+                        { src: "/images/teaser-1.jpg", alt: "Team One Kultur", width: 355, height: 375 },
+                        { src: "/images/teaser-2.jpg", alt: "Team One Zusammenarbeit", width: 500, height: 375 },
+                        { src: "/images/teaser-3.jpg", alt: "Team One Office", width: 390, height: 375 },
                         { src: "/images/culture/coffetalk.webp", alt: "Team One Austausch", width: 355, height: 375 }
                     ]}
                 />
