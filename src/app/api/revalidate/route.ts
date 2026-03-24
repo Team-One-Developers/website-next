@@ -35,8 +35,8 @@ export async function POST(req: NextRequest) {
         }
 
         if (body._type === "blog" || body._type === "career") {
-            const pagePath = body._type === "blog" ? "/blog" : "/career/job"
-            const overviewPagePath = body._type === "blog" ? "/blog" : "/career"
+            const pagePath = body._type === "blog" ? "/blog" : "/karriere/stelle"
+            const overviewPagePath = body._type === "blog" ? "/blog" : "/karriere"
 
             await revalidatePath(pagePath + "/" + body.slug)
             if (slugChanged) await revalidatePath(pagePath + "/" + body.previousSlug)

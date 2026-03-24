@@ -23,7 +23,7 @@ const DoubleImageHero = () => {
                 </div>
                 <div className="w-full px-4 lg:w-4/12">
                     <div>
-                        <Link href="/career#jobs" className="text-foreground mb-7">
+                        <Link href="/karriere#jobs" className="text-foreground mb-7">
                             <svg
                                 width="120"
                                 height="120"

@@ -10,11 +10,11 @@ export const SiteMetadata = {
         },
         {
             name: "Leistungen",
-            link: "/services"
+            link: "/leistungen"
         },
         {
-            name: "Kultur",
-            link: "/culture"
+            name: "Unternehmen",
+            link: "/unternehmen"
         },
 
         {
@@ -23,11 +23,11 @@ export const SiteMetadata = {
         },
         {
             name: "Karriere",
-            link: "/career"
+            link: "/karriere"
         },
         {
             name: "Kontakt",
-            link: "/contact"
+            link: "/kontakt"
         }
     ]
 }

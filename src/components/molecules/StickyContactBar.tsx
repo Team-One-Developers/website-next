@@ -1,4 +1,4 @@
-import ButtonNew from "@/components/atoms/ButtonNew"
+import Button from "@/components/atoms/Button"
 import cn from "@/utils/cn"
 import Image from "next/image"
 
@@ -37,7 +37,7 @@ export default function StickyContactBar({
             <div className="flex flex-1 items-center rounded-md bg-[#014527] px-6.25 py-5 backdrop-blur-[17px]">
                 <div className="flex flex-1 items-center gap-5">
                     <p className="text-small flex-1 text-white">{text}</p>
-                    <ButtonNew label={buttonLabel} href={buttonHref} variant="primary" />
+                    <Button label={buttonLabel} href={buttonHref} variant="primary" />
                 </div>
             </div>
         </div>

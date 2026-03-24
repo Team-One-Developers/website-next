@@ -1,4 +1,4 @@
-import ButtonNew from "@/components/atoms/ButtonNew"
+import Button from "@/components/atoms/Button"
 import AuthorInfo from "@/components/molecules/AuthorInfo"
 import cn from "@/utils/cn"
 import Image from "next/image"
@@ -23,7 +23,7 @@ interface ImageTeaserProps {
 export default function ImageTeaser({
     title,
     description,
-    buttonLabel = "Mehr erfahren",
+    buttonLabel,
     buttonHref,
     buttonVariant = "primary",
     image,
@@ -45,7 +45,7 @@ export default function ImageTeaser({
                     <div className="gap-padding-lg bg-background-soft px-padding-xl py-grid-gutter relative flex w-full max-w-[579px] flex-col rounded-lg backdrop-blur-lg">
                         <h3 className="font-gteradisplay text-h3 text-white">{title}</h3>
                         <p className="text-small text-white-soft">{description}</p>
-                        <ButtonNew label={buttonLabel} variant={buttonVariant} href={buttonHref} />
+                        {buttonLabel && <Button label={buttonLabel} variant={buttonVariant} href={buttonHref} />}
                         {author && (
                             <AuthorInfo
                                 name={author.name}

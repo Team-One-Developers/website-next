@@ -2,45 +2,32 @@
 
 import cn from "@/utils/cn"
 import Image from "next/image"
-import { useEffect, useRef } from "react"
 
 interface LogoMarqueeProps {
-    logos: { src: string; alt: string; width: number; height: number }[]
     fadeColor?: "white" | "primary-soft"
     className?: string
 }
 
-export default function LogoMarquee({ logos, fadeColor = "white", className }: LogoMarqueeProps) {
-    const containerRef = useRef<HTMLDivElement>(null)
+const logos = [
+    { src: "/new/logos/references/porsche.svg", alt: "Porsche", width: 314, height: 22 },
+    { src: "/new/logos/references/mercedes.svg", alt: "Mercedes-Benz", width: 291, height: 35 },
+    { src: "/new/logos/references/recaro.svg", alt: "Recaro", width: 269, height: 58 },
+    { src: "/new/logos/references/dm.svg", alt: "dm", width: 107, height: 107 },
+    { src: "/new/logos/references/otto.svg", alt: "Otto", width: 125, height: 125 },
+    { src: "/new/logos/references/schwarz.svg", alt: "Schwarz", width: 269, height: 51 }
+]
 
-    useEffect(() => {
-        const container = containerRef.current
-        if (!container) return
-
-        let animationId: number
-        let position = 0
-        const speed = 0.5
-
-        function animate() {
-            position -= speed
-            const firstSet = container!.firstElementChild as HTMLElement
-            if (firstSet && Math.abs(position) >= firstSet.scrollWidth) {
-                position = 0
-            }
-            container!.style.transform = `translateX(${position}px)`
-            animationId = requestAnimationFrame(animate)
-        }
-
-        animationId = requestAnimationFrame(animate)
-        return () => cancelAnimationFrame(animationId)
-    }, [])
-
+export default function LogoMarquee({ fadeColor = "white", className }: LogoMarqueeProps) {
     return (
         <div className={cn("relative overflow-hidden py-24", className)}>
-            <div ref={containerRef} className="flex items-center" style={{ willChange: "transform" }}>
-                {/* Duplicate logos for seamless loop */}
+            <div className="flex w-max items-center" style={{ animation: "marquee 40s linear infinite" }}>
+                {/* Two identical sets — translating by -50% loops seamlessly */}
                 {[0, 1].map((setIndex) => (
-                    <div key={setIndex} className="flex shrink-0 items-center gap-64 pr-64">
+                    <div
+                        key={setIndex}
+                        className="flex shrink-0 items-center"
+                        style={{ gap: "200px", paddingRight: "200px" }}
+                    >
                         {logos.map((logo, i) => (
                             <Image
                                 key={`${setIndex}-${i}`}
@@ -48,12 +35,20 @@ export default function LogoMarquee({ logos, fadeColor = "white", className }: L
                                 alt={logo.alt}
                                 width={logo.width}
                                 height={logo.height}
-                                className="h-10 w-auto shrink-0 object-contain brightness-0"
+                                className="shrink-0 object-contain brightness-0"
+                                style={{ height: logo.height, width: logo.width }}
                             />
                         ))}
                     </div>
                 ))}
             </div>
+
+            <style>{`
+                @keyframes marquee {
+                    from { transform: translateX(0); }
+                    to { transform: translateX(-50%); }
+                }
+            `}</style>
         </div>
     )
 }

@@ -1,4 +1,4 @@
-import ButtonNew from "@/components/atoms/ButtonNew"
+import Button from "@/components/atoms/Button"
 import Eyebrow from "@/components/atoms/Eyebrow"
 import cn from "@/utils/cn"
 import Image from "next/image"
@@ -10,6 +10,7 @@ export interface SuccessStory {
     eyebrowLabel: string
     buttonLabel?: string
     href?: string
+    greenFilter?: boolean
 }
 
 interface SuccessStoriesGridProps {
@@ -18,20 +19,30 @@ interface SuccessStoriesGridProps {
     className?: string
 }
 
-export function StoryCard({ title, description, image, eyebrowLabel, buttonLabel = "Mehr lesen", href }: SuccessStory) {
+export function StoryCard({
+    title,
+    description,
+    image,
+    eyebrowLabel,
+    buttonLabel = "Mehr lesen",
+    href,
+    greenFilter
+}: SuccessStory) {
     return (
-        <div className="gap-lg flex flex-1 flex-col items-center">
+        <div className="row-span-5 grid grid-rows-subgrid gap-0">
             {/* Image */}
-            <div className="relative aspect-4/3 w-full overflow-hidden rounded-lg">
+            <div className="mb-lg relative aspect-4/3 w-full overflow-hidden rounded-lg">
                 <Image src={image} alt={title} fill className="object-cover" />
+                {greenFilter && <div className="bg-primary/20 absolute inset-0" />}
             </div>
 
-            {/* Content */}
-            <div className="gap-sm px-padding-lg flex w-full flex-col items-start">
+            <div className="px-padding-lg">
                 <Eyebrow label={eyebrowLabel} size="small" />
-                <h3 className="font-gteradisplay text-h4 max-w-130 text-black">{title}</h3>
-                <p className="text-xsmall max-w-130 text-black/60">{description}</p>
-                <ButtonNew label={buttonLabel} variant="outline" href={href} />
+            </div>
+            <h3 className="font-gteradisplay text-h4 px-padding-lg max-w-130 text-black">{title}</h3>
+            <p className="text-xsmall px-padding-lg pt-sm max-w-130 text-black/60">{description}</p>
+            <div className="px-padding-lg pt-sm">
+                <Button label={buttonLabel} variant="outline" href={href} />
             </div>
         </div>
     )
@@ -52,7 +63,7 @@ export default function SuccessStoriesGrid({ title, stories, className }: Succes
                 </div>
 
                 {/* Stories grid */}
-                <div className="gap-grid-gutter grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+                <div className="gap-grid-gutter grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:grid-rows-[auto_auto_auto_auto_auto]">
                     {stories.map((story, i) => (
                         <StoryCard key={`${story.title}-${i}`} {...story} />
                     ))}

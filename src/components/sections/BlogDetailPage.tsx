@@ -5,7 +5,7 @@ import ContentBlock from "@/components/layout/ContentBlock"
 import AuthorInfo from "@/components/molecules/AuthorInfo"
 import BlogCardNew from "@/components/molecules/BlogCardNew"
 import { T1PortableTextNew } from "@/components/molecules/T1PortableTextNew"
-import ContactSectionNew from "@/components/sections/ContactSectionNew"
+import ContactSection from "@/components/sections/ContactSection"
 import HeroGradientBackdrop from "@/components/sections/HeroGradientBackdrop"
 import ImageTeaser from "@/components/sections/ImageTeaserNew"
 import {
@@ -127,7 +127,7 @@ const BlogDetailPage = async ({ blog, highlightedContent, relatedBlogs, classNam
 
                 {/* Contact section */}
                 <ContentBlock>
-                    <ContactSectionNew
+                    <ContactSection
                         title="Lass uns über Software sprechen, die Wachstum schafft."
                         contact={{
                             name: "Klaus Kleber",

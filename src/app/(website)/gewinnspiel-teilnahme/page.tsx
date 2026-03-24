@@ -1,6 +1,6 @@
 import ContentBlock from "@/components/layout/ContentBlock"
+import Hero from "@/components/sections/Hero"
 import HeroGradientBackdrop from "@/components/sections/HeroGradientBackdrop"
-import HeroNew from "@/components/sections/HeroNew"
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -15,7 +15,7 @@ const GewinnspielTeilnahme = () => {
 
             <div className="gap-vertical-inner relative z-10 flex flex-col">
                 <ContentBlock>
-                    <HeroNew title="Terms and Conditions of Participation for the Contest" />
+                    <Hero title="Terms and Conditions of Participation for the Contest" />
                 </ContentBlock>
 
                 <ContentBlock>
@@ -128,8 +128,8 @@ const GewinnspielTeilnahme = () => {
                                 <br />
                                 For more information about data processing, see our privacy policy:
                                 <br />
-                                <a href="https://www.team-one.de/privacy" className="text-primary underline">
-                                    https://www.team-one.de/privacy
+                                <a href="https://www.team-one.de/datenschutz" className="text-primary underline">
+                                    https://www.team-one.de/datenschutz
                                 </a>
                             </p>
                         </section>

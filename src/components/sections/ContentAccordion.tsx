@@ -78,7 +78,7 @@ export default function ContentAccordion({ sections, className }: ContentAccordi
                             )}
                         >
                             <div className="overflow-hidden">
-                                <div className="pr-8 pb-10 lg:pr-32">{section.content}</div>
+                                <div className="pb-10">{section.content}</div>
                             </div>
                         </div>
                     </div>

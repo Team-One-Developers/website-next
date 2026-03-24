@@ -16,7 +16,7 @@ const sizeClasses: Record<NonNullable<EyebrowProps["size"]>, string> = {
 export default function Eyebrow({ label, size = "xsmall", showDot = true, className }: EyebrowProps) {
     return (
         <div className={cn("gap-xs flex items-center py-0.5", className)}>
-            {showDot && <div className="bg-primary size-3.5 shrink-0 rounded-full" />}
+            {showDot && <div className="size-2.5 shrink-0 rounded-full bg-black" />}
             <span className={cn("font-gteratext text-black", sizeClasses[size])}>{label}</span>
         </div>
     )

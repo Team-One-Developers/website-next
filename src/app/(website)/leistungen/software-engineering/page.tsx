@@ -1,0 +1,123 @@
+import ContentBlock from "@/components/layout/ContentBlock"
+import ContactSection from "@/components/sections/ContactSection"
+import Hero from "@/components/sections/Hero"
+import HeroGradientBackdrop from "@/components/sections/HeroGradientBackdrop"
+import ImageTeaser from "@/components/sections/ImageTeaserNew"
+import ServiceDetailSection from "@/components/sections/ServiceDetailSection"
+import { StoryCard } from "@/components/sections/SuccessStoriesGrid"
+import { storyList } from "@/data/stories"
+
+export default function SoftwareEngineeringPage() {
+    return (
+        <div className="relative">
+            <HeroGradientBackdrop />
+
+            <main className="gap-vertical-inner relative z-10 flex flex-col">
+                <ContentBlock>
+                    <Hero
+                        title="Software Engineering"
+                        backLink={{ label: "Zurück zur Übersicht", href: "/leistungen" }}
+                    />
+                </ContentBlock>
+
+                {/* Two-column intro text */}
+                <ContentBlock>
+                    <section className="gap-grid-gutter flex flex-col lg:flex-row">
+                        <div className="flex-1">
+                            <p className="text-medium max-w-132.5 text-black">
+                                Wir verwandeln komplexe Anforderungen in performante Softwarelösungen, die nachhaltiges
+                                Wachstum ermöglichen.
+                            </p>
+                        </div>
+                        <div className="gap-lg flex flex-1 flex-col">
+                            <p className="text-small max-w-117.25 text-black">
+                                Software ist das Rückgrat moderner Wertschöpfung – sie steuert Kundenbeziehungen,
+                                Datenflüsse und Produktentwicklungen. Erfolgreiche Unternehmen setzen auf robuste,
+                                erweiterbare Systeme, die Sicherheit, Performance und Anpassungsfähigkeit vereinen.
+                            </p>
+                            <p className="text-xsmall max-w-105 text-black">
+                                Wir setzen auf modernste Technologien und Frameworks, um performante, skalierbare und
+                                zukunftssichere Softwarelösungen zu entwickeln.
+                            </p>
+                        </div>
+                    </section>
+                </ContentBlock>
+
+                {/* Schwerpunkte section */}
+                <ContentBlock>
+                    <ServiceDetailSection
+                        sectionTitle={"Unsere Schwerpunkte im\nSoftware Engineering"}
+                        items={[
+                            {
+                                title: "Digital Platforms & Application Engineering",
+                                description:
+                                    "Wir entwickeln skalierbare, modulare Plattformen und Anwendungen für komplexe Enterprise-Ökosysteme. Unsere Lösungen verbinden Daten, Prozesse und Nutzererlebnisse zu performanten, zukunftsfähigen Systemen. Dabei setzen wir auf moderne Architekturprinzipien, API-first-Design und nachhaltige Softwarequalität.",
+                                image: "/new/images/softwareengineering.jpg"
+                            },
+                            {
+                                title: "Enterprise Modernization & System Transformation",
+                                description:
+                                    "Wir modernisieren Legacy-Systeme und überführen komplexe IT-Landschaften in cloud-native Architekturen. Unser Ziel: höhere Flexibilität, geringere Betriebskosten und schnellere Innovationszyklen. Dabei verbinden wir strategische Planung mit technischer Exzellenz und minimaler Betriebsunterbrechung.",
+                                image: "/new/images/softwareengineering.jpg"
+                            },
+                            {
+                                title: "Architecture Advisory & Due Diligence Consulting",
+                                description:
+                                    "Wir schaffen Transparenz in komplexen Technologie-Landschaften und bewerten Systeme nach Qualität, Skalierbarkeit und Zukunftsfähigkeit. Ob Architektur-Audit, Modernisierungsstrategie oder Tech Due Diligence – wir liefern faktenbasierte Entscheidungsgrundlagen. Unser Fokus liegt auf technischer Exzellenz, Investitionssicherheit und nachhaltiger Weiterentwicklung.",
+                                image: "/new/images/softwareengineering.jpg"
+                            },
+                            {
+                                title: "Cloud Security",
+                                description:
+                                    "Wir sichern Cloud-Umgebungen über alle Ebenen hinweg – von Infrastruktur bis Governance. Unsere Security-Konzepte gewährleisten Compliance, Datenschutz und resiliente Betriebsmodelle. Dabei kombinieren wir technisches Know-how mit Best Practices aus DevSecOps und Cloud Architecture und begleiten komplexe Angriffssimulationen.",
+                                image: "/new/images/softwareengineering.jpg"
+                            },
+                            {
+                                title: "Accessibility Auditing",
+                                description:
+                                    "Wir prüfen digitale Produkte auf Barrierefreiheit, Nutzbarkeit und gesetzliche Konformität. Dabei kombinieren wir technische Analyse mit praxisnahen Empfehlungen zur Optimierung. Unser Ziel: digitale Erlebnisse, die für alle Menschen zugänglich und intuitiv nutzbar sind.",
+                                image: "/new/images/softwareengineering.jpg"
+                            },
+                            {
+                                title: "AI-powered Engineering Productivity",
+                                description:
+                                    "Wir steigern Produktivität und Codequalität durch KI-gestützte Entwicklungsprozesse. Unsere Lösungen automatisieren Dokumentation, Code-Reviews und Testgenerierung. So entsteht intelligentes Engineering, das Geschwindigkeit, Qualität und Effizienz vereint.",
+                                image: "/new/images/softwareengineering.jpg"
+                            }
+                        ]}
+                    />
+                </ContentBlock>
+
+                {/* Success Stories */}
+                <ContentBlock greenBg>
+                    <div className="gap-grid-gutter grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+                        {storyList.map((story, i) => (
+                            <StoryCard key={`${story.href}-${i}`} {...story} />
+                        ))}
+                    </div>
+                </ContentBlock>
+
+                {/* Image Teaser */}
+                <ContentBlock>
+                    <ImageTeaser
+                        title="Erfahrung, die Leistung skaliert"
+                        description="Unsere Ingenieure sind nicht nur technisch stark – sie verstehen Geschäftsmodelle, Nutzer:innen und Märkte. So entstehen Lösungen, die wirklich wirken."
+                        buttonLabel="Online"
+                        buttonVariant="light"
+                        image="/images/culture/officelife.webp"
+                        author={{
+                            name: "by Hannah",
+                            role: "Marketing & Organisation",
+                            avatarUrl: "/new/images/image-2.jpg"
+                        }}
+                    />
+                </ContentBlock>
+
+                {/* Contact */}
+                <ContentBlock>
+                    <ContactSection title="Lass uns über Software sprechen, die Wachstum schafft." />
+                </ContentBlock>
+            </main>
+        </div>
+    )
+}
