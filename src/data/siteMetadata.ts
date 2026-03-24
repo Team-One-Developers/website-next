@@ -1,8 +1,8 @@
 export const SiteMetadata = {
-    title: "Team One Developers - Partner für agile Produktentwicklung",
-    siteUrl: "http://www.team-one.de",
+    title: "Team One – Tech-driven Business Transformation",
+    siteUrl: "https://www.team-one.de",
     description:
-        "Wir sind die Technologieberatung für agile Produktentwicklung. Mit unserer jahrelangen Expertise gestalten wir Produkte und digitalisieren Geschäftsprozesse unserer Kunden.",
+        "Team One ist Technologie-Beratungspartner für digitale Produkte, skalierbare Architekturen und KI-gestützte Geschäftsmodelle.",
     menuLinks: [
         {
             name: "Home",
@@ -13,10 +13,17 @@ export const SiteMetadata = {
             link: "/leistungen"
         },
         {
+            name: "Referenzen",
+            link: "/referenzen"
+        },
+        {
             name: "Unternehmen",
             link: "/unternehmen"
         },
-
+        {
+            name: "Einblicke",
+            link: "/einblicke"
+        },
         {
             name: "Blog",
             link: "/blog"

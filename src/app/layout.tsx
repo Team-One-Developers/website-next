@@ -35,7 +35,7 @@ const GTEraDisplay = localFont({
 export const metadata: Metadata = {
     title: {
         default: siteConfig.name,
-        template: "%s | team one - Tech-driven business transformation"
+        template: "%s | Team One"
     },
     description: siteConfig.description,
     openGraph: {

@@ -2,10 +2,17 @@ import ContentBlock from "@/components/layout/ContentBlock"
 import ContactSection from "@/components/sections/ContactSection"
 import Hero from "@/components/sections/Hero"
 import HeroGradientBackdrop from "@/components/sections/HeroGradientBackdrop"
-import ImageTeaser from "@/components/sections/ImageTeaserNew"
+import ImageTeaser from "@/components/sections/ImageTeaser"
 import ServiceDetailSection from "@/components/sections/ServiceDetailSection"
 import { StoryCard } from "@/components/sections/SuccessStoriesGrid"
 import { storyList } from "@/data/stories"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+    title: "Software Engineering",
+    description:
+        "Skalierbare Plattformen, Cloud-Architekturen und moderne Softwareentwicklung – von Digital Platforms über Enterprise Modernization bis Security."
+}
 
 export default function SoftwareEngineeringPage() {
     return (
@@ -52,37 +59,37 @@ export default function SoftwareEngineeringPage() {
                                 title: "Digital Platforms & Application Engineering",
                                 description:
                                     "Wir entwickeln skalierbare, modulare Plattformen und Anwendungen für komplexe Enterprise-Ökosysteme. Unsere Lösungen verbinden Daten, Prozesse und Nutzererlebnisse zu performanten, zukunftsfähigen Systemen. Dabei setzen wir auf moderne Architekturprinzipien, API-first-Design und nachhaltige Softwarequalität.",
-                                image: "/new/images/softwareengineering.jpg"
+                                image: "/images/software-engineering.jpg"
                             },
                             {
                                 title: "Enterprise Modernization & System Transformation",
                                 description:
                                     "Wir modernisieren Legacy-Systeme und überführen komplexe IT-Landschaften in cloud-native Architekturen. Unser Ziel: höhere Flexibilität, geringere Betriebskosten und schnellere Innovationszyklen. Dabei verbinden wir strategische Planung mit technischer Exzellenz und minimaler Betriebsunterbrechung.",
-                                image: "/new/images/softwareengineering.jpg"
+                                image: "/images/software-engineering.jpg"
                             },
                             {
                                 title: "Architecture Advisory & Due Diligence Consulting",
                                 description:
                                     "Wir schaffen Transparenz in komplexen Technologie-Landschaften und bewerten Systeme nach Qualität, Skalierbarkeit und Zukunftsfähigkeit. Ob Architektur-Audit, Modernisierungsstrategie oder Tech Due Diligence – wir liefern faktenbasierte Entscheidungsgrundlagen. Unser Fokus liegt auf technischer Exzellenz, Investitionssicherheit und nachhaltiger Weiterentwicklung.",
-                                image: "/new/images/softwareengineering.jpg"
+                                image: "/images/software-engineering.jpg"
                             },
                             {
                                 title: "Cloud Security",
                                 description:
                                     "Wir sichern Cloud-Umgebungen über alle Ebenen hinweg – von Infrastruktur bis Governance. Unsere Security-Konzepte gewährleisten Compliance, Datenschutz und resiliente Betriebsmodelle. Dabei kombinieren wir technisches Know-how mit Best Practices aus DevSecOps und Cloud Architecture und begleiten komplexe Angriffssimulationen.",
-                                image: "/new/images/softwareengineering.jpg"
+                                image: "/images/software-engineering.jpg"
                             },
                             {
                                 title: "Accessibility Auditing",
                                 description:
                                     "Wir prüfen digitale Produkte auf Barrierefreiheit, Nutzbarkeit und gesetzliche Konformität. Dabei kombinieren wir technische Analyse mit praxisnahen Empfehlungen zur Optimierung. Unser Ziel: digitale Erlebnisse, die für alle Menschen zugänglich und intuitiv nutzbar sind.",
-                                image: "/new/images/softwareengineering.jpg"
+                                image: "/images/software-engineering.jpg"
                             },
                             {
                                 title: "AI-powered Engineering Productivity",
                                 description:
                                     "Wir steigern Produktivität und Codequalität durch KI-gestützte Entwicklungsprozesse. Unsere Lösungen automatisieren Dokumentation, Code-Reviews und Testgenerierung. So entsteht intelligentes Engineering, das Geschwindigkeit, Qualität und Effizienz vereint.",
-                                image: "/new/images/softwareengineering.jpg"
+                                image: "/images/software-engineering.jpg"
                             }
                         ]}
                     />
@@ -108,7 +115,7 @@ export default function SoftwareEngineeringPage() {
                         author={{
                             name: "by Hannah",
                             role: "Marketing & Organisation",
-                            avatarUrl: "/new/images/image-2.jpg"
+                            avatarUrl: "/images/teaser-2.jpg"
                         }}
                     />
                 </ContentBlock>

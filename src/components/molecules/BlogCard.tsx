@@ -5,7 +5,7 @@ import cn from "@/utils/cn"
 import Image from "next/image"
 import Link from "next/link"
 
-interface BlogCardNewProps {
+interface BlogCardProps {
     title: string
     description: string
     image: string
@@ -20,7 +20,7 @@ interface BlogCardNewProps {
     className?: string
 }
 
-export default function BlogCardNew({
+export default function BlogCard({
     title,
     description,
     image,
@@ -29,7 +29,7 @@ export default function BlogCardNew({
     author,
     href,
     className
-}: BlogCardNewProps) {
+}: BlogCardProps) {
     return (
         <Link
             href={href}

@@ -5,7 +5,7 @@ const services = [
         title: "Software Engineering",
         description:
             "Wir verwandeln komplexe Anforderungen in performante Softwarelösungen, die nachhaltiges Wachstum ermöglichen. Wir verstehen Software als das Rückgrat moderner Wertschöpfung in zukunftsfähigen Organisationen.",
-        pictogramUrl: "/new/images/pictograms/layers.svg",
+        pictogramUrl: "/pictograms/layers.svg",
         buttonLabel: "Mehr erfahren",
         href: "/leistungen/software-engineering"
     },
@@ -13,7 +13,7 @@ const services = [
         title: "Operational AI",
         description:
             "Wir sind spezialisierter Beratungs- und Entwicklungspartner im Bereich Data & AI – vom Prototyp über den ersten MVP bis hin zur LLM Plattform.",
-        pictogramUrl: "/new/images/pictograms/star.svg",
+        pictogramUrl: "/pictograms/star.svg",
         buttonLabel: "Mehr erfahren",
         href: "/leistungen/operational-ai"
     },
@@ -21,7 +21,7 @@ const services = [
         title: "Strategy Consulting",
         description:
             "Verbinden Sie mit uns Strategie, Technologie und Geschäfts-Innovatoinen – für eine Organisation, die morgen stärker ist als heute.",
-        pictogramUrl: "/new/images/pictograms/sun.svg",
+        pictogramUrl: "/pictograms/sun.svg",
         buttonLabel: "Mehr erfahren",
         href: "/leistungen/strategie-beratung"
     },
@@ -29,7 +29,7 @@ const services = [
         title: "Car-IT Technologies",
         description:
             "Team One Inframotive entwickelt geschäftskritische Infrastruktur-Frameworks für die nächste Generation automobiler Plattformen.",
-        pictogramUrl: "/new/images/pictograms/verwinkelt.svg",
+        pictogramUrl: "/pictograms/verwinkelt.svg",
         buttonLabel: "Mehr erfahren",
         href: "/leistungen/car-it-technologies"
     }

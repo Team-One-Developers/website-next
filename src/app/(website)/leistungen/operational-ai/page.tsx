@@ -2,10 +2,17 @@ import ContentBlock from "@/components/layout/ContentBlock"
 import ContactSection from "@/components/sections/ContactSection"
 import Hero from "@/components/sections/Hero"
 import HeroGradientBackdrop from "@/components/sections/HeroGradientBackdrop"
-import ImageTeaser from "@/components/sections/ImageTeaserNew"
+import ImageTeaser from "@/components/sections/ImageTeaser"
 import ServiceDetailSection from "@/components/sections/ServiceDetailSection"
 import { StoryCard } from "@/components/sections/SuccessStoriesGrid"
 import { storyList } from "@/data/stories"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+    title: "Operational AI",
+    description:
+        "KI-Strategie, LLM-Lösungen und Data Engineering – wir bringen KI-Projekte vom Prototyp in die Produktion."
+}
 
 export default function AiDataAnalyticsPage() {
     return (
@@ -51,13 +58,13 @@ export default function AiDataAnalyticsPage() {
                                 title: "AI Strategy & Use Case Development",
                                 description:
                                     "Wir identifizieren die wirkungsvollsten KI-Anwendungsfälle für Ihr Unternehmen, bewerten deren Machbarkeit und entwickeln eine umsetzbare Roadmap. Durch strukturiertes Use-Case-Landscaping und Readiness-Assessments schaffen wir die Grundlage für nachhaltige KI-Initiativen.",
-                                image: "/new/images/image-1.jpg"
+                                image: "/images/teaser-1.jpg"
                             },
                             {
                                 title: "LLM & Generative AI Solutions",
                                 description:
                                     "Wir entwickeln maßgeschneiderte LLM-basierte Anwendungen – von intelligenten Assistenzsystemen über automatisierte Textverarbeitung bis hin zu Retrieval-Augmented Generation (RAG). Unsere Lösungen integrieren sich nahtlos in bestehende Systemlandschaften und skalieren zuverlässig.",
-                                image: "/new/images/image-3.jpg"
+                                image: "/images/teaser-3.jpg"
                             },
                             {
                                 title: "Data Engineering & Analytics Platforms",

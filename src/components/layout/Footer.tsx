@@ -61,8 +61,8 @@ export default function Footer() {
                     className="relative w-full"
                     style={{
                         aspectRatio: "1476 / 234",
-                        maskImage: "url(/new/team-one-mask.svg)",
-                        WebkitMaskImage: "url(/new/team-one-mask.svg)",
+                        maskImage: "url(/logos/team-one-mask.svg)",
+                        WebkitMaskImage: "url(/logos/team-one-mask.svg)",
                         maskSize: "100% 100%",
                         WebkitMaskSize: "100% 100%",
                         maskRepeat: "no-repeat",
@@ -71,7 +71,7 @@ export default function Footer() {
                         WebkitMaskPosition: "center"
                     }}
                 >
-                    <Image src="/new/images/gruuuuen.png" alt="" fill className="object-cover" priority={false} />
+                    <Image src="/images/green-gradient.png" alt="" fill className="object-cover" priority={false} />
                     <div className="absolute inset-0 bg-[#7AE1BF]/100 mix-blend-multiply" aria-hidden="true" />
                 </div>
 
@@ -90,23 +90,11 @@ export default function Footer() {
                     {/* Phone + Mail — stacked on mobile, row at sm, dissolves into parent at 1000px */}
                     <div className="flex flex-col gap-4 min-[1000px]:contents sm:flex-row sm:items-center sm:justify-between">
                         <a href="tel:+491829983882" className="flex items-center gap-2 hover:underline">
-                            <Image
-                                src="/new/logos/phone.svg"
-                                alt=""
-                                width={32}
-                                height={32}
-                                className="size-6 md:size-8"
-                            />
+                            <Image src="/logos/phone.svg" alt="" width={32} height={32} className="size-6 md:size-8" />
                             <span className="text-small md:text-medium text-black">+49 182 9983882</span>
                         </a>
                         <a href="mailto:hello@team-one.com" className="flex items-center gap-2 hover:underline">
-                            <Image
-                                src="/new/logos/mail.svg"
-                                alt=""
-                                width={32}
-                                height={32}
-                                className="size-6 md:size-8"
-                            />
+                            <Image src="/logos/mail.svg" alt="" width={32} height={32} className="size-6 md:size-8" />
                             <span className="text-small md:text-medium text-black">hello@team-one.com</span>
                         </a>
                     </div>
@@ -120,7 +108,7 @@ export default function Footer() {
                             aria-label="YouTube"
                         >
                             <Image
-                                src="/new/logos/youtube.svg"
+                                src="/logos/youtube.svg"
                                 alt=""
                                 width={32}
                                 height={32}
@@ -134,7 +122,7 @@ export default function Footer() {
                             aria-label="LinkedIn"
                         >
                             <Image
-                                src="/new/logos/linkedin.svg"
+                                src="/logos/linkedin.svg"
                                 alt=""
                                 width={32}
                                 height={32}
@@ -148,7 +136,7 @@ export default function Footer() {
                             aria-label="Instagram"
                         >
                             <Image
-                                src="/new/logos/instagram.svg"
+                                src="/logos/instagram.svg"
                                 alt=""
                                 width={32}
                                 height={32}

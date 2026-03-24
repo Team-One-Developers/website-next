@@ -17,12 +17,12 @@ const people: Record<string, ContactPerson> = {
     timobrueckel: {
         name: "Timo Brückel",
         role: "Founding Partner & CEO",
-        imageUrl: "/new/images/people/timo-close.png"
+        imageUrl: "/images/people/timo-close.png"
     },
     julianrichter: {
         name: "Julian Richter",
         role: "Founding Partner & CEO",
-        imageUrl: "/new/images/people/julian-closeclose.png"
+        imageUrl: "/images/people/julian-closeclose.png"
     }
 }
 
@@ -38,8 +38,8 @@ interface ContactSectionProps {
 }
 
 const logoMaskStyle: React.CSSProperties = {
-    maskImage: "url(/new/logo-mask.svg)",
-    WebkitMaskImage: "url(/new/logo-mask.svg)",
+    maskImage: "url(/logos/logo-mask.svg)",
+    WebkitMaskImage: "url(/logos/logo-mask.svg)",
     maskSize: "100% 100%",
     WebkitMaskSize: "100% 100%",
     maskRepeat: "no-repeat",

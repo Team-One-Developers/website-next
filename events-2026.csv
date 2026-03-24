@@ -1,0 +1,46 @@
+Datum;Event;Kunde;Status;Typ;Format;Scope;Kategorie
+21.01.2026;"G-BEE";"Marketers und Nerds";Abgeschlossen;Workshop;;Intern;Impuls
+28.01.2026;"MUSTANG X TEAM ONE KICKOFF";"Mustang Jeans";Abgeschlossen;Workshop;;Intern;Impuls
+05.02.2026;"Consultant Workshop Ideation";"DM";Abgeschlossen;Workshop;;Intern;Impuls
+17.02.2026;"EBE 2026 Keynote - Shared files";"eCommerce-Berlin";Abgeschlossen;Keynote;;Extern;Keynote
+18.02.2026;"EBE 2026 Keynote - Shared files";"eCommerce-Berlin";Abgeschlossen;Keynote;;Extern;Keynote
+25.02.2026;"Webinar 1 Strategie & Organisation";"BEVH";Abgeschlossen;Workshop;Remote;Extern;Webinar
+25.02.2026;"1: Strategie & Organisation";"BEVH";Abgeschlossen;Workshop;Remote;Extern;Webinar
+27.02.2026;"Webinar 2 Das KI-Kundenerlebnis: Kunden(rück)gewinnung & Relational KI";"BEVH";Abgeschlossen;Workshop;Remote;Extern;Webinar
+27.02.2026;"2: Operationalisierung der Kundenerfahrung: Logistik & Supply Chain";"BEVH";Abgeschlossen;Workshop;Remote;Extern;Webinar
+04.03.2026;"Webinar 3 Das KI-Kundenerlebnis: Kundenbindung – CRM & Customer Care";"BEVH";Abgeschlossen;Workshop;Remote;Extern;Webinar
+05.03.2026;"AI Experience Days";"PAYBACK";Abgeschlossen;Keynote;;Intern;Keynote
+06.03.2026;"Basic Schulung";"Basic Schulung";Abgeschlossen;Workshop;;Extern;Webinar
+06.03.2026;"Webinar 4 Operationalisierung der Kundenerfahrung: Einkauf & Produktentwicklung";"BEVH";Abgeschlossen;Workshop;Remote;Extern;Webinar
+10.03.2026;"Impuls";"Mustang Jeans";Abgeschlossen;Keynote;;Intern;Keynote
+10.03.2026;"Gala";"Shop Usabilty Award ";Abgeschlossen;Workshop;;Extern;Konferenz
+10.03.2026;"Webinar 5 Operationalisierung der Kundenerfahrung: Logistik & Supply Chain";"BEVH";Abgeschlossen;Workshop;Remote;Extern;Webinar
+11.03.2026;"Gala";"Shop Usabilty Award ";Abgeschlossen;Workshop;;Extern;Konferenz
+12.03.2026;"Panel Retail AI";"K5";Abgeschlossen;Keynote;;Extern;Keynote
+12.03.2026;"Webinar 6 Supporting Systems – Future-Proof Stack";"BEVH";Abgeschlossen;Workshop;Remote;Extern;Webinar
+13.03.2026;"Vortrag Expert Circle";"GS1";Abgeschlossen;Keynote;;Intern;Keynote
+19.03.2026;"OMR Reviews Tool Talk E-Commerce Personalization";"OMR ";Gebucht;Keynote;;Extern;Webinar
+21.03.2026;"Marcus Coop";"TBD";Gebucht;Workshop;;;
+30.03.2026;"Podcast ";"Digital Sucess";Gebucht;Workshop;;Extern;Impuls
+15.04.2026;"Workshop – eCommerce Horizon";"eCommerce Horizon";Geplant;Workshop;;;
+15.04.2026;"VTEX DAYS (Sao Paolo)";"VTEX";Geplant;Workshop;;Extern;Konferenz
+16.04.2026;"Commerce Impact Day";"Shopware";Gebucht;Workshop;;;
+16.04.2026;"VTEX DAYS (Sao Paolo)";"VTEX";Geplant;Workshop;;Extern;Konferenz
+17.04.2026;"VTEX DAYS (Sao Paolo)";"VTEX";Geplant;Workshop;;Extern;Konferenz
+18.04.2026;"VTEX DAYS (Sao Paolo)";"VTEX";Geplant;Workshop;;Extern;Konferenz
+19.04.2026;"VTEX DAYS (Sao Paolo)";"VTEX";Geplant;Workshop;;Extern;Konferenz
+21.04.2026;"Minubo Dinner";"Sammelevents";Geplant;Workshop;;;
+28.04.2026;"Inhouse Keynote";"Camel Active";Geplant;Keynote;;Intern;Impuls
+29.04.2026;"eCom Horizon Update";"eCommerce Horizon";Gebucht;Keynote;;Extern;Keynote
+08.05.2026;"Vortrag";"DDX";Gebucht;Workshop;;Extern;Keynote
+09.05.2026;"Vortrag";"DDX";Gebucht;Workshop;;Extern;Keynote
+10.06.2026;"SCD - Panel ";"Shopware";Gebucht;Keynote;;;
+23.06.2026;"K5 2026";"K5";Gebucht;Workshop;;Extern;
+24.06.2026;"K5 2026";"K5";Gebucht;Workshop;;Extern;
+25.06.2026;"K5 2026";"K5";Gebucht;Workshop;;Extern;
+26.06.2026;"Panel Discussion - Frankfurt";"Union Investment";Geplant;Keynote;;Intern;Konferenz
+19.07.2026;"Workation";"Interne Termine";Gebucht;Workshop;;;
+20.07.2026;"Workation";"Interne Termine";Gebucht;Workshop;;;
+16.09.2026;"Keynote?";"KI BIG BANG Event";Gebucht;Keynote;;;
+17.09.2026;"Keynote?";"KI BIG BANG Event";Gebucht;Keynote;;;
+17.11.2026;"Speaker";"Retail Reshaped";Gebucht;Keynote;;;

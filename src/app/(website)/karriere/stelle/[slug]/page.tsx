@@ -2,7 +2,7 @@ import Button from "@/components/atoms/Button"
 import { DraftMarker } from "@/components/atoms/DraftMarker"
 import ContentBlock from "@/components/layout/ContentBlock"
 import { StructuredData } from "@/components/layout/StructuredData"
-import { T1PortableTextNew } from "@/components/molecules/T1PortableTextNew"
+import { T1PortableText } from "@/components/molecules/T1PortableText"
 import ContactSection from "@/components/sections/ContactSection"
 import ContentAccordion from "@/components/sections/ContentAccordion"
 import Hero from "@/components/sections/Hero"
@@ -169,7 +169,7 @@ export default async function CareerDetailPage({ params }: CareerDetailProps) {
     const accordionSections = [
         ...contentSections.map((section) => ({
             title: section.title,
-            content: <T1PortableTextNew value={section.blocks} />
+            content: <T1PortableText value={section.blocks} />
         })),
         {
             title: "Benefits",
@@ -254,16 +254,7 @@ export default async function CareerDetailPage({ params }: CareerDetailProps) {
 
                 {/* Contact */}
                 <ContentBlock>
-                    <ContactSection
-                        title="Lass uns über Software sprechen, die Wachstum schafft."
-                        contact={{
-                            name: "Klaus Kleber",
-                            role: "Director Business Development",
-                            imageUrl: "/images/culture/paul.png",
-                            phone: "+49 182 9983882",
-                            email: "hello@team-one.com"
-                        }}
-                    />
+                    <ContactSection title="Lass uns über Software sprechen, die Wachstum schafft." />
                 </ContentBlock>
             </main>
         </div>

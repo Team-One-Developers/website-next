@@ -2,10 +2,17 @@ import ContentBlock from "@/components/layout/ContentBlock"
 import ContactSection from "@/components/sections/ContactSection"
 import Hero from "@/components/sections/Hero"
 import HeroGradientBackdrop from "@/components/sections/HeroGradientBackdrop"
-import ImageTeaser from "@/components/sections/ImageTeaserNew"
+import ImageTeaser from "@/components/sections/ImageTeaser"
 import ServiceDetailSection from "@/components/sections/ServiceDetailSection"
 import { StoryCard } from "@/components/sections/SuccessStoriesGrid"
 import { storyList } from "@/data/stories"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+    title: "Strategie-Beratung",
+    description:
+        "Digitale Strategien, Produktvision und organisatorisches Enablement – für nachhaltige Geschäftstransformation."
+}
 
 export default function DigitalStrategyTransformationPage() {
     return (
@@ -51,13 +58,13 @@ export default function DigitalStrategyTransformationPage() {
                                 title: "Digital Strategy & Business Model Innovation",
                                 description:
                                     "Wir entwickeln digitale Strategien, die auf messbaren Geschäftswert ausgerichtet sind. Von der Analyse bestehender Wertschöpfungsketten über die Identifikation neuer Erlösmodelle bis zur Definition einer technologiegestützten Roadmap – wir schaffen Klarheit für die nächsten Schritte.",
-                                image: "/new/images/image-1.jpg"
+                                image: "/images/teaser-1.jpg"
                             },
                             {
                                 title: "Product & Platform Strategy",
                                 description:
                                     "Wir konzipieren digitale Produktstrategien und Plattformansätze, die Skalierbarkeit und Nutzerwert vereinen. Durch strukturierte Discovery-Prozesse, Business-Case-Validierung und MVP-Definition entstehen Produkte, die am Markt bestehen.",
-                                image: "/new/images/image-3.jpg"
+                                image: "/images/teaser-3.jpg"
                             },
                             {
                                 title: "Organizational Enablement & Change",

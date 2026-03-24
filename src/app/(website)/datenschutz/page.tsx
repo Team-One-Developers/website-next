@@ -1,11 +1,11 @@
 import ContentBlock from "@/components/layout/ContentBlock"
-import HeroGradientBackdrop from "@/components/sections/HeroGradientBackdrop"
 import Hero from "@/components/sections/Hero"
+import HeroGradientBackdrop from "@/components/sections/HeroGradientBackdrop"
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
     title: "Datenschutzerklärung",
-    description: "Erahre mehr darüber, wie wir mit deinen Daten umgehen."
+    description: "Erfahre mehr darüber, wie wir mit deinen Daten umgehen."
 }
 
 const Privacy = () => {

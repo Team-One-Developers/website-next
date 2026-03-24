@@ -8,7 +8,7 @@ import { Metadata } from "next"
 
 export const metadata: Metadata = {
     title: "Blog",
-    description: "Inside our creative minds."
+    description: "Technische Einblicke, Praxisberichte und Perspektiven aus unserer täglichen Arbeit."
 }
 
 const Blog = async () => {

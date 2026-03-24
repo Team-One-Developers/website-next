@@ -2,10 +2,17 @@ import ContentBlock from "@/components/layout/ContentBlock"
 import ContactSection from "@/components/sections/ContactSection"
 import Hero from "@/components/sections/Hero"
 import HeroGradientBackdrop from "@/components/sections/HeroGradientBackdrop"
-import ImageTeaser from "@/components/sections/ImageTeaserNew"
+import ImageTeaser from "@/components/sections/ImageTeaser"
 import ServicesOverview from "@/components/sections/ServicesOverview"
 import { StoryCard } from "@/components/sections/SuccessStoriesGrid"
 import { storyList } from "@/data/stories"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+    title: "Leistungen",
+    description:
+        "Software Engineering, Operational AI, Strategieberatung und Car-IT Technologies – unsere Leistungen für nachhaltige digitale Transformation."
+}
 
 export default function ServicesPage() {
     return (
@@ -43,7 +50,7 @@ export default function ServicesPage() {
                         description="Fundiertes Denken, praktische Erfahrung und echte Marktnähe: Wir teilen Einblicke in aktuelle Entwicklungen rund um digitale Transformation, KI, Plattformökonomie und moderne Softwarearchitekturen – immer mit dem Anspruch, konkrete Mehrwerte für Unternehmen zu schaffen."
                         buttonLabel="Insights"
                         buttonVariant="light"
-                        image="/new/images/paul-k5-neu.png"
+                        image="/images/paul-k5.png"
                     />
                 </ContentBlock>
 

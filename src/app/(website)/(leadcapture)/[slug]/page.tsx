@@ -1,13 +1,13 @@
-import Section from "@/components/layout/Section"
+import ContentBlock from "@/components/layout/ContentBlock"
 import StructuredData from "@/components/layout/StructuredData"
 import { T1PortableText } from "@/components/molecules/T1PortableText"
-import CTA from "@/components/sections/CTA"
+import ContactSection from "@/components/sections/ContactSection"
+import HeroGradientBackdrop from "@/components/sections/HeroGradientBackdrop"
 import LeadCaptureHero from "@/components/sections/LeadCaptureHero"
 import { organization } from "@/data/schemaOrg"
 import { client } from "@/sanity/lib/client"
 import { QUERY_ALL_LEADCAPTURES_DANGER_ONLY_FOR_STATIC_PARAMS, QUERY_SPECIFIC_LEADCAPTURE } from "@/sanity/queries"
 import { QUERY_ALL_LEADCAPTURES_DANGER_ONLY_FOR_STATIC_PARAMSResult } from "@/sanity/types"
-import cn from "@/utils/cn"
 import { Metadata } from "next"
 import { notFound } from "next/navigation"
 import type { WebPage, WithContext } from "schema-dts"
@@ -84,31 +84,36 @@ export default async function LeadCapturePage({ params }: LeadcaptureProps) {
 
     return (
         <HubspotProvider>
-            <div>
+            <div className="relative">
+                <HeroGradientBackdrop />
                 <StructuredData data={structuredData} />
                 {leadcapture.visibility !== "Public" && <DraftMarker />}
-                <LeadCaptureHero
-                    image={{
-                        src: leadcapture.heroImage?.asset?.url ?? "",
-                        alt: leadcapture.title,
-                        blurDataURL: leadcapture.heroImage?.asset?.metadata?.lqip ?? "",
-                        width: 1200,
-                        height: 630
-                    }}
-                    title={leadcapture.title}
-                    description={leadcapture.description}
-                    portalId={leadcapture.portalId}
-                    formId={leadcapture.formId}
-                />
-                <Section
-                    className={cn(
-                        "py-16 md:py-24 lg:py-36",
-                        leadcapture.contentTheme === "dark" ? "bg-t1-black text-t1-white" : "bg-t1-white text-t1-black"
-                    )}
-                >
-                    <T1PortableText value={leadcapture.content} />
-                </Section>
-                <CTA variant={leadcapture.cta} />
+
+                <main className="gap-vertical-inner relative z-10 flex flex-col">
+                    <ContentBlock>
+                        <LeadCaptureHero
+                            image={{
+                                src: leadcapture.heroImage?.asset?.url ?? "",
+                                alt: leadcapture.title,
+                                blurDataURL: leadcapture.heroImage?.asset?.metadata?.lqip ?? "",
+                                width: 1200,
+                                height: 630
+                            }}
+                            title={leadcapture.title}
+                            description={leadcapture.description}
+                            portalId={leadcapture.portalId}
+                            formId={leadcapture.formId}
+                        />
+                    </ContentBlock>
+
+                    <ContentBlock className="py-16 md:py-24 lg:py-36">
+                        <T1PortableText value={leadcapture.content} />
+                    </ContentBlock>
+
+                    <ContentBlock>
+                        <ContactSection />
+                    </ContentBlock>
+                </main>
             </div>
         </HubspotProvider>
     )
