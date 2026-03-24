@@ -1,4 +1,4 @@
-import ButtonNew from "@/components/atoms/ButtonNew"
+import Button from "@/components/atoms/Button"
 import cn from "@/utils/cn"
 import Image from "next/image"
 
@@ -67,7 +67,7 @@ export default function BenefitsGrid({ benefits, cta, className }: BenefitsGridP
                                 <h3 className="font-gteradisplay text-h3 text-black">{cta.title}</h3>
                                 <p className="text-small text-black">{cta.description}</p>
                             </div>
-                            <ButtonNew label={cta.buttonLabel} href={cta.buttonHref} variant="outline" />
+                            <Button label={cta.buttonLabel} href={cta.buttonHref} variant="outline" />
                         </div>
                     </div>
                 )}

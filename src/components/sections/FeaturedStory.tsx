@@ -1,4 +1,4 @@
-import ButtonNew from "@/components/atoms/ButtonNew"
+import Button from "@/components/atoms/Button"
 import cn from "@/utils/cn"
 import Image from "next/image"
 
@@ -56,8 +56,8 @@ export default function FeaturedStory({
                         className="h-auto brightness-0"
                     />
                     <h2 className="font-gteradisplay text-h2 max-w-146 text-black">{title}</h2>
-                    <p className="text-medium max-w-119 text-black">{description}</p>
-                    <ButtonNew label={buttonLabel} variant="light" href={buttonHref} />
+                    <p className="text-medium max-w-119 whitespace-pre-line text-black">{description}</p>
+                    <Button label={buttonLabel} variant="dark" href={buttonHref} />
                 </div>
             </div>
 
@@ -88,7 +88,7 @@ export default function FeaturedStory({
                     <div className="gap-padding-md relative z-10 flex w-full flex-col">
                         <h3 className="font-gteradisplay text-h3 text-white">{rightTitle}</h3>
                         <p className="text-small text-white-soft">{rightDescription}</p>
-                        <ButtonNew label={rightButtonLabel} variant="light" href={rightButtonHref} />
+                        <Button label={rightButtonLabel} variant="light" href={rightButtonHref} />
                     </div>
                 )}
             </div>

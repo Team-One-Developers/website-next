@@ -1,12 +1,12 @@
-import ButtonNew from "@/components/atoms/ButtonNew"
+import Button from "@/components/atoms/Button"
 import Eyebrow from "@/components/atoms/Eyebrow"
-import EventCard from "@/components/molecules/EventCard"
+import EventCardHorizontal from "@/components/molecules/EventCardHorizontal"
 import cn from "@/utils/cn"
 
 interface EventItem {
     title: string
     description: string
-    date: string
+    dateLocation: string
     speakerName: string
     speakerRole: string
     speakerImage: string
@@ -29,26 +29,26 @@ export default function EventsSection({
     title,
     description,
     buttonLabel = "Alle Events",
-    buttonHref = "/events",
+    buttonHref = "/veranstaltungen",
     events,
     className
 }: EventsSectionProps) {
     return (
         <section className={cn("gap-grid-gutter flex flex-col lg:flex-row", className)}>
             {/* Left: intro text */}
-            <div className="gap-lg flex w-full shrink-0 flex-col lg:w-[437px]">
+            <div className="gap-lg flex w-full shrink-0 flex-col lg:w-77">
                 <Eyebrow label={eyebrowLabel} />
                 <div className="gap-sm flex flex-col">
                     <h2 className="font-gteradisplay text-d2 text-black">{title}</h2>
                     <p className="text-small text-black-soft">{description}</p>
                 </div>
-                <ButtonNew label={buttonLabel} variant="primary" href={buttonHref} />
+                <Button label={buttonLabel} variant="primary" href={buttonHref} />
             </div>
 
             {/* Right: event cards */}
             <div className="gap-grid-gutter flex flex-1 flex-col">
                 {events.map((event) => (
-                    <EventCard key={event.title} {...event} />
+                    <EventCardHorizontal key={event.title} {...event} />
                 ))}
             </div>
         </section>

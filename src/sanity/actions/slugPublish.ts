@@ -21,7 +21,7 @@ export function createAsyncPublishAction(originalAction: DocumentActionComponent
                 // custom slug? ==> if so we want to keep it
                 if (cleanSlug && cleanSlug !== slugify(title)) {
                     const combinedSlug = draftPrefix + cleanSlug
-                    const path = `${props.type === "blog" ? "/blog" : props.type === "career" ? "/career/job" : ""}/${combinedSlug}`
+                    const path = `${props.type === "blog" ? "/blog" : props.type === "career" ? "/karriere/stelle" : ""}/${combinedSlug}`
                     const link = `https://www.team-one.de${path}`
 
                     await patch.execute([{ set: { slug: { current: combinedSlug }, path, link } }])
@@ -30,7 +30,7 @@ export function createAsyncPublishAction(originalAction: DocumentActionComponent
                 // no custom slug, so we calculate it from the title and prefix it with draft- if needed
                 else {
                     const slug = draftPrefix + slugify(title)
-                    const path = `${props.type === "blog" ? "/blog" : props.type === "career" ? "/career/job" : ""}/${slug}`
+                    const path = `${props.type === "blog" ? "/blog" : props.type === "career" ? "/karriere/stelle" : ""}/${slug}`
                     const link = `https://www.team-one.de${path}`
 
                     await patch.execute([{ set: { slug: { current: slug }, path, link } }])

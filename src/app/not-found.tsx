@@ -1,4 +1,4 @@
-import ButtonNew from "@/components/atoms/ButtonNew"
+import Button from "@/components/atoms/Button"
 import ContentBlock from "@/components/layout/ContentBlock"
 import HeroGradientBackdrop from "@/components/sections/HeroGradientBackdrop"
 
@@ -16,7 +16,7 @@ const NotFound = () => {
                             Entschuldigung, wir konnten die von Ihnen gesuchte Seite nicht finden.
                         </p>
                         <div className="mt-10 flex items-center justify-center">
-                            <ButtonNew label="Zurück zur Startseite" href="/" variant="primary" />
+                            <Button label="Zurück zur Startseite" href="/" variant="dark" />
                         </div>
                     </div>
                 </ContentBlock>

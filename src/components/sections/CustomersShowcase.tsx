@@ -1,6 +1,6 @@
 "use client"
 
-import ButtonNew from "@/components/atoms/ButtonNew"
+import Button from "@/components/atoms/Button"
 import Eyebrow from "@/components/atoms/Eyebrow"
 import CustomerCaseCard from "@/components/molecules/CustomerCaseCard"
 import LogoMarquee from "@/components/molecules/LogoMarquee"
@@ -30,7 +30,7 @@ export default function CustomersShowcase({
     eyebrowLabel,
     title,
     buttonLabel = "Alle Success Stories",
-    buttonHref = "/customers",
+    buttonHref = "/referenzen",
     cases,
     logos,
     className
@@ -54,7 +54,7 @@ export default function CustomersShowcase({
                             <Eyebrow label={eyebrowLabel} />
                             <h2 className="font-gteradisplay text-h2 text-black">{title}</h2>
                         </div>
-                        <ButtonNew label={buttonLabel} variant="primary" href={buttonHref} />
+                        <Button label={buttonLabel} variant="primary" href={buttonHref} />
                     </div>
 
                     {/* Cards carousel */}
@@ -104,7 +104,7 @@ export default function CustomersShowcase({
                 </div>
 
                 {/* Logo marquee */}
-                <LogoMarquee logos={logos} fadeColor="primary-soft" />
+                <LogoMarquee fadeColor="primary-soft" />
             </div>
         </section>
     )

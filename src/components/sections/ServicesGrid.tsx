@@ -1,4 +1,4 @@
-import ButtonNew from "@/components/atoms/ButtonNew"
+import Button from "@/components/atoms/Button"
 import cn from "@/utils/cn"
 import Image from "next/image"
 
@@ -25,33 +25,40 @@ interface ServicesGridProps {
 
 function ServiceCard({ title, description, pictogramUrl, buttonLabel = "Mehr erfahren", href }: ServiceItem) {
     return (
-        <div className="gap-lg flex flex-col">
+        <div className="gap-lg row-span-4 grid grid-rows-subgrid">
             {/* Pictogram */}
-            {pictogramUrl && (
-                <div className="h-25 w-20">
+            <div className="h-25 w-20">
+                {pictogramUrl && (
                     <Image src={pictogramUrl} alt="" width={80} height={100} className="h-full w-full object-contain" />
-                </div>
-            )}
-
-            {/* Text block */}
-            <div className="gap-xs flex flex-col">
-                <h3 className="font-gteradisplay text-h2 max-w-115 text-black">{title}</h3>
-                <p className="text-small text-black-soft max-w-115">{description}</p>
+                )}
             </div>
 
-            <ButtonNew label={buttonLabel} variant="primary" href={href} className="mt-auto self-start" />
+            {/* Title */}
+            <h3 className="font-gteradisplay text-h2 max-w-115 self-start text-black">{title}</h3>
+
+            {/* Description */}
+            <p className="text-small text-black-soft max-w-115">{description}</p>
+
+            {/* Button */}
+            <Button label={buttonLabel} variant="primary" href={href} className="self-start" />
         </div>
     )
 }
 
 function CTACard({ title, description, buttonLabel, href }: ServicesCTACard) {
     return (
-        <div className="gap-lg bg-primary-soft py-padding-xl flex flex-1 flex-col justify-end rounded-lg px-12">
-            <div className="gap-xs flex flex-col text-black">
-                <h3 className="font-gteradisplay text-h3">{title}</h3>
-                <p className="text-small">{description}</p>
-            </div>
-            <ButtonNew label={buttonLabel} variant="outline" href={href} />
+        <div className="gap-lg bg-primary-soft px-padding-xl py-padding-xl row-span-4 grid grid-rows-subgrid self-end rounded-xl">
+            {/* Empty spacer for pictogram row */}
+            <div />
+
+            {/* Title */}
+            <h3 className="font-gteradisplay text-h2 max-w-115 self-start text-black">{title}</h3>
+
+            {/* Description */}
+            <p className="text-small max-w-115 text-black">{description}</p>
+
+            {/* Button */}
+            <Button label={`${buttonLabel} →`} variant="outline" href={href} className="self-start" />
         </div>
     )
 }
@@ -65,14 +72,14 @@ export default function ServicesGrid({ services, cta, className }: ServicesGridP
     return (
         <section className={cn("gap-vertical-inner flex flex-col", className)}>
             {/* Top row */}
-            <div className="gap-grid-gutter grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+            <div className="gap-grid-gutter grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:grid-rows-[auto_auto_auto_auto]">
                 {topRow.map((service) => (
                     <ServiceCard key={service.title} {...service} />
                 ))}
             </div>
 
             {/* Bottom row */}
-            <div className="gap-grid-gutter grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+            <div className="gap-grid-gutter grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:grid-rows-[auto_auto_auto_auto]">
                 {bottomRow.map((service) => (
                     <ServiceCard key={service.title} {...service} />
                 ))}

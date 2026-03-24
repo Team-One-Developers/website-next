@@ -1,4 +1,4 @@
-import ButtonNew from "@/components/atoms/ButtonNew"
+import Button from "@/components/atoms/Button"
 import Tag from "@/components/atoms/Tag"
 import cn from "@/utils/cn"
 import Image from "next/image"
@@ -82,7 +82,7 @@ export default function EventCard({
 
             {/* Button */}
             <div className="px-padding-lg">
-                <ButtonNew label={buttonLabel} variant="primary" href={href} />
+                <Button label={buttonLabel} variant="primary" href={href} />
             </div>
         </div>
     )

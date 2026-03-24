@@ -8,12 +8,12 @@ module.exports = {
         "/robots.txt",
         "/draft-*",
         "/blog/draft-*",
-        "/career/job/draft-*",
+        "/karriere/stelle/draft-*",
         "/studio",
         "/sandbox",
-        "/services/ai-data-analytics",
-        "/services/digital-strategy-transformation",
-        "/services/software-engineering"
+        "/leistungen/ai-data-analytics",
+        "/leistungen/digital-strategy-transformation",
+        "/leistungen/software-engineering"
     ],
     transform: async (config, path) => {
         return {
