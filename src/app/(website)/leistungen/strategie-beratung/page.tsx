@@ -53,24 +53,22 @@ export default function DigitalStrategyTransformationPage() {
                 <ContentBlock>
                     <ServiceDetailSection
                         sectionTitle={"Unsere Schwerpunkte in\nDigital-Strategie & Transformation"}
+                        image="/images/strategy.jpg"
                         items={[
                             {
                                 title: "Digital Strategy & Business Model Innovation",
                                 description:
-                                    "Wir entwickeln digitale Strategien, die auf messbaren Geschäftswert ausgerichtet sind. Von der Analyse bestehender Wertschöpfungsketten über die Identifikation neuer Erlösmodelle bis zur Definition einer technologiegestützten Roadmap – wir schaffen Klarheit für die nächsten Schritte.",
-                                image: "/images/teaser-1.jpg"
+                                    "Wir entwickeln digitale Strategien, die auf messbaren Geschäftswert ausgerichtet sind. Von der Analyse bestehender Wertschöpfungsketten über die Identifikation neuer Erlösmodelle bis zur Definition einer technologiegestützten Roadmap – wir schaffen Klarheit für die nächsten Schritte."
                             },
                             {
                                 title: "Product & Platform Strategy",
                                 description:
-                                    "Wir konzipieren digitale Produktstrategien und Plattformansätze, die Skalierbarkeit und Nutzerwert vereinen. Durch strukturierte Discovery-Prozesse, Business-Case-Validierung und MVP-Definition entstehen Produkte, die am Markt bestehen.",
-                                image: "/images/teaser-3.jpg"
+                                    "Wir konzipieren digitale Produktstrategien und Plattformansätze, die Skalierbarkeit und Nutzerwert vereinen. Durch strukturierte Discovery-Prozesse, Business-Case-Validierung und MVP-Definition entstehen Produkte, die am Markt bestehen."
                             },
                             {
                                 title: "Organizational Enablement & Change",
                                 description:
-                                    "Wir befähigen Organisationen, digitale Veränderungen nachhaltig zu verankern. Durch abteilungsspezifische Enablement-Programme, Workshops und Hackathons schaffen wir die Voraussetzungen für eigenständige Weiterentwicklung und kulturellen Wandel.",
-                                image: "/images/culture/officelife.webp"
+                                    "Wir befähigen Organisationen, digitale Veränderungen nachhaltig zu verankern. Durch abteilungsspezifische Enablement-Programme, Workshops und Hackathons schaffen wir die Voraussetzungen für eigenständige Weiterentwicklung und kulturellen Wandel."
                             }
                         ]}
                     />
@@ -85,13 +83,7 @@ export default function DigitalStrategyTransformationPage() {
                 </ContentBlock>
 
                 <ContentBlock>
-                    <ImageTeaser
-                        title="Erfahrung, die Leistung skaliert"
-                        description="Unsere Ingenieure sind nicht nur technisch stark – sie verstehen Geschäftsmodelle, Nutzer:innen und Märkte. So entstehen Lösungen, die wirklich wirken."
-                        buttonLabel="Online"
-                        buttonVariant="light"
-                        image="/images/culture/officelife.webp"
-                    />
+                    <ImageTeaser variant="software" />
                 </ContentBlock>
 
                 <ContentBlock>

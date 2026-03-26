@@ -54,12 +54,7 @@ export default async function CareerPage() {
 
                 {/* Image Teaser */}
                 <ContentBlock>
-                    <ImageTeaser
-                        title="Unser Team - Dein Playground"
-                        description="Wir verstehen uns nicht einfach nur als Arbeitgeber, sondern viel mehr als aktiver Begleiter auf dem Weg zu deinen individuellen Zielen. Unser Anspruch ist es, den Menschen in den Mittelpunkt unseres unternehmerischen Handelns zu stellen – und dabei fangen wir bei uns im Team an."
-                        image="/images/team-collaboration.jpg"
-                        priority
-                    />
+                    <ImageTeaser variant="team" priority />
                 </ContentBlock>
 
                 <ContentBlock>

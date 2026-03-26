@@ -20,9 +20,7 @@ export default function EventCard({ title, date, client, category, image, classN
                     <Image src={image} alt={title} fill className="object-cover" />
                 ) : (
                     <div className="flex h-full w-full items-end bg-black p-6">
-                        {client && (
-                            <span className="font-gteratext text-small text-white/70">{client}</span>
-                        )}
+                        {client && <span className="font-gteratext text-small text-white/70">{client}</span>}
                     </div>
                 )}
             </div>
