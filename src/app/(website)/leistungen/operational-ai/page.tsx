@@ -53,24 +53,22 @@ export default function AiDataAnalyticsPage() {
                 <ContentBlock>
                     <ServiceDetailSection
                         sectionTitle={"Unsere Schwerpunkte in\nOperational AI & Data Analytics"}
+                        image="/images/aii.jpg"
                         items={[
                             {
                                 title: "AI Strategy & Use Case Development",
                                 description:
-                                    "Wir identifizieren die wirkungsvollsten KI-Anwendungsfälle für Ihr Unternehmen, bewerten deren Machbarkeit und entwickeln eine umsetzbare Roadmap. Durch strukturiertes Use-Case-Landscaping und Readiness-Assessments schaffen wir die Grundlage für nachhaltige KI-Initiativen.",
-                                image: "/images/teaser-1.jpg"
+                                    "Wir identifizieren die wirkungsvollsten KI-Anwendungsfälle für Ihr Unternehmen, bewerten deren Machbarkeit und entwickeln eine umsetzbare Roadmap. Durch strukturiertes Use-Case-Landscaping und Readiness-Assessments schaffen wir die Grundlage für nachhaltige KI-Initiativen."
                             },
                             {
                                 title: "LLM & Generative AI Solutions",
                                 description:
-                                    "Wir entwickeln maßgeschneiderte LLM-basierte Anwendungen – von intelligenten Assistenzsystemen über automatisierte Textverarbeitung bis hin zu Retrieval-Augmented Generation (RAG). Unsere Lösungen integrieren sich nahtlos in bestehende Systemlandschaften und skalieren zuverlässig.",
-                                image: "/images/teaser-3.jpg"
+                                    "Wir entwickeln maßgeschneiderte LLM-basierte Anwendungen – von intelligenten Assistenzsystemen über automatisierte Textverarbeitung bis hin zu Retrieval-Augmented Generation (RAG). Unsere Lösungen integrieren sich nahtlos in bestehende Systemlandschaften und skalieren zuverlässig."
                             },
                             {
                                 title: "Data Engineering & Analytics Platforms",
                                 description:
-                                    "Wir bauen skalierbare Datenplattformen, die heterogene Quellen zusammenführen und Echtzeit-Analysen ermöglichen. Von Data Mesh-Architekturen bis zu modernen Lakehouse-Ansätzen schaffen wir die Infrastruktur für datengetriebene Entscheidungen.",
-                                image: "/images/culture/officelife.webp"
+                                    "Wir bauen skalierbare Datenplattformen, die heterogene Quellen zusammenführen und Echtzeit-Analysen ermöglichen. Von Data Mesh-Architekturen bis zu modernen Lakehouse-Ansätzen schaffen wir die Infrastruktur für datengetriebene Entscheidungen."
                             }
                         ]}
                     />
@@ -85,13 +83,7 @@ export default function AiDataAnalyticsPage() {
                 </ContentBlock>
 
                 <ContentBlock>
-                    <ImageTeaser
-                        title="Erfahrung, die Leistung skaliert"
-                        description="Unsere Ingenieure sind nicht nur technisch stark – sie verstehen Geschäftsmodelle, Nutzer:innen und Märkte. So entstehen Lösungen, die wirklich wirken."
-                        buttonLabel="Online"
-                        buttonVariant="light"
-                        image="/images/culture/officelife.webp"
-                    />
+                    <ImageTeaser variant="software" />
                 </ContentBlock>
 
                 <ContentBlock>

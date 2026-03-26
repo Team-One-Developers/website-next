@@ -54,24 +54,22 @@ export default function CarItTechnologiesPage() {
                 <ContentBlock>
                     <ServiceDetailSection
                         sectionTitle={"Unsere Schwerpunkte in\nCar-IT Technologies"}
+                        image="/images/inframotive.jpg"
                         items={[
                             {
                                 title: "Automotive Platform Engineering",
                                 description:
-                                    "Wir entwickeln skalierbare Plattformen für den digitalen Fahrzeugvertrieb, After-Sales-Services und Connected-Car-Ökosysteme. Unsere Architekturansätze ermöglichen die Integration heterogener Systeme und schaffen die Basis für neue digitale Geschäftsmodelle im Automobilumfeld.",
-                                image: "/images/teaser-1.jpg"
+                                    "Wir entwickeln skalierbare Plattformen für den digitalen Fahrzeugvertrieb, After-Sales-Services und Connected-Car-Ökosysteme. Unsere Architekturansätze ermöglichen die Integration heterogener Systeme und schaffen die Basis für neue digitale Geschäftsmodelle im Automobilumfeld."
                             },
                             {
                                 title: "Vehicle Data & IoT Integration",
                                 description:
-                                    "Wir konzipieren und implementieren Lösungen für die Erfassung, Verarbeitung und Analyse von Fahrzeugdaten in Echtzeit. Von Telematik-Plattformen über kameragestützte Fahrzeugerkennung bis hin zu IoT-Cloud-Architekturen – wir machen Fahrzeugdaten zu einem strategischen Asset.",
-                                image: "/images/teaser-3.jpg"
+                                    "Wir konzipieren und implementieren Lösungen für die Erfassung, Verarbeitung und Analyse von Fahrzeugdaten in Echtzeit. Von Telematik-Plattformen über kameragestützte Fahrzeugerkennung bis hin zu IoT-Cloud-Architekturen – wir machen Fahrzeugdaten zu einem strategischen Asset."
                             },
                             {
                                 title: "Digital Mobility Services",
                                 description:
-                                    "Wir entwickeln digitale Serviceplattformen für Mobilitätsanbieter – von Abo-Modellen und Flatrate-Angeboten über Aggregationsplattformen bis hin zu integrierten Payment- und Billing-Architekturen. Unsere Lösungen verbinden Nutzerzentrierung mit operativer Skalierbarkeit.",
-                                image: "/images/culture/officelife.webp"
+                                    "Wir entwickeln digitale Serviceplattformen für Mobilitätsanbieter – von Abo-Modellen und Flatrate-Angeboten über Aggregationsplattformen bis hin zu integrierten Payment- und Billing-Architekturen. Unsere Lösungen verbinden Nutzerzentrierung mit operativer Skalierbarkeit."
                             }
                         ]}
                     />
@@ -86,13 +84,7 @@ export default function CarItTechnologiesPage() {
                 </ContentBlock>
 
                 <ContentBlock>
-                    <ImageTeaser
-                        title="Erfahrung, die Leistung skaliert"
-                        description="Unsere Ingenieure sind nicht nur technisch stark – sie verstehen Geschäftsmodelle, Nutzer:innen und Märkte. So entstehen Lösungen, die wirklich wirken."
-                        buttonLabel="Online"
-                        buttonVariant="light"
-                        image="/images/culture/officelife.webp"
-                    />
+                    <ImageTeaser variant="software" />
                 </ContentBlock>
 
                 <ContentBlock>

@@ -225,18 +225,7 @@ export default function InsightsPage() {
                         <TabBar tabs={blogCategories} active={blogCategory} onChange={setBlogCategory} />
 
                         {/* Featured blog teaser */}
-                        <ImageTeaser
-                            image="/images/customers/porsche-cropped.jpg"
-                            title="Handelsblatt Change Congress in Essen"
-                            description="Top-Brands, führende Händler & Experten – für Wissen, Wachstum & wertvolle Verbindungen."
-                            buttonLabel="Mehr erfahren"
-                            buttonHref="/blog/handelsblatt-change-congress"
-                            author={{
-                                name: "by Hannah",
-                                role: "Marketing & Organisation",
-                                avatarUrl: "/images/culture/coding.webp"
-                            }}
-                        />
+                        <ImageTeaser variant="insights" />
 
                         {/* Blog cards grid */}
                         <div className="gap-grid-gutter grid grid-cols-1 grid-rows-[repeat(6,auto)] md:grid-cols-2 md:grid-rows-[repeat(6,auto)] lg:grid-cols-3 lg:grid-rows-[repeat(6,auto)]">

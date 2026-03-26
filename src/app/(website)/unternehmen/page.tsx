@@ -95,12 +95,7 @@ export default function CulturePage() {
 
                 {/* Hero Image */}
                 <ContentBlock>
-                    <ImageTeaser
-                        image="/images/office-interior.jpg"
-                        alt="Team One Office"
-                        showOverlay={false}
-                        priority
-                    />
+                    <ImageTeaser variant="office" priority />
                 </ContentBlock>
 
                 {/* Content Block — two-column text */}
@@ -186,14 +181,7 @@ export default function CulturePage() {
                 </ContentBlock>
 
                 <ContentBlock>
-                    <ImageTeaser
-                        title="Werde Teil unseres Teams"
-                        description="Du brennst für Software, AI und Innovationen? Team One bietet einen attraktiven Playground für ambitionierte Tech-Minds - im Bereich Softwareengineering, AI-Engineering, Strategieberatung oder im Bereich Fahrzeugarchitektur."
-                        buttonLabel="Karriere"
-                        buttonVariant="primary"
-                        buttonHref="/karriere"
-                        image="/images/team-collaboration.jpg"
-                    />
+                    <ImageTeaser variant="karriere" />
                 </ContentBlock>
 
                 {/* Business Partner Section

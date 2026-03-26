@@ -10,7 +10,6 @@ module.exports = {
         "/blog/draft-*",
         "/karriere/stelle/draft-*",
         "/studio",
-        "/sandbox",
         "/leistungen/ai-data-analytics",
         "/leistungen/digital-strategy-transformation",
         "/leistungen/software-engineering"

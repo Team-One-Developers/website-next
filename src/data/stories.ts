@@ -58,7 +58,7 @@ export const stories = {
         description:
             "Im Rahmen eines strategischen Plattformprojekts wurde für ein Spin-Off der Axel Springer Gruppe die Grundlage für ein herstellerunabhängiges digitales Ökosystem für Fahrzeugdienstleistungen entwickelt. Ziel war es, ein skalierbares B2B-Geschäftsmodell inklusive innovativer Service-Bundles und Flatrate-Angebote zu konzipieren sowie eine integrierte Payment- und Billing-Architektur für abonnementbasierte Leistungen aufzubauen.",
         image: "/images/arrows.jpg",
-        eyebrowLabel: "Strategy",
+        eyebrowLabel: "Strategie",
         buttonLabel: "Kundenreferenz",
         href: "/referenzen/axelspringer",
         greenFilter: false

@@ -45,13 +45,7 @@ export default function ServicesPage() {
                 </ContentBlock>
 
                 <ContentBlock>
-                    <ImageTeaser
-                        title="Impulse für die Zukunft digitaler Wertschöpfung"
-                        description="Fundiertes Denken, praktische Erfahrung und echte Marktnähe: Wir teilen Einblicke in aktuelle Entwicklungen rund um digitale Transformation, KI, Plattformökonomie und moderne Softwarearchitekturen – immer mit dem Anspruch, konkrete Mehrwerte für Unternehmen zu schaffen."
-                        buttonLabel="Insights"
-                        buttonVariant="light"
-                        image="/images/paul-k5.png"
-                    />
+                    <ImageTeaser variant="einblicke" />
                 </ContentBlock>
 
                 <ContentBlock>

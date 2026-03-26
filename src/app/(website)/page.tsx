@@ -54,13 +54,7 @@ const Home = () => {
                     TODO ADJUST CONTENT WITH PAUL
                     */}
                 <ContentBlock>
-                    <ImageTeaser
-                        title="Unsere Werte sind unser Kompass."
-                        description="Nachhaltigkeit, Transparenz und partnerschaftliche Zusammenarbeit – das sind die Grundpfeiler unserer Arbeit."
-                        buttonLabel="Mehr über uns"
-                        buttonHref="/unternehmen"
-                        image="/images/teaser-1.jpg"
-                    />
+                    <ImageTeaser variant="werte" />
                 </ContentBlock>
 
                 {/*
@@ -102,13 +96,7 @@ const Home = () => {
                 </ContentBlock>
 
                 <ContentBlock>
-                    <ImageTeaser
-                        title="Wir steigern die Wettbewerbsfähigkeit von Unternehmen in einer digitalen Welt."
-                        description="Von Enterprise Software Engineering über Operational AI Implementierung bis hin zur Strategieberatung - wir sind ein spezialisiertes Tech-Powerhouse für komplexe und nachhaltige Technologie- und Geschäftstransformation."
-                        buttonLabel="Unsere Leistungen"
-                        buttonHref="/leistungen"
-                        image="/images/kaprun.jpg"
-                    />
+                    <ImageTeaser variant="leistungen" />
                 </ContentBlock>
 
                 <ContentBlock>

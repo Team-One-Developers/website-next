@@ -54,42 +54,37 @@ export default function SoftwareEngineeringPage() {
                 <ContentBlock>
                     <ServiceDetailSection
                         sectionTitle={"Unsere Schwerpunkte im\nSoftware Engineering"}
+                        image="/images/software-engineering.jpg"
                         items={[
                             {
                                 title: "Digital Platforms & Application Engineering",
                                 description:
-                                    "Wir entwickeln skalierbare, modulare Plattformen und Anwendungen für komplexe Enterprise-Ökosysteme. Unsere Lösungen verbinden Daten, Prozesse und Nutzererlebnisse zu performanten, zukunftsfähigen Systemen. Dabei setzen wir auf moderne Architekturprinzipien, API-first-Design und nachhaltige Softwarequalität.",
-                                image: "/images/software-engineering.jpg"
+                                    "Wir entwickeln skalierbare, modulare Plattformen und Anwendungen für komplexe Enterprise-Ökosysteme. Unsere Lösungen verbinden Daten, Prozesse und Nutzererlebnisse zu performanten, zukunftsfähigen Systemen. Dabei setzen wir auf moderne Architekturprinzipien, API-first-Design und nachhaltige Softwarequalität."
                             },
                             {
                                 title: "Enterprise Modernization & System Transformation",
                                 description:
-                                    "Wir modernisieren Legacy-Systeme und überführen komplexe IT-Landschaften in cloud-native Architekturen. Unser Ziel: höhere Flexibilität, geringere Betriebskosten und schnellere Innovationszyklen. Dabei verbinden wir strategische Planung mit technischer Exzellenz und minimaler Betriebsunterbrechung.",
-                                image: "/images/software-engineering.jpg"
+                                    "Wir modernisieren Legacy-Systeme und überführen komplexe IT-Landschaften in cloud-native Architekturen. Unser Ziel: höhere Flexibilität, geringere Betriebskosten und schnellere Innovationszyklen. Dabei verbinden wir strategische Planung mit technischer Exzellenz und minimaler Betriebsunterbrechung."
                             },
                             {
                                 title: "Architecture Advisory & Due Diligence Consulting",
                                 description:
-                                    "Wir schaffen Transparenz in komplexen Technologie-Landschaften und bewerten Systeme nach Qualität, Skalierbarkeit und Zukunftsfähigkeit. Ob Architektur-Audit, Modernisierungsstrategie oder Tech Due Diligence – wir liefern faktenbasierte Entscheidungsgrundlagen. Unser Fokus liegt auf technischer Exzellenz, Investitionssicherheit und nachhaltiger Weiterentwicklung.",
-                                image: "/images/software-engineering.jpg"
+                                    "Wir schaffen Transparenz in komplexen Technologie-Landschaften und bewerten Systeme nach Qualität, Skalierbarkeit und Zukunftsfähigkeit. Ob Architektur-Audit, Modernisierungsstrategie oder Tech Due Diligence – wir liefern faktenbasierte Entscheidungsgrundlagen. Unser Fokus liegt auf technischer Exzellenz, Investitionssicherheit und nachhaltiger Weiterentwicklung."
                             },
                             {
                                 title: "Cloud Security",
                                 description:
-                                    "Wir sichern Cloud-Umgebungen über alle Ebenen hinweg – von Infrastruktur bis Governance. Unsere Security-Konzepte gewährleisten Compliance, Datenschutz und resiliente Betriebsmodelle. Dabei kombinieren wir technisches Know-how mit Best Practices aus DevSecOps und Cloud Architecture und begleiten komplexe Angriffssimulationen.",
-                                image: "/images/software-engineering.jpg"
+                                    "Wir sichern Cloud-Umgebungen über alle Ebenen hinweg – von Infrastruktur bis Governance. Unsere Security-Konzepte gewährleisten Compliance, Datenschutz und resiliente Betriebsmodelle. Dabei kombinieren wir technisches Know-how mit Best Practices aus DevSecOps und Cloud Architecture und begleiten komplexe Angriffssimulationen."
                             },
                             {
                                 title: "Accessibility Auditing",
                                 description:
-                                    "Wir prüfen digitale Produkte auf Barrierefreiheit, Nutzbarkeit und gesetzliche Konformität. Dabei kombinieren wir technische Analyse mit praxisnahen Empfehlungen zur Optimierung. Unser Ziel: digitale Erlebnisse, die für alle Menschen zugänglich und intuitiv nutzbar sind.",
-                                image: "/images/software-engineering.jpg"
+                                    "Wir prüfen digitale Produkte auf Barrierefreiheit, Nutzbarkeit und gesetzliche Konformität. Dabei kombinieren wir technische Analyse mit praxisnahen Empfehlungen zur Optimierung. Unser Ziel: digitale Erlebnisse, die für alle Menschen zugänglich und intuitiv nutzbar sind."
                             },
                             {
                                 title: "AI-powered Engineering Productivity",
                                 description:
-                                    "Wir steigern Produktivität und Codequalität durch KI-gestützte Entwicklungsprozesse. Unsere Lösungen automatisieren Dokumentation, Code-Reviews und Testgenerierung. So entsteht intelligentes Engineering, das Geschwindigkeit, Qualität und Effizienz vereint.",
-                                image: "/images/software-engineering.jpg"
+                                    "Wir steigern Produktivität und Codequalität durch KI-gestützte Entwicklungsprozesse. Unsere Lösungen automatisieren Dokumentation, Code-Reviews und Testgenerierung. So entsteht intelligentes Engineering, das Geschwindigkeit, Qualität und Effizienz vereint."
                             }
                         ]}
                     />
@@ -106,18 +101,7 @@ export default function SoftwareEngineeringPage() {
 
                 {/* Image Teaser */}
                 <ContentBlock>
-                    <ImageTeaser
-                        title="Erfahrung, die Leistung skaliert"
-                        description="Unsere Ingenieure sind nicht nur technisch stark – sie verstehen Geschäftsmodelle, Nutzer:innen und Märkte. So entstehen Lösungen, die wirklich wirken."
-                        buttonLabel="Online"
-                        buttonVariant="light"
-                        image="/images/culture/officelife.webp"
-                        author={{
-                            name: "by Hannah",
-                            role: "Marketing & Organisation",
-                            avatarUrl: "/images/teaser-2.jpg"
-                        }}
-                    />
+                    <ImageTeaser variant="inframotive" />
                 </ContentBlock>
 
                 {/* Contact */}

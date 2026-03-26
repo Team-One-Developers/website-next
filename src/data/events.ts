@@ -46,7 +46,10 @@ export function formatEventDate(startDate: string, endDate?: string): string {
     return `${startDay}. ${startMonth} – ${endDay}. ${endMonth} ${startYear}`
 }
 
-export function getUpcomingEvents(events: EventData[], today: string = new Date().toISOString().slice(0, 10)): EventData[] {
+export function getUpcomingEvents(
+    events: EventData[],
+    today: string = new Date().toISOString().slice(0, 10)
+): EventData[] {
     return events.filter((e) => (e.endDate ?? e.startDate) >= today)
 }
 
