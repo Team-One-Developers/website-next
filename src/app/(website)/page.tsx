@@ -1,12 +1,14 @@
 import ContentBlock from "@/components/layout/ContentBlock"
 import ContactSection from "@/components/sections/ContactSection"
-import EventsSection from "@/components/sections/EventsSection"
 import Hero from "@/components/sections/Hero"
 import HeroGradientBackdrop from "@/components/sections/HeroGradientBackdrop"
 import ImageTeaser from "@/components/sections/ImageTeaser"
 import ServicesOverview from "@/components/sections/ServicesOverview"
 import StatementSection from "@/components/sections/StatementSection"
+import StoriesGrid from "@/components/sections/StoriesGrid"
+import type { SuccessStory } from "@/components/sections/SuccessStoriesGrid"
 import { StoryCard } from "@/components/sections/SuccessStoriesGrid"
+import { aidArticles } from "@/data/aidArticles"
 import { storyList } from "@/data/stories"
 import type { Metadata } from "next"
 
@@ -15,6 +17,15 @@ export const metadata: Metadata = {
     description:
         "Team One ist Technologie-Beratungspartner für digitale Produkte, skalierbare Architekturen und KI-gestützte Geschäftsmodelle – strategisch, datengetrieben, umsetzungsstark."
 }
+
+const aidStories: SuccessStory[] = aidArticles.map((article) => ({
+    title: article.title,
+    description: article.teaser,
+    image: article.image,
+    eyebrowLabel: `${article.series} #${article.episode} · ${article.guest.company}`,
+    buttonLabel: "Zum Interview",
+    href: `/einblicke/aid-magazin/${article.slug}`
+}))
 
 const Home = () => {
     return (
@@ -57,12 +68,16 @@ const Home = () => {
                     <ImageTeaser variant="werte" />
                 </ContentBlock>
 
+                <ContentBlock>
+                    <StoriesGrid title="AI:D Magazin" stories={aidStories} />
+                </ContentBlock>
+
                 {/*
                     TODO ADJUST CONTENT WITH PAUL
 
                     EVENTS & INSIGHTS 2 times this module
                     */}
-                <ContentBlock>
+                {/* <ContentBlock>
                     <EventsSection
                         eyebrowLabel="Offerings"
                         title="Events"
@@ -93,7 +108,7 @@ const Home = () => {
                             }
                         ]}
                     />
-                </ContentBlock>
+                </ContentBlock> */}
 
                 <ContentBlock>
                     <ImageTeaser variant="leistungen" />

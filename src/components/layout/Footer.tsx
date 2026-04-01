@@ -72,7 +72,7 @@ export default function Footer() {
                     }}
                 >
                     <Image src="/images/green-gradient.png" alt="" fill className="object-cover" priority={false} />
-                    <div className="absolute inset-0 bg-[#7AE1BF]/100 mix-blend-multiply" aria-hidden="true" />
+                    <div className="bg-primary absolute inset-0 mix-blend-multiply" aria-hidden="true" />
                 </div>
 
                 {/* Navigation columns */}

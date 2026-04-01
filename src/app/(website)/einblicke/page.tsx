@@ -4,6 +4,7 @@ import Hero from "@/components/sections/Hero"
 import HeroGradientBackdrop from "@/components/sections/HeroGradientBackdrop"
 import StoriesGrid from "@/components/sections/StoriesGrid"
 import type { SuccessStory } from "@/components/sections/SuccessStoriesGrid"
+import { aidArticles } from "@/data/aidArticles"
 import { events, formatEventDate, getPastEvents, getUpcomingEvents } from "@/data/events"
 import type { Metadata } from "next"
 
@@ -24,38 +25,22 @@ const toCardData = (e: (typeof events)[number]) => ({
     date: formatEventDate(e.startDate, e.endDate),
     client: e.client,
     category: e.category ?? e.type,
-    image: e.image
+    image: e.image,
+    location: e.location,
+    description: e.description
 })
 
 const upcomingEvents = getUpcomingEvents(events, today).map(toCardData)
 const pastEvents = getPastEvents(events, today).map(toCardData)
 
-const insightArticles: SuccessStory[] = [
-    {
-        title: "Plattform für Neu- und Gebrauchtfahrzeuge",
-        description: "Top-Brands, führende Händler & Experten – für Wissen, Wachstum & wertvolle Verbindungen.",
-        image: "/images/customers/porsche-cropped.jpg",
-        eyebrowLabel: "Business Technology",
-        buttonLabel: "Mehr erfahren",
-        href: "/einblicke/plattform"
-    },
-    {
-        title: "Plattform für Neu- und Gebrauchtfahrzeuge",
-        description: "Top-Brands, führende Händler & Experten – für Wissen, Wachstum & wertvolle Verbindungen.",
-        image: "/images/customers/mercedes-cropped.jpg",
-        eyebrowLabel: "Business Technology",
-        buttonLabel: "Mehr erfahren",
-        href: "/einblicke/plattform-2"
-    },
-    {
-        title: "Plattform für Neu- und Gebrauchtfahrzeuge",
-        description: "Top-Brands, führende Händler & Experten – für Wissen, Wachstum & wertvolle Verbindungen.",
-        image: "/images/customers/recaro.jpg",
-        eyebrowLabel: "Business Technology",
-        buttonLabel: "Mehr erfahren",
-        href: "/einblicke/plattform-3"
-    }
-]
+const insightArticles: SuccessStory[] = aidArticles.map((article) => ({
+    title: article.title,
+    description: article.teaser,
+    image: article.image,
+    eyebrowLabel: `${article.series} #${article.episode} · ${article.guest.company}`,
+    buttonLabel: "Zum Interview",
+    href: `/einblicke/aid-magazin/${article.slug}`
+}))
 
 export default function InsightsPage() {
     return (
@@ -75,12 +60,12 @@ export default function InsightsPage() {
                     <EventsCarousel title="Events" upcomingEvents={upcomingEvents} pastEvents={pastEvents} />
                 </ContentBlock>
 
-                <ContentBlock>
+                {/* <ContentBlock>
                     <EventsCarousel title="Webinare" upcomingEvents={[]} pastEvents={[]} />
-                </ContentBlock>
+                </ContentBlock> */}
 
                 <ContentBlock>
-                    <StoriesGrid title="AI:D Artikel" stories={insightArticles} />
+                    <StoriesGrid title="AI:D Magazin" stories={insightArticles} />
                 </ContentBlock>
             </div>
         </div>

@@ -1,0 +1,197 @@
+{
+  "cms_import_meta": {
+    "schema_version": "1.0",
+    "language": "de",
+    "content_type": "interview",
+    "created": "2026-03-24",
+    "tags_global": [
+      "sap",
+      "erp",
+      "cloud",
+      "ki",
+      "enterprise-ai",
+      "datenstrategie",
+      "transformation",
+      "agenten",
+      "plattform"
+    ]
+  },
+
+  "article": {
+    "id": "aid-timo-deiner-40",
+    "series": "AI:D",
+    "episode": 40,
+    "internal_ref": "40-AID-40-Timo-Deiner-SAP-Vendor",
+    "status": "final",
+    "date": null,
+
+    "title": "KI-Transformation mit SAP: Warum jetzt der richtige Zeitpunkt ist, durchzustarten",
+    "slug": "aid-timo-deiner-40-sap-ki-transformation",
+
+    "guest": {
+      "name": "Timo Deiner",
+      "short_name": "Timo Deiner",
+      "company": "SAP",
+      "role": "Head of Innovation & Technology, Mittel- und Osteuropa",
+      "role_alt": "Chief Technology Officer, Mittel- und Osteuropa",
+      "bio": "SAP ist längst mehr als ein ERP – es ist eine der wenigen europäischen Plattformen, die Unternehmen verbindet, Prozesse vereinfacht und Innovation beschleunigt. Timo Deiner verantwortet bei SAP die Technologie- und Innovationsstrategie für Mittel- und Osteuropa."
+    },
+
+    "interviewer": {
+      "name": "Paul Krauss",
+      "role": "Head of Digital",
+      "company": "MDCT AG",
+      "url": "https://www.mdct.ag"
+    },
+
+    "teaser": "Wie gelingt die KI-Transformation, und warum ist jetzt der richtige Zeitpunkt, mit KI durchzustarten? Darüber sprechen wir mit Timo Deiner, Chief Technology Officer für Mittel- und Osteuropa bei SAP.",
+
+    "qa_pairs": [
+      {
+        "id": "q01",
+        "question": "Stell dich bitte kurz vor.",
+        "answer": "Ich bin Timo Deiner, Head of Innovation & Technology für Mittel- und Osteuropa. Meine Aufgabe ist es, unseren Kunden die SAP-Strategie und neue Technologien verständlich zu machen – immer mit Blick darauf, wie sie ihre geschäftlichen Herausforderungen lösen können. Innovation ist wichtig, aber Technologie allein reicht nicht. Es geht darum, den richtigen Kontext zu finden und sinnvolle Veränderungen anzustoßen.",
+        "tags": ["intro", "biografie", "sap", "innovation"]
+      },
+      {
+        "id": "q02",
+        "question": "Viele Unternehmen nutzen SAP als ERP-Lösung mit gewachsenen Strukturen. Eure eigene Cloud-Migration mit HANA ist abgeschlossen, aber eure Kunden ziehen langsamer nach. Wie siehst du diese Entwicklung?",
+        "answer": "Der Markt hat sich gewandelt: Heute erwarten Unternehmen flexible IT-Lösungen, ähnlich wie wir privat Streaming-Dienste nutzen. Die Cloud ermöglicht genau das. Sie macht Unternehmen agiler und ermöglicht es, neue Technologien wie künstliche Intelligenz schnell zum Vorteil zu nutzen. Statt nur „die Lichter am Laufen zu halten", können Unternehmen durch die Cloud effizienter arbeiten und agil auf Veränderungen reagieren. Unser starkes Wachstum in der Cloud bestätigt unsere Strategie.",
+        "tags": ["cloud-migration", "hana", "agilität", "erp", "sap-strategie"]
+      },
+      {
+        "id": "q03",
+        "question": "Viele Unternehmen haben SAP an ihre individuellen Prozesse angepasst, anstatt ihre Prozesse an SAP. Das kann Agilität kosten und das System schwerfälliger machen. Wie siehst du das?",
+        "answer": "Anpassungen sind nicht per se schlecht – Kunden haben SAP seit Jahrzehnten im Einsatz und die Anpassungen sind jeweils mit den besten verfügbaren Möglichkeiten geplant worden. Heute würden Unternehmen oft anders starten. Sie sitzen auf einem riesigen Datenschatz mit wertvollem Wissen. Die Herausforderung bei KI ist, diese Daten zugänglich zu machen und richtig zu verknüpfen.\n\nWenn Unternehmen einen Best-of-Breed-Ansatz fahren – also verschiedene Lösungen für Reisekosten, Logistik und Finanzen nutzen – entsteht später das Problem, die Daten sinnvoll zusammenzuführen, bevor KI überhaupt genutzt werden kann. Ein LLM allein reicht nicht, denn es wurde nicht auf Unternehmensdaten und im Kontext trainiert, sondern auf offenen Weltdaten.\n\nEin großes Thema dieses Jahr wird sein, wie Unternehmen ihre Daten so vereinen, dass alle Beteiligten – von HR bis zum CFO – eine einheitliche Sicht haben. Wer das frühzeitig angeht, kann KI strategisch einsetzen.\n\nHier haben Plattformanbieter mit einer zentralisierten Datenstruktur einen klaren Vorteil. Genau hier liegt die Stärke der SAP. Unsere Business Suite bietet ein integriertes Datenmodell und durch die neue SAP Business Data Cloud sind wir nun in der Lage, einen einheitlichen Daten-Layer inklusive Kontextwissen und Nicht-SAP-Datenquellen zur Verfügung zu stellen. Wer alles selbst zusammenbauen will, verliert wertvolle Zeit – und Geschwindigkeit ist der entscheidende Faktor.",
+        "tags": ["customizing", "best-of-breed", "datenstrategie", "business-data-cloud", "llm", "datenintegration"]
+      },
+      {
+        "id": "q04",
+        "question": "Wie würde ein ideales SAP-Setup für eine AI-First-Company aussehen, die heute von null startet?",
+        "answer": "Das optimale Szenario wäre die Nutzung der Public Cloud. SAP unterscheidet zwischen zwei Cloud-Modellen: Public Cloud und Private Cloud. Beide basieren auf dem SAP Core ERP, doch die Public Cloud bietet durch ihre Standardisierung viele Vorteile.\n\nIm idealen Modell nutzen Unternehmen das Public Cloud ERP in Kombination mit der Business Technology Platform (BTP) als technologische Basis. So lassen sich zusätzliche Anwendungen integrieren, falls erforderlich, während sämtliche Geschäftsprozesse innerhalb des SAP Ökosystems abgebildet werden. Dadurch profitieren Unternehmen sofort von Innovationen wie Joule, dem modernen SAP-Assistenten.\n\nGerade auch für schnell wachsende Start-ups gibt es spezielle SAP-Programme, die sie bei der Skalierung unterstützen. Viele dieser Unternehmen konzentrieren sich zunächst auf ihr Produkt und stellen später fest, dass sie für weiteres Wachstum eine stabile Plattform benötigen – an der oft kein Weg an SAP vorbeiführt.\n\nAllerdings kann nicht jedes Unternehmen sofort einen reinen Public Cloud-Ansatz umsetzen. Wir führen ein Digital Discovery Assessment (DDA) durch, um zu prüfen, ob alle relevanten Prozesse in der Cloud abbildbar sind. Falls nicht, kann eine Private Cloud-Option sinnvoll sein. Eine hybride Lösung ist ebenfalls möglich: Unternehmen können so viel wie möglich in der Public Cloud abbilden und spezifische Anforderungen in der Private Cloud umsetzen. Beide Umgebungen lassen sich über die BTP integrieren.",
+        "tags": ["ai-first", "public-cloud", "private-cloud", "btp", "joule", "startup", "dda", "hybrid-cloud"]
+      },
+      {
+        "id": "q05",
+        "question": "Wann ist für Start-ups und Scale-ups der richtige Zeitpunkt, ihre Datenstrategie zu überdenken und auf eine skalierbare Plattform zu wechseln?",
+        "answer": "So früh wie möglich – idealerweise vor dem großen Wachstumsschub. Sobald ein Produkt erfolgreich ist und das Wachstum schneller wird, als man es noch überblicken kann, sollte die Daten- und Systemarchitektur stabil aufgestellt sein.\n\nWer zu lange wartet, gerät in eine reaktive Haltung, muss ständig nachbessern und verliert wertvolle Zeit mit Feuerlöschen, statt das Wachstum strategisch zu steuern. In vielen Fällen erkennen auch Investoren diesen Punkt und empfehlen eine skalierbare Plattform, um langfristig effizient zu bleiben.",
+        "tags": ["startup", "scale-up", "datenstrategie", "skalierung", "investoren", "wachstum"]
+      },
+      {
+        "id": "q06",
+        "question": "Leben europäische Unternehmen den Plattformgedanken ausreichend, um zu skalieren?",
+        "answer": "Kommt darauf an. Einer unserer ersten Unicorn-Kunden in Deutschland war ein Essenslieferdienst. Dessen differenzierender Prozess ist die Fahrerzuweisung, während vieles andere auf SAP basiert. Das zeigt, dass es durchaus europäische Plattform-Unternehmen gibt. Wenn wir auf die Herstellerebene blicken, haben alle Marktteilnehmer ihren Ursprung in einem bestimmten Bereich. Bei SAP waren das Logistik, Materialwirtschaft und Finanzen. Durch gezielte Zukäufe wie LeanIX oder Signavio komplettieren wir unser Angebot und begleiten Kunden beim Übergang in die digitale Welt.",
+        "tags": ["plattformgedanke", "europa", "unicorn", "leanix", "signavio", "skalierung"]
+      },
+      {
+        "id": "q07",
+        "question": "SAP hat gezielt Zukäufe wie Commerce Cloud, Qualtrics und Emarsys getätigt. Ist die integrierte Business Suite der richtige Ansatz oder greift diese Sichtweise zu kurz?",
+        "answer": "Genau deshalb haben wir diese Akquisitionen getätigt. SAP verfolgt den Ansatz einer integrierten Business Suite, die End-to-End-Prozesse wie Recruit to Retire oder Lead to Cash abdeckt.\n\nGerade im Sales-Bereich ist es wichtig, nicht nur die Abrechnung zu optimieren, sondern auch den gesamten Kundenlebenszyklus zu betrachten. Das schließt Commerce, CRM und Marketing ein.\n\nEin fragmentierter Ansatz mit separaten Systemen führt schnell zu Datenlücken, insbesondere im Kontext von KI-gestützten Prozessen. Eine integrierte Suite ermöglicht eine ganzheitliche Sicht auf Kunden, wodurch Unternehmen effizienter arbeiten und bessere Entscheidungen treffen können.",
+        "tags": ["commerce-cloud", "qualtrics", "emarsys", "business-suite", "lead-to-cash", "recruit-to-retire", "crm", "akquisitionen"]
+      },
+      {
+        "id": "q08",
+        "question": "Viele datengetriebene Ansätze scheitern daran, dass Unternehmen erst Data Lakes aufbauen und Datenhygiene betreiben müssen. Stimmst du zu?",
+        "answer": "Absolut, gut auf den Punkt gebracht. Wer KI-Anwendungen im Unternehmen erfolgreich einsetzen will, benötigt Zugriff auf eine einheitliche semantische Datenschicht aller Unternehmensdaten. Hier hilft die SAP Business Data Cloud unseren Kunden dabei, die Komplexität der Datenverwaltung zu reduzieren und gleichzeitig die Fähigkeit zu verbessern, wertvolle Einblicke aus den eigenen Daten zu gewinnen und diese für strategische Entscheidungen zu nutzen.",
+        "tags": ["data-lake", "datenhygiene", "business-data-cloud", "semantische-datenschicht", "ki-readiness"]
+      },
+      {
+        "id": "q09",
+        "question": "SAP war schon früh in Predictive Maintenance und Forecasting aktiv. Jetzt erweitert generative KI die Anwendungsfälle. Wie habt ihr euch strategisch darauf ausgerichtet?",
+        "answer": "Generative KI ist der nächste logische Schritt in unserer Entwicklung. Viele setzen KI mit generativer KI gleich, aber SAP hat bereits früh mit HANA die Basis für datengetriebene Analysen geschaffen. Durch zentrale Datenspeicherung und schnelle Analysen konnten wir schon prädiktive Anwendungen entwickeln – etwa in der Fertigung mit Predictive Maintenance und Predictive Quality. Unternehmen können Maschinen nicht nur verkaufen, sondern durch vorausschauende Wartung neue Service-Modelle anbieten.\n\nDer Hype um generative KI erinnert an den Smartphone-Boom: Erst im Consumer-Bereich groß geworden, dann in Unternehmen integriert. SAP nutzt diesen Trend nicht nur oberflächlich, sondern baut auf bestehenden KI- und Datenmodellen auf, um echte Business-Mehrwerte zu schaffen.",
+        "tags": ["predictive-maintenance", "generative-ki", "hana", "forecasting", "industrie", "ki-strategie"]
+      },
+      {
+        "id": "q10",
+        "question": "Ist generative KI nur eine Technologie oder ein echter Plattform-Shift, der Geschäftsprozesse grundlegend verändert?",
+        "answer": "Genau an diesem Punkt stehen wir jetzt. Predictive AI war ein wichtiger erster Schritt, doch durch den Erfolg von ChatGPT wird KI nun als dialogfähige Schnittstelle wahrgenommen. Viele erwarten, dass sie mit Unternehmensdaten genauso interagieren können wie mit ChatGPT – z. B. Kundenprojekte abrufen oder den Produktionsstatus abfragen. Dafür braucht es neue User Interfaces, wie SAP sie mit Joule bietet.\n\nUnser Vorteil: Wir verstehen Unternehmensdaten und ihre Strukturen bereits. LLMs sind austauschbar, sie werden zunehmend zur Commodity. Der eigentliche Mehrwert entsteht erst durch die Verknüpfung mit Business-Kontext.\n\nEin zentraler Unterschied zwischen Business AI und Consumer AI liegt im Datenschutz. Hier kommt die Business Technology Platform (BTP) ins Spiel. Sie bietet Funktionen wie Data Masking, um bestimmte Daten vor der Verarbeitung zu anonymisieren oder auszuklammern. Unternehmens-KI folgt anderen Spielregeln als Consumer-KI – und SAP kennt diese Regeln.",
+        "tags": ["plattform-shift", "generative-ki", "joule", "chatgpt", "business-ai", "datenschutz", "btp", "llm-commodity"]
+      },
+      {
+        "id": "q11",
+        "question": "Wie siehst du den Mehrwert spezialisierter LLMs für Unternehmen?",
+        "answer": "Spezialisierung ist definitiv ein großes Thema. Die Frage ist, ob man zwingend ein eigenes LLM entwickeln muss. Wir passen bestehende Modelle durch Fine-Tuning an spezifische Anforderungen an. Dies ermöglicht uns, die Leistung von LLMs in domänenspezifischen Kontexten zu verbessern.\n\nSAP hat viele rechtliche Dokumente, Preislisten und Produktabhängigkeiten. Vertriebs-Teams müssen oft herausfinden, welche Komponenten zusammenpassen. Wir haben begonnen, Modelle auf internen Wissensquellen zu trainieren, sodass der Vertrieb gezielt Fragen stellen kann.\n\nDiese Ansätze lassen sich auch für Kunden umsetzen. Entscheidend ist, dass Unternehmen spezialisierte LLMs auf einer Enterprise-Plattform aufbauen. SAP stellt das notwendige Tooling bereit, sodass Unternehmen ihre eigenen datenbasierten Mehrwert-Services entwickeln können.",
+        "tags": ["spezialisierte-llm", "fine-tuning", "enterprise-ai", "wissensmanagement", "vertrieb", "rag"]
+      },
+      {
+        "id": "q12",
+        "question": "Gibt es eine klare Entwicklung zwischen augmentierten und automatisierten KI-Use-Cases, oder ist ein hybrider Ansatz entscheidend?",
+        "answer": "Beides ist wichtig. Einen klaren Trend sehe ich nicht, da sich das Feld extrem schnell entwickelt. Die letzten Monate haben gezeigt, dass sich alles plötzlich ändern kann.\n\nEntscheidend ist ein offenes Mindset. Unternehmen sollten regelmäßig prüfen, wo manuelle Tätigkeiten optimiert werden können – und zwar ergebnisoffen. Es muss nicht immer KI sein; manchmal reicht eine bessere Datenintegration oder ein optimiertes Frontend.\n\nWichtig ist, neue Technologien nicht vorschnell abzulehnen, nur weil etwas vor fünf Jahren nicht funktioniert hat. Wer sich heute mit KI beschäftigt, baut Wissen auf und kann künftige Entwicklungen schneller adaptieren.",
+        "tags": ["augmentierung", "automatisierung", "hybrid", "mindset", "ki-use-cases"]
+      },
+      {
+        "id": "q13",
+        "question": "KI – wo warten, wo starten?",
+        "answer": "Unternehmen können sofort mit KI starten, besonders in Bereichen, in denen SAP bereits embedded AI Use Cases anbietet – und das über alle End-to-End-Prozesse hinweg.\n\nIn HR gibt es viele Einsatzmöglichkeiten, z. B. für das Analysieren und Klassifizieren von Job-Postings. Auch für CFOs sind KI-gestützte Vorschläge wertvoll, insbesondere in Richtung Agenten-Technologien.\n\nMeine Empfehlung: Mit den Fachabteilungen sprechen und ein Mapping der größten Pain Points machen. SAP bietet dafür kostenlose Workshops, um konkrete Anwendungsfälle zu identifizieren.\n\nDas größte Risiko liegt im Warten selbst. Viele Unternehmen warten auf die perfekte 100%-Lösung, anstatt mit vorhandenen Möglichkeiten schrittweise Mehrwert zu schaffen. KI soll nicht den Menschen ersetzen, sondern repetitive Aufgaben automatisieren – mit finaler Prüfung durch einen Experten. Es gibt keinen Grund zu warten, die Technologie ist bereit.",
+        "tags": ["ki-einstieg", "embedded-ai", "hr", "cfo", "agenten", "pain-points", "workshops"]
+      },
+      {
+        "id": "q14",
+        "question": "Welche Quick Wins gibt es für den Einstieg in KI? Kann man das pauschalisieren?",
+        "answer": "Nein. Das hängt stark davon ab, ob Unternehmen ihre digitale Transformation bereits vorangetrieben haben. Wer Cloud-Technologien nutzt und moderne IT-Strukturen hat, kann aus einer breiten Palette an KI-Anwendungen wählen.\n\nUnternehmen mit veralteter Infrastruktur und fehlendem KI-Know-how haben hingegen kaum echte Quick Wins. Für sie sind No-Code-AI-Plattformen eine Möglichkeit, erste Schritte zu gehen – z. B. mit Chatbots oder einfachen KI-gestützten Apps.\n\nDas Risiko dabei ist, dass solche schnellen Lösungen nur Symptome kaschieren, ohne die eigentliche Transformation voranzutreiben. Wer wirklich nachhaltig von KI profitieren will, sollte seine Daten- und IT-Architektur strategisch modernisieren.",
+        "tags": ["quick-wins", "ki-einstieg", "no-code", "cloud-readiness", "it-architektur", "transformation"]
+      },
+      {
+        "id": "q15",
+        "question": "Wird gerade mit KI das Frontend immer einfacher, während das Backend gleichzeitig komplexer wird?",
+        "answer": "Es wird oft suggeriert, dass Dinge einfacher werden, doch in Wirklichkeit wird die Welt immer komplexer – durch neue Technologien, Tools und Anforderungen.\n\nFrüher waren Systeme reine Expertensysteme, heute sollen sie intuitiv nutzbar sein. Die Erwartungshaltung ist durch das Kundenerlebnis geprägt: Niemand braucht eine Schulung für ein iPhone. Diese Einfachheit wird auch in Unternehmen gefordert. Fiori und KI helfen, Komplexität im Frontend zu reduzieren, aber im Backend bleibt sie bestehen.\n\nLow-Code/No-Code kann hier unterstützen. Fachbereiche haben oft Ideen, die IT ist jedoch mit großen Projekten ausgelastet. Das führt dazu, dass Teams eigenständig SaaS-Lösungen nutzen – was wiederum Schatten-IT, Integrationsprobleme und Sicherheitsrisiken schafft.\n\nBesser wäre ein kontrolliertes Low-Code-Umfeld, das von der IT freigegeben ist. So könnten Fachbereiche eigene Lösungen entwickeln, ohne Sicherheits- und Integrationsprobleme zu verursachen.",
+        "tags": ["frontend", "backend", "komplexität", "low-code", "no-code", "schatten-it", "fiori", "ux"]
+      },
+      {
+        "id": "q16",
+        "question": "Wie weit ist SAP mit Agenten, die Fachbereiche direkt nutzen können, ohne IT-Eingriff?",
+        "answer": "Ja, es gibt bereits erste Use Cases. Letztes Jahr haben wir auf der Sapphire-Konferenz unsere ersten Agenten vorgestellt. Durch die SAP Business Data Cloud kann Joule mithilfe von KI-Agenten bereichsübergreifende Workflows und Entscheidungen im Unternehmen beschleunigen. Außerdem haben unsere Kunden die Möglichkeit, eigene KI-Agenten zu erstellen und implementieren.\n\nDas Ziel ist ein smarter, automatisierter Prozess, der klassische manuelle Workflows ersetzt – kein Excel-Export mit manuellen Filtern und Abstimmen per E-Mail, sondern eine direkte, KI-gestützte Analyse in natürlicher Sprache mit Kontext- und Historienwissen.\n\nLangfristig wird dadurch der IT-Aufwand reduziert, da Fachbereiche auf eine bereits harmonisierte Datenstruktur zugreifen können und die KI den Rest übernimmt.",
+        "tags": ["agenten", "joule", "business-data-cloud", "sapphire", "workflow-automatisierung", "natural-language"]
+      },
+      {
+        "id": "q17",
+        "question": "Ist eine gut gemachte Enterprise Search mit natürlicher Sprache nicht der eigentliche „Killer Use Case" für viele Unternehmen?",
+        "answer": "Ob es der Killer Use Case ist, sei dahingestellt – aber es ist definitiv ein wichtiger Schritt, um Daten wirklich nutzbar zu machen. Real-Time Analytics gibt es bei SAP schon lange. Neu ist die Interaktion: Früher brauchte es mehrere Klicks in SAP Analytics Cloud (SAC), heute funktioniert es über natürliche Sprache und dynamische Rückfragen.\n\nDer Vorteil liegt darin, dass sich Ergebnisse schneller anpassen lassen – etwa durch direkte Verfeinerung der Abfrage. Die eigentliche Revolution ist also nicht die Analyse selbst, sondern die neue Art der Mensch-Maschine-Interaktion. Während früher nur Experten mit SQL oder Python solche Analysen durchführen konnten, kann nun jeder einfach fragen: „Wer waren unsere fünf Top-Kunden in Großbritannien und wie haben sich ihre Umsätze entwickelt?"",
+        "tags": ["enterprise-search", "natural-language", "analytics", "sac", "mensch-maschine", "killer-use-case"]
+      },
+      {
+        "id": "q18",
+        "question": "Schlussfrage: Wann ist der richtige Zeitpunkt, mit KI zu starten?",
+        "answer": "Am besten jetzt – oder eigentlich gestern.",
+        "tags": ["ki-einstieg", "timing", "fazit"]
+      },
+      {
+        "id": "q19",
+        "question": "Und was sagst du denen, die meinen, es sei gerade schwierig?",
+        "answer": "Unternehmen, die warten, werden schneller unter Druck geraten, als ihnen lieb ist. Der Markt entwickelt sich exponentiell, und wer erst startet, wenn die Konkurrenz bereits erfolgreiche KI-Use-Cases hat, wird kaum noch aufholen können.\n\nKI ist keine vorübergehende Modeerscheinung – genauso wenig wie das Internet. Es wird nicht verschwinden. Es gibt in jedem Unternehmen sinnvolle Anwendungsfälle. Wer heute nicht handelt, riskiert langfristig seine Relevanz.",
+        "tags": ["dringlichkeit", "wettbewerb", "ki-relevanz", "transformation", "exponentielles-wachstum"]
+      }
+    ],
+
+    "flash_answers": [
+      {
+        "id": "fa01",
+        "prompt": "KI ist für mich …",
+        "answer": "… ein Gamechanger."
+      },
+      {
+        "id": "fa02",
+        "prompt": "Wer KI nutzt, muss auch …",
+        "answer": "… seine Daten im Griff haben."
+      }
+    ],
+
+    "pull_quotes": [
+      {
+        "id": "pq01",
+        "text": "Das größte Risiko liegt im Warten selbst.",
+        "context": "q13"
+      },
+      {
+        "id": "pq02",
+        "text": "LLMs sind austauschbar – der eigentliche Mehrwert entsteht erst durch die Verknüpfung mit Business-Kontext.",
+        "context": "q10"
+      },
+      {
+        "id": "pq03",
+        "text": "Am besten jetzt – oder eigentlich gestern.",
+        "context": "q18"
+      }
+    ]
+  }
+}

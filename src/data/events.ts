@@ -8,6 +8,8 @@ export interface EventData {
     scope?: "internal" | "external"
     category?: string
     image?: string
+    location?: string
+    description?: string
 }
 
 const MONTHS_DE = [
@@ -59,256 +61,65 @@ export function getPastEvents(events: EventData[], today: string = new Date().to
 
 export const events: EventData[] = [
     {
-        title: "G-BEE",
-        client: "Marketers und Nerds",
-        startDate: "2026-01-21",
-        type: "Workshop",
-        scope: "internal",
-        category: "Impuls"
-    },
-    {
-        title: "Mustang x Team One Kickoff",
-        client: "Mustang Jeans",
-        startDate: "2026-01-28",
-        type: "Workshop",
-        scope: "internal",
-        category: "Impuls"
-    },
-    {
-        title: "Consultant Workshop Ideation",
-        client: "DM",
-        startDate: "2026-02-05",
-        type: "Workshop",
-        scope: "internal",
-        category: "Impuls"
-    },
-    {
-        title: "EBE 2026 Keynote",
-        client: "eCommerce Berlin",
-        startDate: "2026-02-17",
-        endDate: "2026-02-18",
-        type: "Keynote",
-        scope: "external",
-        category: "Keynote"
-    },
-    {
-        title: "BEVH Webinar: Strategie & Organisation",
-        client: "BEVH",
-        startDate: "2026-02-25",
-        type: "Workshop",
-        format: "remote",
-        scope: "external",
-        category: "Webinar"
-    },
-    {
-        title: "BEVH Webinar: Das KI-Kundenerlebnis",
-        client: "BEVH",
-        startDate: "2026-02-27",
-        type: "Workshop",
-        format: "remote",
-        scope: "external",
-        category: "Webinar"
-    },
-    {
-        title: "BEVH Webinar: Kundenbindung – CRM & Customer Care",
-        client: "BEVH",
-        startDate: "2026-03-04",
-        type: "Workshop",
-        format: "remote",
-        scope: "external",
-        category: "Webinar"
-    },
-    {
-        title: "AI Experience Days",
-        client: "PAYBACK",
-        startDate: "2026-03-05",
-        type: "Keynote",
-        scope: "internal",
-        category: "Keynote"
-    },
-    {
-        title: "Basic Schulung",
-        client: "Basic Schulung",
-        startDate: "2026-03-06",
-        type: "Workshop",
-        scope: "external",
-        category: "Webinar"
-    },
-    {
-        title: "BEVH Webinar: Einkauf & Produktentwicklung",
-        client: "BEVH",
-        startDate: "2026-03-06",
-        type: "Workshop",
-        format: "remote",
-        scope: "external",
-        category: "Webinar"
-    },
-    {
-        title: "Impuls",
-        client: "Mustang Jeans",
-        startDate: "2026-03-10",
-        type: "Keynote",
-        scope: "internal",
-        category: "Keynote"
-    },
-    {
-        title: "Shop Usability Award Gala",
-        client: "Shop Usability Award",
-        startDate: "2026-03-10",
-        endDate: "2026-03-11",
-        type: "Workshop",
-        scope: "external",
-        category: "Konferenz"
-    },
-    {
-        title: "BEVH Webinar: Logistik & Supply Chain",
-        client: "BEVH",
-        startDate: "2026-03-10",
-        type: "Workshop",
-        format: "remote",
-        scope: "external",
-        category: "Webinar"
-    },
-    {
-        title: "Panel Retail AI",
-        client: "K5",
-        startDate: "2026-03-12",
-        type: "Keynote",
-        scope: "external",
-        category: "Keynote"
-    },
-    {
-        title: "BEVH Webinar: Future-Proof Stack",
-        client: "BEVH",
-        startDate: "2026-03-12",
-        type: "Workshop",
-        format: "remote",
-        scope: "external",
-        category: "Webinar"
-    },
-    {
-        title: "Vortrag Expert Circle",
-        client: "GS1",
-        startDate: "2026-03-13",
-        type: "Keynote",
-        scope: "internal",
-        category: "Keynote"
-    },
-    {
-        title: "OMR Reviews Tool Talk: E-Commerce Personalization",
-        client: "OMR",
-        startDate: "2026-03-19",
-        type: "Keynote",
-        scope: "external",
-        category: "Webinar"
-    },
-    {
-        title: "Marcus Coop",
-        client: "TBD",
-        startDate: "2026-03-21",
-        type: "Workshop"
-    },
-    {
-        title: "Podcast",
-        client: "Digital Success",
-        startDate: "2026-03-30",
-        type: "Workshop",
-        scope: "external",
-        category: "Impuls"
-    },
-    {
-        title: "Workshop – eCommerce Horizon",
-        client: "eCommerce Horizon",
-        startDate: "2026-04-15",
-        type: "Workshop"
-    },
-    {
-        title: "VTEX DAYS",
-        client: "VTEX",
-        startDate: "2026-04-15",
-        endDate: "2026-04-19",
-        type: "Workshop",
-        scope: "external",
-        category: "Konferenz"
-    },
-    {
-        title: "Commerce Impact Day",
-        client: "Shopware",
-        startDate: "2026-04-16",
-        type: "Workshop"
-    },
-    {
-        title: "Minubo Dinner",
-        client: "Sammelevents",
-        startDate: "2026-04-21",
-        type: "Workshop"
-    },
-    {
-        title: "Inhouse Keynote",
-        client: "Camel Active",
-        startDate: "2026-04-28",
-        type: "Keynote",
-        scope: "internal",
-        category: "Impuls"
-    },
-    {
-        title: "eCom Horizon Update",
-        client: "eCommerce Horizon",
-        startDate: "2026-04-29",
-        type: "Keynote",
-        scope: "external",
-        category: "Keynote"
-    },
-    {
-        title: "Vortrag DDX",
+        title: "DDX 2026",
         client: "DDX",
-        startDate: "2026-05-08",
-        endDate: "2026-05-09",
-        type: "Workshop",
-        scope: "external",
-        category: "Keynote"
-    },
-    {
-        title: "SCD Panel",
-        client: "Shopware",
-        startDate: "2026-06-10",
-        type: "Keynote"
-    },
-    {
-        title: "K5 2026",
-        client: "K5",
-        startDate: "2026-06-23",
-        endDate: "2026-06-25",
-        type: "Workshop",
-        scope: "external"
-    },
-    {
-        title: "Panel Discussion Frankfurt",
-        client: "Union Investment",
-        startDate: "2026-06-26",
+        location: "München",
+        startDate: "2026-05-09",
         type: "Keynote",
-        scope: "internal",
-        category: "Konferenz"
+        scope: "external",
+        category: "Konferenz",
+        image: "/images/DDX.jpg",
+        description:
+            "Das führende Event für UX Design. Paul Krauss spricht darüber, wie KI-Anwendungen heute getestet werden — mit einem Fokus auf KI als das neue UI und wie man einen strukturierten Experimentationsansatz dafür entwickelt. Hands-on-Präsentation mit Live-Demo."
     },
     {
-        title: "Workation",
-        client: "Interne Termine",
-        startDate: "2026-07-19",
-        endDate: "2026-07-20",
-        type: "Workshop",
-        scope: "internal"
+        title: "Shopware Community Day 2026",
+        client: "Shopware",
+        location: "Köln",
+        startDate: "2026-06-10",
+        type: "Keynote",
+        scope: "external",
+        category: "Konferenz",
+        image: "/images/SCD.jpg",
+        description:
+            "Alles rund um den Shopware-Kosmos. Team One nimmt am AI-Panel teil und diskutiert KI-gestützte Commerce-Lösungen mit führenden Branchenexperten."
     },
     {
-        title: "KI BIG BANG Event",
-        client: "KI BIG BANG Event",
-        startDate: "2026-09-16",
-        endDate: "2026-09-17",
-        type: "Keynote"
+        title: "K5 Future Retail Conference 2026",
+        client: "K5",
+        location: "Berlin",
+        startDate: "2026-06-23",
+        endDate: "2026-06-24",
+        type: "Keynote",
+        scope: "external",
+        category: "Konferenz",
+        image: "/images/K5.jpg",
+        description:
+            "Das führende Event für E-Commerce. Team One ist Stagehost eines Auditoriums mit zwei Tagen voller KI-Themen — von Strategie bis zur praktischen Umsetzung im digitalen Handel."
     },
     {
-        title: "Speaker",
+        title: "New Com Summit 2026",
+        client: "New Com Summit",
+        location: "München",
+        startDate: "2026-10-21",
+        endDate: "2026-10-22",
+        type: "Keynote",
+        scope: "external",
+        category: "Konferenz",
+        image: "/images/Newcom.jpg",
+        description:
+            "Für D2C und Social Retail. Paul Krauss präsentiert interaktiv mit Schwerpunkt auf KI — Details folgen in Kürze."
+    },
+    {
+        title: "Retail Reshaped 2026",
         client: "Retail Reshaped",
+        location: "Hamburg",
         startDate: "2026-11-17",
-        type: "Keynote"
+        type: "Keynote",
+        scope: "external",
+        category: "Konferenz",
+        image: "/images/Retail Reshaped.jpg",
+        description:
+            "Shaping the Future with Commerce Media, Data and AI. Paul Krauss beleuchtet den Einfluss von Hyperpersonalisierung und generativer KI auf dynamische Retail Media Formate. Hands-on-Präsentation mit Live-Demo."
     }
 ]

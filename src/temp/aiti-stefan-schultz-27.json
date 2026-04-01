@@ -1,0 +1,166 @@
+{
+  "cms_import_meta": {
+    "schema_version": "1.0",
+    "language": "de",
+    "content_type": "interview",
+    "created": "2026-03-24",
+    "tags_global": [
+      "payback",
+      "loyalty",
+      "multi-partner",
+      "ki",
+      "datenstrategie",
+      "plattform",
+      "personalisierung",
+      "ökosystem",
+      "e-commerce"
+    ]
+  },
+
+  "article": {
+    "id": "aiti-stefan-schultz-27",
+    "series": "AITI Stefan",
+    "episode": 27,
+    "internal_ref": "27-AID-Stefan-Schultz-Payback-Marketplace-Loyalty_27",
+    "status": "final",
+    "date": null,
+
+    "title": "Loyalty, KI und das Ökosystem der Zukunft: Stefan Schultz über PAYBACK",
+    "slug": "aiti-stefan-schultz-27-payback-loyalty-ki",
+
+    "guest": {
+      "name": "Stefan Schultz",
+      "short_name": "Stefan Schultz",
+      "company": "PAYBACK",
+      "role": "Mitglied der Geschäftsleitung",
+      "bio": "PAYBACK vernetzt über 700 Partnerunternehmen und schafft ein einzigartiges Ökosystem für über 31 Millionen Kundinnen. Stefan Schultz verantwortet bei PAYBACK die Bereiche Sales Engineering, Third Party Integrations und die Zusammenarbeit zwischen Business-Einheiten und interner Roadmap."
+    },
+
+    "teaser": "Wie prägt PAYBACK mit agilen Prozessen, Partnerstrategien und KI-Initiativen die Zukunft des Loyalty-Markts? Stefan Schultz, Mitglied der Geschäftsleitung, gibt Einblick.",
+
+    "qa_pairs": [
+      {
+        "id": "q01",
+        "question": "Stell dich bitte kurz vor.",
+        "answer": "Mein Name ist Stefan Schultz. Ich bin seit nunmehr acht Jahren bei PAYBACK. In meiner aktuellen Rolle verantworte ich die Bereiche Sales Engineering, von der Pre-Sales-Beratung über die technische Anbindung bis hin zum Technischen Account-Management und ein für uns neues Feld, das wir mit „Third Party Integrations" beschreiben. Zusätzlich gibt es in meinem Team Projektleiter, die sich schwerpunktmäßig der Zusammenarbeit zwischen unseren Business-Einheiten und der internen Roadmap widmen.\n\nMein Fokus liegt momentan darauf, unser Geschäft und die Produktentwicklung noch schneller, breiter und effizienter zu gestalten, indem ich spezialisierte externe Teams und existierende innovative Software-Lösungen in unsere Geschäftsmodelle und Prozesse integriere.",
+        "tags": ["intro", "biografie", "sales-engineering", "third-party-integrations", "payback"]
+      },
+      {
+        "id": "q02",
+        "question": "Kannst du uns ein paar aktuelle Zahlen nennen und das Konzept von PAYBACK als Multi-Partner-Loyalty-Programm sowie die Idee hinter dem Ökosystem kurz erläutern?",
+        "answer": "Der erste Werbe-Slogan – weit vor meiner Zeit bei PAYBACK – war „Eine Karte, viele Partner". Damit hat man schon sehr treffend zum Ausdruck gebracht, worum es bei PAYBACK geht: Wir schaffen Verbindungen zwischen Partnerunternehmen und Kunden und bieten einen einfachen Zugang zu Mehrwerten für alle Beteiligten.\n\nWir haben über 31 Millionen aktive Nutzer, mehr als 13 Millionen aktive App-Nutzer und mehr als 700 Partnerunternehmen für die Idee dieses gemeinsamen Multi-Partner-Projektes begeistern können.\n\nEin interessantes Element an diesem punktebasierten System: Es spricht eher die Freude an der Belohnung an als den reinen Spartrieb – eine eher emotionale als rein rationale Herangehensweise. Das Besondere an unserem Multi-Partner-System ist, dass Punkte bei verschiedenen Partnern schneller kumulieren. Statt bei einem Partner wochenlang zu sammeln, erreichst du als Kunde bei PAYBACK Schwellen wie Einkaufsgutscheine oder Prämien viel schneller.\n\nDie PAYBACK App ist dabei wie ein virtuelles Einkaufszentrum: ein zentraler Zugangspunkt, der es leicht macht, sich digital sternförmig durch das gesamte Ökosystem zu bewegen.",
+        "tags": ["zahlen", "multi-partner", "loyalty", "app", "ökosystem", "punkte", "belohnungssystem"]
+      },
+      {
+        "id": "q03",
+        "question": "Ihr habt viele analoge Touchpoints geschaffen, um Kunden an PAYBACK zu erinnern. Ab wann hat die PAYBACK-App eine so zentrale Rolle eingenommen?",
+        "answer": "Die aktuelle Version hat sich etwa in den 2010er Jahren etabliert und ist seither ein zentraler Bestandteil unseres Ökosystems. Dabei hat sich die App insbesondere durch ihre intuitive Bedienung und die Möglichkeit, alle PAYBACK-Funktionen an einem zentralen Ort zu bündeln, als unverzichtbar erwiesen.\n\nWir haben über die Jahre erfolgreiche Mechanismen etabliert, die den Kunden helfen, sich mit PAYBACK zu identifizieren – von Face-to-Face-Interaktionen bei Partnern bis hin zu digitalen Erinnerungen durch die App. Unsere Partner spielen dabei eine sehr wichtige Rolle, indem sie aktiv nach der Karte oder App fragen. Das schafft Win-Win-Win-Situationen, hohes Engagement und regelmäßige Belohnungseffekte.",
+        "tags": ["app", "touchpoints", "engagement", "partner", "digitalisierung"]
+      },
+      {
+        "id": "q04",
+        "question": "PAYBACK ist eine sehr große Organisation. Ihr schafft es trotzdem, schnell zu agieren. Wie erreicht ihr diese Geschwindigkeit, besonders bei Projekten außerhalb eurer Kernprozesse?",
+        "answer": "Wir waren immer schnell, wenn es um unsere Kern-Features geht: Punkte sammeln, einlösen, neue Coupon-Typen oder Incentivierungsmechaniken. Schwieriger wird es in Bereichen außerhalb des Kernprogramms. Ein Beispiel ist Mobile Payment, das wir schon 2016 in die PAYBACK-App integriert haben – spürbar vor der Zeit, aber ein Vorsprung, von dem wir heute profitieren.\n\nAktuell arbeite ich explizit daran, Geschäfte zu beschleunigen, die an unsere Kernprozesse angrenzen – durch Kollaborationen und die Integration von Drittanbieter-Lösungen. Wir haben etwa eine Kooperation mit Anybill aus München gestartet, einem Anbieter von E-Bons. Anybill bringt Expertise in der Kassensystem-Integration ein, während wir uns auf unser Kerngeschäft Loyalty konzentrieren können.\n\nEin weiteres Beispiel ist das Thema Retourenprozesse, insbesondere die Rückbuchung von Punkten. Gäbe es standardisierte Module dafür, könnten sich Partner jeder Größe einfacher und kostengünstiger an das PAYBACK-Programm anschließen.",
+        "tags": ["agilität", "geschwindigkeit", "mobile-payment", "anybill", "drittanbieter", "kooperation", "retourenprozesse"]
+      },
+      {
+        "id": "q05",
+        "question": "Dominik Dommick hat von der „Chinese Speed"-Erfahrung auf der K5-Tour berichtet – von rasanter Entwicklungsgeschwindigkeit und modernen Technologien wie Mikro-Apps. Wie siehst du das?",
+        "answer": "Ja, Dominik hat viel von der beeindruckenden Entwicklungsgeschwindigkeit in China berichtet. Im Vergleich zu Europa – und besonders Deutschland – ist es faszinierend, wie konsequent und kundenzentriert dort Systeme aufgebaut werden. Der Zugang zum Kunden hat allein durch die enorme Bevölkerungszahl ein ganz anderes Level. Hinzu kommt die Dynamik, mit der dort Innovationen wie das Nachladen von Mikro-Apps umgesetzt werden, während wir in Europa in diesem Bereich noch am Anfang stehen.\n\nDas sind Themen, die wir uns definitiv anschauen müssen, weil sie extrem spannend sind. Besonders die Frage, wie wir durch Flexibilität unsere Systeme anpassen und stärker auf den Kunden ausrichten können, könnte uns in den nächsten Monaten weiterbringen.",
+        "tags": ["china", "entwicklungsgeschwindigkeit", "mikro-apps", "innovation", "k5", "kundenzentriert"]
+      },
+      {
+        "id": "q06",
+        "question": "Wie siehst du die Make-or-Buy-Entscheidung, insbesondere im Kontext von KI und der zunehmenden Commoditisierung von Technologien?",
+        "answer": "Die Frage, was die eigene Stärke ausmacht, sollte man sich immer zuallererst stellen. Gerade im E-Commerce sollte man sich auf das konzentrieren, was den Unterschied ausmacht.\n\nEine gute Analogie ist Otto Rehhagels Playbook bei der Europameisterschaft in Griechenland: Er hat alle seine Spieler so eingesetzt, dass jeder das tun konnte, was er besonders gut kann – und daraus ein einzigartiges System geschaffen. Für Unternehmen sollte dieses Prinzip genauso gelten.\n\nEin Händler muss nicht selbst Experte für Logistik oder Verpackung werden. Im Bereich KI bedeutet das, klar zu entscheiden, welche Technologien einen echten Wettbewerbsvorteil bieten und diese inhouse zu entwickeln, während man Standards wie Cloud-Dienste oder Foundation-Modelle zukauft. Wichtig ist, dass die eigenen APIs stabil bleiben, um solche Systeme effizient zu integrieren.",
+        "tags": ["make-or-buy", "kernkompetenz", "ki", "commoditisierung", "api", "wettbewerbsvorteil"]
+      },
+      {
+        "id": "q07",
+        "question": "Welche Rolle spielt hier eine modulare Architektur?",
+        "answer": "Hierbei ist es wichtig, Systeme zu wählen, die skalierbar sind und eine modulare Architektur ermöglichen. So kann man einzelne Systeme austauschen, wenn sie an ihre Grenzen stoßen oder bei Verhandlungen keine Einigung mehr möglich ist. Modularität ist nicht nur ein initiales oder theoretisches Konzept, es sollte auch im Betrieb konsequent umgesetzt werden.\n\nEin weiterer wichtiger Aspekt ist die Wartung der Systeme: Man sollte sie sauber halten und in den effektiven Betrieb investieren. Auch wenn das heute vielleicht keinen zusätzlichen Umsatz bringt, verhindert es morgen größere Risiken. Anbieter können ausfallen, Preise erhöhen oder ihre Leistung nicht mehr erbringen. Solche Risiken lassen sich nur durch eine flexible, belastbare und veränderbare Architektur effektiv abmildern.",
+        "tags": ["modulare-architektur", "skalierbarkeit", "systemwartung", "risikomanagement", "technologiestrategie"]
+      },
+      {
+        "id": "q08",
+        "question": "Entsteht durch den Ansatz, KI-Software komplett um den Menschen herumzubauen, auch die Gefahr von Instabilität und Chaos in den Prozessen?",
+        "answer": "Absolut, diese Gefahr besteht. Wenn ich mich auf Systeme verlasse, die alle Varianten abbilden und Entscheidungen umgehen, verliere ich die Identität meiner Prozesse und meines Geschäfts. Gerade in Startups oder Re-Plattform-Projekten brauchst du eine klare Identität, ob es die Marke, das Sortiment oder andere Kernpunkte sind.\n\nKI kann technisch brillante Lösungen schaffen, aber das inhaltliche Ergebnis muss weiterhin kaufmännisch, strukturell und strategisch abgesichert sein. Die Gefahr besteht darin, die Standardisierung oder Normalisierung zu überspringen und indirekt chaotische, automatisierte Lösungen zu schaffen, nur weil sie technisch möglich sind.\n\nKI, sei es Generative KI oder Machine Learning, hat enormes Potenzial, insbesondere wenn es darum geht, die zunehmende Datenvielfalt und die Vielzahl an Schnittstellen in hoher Geschwindigkeit abzubilden. Das Ziel sollte sein, Technik und menschliche Expertise zu kombinieren, statt echte Business-Arbeit zu umgehen.\n\nOhne diese klare Ausrichtung baue ich keinen flexiblen Prozess, sondern immer neue Monolithen – nur diesmal gesteuert durch KI.",
+        "tags": ["ki-risiken", "prozessidentität", "automatisierung", "monolith", "generative-ki", "machine-learning", "kontrolle"]
+      },
+      {
+        "id": "q09",
+        "question": "KI steht für Automatisierung, Effizienz und Standardisierung. Bei PAYBACK habt ihr eine enorme Menge an Kundendaten. Gibt es Pläne, diese Daten mithilfe von KI für ein besseres Nutzererlebnis zu optimieren?",
+        "answer": "Neben Automatisierung und Standardisierung bringt KI für mich auch Raum für Kreativität und Neues zu schaffen – nicht nur zur Normalisierung von Prozessen. Bei PAYBACK analysieren wir Daten, um für Kunden das nächstbeste Erlebnis zu schaffen, sei es ein passender Coupon oder ein attraktives Angebot. Gleichzeitig nutzen wir die Daten, um unerwartete Lücken im Kaufverhalten zu erkennen.\n\nEin Risiko von zu starker Hyperpersonalisierung ist die Reduktion von Menschen auf grundlegende Verhaltensmuster. Das führt schnell zu „Bubbles". Deshalb achten wir sehr darauf, Kunden vor allem Vielfalt zu bieten und PAYBACK als das zu sehen, was es ist: ein Multi-Partner-Loyalty-Programm mit einem enorm breiten Angebot.\n\nEs ist wichtig, nicht nur wiederholtes Verhalten zu belohnen, sondern auch im Ökosystem aufzuzeigen, wo Chancen liegen – sei es für Partner in der Kundenansprache oder für Kunden, die entdecken, dass sie auch für ganz andere Produkte Punkte sammeln können. Und letztlich geht es immer auch um Spaß.",
+        "tags": ["kundendaten", "personalisierung", "hyperpersonalisierung", "filter-bubble", "coupons", "nutzererlebnis", "ki"]
+      },
+      {
+        "id": "q10",
+        "question": "Wie stellst du dir einen Shop oder Marktplatz der Zukunft vor?",
+        "answer": "Schauen wir erstmal zurück. Ich habe mehrere Wellen von Shop-Verhalten und Navigation miterlebt, darunter auch die Einführung einer Pseudo-Intelligenz in der Online-Shop-Suche. Das hat jedoch nicht wirklich funktioniert.\n\nIch sehe den Shop der Zukunft stark von der Digitalisierung und Mobilisierung des Kunden geprägt. Displays bleiben begrenzt. Es geht um einfache, schnelle Interaktion – besonders Sprach-Interfaces werden eine zentrale Rolle spielen, da sie eine natürliche und effiziente Form der Eingabe bieten.\n\nWas ich bei PAYBACK gelernt habe: Menschen individuell bleiben. Kategorien, Filter und Attributselektionen bleiben relevant, da viele spezifische Wünsche haben. Die Herausforderung besteht darin, das User-Verhalten detailliert zu erfassen und dynamische Interfaces zu schaffen, die sich flexibel an individuelle Vorlieben anpassen.\n\nZusammenfassend: Es wird keine universelle Lösung geben. Stattdessen entstehen diverse Interaktionsmöglichkeiten – von Spracheingaben über Klicken bis hin zu komplexen Kombinationen.",
+        "tags": ["shop-der-zukunft", "marktplatz", "sprach-interface", "personalisierung", "ux", "voice-commerce"]
+      },
+      {
+        "id": "q11",
+        "question": "Welche Grundprinzipien sollten Unternehmen verfolgen, um bei der Einführung von KI eine gemeinsame Haltung und Incentives zu schaffen und Ängste bei Mitarbeitern abzubauen?",
+        "answer": "Ein zentrales Prinzip ist, klarzumachen, dass Technologie keine Menschen ersetzt, sondern Aufgaben verschiebt. Es geht darum, Aufwände zu verlagern, nicht darum, weniger Menschen einzusetzen. Führungskräfte sollten die Einführung von KI als Chance kommunizieren und betonen, dass Mitarbeiter durch Schulungen und Weiterbildungen auf neue Anforderungen vorbereitet werden.\n\nZudem ist es wichtig, die Verdrängungsangst der Mitarbeiter ernst zu nehmen. Viele fürchten, durch KI an Bedeutung zu verlieren oder dass Erfolge der Technologie zugeschrieben werden statt ihnen selbst. Hier hilft eine Unternehmenskultur, die den Beitrag jedes Einzelnen anerkennt.\n\nDas Management muss Ängsten begegnen und Chancen aufzeigen. Es ist ein Balanceakt: Einerseits klarzumachen, dass es nicht darum geht, Mitarbeiter zu ersetzen, und andererseits deutlich zu sagen, dass Verhaltensänderungen nötig sind, um mit neuen Technologien Schritt zu halten.",
+        "tags": ["change-management", "ki-einführung", "mitarbeiterängste", "weiterbildung", "unternehmenskultur", "führung"]
+      },
+      {
+        "id": "q12",
+        "question": "In Zeiten großer Veränderungen durch Technologie: Wo siehst du die Konstante im Umgang mit Menschen und welche Prinzipien sollten dabei im Vordergrund stehen?",
+        "answer": "Das gemeinsame Interesse, Ausgleich und die Absicherung in alle Richtungen sind für mich zentrale Prinzipien. Niemand sollte abgehängt werden – jeder braucht einen Platz im Gefüge. Automatisierung hat oft für innerbetriebliche Verwerfungen gesorgt. Aber aus solchen neuen automatisierten Prozessen sind auch positive Entwicklungen entstanden, wie mehr Eigenverantwortung in Teams und agile Methoden.\n\nEs geht darum, Menschen nicht auf Tätigkeiten zu reduzieren, sondern ihnen Möglichkeiten zu geben, sinnvoll teilzuhaben, ohne abzustumpfen. Wichtig ist, Aufgaben so zu gestalten, dass sie Teilhabe ermöglichen und in eine sinnvolle Rotation eingebettet sind. Teilhabe und Mitnahme sind für mich als Grundpfeiler entscheidend.",
+        "tags": ["mensch-und-technologie", "teilhabe", "automatisierung", "agilität", "führungsprinzipien", "veränderungsmanagement"]
+      },
+      {
+        "id": "q13",
+        "question": "Wo können Händler und Marken in Europa stärker zusammenarbeiten, insbesondere im Hinblick auf Logistik oder Datenharmonisierung?",
+        "answer": "Ein großes Potenzial im Handel liegt in Lieferketten – sowohl bei der Zulieferung als auch bei der Weiterlieferung. Logistikgemeinschaften könnten stärker genutzt werden, etwa durch gemeinsame Lagerkapazitäten. Das spart nicht nur Kosten, sondern hat auch ökologische Vorteile.\n\nWir müssen mehr harmonisieren – aber ohne regionale Unterschiede einzuebnen. Regionalität und lokale Identitäten sind der Schlüssel für viele gesellschaftliche Herausforderungen in Europa. Aber einfache Datenmodelle zu harmonisieren – z. B. bei EAN-Codes – würde unproduktive Aufwände absenken.\n\nAuf einer noch höheren Ebene wäre es entscheidend, Europa als Standort zu stärken. Das betrifft z. B. die innereuropäische Standort-Freiheit für Mitarbeiter, die aktuell durch steuerliche und sozialversicherungsrechtliche Hürden unnötig kompliziert ist. Europa fehlt bisher eine klare gemeinsame Antwort auf globale Veränderungen – das könnte langfristig ein Nachteil sein.",
+        "tags": ["europa", "logistik", "datenharmonisierung", "ean", "lieferkette", "bürokratie", "standortpolitik"]
+      }
+    ],
+
+    "flash_answers": [
+      {
+        "id": "fa01",
+        "prompt": "KI ist für mich persönlich …",
+        "answer": "… ein Hilfsmittel, wiederholbare Prozesse schneller, effizienter und datenreicher zu machen und Dinge zu standardisieren. Ein Werkzeug, das Schwachstellen und Chancen identifizieren kann, die ich aufgrund begrenzter eigener Rechenkapazitäten oder Ressourcen möglicherweise nicht selbst erkennen würde."
+      },
+      {
+        "id": "fa02",
+        "prompt": "Wer KI nutzt, muss auch …",
+        "answer": "… schreiben, sprechen und denken können."
+      }
+    ],
+
+    "list_answers": [
+      {
+        "id": "la01",
+        "question": "Welche drei Dinge sollte man vor dem KI-Einsatz klären?",
+        "items": [
+          "Ziele der Optimierung definieren: Klar festlegen, worauf optimiert werden soll.",
+          "Offenheit: Bereit sein, Simulationen zu betrachten, die unvorhergesehene Chancen aufzeigen.",
+          "Flexibilität: Erfolg bedeutet oft, Chancen wahrzunehmen, mit denen man nicht gerechnet hat. KI kann helfen, solche Möglichkeiten durch ihre enorme Datenverarbeitung zu entdecken und auszubalancieren."
+        ],
+        "tags": ["ki-vorbereitung", "checkliste", "strategie"]
+      }
+    ],
+
+    "pull_quotes": [
+      {
+        "id": "pq01",
+        "text": "Erfolg bedeutet im Leben oft, Chancen wahrzunehmen, mit denen man nicht gerechnet hat.",
+        "context": "la01"
+      },
+      {
+        "id": "pq02",
+        "text": "Ohne klare Ausrichtung baue ich keinen flexiblen Prozess, sondern immer neue Monolithen – nur diesmal gesteuert durch KI.",
+        "context": "q08"
+      },
+      {
+        "id": "pq03",
+        "text": "Es spricht eher die Freude an der Belohnung an als den reinen Spartrieb – eine eher emotionale als rein rationale Herangehensweise.",
+        "context": "q02"
+      }
+    ]
+  }
+}
