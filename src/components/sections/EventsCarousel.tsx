@@ -10,6 +10,8 @@ interface EventCardItem {
     client?: string
     category?: string
     image?: string
+    location?: string
+    description?: string
 }
 
 interface EventsCarouselProps {
@@ -23,8 +25,6 @@ const TABS = ["Kommende Veranstaltungen", "Vergangene Veranstaltungen"] as const
 
 export default function EventsCarousel({ title, upcomingEvents, pastEvents, className }: EventsCarouselProps) {
     const [activeTab, setActiveTab] = useState<string>(TABS[0])
-
-    const visibleEvents = activeTab === TABS[0] ? upcomingEvents : pastEvents
 
     return (
         <section className={cn("gap-grid-gutter flex flex-col", className)}>
@@ -47,20 +47,37 @@ export default function EventsCarousel({ title, upcomingEvents, pastEvents, clas
                 ))}
             </div>
 
-            {visibleEvents.length > 0 ? (
-                <div className="scrollbar-hide gap-grid-gutter flex snap-x snap-mandatory overflow-x-auto pb-4">
-                    {visibleEvents.map((event, i) => (
-                        <div
-                            key={i}
-                            className="grid w-[min(100%,420px)] shrink-0 snap-start grid-cols-1 grid-rows-[repeat(3,auto)]"
-                        >
-                            <EventCard {...event} />
-                        </div>
-                    ))}
-                </div>
-            ) : (
-                <p className="font-gteratext text-small py-12 text-black/40">Keine Veranstaltungen vorhanden.</p>
-            )}
+            <div className="grid">
+                {[upcomingEvents, pastEvents].map((events, tabIndex) => (
+                    <div
+                        key={tabIndex}
+                        className={cn("col-start-1 row-start-1", activeTab !== TABS[tabIndex] && "invisible")}
+                    >
+                        {events.length > 0 ? (
+                            <div className="scrollbar-hide gap-grid-gutter flex snap-x snap-mandatory overflow-x-auto pb-4">
+                                {events.map((event, i) => (
+                                    <div
+                                        key={i}
+                                        className="grid w-[min(100%,420px)] shrink-0 snap-start grid-cols-1 grid-rows-[repeat(3,auto)]"
+                                    >
+                                        <EventCard {...event} />
+                                    </div>
+                                ))}
+                            </div>
+                        ) : (
+                            <div className="flex flex-col items-center justify-center py-20 text-center">
+                                <div className="mb-4 text-5xl text-black/10">📅</div>
+                                <p className="font-gteradisplay text-h4 mb-2 text-black/30">Keine Veranstaltungen</p>
+                                <p className="font-gteratext text-small max-w-80 text-black/30">
+                                    {tabIndex === 0
+                                        ? "Neue Termine werden in Kürze bekannt gegeben."
+                                        : "Vergangene Veranstaltungen werden hier angezeigt, sobald Events stattgefunden haben."}
+                                </p>
+                            </div>
+                        )}
+                    </div>
+                ))}
+            </div>
         </section>
     )
 }

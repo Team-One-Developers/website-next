@@ -8,10 +8,21 @@ interface EventCardProps {
     client?: string
     category?: string
     image?: string
+    location?: string
+    description?: string
     className?: string
 }
 
-export default function EventCard({ title, date, client, category, image, className }: EventCardProps) {
+export default function EventCard({
+    title,
+    date,
+    client,
+    category,
+    image,
+    location,
+    description,
+    className
+}: EventCardProps) {
     return (
         <div className={cn("gap-sm row-span-3 grid grid-rows-subgrid", className)}>
             {/* Image or colored placeholder */}
@@ -25,12 +36,16 @@ export default function EventCard({ title, date, client, category, image, classN
                 )}
             </div>
 
-            {/* Title */}
-            <h3 className="font-gteradisplay text-h3 pt-lg max-w-130 self-end text-black">{title}</h3>
+            {/* Title + description */}
+            <div className="pt-lg flex flex-col gap-2">
+                <h3 className="font-gteradisplay text-h3 max-w-130 text-black">{title}</h3>
+                {description && <p className="font-gteratext text-small line-clamp-3 text-black/60">{description}</p>}
+            </div>
 
             {/* Tags row */}
             <div className="flex flex-wrap gap-2">
                 <Tag label={date} />
+                {location && <Tag label={location} />}
                 {category && <Tag label={category} />}
             </div>
         </div>

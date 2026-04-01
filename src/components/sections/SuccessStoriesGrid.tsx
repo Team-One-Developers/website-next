@@ -31,7 +31,7 @@ export function StoryCard({
     return (
         <div className="row-span-5 grid grid-rows-subgrid gap-0">
             {/* Image */}
-            <div className="mb-lg relative aspect-4/3 w-full overflow-hidden rounded-lg">
+            <div className="mb-lg relative aspect-square w-full overflow-hidden rounded-lg">
                 <Image src={image} alt={title} fill className="object-cover" />
                 {greenFilter && <div className="bg-primary/20 absolute inset-0" />}
             </div>
