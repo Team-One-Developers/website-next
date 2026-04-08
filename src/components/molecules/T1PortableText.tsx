@@ -19,7 +19,7 @@ const components: PortableTextComponents = {
                 <div className="py-10">
                     <Image
                         src={value.asset.url}
-                        alt={value.alt || ""}
+                        alt={value.alt || "Blog Bild"}
                         width={width}
                         height={height}
                         sizes="100vw"
@@ -140,7 +140,7 @@ const components: PortableTextComponents = {
         bullet: ({ children }: any) => (
             <li className="font-gteratext text-medium flex items-start gap-2 text-black">
                 <span className="bg-primary mt-2.5 size-2 shrink-0 rounded-full" />
-                {children}
+                <div className="min-w-0 flex-1">{children}</div>
             </li>
         ),
         number: ({ children }: any) => <li className="font-gteratext text-medium my-2 pl-4 text-black">{children}</li>

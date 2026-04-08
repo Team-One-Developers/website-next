@@ -3,7 +3,7 @@ import Link from "next/link"
 import { tv, VariantProps } from "tailwind-variants"
 
 export const buttonVariants = tv({
-    base: "inline-flex items-center w-fit rounded-[4px] px-[18px] py-[9px] text-xxsmall font-gteratext transition-colors duration-200 cursor-pointer",
+    base: "inline-flex items-center w-fit rounded-[4px] px-[18px] py-[9px] text-xxsmall font-gteratext transition-colors duration-200 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black",
     variants: {
         variant: {
             primary: "bg-primary text-black hover:bg-primary/80",

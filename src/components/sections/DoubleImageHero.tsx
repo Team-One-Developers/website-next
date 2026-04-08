@@ -23,7 +23,11 @@ const DoubleImageHero = () => {
                 </div>
                 <div className="w-full px-4 lg:w-4/12">
                     <div>
-                        <Link href="/karriere#jobs" className="text-foreground mb-7">
+                        <Link
+                            href="/karriere#jobs"
+                            className="text-foreground mb-7"
+                            aria-label="Offene Stellen ansehen"
+                        >
                             <svg
                                 width="120"
                                 height="120"
@@ -31,6 +35,7 @@ const DoubleImageHero = () => {
                                 fill="none"
                                 xmlns="http://www.w3.org/2000/svg"
                                 className="mb-7 hidden cursor-pointer transition-all duration-500 hover:scale-105 hover:rotate-90 lg:mt-0 lg:block"
+                                aria-hidden="true"
                             >
                                 <g clipPath="url(#clip0_2143_23490)">
                                     <rect

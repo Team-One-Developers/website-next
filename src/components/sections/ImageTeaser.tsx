@@ -127,13 +127,33 @@ export default function ImageTeaser(props: ImageTeaserProps) {
 
     return (
         <section className={cn("w-full", className)}>
-            <div className="relative flex aspect-1728/900 w-full items-end overflow-hidden rounded-lg p-[8px]">
-                {/* Background image */}
+            {/* Desktop: overlay on image */}
+            <div className="relative hidden aspect-1728/900 w-full items-end overflow-hidden rounded-lg p-[8px] md:flex">
                 <Image src={image} alt={alt ?? title ?? ""} fill className="object-cover" priority={priority} />
-
-                {/* Overlay card */}
                 {hasOverlay && (
                     <div className="gap-padding-lg bg-background-soft px-padding-xl py-grid-gutter relative flex w-full max-w-[579px] flex-col rounded-lg backdrop-blur-lg">
+                        <h3 className="font-gteradisplay text-h3 text-white">{title}</h3>
+                        <p className="text-small text-white-soft whitespace-pre-line">{description}</p>
+                        {buttonLabel && <Button label={buttonLabel} variant={buttonVariant} href={buttonHref} />}
+                        {author && (
+                            <AuthorInfo
+                                name={author.name}
+                                role={author.role}
+                                avatarUrl={author.avatarUrl}
+                                variant="light"
+                            />
+                        )}
+                    </div>
+                )}
+            </div>
+
+            {/* Mobile: image + text stacked */}
+            <div className="flex flex-col overflow-hidden rounded-lg md:hidden">
+                <div className="relative aspect-4/3 w-full">
+                    <Image src={image} alt={alt ?? title ?? ""} fill className="object-cover" priority={priority} />
+                </div>
+                {hasOverlay && (
+                    <div className="gap-padding-lg bg-background-soft px-padding-xl py-grid-gutter flex flex-col">
                         <h3 className="font-gteradisplay text-h3 text-white">{title}</h3>
                         <p className="text-small text-white-soft whitespace-pre-line">{description}</p>
                         {buttonLabel && <Button label={buttonLabel} variant={buttonVariant} href={buttonHref} />}

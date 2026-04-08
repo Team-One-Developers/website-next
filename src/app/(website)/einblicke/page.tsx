@@ -37,7 +37,6 @@ const insightArticles: SuccessStory[] = aidArticles.map((article) => ({
     title: article.title,
     description: article.teaser,
     image: article.image,
-    eyebrowLabel: `${article.series} #${article.episode} · ${article.guest.company}`,
     buttonLabel: "Zum Interview",
     href: `/einblicke/aid-magazin/${article.slug}`
 }))

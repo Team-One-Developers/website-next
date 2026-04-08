@@ -29,7 +29,13 @@ function ServiceCard({ title, description, pictogramUrl, buttonLabel = "Mehr erf
             {/* Pictogram */}
             <div className="h-25 w-20">
                 {pictogramUrl && (
-                    <Image src={pictogramUrl} alt="" width={80} height={100} className="h-full w-full object-contain" />
+                    <Image
+                        src={pictogramUrl}
+                        alt={title}
+                        width={80}
+                        height={100}
+                        className="h-full w-full object-contain"
+                    />
                 )}
             </div>
 

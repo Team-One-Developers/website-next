@@ -58,12 +58,7 @@ export default function JobAccordion({ title, categories, className }: JobAccord
     }
 
     return (
-        <section
-            className={cn(
-                "gap-grid-gutter px-grid-safezone relative flex flex-col rounded-lg py-20 lg:flex-row",
-                className
-            )}
-        >
+        <section className={cn("gap-grid-gutter relative flex flex-col rounded-lg py-20 lg:flex-row", className)}>
             {/* Gray background */}
             <div className="bg-grey absolute inset-x-0 inset-y-0 -mx-[calc((100vw-100%)/2)] rounded-4xl" />
 
@@ -84,7 +79,7 @@ export default function JobAccordion({ title, categories, className }: JobAccord
                                 className="gap-lg flex w-full cursor-pointer items-center py-8"
                                 aria-expanded={isOpen}
                             >
-                                <span className="font-gteradisplay text-h3 min-w-0 text-left whitespace-nowrap text-black">
+                                <span className="font-gteradisplay text-h3 min-w-0 text-left text-black">
                                     {category.label}
                                 </span>
                                 <span className="ml-auto flex shrink-0 items-center gap-4">

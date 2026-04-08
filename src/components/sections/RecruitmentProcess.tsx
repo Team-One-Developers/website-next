@@ -57,7 +57,7 @@ export default function RecruitmentProcess({ title, eyebrowLabel, steps, classNa
             <div className="bg-primary-soft absolute inset-x-0 inset-y-0 -mx-[calc((100vw-100%)/2)] rounded-4xl" />
 
             {/* Left: sticky sidebar */}
-            <div className="relative top-20 flex w-full shrink-0 flex-col gap-10 self-start pt-20 lg:sticky lg:w-[570px]">
+            <div className="relative top-20 flex w-full shrink-0 flex-col gap-10 self-start pt-20 lg:sticky lg:top-34 lg:w-[570px]">
                 <h2 className="font-gteradisplay text-h2 max-w-[457px] text-black">{title}</h2>
                 <div className="flex flex-col gap-5">
                     <Eyebrow label={eyebrowLabel} size="small" />

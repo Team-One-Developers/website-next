@@ -26,7 +26,7 @@ export default function BenefitsGrid({ benefits, cta, className }: BenefitsGridP
             <div className="gap-grid-gutter grid grid-cols-1 md:grid-cols-3">
                 {benefits.slice(0, 3).map((benefit) => (
                     <div key={benefit.title} className="gap-lg flex flex-col">
-                        <Image src={benefit.iconUrl} alt="" width={100} height={100} className="size-25" />
+                        <Image src={benefit.iconUrl} alt={benefit.title} width={100} height={100} className="size-25" />
                         <div className="gap-xs flex flex-col">
                             <h3 className="font-gteradisplay text-h2 text-black">{benefit.title}</h3>
                             <p className="text-small text-black-soft max-w-[460px]">{benefit.description}</p>
@@ -39,7 +39,7 @@ export default function BenefitsGrid({ benefits, cta, className }: BenefitsGridP
             <div className="gap-grid-gutter grid grid-cols-1 md:grid-cols-3">
                 {benefits.slice(3, 6).map((benefit) => (
                     <div key={benefit.title} className="gap-lg flex flex-col">
-                        <Image src={benefit.iconUrl} alt="" width={100} height={100} className="size-25" />
+                        <Image src={benefit.iconUrl} alt={benefit.title} width={100} height={100} className="size-25" />
                         <div className="gap-xs flex flex-col">
                             <h3 className="font-gteradisplay text-h2 text-black">{benefit.title}</h3>
                             <p className="text-small text-black-soft max-w-[460px]">{benefit.description}</p>
@@ -52,7 +52,7 @@ export default function BenefitsGrid({ benefits, cta, className }: BenefitsGridP
             <div className="gap-grid-gutter grid grid-cols-1 md:grid-cols-3">
                 {benefits.slice(6).map((benefit) => (
                     <div key={benefit.title} className="gap-lg flex flex-col">
-                        <Image src={benefit.iconUrl} alt="" width={100} height={100} className="size-25" />
+                        <Image src={benefit.iconUrl} alt={benefit.title} width={100} height={100} className="size-25" />
                         <div className="gap-xs flex flex-col">
                             <h3 className="font-gteradisplay text-h2 text-black">{benefit.title}</h3>
                             <p className="text-small text-black-soft max-w-[460px]">{benefit.description}</p>

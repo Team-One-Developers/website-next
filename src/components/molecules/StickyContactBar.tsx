@@ -27,7 +27,7 @@ export default function StickyContactBar({
             {/* Avatar Image */}
             <Image
                 src={imageUrl}
-                alt=""
+                alt="Ansprechpartner"
                 width={140}
                 height={93}
                 className="h-23.25 w-35 shrink-0 rounded-md object-cover"

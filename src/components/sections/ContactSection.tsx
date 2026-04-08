@@ -152,9 +152,14 @@ export default function ContactSection({
                             type="text"
                             required
                             defaultValue={state.formData.get("name") as string}
+                            aria-describedby={state.errors?.name ? "contact-name-error" : undefined}
                             className="border-t1-darkgreen bg-grey-soft text-small focus:border-primary h-13.5 w-full rounded-[10px] border px-4 text-black outline-none"
                         />
-                        {state.errors?.name && <p className="text-xxsmall text-red-500">{state.errors.name[0]}</p>}
+                        {state.errors?.name && (
+                            <p id="contact-name-error" className="text-xxsmall text-red-500">
+                                {state.errors.name[0]}
+                            </p>
+                        )}
                     </div>
 
                     {/* Email field */}
@@ -168,9 +173,14 @@ export default function ContactSection({
                             type="email"
                             required
                             defaultValue={state.formData.get("email") as string}
+                            aria-describedby={state.errors?.email ? "contact-email-error" : undefined}
                             className="border-t1-darkgreen bg-grey-soft text-small focus:border-primary h-13.5 w-full rounded-[10px] border px-4 text-black outline-none"
                         />
-                        {state.errors?.email && <p className="text-xxsmall text-red-500">{state.errors.email[0]}</p>}
+                        {state.errors?.email && (
+                            <p id="contact-email-error" className="text-xxsmall text-red-500">
+                                {state.errors.email[0]}
+                            </p>
+                        )}
                     </div>
 
                     {/* Message field */}
@@ -184,10 +194,13 @@ export default function ContactSection({
                             required
                             rows={6}
                             defaultValue={state.formData.get("message") as string}
+                            aria-describedby={state.errors?.message ? "contact-message-error" : undefined}
                             className="border-t1-darkgreen bg-grey-soft text-small focus:border-primary h-48.25 w-full resize-none rounded-[10px] border px-4 py-3 text-black outline-none"
                         />
                         {state.errors?.message && (
-                            <p className="text-xxsmall text-red-500">{state.errors.message[0]}</p>
+                            <p id="contact-message-error" className="text-xxsmall text-red-500">
+                                {state.errors.message[0]}
+                            </p>
                         )}
                     </div>
 
