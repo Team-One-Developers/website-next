@@ -78,11 +78,22 @@ export default function Footer() {
                 {/* Navigation columns */}
                 <nav
                     aria-label="Footer navigation"
-                    className="sm:gap-grid-gutter grid grid-cols-1 gap-12 pt-(--footer-spacing) sm:grid-cols-2 md:grid-cols-3"
+                    className="sm:gap-grid-gutter grid grid-cols-1 gap-16 pt-(--footer-spacing) sm:grid-cols-2 md:grid-cols-4"
                 >
                     <FooterColumn title="Leistungen" links={navigation.leistungen} />
                     <FooterColumn title="Referenzen" links={navigation.referenzen} />
                     <FooterColumn title="Unternehmen" links={navigation.unternehmen} />
+                    <div className="gap-lg flex flex-col">
+                        <p className="text-xxsmall text-[#9d9d9d]">Partner</p>
+                        <Image src="/logos/vercel.png" alt="Vercel" width={160} height={40} className="w-56" />
+                        <Image
+                            src="/logos/aca/Member_of_ACA_Logo_2-line_hor_Icon_dark.svg"
+                            alt="Member of ACA"
+                            width={200}
+                            height={100}
+                            className="w-64"
+                        />
+                    </div>
                 </nav>
 
                 {/* Bottom bar */}

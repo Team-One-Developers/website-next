@@ -36,7 +36,7 @@ export default function Hero({ title, description, eyebrows, backLink, className
                         {backLink.label}
                     </Link>
                 )}
-                <h1 className="font-gteradisplay text-d1 max-w-300 font-light whitespace-pre-line text-black">
+                <h1 className="font-gteradisplay text-d1 max-w-300 font-light break-words whitespace-pre-line text-black">
                     {title}
                 </h1>
                 {/* Eyebrow tag bar */}

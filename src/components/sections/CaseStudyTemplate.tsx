@@ -66,8 +66,19 @@ export default function CaseStudyTemplate({
 
             <main className="gap-vertical-inner relative z-10 flex flex-col">
                 <ContentBlock className="gap-xl flex flex-col pt-32">
-                    <Link href={backHref} className="gap-sm text-small flex items-center text-black">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="rotate-180">
+                    <Link
+                        href={backHref}
+                        className="gap-sm text-small flex items-center text-black"
+                        aria-label={backLabel}
+                    >
+                        <svg
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            className="rotate-180"
+                            aria-hidden="true"
+                        >
                             <path
                                 d="M5 12H19M19 12L12 5M19 12L12 19"
                                 stroke="currentColor"
@@ -97,7 +108,7 @@ export default function CaseStudyTemplate({
                     >
                         {highlights.map((item) => (
                             <div key={item.title} className="gap-lg flex flex-col">
-                                <Image src={item.image} alt="" width={100} height={100} className="size-25" />
+                                <Image src={item.image} alt={item.title} width={100} height={100} className="size-25" />
                                 <div className="gap-xs flex flex-col">
                                     <h2 className="font-gteradisplay text-h2 max-w-115 text-black">{item.title}</h2>
                                     <p className="text-small text-black-soft max-w-115">{item.description}</p>

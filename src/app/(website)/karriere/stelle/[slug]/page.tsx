@@ -233,7 +233,7 @@ export default async function CareerDetailPage({ params }: CareerDetailProps) {
                 <ContentBlock>
                     <section className="gap-grid-gutter flex flex-col lg:flex-row">
                         {/* Left: sticky description + CTA */}
-                        <div className="gap-md sticky top-20 flex shrink-0 flex-col self-start pt-8 lg:w-1/3">
+                        <div className="gap-md flex shrink-0 flex-col pt-8 lg:sticky lg:top-34 lg:w-1/3 lg:self-start">
                             <p className="text-medium text-black">{career.description}</p>
                             <Button label="Jetzt bewerben" href="/kontakt" variant="primary" />
                         </div>

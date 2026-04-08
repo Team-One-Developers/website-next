@@ -26,7 +26,7 @@ export default function ServiceDetailSection({ sectionTitle, image, items, class
             {/* Two-column: sticky image left + scrolling text right */}
             <div className="gap-grid-gutter flex">
                 {/* Left: sticky image */}
-                <div className="sticky top-[148px] flex-[1.4] self-start">
+                <div className="sticky top-34 flex-[1.4] self-start">
                     <div className="relative aspect-4/3 w-full overflow-hidden rounded-lg">
                         <Image src={image} alt={sectionTitle} fill className="object-cover" />
                     </div>

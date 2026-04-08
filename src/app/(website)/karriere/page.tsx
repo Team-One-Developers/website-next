@@ -179,10 +179,10 @@ export default async function CareerPage() {
                 {/* Image Gallery Marquee */}
                 <ImageMarquee
                     images={[
-                        { src: "/images/teaser-1.jpg", alt: "Team One Kultur", width: 355, height: 375 },
-                        { src: "/images/teaser-2.jpg", alt: "Team One Zusammenarbeit", width: 500, height: 375 },
-                        { src: "/images/teaser-3.jpg", alt: "Team One Office", width: 390, height: 375 },
-                        { src: "/images/culture/coffetalk.webp", alt: "Team One Austausch", width: 355, height: 375 }
+                        { src: "/images/kaprun.jpg", alt: "Team One Kultur", width: 355, height: 375 },
+                        { src: "/images/office-2.jpg", alt: "Team One Zusammenarbeit", width: 500, height: 375 },
+                        { src: "/images/team.jpg", alt: "Team One Office", width: 500, height: 375 },
+                        { src: "/images/team-collaboration.jpg", alt: "Team One Austausch", width: 355, height: 375 }
                     ]}
                 />
 

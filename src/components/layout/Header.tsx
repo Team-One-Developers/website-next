@@ -76,7 +76,7 @@ export default function Header() {
                     {/* Logo */}
                     <div className="flex items-center">
                         <Link href="/" className="text-black" aria-label="Home">
-                            <Logo className="h-16 w-auto fill-current" />
+                            <Logo className="h-12 w-auto fill-current" />
                         </Link>
                     </div>
 
@@ -136,7 +136,7 @@ export default function Header() {
                                                     <div className="relative w-[340px] shrink-0 overflow-hidden rounded-lg">
                                                         <Image
                                                             src={item.flyout.image}
-                                                            alt=""
+                                                            alt={`${item.name} Übersicht`}
                                                             width={340}
                                                             height={255}
                                                             className="aspect-4/3 h-full w-full object-cover"
@@ -300,7 +300,7 @@ export default function Header() {
                             className="text-white"
                             aria-label="Home"
                         >
-                            <Logo className="h-16 w-auto fill-current" />
+                            <Logo className="h-12 w-auto fill-current" />
                         </Link>
                         <button
                             type="button"

@@ -7,7 +7,7 @@ export interface SuccessStory {
     title: string
     description: string
     image: string
-    eyebrowLabel: string
+    eyebrowLabel?: string
     buttonLabel?: string
     href?: string
     greenFilter?: boolean
@@ -28,20 +28,24 @@ export function StoryCard({
     href,
     greenFilter
 }: SuccessStory) {
+    const rowSpan = eyebrowLabel ? "row-span-5" : "row-span-4"
+
     return (
-        <div className="row-span-5 grid grid-rows-subgrid gap-0">
+        <div className={cn(rowSpan, "grid grid-rows-subgrid gap-0 pb-8 md:pb-0")}>
             {/* Image */}
             <div className="mb-lg relative aspect-square w-full overflow-hidden rounded-lg">
                 <Image src={image} alt={title} fill className="object-cover" />
                 {greenFilter && <div className="bg-primary/20 absolute inset-0" />}
             </div>
 
-            <div className="px-padding-lg">
-                <Eyebrow label={eyebrowLabel} size="small" />
-            </div>
-            <h3 className="font-gteradisplay text-h4 px-padding-lg max-w-130 text-black">{title}</h3>
-            <p className="text-xsmall px-padding-lg pt-sm max-w-130 text-black/60">{description}</p>
-            <div className="px-padding-lg pt-sm">
+            {eyebrowLabel && (
+                <div className="px-padding-lg">
+                    <Eyebrow label={eyebrowLabel} size="small" />
+                </div>
+            )}
+            <h3 className="font-gteradisplay text-h4 px-padding-lg mt-1 max-w-130 text-black">{title}</h3>
+            <p className="text-xsmall px-padding-lg mt-2 max-w-130 text-black/60">{description}</p>
+            <div className="px-padding-lg mt-1">
                 <Button label={buttonLabel} variant="outline" href={href} />
             </div>
         </div>
@@ -63,7 +67,7 @@ export default function SuccessStoriesGrid({ title, stories, className }: Succes
                 </div>
 
                 {/* Stories grid */}
-                <div className="gap-grid-gutter grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:grid-rows-[auto_auto_auto_auto_auto]">
+                <div className="gap-grid-gutter grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
                     {stories.map((story, i) => (
                         <StoryCard key={`${story.title}-${i}`} {...story} />
                     ))}
