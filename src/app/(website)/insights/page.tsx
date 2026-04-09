@@ -6,7 +6,8 @@ import EventCard from "@/components/molecules/EventCard"
 import Hero from "@/components/sections/Hero"
 import HeroGradientBackdrop from "@/components/sections/HeroGradientBackdrop"
 import ImageTeaser from "@/components/sections/ImageTeaser"
-import { StoryCard, type SuccessStory } from "@/components/sections/SuccessStoriesGrid"
+import StoriesGrid from "@/components/sections/StoriesGrid"
+import type { SuccessStory } from "@/components/sections/SuccessStoriesGrid"
 import cn from "@/utils/cn"
 import { useState } from "react"
 
@@ -210,11 +211,7 @@ export default function InsightsPage() {
 
                 {/* Featured articles row */}
                 <ContentBlock>
-                    <div className="gap-grid-gutter grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-                        {featuredArticles.map((article, i) => (
-                            <StoryCard key={i} {...article} />
-                        ))}
-                    </div>
+                    <StoriesGrid stories={featuredArticles} />
                 </ContentBlock>
 
                 {/* Blog section */}
@@ -238,14 +235,7 @@ export default function InsightsPage() {
 
                 {/* Insights section */}
                 <ContentBlock>
-                    <section className="gap-grid-gutter flex flex-col">
-                        <h2 className="font-gteradisplay text-d2 text-black">Insights</h2>
-                        <div className="gap-grid-gutter grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-                            {insightArticles.map((article, i) => (
-                                <StoryCard key={i} {...article} />
-                            ))}
-                        </div>
-                    </section>
+                    <StoriesGrid title="Insights" stories={insightArticles} />
                 </ContentBlock>
             </div>
         </div>

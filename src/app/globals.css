@@ -251,3 +251,22 @@ body {
     color: var(--t1-black);
     font-family: var(--font-gteratext);
 }
+
+.animate-shift-hidden {
+    opacity: 0;
+    filter: blur(4px);
+    transform: translateX(-20px);
+    transition: all 0.5s;
+}
+
+@media (prefers-reduced-motion) {
+    .animate-shift-hidden {
+        transition: none;
+    }
+}
+
+.animate-shift {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}

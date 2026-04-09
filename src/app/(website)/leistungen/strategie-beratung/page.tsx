@@ -4,7 +4,7 @@ import Hero from "@/components/sections/Hero"
 import HeroGradientBackdrop from "@/components/sections/HeroGradientBackdrop"
 import ImageTeaser from "@/components/sections/ImageTeaser"
 import ServiceDetailSection from "@/components/sections/ServiceDetailSection"
-import { StoryCard } from "@/components/sections/SuccessStoriesGrid"
+import StoriesGrid from "@/components/sections/StoriesGrid"
 import { storyList } from "@/data/stories"
 import type { Metadata } from "next"
 
@@ -75,11 +75,7 @@ export default function DigitalStrategyTransformationPage() {
                 </ContentBlock>
 
                 <ContentBlock greenBg>
-                    <div className="gap-grid-gutter grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-                        {storyList.map((story, i) => (
-                            <StoryCard key={`${story.href}-${i}`} {...story} />
-                        ))}
-                    </div>
+                    <StoriesGrid stories={storyList} />
                 </ContentBlock>
 
                 <ContentBlock>

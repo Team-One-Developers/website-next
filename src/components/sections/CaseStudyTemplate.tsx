@@ -2,7 +2,8 @@ import ContentBlock from "@/components/layout/ContentBlock"
 import ContactSection from "@/components/sections/ContactSection"
 import HeroGradientBackdrop from "@/components/sections/HeroGradientBackdrop"
 import ImageTeaser from "@/components/sections/ImageTeaser"
-import { StoryCard, type SuccessStory } from "@/components/sections/SuccessStoriesGrid"
+import StoriesGrid from "@/components/sections/StoriesGrid"
+import type { SuccessStory } from "@/components/sections/SuccessStoriesGrid"
 import cn from "@/utils/cn"
 import Image from "next/image"
 import Link from "next/link"
@@ -119,11 +120,7 @@ export default function CaseStudyTemplate({
                 </ContentBlock>
 
                 <ContentBlock>
-                    <div className="gap-grid-gutter grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-                        {relatedStories.map((story, i) => (
-                            <StoryCard key={`${story.href}-${i}`} {...story} />
-                        ))}
-                    </div>
+                    <StoriesGrid stories={relatedStories} />
                 </ContentBlock>
 
                 <ContentBlock>

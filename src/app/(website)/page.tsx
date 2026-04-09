@@ -7,7 +7,6 @@ import ServicesOverview from "@/components/sections/ServicesOverview"
 import StatementSection from "@/components/sections/StatementSection"
 import StoriesGrid from "@/components/sections/StoriesGrid"
 import type { SuccessStory } from "@/components/sections/SuccessStoriesGrid"
-import { StoryCard } from "@/components/sections/SuccessStoriesGrid"
 import { aidArticles } from "@/data/aidArticles"
 import { storyList } from "@/data/stories"
 import type { Metadata } from "next"
@@ -53,11 +52,7 @@ const Home = () => {
                 </ContentBlock>
 
                 <ContentBlock greenBg>
-                    <div className="gap-grid-gutter grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-                        {storyList.map((story, i) => (
-                            <StoryCard key={`${story.href}-${i}`} {...story} />
-                        ))}
-                    </div>
+                    <StoriesGrid stories={storyList} />
                 </ContentBlock>
 
                 {/*
