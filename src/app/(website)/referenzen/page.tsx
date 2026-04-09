@@ -5,7 +5,7 @@ import ContactSection from "@/components/sections/ContactSection"
 import FeaturedStory from "@/components/sections/FeaturedStory"
 import Hero from "@/components/sections/Hero"
 import HeroGradientBackdrop from "@/components/sections/HeroGradientBackdrop"
-import { StoryCard } from "@/components/sections/SuccessStoriesGrid"
+import StoriesGrid from "@/components/sections/StoriesGrid"
 import { stories, storyList } from "@/data/stories"
 import type { Metadata } from "next"
 
@@ -48,10 +48,7 @@ export default function SuccessStoriesPage() {
 
                 {/* Story cards grid */}
                 <ContentBlock>
-                    <div className="gap-grid-gutter grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:grid-rows-[auto_auto_auto_auto_auto]">
-                        {cardStories.map((story, i) => (
-                            <StoryCard key={`${story.href}-${i}`} {...story} />
-                        ))}
+                    <StoriesGrid stories={cardStories} gridClassName="lg:grid-rows-[auto_auto_auto_auto_auto]">
                         {/* CTA card */}
                         <div className="bg-primary gap-sm px-padding-lg py-xl flex flex-col justify-center rounded-lg">
                             <h3 className="font-gteradisplay text-h4 text-black">
@@ -65,7 +62,7 @@ export default function SuccessStoriesPage() {
                                 <Button label="Kontakt aufnehmen →" variant="dark" href="/kontakt" />
                             </div>
                         </div>
-                    </div>
+                    </StoriesGrid>
                 </ContentBlock>
 
                 <ContentBlock>

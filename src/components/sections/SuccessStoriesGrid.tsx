@@ -31,7 +31,7 @@ export function StoryCard({
     const rowSpan = eyebrowLabel ? "row-span-5" : "row-span-4"
 
     return (
-        <div className={cn(rowSpan, "grid grid-rows-subgrid gap-0 pb-8 md:pb-0")}>
+        <div className={cn(rowSpan, "animate-shift-hidden grid grid-rows-subgrid gap-0 pb-8 md:pb-0")}>
             {/* Image */}
             <div className="mb-lg relative aspect-square w-full overflow-hidden rounded-lg">
                 <Image src={image} alt={title} fill className="object-cover" />
