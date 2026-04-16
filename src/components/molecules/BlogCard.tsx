@@ -40,7 +40,7 @@ export default function BlogCard({
         >
             {/* Image */}
             <div className="relative aspect-4/3 w-full overflow-hidden rounded-lg">
-                <Image src={image} alt={title} fill className="object-cover" />
+                <Image src={image} alt={title} fill sizes="(max-width: 759px) 100vw, (max-width: 1299px) 50vw, 33vw" className="object-cover" />
             </div>
 
             {/* Eyebrow */}

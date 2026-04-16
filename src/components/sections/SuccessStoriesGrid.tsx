@@ -1,5 +1,6 @@
 import Button from "@/components/atoms/Button"
 import Eyebrow from "@/components/atoms/Eyebrow"
+import ScrollReveal from "@/components/atoms/ScrollReveal"
 import cn from "@/utils/cn"
 import Image from "next/image"
 
@@ -31,10 +32,16 @@ export function StoryCard({
     const rowSpan = eyebrowLabel ? "row-span-5" : "row-span-4"
 
     return (
-        <div className={cn(rowSpan, "animate-shift-hidden grid grid-rows-subgrid gap-0 pb-8 md:pb-0")}>
+        <div className={cn(rowSpan, "grid grid-rows-subgrid gap-0 pb-8 md:pb-0")}>
             {/* Image */}
             <div className="mb-lg relative aspect-square w-full overflow-hidden rounded-lg">
-                <Image src={image} alt={title} fill className="object-cover" />
+                <Image
+                    src={image}
+                    alt={title}
+                    fill
+                    sizes="(max-width: 759px) 100vw, (max-width: 1299px) 50vw, 33vw"
+                    className="object-cover"
+                />
                 {greenFilter && <div className="bg-primary/20 absolute inset-0" />}
             </div>
 
@@ -67,11 +74,17 @@ export default function SuccessStoriesGrid({ title, stories, className }: Succes
                 </div>
 
                 {/* Stories grid */}
-                <div className="gap-grid-gutter grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+                <ScrollReveal
+                    stagger
+                    variant="shift"
+                    staggerStep={0.2}
+                    staggerColumns={3}
+                    className="gap-grid-gutter grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+                >
                     {stories.map((story, i) => (
                         <StoryCard key={`${story.title}-${i}`} {...story} />
                     ))}
-                </div>
+                </ScrollReveal>
             </div>
         </section>
     )

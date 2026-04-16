@@ -5,8 +5,8 @@ const navigation = {
     leistungen: [
         { name: "Software Engineering", href: "/leistungen/software-engineering" },
         { name: "Operational AI", href: "/leistungen/operational-ai" },
-        { name: "Strategie-Beratung", href: "/leistungen/strategie-beratung" },
-        { name: "Car-IT Technologies", href: "/leistungen/car-it-technologies" }
+        { name: "Car-IT Technologies", href: "/leistungen/car-it-technologies" },
+        { name: "Strategie-Beratung", href: "/leistungen/strategie-beratung" }
     ],
     referenzen: [
         { name: "Vertriebsplattform", href: "/referenzen/vertriebsplattform" },
@@ -71,7 +71,14 @@ export default function Footer() {
                         WebkitMaskPosition: "center"
                     }}
                 >
-                    <Image src="/images/green-gradient.png" alt="" fill className="object-cover" priority={false} />
+                    <Image
+                        src="/images/green-gradient.png"
+                        alt=""
+                        fill
+                        sizes="100vw"
+                        className="object-cover"
+                        priority={false}
+                    />
                     <div className="bg-primary absolute inset-0 mix-blend-multiply" aria-hidden="true" />
                 </div>
 

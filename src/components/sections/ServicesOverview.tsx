@@ -18,20 +18,20 @@ const services = [
         href: "/leistungen/operational-ai"
     },
     {
-        title: "Strategy Consulting",
-        description:
-            "Verbinden Sie mit uns Strategie, Technologie und Geschäfts-Innovatoinen – für eine Organisation, die morgen stärker ist als heute.",
-        pictogramUrl: "/pictograms/sun.svg",
-        buttonLabel: "Mehr erfahren",
-        href: "/leistungen/strategie-beratung"
-    },
-    {
         title: "Car-IT Technologies",
         description:
-            "Team One Inframotive entwickelt geschäftskritische Infrastruktur-Frameworks für die nächste Generation automobiler Plattformen.",
+            "Team One Inframotive entwickelt die grundlegende Fahrzeug-Infrastruktur für Software-Defined Vehicles – von E/E-Architektur über Diagnose und Security bis hin zu Over-the-Air Updates.",
         pictogramUrl: "/pictograms/verwinkelt.svg",
         buttonLabel: "Mehr erfahren",
         href: "/leistungen/car-it-technologies"
+    },
+    {
+        title: "Strategy Consulting",
+        description:
+            "Verbinden Sie mit uns Strategie, Technologie und Geschäfts-Innovationen – für eine Organisation, die morgen stärker ist als heute.",
+        pictogramUrl: "/pictograms/sun.svg",
+        buttonLabel: "Mehr erfahren",
+        href: "/leistungen/strategie-beratung"
     }
 ]
 

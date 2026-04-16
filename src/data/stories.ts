@@ -23,7 +23,7 @@ export const stories = {
         href: "/referenzen/vertriebsplattform",
         greenFilter: false,
         featured: {
-            logoUrl: "/images/customers/porscheLogo.svg",
+            logoUrl: "/logos/porscheLogo.svg",
             logoAlt: "Porsche",
             logoWidth: 116,
             logoHeight: 43,

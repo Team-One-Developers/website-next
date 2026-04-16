@@ -1,3 +1,4 @@
+import ScrollReveal from "@/components/atoms/ScrollReveal"
 import ContentBlock from "@/components/layout/ContentBlock"
 import BenefitsGrid from "@/components/sections/BenefitsGrid"
 import ContactSection from "@/components/sections/ContactSection"
@@ -58,15 +59,18 @@ export default async function CareerPage() {
                 </ContentBlock>
 
                 <ContentBlock>
-                    <h3 className="font-gteradisplay text-h3 max-w-[700px]">
-                        Oft sagen wir in Gesprächen &bdquo;wir sind Playground für den modernen und ambitionierten
-                        Softwareentwickler&ldquo; – das beschreibt unser Arbeitsumfeld am besten. Wir arbeiten in
-                        anspruchsvollen Kundenprojekten mit spannenden Themen und modernen Tech-Stacks und agilem
-                        Selbstverständnis. Weiterentwicklung ist für uns ein fester Bestandteil unserer
-                        Unternehmensphilosophie: von Trainings und Konferenzbesuchen über eigene Open-Source-Projekte
-                        bis hin zum Spin-Off von eigenständiger Produktideen. Alles ein &bdquo;Kann&ldquo; und kein
-                        &bdquo;Muss&ldquo;, in jedem Fall aber vielseitig und mit unendlich vielen Möglichkeiten.
-                    </h3>
+                    <ScrollReveal>
+                        <h3 className="font-gteradisplay text-h3 max-w-[700px]">
+                            Oft sagen wir in Gesprächen &bdquo;wir sind Playground für den modernen und ambitionierten
+                            Softwareentwickler&ldquo; – das beschreibt unser Arbeitsumfeld am besten. Wir arbeiten in
+                            anspruchsvollen Kundenprojekten mit spannenden Themen und modernen Tech-Stacks und agilem
+                            Selbstverständnis. Weiterentwicklung ist für uns ein fester Bestandteil unserer
+                            Unternehmensphilosophie: von Trainings und Konferenzbesuchen über eigene
+                            Open-Source-Projekte bis hin zum Spin-Off von eigenständiger Produktideen. Alles ein
+                            &bdquo;Kann&ldquo; und kein &bdquo;Muss&ldquo;, in jedem Fall aber vielseitig und mit
+                            unendlich vielen Möglichkeiten.
+                        </h3>
+                    </ScrollReveal>
                 </ContentBlock>
 
                 {/* Open Positions */}

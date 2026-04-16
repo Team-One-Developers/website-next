@@ -1,4 +1,5 @@
 import Button from "@/components/atoms/Button"
+import ScrollReveal from "@/components/atoms/ScrollReveal"
 import AuthorInfo from "@/components/molecules/AuthorInfo"
 import cn from "@/utils/cn"
 import Image from "next/image"
@@ -126,10 +127,17 @@ export default function ImageTeaser(props: ImageTeaserProps) {
     const hasOverlay = showOverlay && title && description
 
     return (
-        <section className={cn("w-full", className)}>
+        <ScrollReveal as="section" className={cn("w-full", className)}>
             {/* Desktop: overlay on image */}
             <div className="relative hidden aspect-1728/900 w-full items-end overflow-hidden rounded-lg p-[8px] md:flex">
-                <Image src={image} alt={alt ?? title ?? ""} fill className="object-cover" priority={priority} />
+                <Image
+                    src={image}
+                    alt={alt ?? title ?? ""}
+                    fill
+                    sizes="100vw"
+                    className="object-cover"
+                    priority={priority}
+                />
                 {hasOverlay && (
                     <div className="gap-padding-lg bg-background-soft px-padding-xl py-grid-gutter relative flex w-full max-w-[579px] flex-col rounded-lg backdrop-blur-lg">
                         <h3 className="font-gteradisplay text-h3 text-white">{title}</h3>
@@ -150,7 +158,14 @@ export default function ImageTeaser(props: ImageTeaserProps) {
             {/* Mobile: image + text stacked */}
             <div className="flex flex-col overflow-hidden rounded-lg md:hidden">
                 <div className="relative aspect-4/3 w-full">
-                    <Image src={image} alt={alt ?? title ?? ""} fill className="object-cover" priority={priority} />
+                    <Image
+                        src={image}
+                        alt={alt ?? title ?? ""}
+                        fill
+                        sizes="100vw"
+                        className="object-cover"
+                        priority={priority}
+                    />
                 </div>
                 {hasOverlay && (
                     <div className="gap-padding-lg bg-background-soft px-padding-xl py-grid-gutter flex flex-col">
@@ -168,6 +183,6 @@ export default function ImageTeaser(props: ImageTeaserProps) {
                     </div>
                 )}
             </div>
-        </section>
+        </ScrollReveal>
     )
 }

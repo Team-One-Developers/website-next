@@ -36,7 +36,7 @@ const Home = () => {
                     <Hero
                         title={"Tech-driven\nBusiness Transformation"}
                         description="Team One ist Technologie-Beratungspartner für digitale Produkte, skalierbare Architekturen und KI-gestützte Geschäftsmodelle – mit Tech-Expertise, die in echten Projekten wirkt. Strategisch, datengetrieben, umsetzungsstark."
-                        eyebrows={["Strategy", "Data & AI", "Software Engineering"]}
+                        eyebrows={["Strategy", "Data & AI", "Software Engineering", "Car-IT Technologies"]}
                     />
                 </ContentBlock>
 
@@ -109,7 +109,10 @@ const Home = () => {
                 </ContentBlock>
 
                 <ContentBlock>
-                    <ContactSection title="What's next? Let's talk." />
+                    <ContactSection
+                        title="What's next? Let's talk."
+                        contacts={["timobrueckel", "julianrichter", "johannesaehling"]}
+                    />
                 </ContentBlock>
             </main>
         </div>

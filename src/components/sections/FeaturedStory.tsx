@@ -1,4 +1,5 @@
 import Button from "@/components/atoms/Button"
+import ScrollReveal from "@/components/atoms/ScrollReveal"
 import cn from "@/utils/cn"
 import Image from "next/image"
 
@@ -44,7 +45,13 @@ export default function FeaturedStory({
     const hasRightOverlay = rightTitle && rightDescription
 
     return (
-        <section className={cn("flex gap-3 lg:h-225", className)}>
+        <ScrollReveal
+            stagger
+            staggerColumns={0}
+            staggerStep={0.2}
+            as="section"
+            className={cn("flex gap-3 lg:h-225", className)}
+        >
             {/* Left: green info card */}
             <div className="bg-primary-soft flex flex-1 flex-col gap-16.5 rounded-xl p-20">
                 <div className="flex flex-col gap-11">
@@ -64,7 +71,7 @@ export default function FeaturedStory({
             {/* Right: image card */}
             <div className="relative flex flex-1 flex-col items-start justify-between overflow-hidden rounded-xl px-15 py-20">
                 <div aria-hidden="true" className="pointer-events-none absolute inset-0 rounded-xl">
-                    <Image src={backgroundImage} alt="" fill className="rounded-xl object-cover" />
+                    <Image src={backgroundImage} alt="" fill sizes="50vw" className="rounded-xl object-cover" />
                     {hasRightOverlay && (
                         <div
                             className="absolute inset-0 rounded-xl mix-blend-multiply"
@@ -92,6 +99,6 @@ export default function FeaturedStory({
                     </div>
                 )}
             </div>
-        </section>
+        </ScrollReveal>
     )
 }
