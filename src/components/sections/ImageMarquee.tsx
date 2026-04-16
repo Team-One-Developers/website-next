@@ -52,7 +52,7 @@ export default function ImageMarquee({ images, className }: ImageMarqueeProps) {
                                 className="relative shrink-0 overflow-hidden rounded-[18px]"
                                 style={{ width: img.width, height: img.height }}
                             >
-                                <Image src={img.src} alt={img.alt} fill className="object-cover" />
+                                <Image src={img.src} alt={img.alt} fill sizes={`${img.width}px`} className="object-cover" />
                                 {/* Green gradient overlay */}
                                 <div
                                     className="pointer-events-none absolute inset-0 rounded-[18px] mix-blend-multiply"

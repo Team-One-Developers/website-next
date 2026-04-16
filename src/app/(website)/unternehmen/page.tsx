@@ -1,5 +1,6 @@
 import Button from "@/components/atoms/Button"
 import Eyebrow from "@/components/atoms/Eyebrow"
+import ScrollReveal from "@/components/atoms/ScrollReveal"
 import ContentBlock from "@/components/layout/ContentBlock"
 import Hero from "@/components/sections/Hero"
 import HeroGradientBackdrop from "@/components/sections/HeroGradientBackdrop"
@@ -52,8 +53,8 @@ const managementTeam = [
     },
     {
         name: "Johannes Aehling",
-        role: "CEO Team One Inframotive",
-        image: "/images/people/johannes-close.png"
+        role: "Founding Partner & CEO Inframotive",
+        image: "/images/people/johannes.png"
     },
     {
         name: "Paul Krauss",
@@ -100,7 +101,13 @@ export default function CulturePage() {
 
                 {/* Content Block — two-column text */}
                 <ContentBlock>
-                    <section className="gap-grid-gutter flex flex-col lg:flex-row">
+                    <ScrollReveal
+                        stagger
+                        staggerColumns={0}
+                        staggerStep={0.15}
+                        as="section"
+                        className="gap-grid-gutter flex flex-col lg:flex-row"
+                    >
                         <div className="flex-1">
                             <p className="font-gteradisplay text-h2 text-black">
                                 Team One ist eine Technologie- & Transformations-Beratung mit Fokus auf
@@ -124,14 +131,20 @@ export default function CulturePage() {
                             </div>
                             <Button label="Zu unseren Leistungen" variant="primary" href="/leistungen" />
                         </div>
-                    </section>
+                    </ScrollReveal>
                 </ContentBlock>
 
                 {/* Values Section */}
                 <ContentBlock>
                     <section className="gap-grid-gutter flex flex-col">
                         <h2 className="font-gteradisplay text-h2 text-black">Unsere Werte</h2>
-                        <div className="gap-grid-gutter grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+                        <ScrollReveal
+                            stagger
+                            variant="shift"
+                            staggerStep={0.15}
+                            staggerColumns={3}
+                            className="gap-grid-gutter grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+                        >
                             {values.slice(0, 3).map((value, i) => (
                                 <ValueCard
                                     key={value.title}
@@ -140,8 +153,14 @@ export default function CulturePage() {
                                     number={i + 1}
                                 />
                             ))}
-                        </div>
-                        <div className="gap-grid-gutter grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+                        </ScrollReveal>
+                        <ScrollReveal
+                            stagger
+                            variant="shift"
+                            staggerStep={0.15}
+                            staggerColumns={3}
+                            className="gap-grid-gutter grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+                        >
                             {values.slice(3).map((value, i) => (
                                 <ValueCard
                                     key={value.title}
@@ -150,7 +169,7 @@ export default function CulturePage() {
                                     number={i + 4}
                                 />
                             ))}
-                        </div>
+                        </ScrollReveal>
                     </section>
                 </ContentBlock>
 
@@ -158,13 +177,25 @@ export default function CulturePage() {
                 <ContentBlock>
                     <section className="gap-grid-gutter flex flex-col">
                         <h2 className="font-gteradisplay text-h2 text-black">Management</h2>
-                        <div className="gap-grid-gutter grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+                        <ScrollReveal
+                            stagger
+                            variant="shift"
+                            staggerStep={0.15}
+                            staggerColumns={4}
+                            className="gap-grid-gutter grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4"
+                        >
                             {managementTeam.map((person) => (
                                 <div
                                     key={person.name}
                                     className="relative flex aspect-3/4 flex-col items-start justify-end overflow-hidden rounded-lg p-2"
                                 >
-                                    <Image src={person.image} alt={person.name} fill className="object-cover" />
+                                    <Image
+                                        src={person.image}
+                                        alt={person.name}
+                                        fill
+                                        sizes="(max-width: 759px) 100vw, (max-width: 1299px) 50vw, 25vw"
+                                        className="object-cover"
+                                    />
                                     {/* Name badge */}
                                     <div className="bg-background-soft px-padding-md py-padding-md relative flex w-full items-center rounded-lg backdrop-blur-lg">
                                         <div className="flex flex-col">
@@ -176,7 +207,7 @@ export default function CulturePage() {
                                     </div>
                                 </div>
                             ))}
-                        </div>
+                        </ScrollReveal>
                     </section>
                 </ContentBlock>
 

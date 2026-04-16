@@ -2,6 +2,7 @@
 
 import Button from "@/components/atoms/Button"
 import Eyebrow from "@/components/atoms/Eyebrow"
+import ScrollReveal from "@/components/atoms/ScrollReveal"
 import CustomerCaseCard from "@/components/molecules/CustomerCaseCard"
 import LogoMarquee from "@/components/molecules/LogoMarquee"
 import cn from "@/utils/cn"
@@ -44,7 +45,7 @@ export default function CustomersShowcase({
     }
 
     return (
-        <section className={cn("", className)}>
+        <ScrollReveal stagger staggerColumns={0} staggerStep={0.15} as="section" className={cn("", className)}>
             {/* Green background area */}
             <div className="bg-primary-soft py-vertical-inner">
                 <div className="gap-vertical-inner px-grid-safezone mx-auto flex max-w-(--max-content-width) flex-col">
@@ -106,6 +107,6 @@ export default function CustomersShowcase({
                 {/* Logo marquee */}
                 <LogoMarquee fadeColor="primary-soft" />
             </div>
-        </section>
+        </ScrollReveal>
     )
 }

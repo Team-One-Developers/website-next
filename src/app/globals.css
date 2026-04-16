@@ -256,17 +256,32 @@ body {
     opacity: 0;
     filter: blur(4px);
     transform: translateX(-20px);
-    transition: all 0.5s;
+    transition:
+        opacity 0.5s ease-out,
+        filter 0.5s ease-out,
+        transform 0.5s ease-out;
+}
+
+.animate-rise-hidden {
+    opacity: 0;
+    filter: blur(4px);
+    transform: translateY(24px);
+    transition:
+        opacity 0.5s ease-out,
+        filter 0.5s ease-out,
+        transform 0.5s ease-out;
 }
 
 @media (prefers-reduced-motion) {
-    .animate-shift-hidden {
+    .animate-shift-hidden,
+    .animate-rise-hidden {
         transition: none;
     }
 }
 
-.animate-shift {
+.animate-shift,
+.animate-rise {
     opacity: 1;
     filter: blur(0);
-    transform: translateX(0);
+    transform: translate(0);
 }

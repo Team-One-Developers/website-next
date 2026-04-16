@@ -1,5 +1,6 @@
 import Button from "@/components/atoms/Button"
 import Eyebrow from "@/components/atoms/Eyebrow"
+import ScrollReveal from "@/components/atoms/ScrollReveal"
 import EventCardHorizontal from "@/components/molecules/EventCardHorizontal"
 import cn from "@/utils/cn"
 
@@ -34,7 +35,13 @@ export default function EventsSection({
     className
 }: EventsSectionProps) {
     return (
-        <section className={cn("gap-grid-gutter flex flex-col lg:flex-row", className)}>
+        <ScrollReveal
+            stagger
+            staggerColumns={0}
+            staggerStep={0.15}
+            as="section"
+            className={cn("gap-grid-gutter flex flex-col lg:flex-row", className)}
+        >
             {/* Left: intro text */}
             <div className="gap-lg flex w-full shrink-0 flex-col lg:w-77">
                 <Eyebrow label={eyebrowLabel} />
@@ -51,6 +58,6 @@ export default function EventsSection({
                     <EventCardHorizontal key={event.title} {...event} />
                 ))}
             </div>
-        </section>
+        </ScrollReveal>
     )
 }

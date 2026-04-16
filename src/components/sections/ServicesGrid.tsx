@@ -1,4 +1,5 @@
 import Button from "@/components/atoms/Button"
+import ScrollReveal from "@/components/atoms/ScrollReveal"
 import cn from "@/utils/cn"
 import Image from "next/image"
 
@@ -78,21 +79,33 @@ export default function ServicesGrid({ services, cta, className }: ServicesGridP
     return (
         <section className={cn("gap-vertical-inner flex flex-col", className)}>
             {/* Top row */}
-            <div className="gap-grid-gutter grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:grid-rows-[auto_auto_auto_auto]">
+            <ScrollReveal
+                stagger
+                variant="shift"
+                staggerStep={0.15}
+                staggerColumns={3}
+                className="gap-grid-gutter grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:grid-rows-[auto_auto_auto_auto]"
+            >
                 {topRow.map((service) => (
                     <ServiceCard key={service.title} {...service} />
                 ))}
-            </div>
+            </ScrollReveal>
 
             {/* Bottom row */}
-            <div className="gap-grid-gutter grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:grid-rows-[auto_auto_auto_auto]">
+            <ScrollReveal
+                stagger
+                variant="shift"
+                staggerStep={0.15}
+                staggerColumns={3}
+                className="gap-grid-gutter grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:grid-rows-[auto_auto_auto_auto]"
+            >
                 {bottomRow.map((service) => (
                     <ServiceCard key={service.title} {...service} />
                 ))}
                 {cta && <CTACard {...cta} />}
                 {/* Empty spacer to fill the 3rd column */}
                 {bottomRow.length + (cta ? 1 : 0) < 3 && <div className="hidden lg:block" />}
-            </div>
+            </ScrollReveal>
         </section>
     )
 }

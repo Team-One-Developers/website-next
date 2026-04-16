@@ -33,7 +33,7 @@ export default function CustomerCaseCard({
         >
             {/* Background image + gradient overlay */}
             <div aria-hidden="true" className="pointer-events-none absolute inset-0 rounded-xl">
-                <Image src={backgroundImage} alt="" fill className="rounded-xl object-cover" />
+                <Image src={backgroundImage} alt="" fill sizes="(max-width: 1299px) 460px, 543px" className="rounded-xl object-cover" />
                 <div
                     className="absolute inset-0 rounded-xl mix-blend-multiply"
                     style={{

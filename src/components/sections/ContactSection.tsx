@@ -2,6 +2,7 @@
 
 import { submitContactForm } from "@/app/actions/submitContactForm"
 import Button from "@/components/atoms/Button"
+import ScrollReveal from "@/components/atoms/ScrollReveal"
 import cn from "@/utils/cn"
 import Image from "next/image"
 import Link from "next/link"
@@ -23,6 +24,11 @@ const people: Record<string, ContactPerson> = {
         name: "Julian Richter",
         role: "Founding Partner & CEO",
         imageUrl: "/images/people/julian-closeclose.png"
+    },
+    johannesaehling: {
+        name: "Johannes Aehling",
+        role: "Founding Partner & CEO Inframotive",
+        imageUrl: "/images/people/johannes.png"
     }
 }
 
@@ -58,7 +64,13 @@ export default function ContactSection({
     const contactPersons = contacts.map((key) => people[key])
 
     return (
-        <section className={cn("gap-grid-gutter flex flex-col rounded-[40px] py-24 lg:flex-row", className)}>
+        <ScrollReveal
+            stagger
+            staggerColumns={0}
+            staggerStep={0.15}
+            as="section"
+            className={cn("gap-grid-gutter flex flex-col rounded-[40px] py-24 lg:flex-row", className)}
+        >
             {/* Left: contact info */}
             <div className="gap-xl flex flex-1 flex-col">
                 <h2 className="font-gteradisplay text-h2 text-black">{title}</h2>
@@ -69,7 +81,13 @@ export default function ContactSection({
                         {contactPersons.map((person) => (
                             <div key={person.name} className="gap-lg flex items-center">
                                 <div className="relative h-23.5 w-18.75 shrink-0" style={logoMaskStyle}>
-                                    <Image src={person.imageUrl} alt={person.name} fill className="object-cover" />
+                                    <Image
+                                        src={person.imageUrl}
+                                        alt={person.name}
+                                        fill
+                                        sizes="75px"
+                                        className="object-cover"
+                                    />
                                 </div>
                                 <div className="flex flex-col">
                                     <span className="text-small text-black">{person.name}</span>
@@ -239,6 +257,6 @@ export default function ContactSection({
                     className={cn(!agreed && "cursor-not-allowed opacity-50")}
                 />
             </form>
-        </section>
+        </ScrollReveal>
     )
 }

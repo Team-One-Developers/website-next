@@ -1,5 +1,6 @@
 "use client"
 
+import ScrollReveal from "@/components/atoms/ScrollReveal"
 import cn from "@/utils/cn"
 import Link from "next/link"
 import { useState } from "react"
@@ -58,7 +59,13 @@ export default function JobAccordion({ title, categories, className }: JobAccord
     }
 
     return (
-        <section className={cn("gap-grid-gutter relative flex flex-col rounded-lg py-20 lg:flex-row", className)}>
+        <ScrollReveal
+            stagger
+            staggerColumns={0}
+            staggerStep={0.15}
+            as="section"
+            className={cn("gap-grid-gutter relative flex flex-col rounded-lg py-20 lg:flex-row", className)}
+        >
             {/* Gray background */}
             <div className="bg-grey absolute inset-x-0 inset-y-0 -mx-[calc((100vw-100%)/2)] rounded-4xl" />
 
@@ -115,6 +122,6 @@ export default function JobAccordion({ title, categories, className }: JobAccord
                     )
                 })}
             </div>
-        </section>
+        </ScrollReveal>
     )
 }

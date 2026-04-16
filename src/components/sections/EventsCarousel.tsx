@@ -1,5 +1,6 @@
 "use client"
 
+import ScrollReveal from "@/components/atoms/ScrollReveal"
 import EventCard from "@/components/molecules/EventCard"
 import cn from "@/utils/cn"
 import { useState } from "react"
@@ -27,7 +28,13 @@ export default function EventsCarousel({ title, upcomingEvents, pastEvents, clas
     const [activeTab, setActiveTab] = useState<string>(TABS[0])
 
     return (
-        <section className={cn("gap-grid-gutter flex flex-col", className)}>
+        <ScrollReveal
+            stagger
+            staggerColumns={0}
+            staggerStep={0.15}
+            as="section"
+            className={cn("gap-grid-gutter flex flex-col", className)}
+        >
             <h2 className="font-gteradisplay text-d2 text-black">{title}</h2>
 
             <div className="flex gap-8 border-b border-black/10">
@@ -78,6 +85,6 @@ export default function EventsCarousel({ title, upcomingEvents, pastEvents, clas
                     </div>
                 ))}
             </div>
-        </section>
+        </ScrollReveal>
     )
 }

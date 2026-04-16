@@ -1,11 +1,12 @@
 "use client"
+import ScrollReveal from "@/components/atoms/ScrollReveal"
 import cn from "@/utils/cn"
 import Image from "next/image"
-import { useRef } from "react"
+import { ReactNode, useRef } from "react"
 
 interface FocusItem {
     title: string
-    description: string
+    description: ReactNode
 }
 
 interface ServiceDetailSectionProps {
@@ -19,16 +20,28 @@ export default function ServiceDetailSection({ sectionTitle, image, items, class
     const itemRefs = useRef<(HTMLDivElement | null)[]>([])
 
     return (
-        <section className={cn("flex flex-col gap-10 rounded-lg lg:gap-20", className)}>
+        <ScrollReveal
+            stagger
+            staggerColumns={0}
+            staggerStep={0.15}
+            as="section"
+            className={cn("flex flex-col gap-10 rounded-lg lg:gap-20", className)}
+        >
             {/* Section heading */}
             <h2 className="font-gteradisplay text-d2 text-center text-black">{sectionTitle}</h2>
 
             {/* Two-column: sticky image left + scrolling text right */}
             <div className="gap-grid-gutter flex flex-col lg:flex-row">
                 {/* Left: sticky image (static on mobile, sticky on desktop) */}
-                <div className="lg:sticky lg:top-34 lg:flex-[1.4] lg:self-start">
+                <div className="lg:sticky lg:top-34 lg:flex-1 lg:self-start">
                     <div className="relative aspect-4/3 w-full overflow-hidden rounded-lg">
-                        <Image src={image} alt={sectionTitle} fill className="object-cover" />
+                        <Image
+                            src={image}
+                            alt={sectionTitle}
+                            fill
+                            sizes="(max-width: 1299px) 100vw, 58vw"
+                            className="object-cover"
+                        />
                     </div>
                 </div>
 
@@ -43,11 +56,13 @@ export default function ServiceDetailSection({ sectionTitle, image, items, class
                             className="gap-sm flex flex-col items-start"
                         >
                             <h3 className="font-gteradisplay text-h4 text-black">{item.title}</h3>
-                            <p className="text-xsmall text-black/60">{item.description}</p>
+                            <div className="text-xsmall flex flex-col gap-3 text-black/60">
+                                {typeof item.description === "string" ? <p>{item.description}</p> : item.description}
+                            </div>
                         </div>
                     ))}
                 </div>
             </div>
-        </section>
+        </ScrollReveal>
     )
 }
