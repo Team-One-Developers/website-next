@@ -1,5 +1,6 @@
 "use client"
 
+import { BLUR_DATA_URL } from "@/constants/blur"
 import cn from "@/utils/cn"
 import Image from "next/image"
 import { useEffect, useRef } from "react"
@@ -52,7 +53,15 @@ export default function ImageMarquee({ images, className }: ImageMarqueeProps) {
                                 className="relative shrink-0 overflow-hidden rounded-[18px]"
                                 style={{ width: img.width, height: img.height }}
                             >
-                                <Image src={img.src} alt={img.alt} fill sizes={`${img.width}px`} className="object-cover" />
+                                <Image
+                                    src={img.src}
+                                    alt={img.alt}
+                                    fill
+                                    sizes={`${img.width}px`}
+                                    className="object-cover"
+                                    placeholder="blur"
+                                    blurDataURL={BLUR_DATA_URL}
+                                />
                                 {/* Green gradient overlay */}
                                 <div
                                     className="pointer-events-none absolute inset-0 rounded-[18px] mix-blend-multiply"

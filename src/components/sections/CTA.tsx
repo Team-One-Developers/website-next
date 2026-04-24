@@ -1,6 +1,7 @@
 import { LinkComponent } from "@/components/atoms/LinkComponent"
 import Typography from "@/components/atoms/Typography"
 import Section from "@/components/layout/Section"
+import { BLUR_DATA_URL } from "@/constants/blur"
 import cn from "@/utils/cn"
 import Image from "next/image"
 
@@ -42,6 +43,8 @@ export const CTA = ({ variant }: CTAProps) => {
                         className="w-full rounded-sm sm:w-1/4"
                         width={400}
                         height={600}
+                        placeholder="blur"
+                        blurDataURL={BLUR_DATA_URL}
                     />
                     <div className="flex w-full flex-col gap-8 sm:w-2/3">
                         <Typography variant="paragraph" className="text-2xl sm:text-3xl">

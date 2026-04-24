@@ -24,6 +24,7 @@ export default function SoftwareEngineeringPage() {
                     <Hero
                         title="Software Engineering"
                         backLink={{ label: "Zurück zur Übersicht", href: "/leistungen" }}
+                        viewTransitionName="service-title-software-engineering"
                     />
                 </ContentBlock>
 
@@ -55,6 +56,7 @@ export default function SoftwareEngineeringPage() {
                     <ServiceDetailSection
                         sectionTitle={"Unsere Schwerpunkte im\nSoftware Engineering"}
                         image="/images/software-engineering.jpg"
+                        animate={false}
                         items={[
                             {
                                 title: "Digital Platforms & Application Engineering",

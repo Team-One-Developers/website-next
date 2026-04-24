@@ -1,3 +1,5 @@
+import { BLUR_DATA_URL } from "@/constants/blur"
+import { CONTACT_EMAIL, CONTACT_PHONE } from "@/constants/contact"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -12,7 +14,7 @@ const navigation = {
         { name: "Vertriebsplattform", href: "/referenzen/vertriebsplattform" },
         { name: "Finanzenkonfigurator", href: "/referenzen/finanzenkonfigurator" },
         { name: "KI-Kundenservice", href: "/referenzen/ki-kundenservice" },
-        { name: "Plattformstrategie", href: "/referenzen/axelspringer" }
+        { name: "Plattformstrategie", href: "/referenzen/plattformstrategie" }
     ],
     unternehmen: [
         { name: "Unternehmen", href: "/unternehmen" },
@@ -78,6 +80,8 @@ export default function Footer() {
                         sizes="100vw"
                         className="object-cover"
                         priority={false}
+                        placeholder="blur"
+                        blurDataURL={BLUR_DATA_URL}
                     />
                     <div className="bg-primary absolute inset-0 mix-blend-multiply" aria-hidden="true" />
                 </div>
@@ -92,7 +96,15 @@ export default function Footer() {
                     <FooterColumn title="Unternehmen" links={navigation.unternehmen} />
                     <div className="gap-lg flex flex-col">
                         <p className="text-xxsmall text-[#9d9d9d]">Partner</p>
-                        <Image src="/logos/vercel.png" alt="Vercel" width={160} height={40} className="w-56" />
+                        <Image
+                            src="/logos/vercel.png"
+                            alt="Vercel"
+                            width={160}
+                            height={40}
+                            className="w-56"
+                            placeholder="blur"
+                            blurDataURL={BLUR_DATA_URL}
+                        />
                         <Image
                             src="/logos/aca/Member_of_ACA_Logo_2-line_hor_Icon_dark.svg"
                             alt="Member of ACA"
@@ -107,13 +119,16 @@ export default function Footer() {
                 <div className="pb-grid-gutter flex flex-col gap-10 pt-(--footer-spacing) min-[1000px]:flex-row min-[1000px]:items-center min-[1000px]:justify-between sm:gap-6">
                     {/* Phone + Mail — stacked on mobile, row at sm, dissolves into parent at 1000px */}
                     <div className="flex flex-col gap-4 min-[1000px]:contents sm:flex-row sm:items-center sm:justify-between">
-                        <a href="tel:+491829983882" className="flex items-center gap-2 hover:underline">
+                        <a
+                            href={`tel:${CONTACT_PHONE.replace(/\s/g, "")}`}
+                            className="flex items-center gap-2 hover:underline"
+                        >
                             <Image src="/logos/phone.svg" alt="" width={32} height={32} className="size-6 md:size-8" />
-                            <span className="text-small md:text-medium text-black">+49 182 9983882</span>
+                            <span className="text-small md:text-medium text-black">{CONTACT_PHONE}</span>
                         </a>
-                        <a href="mailto:hello@team-one.com" className="flex items-center gap-2 hover:underline">
+                        <a href={`mailto:${CONTACT_EMAIL}`} className="flex items-center gap-2 hover:underline">
                             <Image src="/logos/mail.svg" alt="" width={32} height={32} className="size-6 md:size-8" />
-                            <span className="text-small md:text-medium text-black">hello@team-one.com</span>
+                            <span className="text-small md:text-medium text-black">{CONTACT_EMAIL}</span>
                         </a>
                     </div>
 

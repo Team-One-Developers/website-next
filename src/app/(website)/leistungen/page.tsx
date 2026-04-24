@@ -33,7 +33,7 @@ export default function ServicesPage() {
                 </ContentBlock>
 
                 <ContentBlock>
-                    <ServicesOverview showCta={false} />
+                    <ServicesOverview showCta={false} animate={false} />
                 </ContentBlock>
 
                 <ContentBlock greenBg>

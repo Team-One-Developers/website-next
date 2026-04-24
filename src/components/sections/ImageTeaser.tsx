@@ -104,6 +104,7 @@ interface ImageTeaserProps {
     showOverlay?: boolean
     priority?: boolean
     className?: string
+    animate?: boolean
 }
 
 export default function ImageTeaser(props: ImageTeaserProps) {
@@ -119,7 +120,8 @@ export default function ImageTeaser(props: ImageTeaserProps) {
         author,
         showOverlay = true,
         priority = false,
-        className
+        className,
+        animate
     } = { ...variantDefaults, ...props }
 
     if (!image) return null
@@ -127,7 +129,7 @@ export default function ImageTeaser(props: ImageTeaserProps) {
     const hasOverlay = showOverlay && title && description
 
     return (
-        <ScrollReveal as="section" className={cn("w-full", className)}>
+        <ScrollReveal as="section" animate={animate} className={cn("w-full", className)}>
             {/* Desktop: overlay on image */}
             <div className="relative hidden aspect-1728/900 w-full items-end overflow-hidden rounded-lg p-[8px] md:flex">
                 <Image

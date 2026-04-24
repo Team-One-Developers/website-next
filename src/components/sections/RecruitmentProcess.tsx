@@ -1,6 +1,7 @@
 "use client"
 
 import Eyebrow from "@/components/atoms/Eyebrow"
+import { BLUR_DATA_URL } from "@/constants/blur"
 import cn from "@/utils/cn"
 import Image from "next/image"
 import { useEffect, useRef, useState } from "react"
@@ -88,7 +89,15 @@ export default function RecruitmentProcess({ title, eyebrowLabel, steps, classNa
                         className="gap-lg flex flex-col items-center"
                     >
                         <div className="relative aspect-[340.25/255.19] w-full overflow-hidden rounded-lg">
-                            <Image src={step.image} alt={step.title} fill sizes="(max-width: 1299px) 100vw, 570px" className="object-cover" />
+                            <Image
+                                src={step.image}
+                                alt={step.title}
+                                fill
+                                sizes="(max-width: 1299px) 100vw, 570px"
+                                className="object-cover"
+                                placeholder="blur"
+                                blurDataURL={BLUR_DATA_URL}
+                            />
                         </div>
                         <div className="gap-sm flex flex-col px-8">
                             <h4 className="font-gteradisplay text-h4 text-black">{step.title}</h4>

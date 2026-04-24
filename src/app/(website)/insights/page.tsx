@@ -211,7 +211,7 @@ export default function InsightsPage() {
 
                 {/* Featured articles row */}
                 <ContentBlock>
-                    <StoriesGrid stories={featuredArticles} />
+                    <StoriesGrid stories={featuredArticles} animate={false} />
                 </ContentBlock>
 
                 {/* Blog section */}
@@ -222,7 +222,7 @@ export default function InsightsPage() {
                         <TabBar tabs={blogCategories} active={blogCategory} onChange={setBlogCategory} />
 
                         {/* Featured blog teaser */}
-                        <ImageTeaser variant="insights" />
+                        <ImageTeaser variant="insights" animate={false} />
 
                         {/* Blog cards grid */}
                         <div className="gap-grid-gutter grid grid-cols-1 grid-rows-[repeat(6,auto)] md:grid-cols-2 md:grid-rows-[repeat(6,auto)] lg:grid-cols-3 lg:grid-rows-[repeat(6,auto)]">

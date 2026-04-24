@@ -8,8 +8,8 @@ interface EventItem {
     title: string
     description: string
     dateLocation: string
-    speakerName: string
-    speakerRole: string
+    speakerName?: string
+    speakerRole?: string
     speakerImage: string
     speakerBadge?: string
     href?: string
@@ -23,6 +23,7 @@ interface EventsSectionProps {
     buttonHref?: string
     events: EventItem[]
     className?: string
+    animate?: boolean
 }
 
 export default function EventsSection({
@@ -32,13 +33,15 @@ export default function EventsSection({
     buttonLabel = "Alle Events",
     buttonHref = "/veranstaltungen",
     events,
-    className
+    className,
+    animate
 }: EventsSectionProps) {
     return (
         <ScrollReveal
             stagger
             staggerColumns={0}
             staggerStep={0.15}
+            animate={animate}
             as="section"
             className={cn("gap-grid-gutter flex flex-col lg:flex-row", className)}
         >

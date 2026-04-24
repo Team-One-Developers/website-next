@@ -1,5 +1,6 @@
 import Typography from "@/components/atoms/Typography"
 import Section from "@/components/layout/Section"
+import { BLUR_DATA_URL } from "@/constants/blur"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -38,6 +39,8 @@ export const ServiceInfo = ({ title, description, image, alt, textBlocks, link }
                             width={300}
                             height={200}
                             className="w-full object-cover lg:w-1/2"
+                            placeholder="blur"
+                            blurDataURL={BLUR_DATA_URL}
                         />
                     )}
                 </div>

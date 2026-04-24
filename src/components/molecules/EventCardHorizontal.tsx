@@ -1,4 +1,5 @@
 import Button from "@/components/atoms/Button"
+import { BLUR_DATA_URL } from "@/constants/blur"
 import cn from "@/utils/cn"
 import Image from "next/image"
 
@@ -31,7 +32,15 @@ export default function EventCardHorizontal({
         <div className={cn("gap-grid-gutter flex flex-col items-center md:flex-row", className)}>
             {/* Square image with gradient overlay + speaker bar */}
             <div className="relative aspect-square w-full shrink-0 overflow-hidden rounded-xl md:w-1/2">
-                <Image src={speakerImage} alt={speakerName ?? title} fill sizes="(max-width: 759px) 100vw, 50vw" className="object-cover" />
+                <Image
+                    src={speakerImage}
+                    alt={speakerName ?? title}
+                    fill
+                    sizes="(max-width: 759px) 100vw, 50vw"
+                    className="object-cover"
+                    placeholder="blur"
+                    blurDataURL={BLUR_DATA_URL}
+                />
                 {/* Green gradient overlay */}
                 <div
                     className="absolute inset-0 mix-blend-multiply"

@@ -1,5 +1,6 @@
 import Typography from "@/components/atoms/Typography"
 import Section from "@/components/layout/Section"
+import { BLUR_DATA_URL } from "@/constants/blur"
 import Image from "next/image"
 
 const Benefits = () => {
@@ -54,7 +55,15 @@ const BenefitsCard = ({ img, subtitle, title }: { img: string; subtitle: string;
     return (
         <div className="mr-0 mb-[60px] lg:mr-4">
             <div className="mb-9 overflow-hidden rounded-xl">
-                <Image src={img} alt="image" className="w-full" width={510} height={340} />
+                <Image
+                    src={img}
+                    alt="image"
+                    className="w-full"
+                    width={510}
+                    height={340}
+                    placeholder="blur"
+                    blurDataURL={BLUR_DATA_URL}
+                />
             </div>
             <div className="content">
                 <div className="mb-4 flex items-center">

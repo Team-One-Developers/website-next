@@ -1,3 +1,4 @@
+import { BLUR_DATA_URL } from "@/constants/blur"
 import cn from "@/utils/cn"
 import Image from "next/image"
 import Link from "next/link"
@@ -33,7 +34,15 @@ export default function CustomerCaseCard({
         >
             {/* Background image + gradient overlay */}
             <div aria-hidden="true" className="pointer-events-none absolute inset-0 rounded-xl">
-                <Image src={backgroundImage} alt="" fill sizes="(max-width: 1299px) 460px, 543px" className="rounded-xl object-cover" />
+                <Image
+                    src={backgroundImage}
+                    alt=""
+                    fill
+                    sizes="(max-width: 1299px) 460px, 543px"
+                    className="rounded-xl object-cover"
+                    placeholder="blur"
+                    blurDataURL={BLUR_DATA_URL}
+                />
                 <div
                     className="absolute inset-0 rounded-xl mix-blend-multiply"
                     style={{
@@ -45,7 +54,15 @@ export default function CustomerCaseCard({
             {/* Logo */}
             {logoUrl && (
                 <div className="relative z-10">
-                    <Image src={logoUrl} alt={logoAlt || ""} width={87} height={15} className="h-auto" />
+                    <Image
+                        src={logoUrl}
+                        alt={logoAlt || ""}
+                        width={87}
+                        height={15}
+                        className="h-auto"
+                        placeholder="blur"
+                        blurDataURL={BLUR_DATA_URL}
+                    />
                 </div>
             )}
 

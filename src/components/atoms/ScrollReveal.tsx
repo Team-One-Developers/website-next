@@ -8,19 +8,14 @@ type AnimationVariant = "shift" | "rise"
 interface ScrollRevealProps {
     children: React.ReactNode
     className?: string
-    /** Stagger delay in seconds for the element itself */
     delay?: number
-    /** IntersectionObserver threshold (0-1) */
     threshold?: number
-    /** Animate direct children individually with stagger */
     stagger?: boolean
-    /** Stagger delay step between children in seconds */
     staggerStep?: number
-    /** Number of columns for row-based stagger (used with variant="shift"). Set to 0 for sequential stagger. */
     staggerColumns?: number
-    /** Animation variant: "shift" = from left (for cards), "rise" = from below (default) */
     variant?: AnimationVariant
     as?: React.ElementType
+    animate?: boolean
 }
 
 const hiddenClass: Record<AnimationVariant, string> = {
@@ -42,11 +37,14 @@ export default function ScrollReveal({
     staggerStep = 0.15,
     staggerColumns = 3,
     variant = "rise",
-    as: Component = "div"
+    as: Component = "div",
+    animate = true
 }: ScrollRevealProps) {
     const ref = useRef<HTMLDivElement>(null)
 
     useEffect(() => {
+        if (!animate) return
+
         const el = ref.current
         if (!el) return
 
@@ -54,12 +52,10 @@ export default function ScrollReveal({
         const visible = visibleClass[variant]
 
         if (stagger) {
-            // Animate direct children individually
             const children = Array.from(el.children) as HTMLElement[]
             const isMobile = window.matchMedia("(max-width: 759px)").matches
 
             children.forEach((child, i) => {
-                // Column-based stagger for grids, sequential for everything else
                 const delayValue = isMobile
                     ? 0
                     : staggerColumns > 0
@@ -84,7 +80,6 @@ export default function ScrollReveal({
             children.forEach((child) => observer.observe(child))
             return () => observer.disconnect()
         } else {
-            // Animate the element itself
             el.style.transitionDelay = `${delay}s`
             el.classList.add(hidden)
 
@@ -102,7 +97,7 @@ export default function ScrollReveal({
             observer.observe(el)
             return () => observer.disconnect()
         }
-    }, [delay, threshold, stagger, staggerStep, staggerColumns, variant])
+    }, [animate, delay, threshold, stagger, staggerStep, staggerColumns, variant])
 
     return (
         <Component ref={ref} className={cn(className)}>

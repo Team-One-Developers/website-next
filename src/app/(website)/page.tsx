@@ -1,5 +1,7 @@
 import ContentBlock from "@/components/layout/ContentBlock"
+import LogoMarquee from "@/components/molecules/LogoMarquee"
 import ContactSection from "@/components/sections/ContactSection"
+import EventsCarousel from "@/components/sections/EventsCarousel"
 import Hero from "@/components/sections/Hero"
 import HeroGradientBackdrop from "@/components/sections/HeroGradientBackdrop"
 import ImageTeaser from "@/components/sections/ImageTeaser"
@@ -8,6 +10,7 @@ import StatementSection from "@/components/sections/StatementSection"
 import StoriesGrid from "@/components/sections/StoriesGrid"
 import type { SuccessStory } from "@/components/sections/SuccessStoriesGrid"
 import { aidArticles } from "@/data/aidArticles"
+import { events, formatEventDate, getPastEvents, getUpcomingEvents } from "@/data/events"
 import { storyList } from "@/data/stories"
 import type { Metadata } from "next"
 
@@ -24,6 +27,21 @@ const aidStories: SuccessStory[] = aidArticles.map((article) => ({
     buttonLabel: "Zum Interview",
     href: `/einblicke/aid-magazin/${article.slug}`
 }))
+
+const today = new Date().toISOString().slice(0, 10)
+
+const toCardData = (e: (typeof events)[number]) => ({
+    title: e.title,
+    date: formatEventDate(e.startDate, e.endDate),
+    client: e.client,
+    category: e.category ?? e.type,
+    image: e.image,
+    location: e.location,
+    description: e.description
+})
+
+const upcomingEvents = getUpcomingEvents(events, today).map(toCardData)
+const pastEvents = getPastEvents(events, today).map(toCardData)
 
 const Home = () => {
     return (
@@ -48,11 +66,12 @@ const Home = () => {
                 </ContentBlock>
 
                 <ContentBlock>
-                    <ServicesOverview />
+                    <ServicesOverview animate={false} />
                 </ContentBlock>
 
                 <ContentBlock greenBg>
-                    <StoriesGrid stories={storyList} />
+                    <StoriesGrid stories={storyList} animate={true} />
+                    <LogoMarquee fadeColor="primary-soft" className="pb-0" />
                 </ContentBlock>
 
                 {/*
@@ -63,46 +82,12 @@ const Home = () => {
                 </ContentBlock>
 
                 <ContentBlock>
-                    <StoriesGrid title="AI:D Magazin" stories={aidStories} />
+                    <StoriesGrid title="AI:D Magazin" stories={aidStories} imageBorder />
                 </ContentBlock>
 
-                {/*
-                    TODO ADJUST CONTENT WITH PAUL
-
-                    EVENTS & INSIGHTS 2 times this module
-                    */}
-                {/* <ContentBlock>
-                    <EventsSection
-                        eyebrowLabel="Offerings"
-                        title="Events"
-                        description="Erleben Sie uns live: als Speaker auf führenden Branchenveranstaltungen und in inspirierenden Webinaren."
-                        buttonLabel="Alle Events"
-                        buttonHref="/veranstaltungen"
-                        events={[
-                            {
-                                title: "KI in der Unternehmenspraxis",
-                                description:
-                                    "Wie Unternehmen KI-Projekte von der Idee in die Produktion bringen – und was dabei wirklich zählt.",
-                                dateLocation: "15. März 2026 • Stuttgart",
-                                speakerName: "Andreas Zander",
-                                speakerRole: "Managing Director",
-                                speakerImage: "/images/teaser-2.jpg",
-                                speakerBadge: "Speaker",
-                                href: "/veranstaltungen/ki-praxis"
-                            },
-                            {
-                                title: "Platform Engineering Summit",
-                                description:
-                                    "Best Practices für Internal Developer Platforms: von der Architektur zur Adoption.",
-                                dateLocation: "22. April 2026 • Berlin",
-                                speakerName: "Team One",
-                                speakerRole: "Engineering",
-                                speakerImage: "/images/teaser-3.jpg",
-                                href: "/veranstaltungen/platform-engineering"
-                            }
-                        ]}
-                    />
-                </ContentBlock> */}
+                <ContentBlock>
+                    <EventsCarousel title="Events" upcomingEvents={upcomingEvents} pastEvents={pastEvents} />
+                </ContentBlock>
 
                 <ContentBlock>
                     <ImageTeaser variant="leistungen" />

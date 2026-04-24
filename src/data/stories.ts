@@ -23,7 +23,7 @@ export const stories = {
         href: "/referenzen/vertriebsplattform",
         greenFilter: false,
         featured: {
-            logoUrl: "/logos/porscheLogo.svg",
+            logoUrl: "/logos/porsche.svg",
             logoAlt: "Porsche",
             logoWidth: 116,
             logoHeight: 43,
@@ -60,7 +60,7 @@ export const stories = {
         image: "/images/arrows.jpg",
         eyebrowLabel: "Strategie",
         buttonLabel: "Kundenreferenz",
-        href: "/referenzen/axelspringer",
+        href: "/referenzen/plattformstrategie",
         greenFilter: false
     }
 } as const satisfies Record<string, StoryData>

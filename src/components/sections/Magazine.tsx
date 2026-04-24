@@ -1,4 +1,5 @@
 import Section from "@/components/layout/Section"
+import { BLUR_DATA_URL } from "@/constants/blur"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -43,6 +44,8 @@ export const Magazine = () => {
                     width={800}
                     height={800}
                     className="w-full lg:absolute lg:-top-12 lg:-left-12 lg:w-[50%] xl:-top-36 xl:-left-36 xl:w-[60%]"
+                    placeholder="blur"
+                    blurDataURL={BLUR_DATA_URL}
                 />
                 <div className="hidden h-1 w-[45%] lg:block" />
                 <div className="flex w-full flex-col gap-y-6 lg:w-1/2">
@@ -74,6 +77,8 @@ export const Magazine = () => {
                             width={150}
                             height={150}
                             className="w-1/3 object-contain lg:w-1/8"
+                            placeholder="blur"
+                            blurDataURL={BLUR_DATA_URL}
                         />
                     ))}
                 </div>

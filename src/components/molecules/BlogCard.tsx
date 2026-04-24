@@ -1,6 +1,7 @@
 import Eyebrow from "@/components/atoms/Eyebrow"
 import Tag from "@/components/atoms/Tag"
 import AuthorInfo from "@/components/molecules/AuthorInfo"
+import { BLUR_DATA_URL } from "@/constants/blur"
 import cn from "@/utils/cn"
 import Image from "next/image"
 import Link from "next/link"
@@ -40,7 +41,15 @@ export default function BlogCard({
         >
             {/* Image */}
             <div className="relative aspect-4/3 w-full overflow-hidden rounded-lg">
-                <Image src={image} alt={title} fill sizes="(max-width: 759px) 100vw, (max-width: 1299px) 50vw, 33vw" className="object-cover" />
+                <Image
+                    src={image}
+                    alt={title}
+                    fill
+                    sizes="(max-width: 759px) 100vw, (max-width: 1299px) 50vw, 33vw"
+                    className="object-cover"
+                    placeholder="blur"
+                    blurDataURL={BLUR_DATA_URL}
+                />
             </div>
 
             {/* Eyebrow */}

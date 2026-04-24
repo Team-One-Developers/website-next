@@ -55,7 +55,7 @@ export default async function CareerPage() {
 
                 {/* Image Teaser */}
                 <ContentBlock>
-                    <ImageTeaser variant="team" priority />
+                    <ImageTeaser variant="team" priority animate={false} />
                 </ContentBlock>
 
                 <ContentBlock>

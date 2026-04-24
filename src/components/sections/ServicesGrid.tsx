@@ -2,6 +2,7 @@ import Button from "@/components/atoms/Button"
 import ScrollReveal from "@/components/atoms/ScrollReveal"
 import cn from "@/utils/cn"
 import Image from "next/image"
+import { ViewTransition } from "react"
 
 interface ServiceItem {
     title: string
@@ -22,6 +23,7 @@ interface ServicesGridProps {
     services: ServiceItem[]
     cta?: ServicesCTACard
     className?: string
+    animate?: boolean
 }
 
 function ServiceCard({ title, description, pictogramUrl, buttonLabel = "Mehr erfahren", href }: ServiceItem) {
@@ -41,13 +43,15 @@ function ServiceCard({ title, description, pictogramUrl, buttonLabel = "Mehr erf
             </div>
 
             {/* Title */}
-            <h3 className="font-gteradisplay text-h2 max-w-115 self-start text-black">{title}</h3>
+            <ViewTransition name={href ? `service-title-${href.split("/").pop()}` : undefined} share="morph">
+                <h3 className="font-gteradisplay text-h2 max-w-115 self-start text-black">{title}</h3>
+            </ViewTransition>
 
             {/* Description */}
             <p className="text-small text-black-soft max-w-115">{description}</p>
 
             {/* Button */}
-            <Button label={buttonLabel} variant="primary" href={href} className="self-start" />
+            <Button label={buttonLabel} variant="primary" href={href} className="self-start" hrefForward />
         </div>
     )
 }
@@ -70,7 +74,7 @@ function CTACard({ title, description, buttonLabel, href }: ServicesCTACard) {
     )
 }
 
-export default function ServicesGrid({ services, cta, className }: ServicesGridProps) {
+export default function ServicesGrid({ services, cta, className, animate }: ServicesGridProps) {
     // First row: first 3 services
     const topRow = services.slice(0, 3)
     // Second row: remaining services + CTA card
@@ -84,6 +88,7 @@ export default function ServicesGrid({ services, cta, className }: ServicesGridP
                 variant="shift"
                 staggerStep={0.15}
                 staggerColumns={3}
+                animate={animate}
                 className="gap-grid-gutter grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:grid-rows-[auto_auto_auto_auto]"
             >
                 {topRow.map((service) => (
@@ -97,6 +102,7 @@ export default function ServicesGrid({ services, cta, className }: ServicesGridP
                 variant="shift"
                 staggerStep={0.15}
                 staggerColumns={3}
+                animate={animate}
                 className="gap-grid-gutter grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:grid-rows-[auto_auto_auto_auto]"
             >
                 {bottomRow.map((service) => (

@@ -5,6 +5,7 @@ import ContentBlock from "@/components/layout/ContentBlock"
 import Hero from "@/components/sections/Hero"
 import HeroGradientBackdrop from "@/components/sections/HeroGradientBackdrop"
 import ImageTeaser from "@/components/sections/ImageTeaser"
+import { BLUR_DATA_URL } from "@/constants/blur"
 import { Metadata } from "next"
 import Image from "next/image"
 
@@ -96,7 +97,7 @@ export default function CulturePage() {
 
                 {/* Hero Image */}
                 <ContentBlock>
-                    <ImageTeaser variant="office" priority />
+                    <ImageTeaser variant="office" priority animate={false} />
                 </ContentBlock>
 
                 {/* Content Block — two-column text */}
@@ -195,6 +196,8 @@ export default function CulturePage() {
                                         fill
                                         sizes="(max-width: 759px) 100vw, (max-width: 1299px) 50vw, 25vw"
                                         className="object-cover"
+                                        placeholder="blur"
+                                        blurDataURL={BLUR_DATA_URL}
                                     />
                                     {/* Name badge */}
                                     <div className="bg-background-soft px-padding-md py-padding-md relative flex w-full items-center rounded-lg backdrop-blur-lg">

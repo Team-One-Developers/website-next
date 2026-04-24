@@ -1,4 +1,5 @@
 import Section from "@/components/layout/Section"
+import { BLUR_DATA_URL } from "@/constants/blur"
 import Image from "next/image"
 
 interface ImageDividerProps {
@@ -15,6 +16,8 @@ export default function ImageDivider({ fullWidth = false }: ImageDividerProps) {
                     className="aspect-5/2 w-full object-cover xl:rounded-sm"
                     width={1200}
                     height={480}
+                    placeholder="blur"
+                    blurDataURL={BLUR_DATA_URL}
                 />
             </Section>
         </div>

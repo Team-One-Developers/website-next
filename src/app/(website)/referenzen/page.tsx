@@ -39,6 +39,7 @@ export default function SuccessStoriesPage() {
                         buttonLabel={featured.buttonLabel}
                         buttonHref={featured.href}
                         backgroundImage={featured.featured!.backgroundImage}
+                        animate={false}
                     />
                 </ContentBlock>
 

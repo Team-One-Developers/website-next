@@ -18,9 +18,10 @@ interface BenefitsGridProps {
         buttonHref: string
     }
     className?: string
+    animate?: boolean
 }
 
-export default function BenefitsGrid({ benefits, cta, className }: BenefitsGridProps) {
+export default function BenefitsGrid({ benefits, cta, className, animate }: BenefitsGridProps) {
     return (
         <section className={cn("flex flex-col gap-20", className)}>
             {/* First row: 3 benefits */}
@@ -29,6 +30,7 @@ export default function BenefitsGrid({ benefits, cta, className }: BenefitsGridP
                 variant="shift"
                 staggerStep={0.15}
                 staggerColumns={3}
+                animate={animate}
                 className="gap-grid-gutter grid grid-cols-1 md:grid-cols-3"
             >
                 {benefits.slice(0, 3).map((benefit) => (
@@ -48,6 +50,7 @@ export default function BenefitsGrid({ benefits, cta, className }: BenefitsGridP
                 variant="shift"
                 staggerStep={0.15}
                 staggerColumns={3}
+                animate={animate}
                 className="gap-grid-gutter grid grid-cols-1 md:grid-cols-3"
             >
                 {benefits.slice(3, 6).map((benefit) => (
@@ -67,6 +70,7 @@ export default function BenefitsGrid({ benefits, cta, className }: BenefitsGridP
                 variant="shift"
                 staggerStep={0.15}
                 staggerColumns={3}
+                animate={animate}
                 className="gap-grid-gutter grid grid-cols-1 md:grid-cols-3"
             >
                 {benefits.slice(6).map((benefit) => (

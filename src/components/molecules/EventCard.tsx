@@ -1,4 +1,5 @@
 import Tag from "@/components/atoms/Tag"
+import { BLUR_DATA_URL } from "@/constants/blur"
 import cn from "@/utils/cn"
 import Image from "next/image"
 
@@ -28,7 +29,15 @@ export default function EventCard({
             {/* Image or colored placeholder */}
             <div className="relative aspect-square w-full overflow-hidden rounded-lg">
                 {image ? (
-                    <Image src={image} alt={title} fill sizes="(max-width: 759px) 100vw, (max-width: 1299px) 50vw, 33vw" className="object-cover" />
+                    <Image
+                        src={image}
+                        alt={title}
+                        fill
+                        sizes="(max-width: 759px) 100vw, (max-width: 1299px) 50vw, 33vw"
+                        className="object-cover"
+                        placeholder="blur"
+                        blurDataURL={BLUR_DATA_URL}
+                    />
                 ) : (
                     <div className="flex h-full w-full items-end bg-black p-6">
                         {client && <span className="font-gteratext text-small text-white/70">{client}</span>}

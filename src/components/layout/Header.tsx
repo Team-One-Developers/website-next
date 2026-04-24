@@ -3,12 +3,14 @@
 import Button from "@/components/atoms/Button"
 import Eyebrow from "@/components/atoms/Eyebrow"
 import { Logo } from "@/components/atoms/Logo"
+import { LogoNoText } from "@/components/atoms/LogoNoText"
+import { BLUR_DATA_URL } from "@/constants/blur"
 import cn from "@/utils/cn"
 import { Dialog, DialogPanel } from "@headlessui/react"
 import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { useState } from "react"
+import { useCallback, useEffect, useRef, useState } from "react"
 
 interface FlyoutItem {
     name: string
@@ -54,6 +56,23 @@ export default function Header() {
     const [flyoutOpen, setFlyoutOpen] = useState(false)
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
     const [expandedItem, setExpandedItem] = useState<string | null>(null)
+    const [hidden, setHidden] = useState(false)
+    const lastScrollY = useRef(0)
+
+    const handleScroll = useCallback(() => {
+        const currentScrollY = window.scrollY
+        if (currentScrollY > lastScrollY.current && currentScrollY > 80) {
+            setHidden(true)
+        } else {
+            setHidden(false)
+        }
+        lastScrollY.current = currentScrollY
+    }, [])
+
+    useEffect(() => {
+        window.addEventListener("scroll", handleScroll, { passive: true })
+        return () => window.removeEventListener("scroll", handleScroll)
+    }, [handleScroll])
 
     return (
         <>
@@ -65,7 +84,12 @@ export default function Header() {
                 )}
             />
 
-            <header className="fixed top-0 left-0 z-50 w-full">
+            <header
+                className={cn(
+                    "fixed top-0 left-0 z-50 w-full transition-transform duration-300",
+                    hidden && !flyoutOpen && "min-[600px]:-translate-y-full"
+                )}
+            >
                 {/* Background blur overlay */}
                 <div className="bg-primary/50 absolute inset-0 -z-10 backdrop-blur-[20px]" />
 
@@ -76,13 +100,14 @@ export default function Header() {
                     {/* Logo */}
                     <div className="flex items-center">
                         <Link href="/" className="text-black" aria-label="Home">
-                            <Logo className="h-12 w-auto fill-current" />
+                            <Logo className="hidden h-9 w-auto fill-current lg:block" />
+                            <LogoNoText className="block h-9 w-auto fill-current lg:hidden" />
                         </Link>
                     </div>
 
-                    {/* Desktop Navigation Links - hidden below 1300px */}
-                    <div className="hidden shrink-0 items-center lg:flex">
-                        <div className="font-gteratext text-small flex items-center gap-[69px] text-black">
+                    {/* Desktop Navigation Links */}
+                    <div className="hidden shrink-0 items-center min-[600px]:flex">
+                        <div className="font-gteratext text-small flex items-center gap-6 text-black md:gap-10 lg:gap-[69px]">
                             {navigation.map((item) => (
                                 <div
                                     key={item.name}
@@ -104,15 +129,29 @@ export default function Header() {
                                     </Link>
                                     {/* Flyout menu */}
                                     {item.flyout && (
-                                        <div className="absolute left-0 hidden pt-2 group-hover:block">
+                                        <div
+                                            className="absolute left-0 hidden pt-2 group-hover:block"
+                                            style={{ marginLeft: "calc(-0.5rem - var(--spacing-padding-xl))" }}
+                                        >
                                             <div className="flex items-stretch gap-0 rounded-lg bg-black p-2 backdrop-blur-lg">
                                                 {/* Menu items */}
                                                 <div
                                                     className={cn(
-                                                        "gap-xs p-padding-xl flex shrink-0 flex-col justify-start",
+                                                        "gap-sm px-padding-xl py-padding-lg flex shrink-0 flex-col justify-start",
                                                         !item.flyout.image && "pr-50"
                                                     )}
                                                 >
+                                                    {/* "Alle [Section]" link at top */}
+                                                    <Link
+                                                        href={item.href}
+                                                        className={cn(
+                                                            "font-gteratext text-small hover:text-primary mb-sm font-medium whitespace-nowrap text-white transition-colors",
+                                                            pathname === item.href && "text-primary"
+                                                        )}
+                                                    >
+                                                        Alle {item.name}
+                                                    </Link>
+
                                                     {item.flyout.items.map((flyoutItem) => (
                                                         <Link
                                                             key={flyoutItem.href}
@@ -120,7 +159,8 @@ export default function Header() {
                                                             className={cn(
                                                                 "font-gteratext text-small hover:text-primary flex items-center gap-2 whitespace-nowrap text-white transition-colors",
                                                                 flyoutItem.highlight &&
-                                                                    "mt-sm pt-sm border-t border-white/10"
+                                                                    "mt-sm pt-sm border-t border-white/10",
+                                                                pathname === flyoutItem.href && "text-primary"
                                                             )}
                                                         >
                                                             {flyoutItem.highlight && (
@@ -140,6 +180,8 @@ export default function Header() {
                                                             width={340}
                                                             height={255}
                                                             className="aspect-4/3 h-full w-full object-cover"
+                                                            placeholder="blur"
+                                                            blurDataURL={BLUR_DATA_URL}
                                                         />
                                                     </div>
                                                 )}
@@ -151,8 +193,8 @@ export default function Header() {
                         </div>
                     </div>
 
-                    {/* Mobile burger button - visible below 1300px */}
-                    <div className="flex items-center lg:hidden">
+                    {/* Mobile burger button - visible on very small screens */}
+                    <div className="flex items-center min-[600px]:hidden">
                         <button
                             type="button"
                             onClick={() => setMobileMenuOpen(true)}
@@ -282,7 +324,7 @@ export default function Header() {
             </header>
 
             {/* Mobile menu */}
-            <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">
+            <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="min-[600px]:hidden">
                 {/* Backdrop */}
                 <div className="fixed inset-0 z-50 bg-black/5 backdrop-blur-sm" />
 
