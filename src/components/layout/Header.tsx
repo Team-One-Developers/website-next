@@ -107,7 +107,7 @@ export default function Header() {
 
                     {/* Desktop Navigation Links */}
                     <div className="hidden shrink-0 items-center min-[600px]:flex">
-                        <div className="font-gteratext text-small flex items-center gap-6 text-black md:gap-10 lg:gap-[69px]">
+                        <div className="font-gteratext text-small flex items-center gap-6 text-black md:gap-10 lg:gap-17.25">
                             {navigation.map((item) => (
                                 <div
                                     key={item.name}
@@ -173,7 +173,7 @@ export default function Header() {
 
                                                 {/* Image */}
                                                 {item.flyout.image && (
-                                                    <div className="relative w-[340px] shrink-0 overflow-hidden rounded-lg">
+                                                    <div className="relative w-85 shrink-0 overflow-hidden rounded-lg">
                                                         <Image
                                                             src={item.flyout.image}
                                                             alt={`${item.name} Übersicht`}
@@ -275,11 +275,11 @@ export default function Header() {
                             {/* Keyboard Shortcut Display */}
                             <div className="flex items-center gap-0.5">
                                 {/* Command/Ctrl symbol */}
-                                <div className="flex items-center rounded-[5px] border border-[#88ffca] bg-[#84ffc8] px-1 py-[5px]">
+                                <div className="flex items-center rounded-[5px] border border-[#88ffca] bg-[#84ffc8] px-1 py-1.25">
                                     <span className="font-gteradisplay text-xxsmall text-black">⌘</span>
                                 </div>
                                 {/* K key */}
-                                <div className="flex items-center rounded-[5px] border border-[#88ffca] bg-[#84ffc8] px-1 py-[5px]">
+                                <div className="flex items-center rounded-[5px] border border-[#88ffca] bg-[#84ffc8] px-1 py-1.25">
                                     <span className="font-gteradisplay text-xxsmall text-black">K</span>
                                 </div>
                             </div>
@@ -331,7 +331,7 @@ export default function Header() {
                 <DialogPanel
                     className={cn(
                         "bg-t1-darkgreen fixed inset-y-0 right-0 z-60 flex w-full flex-col overflow-y-auto transition-transform duration-300",
-                        "md:max-w-[448px]"
+                        "md:max-w-112"
                     )}
                 >
                     {/* Top: Logo + Close */}

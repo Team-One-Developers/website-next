@@ -44,12 +44,12 @@ export default function Hero({ title, description, eyebrows, backLink, className
                 )}
                 {viewTransitionName ? (
                     <ViewTransition name={viewTransitionName} share="morph">
-                        <h1 className="font-gteradisplay text-d1 max-w-300 font-light break-words whitespace-pre-line text-black">
+                        <h1 className="font-gteradisplay text-d1 max-w-300 font-light wrap-break-word whitespace-pre-line text-black">
                             {title}
                         </h1>
                     </ViewTransition>
                 ) : (
-                    <h1 className="font-gteradisplay text-d1 max-w-300 font-light break-words whitespace-pre-line text-black">
+                    <h1 className="font-gteradisplay text-d1 max-w-300 font-light wrap-break-word whitespace-pre-line text-black">
                         {title}
                     </h1>
                 )}

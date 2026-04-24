@@ -71,7 +71,7 @@ const Home = () => {
 
                 <ContentBlock greenBg>
                     <StoriesGrid stories={storyList} animate={true} />
-                    <LogoMarquee fadeColor="primary-soft" className="pb-0" />
+                    <LogoMarquee className="pb-0" />
                 </ContentBlock>
 
                 {/*

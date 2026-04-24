@@ -38,7 +38,7 @@ export default function BenefitsGrid({ benefits, cta, className, animate }: Bene
                         <Image src={benefit.iconUrl} alt={benefit.title} width={100} height={100} className="size-25" />
                         <div className="gap-xs flex flex-col">
                             <h3 className="font-gteradisplay text-h2 text-black">{benefit.title}</h3>
-                            <p className="text-small text-black-soft max-w-[460px]">{benefit.description}</p>
+                            <p className="text-small text-black-soft max-w-115">{benefit.description}</p>
                         </div>
                     </div>
                 ))}
@@ -58,7 +58,7 @@ export default function BenefitsGrid({ benefits, cta, className, animate }: Bene
                         <Image src={benefit.iconUrl} alt={benefit.title} width={100} height={100} className="size-25" />
                         <div className="gap-xs flex flex-col">
                             <h3 className="font-gteradisplay text-h2 text-black">{benefit.title}</h3>
-                            <p className="text-small text-black-soft max-w-[460px]">{benefit.description}</p>
+                            <p className="text-small text-black-soft max-w-115">{benefit.description}</p>
                         </div>
                     </div>
                 ))}
@@ -78,7 +78,7 @@ export default function BenefitsGrid({ benefits, cta, className, animate }: Bene
                         <Image src={benefit.iconUrl} alt={benefit.title} width={100} height={100} className="size-25" />
                         <div className="gap-xs flex flex-col">
                             <h3 className="font-gteradisplay text-h2 text-black">{benefit.title}</h3>
-                            <p className="text-small text-black-soft max-w-[460px]">{benefit.description}</p>
+                            <p className="text-small text-black-soft max-w-115">{benefit.description}</p>
                         </div>
                     </div>
                 ))}

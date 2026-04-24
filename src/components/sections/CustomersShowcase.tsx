@@ -23,7 +23,6 @@ interface CustomersShowcaseProps {
     buttonLabel?: string
     buttonHref?: string
     cases: CustomerCase[]
-    logos: { src: string; alt: string; width: number; height: number }[]
     className?: string
     animate?: boolean
 }
@@ -34,7 +33,6 @@ export default function CustomersShowcase({
     buttonLabel = "Alle Success Stories",
     buttonHref = "/referenzen",
     cases,
-    logos,
     className,
     animate
 }: CustomersShowcaseProps) {
@@ -114,7 +112,7 @@ export default function CustomersShowcase({
                 </div>
 
                 {/* Logo marquee */}
-                <LogoMarquee fadeColor="primary-soft" />
+                <LogoMarquee />
             </div>
         </ScrollReveal>
     )

@@ -4,7 +4,6 @@ import cn from "@/utils/cn"
 import Image from "next/image"
 
 interface LogoMarqueeProps {
-    fadeColor?: "white" | "primary-soft"
     className?: string
 }
 
@@ -17,7 +16,7 @@ const logos = [
     { src: "/logos/schwarz.svg", alt: "Schwarz", width: 269, height: 51 }
 ]
 
-export default function LogoMarquee({ fadeColor = "white", className }: LogoMarqueeProps) {
+export default function LogoMarquee({ className }: LogoMarqueeProps) {
     return (
         <div className={cn("relative overflow-hidden py-24", className)}>
             <div className="flex w-max items-center" style={{ animation: "marquee 40s linear infinite" }}>

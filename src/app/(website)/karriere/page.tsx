@@ -60,7 +60,7 @@ export default async function CareerPage() {
 
                 <ContentBlock>
                     <ScrollReveal>
-                        <h3 className="font-gteradisplay text-h3 max-w-[700px]">
+                        <h3 className="font-gteradisplay text-h3 max-w-175">
                             Oft sagen wir in Gesprächen &bdquo;wir sind Playground für den modernen und ambitionierten
                             Softwareentwickler&ldquo; – das beschreibt unser Arbeitsumfeld am besten. Wir arbeiten in
                             anspruchsvollen Kundenprojekten mit spannenden Themen und modernen Tech-Stacks und agilem
