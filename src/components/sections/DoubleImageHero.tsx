@@ -7,7 +7,7 @@ import Link from "next/link"
 
 const DoubleImageHero = () => {
     return (
-        <Section className="bg-background overflow-hidden pb-12 lg:pt-8 lg:pb-[90px]">
+        <Section className="bg-background overflow-hidden pb-12 lg:pt-8 lg:pb-22.5">
             <div className="-mx-4 mb-16 flex flex-wrap">
                 <div className="w-full px-4 lg:w-8/12">
                     <div className="overflow-hidden rounded-sm">
@@ -78,7 +78,7 @@ const DoubleImageHero = () => {
             </div>
 
             <div className="mt-0 lg:-mt-12">
-                <div className="mb-11 w-full max-w-[970px]">
+                <div className="mb-11 w-full max-w-242.5">
                     <span className="text-primary mb-2 block text-lg font-semibold uppercase">OUR MISSION</span>
                     <Typography as="h1" variant="h1" className="text-t1-white mb-3">
                         Unser Team - <span className="font-bold">Dein </span> Playground

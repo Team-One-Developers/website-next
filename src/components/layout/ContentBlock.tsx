@@ -20,7 +20,7 @@ export default function ContentBlock({ children, className, greenBg, id }: Conte
     if (greenBg) {
         return (
             <div id={id} className="flex justify-center">
-                <div className="bg-primary-soft w-full py-20 xl:max-w-[2000px] xl:rounded-3xl">{content}</div>
+                <div className="bg-primary-soft w-full py-20 xl:max-w-500 xl:rounded-3xl">{content}</div>
             </div>
         )
     }

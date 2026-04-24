@@ -64,25 +64,12 @@ const managementTeam = [
     }
 ]
 
-const partners = [
-    {
-        name: "Fraunhofer",
-        description: "AI Research Partner",
-        image: ""
-    },
-    {
-        name: "Vercel",
-        description:
-            "Wir verwandeln komplexe Anforderungen in performante Softwarelösungen, die nachhaltiges Wachstum ermöglichen.",
-        image: ""
-    },
-    {
-        name: "Porsche",
-        description:
-            "Wir verwandeln komplexe Anforderungen in performante Softwarelösungen, die nachhaltiges Wachstum ermöglichen.",
-        image: ""
-    }
-]
+// Partners data is currently unused — uncomment the section below when ready
+// const partners = [
+//     { name: "Fraunhofer", description: "AI Research Partner", image: "" },
+//     { name: "Vercel", description: "Wir verwandeln komplexe Anforderungen in performante Softwarelösungen, die nachhaltiges Wachstum ermöglichen.", image: "" },
+//     { name: "Porsche", description: "Wir verwandeln komplexe Anforderungen in performante Softwarelösungen, die nachhaltiges Wachstum ermöglichen.", image: "" },
+// ]
 
 export default function CulturePage() {
     return (

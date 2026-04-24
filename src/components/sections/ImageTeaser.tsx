@@ -131,7 +131,7 @@ export default function ImageTeaser(props: ImageTeaserProps) {
     return (
         <ScrollReveal as="section" animate={animate} className={cn("w-full", className)}>
             {/* Desktop: overlay on image */}
-            <div className="relative hidden aspect-1728/900 w-full items-end overflow-hidden rounded-lg p-[8px] md:flex">
+            <div className="relative hidden aspect-1728/900 w-full items-end overflow-hidden rounded-lg p-2 md:flex">
                 <Image
                     src={image}
                     alt={alt ?? title ?? ""}
@@ -141,7 +141,7 @@ export default function ImageTeaser(props: ImageTeaserProps) {
                     priority={priority}
                 />
                 {hasOverlay && (
-                    <div className="gap-padding-lg bg-background-soft px-padding-xl py-grid-gutter relative flex w-full max-w-[579px] flex-col rounded-lg backdrop-blur-lg">
+                    <div className="gap-padding-lg bg-background-soft px-padding-xl py-grid-gutter relative flex w-full max-w-144.75 flex-col rounded-lg backdrop-blur-lg">
                         <h3 className="font-gteradisplay text-h3 text-white">{title}</h3>
                         <p className="text-small text-white-soft whitespace-pre-line">{description}</p>
                         {buttonLabel && <Button label={buttonLabel} variant={buttonVariant} href={buttonHref} />}
