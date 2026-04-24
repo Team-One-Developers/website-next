@@ -1,5 +1,6 @@
 "use server"
 
+import "server-only"
 import { sendEmail } from "@/app/actions/sendEmail"
 import { sendSlackMessage } from "@/app/actions/sendSlackMessage"
 import { checkBotId } from "botid/server"

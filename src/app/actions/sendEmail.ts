@@ -1,5 +1,6 @@
 "use server"
 
+import "server-only"
 import { EmailTemplate } from "@/components/email/contact"
 import { CONTACT_FORM_RECIPIENT, CONTACT_FORM_SENDER } from "@/constants/email"
 import { resend } from "@/utils/resend"
