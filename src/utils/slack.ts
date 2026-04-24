@@ -1,3 +1,4 @@
+import "server-only"
 import { App } from "@slack/bolt"
 
 export const bolt = new App({

@@ -1,5 +1,6 @@
 "use server"
 
+import "server-only"
 import { bolt } from "@/utils/slack"
 import { headers } from "next/headers"
 
