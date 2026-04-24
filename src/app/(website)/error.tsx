@@ -9,7 +9,7 @@ export default function Error({ reset }: { error: Error & { digest?: string }; r
             <main className="relative z-10 grid min-h-[70vh] place-items-center py-24 sm:py-32">
                 <ContentBlock>
                     <div className="text-center">
-                        <p className="font-gteratext text-primary text-base font-semibold">Fehler</p>
+                        <p className="font-gteratext text-base font-semibold">Fehler</p>
                         <h1 className="font-gteradisplay text-d1 mt-4 font-light text-black">
                             Etwas ist schiefgelaufen
                         </h1>

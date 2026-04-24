@@ -10,7 +10,7 @@ const NotFound = () => {
             <main className="relative z-10 grid min-h-[70vh] place-items-center py-24 sm:py-32">
                 <ContentBlock>
                     <div className="text-center">
-                        <p className="font-gteratext text-primary text-base font-semibold">404</p>
+                        <p className="font-gteratext text-base font-semibold">404</p>
                         <h1 className="font-gteradisplay text-d1 mt-4 font-light text-black">Seite nicht gefunden</h1>
                         <p className="font-gteratext text-small mt-6 text-black/60">
                             Entschuldigung, wir konnten die von Ihnen gesuchte Seite nicht finden.

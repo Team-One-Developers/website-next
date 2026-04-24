@@ -256,20 +256,12 @@ body {
     opacity: 0;
     filter: blur(4px);
     transform: translateX(-20px);
-    transition:
-        opacity 0.5s ease-out,
-        filter 0.5s ease-out,
-        transform 0.5s ease-out;
 }
 
 .animate-rise-hidden {
     opacity: 0;
     filter: blur(4px);
-    transform: translateY(24px);
-    transition:
-        opacity 0.5s ease-out,
-        filter 0.5s ease-out,
-        transform 0.5s ease-out;
+    transform: translateY(48px);
 }
 
 @media (prefers-reduced-motion) {
@@ -284,4 +276,23 @@ body {
     opacity: 1;
     filter: blur(0);
     transform: translate(0);
+    transition:
+        opacity 0.8s ease-out,
+        filter 0.8s ease-out,
+        transform 0.8s ease-out;
+}
+
+/* View Transition: shared element morph for service titles */
+::view-transition-group(.morph) {
+    animation-duration: 350ms;
+    animation-timing-function: ease-in-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    ::view-transition-old(*),
+    ::view-transition-new(*),
+    ::view-transition-group(*) {
+        animation-duration: 0s !important;
+        animation-delay: 0s !important;
+    }
 }

@@ -44,8 +44,9 @@ const cta = {
 
 interface ServicesOverviewProps {
     showCta?: boolean
+    animate?: boolean
 }
 
-export default function ServicesOverview({ showCta = true }: ServicesOverviewProps) {
-    return <ServicesGrid services={services} cta={showCta ? cta : undefined} />
+export default function ServicesOverview({ showCta = true, animate }: ServicesOverviewProps) {
+    return <ServicesGrid services={services} cta={showCta ? cta : undefined} animate={animate} />
 }

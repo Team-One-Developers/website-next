@@ -1,4 +1,5 @@
 import Button from "@/components/atoms/Button"
+import { BLUR_DATA_URL } from "@/constants/blur"
 import cn from "@/utils/cn"
 import Image from "next/image"
 
@@ -31,6 +32,8 @@ export default function StickyContactBar({
                 width={140}
                 height={93}
                 className="h-23.25 w-35 shrink-0 rounded-md object-cover"
+                placeholder="blur"
+                blurDataURL={BLUR_DATA_URL}
             />
 
             {/* Content Bar */}

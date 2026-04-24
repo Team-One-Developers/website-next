@@ -25,6 +25,7 @@ export default function CarItTechnologiesPage() {
                     <Hero
                         title="Car-IT Technologies"
                         backLink={{ label: "Zurück zur Übersicht", href: "/leistungen" }}
+                        viewTransitionName="service-title-car-it-technologies"
                     />
                 </ContentBlock>
 
@@ -78,6 +79,7 @@ export default function CarItTechnologiesPage() {
                     <ServiceDetailSection
                         sectionTitle={"Team One Inframotive - unsere Schwerpunkte"}
                         image="/images/inframotive.jpg"
+                        animate={false}
                         items={[
                             {
                                 title: "E/E Architektur",

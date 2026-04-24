@@ -21,19 +21,34 @@ export const buttonVariants = tv({
 interface ButtonProps extends VariantProps<typeof buttonVariants> {
     label: string
     href?: string
+    hrefForward?: boolean
     className?: string
     onClick?: () => void
     type?: "button" | "submit"
     disabled?: boolean
 }
 
-export default function Button({ label, href, variant, className, onClick, type = "button", disabled }: ButtonProps) {
+export default function Button({
+    label,
+    href,
+    hrefForward,
+    variant,
+    className,
+    onClick,
+    type = "button",
+    disabled
+}: ButtonProps) {
     const classes = cn(buttonVariants({ variant }), className)
 
     if (href) {
         return (
-            <Link href={href} className={classes} onClick={onClick}>
-                {label}
+            <Link
+                href={href}
+                className={classes}
+                onClick={onClick}
+                transitionTypes={hrefForward ? ["nav-forward"] : ["nav-back"]}
+            >
+                {label}1
             </Link>
         )
     }

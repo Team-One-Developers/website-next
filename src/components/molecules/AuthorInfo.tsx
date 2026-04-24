@@ -1,3 +1,4 @@
+import { BLUR_DATA_URL } from "@/constants/blur"
 import cn from "@/utils/cn"
 import Image from "next/image"
 
@@ -18,6 +19,8 @@ export default function AuthorInfo({ name, role, avatarUrl, className, variant =
                 width={52}
                 height={64}
                 className="h-16 w-13 shrink-0 rounded-full object-cover"
+                placeholder="blur"
+                blurDataURL={BLUR_DATA_URL}
             />
             <div className="flex flex-col">
                 <span className={cn("text-[18px] leading-normal", variant === "light" ? "text-white" : "text-black")}>

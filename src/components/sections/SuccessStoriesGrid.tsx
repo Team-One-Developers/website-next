@@ -1,6 +1,7 @@
 import Button from "@/components/atoms/Button"
 import Eyebrow from "@/components/atoms/Eyebrow"
 import ScrollReveal from "@/components/atoms/ScrollReveal"
+import { BLUR_DATA_URL } from "@/constants/blur"
 import cn from "@/utils/cn"
 import Image from "next/image"
 
@@ -12,12 +13,14 @@ export interface SuccessStory {
     buttonLabel?: string
     href?: string
     greenFilter?: boolean
+    imageBorder?: boolean
 }
 
 interface SuccessStoriesGridProps {
     title: string
     stories: SuccessStory[]
     className?: string
+    animate?: boolean
 }
 
 export function StoryCard({
@@ -27,20 +30,28 @@ export function StoryCard({
     eyebrowLabel,
     buttonLabel = "Mehr lesen",
     href,
-    greenFilter
+    greenFilter,
+    imageBorder
 }: SuccessStory) {
     const rowSpan = eyebrowLabel ? "row-span-5" : "row-span-4"
 
     return (
         <div className={cn(rowSpan, "grid grid-rows-subgrid gap-0 pb-8 md:pb-0")}>
             {/* Image */}
-            <div className="mb-lg relative aspect-square w-full overflow-hidden rounded-lg">
+            <div
+                className={cn(
+                    "mb-lg relative aspect-square w-full overflow-hidden rounded-lg",
+                    imageBorder && "border border-black/20"
+                )}
+            >
                 <Image
                     src={image}
                     alt={title}
                     fill
                     sizes="(max-width: 759px) 100vw, (max-width: 1299px) 50vw, 33vw"
                     className="object-cover"
+                    placeholder="blur"
+                    blurDataURL={BLUR_DATA_URL}
                 />
                 {greenFilter && <div className="bg-primary/20 absolute inset-0" />}
             </div>
@@ -52,14 +63,14 @@ export function StoryCard({
             )}
             <h3 className="font-gteradisplay text-h4 px-padding-lg mt-1 max-w-130 text-black">{title}</h3>
             <p className="text-xsmall px-padding-lg mt-2 max-w-130 text-black/60">{description}</p>
-            <div className="px-padding-lg mt-1">
+            <div className="px-padding-lg mt-4">
                 <Button label={buttonLabel} variant="outline" href={href} />
             </div>
         </div>
     )
 }
 
-export default function SuccessStoriesGrid({ title, stories, className }: SuccessStoriesGridProps) {
+export default function SuccessStoriesGrid({ title, stories, className, animate }: SuccessStoriesGridProps) {
     return (
         <section className={cn("relative", className)}>
             {/* Green background */}
@@ -79,6 +90,7 @@ export default function SuccessStoriesGrid({ title, stories, className }: Succes
                     variant="shift"
                     staggerStep={0.2}
                     staggerColumns={3}
+                    animate={animate}
                     className="gap-grid-gutter grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
                 >
                     {stories.map((story, i) => (

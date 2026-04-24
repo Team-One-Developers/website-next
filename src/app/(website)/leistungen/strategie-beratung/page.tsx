@@ -22,8 +22,9 @@ export default function DigitalStrategyTransformationPage() {
             <main className="gap-vertical-inner relative z-10 flex flex-col">
                 <ContentBlock>
                     <Hero
-                        title="Digital-Strategie & Transformation"
+                        title="Strategy Consulting"
                         backLink={{ label: "Zurück zur Übersicht", href: "/leistungen" }}
+                        viewTransitionName="service-title-strategie-beratung"
                     />
                 </ContentBlock>
 
@@ -54,6 +55,7 @@ export default function DigitalStrategyTransformationPage() {
                     <ServiceDetailSection
                         sectionTitle={"Unsere Schwerpunkte in\nDigital-Strategie & Transformation"}
                         image="/images/strategy.jpg"
+                        animate={false}
                         items={[
                             {
                                 title: "Digital Strategy & Business Model Innovation",

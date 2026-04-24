@@ -21,6 +21,7 @@ interface JobAccordionProps {
     title: string
     categories: JobCategory[]
     className?: string
+    animate?: boolean
 }
 
 function ChevronIcon({ open }: { open: boolean }) {
@@ -43,7 +44,7 @@ function ChevronIcon({ open }: { open: boolean }) {
     )
 }
 
-export default function JobAccordion({ title, categories, className }: JobAccordionProps) {
+export default function JobAccordion({ title, categories, className, animate }: JobAccordionProps) {
     const [openIndices, setOpenIndices] = useState<Set<number>>(() => new Set())
 
     function toggle(index: number) {
@@ -63,6 +64,7 @@ export default function JobAccordion({ title, categories, className }: JobAccord
             stagger
             staggerColumns={0}
             staggerStep={0.15}
+            animate={animate}
             as="section"
             className={cn("gap-grid-gutter relative flex flex-col rounded-lg py-20 lg:flex-row", className)}
         >

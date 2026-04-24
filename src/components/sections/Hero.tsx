@@ -1,6 +1,7 @@
 import Eyebrow from "@/components/atoms/Eyebrow"
 import cn from "@/utils/cn"
 import Link from "next/link"
+import { ViewTransition } from "react"
 
 interface HeroProps {
     title: string
@@ -8,15 +9,20 @@ interface HeroProps {
     eyebrows?: string[]
     backLink?: { label: string; href: string }
     className?: string
+    viewTransitionName?: string
 }
 
-export default function Hero({ title, description, eyebrows, backLink, className }: HeroProps) {
+export default function Hero({ title, description, eyebrows, backLink, className, viewTransitionName }: HeroProps) {
     return (
-        <section className={cn("relative flex flex-col gap-20 pt-32", className)}>
+        <section className={cn("relative flex flex-col gap-20", backLink ? "pt-10" : "pt-32", className)}>
             {/* Heading block */}
             <div className="gap-lg flex flex-col">
                 {backLink && (
-                    <Link href={backLink.href} className="gap-sm text-small flex items-center text-black">
+                    <Link
+                        href={backLink.href}
+                        className="gap-sm text-small flex items-center text-black"
+                        transitionTypes={["nav-back"]}
+                    >
                         <svg
                             width="24"
                             height="24"
@@ -36,9 +42,17 @@ export default function Hero({ title, description, eyebrows, backLink, className
                         {backLink.label}
                     </Link>
                 )}
-                <h1 className="font-gteradisplay text-d1 max-w-300 font-light break-words whitespace-pre-line text-black">
-                    {title}
-                </h1>
+                {viewTransitionName ? (
+                    <ViewTransition name={viewTransitionName} share="morph">
+                        <h1 className="font-gteradisplay text-d1 max-w-300 font-light break-words whitespace-pre-line text-black">
+                            {title}
+                        </h1>
+                    </ViewTransition>
+                ) : (
+                    <h1 className="font-gteradisplay text-d1 max-w-300 font-light break-words whitespace-pre-line text-black">
+                        {title}
+                    </h1>
+                )}
                 {/* Eyebrow tag bar */}
                 {eyebrows && eyebrows.length > 0 && (
                     <div className="gap-lg flex flex-wrap items-center">

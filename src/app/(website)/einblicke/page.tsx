@@ -56,7 +56,12 @@ export default function InsightsPage() {
                 </ContentBlock>
 
                 <ContentBlock>
-                    <EventsCarousel title="Events" upcomingEvents={upcomingEvents} pastEvents={pastEvents} />
+                    <EventsCarousel
+                        title="Events"
+                        upcomingEvents={upcomingEvents}
+                        pastEvents={pastEvents}
+                        animate={false}
+                    />
                 </ContentBlock>
 
                 {/* <ContentBlock>

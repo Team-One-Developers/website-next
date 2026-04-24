@@ -24,6 +24,7 @@ export default function AiDataAnalyticsPage() {
                     <Hero
                         title="Operational AI & Data Analytics"
                         backLink={{ label: "Zurück zur Übersicht", href: "/leistungen" }}
+                        viewTransitionName="service-title-operational-ai"
                     />
                 </ContentBlock>
 
@@ -54,6 +55,7 @@ export default function AiDataAnalyticsPage() {
                     <ServiceDetailSection
                         sectionTitle={"Unsere Schwerpunkte in\nOperational AI & Data Analytics"}
                         image="/images/aii.jpg"
+                        animate={false}
                         items={[
                             {
                                 title: "AI Strategy & Use Case Development",

@@ -91,7 +91,13 @@ export default function CaseStudyTemplate({
                         {backLabel}
                     </Link>
 
-                    <ImageTeaser title={heroTitle} description={heroDescription} image={heroImage} priority />
+                    <ImageTeaser
+                        title={heroTitle}
+                        description={heroDescription}
+                        image={heroImage}
+                        priority
+                        animate={false}
+                    />
                 </ContentBlock>
 
                 {textSection && (

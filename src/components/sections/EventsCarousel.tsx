@@ -20,11 +20,12 @@ interface EventsCarouselProps {
     upcomingEvents: EventCardItem[]
     pastEvents: EventCardItem[]
     className?: string
+    animate?: boolean
 }
 
 const TABS = ["Kommende Veranstaltungen", "Vergangene Veranstaltungen"] as const
 
-export default function EventsCarousel({ title, upcomingEvents, pastEvents, className }: EventsCarouselProps) {
+export default function EventsCarousel({ title, upcomingEvents, pastEvents, className, animate }: EventsCarouselProps) {
     const [activeTab, setActiveTab] = useState<string>(TABS[0])
 
     return (
@@ -32,6 +33,7 @@ export default function EventsCarousel({ title, upcomingEvents, pastEvents, clas
             stagger
             staggerColumns={0}
             staggerStep={0.15}
+            animate={animate}
             as="section"
             className={cn("gap-grid-gutter flex flex-col", className)}
         >

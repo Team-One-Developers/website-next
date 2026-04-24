@@ -20,7 +20,7 @@ export default function ContactPage() {
                 </ContentBlock>
 
                 <ContentBlock>
-                    <ContactSection title="Lass uns über Software sprechen, die Wachstum schafft." />
+                    <ContactSection title="Lass uns über Software sprechen, die Wachstum schafft." animate={false} />
                 </ContentBlock>
             </main>
         </div>

@@ -1,5 +1,6 @@
 import Button from "@/components/atoms/Button"
 import ScrollReveal from "@/components/atoms/ScrollReveal"
+import { BLUR_DATA_URL } from "@/constants/blur"
 import cn from "@/utils/cn"
 import Image from "next/image"
 
@@ -22,6 +23,7 @@ interface FeaturedStoryProps {
     rightButtonLabel?: string
     rightButtonHref?: string
     className?: string
+    animate?: boolean
 }
 
 export default function FeaturedStory({
@@ -40,7 +42,8 @@ export default function FeaturedStory({
     rightDescription,
     rightButtonLabel = "Case study",
     rightButtonHref,
-    className
+    className,
+    animate
 }: FeaturedStoryProps) {
     const hasRightOverlay = rightTitle && rightDescription
 
@@ -49,6 +52,7 @@ export default function FeaturedStory({
             stagger
             staggerColumns={0}
             staggerStep={0.2}
+            animate={animate}
             as="section"
             className={cn("flex gap-3 lg:h-225", className)}
         >
@@ -61,6 +65,8 @@ export default function FeaturedStory({
                         width={logoWidth}
                         height={logoHeight}
                         className="h-auto brightness-0"
+                        placeholder="blur"
+                        blurDataURL={BLUR_DATA_URL}
                     />
                     <h2 className="font-gteradisplay text-h2 max-w-146 text-black">{title}</h2>
                     <p className="text-medium max-w-119 whitespace-pre-line text-black">{description}</p>
@@ -71,7 +77,15 @@ export default function FeaturedStory({
             {/* Right: image card */}
             <div className="relative flex flex-1 flex-col items-start justify-between overflow-hidden rounded-xl px-15 py-20">
                 <div aria-hidden="true" className="pointer-events-none absolute inset-0 rounded-xl">
-                    <Image src={backgroundImage} alt="" fill sizes="50vw" className="rounded-xl object-cover" />
+                    <Image
+                        src={backgroundImage}
+                        alt=""
+                        fill
+                        sizes="50vw"
+                        className="rounded-xl object-cover"
+                        placeholder="blur"
+                        blurDataURL={BLUR_DATA_URL}
+                    />
                     {hasRightOverlay && (
                         <div
                             className="absolute inset-0 rounded-xl mix-blend-multiply"
@@ -86,7 +100,15 @@ export default function FeaturedStory({
                 {/* Logo */}
                 {rightLogoUrl && hasRightOverlay && (
                     <div className="relative z-10">
-                        <Image src={rightLogoUrl} alt={rightLogoAlt || ""} width={87} height={15} className="h-auto" />
+                        <Image
+                            src={rightLogoUrl}
+                            alt={rightLogoAlt || ""}
+                            width={87}
+                            height={15}
+                            className="h-auto"
+                            placeholder="blur"
+                            blurDataURL={BLUR_DATA_URL}
+                        />
                     </div>
                 )}
 

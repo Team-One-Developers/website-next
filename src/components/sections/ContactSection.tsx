@@ -3,6 +3,8 @@
 import { submitContactForm } from "@/app/actions/submitContactForm"
 import Button from "@/components/atoms/Button"
 import ScrollReveal from "@/components/atoms/ScrollReveal"
+import { BLUR_DATA_URL } from "@/constants/blur"
+import { CONTACT_EMAIL, CONTACT_PHONE } from "@/constants/contact"
 import cn from "@/utils/cn"
 import Image from "next/image"
 import Link from "next/link"
@@ -32,15 +34,13 @@ const people: Record<string, ContactPerson> = {
     }
 }
 
-const contactPhone = "+49 711 252 986 90"
-const contactEmail = "info@team-one.de"
-
 type PersonKey = keyof typeof people
 
 interface ContactSectionProps {
     title?: string
     contacts?: PersonKey[]
     className?: string
+    animate?: boolean
 }
 
 const logoMaskStyle: React.CSSProperties = {
@@ -55,7 +55,8 @@ const logoMaskStyle: React.CSSProperties = {
 export default function ContactSection({
     title = "Lass uns über Software sprechen, die Wachstum schafft.",
     contacts = ["timobrueckel", "julianrichter"],
-    className
+    className,
+    animate
 }: ContactSectionProps) {
     const initialState = { success: false, message: "", errors: undefined, formData: new FormData() }
     const [state, formAction, isPending] = useActionState(submitContactForm, initialState)
@@ -68,6 +69,7 @@ export default function ContactSection({
             stagger
             staggerColumns={0}
             staggerStep={0.15}
+            animate={animate}
             as="section"
             className={cn("gap-grid-gutter flex flex-col rounded-[40px] py-24 lg:flex-row", className)}
         >
@@ -87,6 +89,8 @@ export default function ContactSection({
                                         fill
                                         sizes="75px"
                                         className="object-cover"
+                                        placeholder="blur"
+                                        blurDataURL={BLUR_DATA_URL}
                                     />
                                 </div>
                                 <div className="flex flex-col">
@@ -100,7 +104,7 @@ export default function ContactSection({
                     {/* Phone & Email */}
                     <div className="gap-xs flex flex-col">
                         <a
-                            href={`tel:${contactPhone}`}
+                            href={`tel:${CONTACT_PHONE}`}
                             className="text-small flex items-center gap-2 text-black hover:underline"
                         >
                             <svg
@@ -119,10 +123,10 @@ export default function ContactSection({
                                     strokeLinejoin="round"
                                 />
                             </svg>
-                            {contactPhone}
+                            {CONTACT_PHONE}
                         </a>
                         <a
-                            href={`mailto:${contactEmail}`}
+                            href={`mailto:${CONTACT_EMAIL}`}
                             className="text-small flex items-center gap-2 text-black hover:underline"
                         >
                             <svg
@@ -150,7 +154,7 @@ export default function ContactSection({
                                     strokeLinejoin="round"
                                 />
                             </svg>
-                            {contactEmail}
+                            {CONTACT_EMAIL}
                         </a>
                     </div>
                 </div>
@@ -171,7 +175,7 @@ export default function ContactSection({
                             required
                             defaultValue={state.formData.get("name") as string}
                             aria-describedby={state.errors?.name ? "contact-name-error" : undefined}
-                            className="border-t1-darkgreen bg-grey-soft text-small focus:border-primary h-13.5 w-full rounded-[10px] border px-4 text-black outline-none"
+                            className="border-t1-darkgreen bg-grey-soft text-small focus:ring-primary h-13.5 w-full rounded-[10px] border px-4 text-black outline-none focus:ring-2 focus:ring-inset"
                         />
                         {state.errors?.name && (
                             <p id="contact-name-error" className="text-xxsmall text-red-500">
@@ -192,7 +196,7 @@ export default function ContactSection({
                             required
                             defaultValue={state.formData.get("email") as string}
                             aria-describedby={state.errors?.email ? "contact-email-error" : undefined}
-                            className="border-t1-darkgreen bg-grey-soft text-small focus:border-primary h-13.5 w-full rounded-[10px] border px-4 text-black outline-none"
+                            className="border-t1-darkgreen bg-grey-soft text-small focus:ring-primary h-13.5 w-full rounded-[10px] border px-4 text-black outline-none focus:ring-2 focus:ring-inset"
                         />
                         {state.errors?.email && (
                             <p id="contact-email-error" className="text-xxsmall text-red-500">
@@ -213,7 +217,7 @@ export default function ContactSection({
                             rows={6}
                             defaultValue={state.formData.get("message") as string}
                             aria-describedby={state.errors?.message ? "contact-message-error" : undefined}
-                            className="border-t1-darkgreen bg-grey-soft text-small focus:border-primary h-48.25 w-full resize-none rounded-[10px] border px-4 py-3 text-black outline-none"
+                            className="border-t1-darkgreen bg-grey-soft text-small focus:ring-primary h-48.25 w-full resize-none rounded-[10px] border px-4 py-3 text-black outline-none focus:ring-2 focus:ring-inset"
                         />
                         {state.errors?.message && (
                             <p id="contact-message-error" className="text-xxsmall text-red-500">

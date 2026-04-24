@@ -25,6 +25,7 @@ interface CustomersShowcaseProps {
     cases: CustomerCase[]
     logos: { src: string; alt: string; width: number; height: number }[]
     className?: string
+    animate?: boolean
 }
 
 export default function CustomersShowcase({
@@ -34,7 +35,8 @@ export default function CustomersShowcase({
     buttonHref = "/referenzen",
     cases,
     logos,
-    className
+    className,
+    animate
 }: CustomersShowcaseProps) {
     const scrollRef = useRef<HTMLDivElement>(null)
 
@@ -45,7 +47,14 @@ export default function CustomersShowcase({
     }
 
     return (
-        <ScrollReveal stagger staggerColumns={0} staggerStep={0.15} as="section" className={cn("", className)}>
+        <ScrollReveal
+            stagger
+            staggerColumns={0}
+            staggerStep={0.15}
+            animate={animate}
+            as="section"
+            className={cn("", className)}
+        >
             {/* Green background area */}
             <div className="bg-primary-soft py-vertical-inner">
                 <div className="gap-vertical-inner px-grid-safezone mx-auto flex max-w-(--max-content-width) flex-col">
