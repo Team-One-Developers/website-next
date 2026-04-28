@@ -74,6 +74,15 @@ export default function Header() {
         return () => window.removeEventListener("scroll", handleScroll)
     }, [handleScroll])
 
+    // Close flyout/mobile menu when navigating. Without this the blur
+    // backdrop can get stuck open if a click triggers navigation before
+    // mouseleave fires (e.g. during View Transitions or layout shifts).
+    const closeMenus = useCallback(() => {
+        setFlyoutOpen(false)
+        setMobileMenuOpen(false)
+        setExpandedItem(null)
+    }, [])
+
     return (
         <>
             {/* Fullscreen blur backdrop when flyout is open */}
@@ -117,6 +126,7 @@ export default function Header() {
                                 >
                                     <Link
                                         href={item.href}
+                                        onClick={closeMenus}
                                         className={cn(
                                             "transition-colors duration-200 hover:text-black/70 hover:underline",
                                             (pathname === item.href ||
@@ -144,6 +154,7 @@ export default function Header() {
                                                     {/* "Alle [Section]" link at top */}
                                                     <Link
                                                         href={item.href}
+                                                        onClick={closeMenus}
                                                         className={cn(
                                                             "font-gteratext text-small hover:text-primary mb-sm font-medium whitespace-nowrap text-white transition-colors",
                                                             pathname === item.href && "text-primary"
@@ -156,6 +167,7 @@ export default function Header() {
                                                         <Link
                                                             key={flyoutItem.href}
                                                             href={flyoutItem.href}
+                                                            onClick={closeMenus}
                                                             className={cn(
                                                                 "font-gteratext text-small hover:text-primary flex items-center gap-2 whitespace-nowrap text-white transition-colors",
                                                                 flyoutItem.highlight &&
