@@ -48,7 +48,7 @@ export default function Button({
                 onClick={onClick}
                 transitionTypes={hrefForward ? ["nav-forward"] : ["nav-back"]}
             >
-                {label}1
+                {label}
             </Link>
         )
     }
