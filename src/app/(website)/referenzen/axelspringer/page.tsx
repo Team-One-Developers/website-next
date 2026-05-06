@@ -3,9 +3,12 @@ import { getOtherStories } from "@/data/stories"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-    title: "New Venture Plattformstrategie",
+    title: "Axel Springer – Digitales Plattform-Ökosystem",
     description:
-        "Strategische Plattformentwicklung für ein herstellerunabhängiges digitales Ökosystem – B2B-Geschäftsmodell, Service-Bundles und Payment-Architektur."
+        "Case Study: Für ein Spin-Off der Axel Springer Gruppe entwickelte Team One ein herstellerunabhängiges digitales Ökosystem mit B2B-Geschäftsmodell, Service-Bundles und Payment-Architektur.",
+    alternates: {
+        canonical: "https://www.team-one.de/referenzen/axelspringer"
+    }
 }
 
 const highlights = [

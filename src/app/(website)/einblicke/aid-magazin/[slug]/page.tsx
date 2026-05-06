@@ -22,7 +22,15 @@ export async function generateMetadata({ params }: AidArticlePageProps): Promise
 
     return {
         title: article.title,
-        description: article.teaser
+        description: article.teaser,
+        openGraph: {
+            images: `/api/og?title=${article.title}`,
+            type: "article",
+            url: `https://www.team-one.de/einblicke/aid-magazin/${slug}`
+        },
+        alternates: {
+            canonical: `https://www.team-one.de/einblicke/aid-magazin/${slug}`
+        }
     }
 }
 

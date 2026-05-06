@@ -11,7 +11,10 @@ import type { Metadata } from "next"
 export const metadata: Metadata = {
     title: "Software Engineering",
     description:
-        "Skalierbare Plattformen, Cloud-Architekturen und moderne Softwareentwicklung – von Digital Platforms über Enterprise Modernization bis Security."
+        "Software Engineering von Team One: Skalierbare Plattformen, Cloud-Architekturen, Enterprise Modernization, Security und AI-powered Engineering – moderne Softwareentwicklung für nachhaltiges Wachstum.",
+    alternates: {
+        canonical: "https://www.team-one.de/leistungen/software-engineering"
+    }
 }
 
 export default function SoftwareEngineeringPage() {

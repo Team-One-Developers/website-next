@@ -5,7 +5,15 @@ import { Metadata } from "next"
 
 export const metadata: Metadata = {
     title: "Teilnahmebedingungen Gewinnspiel",
-    description: "Teilnahmebedingungen für das Gewinnspiel der Team One Developers GmbH."
+    description:
+        "Teilnahmebedingungen für das Gewinnspiel der Team One Developers GmbH – alle Informationen zu Teilnahme, Datenschutz und Gewinnerermittlung.",
+    robots: {
+        index: false,
+        follow: false
+    },
+    alternates: {
+        canonical: "https://www.team-one.de/gewinnspiel-teilnahme"
+    }
 }
 
 const GewinnspielTeilnahme = () => {

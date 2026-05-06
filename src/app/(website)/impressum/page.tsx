@@ -6,7 +6,11 @@ import Link from "next/link"
 
 export const metadata: Metadata = {
     title: "Impressum",
-    description: "Impressum der Team One Developers GmbH in Stuttgart."
+    description:
+        "Impressum der Team One Developers GmbH, Stafflenbergstraße 44, 70184 Stuttgart. Geschäftsführer: Timo Brückel, Julian Richter. Handelsregister: HRB 777716.",
+    alternates: {
+        canonical: "https://www.team-one.de/impressum"
+    }
 }
 
 const Legal = () => {

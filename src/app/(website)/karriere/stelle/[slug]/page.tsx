@@ -65,6 +65,9 @@ export async function generateMetadata({ params }: CareerDetailProps): Promise<M
         robots: {
             index: isPublic,
             follow: isPublic
+        },
+        alternates: {
+            canonical: `https://www.team-one.de/karriere/stelle/${career.slug.current}`
         }
     }
 }

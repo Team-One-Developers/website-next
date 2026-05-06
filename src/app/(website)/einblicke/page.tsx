@@ -11,7 +11,10 @@ import type { Metadata } from "next"
 export const metadata: Metadata = {
     title: "Einblicke",
     description:
-        "Events, Vorträge und Insights rund um Software Engineering, AI und digitale Transformation – von Team One."
+        "Events, Vorträge, Webinare und das AI:D Magazin – Einblicke von Team One rund um Software Engineering, künstliche Intelligenz und digitale Transformation.",
+    alternates: {
+        canonical: "https://www.team-one.de/einblicke"
+    }
 }
 
 /* ------------------------------------------------------------------ */

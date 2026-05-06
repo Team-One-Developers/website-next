@@ -9,9 +9,12 @@ import { storyList } from "@/data/stories"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-    title: "Strategie-Beratung",
+    title: "Strategieberatung",
     description:
-        "Digitale Strategien, Produktvision und organisatorisches Enablement – für nachhaltige Geschäftstransformation."
+        "Digitale Strategien, Produkt- und Plattformstrategie sowie organisatorisches Enablement von Team One – für nachhaltige Geschäftstransformation mit messbarem Ergebnis.",
+    alternates: {
+        canonical: "https://www.team-one.de/leistungen/strategie-beratung"
+    }
 }
 
 export default function DigitalStrategyTransformationPage() {

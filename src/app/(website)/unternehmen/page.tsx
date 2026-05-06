@@ -12,7 +12,10 @@ import Image from "next/image"
 export const metadata: Metadata = {
     title: "Unternehmen",
     description:
-        "Team One ist eine Technologie- & Transformations-Beratung mit Fokus auf menschenzentrierte Arbeitsweisen und datengetriebene Geschäftsmodelle."
+        "Team One ist eine Technologie- & Transformations-Beratung aus Stuttgart mit Fokus auf menschenzentrierte Arbeitsweisen, datengetriebene Geschäftsmodelle und agile Prinzipien.",
+    alternates: {
+        canonical: "https://www.team-one.de/unternehmen"
+    }
 }
 
 const values = [

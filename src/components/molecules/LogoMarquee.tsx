@@ -10,7 +10,7 @@ interface LogoMarqueeProps {
 const logos = [
     { src: "/logos/porsche.svg", alt: "Porsche", width: 314, height: 22 },
     { src: "/logos/mercedes.svg", alt: "Mercedes-Benz", width: 291, height: 35 },
-    { src: "/logos/recaro.svg", alt: "Recaro", width: 269, height: 58 },
+    // { src: "/logos/recaro.svg", alt: "Recaro", width: 269, height: 58 },
     { src: "/logos/dm.svg", alt: "dm", width: 107, height: 107 },
     { src: "/logos/otto.svg", alt: "Otto", width: 125, height: 125 },
     { src: "/logos/schwarz.svg", alt: "Schwarz", width: 269, height: 51 }

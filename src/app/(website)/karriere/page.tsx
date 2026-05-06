@@ -36,7 +36,10 @@ function groupCareersByDivision(careers: Career[]) {
 export const metadata: Metadata = {
     title: "Karriere",
     description:
-        "Werde Teil von Team One – attraktive Jobs in Software Engineering, AI, Strategieberatung und Car-IT Technologies in Stuttgart."
+        "Karriere bei Team One: Offene Stellen in Software Engineering, Operational AI, Strategieberatung und Car-IT Technologies in Stuttgart. Entdecke attraktive Benefits und werde Teil unseres Teams.",
+    alternates: {
+        canonical: "https://www.team-one.de/karriere"
+    }
 }
 
 export default async function CareerPage() {

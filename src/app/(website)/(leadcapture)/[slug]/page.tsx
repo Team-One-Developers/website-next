@@ -41,13 +41,18 @@ export async function generateMetadata({ params }: LeadcaptureProps): Promise<Me
 
     return {
         openGraph: {
-            images: "/og.png"
+            images: `/api/og?title=${leadcapture.title}`,
+            type: "website",
+            url: `https://www.team-one.de/${slug}`
         },
         title: leadcapture.title,
         description: leadcapture.description,
         robots: {
             index: isPublic,
             follow: isPublic
+        },
+        alternates: {
+            canonical: `https://www.team-one.de/${slug}`
         }
     }
 }

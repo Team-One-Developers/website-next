@@ -3,9 +3,12 @@ import { getOtherStories } from "@/data/stories"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-    title: "AI Customer Service",
+    title: "KI-gestützter Kundenservice",
     description:
-        "KI-gestütztes Automatisierungssystem für den Customer Service – datenbasiertes Reporting, intelligentes Routing und automatische Kategorisierung."
+        "Case Study: KI-Automatisierung im Customer Service – intelligentes Routing, automatische Kategorisierung und datenbasiertes Reporting. Reduktion der Fehlzuordnungen um über 80 %.",
+    alternates: {
+        canonical: "https://www.team-one.de/referenzen/ki-kundenservice"
+    }
 }
 
 const highlights = [

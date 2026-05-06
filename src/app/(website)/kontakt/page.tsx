@@ -6,7 +6,11 @@ import type { Metadata } from "next"
 
 export const metadata: Metadata = {
     title: "Kontakt",
-    description: "Kontaktiere Team One – lass uns über Software, AI und digitale Transformation sprechen."
+    description:
+        "Kontaktiere Team One in Stuttgart – lass uns über Software Engineering, KI-Lösungen und digitale Transformation sprechen. Wir freuen uns auf deine Anfrage.",
+    alternates: {
+        canonical: "https://www.team-one.de/kontakt"
+    }
 }
 
 export default function ContactPage() {

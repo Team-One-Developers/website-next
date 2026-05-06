@@ -8,7 +8,11 @@ import { Metadata } from "next"
 
 export const metadata: Metadata = {
     title: "Blog",
-    description: "Technische Einblicke, Praxisberichte und Perspektiven aus unserer täglichen Arbeit."
+    description:
+        "Der Team One Blog: Technische Einblicke, Praxisberichte und Perspektiven aus Software Engineering, AI, Cloud-Architektur und digitaler Transformation.",
+    alternates: {
+        canonical: "https://www.team-one.de/blog"
+    }
 }
 
 const Blog = async () => {

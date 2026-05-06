@@ -3,9 +3,12 @@ import { getOtherStories } from "@/data/stories"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-    title: "Finance Configurator",
+    title: "Porsche Finance Configurator",
     description:
-        "Digitale Finanzlösung für den Online-Fahrzeugvertrieb – nahtlose Integration in die Customer Journey mit messbarem Business Impact."
+        "Case Study: Digitale Finanzlösung für den Online-Fahrzeugvertrieb – nahtlose Integration in die Customer Journey mit über 300 % mehr qualifizierten Leads und messbarem Business Impact.",
+    alternates: {
+        canonical: "https://www.team-one.de/referenzen/finanzenkonfigurator"
+    }
 }
 
 const highlights = [

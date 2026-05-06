@@ -9,9 +9,12 @@ import { storyList } from "@/data/stories"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-    title: "Operational AI",
+    title: "Operational AI & Data Analytics",
     description:
-        "KI-Strategie, LLM-Lösungen und Data Engineering – wir bringen KI-Projekte vom Prototyp in die Produktion."
+        "KI-Strategie, LLM-Lösungen und Data Engineering von Team One: Wir bringen KI-Projekte vom Prototyp in die Produktion – pragmatisch, skalierbar und mit echtem Geschäftswert.",
+    alternates: {
+        canonical: "https://www.team-one.de/leistungen/operational-ai"
+    }
 }
 
 export default function AiDataAnalyticsPage() {

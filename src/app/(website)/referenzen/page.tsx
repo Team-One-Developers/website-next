@@ -10,9 +10,12 @@ import { stories, storyList } from "@/data/stories"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-    title: "Referenzen",
+    title: "Kundenreferenzen",
     description:
-        "Ausgewählte Kundenreferenzen – erfahre, wie Team One digitale Produkte und Plattformen für führende Unternehmen entwickelt."
+        "Ausgewählte Kundenreferenzen von Team One: Digitale Produkte, Plattformen und KI-Lösungen für führende Unternehmen – von Porsche bis Axel Springer. Erfahre mehr über unsere Projekte.",
+    alternates: {
+        canonical: "https://www.team-one.de/referenzen"
+    }
 }
 
 const featured = stories.vertriebsplattform

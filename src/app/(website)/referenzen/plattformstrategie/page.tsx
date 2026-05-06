@@ -5,7 +5,10 @@ import type { Metadata } from "next"
 export const metadata: Metadata = {
     title: "New Venture Plattformstrategie",
     description:
-        "Strategische Plattformentwicklung für ein herstellerunabhängiges digitales Ökosystem – B2B-Geschäftsmodell, Service-Bundles und Payment-Architektur."
+        "Case Study: Strategische Plattformentwicklung für ein herstellerunabhängiges Fahrzeugdienstleistungs-Ökosystem – B2B-Business-Case, skalierbare Service-Bundles und integrierte Payment-Architektur.",
+    alternates: {
+        canonical: "https://www.team-one.de/referenzen/plattformstrategie"
+    }
 }
 
 const highlights = [

@@ -52,13 +52,18 @@ export async function generateMetadata({ params }: BlogProps): Promise<Metadata>
 
     return {
         openGraph: {
-            images: `/api/og?title=${blog.title}`
+            images: `/api/og?title=${blog.title}`,
+            type: "article",
+            url: `https://www.team-one.de/blog/${slug}`
         },
         title: blog.title,
         description: blog.descriptionShort,
         robots: {
             index: isPublic,
             follow: isPublic
+        },
+        alternates: {
+            canonical: `https://www.team-one.de/blog/${slug}`
         }
     }
 }

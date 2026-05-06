@@ -5,7 +5,10 @@ import type { Metadata } from "next"
 export const metadata: Metadata = {
     title: "Porsche Vertriebsplattform",
     description:
-        "Internationale Online-Plattform für den digitalen Vertrieb von Neu- und Gebrauchtfahrzeugen – global skalierbar mit lokaler Händleranbindung."
+        "Case Study: Internationale Online-Plattform für den digitalen Vertrieb von Porsche Neu- und Gebrauchtfahrzeugen – global skalierbar mit lokaler Händleranbindung und Premium-User-Experience.",
+    alternates: {
+        canonical: "https://www.team-one.de/referenzen/vertriebsplattform"
+    }
 }
 
 const highlights = [

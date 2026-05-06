@@ -1,6 +1,7 @@
 import Button from "@/components/atoms/Button"
 import ScrollReveal from "@/components/atoms/ScrollReveal"
 import AuthorInfo from "@/components/molecules/AuthorInfo"
+import { BLUR_DATA_URL } from "@/constants/blur"
 import cn from "@/utils/cn"
 import Image from "next/image"
 
@@ -139,6 +140,8 @@ export default function ImageTeaser(props: ImageTeaserProps) {
                     sizes="100vw"
                     className="object-cover"
                     priority={priority}
+                    placeholder="blur"
+                    blurDataURL={BLUR_DATA_URL}
                 />
                 {hasOverlay && (
                     <div className="gap-padding-lg bg-background-soft px-padding-xl py-grid-gutter relative flex w-full max-w-144.75 flex-col rounded-lg backdrop-blur-lg">

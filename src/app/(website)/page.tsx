@@ -15,9 +15,14 @@ import { storyList } from "@/data/stories"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-    title: "Team One – Tech-driven Business Transformation",
+    title: {
+        absolute: "Team One – Tech-driven Business Transformation | Beratung Stuttgart"
+    },
     description:
-        "Team One ist Technologie-Beratungspartner für digitale Produkte, skalierbare Architekturen und KI-gestützte Geschäftsmodelle – strategisch, datengetrieben, umsetzungsstark."
+        "Team One ist Technologie-Beratungspartner für digitale Produkte, skalierbare Architekturen und KI-gestützte Geschäftsmodelle. Software Engineering, AI, Strategie & Car-IT – strategisch, datengetrieben, umsetzungsstark.",
+    alternates: {
+        canonical: "https://www.team-one.de"
+    }
 }
 
 const aidStories: SuccessStory[] = aidArticles.map((article) => ({

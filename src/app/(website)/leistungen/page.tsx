@@ -11,7 +11,10 @@ import type { Metadata } from "next"
 export const metadata: Metadata = {
     title: "Leistungen",
     description:
-        "Software Engineering, Operational AI, Strategieberatung und Car-IT Technologies – unsere Leistungen für nachhaltige digitale Transformation."
+        "Unsere Leistungen: Software Engineering, Operational AI, Strategieberatung und Car-IT Technologies. Team One liefert nachhaltige digitale Transformation für führende Unternehmen.",
+    alternates: {
+        canonical: "https://www.team-one.de/leistungen"
+    }
 }
 
 export default function ServicesPage() {

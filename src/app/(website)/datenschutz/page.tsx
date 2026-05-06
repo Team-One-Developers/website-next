@@ -5,7 +5,11 @@ import { Metadata } from "next"
 
 export const metadata: Metadata = {
     title: "Datenschutzerklärung",
-    description: "Erfahre mehr darüber, wie wir mit deinen Daten umgehen."
+    description:
+        "Datenschutzerklärung der Team One Developers GmbH: Informationen zur Verarbeitung personenbezogener Daten, Ihren Rechten und unserem Datenschutzbeauftragten gemäß DSGVO.",
+    alternates: {
+        canonical: "https://www.team-one.de/datenschutz"
+    }
 }
 
 const Privacy = () => {

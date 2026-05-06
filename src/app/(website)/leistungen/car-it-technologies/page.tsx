@@ -12,7 +12,10 @@ import type { Metadata } from "next"
 export const metadata: Metadata = {
     title: "Car-IT Technologies",
     description:
-        "Automotive Platform Engineering, Vehicle Data & IoT und digitale Mobilitätsservices – Infrastruktur-Frameworks für die nächste Generation automobiler Plattformen."
+        "Team One Inframotive: Automotive Platform Engineering, E/E-Architektur, Diagnose, Security und Over-the-Air Updates – Infrastruktur-Frameworks für Software-Defined Vehicles.",
+    alternates: {
+        canonical: "https://www.team-one.de/leistungen/car-it-technologies"
+    }
 }
 
 export default function CarItTechnologiesPage() {
