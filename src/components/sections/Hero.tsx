@@ -14,7 +14,7 @@ interface HeroProps {
 
 export default function Hero({ title, description, eyebrows, backLink, className, viewTransitionName }: HeroProps) {
     return (
-        <section className={cn("relative flex flex-col gap-20", backLink ? "pt-10" : "pt-32", className)}>
+        <section className={cn("relative flex flex-col gap-20", backLink ? "pt-10" : "pt-20 lg:pt-32", className)}>
             {/* Heading block */}
             <div className="gap-lg flex flex-col">
                 {backLink && (

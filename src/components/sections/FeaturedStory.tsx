@@ -54,10 +54,10 @@ export default function FeaturedStory({
             staggerStep={0.2}
             animate={animate}
             as="section"
-            className={cn("flex gap-3 lg:h-225", className)}
+            className={cn("flex flex-col gap-3 lg:h-225 lg:flex-row", className)}
         >
             {/* Left: green info card */}
-            <div className="bg-primary-soft flex flex-1 flex-col gap-16.5 rounded-xl p-20">
+            <div className="bg-primary-soft flex flex-1 flex-col gap-16.5 rounded-xl p-8 lg:p-20">
                 <div className="flex flex-col gap-11">
                     <Image
                         src={logoUrl}
@@ -75,13 +75,13 @@ export default function FeaturedStory({
             </div>
 
             {/* Right: image card */}
-            <div className="relative flex flex-1 flex-col items-start justify-between overflow-hidden rounded-xl px-15 py-20">
+            <div className="relative flex min-h-80 flex-1 flex-col items-start justify-between overflow-hidden rounded-xl px-8 py-10 lg:min-h-0 lg:px-15 lg:py-20">
                 <div aria-hidden="true" className="pointer-events-none absolute inset-0 rounded-xl">
                     <Image
                         src={backgroundImage}
                         alt=""
                         fill
-                        sizes="50vw"
+                        sizes="(max-width: 1023px) 100vw, 50vw"
                         className="rounded-xl object-cover"
                         placeholder="blur"
                         blurDataURL={BLUR_DATA_URL}

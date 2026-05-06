@@ -66,7 +66,7 @@ export default function CaseStudyTemplate({
             <HeroGradientBackdrop />
 
             <main className="gap-vertical-inner relative z-10 flex flex-col">
-                <ContentBlock className="gap-xl flex flex-col pt-32">
+                <ContentBlock className="gap-xl flex flex-col pt-20 lg:pt-32">
                     <Link
                         href={backHref}
                         className="gap-sm text-small flex items-center text-black"

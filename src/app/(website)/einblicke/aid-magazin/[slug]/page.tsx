@@ -51,7 +51,10 @@ export default async function AidArticlePage({ params }: AidArticlePageProps) {
                 <ContentBlock>
                     <div className="flex flex-col">
                         {/* Back link */}
-                        <Link href="/einblicke" className="gap-sm text-small mb-lg flex items-center pt-32 text-black">
+                        <Link
+                            href="/einblicke"
+                            className="gap-sm text-small mb-lg flex items-center pt-20 text-black lg:pt-32"
+                        >
                             <svg
                                 width="24"
                                 height="24"

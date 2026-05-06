@@ -20,7 +20,7 @@ export const BlogOverview = ({ blogs }: BlogOverviewProps) => {
     const filteredBlogs = activeCategory === "all" ? blogs : blogs.filter((b) => b.category === activeCategory)
 
     return (
-        <div className="gap-vertical-inner flex flex-col pt-20">
+        <div className="gap-vertical-inner flex flex-col pt-14 lg:pt-20">
             <ContentBlock>
                 <div className="gap-grid-gutter flex flex-col">
                     <h2 className="font-gteradisplay text-d2 text-black">Blog</h2>
