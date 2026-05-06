@@ -277,9 +277,9 @@ body {
     filter: blur(0);
     transform: translate(0);
     transition:
-        opacity 0.8s ease-out,
-        filter 0.8s ease-out,
-        transform 0.8s ease-out;
+        opacity 0.6s ease-out,
+        filter 0.6s ease-out,
+        transform 0.6s ease-out;
 }
 
 /* View Transition: shared element morph for service titles */
