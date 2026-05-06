@@ -489,7 +489,6 @@ const DataPrivacy = () => {
                 </p>
             </div>
 
-<<<<<<< HEAD
             <h3 className="mt-4 text-2xl font-bold">Verarbeitung im Rahmen von Schulungsbuchungen</h3>
             <div>
                 <div className="text-1xl mt-4 font-bold">Art und Umfang der Verarbeitung</div>
@@ -669,10 +668,7 @@ const DataPrivacy = () => {
                 </div>
             </div>
 
-            <h3 className="mt-4 text-2xl font-bold">Whitepaper</h3>
-=======
             <h3 className="font-gteradisplay text-h3 mt-8 mb-4 text-black">Whitepaper</h3>
->>>>>>> 58cc672 (base pages)
             <div>
                 <p>
                     Wenn Sie über unsere Website ein Whitepaper anfordern, werden die von Ihnen im Formular angegebenen
