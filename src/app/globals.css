@@ -32,12 +32,12 @@
     --radius-xlarge: 32px;
 
     /* Typography - Font Sizes (Fluid scaling from mobile to desktop) */
-    --font-size-d1: clamp(50px, 3.125vw + 30px, 100px);
-    --font-size-d2: clamp(33px, 0.9375vw + 24px, 48px);
-    --font-size-h1: clamp(37px, 0.9375vw + 28px, 52px);
-    --font-size-h2: clamp(30px, 0.625vw + 22px, 40px);
-    --font-size-h3: clamp(26px, 0.375vw + 20px, 32px);
-    --font-size-h4: clamp(20px, 0.25vw + 16px, 24px);
+    --font-size-d1: clamp(36px, 4vw + 23px, 100px);
+    --font-size-d2: clamp(26px, 1.375vw + 22px, 48px);
+    --font-size-h1: clamp(28px, 1.5vw + 23px, 52px);
+    --font-size-h2: clamp(24px, 1vw + 21px, 40px);
+    --font-size-h3: clamp(22px, 0.625vw + 20px, 32px);
+    --font-size-h4: clamp(18px, 0.375vw + 17px, 24px);
     --font-size-text-large: clamp(24px, 0.5vw + 18px, 32px);
     --font-size-text-medium: clamp(18px, 0.375vw + 14px, 24px);
     --font-size-text-small: clamp(16px, 0.125vw + 14px, 18px);
@@ -45,12 +45,12 @@
     --font-size-text-xxsmall: 13px;
 
     /* Typography - Line Heights (Fluid scaling) */
-    --line-height-d1-lh: clamp(60px, 3.75vw + 36px, 120px);
-    --line-height-d2-lh: clamp(40px, 1.125vw + 29px, 58px);
-    --line-height-h1-lh: clamp(44px, 1.125vw + 33px, 62px);
-    --line-height-h2-lh: clamp(42px, 0.875vw + 32px, 56px);
-    --line-height-h3-lh: clamp(36px, 0.5625vw + 28px, 45px);
-    --line-height-h4-lh: clamp(28px, 0.375vw + 22px, 34px);
+    --line-height-d1-lh: clamp(44px, 4.75vw + 29px, 120px);
+    --line-height-d2-lh: clamp(34px, 1.5vw + 29px, 58px);
+    --line-height-h1-lh: clamp(36px, 1.625vw + 31px, 62px);
+    --line-height-h2-lh: clamp(32px, 1.5vw + 27px, 56px);
+    --line-height-h3-lh: clamp(30px, 0.9375vw + 27px, 45px);
+    --line-height-h4-lh: clamp(24px, 0.625vw + 22px, 34px);
     --line-height-text-large-lh: clamp(38px, 0.8125vw + 28px, 51px);
     --line-height-text-medium-lh: clamp(26px, 0.5vw + 20px, 34px);
     --line-height-text-small-lh: clamp(26px, 0.1875vw + 23px, 29px);
