@@ -104,7 +104,7 @@ export default async function CareerPage() {
                                 iconUrl: "/pictograms/verwinkelt.svg"
                             },
                             {
-                                title: "Worktation",
+                                title: "Workation",
                                 description:
                                     "Wir haben Gefallen daran gefunden dort zu arbeiten wo andere Urlaub machen. Ein bis zweimal jährlich wechseln wir unser Arbeitsumfeld und reisen gemeinsam an spannenden Locations im In- und Ausland.",
                                 iconUrl: "/pictograms/verwinkelt.svg"
