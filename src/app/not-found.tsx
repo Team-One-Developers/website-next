@@ -16,7 +16,7 @@ const NotFound = () => {
                             Entschuldigung, wir konnten die von Ihnen gesuchte Seite nicht finden.
                         </p>
                         <div className="mt-10 flex items-center justify-center">
-                            <Button label="Zurück zur Startseite" href="/" variant="dark" />
+                            <Button label="Zurück zur Startseite" href="/" variant="primary" />
                         </div>
                     </div>
                 </ContentBlock>
