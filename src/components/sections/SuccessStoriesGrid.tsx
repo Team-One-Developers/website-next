@@ -33,10 +33,10 @@ export function StoryCard({
     greenFilter,
     imageBorder
 }: SuccessStory) {
-    const rowSpan = eyebrowLabel ? "row-span-5" : "row-span-4"
+    const rowSpan = eyebrowLabel ? "md:row-span-5" : "md:row-span-4"
 
     return (
-        <div className={cn(rowSpan, "grid grid-rows-subgrid gap-0 pb-8 md:pb-0")}>
+        <div className={cn(rowSpan, "flex flex-col md:grid md:grid-rows-subgrid")}>
             {/* Image */}
             <div
                 className={cn(

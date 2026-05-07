@@ -138,7 +138,7 @@ const BlogDetailPage = async ({ blog, highlightedContent, relatedBlogs, classNam
                     <ContentBlock>
                         <section className="gap-grid-gutter flex flex-col">
                             <h2 className="font-gteradisplay text-d2 text-black">Ähnliche Artikel</h2>
-                            <div className="gap-grid-gutter grid grid-cols-1 grid-rows-[repeat(6,auto)] md:grid-cols-2 md:grid-rows-[repeat(6,auto)] lg:grid-cols-3 lg:grid-rows-[repeat(6,auto)]">
+                            <div className="gap-grid-gutter grid grid-cols-1 md:grid-cols-2 md:grid-rows-[repeat(6,auto)] lg:grid-cols-3 lg:grid-rows-[repeat(6,auto)]">
                                 {relatedBlogCards.map((post: any) => (
                                     <BlogCard key={post.href} {...post} />
                                 ))}

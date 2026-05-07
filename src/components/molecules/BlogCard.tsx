@@ -35,7 +35,7 @@ export default function BlogCard({
         <Link
             href={href}
             className={cn(
-                "group row-span-6 grid grid-rows-subgrid gap-0 transition-transform hover:scale-[1.01]",
+                "group flex flex-col gap-0 pb-8 transition-transform hover:scale-[1.01] md:row-span-6 md:grid md:grid-rows-subgrid md:pb-0",
                 className
             )}
         >

@@ -28,7 +28,7 @@ interface ServicesGridProps {
 
 function ServiceCard({ title, description, pictogramUrl, buttonLabel = "Mehr erfahren", href }: ServiceItem) {
     return (
-        <div className="gap-lg row-span-4 grid grid-rows-subgrid">
+        <div className="gap-lg flex flex-col md:row-span-4 md:grid md:grid-rows-subgrid">
             {/* Pictogram */}
             <div className="h-25 w-20">
                 {pictogramUrl && (
@@ -58,7 +58,7 @@ function ServiceCard({ title, description, pictogramUrl, buttonLabel = "Mehr erf
 
 function CTACard({ title, description, buttonLabel, href }: ServicesCTACard) {
     return (
-        <div className="gap-lg bg-primary-soft px-padding-xl py-padding-xl row-span-4 grid grid-rows-subgrid self-end rounded-xl">
+        <div className="gap-lg bg-primary-soft px-padding-xl py-padding-xl flex flex-col self-end rounded-xl md:row-span-4 md:grid md:grid-rows-subgrid">
             {/* Empty spacer for pictogram row */}
             <div />
 
@@ -81,7 +81,7 @@ export default function ServicesGrid({ services, cta, className, animate }: Serv
     const bottomRow = services.slice(3)
 
     return (
-        <section className={cn("gap-vertical-inner flex flex-col", className)}>
+        <section className={cn("gap-grid-gutter lg:gap-vertical-inner flex flex-col", className)}>
             {/* Top row */}
             <ScrollReveal
                 stagger
