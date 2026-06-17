@@ -39,7 +39,7 @@ const navigation: NavigationItem[] = [
                 { name: "Car-IT Technologies", href: "/leistungen/car-it-technologies" },
                 { name: "Kundenreferenzen", href: "/referenzen", highlight: true }
             ],
-            image: "/images/office-team.jpg"
+            image: "/images/Leistungen1.jpg"
         }
     },
     { name: "Unternehmen", href: "/unternehmen" },

@@ -12,7 +12,7 @@ const imageTeaserVariants = {
             "Nachhaltigkeit, Transparenz und partnerschaftliche Zusammenarbeit – das sind die Grundpfeiler unserer Arbeit.",
         buttonLabel: "Mehr über uns",
         buttonHref: "/unternehmen",
-        image: "/images/teaser-1.jpg"
+        image: "/images/WerteKompass1.jpg"
     },
     leistungen: {
         title: "Wir steigern die Wettbewerbsfähigkeit von Unternehmen in einer digitalen Welt.",
@@ -20,10 +20,10 @@ const imageTeaserVariants = {
             "Von Enterprise Software Engineering über Operational AI Implementierung bis hin zur Strategieberatung - wir sind ein spezialisiertes Tech-Powerhouse für komplexe und nachhaltige Technologie- und Geschäftstransformation.",
         buttonLabel: "Unsere Leistungen",
         buttonHref: "/leistungen",
-        image: "/images/kaprun.jpg"
+        image: "/images/Wettbewerbsfähigkeit1.jpg"
     },
     office: {
-        image: "/images/office-interior.jpg",
+        image: "/images/Unternehmen1.jpg",
         alt: "Team One Office",
         showOverlay: false
     },
@@ -34,13 +34,13 @@ const imageTeaserVariants = {
         buttonLabel: "Karriere",
         buttonVariant: "primary" as const,
         buttonHref: "/karriere",
-        image: "/images/team-collaboration.jpg"
+        image: "/images/Unternehmen2.jpg"
     },
     team: {
         title: "Unser Team - Dein Playground",
         description:
             "Wir verstehen uns nicht einfach nur als Arbeitgeber, sondern viel mehr als aktiver Begleiter auf dem Weg zu deinen individuellen Zielen. Unser Anspruch ist es, den Menschen in den Mittelpunkt unseres unternehmerischen Handelns zu stellen – und dabei fangen wir bei uns im Team an.",
-        image: "/images/team-collaboration.jpg"
+        image: "/images/Karriere.jpg"
     },
     einblicke: {
         title: "Impulse für die Zukunft digitaler Wertschöpfung",

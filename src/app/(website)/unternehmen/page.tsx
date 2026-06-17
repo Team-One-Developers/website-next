@@ -48,22 +48,22 @@ const managementTeam = [
     {
         name: "Timo Brückel",
         role: "Founding Partner & CEO",
-        image: "/images/people/timo.png"
+        image: "/images/people/Timo1Neu.png"
     },
     {
         name: "Julian Richter",
         role: "Founding Partner & CEO",
-        image: "/images/people/julian-card.png"
+        image: "/images/people/Julian1Neu.png"
     },
     {
         name: "Johannes Aehling",
         role: "Founding Partner & CEO Inframotive",
-        image: "/images/people/johannes.png"
+        image: "/images/people/Johannes1Neu.png"
     },
     {
         name: "Paul Krauss",
         role: "Partner AI",
-        image: "/images/people/paul-closeclose.png"
+        image: "/images/people/Paul1Neu.png"
     }
 ]
 

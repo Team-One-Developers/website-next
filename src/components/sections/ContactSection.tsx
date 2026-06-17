@@ -20,17 +20,17 @@ const people: Record<string, ContactPerson> = {
     timobrueckel: {
         name: "Timo Brückel",
         role: "Founding Partner & CEO",
-        imageUrl: "/images/people/timo-close.png"
+        imageUrl: "/images/people/Timo1cropped.png"
     },
     julianrichter: {
         name: "Julian Richter",
         role: "Founding Partner & CEO",
-        imageUrl: "/images/people/julian-closeclose.png"
+        imageUrl: "/images/people/Julian1cropped.png"
     },
     johannesaehling: {
         name: "Johannes Aehling",
         role: "Founding Partner & CEO Inframotive",
-        imageUrl: "/images/people/johannes.png"
+        imageUrl: "/images/people/Johannes1cropped.png"
     }
 }
 
