@@ -62,14 +62,14 @@ export default function ImageMarquee({ images, className }: ImageMarqueeProps) {
                                     placeholder="blur"
                                     blurDataURL={BLUR_DATA_URL}
                                 />
-                                {/* Green gradient overlay */}
+                                {/* Green gradient overlay
                                 <div
                                     className="pointer-events-none absolute inset-0 rounded-[18px] mix-blend-multiply"
                                     style={{
                                         backgroundImage:
                                             "linear-gradient(159deg, rgba(255,255,255,0) 5.6%, rgb(70,255,173) 90.4%)"
                                     }}
-                                />
+                                /> */}
                             </div>
                         ))}
                     </div>

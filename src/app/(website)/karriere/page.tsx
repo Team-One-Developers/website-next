@@ -187,10 +187,9 @@ export default async function CareerPage() {
                 <ImageMarquee
                     images={[
                         { src: "/images/Slider1.jpg", alt: "Team One", width: 560, height: 375 },
-                        { src: "/images/Slider2.jpg", alt: "Team One", width: 560, height: 375 },
                         { src: "/images/Slider3.jpg", alt: "Team One", width: 560, height: 375 },
-                        { src: "/images/Slider4.jpg", alt: "Team One", width: 560, height: 375 },
-                        { src: "/images/Slider5.jpg", alt: "Team One", width: 560, height: 375 }
+                        { src: "/images/Slider2.jpg", alt: "Team One", width: 560, height: 375 },
+                        { src: "/images/Slider4.jpg", alt: "Team One", width: 560, height: 375 }
                     ]}
                 />
 
