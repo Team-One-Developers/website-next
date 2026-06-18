@@ -135,20 +135,6 @@ export default function Footer() {
                     {/* Social icons */}
                     <div className="gap-xl flex items-center">
                         <Link
-                            href="https://www.youtube.com/@team-one"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="YouTube"
-                        >
-                            <Image
-                                src="/logos/youtube.svg"
-                                alt=""
-                                width={32}
-                                height={32}
-                                className="size-6 md:size-8"
-                            />
-                        </Link>
-                        <Link
                             href="https://www.linkedin.com/company/team-one-developers"
                             target="_blank"
                             rel="noopener noreferrer"
@@ -179,7 +165,7 @@ export default function Footer() {
                     </div>
 
                     {/* Copyright */}
-                    <p className="text-small md:text-medium text-black">© {new Date().getFullYear()} Team One</p>
+                    <p className="text-small md:text-medium text-black">© {new Date().getFullYear()} team one</p>
                 </div>
             </div>
         </footer>

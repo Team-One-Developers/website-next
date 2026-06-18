@@ -116,9 +116,9 @@ export default async function CareerPage() {
                                 iconUrl: "/pictograms/verwinkelt.svg"
                             },
                             {
-                                title: "Wellness",
+                                title: "Wellpass",
                                 description:
-                                    "Alternativ hast Du die Möglichkeit über unseren Fitness-Partner Wellpass in 10.000 hochwertigen Sport- und Gesundheitseinrichtungen in ganz Deutschland zu trainieren.",
+                                    "über unseren Fitness-Partner EGYM Wellpass kannst du aus über 15.000 Sport- und Wellnessangeboten in Deutschland und Österreich frei wählen!",
                                 iconUrl: "/pictograms/verwinkelt.svg"
                             },
                             {

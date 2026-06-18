@@ -13,7 +13,14 @@ const nextConfig: NextConfig = {
             }
         ],
         minimumCacheTTL: 2678400 // 31 days
-    }
+    },
+    redirects: async () => [
+        {
+            source: "/training",
+            destination: "https://training.team-one.de",
+            permanent: false
+        }
+    ]
 }
 
 export default withBotId(nextConfig)
