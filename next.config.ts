@@ -16,7 +16,7 @@ const nextConfig: NextConfig = {
     },
     redirects: async () => [
         {
-            source: "/training",
+            source: "/trainings",
             destination: "https://training.team-one.de",
             permanent: false
         }
