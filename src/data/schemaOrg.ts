@@ -2,7 +2,7 @@ import { Organization as OrganizationSchema } from "schema-dts"
 
 export const organization: OrganizationSchema = {
     "@type": "Organization",
-    image: ["https://www.team-one.de/images/logos/t1-only-dark.svg"],
+    image: ["https://www.team-one.de/logos/team-one-mask.svg"],
     name: "Team One",
     legalName: "Team One Developers GmbH",
     slogan: "Tech-driven business transformation",
@@ -13,7 +13,7 @@ export const organization: OrganizationSchema = {
         "https://www.instagram.com/teamonedevelopers",
         "https://www.xing.com/pages/team-one-developers-gmbh"
     ],
-    logo: "https://www.team-one.de/images/logos/t1-only-dark.svg",
+    logo: "https://www.team-one.de/logos/team-one-mask.svg",
     description:
         "Team One ist Technologie-Beratungspartner für digitale Produkte, skalierbare Architekturen und KI-gestützte Geschäftsmodelle",
     email: "info@team-one.de",
