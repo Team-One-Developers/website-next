@@ -6,32 +6,10 @@ import Hero from "@/components/sections/Hero"
 import HeroGradientBackdrop from "@/components/sections/HeroGradientBackdrop"
 import ImageMarquee from "@/components/sections/ImageMarquee"
 import ImageTeaser from "@/components/sections/ImageTeaser"
-import JobAccordion from "@/components/sections/JobAccordion"
-import { client } from "@/sanity/lib/client"
-import { QUERY_ALL_PUBLIC_CAREERS } from "@/sanity/queries"
-import { Career } from "@/sanity/types"
+import { JobsServer } from "@/components/sections/JobsServer"
 import type { Metadata } from "next"
+import { Suspense } from "react"
 
-function groupCareersByDivision(careers: Career[]) {
-    const groups = new Map<string, Career[]>()
-
-    for (const career of careers) {
-        if (!career.division || !career.slug?.current) continue
-        const existing = groups.get(career.division) || []
-        existing.push(career)
-        groups.set(career.division, existing)
-    }
-
-    return Array.from(groups.entries()).map(([division, items]) => ({
-        label: division,
-        count: items.length,
-        jobs: items.map((c) => ({
-            title: c.title,
-            type: `${c.employmentType}, ${c.schedule}`,
-            href: `/karriere/stelle/${c.slug!.current!}`
-        }))
-    }))
-}
 
 export const metadata: Metadata = {
     title: "Karriere",
@@ -43,9 +21,6 @@ export const metadata: Metadata = {
 }
 
 export default async function CareerPage() {
-    const allCareers = await client.fetch(QUERY_ALL_PUBLIC_CAREERS)
-    const jobCategories = groupCareersByDivision(allCareers)
-
     return (
         <div className="relative">
             <HeroGradientBackdrop />
@@ -78,7 +53,9 @@ export default async function CareerPage() {
 
                 {/* Open Positions */}
                 <ContentBlock id="jobs">
-                    <JobAccordion title="Open Positions" categories={jobCategories} />
+                    <Suspense fallback={<p>loading ...</p>}>
+                        <JobsServer />
+                    </Suspense>
                 </ContentBlock>
 
                 {/* Benefits */}

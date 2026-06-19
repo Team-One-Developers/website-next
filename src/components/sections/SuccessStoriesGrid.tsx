@@ -36,7 +36,7 @@ export function StoryCard({
     const rowSpan = eyebrowLabel ? "md:row-span-5" : "md:row-span-4"
 
     return (
-        <div className={cn(rowSpan, "flex flex-col md:grid md:grid-rows-subgrid")}>
+        <div className={cn(rowSpan, "flex flex-col")}>
             {/* Image */}
             <div
                 className={cn(

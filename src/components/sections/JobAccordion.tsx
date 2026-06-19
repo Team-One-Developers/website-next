@@ -45,7 +45,9 @@ function ChevronIcon({ open }: { open: boolean }) {
 }
 
 export default function JobAccordion({ title, categories, className, animate }: JobAccordionProps) {
-    const [openIndices, setOpenIndices] = useState<Set<number>>(() => new Set())
+    const [openIndices, setOpenIndices] = useState<Set<number>>(
+        () => new Set(categories.map((_, index) => index))
+    )
 
     function toggle(index: number) {
         setOpenIndices((prev) => {
@@ -69,7 +71,7 @@ export default function JobAccordion({ title, categories, className, animate }: 
             className={cn("gap-grid-gutter relative flex flex-col rounded-lg py-20 lg:flex-row", className)}
         >
             {/* Gray background */}
-            <div className="bg-grey absolute inset-x-0 inset-y-0 -mx-[calc((100vw-100%)/2)] rounded-4xl" />
+            {/* <div className="bg-grey absolute inset-x-0 inset-y-0 -mx-[calc((100vw-100%)/2)] rounded-4xl" /> */}
 
             {/* Left: title */}
             <div className="relative flex shrink-0 items-center py-8 lg:w-1/3">
