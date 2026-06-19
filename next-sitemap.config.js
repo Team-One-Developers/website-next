@@ -10,9 +10,6 @@ module.exports = {
         "/blog/draft-*",
         "/karriere/stelle/draft-*",
         "/studio",
-        "/leistungen/ai-data-analytics",
-        "/leistungen/digital-strategy-transformation",
-        "/leistungen/software-engineering"
     ],
     transform: async (config, path) => {
         return {

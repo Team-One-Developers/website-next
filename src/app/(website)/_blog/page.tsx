@@ -12,7 +12,7 @@ export const metadata: Metadata = {
         "Der Team One Blog: Technische Einblicke, Praxisberichte und Perspektiven aus Software Engineering, AI, Cloud-Architektur und digitaler Transformation.",
     alternates: {
         canonical: "https://www.team-one.de/blog"
-    }
+    },
 }
 
 const Blog = async () => {
