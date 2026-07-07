@@ -1,5 +1,6 @@
 import Footer from "@/components/layout/Footer"
 import Header from "@/components/layout/Header"
+import ScrollToTop from "@/components/layout/ScrollToTop"
 
 export default function WebsiteLayout({
     children
@@ -8,6 +9,7 @@ export default function WebsiteLayout({
 }>) {
     return (
         <>
+            <ScrollToTop />
             <a
                 href="#main-content"
                 className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-100 focus:rounded-md focus:bg-black focus:px-4 focus:py-2 focus:text-white"
