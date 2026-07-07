@@ -21,6 +21,7 @@ import {
     QUERY_ALL_CAREERS_DANGER_ONLY_FOR_STATIC_PARAMSResult,
     QUERY_SPECIFIC_CAREERResult
 } from "@/sanity/types"
+import { getCareerCategory } from "@/utils/careerCategory"
 import { mostRelatedCareers } from "@/utils/mostRelated"
 import { Metadata } from "next"
 import { notFound } from "next/navigation"
@@ -115,20 +116,22 @@ function splitContentByHeadings(content: Career["content"]) {
 }
 
 /**
- * Group careers by division for the JobAccordion component.
+ * Group careers by category (division for Team One, inframotiveCategory for
+ * Inframotive) for the JobAccordion component.
  */
-function groupCareersByDivision(careers: Career[]) {
+function groupCareersByCategory(careers: Career[]) {
     const groups = new Map<string, Career[]>()
 
     for (const career of careers) {
-        if (!career.division || !career.slug?.current) continue
-        const existing = groups.get(career.division) || []
+        const category = getCareerCategory(career)
+        if (!category || !career.slug?.current) continue
+        const existing = groups.get(category) || []
         existing.push(career)
-        groups.set(career.division, existing)
+        groups.set(category, existing)
     }
 
-    return Array.from(groups.entries()).map(([division, items]) => ({
-        label: division,
+    return Array.from(groups.entries()).map(([category, items]) => ({
+        label: category,
         count: items.length,
         jobs: items.map((c) => ({
             title: c.title,
@@ -189,8 +192,8 @@ export default async function CareerDetailPage({ params }: CareerDetailProps) {
         }
     ]
 
-    // Group related careers by division for "Weitere Jobs" accordion
-    const weitereJobsCategories = relatedCareers ? groupCareersByDivision(relatedCareers) : []
+    // Group related careers by category for "Weitere Jobs" accordion
+    const weitereJobsCategories = relatedCareers ? groupCareersByCategory(relatedCareers) : []
 
     // Structured data for SEO
     const structuredData: WithContext<JobPosting> = {
@@ -199,6 +202,7 @@ export default async function CareerDetailPage({ params }: CareerDetailProps) {
         hiringOrganization: organization,
         title: career.title,
         description: `<p>${career.description}</p>`,
+        occupationalCategory: getCareerCategory(career),
         jobLocation: {
             "@type": "Place",
             address: {

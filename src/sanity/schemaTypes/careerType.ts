@@ -1,4 +1,4 @@
-import { DIVISIONS } from "@/constants/divisions"
+import { BUSINESSES, DIVISIONS, INFRAMOTIVE_CATEGORIES } from "@/constants/divisions"
 import { CaseIcon } from "@sanity/icons"
 import { defineField, defineType } from "sanity"
 
@@ -61,13 +61,53 @@ export const careerType = defineType({
             validation: (Rule) => Rule.required()
         }),
         defineField({
+            name: "business",
+            title: "Business",
+            type: "string",
+            description:
+                "Which business this job opening belongs to. Determines the available categories below.",
+            options: {
+                list: BUSINESSES,
+                layout: "radio"
+            },
+            initialValue: "Team One",
+            validation: (Rule) => Rule.required()
+        }),
+        defineField({
             name: "division",
+            title: "Category (Team One)",
             type: "string",
             options: {
                 list: DIVISIONS,
                 layout: "dropdown"
             },
-            validation: (rule) => rule.required()
+            hidden: ({ document }) => document?.business === "Inframotive",
+            validation: (Rule) =>
+                Rule.custom((value, context) => {
+                    const business = (context.document as { business?: string } | undefined)?.business
+                    if (business !== "Inframotive" && !value) {
+                        return "Category is required"
+                    }
+                    return true
+                })
+        }),
+        defineField({
+            name: "inframotiveCategory",
+            title: "Category (Inframotive)",
+            type: "string",
+            options: {
+                list: INFRAMOTIVE_CATEGORIES,
+                layout: "dropdown"
+            },
+            hidden: ({ document }) => document?.business !== "Inframotive",
+            validation: (Rule) =>
+                Rule.custom((value, context) => {
+                    const business = (context.document as { business?: string } | undefined)?.business
+                    if (business === "Inframotive" && !value) {
+                        return "Category is required"
+                    }
+                    return true
+                })
         }),
         defineField({
             name: "tags",
@@ -128,13 +168,14 @@ export const careerType = defineType({
     preview: {
         select: {
             title: "title",
+            business: "business",
             employmentType: "employmentType",
             location: "location",
             visibility: "visibility"
         },
-        prepare({ title, employmentType, location, visibility }) {
+        prepare({ title, business, employmentType, location, visibility }) {
             const previewTitle = visibility === "Public" ? title : `DRAFT: ${title}`
-            const previewSubtitle = `${employmentType} - ${location}`
+            const previewSubtitle = `${business ?? "Team One"} · ${employmentType} - ${location}`
 
             return {
                 title: previewTitle,

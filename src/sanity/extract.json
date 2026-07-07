@@ -610,6 +610,23 @@
         },
         "optional": false
       },
+      "business": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "union",
+          "of": [
+            {
+              "type": "string",
+              "value": "Team One"
+            },
+            {
+              "type": "string",
+              "value": "Inframotive"
+            }
+          ]
+        },
+        "optional": false
+      },
       "division": {
         "type": "objectAttribute",
         "value": {
@@ -637,7 +654,36 @@
             }
           ]
         },
-        "optional": false
+        "optional": true
+      },
+      "inframotiveCategory": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "union",
+          "of": [
+            {
+              "type": "string",
+              "value": "Infrastructure general"
+            },
+            {
+              "type": "string",
+              "value": "Architecture"
+            },
+            {
+              "type": "string",
+              "value": "Diagnosis"
+            },
+            {
+              "type": "string",
+              "value": "Update"
+            },
+            {
+              "type": "string",
+              "value": "Security"
+            }
+          ]
+        },
+        "optional": true
       },
       "tags": {
         "type": "objectAttribute",

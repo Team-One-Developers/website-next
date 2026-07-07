@@ -96,7 +96,9 @@ export type Career = {
     location: "Stuttgart"
     schedule: "Vollzeit" | "Teilzeit"
     employmentType: "Festanstellung" | "Praktikum" | "Werkstudent"
-    division: "Software Engineering" | "AI & Data Analytics" | "Strategy & Transformation" | "Marketing" | "Operations"
+    business: "Team One" | "Inframotive"
+    division?: "Software Engineering" | "AI & Data Analytics" | "Strategy & Transformation" | "Marketing" | "Operations"
+    inframotiveCategory?: "Infrastructure general" | "Architecture" | "Diagnosis" | "Update" | "Security"
     tags: Array<string>
     date: string
     content: Array<
@@ -389,7 +391,7 @@ export type AllSanitySchemaTypes =
 export declare const internalGroqTypeReferenceTo: unique symbol
 // Source: ./src/sanity/queries.ts
 // Variable: QUERY_ALL_CAREERS_DANGER_ONLY_FOR_STATIC_PARAMS
-// Query: *  [_type == 'career' && defined(slug) && defined(slug.current) && division != null && !(division in [""])]
+// Query: *  [_type == 'career' && defined(slug) && defined(slug.current) && (    (division != null && !(division in [""])) ||    (inframotiveCategory != null && !(inframotiveCategory in [""]))  )]
 export type QUERY_ALL_CAREERS_DANGER_ONLY_FOR_STATIC_PARAMSResult = Array<{
     _id: string
     _type: "career"
@@ -403,7 +405,9 @@ export type QUERY_ALL_CAREERS_DANGER_ONLY_FOR_STATIC_PARAMSResult = Array<{
     location: "Stuttgart"
     schedule: "Teilzeit" | "Vollzeit"
     employmentType: "Festanstellung" | "Praktikum" | "Werkstudent"
-    division: "AI & Data Analytics" | "Marketing" | "Operations" | "Software Engineering" | "Strategy & Transformation"
+    business: "Inframotive" | "Team One"
+    division?: "AI & Data Analytics" | "Marketing" | "Operations" | "Software Engineering" | "Strategy & Transformation"
+    inframotiveCategory?: "Architecture" | "Diagnosis" | "Infrastructure general" | "Security" | "Update"
     tags: Array<string>
     date: string
     content: Array<
@@ -460,7 +464,9 @@ export type QUERY_ALL_PUBLIC_CAREERSResult = Array<{
     location: "Stuttgart"
     schedule: "Teilzeit" | "Vollzeit"
     employmentType: "Festanstellung" | "Praktikum" | "Werkstudent"
-    division: "AI & Data Analytics" | "Marketing" | "Operations" | "Software Engineering" | "Strategy & Transformation"
+    business: "Inframotive" | "Team One"
+    division?: "AI & Data Analytics" | "Marketing" | "Operations" | "Software Engineering" | "Strategy & Transformation"
+    inframotiveCategory?: "Architecture" | "Diagnosis" | "Infrastructure general" | "Security" | "Update"
     tags: Array<string>
     date: string
     content: Array<
@@ -517,7 +523,9 @@ export type QUERY_SPECIFIC_CAREERResult = {
     location: "Stuttgart"
     schedule: "Teilzeit" | "Vollzeit"
     employmentType: "Festanstellung" | "Praktikum" | "Werkstudent"
-    division: "AI & Data Analytics" | "Marketing" | "Operations" | "Software Engineering" | "Strategy & Transformation"
+    business: "Inframotive" | "Team One"
+    division?: "AI & Data Analytics" | "Marketing" | "Operations" | "Software Engineering" | "Strategy & Transformation"
+    inframotiveCategory?: "Architecture" | "Diagnosis" | "Infrastructure general" | "Security" | "Update"
     tags: Array<string>
     date: string
     content: Array<
@@ -1185,7 +1193,7 @@ export type QUERY_SPECIFIC_LEADCAPTUREResult = {
 import "@sanity/client"
 declare module "@sanity/client" {
     interface SanityQueries {
-        "*\n  [_type == 'career' && defined(slug) && defined(slug.current) && division != null && !(division in [\"\"])]\n": QUERY_ALL_CAREERS_DANGER_ONLY_FOR_STATIC_PARAMSResult
+        '*\n  [_type == \'career\' && defined(slug) && defined(slug.current) && (\n    (division != null && !(division in [""])) ||\n    (inframotiveCategory != null && !(inframotiveCategory in [""]))\n  )]\n': QUERY_ALL_CAREERS_DANGER_ONLY_FOR_STATIC_PARAMSResult
         "*\n  [_type == 'career' && defined(slug) && defined(slug.current) && visibility == 'Public']\n": QUERY_ALL_PUBLIC_CAREERSResult
         "*\n  [_type == 'career' && slug.current == $slug][0]\n": QUERY_SPECIFIC_CAREERResult
         "*\n  [_type == 'leadcapture' && defined(slug) && defined(slug.current)]\n  {\n    ...,\n    heroImage{\n      asset->\n    }\n  }\n": QUERY_ALL_LEADCAPTURES_DANGER_ONLY_FOR_STATIC_PARAMSResult

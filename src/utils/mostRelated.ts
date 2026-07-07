@@ -7,6 +7,7 @@ import {
     QUERY_SPECIFIC_BLOGResult,
     QUERY_SPECIFIC_CAREERResult
 } from "@/sanity/types"
+import { getCareerCategory } from "@/utils/careerCategory"
 import { intersection } from "lodash"
 
 export const mostRelatedBlogs = ({
@@ -53,15 +54,18 @@ export const mostRelatedCareers = ({
 
     const mostRelatedItems: any = []
 
+    const currentCategory = getCareerCategory(currentItem)
+
     allItems
         // first filter out the item we are currently on
         .filter((c) => c.slug?.current !== currentItem.slug?.current)
         // now find the similarities between every other item and the current item
         .forEach((c) => {
+            const category = getCareerCategory(c)
             mostRelatedItems.push({
                 ...c,
-                // number of similar tags
-                score: intersection(c.division, currentItem.division).length
+                // same category (and business) scores highest
+                score: category && category === currentCategory ? 1 : 0
             })
         })
 

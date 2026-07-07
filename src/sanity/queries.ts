@@ -1,7 +1,10 @@
 import { defineQuery } from "next-sanity"
 
 export const QUERY_ALL_CAREERS_DANGER_ONLY_FOR_STATIC_PARAMS = defineQuery(`*
-  [_type == 'career' && defined(slug) && defined(slug.current) && division != null && !(division in [""])]
+  [_type == 'career' && defined(slug) && defined(slug.current) && (
+    (division != null && !(division in [""])) ||
+    (inframotiveCategory != null && !(inframotiveCategory in [""]))
+  )]
 `)
 
 export const QUERY_ALL_PUBLIC_CAREERS = defineQuery(`*
