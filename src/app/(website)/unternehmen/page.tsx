@@ -56,7 +56,7 @@ const managementTeam = [
         image: "/images/people/Julian1Neu.png"
     },
     {
-        name: "Joha‘nnes Aehling",
+        name: "Johannes Aehling",
         role: "Founding Partner & CEO Inframotive",
         image: "/images/people/Johannes1Neu.png"
     },
