@@ -10,7 +10,6 @@ import { JobsServer } from "@/components/sections/JobsServer"
 import type { Metadata } from "next"
 import { Suspense } from "react"
 
-
 export const metadata: Metadata = {
     title: "Karriere",
     description:
@@ -172,7 +171,10 @@ export default async function CareerPage() {
 
                 {/* Contact */}
                 <ContentBlock>
-                    <ContactSection title="Werde ein Teil von uns." />
+                    <ContactSection
+                        title="Werde ein Teil von uns."
+                        contacts={["timobrueckel", "julianrichter", "johannesaehling"]}
+                    />
                 </ContentBlock>
             </main>
         </div>

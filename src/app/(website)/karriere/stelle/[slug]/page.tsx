@@ -261,7 +261,10 @@ export default async function CareerDetailPage({ params }: CareerDetailProps) {
 
                 {/* Contact */}
                 <ContentBlock>
-                    <ContactSection title="Lass uns über Software sprechen, die Wachstum schafft." />
+                    <ContactSection
+                        title="Lass uns über Software sprechen, die Wachstum schafft."
+                        contacts={["timobrueckel", "julianrichter", "johannesaehling"]}
+                    />
                 </ContentBlock>
             </main>
         </div>
