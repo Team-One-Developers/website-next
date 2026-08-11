@@ -89,7 +89,7 @@ export default function ServicesGrid({ services, cta, className, animate }: Serv
                 staggerStep={0.15}
                 staggerColumns={3}
                 animate={animate}
-                className="gap-grid-gutter grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:grid-rows-[auto_auto_auto_auto]"
+                className="gap-grid-gutter grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
             >
                 {topRow.map((service) => (
                     <ServiceCard key={service.title} {...service} />
@@ -103,7 +103,7 @@ export default function ServicesGrid({ services, cta, className, animate }: Serv
                 staggerStep={0.15}
                 staggerColumns={3}
                 animate={animate}
-                className="gap-grid-gutter grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:grid-rows-[auto_auto_auto_auto]"
+                className="gap-grid-gutter grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
             >
                 {bottomRow.map((service) => (
                     <ServiceCard key={service.title} {...service} />
