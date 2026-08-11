@@ -94,7 +94,7 @@ export default async function CareerPage() {
                             {
                                 title: "Wellpass",
                                 description:
-                                    "über unseren Fitness-Partner EGYM Wellpass kannst du aus über 15.000 Sport- und Wellnessangeboten in Deutschland und Österreich frei wählen!",
+                                    "Über unseren Fitness-Partner EGYM Wellpass kannst du aus über 15.000 Sport- und Wellnessangeboten in Deutschland und Österreich frei wählen!",
                                 iconUrl: "/pictograms/verwinkelt.svg"
                             },
                             {

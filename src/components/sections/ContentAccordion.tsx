@@ -20,6 +20,7 @@ function ChevronIcon({ open }: { open: boolean }) {
             height="32"
             viewBox="0 0 24 24"
             fill="none"
+            aria-hidden="true"
             className={cn("shrink-0 transition-transform duration-300", open && "rotate-180")}
         >
             <path
@@ -34,7 +35,7 @@ function ChevronIcon({ open }: { open: boolean }) {
 }
 
 export default function ContentAccordion({ sections, className }: ContentAccordionProps) {
-    const [openIndices, setOpenIndices] = useState<Set<number>>(() => new Set([0, 1]))
+    const [openIndices, setOpenIndices] = useState<Set<number>>(() => new Set([0, 1, 2]))
 
     function toggle(index: number) {
         setOpenIndices((prev) => {
@@ -72,6 +73,7 @@ export default function ContentAccordion({ sections, className }: ContentAccordi
                             id={panelId}
                             role="region"
                             aria-labelledby={triggerId}
+                            inert={!isOpen}
                             className={cn(
                                 "grid transition-[grid-template-rows] duration-300",
                                 isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"

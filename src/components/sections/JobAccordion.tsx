@@ -31,6 +31,7 @@ function ChevronIcon({ open }: { open: boolean }) {
             height="32"
             viewBox="0 0 24 24"
             fill="none"
+            aria-hidden="true"
             className={cn("shrink-0 transition-transform duration-300", open && "rotate-180")}
         >
             <path
@@ -74,7 +75,7 @@ export default function JobAccordion({ title, categories, className, animate }: 
             {/* <div className="bg-grey absolute inset-x-0 inset-y-0 -mx-[calc((100vw-100%)/2)] rounded-4xl" /> */}
 
             {/* Left: title */}
-            <div className="relative flex shrink-0 items-center py-8 lg:w-1/3">
+            <div className="relative flex shrink-0 py-8 lg:w-1/3">
                 <h2 className="font-gteradisplay text-h2 whitespace-pre-line text-black">{title}</h2>
             </div>
 
@@ -82,13 +83,17 @@ export default function JobAccordion({ title, categories, className, animate }: 
             <div className="relative flex min-w-0 flex-1 flex-col">
                 {categories.map((category, i) => {
                     const isOpen = openIndices.has(i)
+                    const panelId = `job-accordion-panel-${i}`
+                    const triggerId = `job-accordion-trigger-${i}`
                     return (
                         <div key={category.label} className="border-t border-black/10">
                             <button
+                                id={triggerId}
                                 type="button"
                                 onClick={() => toggle(i)}
                                 className="gap-lg flex w-full cursor-pointer items-center py-8"
                                 aria-expanded={isOpen}
+                                aria-controls={panelId}
                             >
                                 <span className="font-gteradisplay text-h3 min-w-0 text-left text-black">
                                     {category.label}
@@ -103,6 +108,10 @@ export default function JobAccordion({ title, categories, className, animate }: 
 
                             {/* Expanded job listings */}
                             <div
+                                id={panelId}
+                                role="region"
+                                aria-labelledby={triggerId}
+                                inert={!isOpen}
                                 className={cn(
                                     "grid transition-[grid-template-rows] duration-300",
                                     isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"

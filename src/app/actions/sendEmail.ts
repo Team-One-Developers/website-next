@@ -2,7 +2,6 @@
 
 import "server-only"
 import { EmailTemplate } from "@/components/email/contact"
-import { CONTACT_FORM_RECIPIENT, CONTACT_FORM_SENDER } from "@/constants/email"
 import { resend } from "@/utils/resend"
 
 interface FormData {
@@ -13,8 +12,8 @@ interface FormData {
 
 export const sendEmail = async ({ name, email, message }: FormData) => {
     const { error } = await resend.emails.send({
-        from: CONTACT_FORM_SENDER,
-        to: [CONTACT_FORM_RECIPIENT],
+        from: "Team One Kontaktformular <contact-form@transactional.team-one.de>",
+        to: ["info@team-one.de"],
         subject: "Team One - Kontaktanfrage",
         react: await EmailTemplate({ name, email, message })
     })

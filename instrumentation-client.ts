@@ -12,6 +12,10 @@ initBotId({
         {
             path: "/kontakt",
             method: "POST"
+        },
+        {
+            path: "/karriere/stelle/*/bewerbung",
+            method: "POST"
         }
     ]
 })

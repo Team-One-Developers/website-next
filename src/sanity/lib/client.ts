@@ -6,5 +6,5 @@ export const client = createClient({
   projectId,
   dataset,
   apiVersion,
-  useCdn: true, // Set to false if statically generating pages, using ISR or tag-based revalidation
+  useCdn: false, // Pages are statically generated at build time; read fresh (non-CDN) data so builds reflect the latest CMS state
 })

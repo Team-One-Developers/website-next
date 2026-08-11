@@ -3,7 +3,11 @@ import type { NextConfig } from "next"
 
 const nextConfig: NextConfig = {
     experimental: {
-        viewTransition: true
+        viewTransition: false,
+        scrollRestoration: true,
+        serverActions: {
+            bodySizeLimit: "8mb"
+        }
     },
     images: {
         remotePatterns: [

@@ -11,16 +11,12 @@ import JobAccordion from "@/components/sections/JobAccordion"
 import { FESTANSTELLUNG_BENEFITS, PRAKTIKUMS_BENEFITS, WERKSTUDENT_BENEFITS } from "@/constants/benefits"
 import { organization } from "@/data/schemaOrg"
 import { client } from "@/sanity/lib/client"
+import { getCareerBySlug } from "@/sanity/lib/getCareer"
 import {
     QUERY_ALL_CAREERS_DANGER_ONLY_FOR_STATIC_PARAMS,
-    QUERY_ALL_PUBLIC_CAREERS,
-    QUERY_SPECIFIC_CAREER
+    QUERY_ALL_PUBLIC_CAREERS
 } from "@/sanity/queries"
-import {
-    Career,
-    QUERY_ALL_CAREERS_DANGER_ONLY_FOR_STATIC_PARAMSResult,
-    QUERY_SPECIFIC_CAREERResult
-} from "@/sanity/types"
+import { Career, QUERY_ALL_CAREERS_DANGER_ONLY_FOR_STATIC_PARAMSResult } from "@/sanity/types"
 import { getCareerCategory } from "@/utils/careerCategory"
 import { mostRelatedCareers } from "@/utils/mostRelated"
 import { Metadata } from "next"
@@ -31,23 +27,9 @@ interface CareerDetailProps {
     params: Promise<{ slug: string }>
 }
 
-async function getCareerFromParams(slug: string): Promise<QUERY_SPECIFIC_CAREERResult | null> {
-    const career = await client.fetch(
-        QUERY_SPECIFIC_CAREER,
-        { slug },
-        { cache: process.env.NODE_ENV === "development" ? "no-store" : "force-cache" }
-    )
-
-    if (!career) {
-        return null
-    }
-
-    return career
-}
-
 export async function generateMetadata({ params }: CareerDetailProps): Promise<Metadata> {
     const { slug } = await params
-    const career = await getCareerFromParams(slug)
+    const career = await getCareerBySlug(slug)
 
     if (!career || !career.slug?.current) {
         return {}
@@ -143,8 +125,10 @@ function groupCareersByCategory(careers: Career[]) {
 
 export default async function CareerDetailPage({ params }: CareerDetailProps) {
     const { slug } = await params
-    const career = await getCareerFromParams(slug)
-    const allCareers = await client.fetch(QUERY_ALL_PUBLIC_CAREERS)
+    const [career, allCareers] = await Promise.all([
+        getCareerBySlug(slug),
+        client.fetch(QUERY_ALL_PUBLIC_CAREERS)
+    ])
 
     if (!career) {
         notFound()
@@ -168,8 +152,8 @@ export default async function CareerDetailPage({ params }: CareerDetailProps) {
         career.employmentType === "Festanstellung"
             ? FESTANSTELLUNG_BENEFITS
             : career.employmentType === "Werkstudent"
-              ? WERKSTUDENT_BENEFITS
-              : PRAKTIKUMS_BENEFITS
+                ? WERKSTUDENT_BENEFITS
+                : PRAKTIKUMS_BENEFITS
 
     // Build accordion sections: content sections + benefits
     const accordionSections = [
@@ -242,7 +226,11 @@ export default async function CareerDetailPage({ params }: CareerDetailProps) {
                         {/* Left: sticky description + CTA */}
                         <div className="gap-md flex shrink-0 flex-col pt-8 lg:sticky lg:top-34 lg:w-1/3 lg:self-start">
                             <p className="text-medium text-black">{career.description}</p>
-                            <Button label="Jetzt bewerben" href="/kontakt" variant="primary" />
+                            <Button
+                                label="Jetzt bewerben"
+                                href={`/karriere/stelle/${career.slug!.current!}/bewerbung`}
+                                variant="primary"
+                            />
                         </div>
 
                         {/* Right: content accordions */}
@@ -260,12 +248,12 @@ export default async function CareerDetailPage({ params }: CareerDetailProps) {
                 )}
 
                 {/* Contact */}
-                <ContentBlock>
+                {/* <ContentBlock>
                     <ContactSection
                         title="Lass uns über Software sprechen, die Wachstum schafft."
                         contacts={["timobrueckel", "julianrichter", "johannesaehling"]}
                     />
-                </ContentBlock>
+                </ContentBlock> */}
             </main>
         </div>
     )

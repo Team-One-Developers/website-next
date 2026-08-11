@@ -316,6 +316,58 @@ const DataPrivacy = () => {
                 auffordern, Ihre Einwilligung widerrufen oder der Zweck für die Speicherung entfällt (z. B. nach
                 abgeschlossener Bearbeitung Ihrer Anfrage). Gesetzliche Aufbewahrungspflichten bleiben unberührt.
             </p>
+
+            <h3 className="font-gteradisplay text-h3 mt-8 mb-4 text-black">Bewerbungen</h3>
+
+            <p>
+                Wenn Sie sich über unser Bewerbungsformular auf eine ausgeschriebene Stelle bewerben, verarbeiten wir
+                die von Ihnen übermittelten Daten zur Durchführung des Bewerbungsverfahrens und zur Entscheidung über
+                die Begründung eines Beschäftigungsverhältnisses. Hierzu zählen insbesondere Ihr Name, Ihre Kontaktdaten
+                (E-Mail-Adresse, Telefonnummer), Ihre Angaben zu Ihren Sprachkenntnissen (Deutsch und Englisch), ein
+                frühestmögliches Eintrittsdatum, Ihre Gehaltsvorstellung, die Angabe, wie Sie auf uns aufmerksam
+                geworden sind, ein etwaiger Link zu einem Portfolio- oder Karriereprofil, Ihre Nachricht sowie die von
+                Ihnen hochgeladenen Bewerbungsunterlagen (z. B. Ihr Lebenslauf als PDF-Datei).
+            </p>
+            <p>
+                Rechtsgrundlage für die Verarbeitung Ihrer Bewerbungsdaten ist § 26 Abs. 1 BDSG in Verbindung mit
+                Art. 6 Abs. 1 lit. b DSGVO (Anbahnung eines Beschäftigungsverhältnisses). Soweit Sie uns hierzu Ihre
+                Einwilligung erteilt haben, erfolgt die Verarbeitung zusätzlich auf Grundlage von Art. 6 Abs. 1 lit. a
+                DSGVO; diese Einwilligung können Sie jederzeit mit Wirkung für die Zukunft widerrufen.
+            </p>
+            <p>
+                Zur Zustellung Ihrer Bewerbung setzen wir den E-Mail-Dienstleister Resend (Resend, Inc., USA) ein, über
+                den Ihre Angaben und Ihre hochgeladenen Unterlagen als E-Mail an uns übermittelt werden. Über den
+                Nachrichtendienst Slack (Slack Technologies Limited / Salesforce, Inc.) werden wir zudem intern über den
+                Eingang Ihrer Bewerbung benachrichtigt. Beide Anbieter sind für uns als Auftragsverarbeiter nach Art. 28
+                DSGVO tätig. Innerhalb unseres Unternehmens erhalten ausschließlich die für das Bewerbungsverfahren
+                zuständigen Stellen (Personalverantwortliche, die jeweilige Fachabteilung sowie die Geschäftsführung)
+                Zugriff auf Ihre Daten; eine darüber hinausgehende Weitergabe an Dritte erfolgt nicht.
+            </p>
+            <p>
+                Bei der Nutzung von Resend und Slack können personenbezogene Daten auch in die USA übermittelt und dort
+                verarbeitet werden. Die USA gelten datenschutzrechtlich als Drittland ohne generell angemessenes
+                Datenschutzniveau. Ein angemessenes Schutzniveau wird über den Beitritt der Anbieter zum EU-U.S. Data
+                Privacy Framework bzw. über den Abschluss von EU-Standardvertragsklauseln (Art. 46 Abs. 2 lit. c DSGVO)
+                sichergestellt.
+            </p>
+            <p>
+                Bitte übermitteln Sie uns im Rahmen Ihrer Bewerbung keine besonderen Kategorien personenbezogener Daten
+                (Art. 9 DSGVO), soweit dies nicht erforderlich ist. Sofern Sie solche Daten (z. B. Angaben zu einer
+                Schwerbehinderung) freiwillig in Ihren Unterlagen angeben, erfolgt deren Verarbeitung auf Grundlage von
+                § 26 Abs. 3 BDSG in Verbindung mit Art. 9 Abs. 2 lit. b DSGVO.
+            </p>
+            <p>
+                Kommt es nicht zu einer Einstellung, löschen wir Ihre Bewerbungsdaten spätestens sechs Monate nach
+                Abschluss des Bewerbungsverfahrens, sofern keine gesetzlichen Aufbewahrungspflichten entgegenstehen oder
+                Sie uns eine längere Speicherung (z. B. zur Aufnahme in einen Talentpool) ausdrücklich gestattet haben.
+                Im Falle einer Einstellung werden die für das Beschäftigungsverhältnis erforderlichen Daten in Ihre
+                Personalakte übernommen.
+            </p>
+            <p>
+                Die Bereitstellung Ihrer Bewerbungsdaten erfolgt freiwillig. Ohne die als erforderlich gekennzeichneten
+                Angaben und Ihren Lebenslauf können wir Ihre Bewerbung jedoch gegebenenfalls nicht bearbeiten.
+            </p>
+
             <h3 className="font-gteradisplay text-h3 mt-8 mb-4 text-black">Google Analytics</h3>
             <div>
                 <p>

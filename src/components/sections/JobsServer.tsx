@@ -35,9 +35,9 @@ export const JobsServer = async () => {
 
     return (
         <div className="gap-vertical-inner flex flex-col">
-            <JobAccordion title="Open Positions" categories={teamOneCategories} />
+            <JobAccordion title="Offene Stellen bei Team One" categories={teamOneCategories} />
             {inframotiveCategories.length > 0 && (
-                <JobAccordion title={"Open Positions\nInframotive"} categories={inframotiveCategories} />
+                <JobAccordion title={"Offene Stellen bei Inframotive"} categories={inframotiveCategories} />
             )}
         </div>
     )
