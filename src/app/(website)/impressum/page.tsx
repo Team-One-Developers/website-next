@@ -56,6 +56,37 @@ const Legal = () => {
                         </section>
 
                         <section>
+                            <h2 className="font-gteradisplay text-h3 mb-4 text-black">
+                                Verantwortlich für den Inhalt im Bereich leistungen/car-it-technologies
+                            </h2>
+                            <address className="text-black/60 not-italic">
+                                Team One Inframotive GmbH <br />
+                                Stafflenbergstraße 44 <br />
+                                70184 Stuttgart
+                            </address>
+                        </section>
+
+                        <section>
+                            <h2 className="font-gteradisplay text-h3 mb-4 text-black">
+                                Vertreten durch die Geschäftsführung
+                            </h2>
+                            <ul className="list-disc pl-5 text-black/60">
+                                <li>Timo Brückel</li>
+                                <li>Julian Richter</li>
+                                <li>Johannes Aehling</li>
+                            </ul>
+                        </section>
+
+                        <section>
+                            <h2 className="font-gteradisplay text-h3 mb-4 text-black">Registereintrag</h2>
+                            <p className="text-black/60">
+                                Eintragung im Handelsregister. <br />
+                                Registergericht: Amtsgericht Stuttgart <br />
+                                Registernummer: HRB 806218
+                            </p>
+                        </section>
+
+                        <section>
                             <h2 className="font-gteradisplay text-h3 mb-4 text-black">Datenschutz</h2>
                             <p className="text-black/60">
                                 Sofern innerhalb des Internetangebotes die Möglichkeit zur Eingabe persönlicher oder
