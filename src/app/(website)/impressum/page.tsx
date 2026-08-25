@@ -71,8 +71,6 @@ const Legal = () => {
                                 Vertreten durch die Geschäftsführung
                             </h2>
                             <ul className="list-disc pl-5 text-black/60">
-                                <li>Timo Brückel</li>
-                                <li>Julian Richter</li>
                                 <li>Johannes Aehling</li>
                             </ul>
                         </section>
